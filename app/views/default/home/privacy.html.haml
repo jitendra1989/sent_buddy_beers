@@ -1,0 +1,77 @@
+%h1= t(".heading")
+  
+#privacy
+  %h2= t(".information_collected.heading")
+  %p= t(".information_collected.description") 
+  %p= t(".information_collected.description_2")
+  %h2= t(".information_uses.heading")
+  %p= t(".information_uses.description") 
+  %ul
+    %li= t(".information_uses.bullets.personal_experience")
+    %li= t(".information_uses.bullets.improve_site")
+    %li= t(".information_uses.bullets.customer_service")
+    %li= t(".information_uses.bullets.transactions")
+    %li= t(".information_uses.bullets.contest")
+    %li= t(".information_uses.bullets.emails")
+  
+  %h2= t(".protect_information.heading")
+
+  %p= t(".protect_information.description") 
+
+  %h2= t(".cookies.heading")
+
+  %p= t(".cookies.description")
+
+  %p= t(".cookies.description_2")
+
+  %h2= t(".sell_info.heading")
+
+  %p= t(".sell_info.description")
+
+  %h2= t(".third_parties.heading")
+
+  %p= t(".third_parties.description")
+
+  %h2= t(".california.heading")
+
+  %p= t(".california.description")
+
+  %h2= t(".children.heading")
+
+  %p= t(".children.description")
+
+  %h2= t(".surveys.heading")
+
+  %p= t(".surveys.description")
+
+  %h2= t(".alcohol.heading")
+
+  %p= t(".alcohol.description")
+
+  %h2= t(".online_privacy.heading")
+
+  %p= t(".online_privacy.description")
+
+  %h2= t(".consent.heading")
+
+  %p= t(".consent.description")
+
+  %h2= t(".changes.heading")
+
+  %p= t(".changes.description") 
+
+  %p= t(".latest_changes")
+
+  %h2= t(".contact.heading")
+
+  %p= t(".contact.description")
+
+  %p 
+    BuddyLabs UG
+    %br
+    1370 Willow Road, 2nd Floor
+    %br
+    Menlo Park, CA 94025
+    %br
+    = mail_to(obscure_email("info@buddydrinks.com"), t("home.impressum.email_us"))
+  

@@ -1,0 +1,83 @@
+- content_for :facebook do
+  :plain
+    //FB.Canvas.setSize();
+    FB.Canvas.setAutoResize();
+    //FB.getLoginStatus(function(response) {
+      /* 
+        response returns:
+
+        status
+        The status of the User. One of connected, notConnected or unknown.
+
+        session
+        The session object.
+
+        perms
+        The comma separated permissions string. This is specific to a permissions call. It is not persistent. 
+      */
+			
+      //if (response.session) {
+
+        // logged in and connected user, someone you know
+      //  $("#buy_button").show();
+        
+      //} else {
+
+        // no user session available, someone you dont know
+        //$("#fblogin").show();
+
+      //}
+    //});
+  
+    // This listens for an event. It listens to see if we get a session key for a user when we didn't previously have one.
+    // Basically if they've authenitcated our app
+    // More info: http://developers.facebook.com/docs/reference/javascript/FB.getLoginStatus/
+    //FB.Event.subscribe('auth.login', function(response) {
+      //do something with response
+    //  $("#fblogin").hide();
+    //  $("#buy_button").show();
+    //});
+    
+:javascript
+  //your fb login function
+  //function fblogin() {
+    //FB.login(function(response) {
+      //...
+    //}, {perms:'email'});
+  //}
+  $(document).ready(function() {
+    $("#fblogin a").click(function(e){
+      //FB.login(function(response) {
+        //if (response.session) {
+          //if (response.perms) {
+            // user is logged in and granted some permissions.
+            // perms is a comma separated list of granted permissions
+          //} else {
+            // user is logged in, but did not grant any permissions
+          //}
+      
+          // logged in and connected user, someone you know
+          //$("#buy_button").show();
+        
+        //} else {
+      
+          // no user session available, someone you dont know
+          //$("#fblogin").show();
+        //}
+      //});
+      top.location.href = $(this).attr("href");
+      e.preventDefault;
+    });
+  });
+
+#content_header
+  %h1 Buy a beer for a friend  
+  
+  - if current_user
+    #buy_button.button
+      = link_to t(".buy_button"), new_facebook_order_url
+  - else
+    #fblogin.button
+      = link_to t(".fb_connect"), @oauth_url
+
+= render "order_feed"

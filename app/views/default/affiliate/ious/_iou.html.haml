@@ -1,0 +1,10 @@
+= form_for iou do |f|
+  %span.number
+    = "#{iou.coupon_code_without_redemption_code}-"
+    = f.text_field :redemption_token, :value => "", :class => "redemption_code"
+  %br
+  = iou.created_at.to_s(:euro_sm_with_time)
+  &ndash;
+  = iou.recipient_name
+  &ndash;
+  = iou.sender_name

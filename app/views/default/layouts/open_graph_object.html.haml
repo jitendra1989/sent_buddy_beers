@@ -1,0 +1,11 @@
+!!!XML
+!!!
+%html{html_attrs(I18n.locale.to_s)}
+  %head( prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# buddybeers: http://ogp.me/ns/fb/buddybeers#" )
+    %title= @title or "Buddy Drinks"
+    = csrf_meta_tag
+    = stylesheet_link_tag 'reset', :media => "all"
+    = yield(:head)
+  
+  %body
+    = yield

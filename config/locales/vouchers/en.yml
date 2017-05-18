@@ -1,0 +1,16 @@
+en:
+  vouchers:
+    check:
+      heading: "Redeem a voucher"
+      form:
+        button: "Redeem"
+    redeem:
+      success_expired: "Voucher for %{bar} has expired! We redeemed it for you anyways so you'll get paid, but it's your choice if you want to deliver the product to the customer."
+      success: "Voucher for %{bar} redeemed!"
+      error:
+        expired: "Voucher has expired!"
+        unredeemable: "The code you entered was incorrect or the voucher was not redeemable."
+        not_found: "This voucher was not found or was already redeemed."
+        empty: "All your vouchers have already been redeemed."
+        permission_denied: "Sorry, you do not have permission to redeem vouchers."
+        no_code: "You did not enter a voucher number. Please try again."

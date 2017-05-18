@@ -1,0 +1,18 @@
+/ carlsberg > registrations > form
+
+= f.hidden_field :language, :value => I18n.locale
+
+= render("payment_information", :f => f) if f.object.affiliate?
+
+%fieldset
+  %legend= t(".personal_information.legend")
+    
+  = render "personal_information", :f => f
+  
+  %ol
+    %li
+      = f.label :avatar, resource.avatar.file? ? t("registrations.edit.photo_change") : t("registrations.edit.photo_add")
+      = f.file_field :avatar, :class => "file"
+
+  %ul.buttons
+    %li= f.submit t("forms.buttons.update")

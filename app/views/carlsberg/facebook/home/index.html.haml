@@ -1,0 +1,41 @@
+/ - stylesheets 'sites/carlsberg/sections/facebook'
+- @meta_description = t(".meta_description")
+- @canonical_link = "#{(request.ssl? ? "https" : "http")}://carlsberg.buddybeers.com#{["/", I18n.locale.to_s].join() unless request.fullpath.start_with?(["/", I18n.locale.to_s].join())}#{request.fullpath.split("?").first.chomp("/")}"
+- @title = t(".title")
+
+- content_for :facebook do
+  :plain
+    //FB.Canvas.setSize();
+    FB.Canvas.setAutoResize();
+
+- content_for :head do
+  :javascript
+    $(document).ready(function() {
+      $("#fblogin a").click(function(e){
+        top.location.href = $(this).attr("href");
+        e.preventDefault;
+      });
+    });
+  :plain
+    <!--[if lte IE 8]>
+      <style type="text/css" media="screen">
+        #home #drink_feed .drink .avatar img {
+          -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(grayscale=1)";
+          filter: progid:DXImageTransform.Microsoft.BasicImage(grayscale=1);
+        }
+      </style>
+    <![endif]-->
+
+#home
+  #content_header
+    %h1= t(".heading")
+    %p.description= raw t(".description")
+
+    - if current_user
+      #buy_button.button
+        = link_to content_tag(:span, t(".buy_button")), new_facebook_order_url
+    - else
+      #fblogin.button
+        = link_to content_tag(:span, t(".fb_connect")), @oauth_url #:display => "popup"
+
+  = render "order_feed"

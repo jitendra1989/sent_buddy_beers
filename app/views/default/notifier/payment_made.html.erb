@@ -1,0 +1,13 @@
+<%# Hello %{name}, %>
+<h1 class="h1"><%= t('.greeting', :name => @payment.affiliate_name) %></h1>
+
+<%# "We have recently marked payout #%{number} as paid." %>
+<p><strong><%= t('.invoice_paid', :number => @payment.id) %></strong></p>
+
+<%# This means that the payout amount of %{amount} has been delivered to you in the manner by which you have requested. %>
+<%# We want to take a moment to thank you for being a part of our Buddy Venues network and we look forward to providing you with kick-ass service in the future. %>
+<p><%= t('.explanation', :amount => number_to_currency(@payment.amount.to_f, :unit =>@payment.amount.currency.symbol)) %></p>
+
+<%# "If you want to view this payout online, follow the link below:" %>
+<p><%= t('.link') %><br />
+<%= link_to affiliate_payment_url(@payment), affiliate_payment_url(@payment) %></p>

@@ -1,0 +1,11 @@
+/ default > layouts > user_account_information
+
+#user_account_navigation
+  - if current_user
+    %ul.logged_in
+      %li.logout= link_to t(".logout"), destroy_user_session_url
+  - else
+    %ul.logged_out
+      %li.login= link_to t(".login"), login_url, :rel => "nofollow"
+      %li.facebook= facebook_login_button
+      %li.signup= link_to t(".signup_short"), new_user_registration_url, :rel => "nofollow"

@@ -1,0 +1,15 @@
+- stylesheets 'sites/default/sections/payments'
+- javascripts('jquery.pageless')
+= render "admin/dashboard/tabs"
+
+#payments
+
+  .warning
+    %p
+      %strong WARNING:
+      Guys, be careful checking the "Paid" box as it sends an email to the Affiliate when you do telling them that their invoice has been paid.
+
+  = render "shared/payment_table"
+  
+  = will_paginate(@payments)
+  = pageless(@payments.total_pages, admin_payments_url, '#payment_table tbody', "Loading More")

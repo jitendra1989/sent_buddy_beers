@@ -1,0 +1,25 @@
+%p.stats
+  = "#{controller.controller_name.capitalize}:"
+  - if request.url == admin_users_url
+    = User.active.size
+  - else
+    = @users.count
+
+#users
+  =# render "shared/admin/filter_form"
+
+  %form{ :action => admin_users_url }
+    %fieldset.sort
+      %ol
+        %li
+          %label.long Search users:
+          %br
+          %input{ :type => "text", :name => "query", :value => "", :id => "id_search_list" }
+          %button{ :type => "submit" }
+            Search &raquo;
+
+  %ul
+    - for user in @users
+      %li{ :class => cycle("odd", "even") }= render :partial => "admin/users/user", :locals => {:user => user}
+
+  = will_paginate @users

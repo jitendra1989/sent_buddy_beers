@@ -1,0 +1,40 @@
+- @title = t(".title")
+- stylesheets "sites/buddybeers/sections/gallery"
+
+- content_for :head do
+  :javascript
+    $(document).ready(function(){
+      $("a.single_image").fancybox();
+    });
+    
+= render "admin/dashboard/tabs"
+= render :partial => "bar_tabs"
+
+#gallery
+  .tabs
+    %ul
+      %li= link_to t('.tabs.add_photo'), new_admin_bar_photo_path(@bar)
+    = clear_floats
+
+  - if @gallery.photos.blank?
+    %p.empty= t('.no_photos')
+  - else
+    - @gallery.photos.each do |photo|
+      .photo{ :class => cycle("odd", "even")}
+        = link_to image_tag(photo.photo(:thumb), :alt => photo.title), photo.photo(:full), :class => "single_image"
+        .text
+          - unless photo.title.blank?
+            .title= photo.title
+          - unless photo.description.blank?
+            .description= photo.description
+
+          
+        
+        .options
+          %span.edit= link_to t("global.edit"), edit_admin_bar_photo_path(@bar, photo)
+          |
+          %span.delete= link_to t("global.delete"), admin_bar_photo_path(@bar, photo), :method => :delete, :confirm => t("global.confirm_question")
+          %br
+          = link_to t(".view_full"), photo.photo(:full), :class => "single_image"
+          
+        = clear_floats

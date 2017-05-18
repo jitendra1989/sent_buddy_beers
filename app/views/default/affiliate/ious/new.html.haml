@@ -1,0 +1,55 @@
+- @title = t(".title")
+
+%h2= t(".heading", :bar => @bar.name.titleize)
+%p#page-intro= t(".instructions")
+.clear
+
+.content-box
+  / Start Content Box
+  .content-box-header
+    %h3= t(".form.recipient_info_legend")
+    .clear
+    
+  .content-box-content
+    = form_for [:affiliate, @bar, @iou] do |iou_form|
+      - if @iou.errors.any?
+        #error.notification.error.png_bg
+          = link_to image_tag("sites/default/admin/icons/cross_grey_small.png", :title => "Close this notification", :alt => "close"), "#", :class => "close"
+          %div
+            %h5= t("activerecord.errors.template.header.body")
+            %ul
+              - @iou.errors.full_messages.each do |msg|
+                %li= msg
+
+      %fieldset.friend
+        %ol
+          %li
+            = iou_form.label :recipient_email, "#{t(".form.recipient_email")}:"
+            = iou_form.text_field :recipient_email, :class => "medium-input text-input"
+          %li.friends_name
+            = iou_form.label :recipient_name, "#{t(".form.recipient_name")}:"
+            = iou_form.text_field :recipient_name, :class => "medium-input text-input"
+          %li.or
+            = "~ #{t("ious.form.and_or")} ~"
+          %li.friends_phone_country
+            = iou_form.label :recipient_phone_country_code
+            = select_tag "iou[recipient_phone_country_code]", grouped_options_for_select(dialing_codes), :class => "medium-input"
+          %li.friends_phone
+            = iou_form.label :recipient_phone
+            = iou_form.text_field :recipient_phone, :class => "medium-input text-input"
+            = hidden_field :bar_id, :value => @bar.id
+          %li
+            = iou_form.label( :quantity, "#{t(".form.beer")}:")
+            %span.quantity= iou_form.select :quantity, (1..10).map{|n| [n.to_s, n.to_s]}, :class => "small-input"
+            = iou_form.hidden_field :beverage_id, :value => 1
+            %span.name= iou_form.select :price_id, @bar.prices.collect{|p| [ [p.name, "-", number_to_currency(p.total.to_f, :unit => p.total.currency.symbol)].join(" "), p.id ] }.sort, :class => "medium-input"
+          %li
+            = iou_form.label :memo, "#{t(".form.memo")}:"
+            = iou_form.text_area :memo, :class => "text-input textarea", :rows => 5
+          %li
+            = iou_form.label :sender_name, "#{t(".form.sender_name")}:"
+            = iou_form.text_field :sender_name, :value => current_user.name, :class => "medium-input text-input"
+
+        %ul
+          %li
+            = submit_tag t("ious.form.form.button"), :class => "send_beer button"

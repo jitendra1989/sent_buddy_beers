@@ -1,0 +1,42 @@
+- @title = "#{@bar.name} | #{t('.title')}"
+- javascripts 'price_form'
+
+%h2= @bar.name
+%p#page-intro= @bar.full_address
+.clear
+
+- unless @menu.blank?
+  .content-box
+    / Start Content Box
+    .content-box-header
+      %h3=t(".title")
+      .clear
+
+    .content-box-content
+      %table
+        %thead
+          %tr
+            %th Picture
+            %th Name
+            %th Price
+            %th Discounted Price
+            %th Description
+            %th Options
+
+        %tbody
+          - @menu.each do |menu_item|
+            %tr= render :partial => 'drink', :locals => {:object => menu_item, :css_class => cycle("odd", "even")}
+
+.content-box
+  / Start Content Box
+  .content-box-header
+    %h3= t(".legend", :bar => @bar.name)
+    .clear
+
+  .content-box-content
+    = form_for ["affiliate", @bar, @price], :html => { :multipart => true } do |f|
+      %fieldset
+        = error_messages_for :price
+        = render :partial => "prices/form", :locals => {:f => f}
+        %ul
+          %li= f.submit t("forms.buttons.add"), :class => "button"

@@ -1,0 +1,34 @@
+- @title = "Payouts"
+- stylesheets 'sites/default/sections/payments', 'payout'
+- javascripts 'jquery.tablesorter.min'
+- content_for :head do
+  :javascript
+    $(document).ready(function(){ $("#payment_table").tablesorter(); });
+    
+%h2="Paid Vouchers"
+%p#page-intro= "for #{current_user.to_s}"
+.clear
+
+.content-box
+  / Start Content Box
+  .content-box-header
+    %h3= "Paid Vouchers"
+    .clear
+
+  .content-box-content
+    %table#payment_table
+      %thead
+        %tr
+          %th Payment Request Mode
+          %th Payment Request Date
+          %th Number of redeemed vouchers 
+          %th Amount Paid
+      %tbody
+        - @paid_voucher_details.each do |paid_voucher_detail|
+          %tr
+            %td= paid_voucher_detail.mode
+            %td= paid_voucher_detail.date.to_s(:euro_sm_with_time) rescue ''
+            %td= paid_voucher_detail.no_of_redeemed_vouchers
+            %td
+              %strong= paid_voucher_detail.amount
+    / = will_paginate @paid_voucher_details

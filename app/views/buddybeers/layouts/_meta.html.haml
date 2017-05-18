@@ -1,0 +1,21 @@
+%meta(http-equiv="content-type" content="text/html;charset=UTF-8")
+%meta{ :name => "description", :content => @meta_description ? @meta_description : t("layouts.meta.description") }
+%meta{ :name => "title", :content => (@title.blank? ? controller.action_name : @title) }
+
+-# Do Not let search engines Index the Staging, Dev, or Dutch sites
+- robots = []
+- @noindex = true if (!Rails.env.production? or I18n.locale.to_s == "nl")
+- robots << "noindex" if @noindex
+- robots << "nofollow" if @nofollow
+- if robots.present?
+  %meta{ :name => 'robots', :content => robots.join(", ") }
+  
+-# Facebook OpenGraph Meta Tags are below:
+-# More info: http://developers.facebook.com/docs/reference/plugins/like
+%meta{ :property => "og:site_name", :content => "Buddy Drinks" }
+%meta{ :property => "fb:app_id", :content => facebook_app_id }
+%meta{ :property => "fb:admins", :content => "511335022" }
+%meta{ :property => "og:description", :content => @meta_description.blank? ? t("layouts.meta.description") : @meta_description }
+
+-# Canonical links to link this site to its subdomain are below
+%link{ :rel => "canonical", :href => @canonical_link.present? ? @canonical_link : "#{(request.ssl? ? "https" : "http")}://buddybeers.com#{["/", I18n.locale.to_s].join() unless request.fullpath.start_with?(["/", I18n.locale.to_s].join())}#{request.fullpath.split("?").first.chomp("/")}" }

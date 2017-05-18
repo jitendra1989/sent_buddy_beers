@@ -1,0 +1,309 @@
+it:
+  home:
+    content_header:
+      buy_a_beer: "Compra una birra ad un tuo amico."
+      happy_hours: "Happy Hour tutto il giorno."
+      social_in_socializing: "Put <span class=\"color\">social</span> back into socializing."
+      description: "Hai amici che vivono lontano ma vuoi comunque inviare loro un <strong>regalo oppure un segno della tua gratitudine?</strong> Vuoi ottenere <strong>forti sconti sui drink</strong> per tutto il giorno in uno dei bar della tua città? Buddy Drinks mette a disposizione un modo per mantenere i tuoi rapporti sociali attraverso l'attività più antica: comprare birre assieme ai tuoi amici! <strong>Provatelo oggi stesso!</strong>"
+      beer_button: "Invia una birra. La prima è gratis."
+    bar_info:
+      heading: "Sei il proprietario di un bar, oppure di un ristorante, di un caffè all'aperto, di un hotel, ecc.?"
+      description: "Scopri il modo in cui possiamo aumentare le tue entrate e la tua base base di clienti, il tutto senza commissioni!"
+      link: "Scopri di più ¬ª"
+    index:
+      title: Invia Birre Online ai Tuoi Amici!!
+      bar_search:
+        heading: "Trova bar vicini a me:"
+        label: "Inserisci un indirizzo come: Stargarderstr. 80, 10437 Berlin"
+      brewery:
+        heading: "Rappresenti un birrificio, una catena di ristoranti o un'agenzia di marketing?"
+        description: "Contattaci e scopri le nostre offerte software, in grado di incremenentare in maniera significativa la notorietà del vostro brand all'interno di un target di pubblico variabile tra i 17 e i 30 anni."
+        link: Scopri di più
+      heading: Invia birre online ai tuoi amici.
+    press:
+      title: "Copertura stampa di Buddy Drinks all'interno di News e Blog"
+      heading: "Hanno parlato di noi:"
+      big_quote: "Ciò potrebbe cambiare il modo di consumare birra in Germania."
+      contacts:
+        heading: Relazioni coi media
+    press_releases:
+      heading: Comunicati stampa
+      carlsberg_en: "26 aprile 2011 - <strong>Buddy Drinks and Carlsberg Announce a Partnership to Expand the Beer-Gifting Service in Germany.</strong> [english]"
+      carlsberg_de: "26 aprile 2011 - <strong>BuddyDrinks.com kooperiert mit Carlsberg Deutschland.</strong> [german]"
+      paypal: "4 ottobre 2010 - <strong>Buddy Drinks and Appcelerator team up to win the 2010 PayPal X Developer‚Äôs Conference Hackathon</strong> [english]"
+      announcing: "29 luglio 2010 - <strong>Announcing Buddy Drinks</strong> [english]"
+    downloads:
+      heading: "Download"
+      logo: "Marchio"
+      stamp: "Logo"
+    contact_info:
+      admin_address: Indirizzo dell'Amministrazione
+      berlin_office: Ufficio di Berlino
+      email_us: Mandaci una email
+      fourth_floor: 4° Piano
+    impressum:
+      title: Buddy Drinks | Impressum
+      subsidiary: BuddyDrinks.com è un prodotto
+      heading: Impressum
+      last_updated: "Ultimo aggiornamento il %{date}"
+      founding_partner: Partner fondatore
+    about:
+      title: "A proposito Buddy Drinks - Un Social Web Service per Comprare Drink Online"
+      meta_description: "Buddy Drinks sta portando online l'attività sociale/locale più antica: quella di comprare drink per i tuoi amici! In questa pagina vengono coperti tutti i dettagli del servizio, compresi quelli relativi al riscatto dei Voucher, l'acquisto dei drink e la storia dell'azienda."
+      heading: A proposito di Buddy Drinks
+      toc:
+        title: FAQ
+      about_buddy_beers:
+        toc: Cos'è Buddy Drinks?
+        anchor: a-proposito-di-buddy-beers
+        question: Cos'è Buddy Drinks?
+        answer: "<p>Buddy Drinks è un sito che ti permette di inviare <strong>birre vere</strong> ai tuoi amici.</p><p>Hai mai avuto un amico che ha fatto qualcosa per te e che però vive in un'altra città? Hai mai detto \"Ti devo una birra?\" Ora puoi dar seguito a questi intenti inviando al tuo amico una vera birra tramite Buddy Drinks.</p>"
+      buddy_bars:
+        toc: Buddy Bar
+        anchor: dove-posso-acquistare  
+        question: Dove posso comprare online delle birre per i miei amici?
+        answer: "<p>Abbiamo un'ampia selezione di bar in Germania e stiamo cominciando ad allargarci nel Regno Unito e negli Stati Uniti. <a href=\"%{link}\">Ecco una mappa degli attuali Buddy Bar.</a></p>"
+      how_does_it_work:
+        toc: Come funziona?
+        anchor: come-funziona-buddy-beers
+        question: Come funziona?
+        answer: "<p>Quando invii una birra ad un tuo amico, egli riceverà un Voucher per email oppure direttamente sul suo telefono cellulare tramite SMS/Messaggio di testo. Il tuo amico potrà dunque portare il Voucher al bar che hai scelto per lui e riscattarlo con una birra vera. È proprio così semplice!</p>"
+      sms_vouchers:
+        toc: Voucher SMS
+        anchor: invia-birre-via-sms
+        question: Come funzionano i Voucher via SMS/Messaggio di testo?
+        answer: "<p>Puoi scegliere di inviare i Voucher ai tuoi amici direttamente sul loro cellulare. Basta inserire il loro numero di cellulare all'interno del modulo per l'invio di una birra ed essi riceveranno un SMS contenente il codice del Voucher. Questo è tutto ciò di cui hanno bisogno per ottenere la loro birra. Tecnologico, eh?</p>"
+      printing_vouchers:
+        toc: Stampare i Voucher
+        anchor: devo-stampare-il-mio-voucher
+        question: Devo stampare il mio Voucher?
+        answer: "<p><strong>No!</strong> Tutto quello di cui hai bisogno sono le 6 cifre del numero del Voucher. <em>Puoi</em> stamparlo, ma non è necessario. Presentare il numero tramite smartphone o prenderne nota è sufficiente per agguantare la tua birra gratuita.</p>"
+      hand_written_vouchers:
+        toc: Voucher scritti a mano
+        anchor: voucher-scritti-a-mano
+        question: "Se volessi riscattare un Voucher scrivendo a mano il numero, cosa devo scrivere esattamente?"
+        answer: "<p><strong>La cosa più importante è riportare le 6 cifre del numero del Voucher </strong> Senza di queste, la birra non la prendi. La <strong>data, l'importo del Voucher, il tuo nome e il tipo di birra</strong> sono informazioni utili al barista per tracciare il tutto ma non sono strettamente necessarie.</p>"
+      mobile_vouchers:
+        toc: Voucher su dispositivi portatili
+        anchor: voucher-su-dispositivi-portatili
+        question: "Ho questo fighissimo iPhone/Android/Blackberry: posso mostrare il Voucher al barista utilizzando il mio smartphone?"
+        answer: "<p><strong>Sicuro!</strong></p><p>Stiamo inoltre creando delle App e dei giochi troppo potenti in modo che l'intera operazione risulti più semplice e divertente in futuro.</p>"
+      expire:
+        toc: Scadenza
+        anchor: i-voucher-scadono
+        question: I Voucher scadono?
+        answer: "<p><strong>Si!</strong> Proprio come una buona birra, i nostri Voucher vanno a male se se ne stanno fermi troppo a lungo. Nella nostra fase beta, i Voucher scadono dopo 90 giorni a partire dal giorno di emissione.</p>"
+      buy_myself:
+        toc: Comprarmi una birra da solo  
+        anchor: posso-comprarmi-una-birra-da-solo
+        question: Posso comprarmi una birra da solo?
+        answer: "<p><strong>Certo!</strong> Anche se parliamo parecchio della possibilità di comprare ad altri delle birre (anche perchè è questo che i grandi amici fanno), non vogliamo precluderti la possibilità di comprarti da solo una bella birra fresca. Devi solo inserire il tuo indirizzo email e… fartene una! </p><p>Già che ci sei, dai un'occhiata agli sconti offerti da alcuni dei nostri bar: magari risparmi anche qualche Euro!</p>"
+      pricing:
+        toc: Prezzi
+        anchor: quanto-costa
+        question: Quanto costa?
+        answer: "<p><strong>Chi è dei nostri, non paga nessuna commissione.</strong> Comprare una birra ad un tuo amico con Buddy Drinks costa esattamente quanto comprare la stessa birra nella vita reale. È come se fossi andato in un bar con un tuo amico e gliene avessi offerta una lì.</p><p><strong>Alcuni dei nostri bar offrono agli utenti Buddy Drinks degli sconti.</strong> Dai quindi un'occhiata alle promozioni in evidenza sul nostro sito</p>"
+      paying:
+        toc: Come pagare
+        anchor: come-pagare
+        question: Come posso pagare per la mia birra?
+        answer: "<p>Al momento, per elaborare i nostri pagamenti, stiamo utilizzando Paypal e i BuddyBucks.</p>"
+      paypal:
+        toc: Account Paypal
+        anchor: account-paypal
+        question: Ho bisogno di un account Paypal?
+        answer: "<p><strong>No, Paypal ti permette di pagare con carta di credito anche senza account</strong></p><p>Paypal accetta un'ampia gamma di metodi di pagamento, comprese tutte le principali carte di credito; <strong>Visa, Mastercard, Discover, American Express, Maestro.</strong></p><p>Basta cliccare il link sulla sinistra una volta reindirizzati all'interno di Paypal per effettuare il saldo.</p><p>Registrandovi per un account, Paypal permette anche di effettuare trasferimenti bancari.</p>"
+      buddy_bucks:
+        toc: BuddyBucks
+        anchor: buddy-bucks
+        question: Cosa sono i BuddyBucks?
+        answer: "<p>I BuddyBucks sono la nostra esclusiva moneta virtuale. Puoi ricaricare il tuo account con quanti BuddyBucks vuoi, sfruttando diversi metodi di pagamento (compresi i telefoni cellulari!). Questo ti permetterà di risparmiare tempo quando invii una birra e di poter acquistare seduta stante una birra in uno dei nostri Buddy Bar.</p>"
+      ultimate_pay:
+        toc: Ultimate Pay
+        anchor: a-proposito-di-ultimate-pay
+        question: "Chi è Ultimate Pay?"
+        answer: "<a href=\"http://ultimatepay.com\">Ultimate Pay</a> è un elaboratore di pagamenti di proprietà di Visa. Lo utilizziamo per elaborare i pagamenti con la nostra moneta virtuale. Ultimate Pay mette a disposizione un'infinità di opzioni per ricaricare il tuo account, compreso il pagamento tramite telefono cellulare. Ha una certificazione PCI, è estremamente fidato e sicurissimo da utilizzare. Spacca, fidati!"
+      account:
+        toc: Account Buddy Drinks
+        anchor: account-buddy-beers
+        question: Ho bisogno di un account Buddy Drinks?
+        answer: "<p>Tu avrai bisogno di un account per <em>inviare</em> birre, ma per i tuoi amici che le riceveranno non c'è bisogno di crearlo.</p><p>Certo, se ne avessero uno sarebbe molto più divertente, dal momento che stiamo mettendo in campo un sacco di funzionalità interattive pensate proprio per gli amici su Buddy Drinks.</p>"
+      signup:
+        toc: Registrazione
+        anchor: registrazione-con-buddy-beers-o-facebook
+        question: Account Buddy Drinks e account Facebook
+        answer: "<p>Puoi registrarti qui per ottenere un account Buddy Drinks: <a href=\"%{signup_link}\">Registrati per avere un account Buddy Drinks.</a></p><p>O, altrimenti, puoi cliccare qui per %{connect_with_facebook}.</p>"
+      account_after_facebook:
+        toc: Collegamento con Facebook
+        anchor: account-legato-a-facebook
+        question: Posso creare un account Buddy Drinks se mi sono già connesso con Facebook?
+        answer: "<p>Si, tutto quello che devi fare è accedere a Facebook e poi cliccare il link \"A proposito di me\" in alto a destra. Scegli uno username e una password e salva. Fatto: ora puoi accedere con queste credenziali.</p>"
+      send_beers_on_facebook:
+        toc: Invia birre su Facebook
+        anchor: inviare-birre-su-facebook
+        question: Posso inviare birre su Facebook?
+        answer: "<p><strong>Prestissimo!</strong> Stiamo aspettando che Facebook termini gli aggiornamenti alla loro API; dopodiché si potrà fare anche questo.</p>"
+      signing_up_bars:
+        toc: Iscrivere nuovi bar
+        anchor: iscrivere-nuovi-bar
+        question: Conosco un bellissimo bar al quale credo potrebbe piacere molto questa idea!
+        answer: "<p>Benone! Siamo sempre interessati ad espandere il nostro network di bar.</p><p><a href=\"%{link}\">I nuovi bar possono iscriversi qui.</a></p><p><strong>Assicurati che il bar metta il tuo username Buddy Drinks all'interno del modulo</strong> alla voce \"Chi ti ha parlato di noi?\" dal momento che vogliamo essere sicuri che tu possa essere ricompensato per la tua azione.</p>"
+      bar_needs:
+        toc: Di cosa ha bisogno un bar?
+        anchor: di-cosa-ha-bisogno-un-bar
+        question:  Di cosa ha bisogno un bar per diventare un Buddy bar?
+        answer: "<p>L'unica cosa di cui ha bisogno un bar è un indirizzo email e qualcuno che lo controlli un paio di volte alla settimana. <em>E basta!</em></p><p>Quando un bar possiede delle dotazioni tecnologiche (ad esempio internet nel locale) è un po' più facile ma questo non è strettamente necessario. Siamo ben contenti di discutere con i bar riguardo le varie opzioni disponibili e possiamo renderti un Buddy Bar in meno di 30 minuti.</p>"
+      bartender:
+        toc: Baristi
+        anchor: funzionalità-per-i-baristi
+        question: Sono un barista. Cosa devo fare?
+        answer: "<p><em>Prima di tutto, chiedi a chi gestisce il tuo bar su Buddy Drinks di <strong>aggiungerti come barista nella sezione Buddy Bar Admin</strong>. Ciò attiverà nuove funzionalità a te dedicate che ti renderanno la vita un sacco più semplice.</em></p><p>Poi, tutto quello che dovrai fare nel bar sarà guardare il codice che ti mostreranno i clienti e confrontarlo con il tuo elenco dei Voucher. Corrisponderà ad una sola categoria di prezzo. Segna velocemente il numero come riscattato e dai al cliente il drink che ha chiesto. Non ci vuole molto più tempo di quello che si impiega solitamente per utilizzare la cassa.</p><p>Se sei loggato all'interno del nostro sito, sarai in grado di riscattare i Voucher da qualsiasi pagina. Basta cliccare il link sulla destra, inserire il numero intero del Voucher e cliccare 'Riscatta'. Abbastanza semplice.</p>"
+      who:
+        toc: Chi è Buddy Drinks?
+        anchor: chi-è-buddy-beers
+        question: Chi è Buddy Drinks?
+        answer: "<p>Siamo una startup con base appena fuori Berlino, in Germania, fondata da un americano espatriato e da due suoi amici tedeschi. Ci piace la birra e siamo ossessionati dalla tecnologia.</p><p><a href=\"%{video_link}\">Ecco un imbarazzante e maldestro video con noi che spieghiamo il nostro sito.</a></p><p>Stiamo attualmente cercando un primo giro di investimenti per far in modo che questa bolla scoppi! <a href=\"mailto:%{email}?subject=I%27m%20your%20Angel%21\">Mandateci una email</a> se volete vedere la nostra fighissima presentazione del progetto in <strike>Powerpoint</strike>."
+      founded:
+        toc: Fondazione
+        anchor: fondazione
+        question: Quando è stata fondata Buddy Drinks?
+        answer: "<p>Buddy Drinks è un'idea partorita tre anni fa che, dopo lunga fermentazione, si è finalmente sviluppata nel 2010, sotto forma di un'applicazione web leggera ma sostanziosa, pronta per essere consumata dal suo pubblico.</p>"
+      contact:
+        toc: Contatti
+        anchor: contatti
+        question: Come posso contattare Buddy Drinks?
+        updated: "L'ultimo aggiornamento di questa pagina risale al: %{updated}"
+        facebook_app: La nostra App Facebook
+    apps:
+      android_market: "Android Market"
+      app_instructions: "Apri <strong>buddybeers.com/apps</strong> sul tuo cellulare‚ browser o inviatela per email:"
+      app_store: iTunes App Store
+      availability: "Disponibile per <a href=\"%{iphone_link}\">iPhone</a> e <a href=\"%{android_link}\">Android</a>."
+      download_android_app: "Scarica l'App per Android"
+      download_instructions: "Scarica una App per dispositivi portatili per comprare birre ai tuoi amici e riscattare i tuoi Voucher Buddy Drinks"
+      download_iphone_app: "Scarica l'App per iPhone"
+      error:
+        heading: "Si è verificato un errore con il tuo indirizzo email."
+        description: "Per favore, verifica di averlo inserito correttamente e prova ancora."
+      get_app: "Scarica la App:"
+      please_wait: "Tieni duro..."
+      redirect: "Stai per essere reindirizzato al %{store_name}."
+      subhead: "Con Buddy Drinks puoi comprare dei veri drink ai tuoi amici sparsi per il mondo."
+      success:
+        heading: "Link per il download inviato a:"
+    privacy:
+      title: Politiche sulla privacy
+      information_uses:
+        heading: Per cosa utilizziamo le tue informazioni?
+        bullets:
+          transactions: "Per elaborare le transazioni. Senza il tuo consenso, le informazioni che ti riguardano - sia pubbliche che private - non saranno vendute, scambiate, trasferite o fornite a nessun'altra azienda per nessuna ragione e, in ogni caso, solamente con il proposito esplicito di fornire il prodotto acquistato o il servizio richiesto."
+          personal_experience: Per personalizzare la tua esperienza (le tue informazioni ci aiutano a soddisfare più efficacemente le tue necessità)
+          contest: "Per amministrare concorsi, promozioni, sondaggi e altre funzionalità del sito."
+          improve_site: Per migliorare il nostro sito (ci sforziamo continuamente per migliorare la nostra offerta web sulla base delle informazioni e dei consigli che ci invierai)
+          customer_service: Per migliorare il servizio per il cliente (le tue informazioni ci aiutano a rispondere in maniera più efficace alle tue richieste e a garantirti il necessario supporto)
+          emails: Per inviare periodicamente delle email. L'indirizzo email che ci hai fornito per l'elaborazione dell'ordine verrà utilizzato per inviarti informazioni e aggiornamenti in relazione al tuo ordine.
+        description: "Qualsiasi informazione che ci fornirai potrà essere utilizzata in uno di questi modi:"
+      alcohol:
+        heading: Bevande alcoliche
+        description: "Non vendiamo bevande alcoliche vere e proprie ma Voucher da riscattare in bar e ristoranti. È responsabilità del bar o del ristorante quella di assicurarsi che il cliente possegga l'età minima per consumare bevande alcoliche, sulla base della giurisdizione vigente nel Paese in cui risiede il bar o il ristorante stesso."
+      surveys:
+        heading: Sondaggi
+        description: "Occasionalmente, potremmo chiedere ai nostri utenti di partecipare a sondaggi finalizzati al miglioramento del nostro sito"
+      third_parties:
+        heading: Collegamenti con terze parti
+        description: "Occasionalmente, a nostra discrezione, potremmo includere od offrire, sul nostro sito, prodotti o servizi sviluppati da terze parti. I siti di queste terze parti posseggono politiche per la privacy separate e indipendenti. Non abbiamo quindi nessun vincolo o responsabilità sui contenuti e per i contenuti e le attività svolte da siti a noi collegati. Nonostante ciò, il nostro obiettivo rimane quello di proteggere l'integrità del nostro sito e dunque accogliamo con favore ogni commento relativo ai siti di terze parti."
+      latest_changes: Questa politica aziendale è stata modificata l'ultima volta il 9 marzo 2010.
+      information_collected:
+        description_2: "Quando effettui un ordine o ti registri sul nostro sito, a seconda dei casi, potrebbe venirti richiesto di inserire il tuo: nome o indirizzo email. Potrai, comunque, visitare il nostro sito anche in maniera anonima."
+        heading: Quali informazioni raccogliamo?
+        description: "Raccogliamo informazioni che ti rigurdano ogni volta che ti registri al nostro sito, effettui un ordine, partecipi a un sondaggio e riempi un modulo."
+      contact:
+        heading: Contattaci
+        description: Se dovessi avere domande su queste politiche sulla privacy puoi contattarci utilizzando le informazioni seguenti.
+      california:
+        heading: Conformità con il California Online Privacy Protection Act
+        description: "Dal momento che la tua privacy ci sta a cuore, abbiamo preso le necessarie precauzioni affinché il nostro servizio si svolga conformemente con il California Online Privacy Protection Act. Non distribuiremo dunque le tue informazioni personali verso altre parti senza aver avuto prima il tuo consenso."
+      cookies:
+        description_2: Utilizziamo i cookies per comprendere e salvare le tue impostazioni in funzione di visite future.
+        heading: Utilizziamo cookies?
+        description: Si. I cookies sono dei piccoli file che un sito o il suo provider di servizi trasferisce sull'hard disk del tuo computer attraverso il tuo browser web (se lo permetti) e che permettono ai sistemi utilizzati dal sito o dal provider di servizi di riconoscere il tuo browser catturando e ricordando così determinate informazioni.
+      consent:
+        heading: Il tuo consenso
+        description: Utilizzando il nostro sito acconsenti a quanto specificato all'interno della nostra politica sulla privacy.
+      heading: Politica sulla privacy di Buddy Drinks
+      online_privacy:
+        heading: Politica sulla sola Privacy Online
+        description: Questa politica per la privacy online si applica solamente alle informazioni raccolte tramite il nostro sito web e non alle informazioni raccolte offline.
+      changes:
+        heading: Cambiamente alla nostra Politica sulla Privacy
+        description: "Se dovessimo decidere di modificare la nostra politica sulla privacy, aggiorneremo la sottostante data di modifica della Politica sulla Privacy."
+      sell_info:
+        heading: Divulghiamo qualche informazione verso altre parti?
+        description: "Non vendiamo, commercializziamo o trasferiamo in altri modi e verso altre parti le tue informazioni sensibili. Tra le altri parti non vengono incluse le terze parti di cui ci fidiamo e che ci assistono nel funzionamento del nostro sito web, nello svolgimento della nostra attività commerciale e nel fornirivi il necessario supporto, fintanto che queste terze parti accettano di mantenere le vostre informazioni confidenziali. Potremmo inoltre divulgare le vostre informazioni nel momento in cui dovessimo ritenere che sia appropriato conformarci alle norme di legge, rafforzare le politiche del nostro sito, proteggere i diritti, le proprietà o la sicurezza nostra e degli altri. In ogni caso, le informazioni non personalmente identificabili potrebbero essere fornite ad altre parti per svolgere operazioni di marketing, pubblicità o per altri utilizzi."
+      protect_information:
+        heading: Come proteggiamo le tue informazioni?
+        description: "Abbiamo implementato una grande varietà di misure di sicurezza allo scopo di garantire la sicurezza delle tue informazioni sensibili sia quando effettui un ordine, sia quando accedi alle tue informazioni personali."
+      children:
+        heading: Conformità con il Childrens Online Privacy Protection Act
+        description: "Svolgiamo la nostra attività in conformità con i requisiti richiesti dal COPPA (Childrens Online Privacy Protection Act); non raccogliamo nessuna informazione da persone con un'età inferiore ai 13 anni. Il nostro sito, i nostri prodotti e servizi, sono tutti diretti nei confronti di persone che hanno dai 13 anni in su."
+    terms:
+      title: "TERMINI E CONDIZIONI GENERALI"
+      heading: "TERMINI E CONDIZIONI GENERALI"
+      general: 
+        heading: "GENERALE"
+        one: "Questi termini e condizioni si applicano a chiunque utilizzi i servizi forniti dal sito web www.buddybeers.com."
+        two: "Sul sito www.buddybeers.com, gestito da BuddyLabs UG (haftungsbeschr√§nkt) (BuddyLabs), vengono offerti Voucher per prodotti di altre aziende (Partners). È responsabilità esclusiva di questi Partners quella di consegnare i beni o i servizi indicati sul Voucher e fornire questi beni e servizi sulla base degli specifici termini e condizioni. BuddyLabs non garantisce la consegna dei beni specificati nei Voucher ma solo che il Voucher assegnato dia la possibilità al suo possessore di usufruire dei servizi dei Partners."
+        three: "I Voucher venduti da BuddyLabs rappresentano un esatto valore monetario (Voucher) o uno specifico prodotto (Voucher) e non possono essere cambiati in denaro."
+        four: "I servizi messi a disposizione da BuddyLabs sono soggetti ai seguenti termini di utilizzo. I termini dei BuddyLabs vengono consderati accettati quando una persona crea e conferma un profilo utente. È possibile accedere ai termini in qualsiasi momento all'indirizzo http://www.buddybeers.com/terms, oppure salvarli e stamparli in locale."
+      operator: 
+        heading: "FUNZIONAMENTO DEL SERVIZIO BUDDY DRINK"
+        body: "Il sito web www.buddybeers.com e il software per il riscatto e la vendita dei Voucher associato a questo sito web sono proprietà di:<br /><br />BuddyLabs UG (haftungsbeschr√§nkt)<br />Stargarderstr. 80<br />10437 Berlin<br />Germany<br /><br />Telefono: +49 (0) 30 609 871 850 <br />Fax: +49 (0) 30 609 871 859<br /><br />Email: info@buddydrinks.com"
+      purchasing:
+        heading: "ACQUISTO DEI VOUCHER"
+        description: "Per aquistare un Voucher da www.buddybeers.com"
+        steps:
+          one: "Clicca qualsiasi bottone contrassegnato con 'Compra una birra' o 'Invia una birra'"
+          two: "Inserisci l'indirizzo email e/o il numero di telefono cellulare ed il nome del destinatario del Voucher."
+          three: "Seleziona un Paese, una città e un partner dove il Voucher sarà valido."
+          four: "Seleziona il prodotto o il servizio ed il numero desiderato di Voucher."
+          five: "Inserisci un messaggio di saluto ed il tuo nome, poi premi il bottone 'Invia'."
+          six: "Seleziona un metodo di pagamento (BuddyBucks o Paypal)."
+          seven: "Inserisci le necessarie informazioni per il pagamento a seconda del provider per i pagamenti selezionato e conferma il pagamento utilizzando i bottoni di 'Pagamento' appropriati durante il processo di acquisto."
+        end: "Dopo aver ricevuto la conferma del pagamento da parte del provider per i pagamenti, invieremo al destinatario del Voucher un codice coupon e ulteriori istruzioni per riscattare il Voucher."  
+      vouchers:
+        heading: "INVIO E RISCATTO DEI VOUCHER E DIRITTI RELATIVI AI VOUCHER"
+        one: "Una volta che l'acquisto è andato a buon fine, il Voucher viene spedito tramite email e/o messaggio di testo all'indirizzo email e/o al numero di telefono cellulare fornito durante la fase di ordinazione. L'invio del Voucher avviene una volta che il pagamento viene contabilizzato sul nostro conto e dopo averne ricevuto notifica dal nostro elaboratore di pagamenti."
+        two: "Tutti i Voucher vengono rilasciati con un codice alfanumerico univoco utilizzabile per riscattare il Voucher e corrispondente con una lista di codici in possesso del Partner. Il Voucher non è trasferibile. La copia, la modifica o la manipolazione dei Voucher non è permessa. BuddyLabs si riserva il diritto, nel caso vi siano sospetti che sia avvenuta la riproduzione non autorizzata dei dati del Voucher, di notificare il Partner della violazione e di intraprendere azioni legali."
+        three: "Ciascun Voucher può essere riscattato una sola volta dal Partner dove il quale il Voucher è valido. Se il valore del Voucher non è utilizzato completamente durante l'ordinazione dal Partner, il valore rimanente viene considerato come forfettario. Non è possibile rimborsarlo."
+        four: "Il Voucher non garantisce il diritto di ricevere beni in determinati momenti. La decisione sul numero di Voucher che possono essere riscattati al giorno rimane discrezione esclusiva del Partner. Il Partner è obbligato a riscattare almeno un Voucher a persona al giorno."
+        five: "Il Voucher ha una data di scadenza ed un periodo di validità. Il Voucher può essere riscattato solamente entro questa finestra di validità. Se il Cliente non riscatta il Voucher entro il periodo di validità, questo può essere scambiato con BuddyLabs entro il periodo di limitazione previsto dalla legge, incorrendo in una penale del 15% rispetto al costo di acquisto del Voucher. Il Cliente ha il diritto di provare che BuddyLabs ha risentito scarsamente e che non ha dovuto impegnarsi in nessuna maniera a causa dello scambio."
+        six: "La rivendita commerciale dei Voucher è proibita. Se questa regola viene violata, BuddyLabs si riserva il diritto di intraprendere azioni legali e chiedere risarcimento."
+      warranty:
+        heading: "GARANZIA/AFFIDABILITÀ"
+        one: "BuddyLabs garantisce che i Partner riscatteranno il Voucher, il che significa che lo scambieranno con un prodotto o servizio dello stesso valore di quello presentato nel Voucher entro il suo periodo di validità."
+        two: "BuddyLabs non garantisce sul prodotto o servizio che il Cliente ottiene dal Partner. I beni, servizi e prezzi elencati sul Voucher sono controllati dal Partner attraverso il loro account utente su www.buddybeers.com. Dunque, BuddyLabs non sarà imputabile da parte del cliente per l'inabilità del Partner a consegnare l'esatto prodotto o servizio che hanno elencato."
+        three: "Se dovesse verificarsi un problema durante il riscatto di un Voucher oppure durante la consegna di un prodotto o di un servizio in elenco, BuddyLabs tenterà di trovare una soluzione ragionevole. Se ciò dovesse accadere, ti preghiamo di mandare una email a help@buddydrinks.com oppure di contattarci via telefono indicandoci esattamente il tuo problema."
+      functionality:
+        heading: "FUNZIONALITÀ E DISPONIBILITÀ DEL SITO WEB"
+        body: "BuddyLabs si riserva il diritto di limitare o interrompere i servizi, gli obiettivi e le funzionalità del sito web in qualsiasi momento, a meno che non esista un contratto commerciale in essere che glielo impedisca. BuddyLabs tenterà di offrire i suoi servizi senza intervenire, ma vi sono casi nei quali il servizio sarà interrotto per problemi di manutenzione, di sviluppo o per problemi imputabili a terze parti. Ciò potrebbe risultare anche nella perdita di alcuni dati. BuddyLabs non assume nessuna responsabilità per la disponibilità del Servizio, per l'assenza di interventi o per l'eventuale perdita di dati."
+      partner:
+        heading: "PARTNER"
+        one: "I Partner di BuddyLabs sono imprese aperte al pubblico che accettano i Voucher acquistati su www.buddybeers.com."
+        two: "Le suddette imprese aperte al pubblico accettano i termini e le condizioni nel momento stesso in cui cliccano il bottone per aggiungere l'impresa al nostro database sul sito www.buddybeers.com o nel momento stesso che accedono all'interno dell'account assegnato alla loro impresa."
+        three: "I partner ricevono una parte del profitto mensile a seconda del numero di Voucher che vengono correttamente dichiarati come 'riscattati' su www.buddybeers.com. Se un partner non mantiene gli obblighi cui si fa riferimento sopra al punto 4.4, BuddyLabs si riserva il diritto di farsi risarcire i costi sostenuti per la transazione richiedendo il rimborso dei costi sostenuti."
+        four: "Se un partner viene dichiarato legalmente insolvente, i mittenti e i destinatari di qualsiasi Voucher non riscattabile da parte del Partner hanno il diritto di richiedere e ricevere nuovi Voucher dello stesso importo di quelli non corrisposti. Questi Voucher saranno validi per un Partner alternativo."
+        five: "Il Partner è ritenuto responsabile della verifica che una persona sia legalmente autorizzata ad acquistare i beni o i servizi messi a disposizione e che questa, mentre la si serve, non violi le leggi, soprattutto quelle riguardanti l'età legale per bere alcool. Se una di queste leggi viene infranta, il Voucher utilizzato cessa di essere valido ed ogni reclamo di rimborso verrà ignorato."
+      copyright:
+        heading: "COPYRIGHT"
+        body: "BuddyLabs possiede tutti i diritti d'autore e gli altri diritti sul Servizio, sui contenuti pubblicati, le informazioni, le immagini, i video e i database (la \"Proprietà Protetta\"). Ogni modifica, riproduzione, pubblicazione, divulgazione a terze parti e/o sfruttamento della Proprietà Protetta senza il consenso scritto di BuddyLabs è strettamente proibita."
+      change:
+        heading: "MODIFICA DEI TERMINI"
+        one: "BuddyLabs adatterà occasionalmente questi termini e condizioni per implementare i requisiti di natura legale o per riflettere eventuali cambiamenti nella funzionalità. È possibile trovare gli attuali termini di utilizzo a questo indirizzo: http://www.buddybeers.com/terms. Se un utente non dovesse accettare la rettifica dei termini e delle condizioni, purtroppo non potrà più utilizzare il nostro Servizio."
+        two: "Dato un accordo contrattuale preesistente tra il Cliente e BuddyLabs e messo al corrente il Cliente di una modifica nei Termini e nelle Condizioni, il Cliente può opporsi alle modifiche scrivendo entro 6 settimane dal giorno in cui è stato messo al corrente delle modifiche. Se questa opposizione non avviene entro questa finestra temporale, il Cliente solleva BuddyLabs da ogni conseguenza legale accettando di fatto le modifiche."
+      severability:
+        heading: "CLAUSOLA SALVATORIA"
+        body: "Se qualcuna delle presenti o future clausole del contratto, per ragioni diverse da quelle esposte nel BGB 305-310, dovessero rendere non più valido o nullo l'intero contratto o alcune delle sue parti, la validità delle rimanenti clausole di questo accordo non ne verrà influenzata, a meno che l'esecuzione del contratto non crei avversità per una delle parti. Ciò si applica anche nel caso che la conclusione del contratto dovesse risultare in qualche tipo di disparità. Determinata la non validità o l'annullamento del contratto, la giurisprudenza ricadrà all'interno delle rispettive regolamentazioni legali."
+      law:
+        heading: "LEGGE DI RIFERIMENTO/GIURISDIZIONE"
+        one: "Le leggi tedesche vengono applicate sotto la UN Sales Convention (CISG)."
+        two: "Per i contratti con i Clienti, l'unica giurisdizione è quella applicata a Berlino, Germania."

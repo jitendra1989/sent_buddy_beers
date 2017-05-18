@@ -1,0 +1,8 @@
+/ default > layouts > content
+
+= render :partial => "layouts/flash", :locals => { :flash => flash }
+#content{ :class => @content_class }
+  #content-padding
+    = yield
+    #content-footer.clear
+      // Clear Floats

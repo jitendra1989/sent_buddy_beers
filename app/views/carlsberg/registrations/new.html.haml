@@ -1,0 +1,37 @@
+/ carlsberg > registrations > new
+
+- @title = t(".title")
+- stylesheets "sites/carlsberg/sections/forms"
+- content_for :head do
+  :javascript
+    $(document).ready(function(){ $("label").inFieldLabels(); });
+
+#new_user
+  %h1= t(".heading")
+  
+  = form_for resource, :as => :customer, :url => registration_path(resource_name) do |f|
+    = f.error_messages(:header_message => nil)
+    %fieldset
+      %h2= t(".form.legend")
+      %ol
+        %li
+          = f.label :login, t("forms.labels.choose_username")
+          = f.text_field :login, :class => "pie"
+        = f.fields_for :emails do |emails_form|
+          %li
+            = emails_form.label :email, t("forms.labels.your_email")
+            = emails_form.text_field :email, :class => "pie"
+        %li
+          = f.label :password, t("forms.labels.choose_password")
+          = f.password_field :password, :class => "pie"
+        %li
+          = f.label :password_confirmation, t("forms.labels.confirm_password")
+          = f.password_field :password_confirmation, :class => "pie"
+
+      %ul
+        %li
+          %button{ :type => "submit" }= content_tag(:span, t(".form.button"))
+        %li= link_to t(".form.existing_account"), "/login"
+
+    = render :partial => "shared/network_connect"
+    = clear_floats

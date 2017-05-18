@@ -1,0 +1,85 @@
+/ - Header start  
+%header.navbar-fixed-top
+  .container
+    %nav.navbar{:role => "navigation"}
+      .navbar-header
+        %button.navbar-toggle.btn_toggle{"data-target" => "#bs-example-navbar-collapse-1", "data-toggle" => "collapse", :type => "button"}
+          %span.sr-only Toggle navigation
+          %span.icon-bar
+          %span.icon-bar
+          %span.icon-bar
+        %a.logo.navbar-brand{:href => root_url}
+      / Collect the nav links, forms, and other content for toggling
+      #bs-example-navbar-collapse-1.collapse.navbar-collapse.top_menu.padd_none
+        - if user_signed_in?
+          .col-md-10.col-sm-9.col-xs-12.pull-right.top_user_row.text-right.padd_none
+            .row
+              .col-md-12.col-sm-12.col-xs-12.padd_none
+                %ul.nav.navbar-nav.custom_header.my_tabs_pos.after-login-header
+                  %li
+                    %a.my_tabs.btn{:href => new_iou_url, :class => request.url == new_iou_url ? 'active' : '', :style => "margin-right: 0 !important;"}
+                      %span.glyphicon.glyphicon-usd
+                      = t("layouts.menu.send_a_beer")
+                  %li
+                    %a.my_tabs.btn{:href => edit_user_registration_url(current_user), :class => request.url == edit_user_registration_url(current_user) ? 'active' : '', :style => "margin-right: 0 !important;"}
+                      %span.glyphicon.glyphicon-user
+                      = t("layouts.user_account_navigation.my_account")
+                  %li
+                    %a.my_tabs.btn{:href => ious_url, :class => (request.url == ious_url || request.url == ious_url(:sent => true)) ? 'active' : ''}
+                      %span.glyphicon.glyphicon-glass
+                      = t("layouts.user_account_navigation.my_drinks")
+                  %li
+                    %a.my_tabs.btn{:href => events_url, :class => request.url == events_url ? 'active' : ''}
+                      %span.glyphicon.glyphicon-tasks
+                      = t("layouts.user_account_navigation.my_events")
+
+                #user_account_navigation
+                  - if current_user
+                    #user_account
+                      .avatar
+                        - if current_user.avatar.file?
+                          = link_to content_tag(:span, image_tag(current_user.avatar(:tiny), :alt => current_user.name, :height => "53px", :width => "53px")), edit_user_registration_url(current_user)
+                        -else
+                          = link_to content_tag(:span, image_tag("/images/icon-profile.png", :height => "53px", :width => "53px")), edit_user_registration_url(current_user)
+                      .account_information
+                        %p.name= link_to current_user.to_s, edit_user_registration_url(current_user), :class => request.url == edit_user_registration_url(current_user) ? 'active' : ''
+                        / %p.buddybucks
+                        /  BuddyBucks:
+                        /  %span.amount
+                        /    = link_to number_with_delimiter(current_user.credits, :locale => I18n.locale), user_credits_url(current_user)
+                        %p.logout
+                          / = link_to t("layouts.user_account_navigation.profile"), edit_user_registration_url(current_user), :class => request.url == edit_user_registration_url(current_user) ? 'active' : ''
+                          /|
+                          = link_to t("layouts.user_account_navigation.logout"), destroy_user_session_url
+                      %ul.drink-list
+                        %li
+                          .drinks
+                            = link_to ious_url(:sent => true), :class => request.url == ious_url(:sent => true) ? 'active' : '' do
+                              %span.sent
+                                %span.title Sent Drinks
+                                %span.amount= current_user.sent_ious.sum(:quantity)
+                        %li  
+                          .drinks.received-drnk
+                            = link_to ious_url, :class => request.url == ious_url ? 'active' : '' do
+                              %span.received
+                                %span.title Received Drinks
+                                %span.amount= current_user.received_group_drinks.sum(:quantity)
+                    .clearfix        
+        - unless user_signed_in?
+          %ul.nav.navbar-nav.custom_header 
+            %li{:class => request.url == bars_url ? 'active' : ''}
+              = link_to content_tag(:span, t("layouts.menu.bars")), bars_url
+            %li{:class => request.url == new_bar_url ? 'active' : ''}
+              = link_to content_tag(:span, t("layouts.menu.register_a_bar")), new_bar_url
+            
+            %li{:class => request.url == new_iou_url ? 'active' : ''}
+              = link_to t("layouts.menu.send_a_beer"), new_iou_url, :rel => "nofollow"
+
+            %li{:class => request.url == about_url ? 'active' : ''}
+              = link_to t("layouts.menu.about"), about_url, :rel => "nofollow"
+            %li.dropdown
+              %a.btn.btn-danger.login.login-btn{:href => login_url}= t("layouts.user_account_navigation.login")
+            %li.dropdown
+              %a.btn.btn-warning.signup.signup-btn{:href => new_user_registration_url}= t("layouts.user_account_navigation.new_sign_up")
+          
+

@@ -1,0 +1,11 @@
+<% flash.each do |name, msg| %>
+  <% if msg.is_a?(String) %>
+  <div class="col-md-12 col-xs-12 col-sm-12 padd_none">
+    <div class="glogal-alert alert alert-<%= name == :notice ? "success" : "danger" %>">
+      <a class="close" data-dismiss="alert">&#215;</a>
+      <%= content_tag :div, msg, :id => "flash_#{name}" %>
+    </div>
+    <div class="clear"></div>
+  </div>
+  <% end %>
+<% end %>

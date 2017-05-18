@@ -1,0 +1,70 @@
+/ buddybeers > ious > show
+
+- @title = t(".title", :sender => (@iou.sender_name.blank? ? t("ious.index.sender_generic") : @iou.sender_name), :recipient => t("ious.index.you_received"), :drink => [@iou.quantity, beverage_owed(@iou)].join(" "), :bar => @iou.bar_name, :city => @iou.bar.city.name)
+- stylesheets('sites/buddybeers/sections/vouchers')
+
+- content_for :head do
+  :javascript
+    $(document).ready(function(){ $("label").inFieldLabels(); });
+
+.container
+  .row.voucher-main
+    #content_header
+
+      /%h1= t(".heading", :value => number_to_currency(@iou.amount.to_f, :unit => @iou.amount.currency.symbol), :beer => beverage_owed(@iou))
+      .drink.row
+        .col-md-8.col-sm-8.col-xs-12.left-section
+          .avatar= image_tag(@iou.sender.avatar(:tiny))
+          - @iou.group_drinks.received_drinks(current_user.id).each do |gd|
+            - if gd.recipient
+              //.recipient= image_tag(gd.recipient.avatar(:tiny))
+            .description
+              %p= raw t("ious.index.description_received", :sender => (@iou.sender_name.blank? ? t("ious.index.sender_generic") : @iou.sender_name), :recipient => t("ious.index.you_received"), :drink => [gd.quantity, beverage_owed(@iou)].join(" "), :bar => link_to(@iou.bar_name, bar_url(@iou.bar)), :city => @iou.bar.city.name, :beverage_name => gd.price.name)
+              %p= raw t("ious.index.venue", :city => @iou.bar.city.name)
+            = clear_floats
+          - if @iou.memo.present?
+            .memo.col-md-12.col-sm-12.col-md-12
+              .bubble
+                %p= @iou.memo
+          = clear_floats
+          %br
+          = render 'qrcode'
+
+          %h3.status= status_for(@iou)
+          = clear_floats
+
+
+        .col-md-4.col-sm-4.col-xs-12.right-section
+          #iou
+            .left
+              .bar
+                %h2
+                  = link_to @iou.bar.name, bar_url(@iou.bar)
+                %p
+                  %small= @iou.bar.address
+                = clear_floats
+                .row
+                  .col-md-12.col-sm-12.col-xs-12.padd_none
+                    .map
+                      - if @iou.bar && @iou.bar.geocoded?
+                        #map{ :style => "width:100%; height:250px", :data => { :"map-markers" => bars_to_map_markers(@iou.bar) } }
+                      - else
+                        = image_tag(@iou.bar.gallery.photos.present? ? @iou.bar.gallery.photos.first.photo(:square) : "/images/torino_google-map.png", :class => "img-responsive", :style => "width: 100%;")
+                  .col-md-12.col-sm-12.col-xs-12.padd_none
+                    .right
+                      .info= link_to content_tag(:span, t(".more_info")), bar_url(@iou.bar)
+                %p.disclaimer
+                  = t(".disclaimer.title")
+                  = t(".disclaimer.no_cash")
+
+              - @iou.group_drinks.each do |gd|
+                - unless gd.recipient and gd.recipient.active_for_authentication?
+                  - unless current_user
+                    = render "vouchers/existing_account_activation", :group_drink => gd
+                    = render "vouchers/new_account_creation", :group_drink => gd
+
+
+            = clear_floats
+
+:javascript
+  var map = new bb.maps.Map("#map");

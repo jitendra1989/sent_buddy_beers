@@ -1,0 +1,186 @@
+de:
+  affiliate: 
+    affiliate: 
+      tabs: 
+        home: Startseite
+    bars: 
+      bar: 
+        edit: "Diese Bar bearbeiten"
+        information: 
+          heading: Information
+        map: 
+          heading: Karte
+        monthly_profit: "Monatlicher Gewinn"
+        stats: 
+          beers_redeemed: "Eingelöste Gutscheine"
+          beers_sold: "Verkaufte Gutscheine"
+          bro: 
+            heading: "Dein Beer Bro"
+            hint: 
+              description: "Dein Beer Bro ist Dein Ansprechpartner vor Ort. Kontaktiere ihn wann immer Du Fragen über Buddy Drinks und das BuddyDrinks-System hast. Wir bezahlen ihn dafür, dass er Dir bei der Einführung des BuddyDrink-Systems in Deiner Bar hilft und Dir auch sonst bei Fragen zur Verfügung steht. <br /><br />Dein Beer Bro erhält wie Du wöchentlich die Liste der offenen Gutscheine für Deine Bar und wird Dich auf Deinen Wunsch hin beim Einlösen der Gutscheine bei BuddyDrinks unterstützen. Du selbst kannst Dir einen Beer Bro, dem Du vertraust, auswählen oder Dir von uns einen vorschlagen lassen."
+              title: "Beer Bros"
+          heading: Statistik
+          monthly_turnover: "Monatliche Umsatz"
+          total_profit: Gesamtgewinn
+        vouchers: 
+          heading: Gutscheine
+          outstanding_voucher: "Offene Gutscheine"
+          redeem_link: "Eingelöste Gutscheine melden"
+      edit: 
+        new_voucher_list_notification: "Ich möchte Gutscheine, die ich einlöse, gerne zusätzlich mit Hilfe einer ausgedruckten Gutscheinliste überprüfen. Bitte benachrichtigt mich, wenn neue Gutscheincodes für mich generiert wurden."
+        notifications_title: "Benachrichtigungen"
+        redeemed_voucher_notification_timeframe: "Sende mir eine Bestätigungsemail, wenn ein Gutschein bei mir eingelöst wurden."
+        title: "Bar Informationen bearbeiten"
+        update_bar_notifications: "Änderungen speichern"
+      form: 
+        legends: 
+          bar_information: "Bar Information"
+          voucher_conditions: Gutscheinbedingungen
+        token_disclaimer: "(Diese Nummer erscheint auf allen Gutscheinen und zeigt dir die Gültigkeit)"
+        voucher_limit_hint_description: "Gib einen Wert an, wie viele Gutscheine eine Person pro Tag einreichen kann.<br /><br />Wir brauchen diese Zahl falls es zum seltenen Falle kommt, dass ein Gast mit vielen Gutscheinen in Deine Bar kommt und nichts bezahlen moechte.<br /><br />Der Gast wird ueber die Begrenzung der Gutscheine informiert."
+      gallery: 
+        no_photos: "Derzeitig hast Du keine Bilder hochgeladen."
+        tabs: 
+          add_photo: "Bild hochladen."
+        title: "Bilder"
+        view_full: "Als großes Bild betrachten"
+      index: 
+        heading: "Meine Bars"
+        title: "Meine Bars"
+      outstanding_vouchers: "Offene Gutscheine"
+      redeem_ious: 
+        error: "%{total} nicht eingelöst. Überprüfe die Gutscheinnummern und versuche es noch mal."
+        success: "%{total} eingelöst. Dein Gewinn für diesen Monat wurde aktualisiert. Ka-tsching!"
+        voucher: gutschein
+      redeemed_vouchers: "Eingelöste Gutscheine"
+      show:
+        activity:
+          purchased_singular: "1 Gutschein für %{item} war"
+          purchased_plural: "%{quantity} Gutscheine für %{item} war"
+          redeemed: "eingelöst"
+          purchased: "gekauft"     
+      tabs: 
+        beer_list: Getränkeliste
+        edit_bar_information: "Bar Informationen bearbeiten"
+        employees: Mitarbeiter
+        gallery: Photo
+        promotional: "Sende einen Werbegutschein"
+      update: 
+        error: "Fähler beim aktualisieren."
+        none_redeemed: "Dein Gutschein wurde nicht eingelöst. Bitte versuche es nocheinmal."
+        some_redeemed: "Eingelöste Gutscheine: %{number} "
+        success: "Bar aktualisiert!"
+      voucher_list: 
+        expires: "Die letzte Liste Nr. %{number} verfällt am %{date}"
+        footer: 
+          code: 
+            description: "Legt ein Gast zum Beispiel den Code A-BCD-EF vor, so suchst Du die Zeichenfolge A-BCD und trägst „E F“ dahinter ein. Diese beiden Zeichen benötigst Du später, um uns via buddydrinks.com zu informieren, welche Codes eingelöst wurden."
+            heading: Code
+          employee: 
+            description: "Da eventuell auch Deine Kollegen Gutscheine entgegennehmen und dabei diese Liste benutzen, kannst Du hinter dem eingelösten Code Dein Namenskürzel hinzufügen. So wisst ihr später, welcher Gutscheincode von welchem Mitglied aus Eurem Team entgegengenommen wurde."
+            heading: Mitarbeiter
+          voucher: 
+            description: "Dies ist eine 6-stellige Zeichenfolge bestehend aus Zahlen und Großbuchstaben, von der sich die ersten 4 Zeichen auf dieser Liste befinden. Möchte ein Gast einen Gutschein einlösen, so werden für den entsprechenden Code auf dieser Liste die fehlenden zwei Zeichen eingetragen.  "
+            heading: Gutschein
+        header: "BuddyDrinks Gutscheinliste Nr. %{number} &ndash; <strong>%{bar_name}, %{bar_city}</strong>"
+        pdf_file_name: BuddyDrinks_Gutscheine
+      voucher_lists: Gutscheinlisten
+      voucher_table: 
+        table: 
+          headers: 
+            code: Code
+            employee: Mitarbeiter/in
+            voucher: Gutschein
+    dashboard: 
+      heading: "Willkommen im Meister-Cockpit"
+      tabs: 
+        home: "Meine Bars"
+        invoices: Auszahlungen
+    employments: 
+      create: 
+        error: "Leider ist ein Fehler beim Hinzufügen des Mitarbeiters aufgetreten."
+        success: "Mitarbeiter hinzugefügt"
+      destroy: 
+        error: "Es gab einen Fehler, den Mitarbeiter zu entfernen. Bitte versuche es nocheinmal."
+        success: "Dieser Mitarbeiter wurde entlassen"
+      employment: 
+        remove: Entfernen
+      index: 
+        description: "Gib den Namen Deines Mitarbeiters im unteren Feld ein. Klicke auf den Namen und dann klicke \"Mitarbeiter hinzufügen\". Mitarbeiter müssen erst ein BuddyDrinks Benutzerkonto besitzen, bevor Du sie hinzufügen kannst. "
+        form: 
+          friend_search_hint_text: "Gib einen Mitarbeitername oder eine Emailadresse ein (mindestens 3 Buchstaben)"
+          friend_search_no_results_text: "Keine Benutzer gefunden"
+          friend_searching_text: Suchen
+        how_to: "Gib Deine Mitarbeiter im obigen Formular an. Falls sie noch kein BuddyDrinks Benutzerkonto besitzen, müssen sie sich zuerst eins anlegen."
+        new_employee: "Einen neuen Mitarbeiter hinzufügen"
+        no_employees: "Du hast derzeit keine Mitarbeiter angemeldet!"
+        submit: "Diese Mitarbeiter hinzufügen"
+        submitting: "wird gesendet ..."
+        title: Mitarbeiterverwaltung
+    ious: 
+      filter_form: 
+        instructions: "Tippe eine Gutscheinnummer/Datum/Name um die Liste zu durchsuchen."
+      index: 
+        from: Von
+        to: An
+      new: 
+        form: 
+          beer: "Bier (Sorte, Menge)"
+          beer_legend: Bier
+          memo: Grund
+          recipient_email: "Email des Empfängers"
+          recipient_info_legend: Empfänger
+          recipient_name: "Name des Empfängers"
+          salutation_legend: Gruß
+          sender_name: "Name des Senders"
+        heading: "Sende einen Gutschein für %{bar}"
+        instructions: "Versende Gutscheine für Deine Bar, um z.B. für eine bevorstehende Veranstaltung zu werben oder Deine besonderen Gäste zu beschenken. Dieser Service ist für Dich kostenlos."
+        title: "Sende einen BuddyDrinks Werbegutschein"
+      outstanding_form: 
+        no_vouchers: "Du hast keine offenen Gutscheine. Fang an die Werbetrommel zu rühren!"
+    payments: 
+      index: 
+        title: "Alle Auszahlungen"
+      show: 
+        title: "Auszahlung #%{number}"
+    photos: 
+      create: 
+        error: "Beim Hochladen des Bildes ist ein Fehler aufgetreten."
+        success: "Das Bild wurde erfolgreich hinzugefügt."
+      destroy: 
+        error: "Beim Löschen des Bildes ist ein Fehler aufgetreten."
+        success: "Bild gelöscht!"
+      edit: 
+        form: 
+          button: Aktualisieren
+          legend: "Bild bearbeiten"
+        title: "Bild bearbeiten"
+      new: 
+        form: 
+          button: Hinzufügen
+          legend: "Ein Bild hinzufügen"
+        title: "Füge ein neues Bild Deiner Bar hinzu"
+      update: 
+        error: "Beim Aktualisieren des Bildes ist ein Fehler aufgetreten"
+        success: "Bild wurde erfolgreich aktualisiert"
+    prices: 
+      create: 
+        error: "Fehler! Bitte überprüfe, dass Du alle Felder korrekt ausgefüllt hast."
+        success: "Neues Bier hinzugefügt"
+      destroy: 
+        error: "Fähler beim entfernen"
+        success: "Bier entfernt"
+      drink: 
+        special_price: "Spezial Preis. Danke!"
+      edit: 
+        legend: "Getränkpreis ändern"
+        title: "Bierpreis ändern"
+      index: 
+        legend: "Füge ein weiteres Bier zur %{bar} Getränkeliste hinzu"
+        title: Getränkeliste
+      update: 
+        error: "Fähler beim aktualisieren"
+        success: "Preis aktualisiert"
+    voucher_lists:
+      show:
+        voucher_list: "Gutscheinliste"

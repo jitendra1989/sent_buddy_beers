@@ -1,0 +1,196 @@
+fr:
+  ious:
+    new:
+      heading: "Envoyez une bière à vos amis."
+      title: "Envoyez une bière à vos amis"
+    form:
+      and_or: "and / or"
+      friends_info_legend: Votre ami
+      salutation_legend: Salutations
+      friend_network: Choisissez un ami depuis
+      bar_legend: Choisissez un bar
+      sms_warning:
+        notice: Attention
+        warning: "Certains opérateurs téléphoniques dans le monde n'acceptent pas nos SMS. Nous vous recommandons fortement d'inclure également l'email de votre ami."
+      form:
+        button: Envoyer!
+        send_a: Envoyer un
+        memo: "Raison de votre générosité"
+        beer: "Bière <small>(Quantité/Type)</small>"
+        friends_email: "Entrez l'email de votre ami"
+        friend_search_hint_text: "Commencez à taper le nom ou l'email d'un de vos amis"
+        friends_name: Le nom de votre ami
+        friend_searching_text: "Recherche dans votre liste d'amis..."
+        friend_search_no_results_text: "Aucun ami avec ce nom-là"
+        sms_warning: "Peut être tronqué par SMS"
+        buddy_beers_countries: Pays dans lesquels Buddy Drinks est disponible
+        other_countries: Tous les pays
+      beer_legend: "Choisissez une bière"
+      public_acceptance: "Peut être affiché sur la page d'accueil et la page du bar."
+    twitter:
+      status: "%{memo} %{sender} bought %{recipient} %{beer} at %{bar}, %{city}: %{url}"
+    index:
+      title: "Mes bières"
+      you_sent: Vous
+      you_received: Vous
+      description_received: "<strong>%{sender}</strong> a payé à<strong>%{recipient}</strong> %{drink} à <strong>%{bar}</strong>, %{city}"
+      description_sent: "<strong>%{sender}</strong> a payé à <strong>%{recipient}</strong> %{drink} à <strong>%{bar}</strong>, %{city}"
+      received_beers: "Bières reçues: %{count}"
+      sent_beers: "Bières envoyées: %{count}"
+      sender_generic: "Un ami"
+      voucher_number: "Coupon #%{number}"
+      heading: Mes bières
+      expired: "Expire le: %{date}"
+      expires: "Expire dans %{distance} le %{date}"
+      redeemed: "Échangé: %{date}"
+      received_empty: "Vous n'avez reçu aucune bière. Pourquoi ne pas demander à vos amis ou votre famille de vous envoyer une bière ? Ils adoreraient sûrement ça!"
+      received_mobile:
+        heading: "Avez-vous reçu un coupon sur votre téléphone que vous ne voyez pas ici ?"
+        description: "<a href=\"%{link}\">Cliquez ici pour ajouter votre téléphone à votre compte</a>: vous pourrez ensuite voir vos coupons."
+      sent_empty: "Vous n'avez encore envoyé aucune bière. Si vous n'avez aucun ami à proximité de nos bars, pourquoi ne pas vous en offrir une vous-même ?"
+    order:
+      price: Coupon
+      quantity: "Qté."
+      similar_price: "ou un verre à un prix similaire"
+      total: Total
+      heading: Vous achetez
+      bucks: BuddyBucks
+    drink_details:
+      drink_at_bar: "Coupon pour %{drink}* à %{bar}, %{city} pour %{recipient} (%{email})"
+    buddy_bucks_payment:
+      get_bucks: Obtenez plus de BuddyBucks
+      heading: BuddyBucks
+      pay: "Payez en utilisant %{amount} BuddyBucks"
+      bullets:
+        credit_system: "Notre propre monnaie %{link}"
+        fast_convenient: Rapide et pratique
+        payment_options: "Des tonnes d'options de paiement, y compris les<strong>virements bancaires</strong>"
+        multiple_purchases: "Ne payez qu'une fois pour plusieurs achats!"
+      credits:
+        voucher: Coupon
+      credit_cards: "Toutes les cartes de crédit sont acceptées"
+    paypal_payment:
+      button: "Payez %{amount} avec Paypal"
+      bullets:
+        credit_card: "Payez avec les principales cartes de crédit"
+        secure: "Le standard des paiements Internet sécurisés"
+        no_account: "Pas d'inscription requise"
+      form:
+        for_buddybeers: pour BuddyDrinks.com
+        order_name: "Commande #%{number}"
+        item_name: "%{amount} Coupons pour %{beers}%{location}"
+        average: Moyenne
+      credit_cards: "Accepte les principales cartes de crédit"
+    pay:
+      title: "L'addition s'il vous plaît!"
+      heading: "Il est temps de payer!"
+      payment:
+        heading: Payez en utilisant
+    credits:
+      current_bucks: "Vous avez actuellement <span class=\"user_credits\">%{amount}</span> BuddyBucks."
+    create:
+      real:
+        success: "<strong>Génial.</strong> Payez pour la bière ci-dessous et vos amis penseront que vous êtes le plus cool d'entre tous!"
+      error: Oops! Une erreur est survenue. 
+    completed:
+      error: "Désolé, bro. Pas de bières gratuites aujourd'hui: vous devez d'abord payer l'addition."
+    confirm:
+      not_enough_bucks: 
+        heading: "Vous avez besoin de %{amount} BuddyBucks supplémentaires pour terminer cette commande."
+        desc: "Cliquez sur le lien ci-dessous pour recharger votre compte avec des BuddyBucks."
+      get_more_bucks: "Obtenez plus de BuddyBucks"
+      error:
+        heading: "Erreur"
+        description: "Il y a eu une erreur en payant votre coupon. Essayez encore ou contactez-nous à info@buddydrinks.com si le problème persiste."
+      pay: "Payez avec %{amount} BuddyBucks"
+    bar_detail:
+      read_more: lire plus
+      more_info: "Plus d'informations"
+    update:
+      success: "Le coupon a été échangé"
+      error: Il y au une erreur
+    confirm_payment:
+      success: "<strong>Sweet!</strong> Paypal a confirmé votre paiement!"
+    confirmed_payment:
+      immediate_delivery: "Quelques minutes peuvent s'écouler avant que votre ami reçoive son coupon, mais qu'est-ce que %{recipient} va être heureux! Il <em>vous</em> achètera peut-être même une bière pour vous remercier!"
+      title: Beers away!
+      send_another_beer: "Envoyer une autre bière"
+      you_sent: "<strong>Vous</strong> avez envoyé <strong>%{recipient}</strong> un coupon de %{price} pour une %{beer} à <strong>%{bar}</strong>, %{city}!"
+      spread_the_love: "Vous voulez continuer à répandre de l'amour ?"
+      heading: Hot damn!
+      success: "<strong>Sweet!</strong> Paypal a confirmé votre paiement!"
+      delayed_delivery: "{bar} met un petit moment à recevoir ses coupons, %{recipient} recevra donc son coupon à peu près dans %{time} heures. Mais qu'est ce que %{recipient} va être heureux! Il <em>vous</em> achètera peut-être même une bière pour vous remercier!"
+      social_spread:
+        share: Partager sur Facebook
+        real: VRAI
+        heading: "Faites-le savoir à vos amis sur Facebook ou Twitter"
+        fb_status: "J'ai envoyé une %{beer} à %{recipient}  à %{bar}, %{city}: %{memo}!"
+        fb_status_for_display: "J'ai envoyé une %{beer} à <strong>%{recipient}</strong>  à %{bar}, %{city}: %{memo}!"
+        fb_action: "Achetez une bière ici"
+        twitter_link: Partager sur Twitter!
+        twitter_status_for_display: "J'ai envoyé %{beer} à <strong>%{recipient}</strong>  à %{bar} à %{city} sur <strong>http://buddydrinks.com</strong>"
+        twitter_status: "J'ai envoyé %{beer} à %{recipient} à %{bar} à %{city}"
+        twitter_via: "via Buddy Drinks"
+      receipt:
+        heading: "Reçu de paiement"
+        description: "Vous allez recevoir un reçu sur votre adresse email de la part de notre partenaire de paiement (Paypal ou Ultimate Pay)."
+        questions: "Si vous avez la moindre question, s'il vous plaît:"
+        faqs: "Lisez notre FAQ"
+        contact: "Contactez nous"
+    show:
+      app:
+        iphone:
+          heading: "Échangez vos coupons avec notre application iPhone:"
+          link: "Téléchargez notre application iPhone"
+        android:
+          heading: "Échangez vos coupons avec notre application Android:"
+          link: "Téléchargez notre application Android"
+        mobile: 
+          heading: "Échangez vos coupons avec notre application iPhone ou Android:"
+      sent: "ENVOYÉ:"
+      expires: "EXPIRE:"
+      title: "%{sender} a payé à %{recipient} %{drink} à %{bar}, %{city}"
+      sent_to: "Envoyé à:"
+      memo: Pourquoi?
+      heading: "%{value} Coupon pour 1 %{beer}"
+      statuses:
+        simple:
+          sent: "Enovyé"
+          redeemed: "Échangé"
+          valid_on: "Valide à partir de %{date}"
+          valid: Valide
+          expired: "Expiré"
+        sent: "Envoyé, mais pas encore valide"
+        redeemed: "Échangé!"
+        valid_on: "Pas encore valide. Valide à partir de %{date}."
+        valid: "Valide, profitez-en!"
+        expired: "Expiré! Qu'est-ce qui vous a pris si longtemps?"
+        valid_until: "Valide jusqu'à %{date}"
+        redeemed_on: "Échangé le %{date}"
+        expired_on: "Expiré le %{date} "
+      disclaimer:
+        title: "Disclaimer:"
+        no_cash: "Les coupons Buddy Drinks ne sont pas échangeables contre de l'argent et ne peuvent être transmis qu'avec l'autorisation du propriétaire du bar."
+        voucher_limit: "Ce bar n'autorise que %{limit} boissons par personne et par jour achetées en utilisant un coupon Buddy Drinks."
+      instructions:
+        print_link: Imprimer ce coupon
+        heading: "Qu'est-ce que je fais maintenant ?"
+        instructions: "Téléchargez notre <a href=\"%{iphone_link}\">Application iPhone</a> or <a href=\"%{android_link}\">Application Android></a> et prenez votre téléphone à %{bar}."
+        instructions_iphone: "Téléchargez notre <a href=\"%{link}\">Application iPhone</a> et prenez votre téléphone à %{bar}."
+        instructions_android: "Téléchargez notre <a href=\"%{link}\">Application Android</a> et prenez votre téléphone à %{bar}."
+      map_link: grande carte
+      expired: "Désolé, ce coupon a expiré."
+      status: "STATUS:"
+      sent_by: "Envoyé par:"
+      redeemable_at: "échangeable à"
+      heading_voucher: "C'est un coupon d'une valeur de <span class=\"money\">%{amount}</span> pour %{beer}%{bar}"
+      more_info: "Plus d'info"
+      mobile: 
+        heading: Coupon
+    existing_account_activation:
+      heading: "Déjà inscrit sur BuddyDrinks ?"
+      description: "Connectez-vous ici et nous ajouterons %{email} à votre compte."
+    new_account_creation:
+      heading: Vous voulez activer votre compte ?
+      description: "Activer votre compte vous permet de vous connecter à Buddy Drinks et gérer vos bières plus facilement."
+      activate: Activer

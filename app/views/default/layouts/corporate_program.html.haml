@@ -1,0 +1,17 @@
+!!!
+%html{:xmlns => "http://www.w3.org/1999/xhtml"}
+  %head
+    %meta{:charset => "utf-8"}
+    %meta{:content => "IE=edge", "http-equiv" => "X-UA-Compatible"}
+    %meta{:content => "width=device-width, initial-scale=1", :name => "viewport"}
+    %title Buddydrinks
+    = javascript_include_tag 'jquery1.11.1.min', 'jquery-ui.min', 'bootstrap.min'  
+    = stylesheet_link_tag 'bootstrap.min', 'jquery-ui.min', 'style', 'corporate_program'          
+    %link{:href => 'http://fonts.googleapis.com/css?family=Open+Sans:700', :rel => 'stylesheet', :type => 'text/css'}
+    %link{:href=>'http://fonts.googleapis.com/css?family=Ubuntu:500', :rel=>'stylesheet', :type=>'text/css'}
+    = yield(:head)
+  %body
+    = render "/default/shared/corporate_header"
+    =  yield
+    = render "/default/shared/buddy_footer"
+    

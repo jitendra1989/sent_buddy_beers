@@ -1,0 +1,11 @@
+berlin:
+  name: Berlin
+  country: germany
+
+hamburg:
+  name: Hamburg
+  country: germany
+  
+annapolis:
+  name: Annapolis
+  country: usa

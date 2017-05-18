@@ -1,0 +1,111 @@
+/ default > facebook > orders > index
+- content_for :facebook do
+  :plain
+    //FB.Canvas.setSize();
+    FB.Canvas.setAutoResize();
+    
+- content_for :head do
+  :javascript
+    $(document).ready(function(){
+      #{ params[:sent] ? "$('#received').hide(); $('.sent_link a').addClass('active');" : "$('#sent').hide(); $('.received_link a').addClass('active');" }
+      $("#fb_received_post_button a").click(function(e){
+        FB.ui({ method: 'feed', display: 'iframe',
+         message: '#{t("facebook.orders.index.ask_for_beer.my_fb_status").gsub("'", "\\\\\'")}',
+         link: 'http://apps.facebook.com/#{current_site.facebook_app_url}',
+         name: '#{t("facebook.orders.index.ask_for_beer.name").gsub("'", "\\\\\'")}',
+         caption: 'http://apps.facebook.com/#{current_site.facebook_app_url}',
+         description: '#{t("layouts.meta.description").gsub(/\n/," ").gsub(/\r/," ").gsub("'", "\\\\\'")}',
+         actions: {name: '#{t("facebook.orders.index.ask_for_beer.fb_action_buy", :name => current_user.to_s).gsub("'", "\\\\\'")}', link: 'http://apps.facebook.com/#{current_site.facebook_app_url}' }
+        });
+        e.preventDefault;
+      });
+      $("#fb_sent_post_button a").click(function(e){
+        FB.ui({ method: 'feed', display: 'iframe',
+         message: '#{t("facebook.orders.index.ask_friends.my_fb_status").gsub("'", "\\\\\'")}',
+         link: 'http://apps.facebook.com/#{current_site.facebook_app_url}',
+         name: '#{t("facebook.orders.index.ask_friends.name").gsub("'", "\\\\\'")}',
+         caption: 'http://apps.facebook.com/#{current_site.facebook_app_url}',
+         description: '#{t("layouts.meta.description").gsub(/\n/," ").gsub(/\r/," ").gsub("'", "\\\\\'")}',
+         actions: {name: '#{t("facebook.orders.index.ask_friends.fb_action_buy").gsub("'", "\\\\\'")}', link: 'http://apps.facebook.com/#{current_site.facebook_app_url}' }
+        });
+        e.preventDefault;
+      });
+    });
+  :plain
+    <!--[if lte IE 8]>
+      <style type="text/css" media="screen">
+        #ious #received ul li.drink .avatar img, #ious #sent ul li.drink .avatar img {
+          -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(grayscale=1)";
+          filter: progid:DXImageTransform.Microsoft.BasicImage(grayscale=1);
+        }
+      </style>
+    <![endif]--> 
+
+#ious
+  %h1= t("ious.index.heading")
+  %ul.tabs
+    %li.received_link= link_to_function content_tag(:span, t("ious.index.received_beers", :count => @received_ious_count)), "$('#received, #sent').toggle(); $('.received_link a, .sent_link a').toggleClass('active')"
+    %li.sent_link= link_to_function content_tag(:span, t("ious.index.sent_beers", :count => @sent_ious_count)), "$('#received, #sent').toggle(); $('.received_link a, .sent_link a').toggleClass('active')"
+  
+  - if @received_ious.present?
+    #received
+      %ul
+        - for iou in @received_ious
+    
+          %li.drink
+            = link_to facebook_order_url(iou), :class => "drink_link" do
+              .avatar.sender
+                = image_tag(order_participant_photo(iou, "sender", "sites/carlsberg/avatars/thumb/missing.png"), :alt => iou.sender.name, :height => "53px", :width => "53px")
+              .avatar.recipient
+                = image_tag(order_participant_photo(iou, "recipient", "sites/carlsberg/avatars/thumb/missing.png"), :alt => iou.recipient_name, :height => "53px", :width => "53px")
+              .description
+                %p= raw t("ious.index.description_received", :sender => (iou.sender_name.blank? ? t("ious.index.sender_generic") : iou.sender_name), :recipient => t("ious.index.you"), :drink => [iou.quantity, iou.price_name].join(" "), :bar => iou.bar_name, :city => iou.bar.city.name)
+              - if iou.memo.present?
+                .memo
+                  .bubble
+                    %p= iou.memo
+              
+              %p.date
+                = iou.created_at.to_s(:twitter_format_w_year)
+                - if iou.expired? and iou.expires_at
+                  &ndash;
+                  %strong= t("ious.index.expired", :date => iou.expires_at.to_s(:euro_date))
+                - elsif iou.expires_at.present? and !iou.redeemed?
+                  &ndash;
+                  %strong= t("ious.index.expires", :distance => distance_of_time_in_words(Time.now, iou.expires_at, false), :date => iou.expires_at.to_s(:euro_date))
+                - elsif iou.redeemed? and iou.vouchers.present?
+                  &ndash;
+                  %strong= t("ious.index.redeemed", :date => iou.vouchers.last.redeemed_at.to_s(:euro_date))
+              = clear_floats
+    
+      = will_paginate(@received_ious, :param_name => :received_page, :previous_label => "&larr; #{t("global.pagination.previous")}", :next_label => "#{t("global.pagination.next")} &rarr;")
+    
+  - else
+    #received
+      %p.empty= t("ious.index.received_empty")
+      %p#fb_received_post_button.fb_post_button
+        = link_to content_tag(:span, t(".ask_for_beer.link")), "#"
+  
+  - if @sent_ious.present?
+    #sent
+      %ul
+        - for iou in @sent_ious
+     
+          %li.drink
+            .avatar.sender= image_tag order_participant_photo(iou, "sender", "sites/carlsberg/avatars/thumb/missing.png")
+            .avatar.recipient= image_tag(order_participant_photo(iou, "recipient", "sites/carlsberg/avatars/thumb/missing.png"), :alt => iou.recipient_name, :height => "53px", :width => "53px")
+            
+            .description
+              %p= raw t("ious.index.description_sent", :sender => t("ious.index.you"), :recipient => (iou.recipient_name.blank? ? t("ious.index.sender_generic") : iou.recipient_name), :drink => [iou.quantity, iou.price_name].join(" "), :bar => link_to(iou.bar_name, facebook_location_url(iou.bar)), :city => iou.bar.city.name)
+            - if iou.memo.present?
+              .memo
+                .bubble
+                  %p= iou.memo
+            %p.date= iou.created_at.to_s(:twitter_format_w_year)
+    
+      = will_paginate(@sent_ious, :param_name => :sent_page, :params => {:sent => true}, :previous_label => "&larr; #{t("global.pagination.previous")}", :next_label => "#{t("global.pagination.next")} &rarr;")
+  - else
+    #sent
+      %p.empty= t("ious.index.sent_empty")
+      %p#fb_sent_post_button.fb_post_button
+        = link_to content_tag(:span, t(".ask_friends.link")), "#"

@@ -1,0 +1,9 @@
+/ carlsberg > bars > bars
+
+- @bars.group_by(&:country).each do |country, bars|
+  - bars.group_by(&:city).each do |city, bars_in_city|
+    %h3.city= "#{t("countries.#{country.printable_name.parameterize.gsub("-", "_")}")} / #{city.name}"
+    %ul
+      - bars_in_city.each do |bar|
+        %li{ :class => "bar #{cycle("odd", "even")}"}
+          = render bar

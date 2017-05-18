@@ -1,0 +1,47 @@
+it:
+  registrations:
+    email:
+      pending: Verifica in sospeso
+    new:
+      title: Crea un account Buddy Beers
+      heading: In alto lo sgabello!
+      sponsorpay_heading: Hai bisogno di una pausa? Che ne dici di una birra fresca?
+      form:
+        button: Registrati
+        legend: Crea un account Buddy Beers
+        existing_account: Ho già un account
+    edit:
+      button:
+        heading: Aggiungi un bottone al tuo sito web
+        description: "Copia e incolla il seguente codice all'interno del tuo sito web:"
+        name_label: Mostra il mio nome
+      title: Modifica il mio account
+      heading: Modifica il mio account
+      facebook:
+        connected: Sei connesso con Facebook!
+        account: Sei connesso tramite il numero di account Facebook %{id}
+        permissions:
+          about: Motivo per il quale stiamo richiedendo le tue informazioni Facebook
+          basic_info: Informazioni principali
+          basic_info_explained: Utilizziamo queste informazioni per aggiornare la tua foto e il tuo nome sul nostro sito. Verifichiamo anche se qualcuno dei tuoi amici sta per caso utilizzando la nostra App, così sarai in grado di inviargli delle birre.
+          email: Indirizzo email
+          email_explained: Il tuo indirizzo email di Facebook verrà utilizzato SOLAMENTE per inviarti una notifica del fatto che un tuo amico ti ha comprato una birra.
+      photo_change: Cambia la tua foto
+      photo_add: Aggiungi una foto
+      password: Cambia la tua password
+    complete:
+      title: Registrazione a Buddy Beers completata
+      heading: Registrazione completata. Per favore, controlla la tua email.
+      description: "Clicca il link nella email che ti abbiamo appena inviato per confermare il tuo indirizzo email."
+      resend: "Niente, eh? Non hai ricevuto nessuna email? <a href=\"%{link}\">Clicca qui per inviarla nuovamente.</a>"
+    form:
+      payment_information:
+        legend: Informazioni di pagamento
+      personal_information:
+        legend: Informazioni personali
+      promo_information:
+        legend: Informazioni promozionali
+    create:
+      success: "<strong>Il tuo account è stato creato.</strong> Ora verifica di aver ricevuto la email con il link per la verifica e dopodichè sarai pronto!"
+    update:
+      success: Account aggiornato!

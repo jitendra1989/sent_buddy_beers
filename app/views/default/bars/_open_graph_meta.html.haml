@@ -1,0 +1,19 @@
+/ default > bars > open_graph_meta
+
+- content_for :head do
+  %meta{ :property => "og:title", :content => @title }
+  %meta{ :property => "og:type", :content => "bar" }
+  %meta{ :property => "og:image", :content => @bar.fb_image_url }
+  %meta{ :property => "og:url", :content => bar_url(@bar) }
+  - if @geocoords.present? and @geocoords.success and @geocoords.all.size == 1
+    %meta{ :property => "og:latitude", :content => @geocoords.lat }
+    %meta{ :property => "og:longitude", :content => @geocoords.lng }
+    %meta{ :property => "og:street-address", :content => @geocoords.street_address }
+    %meta{ :property => "og:locality", :content => @geocoords.city }
+    %meta{ :property => "og:region", :content => @geocoords.state }
+    %meta{ :property => "og:postal-code", :content => @geocoords.zip }
+    %meta{ :property => "og:country-name", :content => @geocoords.country_code }
+  - if @bar.contact_email
+    %meta{ :property => "og:email", :content => @bar.contact_email }
+  - if @bar.phone_number
+    %meta{ :property => "og:phone_number", :content => @bar.phone_number }

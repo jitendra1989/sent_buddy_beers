@@ -1,0 +1,19 @@
+= user.affiliate? ? link_to(highlight_search_term(user.name), admin_affiliate_path(user)) : user.bro? ? link_to(highlight_search_term(user.name), admin_bro_path(user)) : highlight_search_term(user.name)
+&ndash;
+= highlight_search_term(user.email)
+- if user.affiliate?
+  &ndash;
+  = pluralize(user.bars.length, "Venue")
+  &ndash;
+  Last login:
+  = user.last_sign_in_at ? user.last_sign_in_at.to_s(:euro_sm_with_time) : "Never"
+- if user.bro?
+  &ndash;
+  = pluralize(user.bars.length, "Venue")
+&ndash;
+Created: 
+= user.created_at.to_s(:euro_sm_with_time)
+&ndash;
+= link_to "details", admin_user_path(user)
+|
+= link_to "edit", edit_admin_user_path(user)

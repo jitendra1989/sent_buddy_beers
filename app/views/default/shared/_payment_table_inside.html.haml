@@ -1,0 +1,28 @@
+- for payment in @payments
+  %tr{:class => cycle('even', 'odd')}
+    %td{ :class => payment.paid ? 'paid' : 'unpaid' }
+      - if current_user.admin?
+        = check_box_tag "", "1", payment.paid, :onclick => remote_function(:url => toggle_admin_payment_url(:id => payment.id), :method => :put)
+      - else
+        = t(payment.paid ? ".paid" : ".unpaid")
+    %td= payment.id
+    %td
+      %strong= number_to_currency(payment.amount.to_f, :unit => payment.amount.currency.symbol)
+    %td
+      = payment.beginning_at.to_s(:euro_date)
+      &ndash;
+      = payment.ending_at.to_s(:euro_date)
+
+
+    %td
+      = payment.affiliate_name
+      = "(unpayable)" if payment.affiliate and payment.affiliate.payment_prefs_empty? and current_user.admin?
+    %td
+      - if current_user.admin?
+        = link_to t(".table.options.details"), admin_payment_path(payment)
+        |
+        = link_to t("global.edit"), edit_admin_payment_path(payment)
+        |
+        = link_to t("global.delete"), admin_payment_path(payment), :method => :delete, :confirm => t("global.confirm_question")
+      - else
+        = link_to t(".table.options.details"), affiliate_payment_path(payment)

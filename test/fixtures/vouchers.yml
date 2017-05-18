@@ -1,0 +1,78 @@
+valid_voucher:
+  iou: valid_voucher
+  token: <%= String.tokenize(10) %>
+  redemption_token: <%= String.tokenize(2) %>
+  bar: active_bar
+  cents: 499
+  currency: EUR
+  voucher_list: active_voucher_list
+
+valid_voucher_for_weiss:
+  iou: valid_voucher_for_weiss
+  token: <%= String.tokenize(10) %>
+  redemption_token: <%= String.tokenize(2) %>
+  bar: active_bar
+  cents: 499
+  currency: EUR
+  voucher_list: active_voucher_list
+
+valid_voucher_for_kindl:
+  iou: valid_voucher_for_kindl
+  token: <%= String.tokenize(10) %>
+  redemption_token: <%= String.tokenize(2) %>
+  bar: active_bar
+  cents: 250
+  currency: EUR
+  voucher_list: voucher_list_250
+  
+valid_voucher_to_customer:
+  iou: valid_voucher_to_customer
+  token: <%= String.tokenize(10) %>
+  redemption_token: <%= String.tokenize(2) %>
+  bar: active_bar
+  cents: 499
+  currency: EUR
+  voucher_list: active_voucher_list
+
+redeemed_voucher:
+  iou: redeemed_voucher
+  token: <%= String.tokenize(10) %>
+  redemption_token: <%= String.tokenize(2) %>
+  bar: active_bar
+  redeemed: true
+  cents: 499
+  currency: EUR
+  voucher_list: active_voucher_list
+
+expired_voucher:
+  iou: expired_voucher
+  token: <%= String.tokenize(10) %>
+  redemption_token: <%= String.tokenize(2) %>
+  bar: active_bar
+  cents: 499
+  currency: EUR
+  voucher_list: active_voucher_list
+
+# pending_payment_voucher:
+#   iou: pending_payment_voucher
+#   token: <%= String.tokenize(10) %>
+#   redemption_token: <%= String.tokenize(2) %>
+#   bar: active_bar
+#   cents: 499
+#   currency: EUR
+  
+available_voucher:
+  token: <%= String.tokenize(10) %>
+  redemption_token: <%= String.tokenize(2) %>
+  bar: active_bar
+  cents: 499
+  currency: EUR
+  voucher_list: active_voucher_list
+  
+another_available_voucher:
+  token: <%= String.tokenize(10) %>
+  redemption_token: <%= String.tokenize(2) %>
+  bar: active_bar
+  cents: 499
+  currency: EUR
+  voucher_list: active_voucher_list

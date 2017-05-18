@@ -1,0 +1,42 @@
+- @vouchers.group_by(&:cents).each do |cents, vouchers|
+  - vouchers = vouchers.sort_by(&:token)
+  #voucher_list
+    #header
+      / #logo= image_tag "http://www.buddybeers.com/images/print/logo-for-pdf.jpg", :width => 200, :height => 90
+      %p.bar_name
+        = raw t("affiliate.bars.voucher_list.header", :number => "", :bar_name => @bar.name, :bar_city => @bar.city.name)
+      %h1= number_to_currency(vouchers.first.amount.to_f, :unit => vouchers.first.amount.currency.symbol)
+      %h2 (#{beers_in_price_range(cents, @bar)})
+      =clear_floats
+    
+    #body.three_col
+      - @first_third = vouchers.first(vouchers.length / 3)
+      - @second_third = (vouchers - @first_third).first((vouchers - @first_third).length / 2)
+      .left
+        .pad
+          = render :partial => 'affiliate/bars/voucher_table', :locals => {:vouchers => @first_third }
+
+      .right
+        .pad
+          = render :partial => 'affiliate/bars/voucher_table', :locals => {:vouchers => vouchers - @first_third - @second_third }
+      
+      .center
+        .pad
+          = render :partial => 'affiliate/bars/voucher_table', :locals => {:vouchers => @second_third  }
+    
+      = clear_floats
+
+    #footer
+      .price
+        .number= number_to_currency(vouchers.first.amount.to_f, :unit => vouchers.first.amount.currency.symbol)
+        .beers (#{beers_in_price_range(cents, @bar)})
+      %p
+        %strong= "#{t("affiliate.bars.voucher_list.footer.voucher.heading")}:"
+        = t("affiliate.bars.voucher_list.footer.voucher.description")
+      %p
+        %strong= "#{t("affiliate.bars.voucher_list.footer.code.heading")}:"
+        = raw t("affiliate.bars.voucher_list.footer.code.description")
+      %p
+        %strong= "#{t("affiliate.bars.voucher_list.footer.employee.heading")}:"
+        = t("affiliate.bars.voucher_list.footer.employee.description")
+      #logo= image_tag "http://buddybeers.com/images/print/logo-for-pdf.jpg", :width => 150, :height => 64

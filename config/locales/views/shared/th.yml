@@ -1,0 +1,44 @@
+th:
+  shared:
+    admin:
+      bars:
+        form:
+          translation: 
+            translation: "%{other_locale} คำแปล" 
+            none: "ไม่มี"
+    drink_feed:
+      heading: "ใครเป็นคนส่งเบียร์?"
+    drink_in_feed:  
+      default_friend: "เพื่อน"
+      description: "<strong>%{sender}</strong> ได้ซื้อ <strong>%{recipient}</strong> เบียร์ %{beer} ที่บาร์ <strong>%{bar}</strong>, %{city}"
+    payment_table:
+      paid: "ใช่"
+      table:
+        options:
+          details: "แสดงรายละเอียด"
+        headings:
+          name: "ชื่อ"
+          invoice: "เลขที่ใบแจ้งหนี้"
+          timeframe: "ระยะเวลา"
+          paid: "จ่ายแล้ว"
+          amount: "จำนวน"
+          options: "ทางเลือก"
+      unpaid: "ไม่"
+    network_connect: 
+      heading: "ลงทะเบียนง่ายๆด้วยบัญชีเฟสบุ๊ค"
+    payment: 
+      buddy_beers_address: "Buddy Drinks <br />c/o BuddyLabs UG<br />Stargarderstr. 80<br />10437 กรุงเบอร์ลิน<br />ประเทศเยอรมันน"
+      invoice: "นำจ่าย"
+      notes: "หมายเหตุ"
+      amount: "จำนวน"
+      invoice_number: "เลขที่ใบแจ้งหน"
+      item_description: "โปรโมชั่น Buddy Drinks: %{from} &ndash; %{to}"
+      date: "วันที่"
+      redeemed: "ถูกขึ้นใช้แล้ว"
+      admin_notes: "หมายเหตุจากเจ้าหน้าที่ฝ่ายทะเบียน"
+      line_item: "%{amount} คูปองที่บาร์ %{bar} %{status} ในวันที่ %{date}"
+      unpaid: "ค้างจ่าย"
+      for: "สำหรับ"
+      paid_on: "จ่ายแล้วในวันที่ %{date}"
+      expired: "หมดอายุ"
+      status: "สถานะ"

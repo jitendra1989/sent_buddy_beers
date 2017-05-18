@@ -1,0 +1,97 @@
+- content_for :add_page_js_css do
+  = javascript_include_tag 'moment.min', 'fullcalendar'
+  = stylesheet_link_tag 'fullcalendar', 'custom', 'search'
+  %link{:href => "http://fonts.googleapis.com/css?family=Didact+Gothic", :rel => "stylesheet", :type => "text/css"}
+
+:javascript
+  $(document).ready(function() {
+    $('#calendar').fullCalendar({
+      dayClick: function (dateSelected, allDay, jsEvent, view) {
+        var date_from_calender = (new Date(dateSelected)).toISOString().slice(0, 10)
+        var selected_date = new Date(dateSelected)
+        var today_date = (new Date()).toISOString().slice(0, 10)
+        if(today_date <= date_from_calender)
+          {
+            $('#myEventCalender').modal('show');
+            date = date_from_calender.split("-");
+            seleted_date = date[1]+"-"+date[2]+"-"+date[0];
+            $('#event_day_of_the_event').val(seleted_date)
+          }
+        },
+        allDay: true,
+      events: 'events/return_events',
+      eventClick: function(event) {
+        if (event.url) {
+            console.log(event.title)
+            console.log(event.start)
+            window.open(event.url, "_self"); //, "_blank"
+            return false;
+        }
+      },
+      eventRender: function(event, element){
+        element.find('.fc-title').attr("title", event.title);
+      }
+    });
+     $('#event_other_event_type').hide();
+  });
+
+  $(document).on('click', '#new_event', function() {
+    $('#myEventCalender').modal('show');
+  });
+
+  $(document).on('click', '#event_submit', function() {
+    $('#myEventCalender').modal('hide');
+  });
+
+  $(document).on('change', '#event_event_type', function() {
+    var selected_val = $(this).val();
+    if(selected_val == "Other"){
+      $('#event_other_event_type').show();
+    }else{
+      $('#event_other_event_type').hide();
+    }
+  });
+
+  $(document).ready(function(){
+    var dateToday = new Date();
+    $('#event_day_of_the_event').datepicker({ dateFormat: 'mm-dd-yy', minDate: dateToday});
+  });
+
+- stylesheets "sites/buddybeers/sections/ious"
+- content_for :add_page_js_css do
+  = javascript_include_tag 'moment.min', 'fullcalendar'
+  = stylesheet_link_tag 'fullcalendar'
+  = stylesheet_link_tag  'send_friend'
+
+%section
+  .container.calendar-event
+    .row.ious-middle-row
+      .col-md-8.left.col-sm-8.col-xs-12
+        %h1 My Events
+
+        //Birthday Row
+
+        .row.text-right
+          .col-md-12.col-sm-12.col-xs-12.padd_none
+            = link_to "javascript:void(0)", :id => "new_event", :class=> "#{'add-event-button' if @upcoming_event.blank?}" do
+              %span.add-event-icon
+              %span Add Event
+            =# link_to 'Add Event', "javascript:void(0)", :id => 'new_event'
+        
+        .sort_paginate_ajax= render 'upcoming_events'
+        %div.set-calendar
+          #calendar
+      .col-md-4.right.col-sm-4.col-xs-12.my_tab_right
+        .row
+        = render "/default/ious/new_buddy_bucks_payment"
+        = render "/default/ious/script_for_button"
+    #myEventCalender.modal.fade{"aria-hidden" => "true", "aria-labelledby" => "myModalLabel", :role => "dialog", :tabindex => "-1"}
+      .modal-dialog.popup
+        .modal-content
+          .modal-header
+            %button.close{"data-dismiss" => "modal", :type => "button"}
+              %span{"aria-hidden" => "true"} &times;
+              %span.sr-only Close
+            %h4#myModalLabel.modal-title{:style => 'margin:0px;'} Add Event
+          .modal-body
+            = render "form"

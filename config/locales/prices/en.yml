@@ -1,0 +1,21 @@
+en:
+  prices:
+    new:
+      title: Enter Your Venue's Drink List
+      next_step: "Step 3: Confirm Your Details"
+      heading: "%{bar_name}'s Drink List"
+      description: Add the prices for the drinks you would like to sell on Buddy Drinks using the form below. When you are done click the button at the bottom of the page to go to the next step.
+    form:
+      new_brand: Enter the drink's brand name
+      add_beer_link: Add this Drink
+      legend: Add another Drink to %{bar} Drink List
+      new_brand_link: Link this drink to a brand
+      add_brand_link: Link this brand
+      new_beer_link: Add a new Drink
+      new_beer: Add a New Drink to Our Database
+      submit: Add this drink
+    inventory:
+      drink_list: Current Drink List
+      empty: There are currently no drinks in your menu. Please add some using the form above.
+    price:
+      special_price: Special price. Thanks!

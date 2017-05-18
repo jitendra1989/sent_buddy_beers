@@ -1,0 +1,53 @@
+de:
+  layouts: 
+    affiliate: 
+      payment_prefs_empty: 
+        description: "Damit wir Dir als Buddy Bar Deinen monatlichen Gewinn überweisen können, benötigen wir Deine Bank- oder Paypaldaten. <a href=\"%{link}\">Klicke hier, um uns diese wichtigen Informationen mitzuteilen.</a>"
+        heading: "Du hast noch keine Bezahlmethode festgelegt!"
+      view_bar_listing: "Betrachte Bar"
+    application: 
+      promo: "Spare 20% auf alle Biere wenn Du mit BuddyBucks bezahlst "
+    apps:
+      slogan: "Spendiere Drinks. <br /> Weltweit."
+    email_layout:
+      download_now: "Jetzt herunterladen!"
+      be_social: "Verfolge uns"
+    logged_in_as: "Du bist angemeldet als %{user}"
+    menu: 
+      about: "Über Uns"
+      admin: 
+        affiliates: Barbesitzer
+        dashboard: Admin
+        users: Benutzer
+      affiliate: 
+        dashboard: "Affiliate Backend"
+        my_bars: "Meine Bars"
+        my_beers: Spendieren
+      apps: "App herunterladen"
+      bars: BuddyBars
+      blog: Blog
+      bro: 
+        dashboard: "Bro Backend"
+      contact: "Kontaktiere uns"
+      edit_user: Profil
+      home: Startseite
+      logout: Abmelden
+      my_beers: Deckel
+      redeem_link: "Gutschein einlösen"
+      register_a_bar: "Neue Bar"
+      send_a_beer: Drink Spendieren
+      sync_your_email: "Sync Deine Email!"
+    meta: 
+      description: "Mit Buddy Drinks kannst Du ein ECHTES Bier an Deine Freunde online schicken! Hast Du nicht auch schon mal gesagt: \"Das naechste geht auf mich\"? Jetzt kannst Du zu Deinem Wort stehen und mit Buddy Drinks ein Bier versenden."
+    navigation: 
+      slogan: "Made in Berlin. <strong>Served Worldwide.</strong>"
+    user_account_navigation: 
+      buddybeers: "Melde Dich mit Deinen BuddyDrinks Daten an"
+      drinks: "Drinks"
+      drinks_received: "Empfangene Drinks"
+      drinks_sent: "Spendierte Drinks"
+      login: Anmelden
+      logout: Abmelden
+      profile: Profil
+      signup: Kostenlos registrieren
+      signup_short: Registrieren

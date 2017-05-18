@@ -1,0 +1,8 @@
+#new_user_complete
+  %h1= t(".heading")
+  
+  %h2= t(".description")
+  
+  %p.resend= raw t(".resend", :link => new_confirmation_path(resource_name))
+  
+  = clear_floats

@@ -1,0 +1,32 @@
+<div class="buddy_beers_bar_widget">
+  <div class="BBBWcontainer">
+    <div class="BBBWheader">
+      <a href="http://www.buddydrinks.com" target="_blank">
+        <%= t(".header_alt_text") %>
+      </a>
+    </div>
+    <div class="BBBWmainbar">
+      <p class="BBBWbutton"><%= link_to content_tag(:span, t(".main_button", :bar => @bar.name)), bar_url(@bar), :class => "BBBWmainbutton", :target => "_blank" %></p>
+      <div class="BBBWmenu">
+        <% for price in @bar.prices.find(:all, :limit => "3", :order => "random()") %>
+          <div class="BBBWbeer">
+            <p class="BBBWname">
+              <%= "#{price.name}" %>
+              <span class="BBBWvolume"><%= "#{price.try(:volume)}" %></span>
+            </p>
+            <p class="BBBWbuylink">
+              <%= link_to number_to_currency(number_with_delimiter(price.total), :unit => price.amount.currency.symbol), new_iou_url(:price_id => price.id), :rel => "nofollow" %>
+            </p>
+            <div class="BBBWclear"><!-- clearing floats --></div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+    <div class="BBBWbottombar">
+      <p class="BBBWfriendsmessage"><%= raw t(".friends_message") %></p>
+      <p class="BBBWfacebook"><%= link_to "Facebook", "http://www.facebook.com/sharer.php?u=#{CGI::escape(bar_url(@bar))}", :target => "_blank", :rel => "nofollow" %></p>
+      <p class="BBBWtwitter"><%= link_to "Twitter", "http://twitter.com/share?count=none&lang=#{I18n.locale.to_s}&url=#{CGI::escape(bar_url(@bar))}&via=buddybeers&text=#{t(".twitter_status", :bar => @bar.name, :url => CGI::escape(bar_url(@bar)))}", :target => "_blank", :rel => "nofollow" %></p>
+      <div class="BBBWclear"><!-- clearing floats --></div>
+    </div>
+  </div>
+</div>

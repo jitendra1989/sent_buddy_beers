@@ -1,0 +1,24 @@
+th:
+  api:
+    v1:
+      vouchers:
+        statuses:
+          redeemed: "ใช้แล้ว"
+        sent:
+          empty: "ผู้ใช้ยังไม่ได้ส่งคูปอง"
+        received:
+          empty: "ผู้ใช้ยังไม่ได้รับคูปอง"
+      users:
+        errors:
+          not_found: "ไม่มีชื่อผู้ใช้ในระบบ"
+          not_logged_in: "ไม่ได้เข้าสูระบบ"
+          no_locations: "ผู้ใช้ไม่มีสถานที่"
+      locations:
+        errors:
+          not_found: "ไม่พบบาร์ที่คุณค้นหา"
+      orders:
+        errors:
+          not_enough_currency:  "เครดิตของผู้ใช้มีไม่เพียงพอ"
+      prices:
+        errors:
+          empty: "ไม่มีราคาสินค้า"

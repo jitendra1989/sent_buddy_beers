@@ -1,0 +1,25 @@
+/ default > ious > bar_detail
+= stylesheet_link_tag  'send_friend'
+- if @bar
+  .row.search-result-row
+    %h2= @bar.name
+    .col-md-5.col-xs-12.col-sm-5.padd_none
+      %p.address= @bar.full_address_except_country
+      %p.address= @bar.bar_countries
+      = link_to @bar.url, @bar.url, :rel => "nofollow", :target => "_blank"
+    .col-md-3.col-xs-12.right-top-margin.padd_none.col-sm-3
+      %p
+        = t(".price_range")
+        %strong= price_range_for(@bar)
+      %p
+        = t(".drink_specials")
+        %strong= has_drink_specials?(@bar)
+    .col-md-4.col-xs-12.right-top-margin.col-sm-4.padd_none
+      / %button.btn.btn-warning.more-info-btn More info
+      = link_to content_tag(:span, t(".more_info")), bar_url(@bar), :class => 'btn btn-warning more-info-btn ious-more-btn'
+      / %button.btn.btn-warning.buy-drink-btn Buy A Buddy Drink
+      /- iou_bar_p = request.env["HTTP_REFERER"].include?("send_group_drinks") ? send_group_drinks_ious_path(:bar_id => @bar.id) : new_iou_url(:bar_id => @bar.id)
+      /= link_to 'Buy a Drink Here', iou_bar_p, :rel => "nofollow", :class => 'btn btn-warning buy-drink-btn'
+    .clearfix
+    .description.bar-description
+      = raw truncate(@bar.description, :length => 400, :omission => "&hellip; #{link_to("#{t(".read_more")}&raquo;".html_safe, bar_url(@bar), :target => "_blank")}")

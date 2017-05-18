@@ -1,0 +1,27 @@
+!!!XML
+!!!
+%html{html_attrs(I18n.locale.to_s), "xmlns:fb" => "http://www.facebook.com/2008/fbml"}
+  %head
+    %title= "Buddy Drinks Carlsberg"
+    = render 'layouts/meta'
+    = csrf_meta_tag
+    = render 'layouts/favicon'
+    = stylesheet_link_tag 'reset', :media => "all"
+    = stylesheet_link_tag 'sites/default/facebook'
+    :javascript
+      var bb = {};
+    = javascript_include_tag 'jquery', 'jquery-ui', 'rails', 'map', 'application'
+    = yield(:head)
+  
+  %body
+    = render 'shared/google_analytics'
+    = render 'shared/facebook_sdk'
+    #container
+      #header
+        = link_to "#{t(".my_beers")} #{"(#{current_user.received_facebook_requests.closable.size})" if current_user and (current_user.received_facebook_requests.closable.size > 0)}", current_user ? facebook_orders_url : @oauth.url_for_oauth_code(:permissions => "email")
+        Signed in as: 
+        = current_user
+        #logo= link_to image_tag("buddy-beers-logo.png", :alt => "Buddy Drinks Logo"), facebook_root_url
+        = link_to "Venues", "#"
+        
+      = render 'layouts/content'

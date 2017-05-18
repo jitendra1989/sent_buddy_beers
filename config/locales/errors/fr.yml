@@ -1,0 +1,7 @@
+fr:
+  errors:
+    messages:
+      not_found: "non trouvé"
+      already_confirmed: "était déjà confirmé"
+      not_locked: "n'était pas verrouillé"
+      already_exists: "existe déjà"

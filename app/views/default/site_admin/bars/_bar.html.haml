@@ -1,0 +1,75 @@
+.bar{ :class => cycle("odd", "even") }
+  .heading
+    %h2= link_to bar.name, site_admin_bar_url(bar)
+    = link_to t("affiliate.bars.bar.edit"), edit_site_admin_bar_path(bar), :class => "edit_link"
+    = clear_floats
+  .info
+    .map
+      %h3= "#{t("affiliate.bars.bar.map.heading")}:"
+      - if bar.geocoded?
+        .map{ :style => "width:350px; height:250px", :data => { :"map-markers" => bars_to_map_markers(bar) } }
+    .descriptive
+      %h3= "#{t("affiliate.bars.bar.information.heading")}:"
+      %p
+        %span.label= "#{t("forms.labels.address")}:"
+        %span= bar.full_address
+      %p
+        %span.label= "#{t("forms.labels.website")}:"
+        %span= link_to bar.url, bar.url
+      %p
+        %span.label= "#{t("forms.labels.contact_name")}:"
+        %span= bar.contact_name
+      %p
+        %span.label= "#{t("forms.labels.phone_number")}:"
+        %span= bar.phone_number
+      %p
+        %span.label= "#{t("forms.labels.email")}:"
+        %span= bar.contact_email
+      %p
+        %span.label= "#{t("forms.labels.currency")}:"
+        %span= bar.default_currency
+      %p.description
+        %span= truncate(bar.description, :length => 200, :omission => "…")
+
+    .vouchers
+      %h3
+        = "#{t("affiliate.bars.bar.vouchers.heading")}:"
+        = link_to pluralize((bar.ious.outstanding.count + bar.ious.expired_since(1.week.ago.beginning_of_day).count), t("affiliate.bars.bar.vouchers.outstanding_voucher")), site_admin_bar_path(bar)
+      %p.redeem_link= link_to t("affiliate.bars.bar.vouchers.redeem_link"), site_admin_bar_path(bar)
+
+    .bar_stats
+      %h3= "#{t("affiliate.bars.bar.stats.heading")}:"
+      %p
+        %span.label= "#{t("affiliate.bars.bar.stats.beers_sold")}:"
+        = bar.drinks_sold
+      %p
+        %span.label= "#{t('affiliate.bars.bar.stats.beers_redeemed')}:"
+        = bar.drinks_redeemed
+      %p
+        %span.label= "#{t('affiliate.bars.bar.stats.monthly_profit')}:"
+        = number_to_currency(bar.profit.to_f, :unit => bar.profit.currency.symbol)
+      %p
+        %span.label= "#{t('affiliate.bars.bar.stats.monthly_turnover')}:"
+        = bar.turnover
+      %p
+        %span.label= "#{t('affiliate.bars.bar.stats.total_profit')}:"
+        = number_to_currency(bar.profit(bar.created_at, 1.second.from_now).to_f, :unit => bar.profit(bar.created_at, 1.second.from_now).currency.symbol)
+      - if bar.bro
+        .bro
+          %h3
+            = "#{t('affiliate.bars.bar.stats.bro.heading')}:"
+            = hint_box("beer_bro", t("affiliate.bars.bar.stats.bro.hint.title"), t("affiliate.bars.bar.stats.bro.hint.description"))
+          %p.pic
+            = image_tag bar.bro.avatar(:thumb), :width => 75, :height => 75
+          %p
+            %span.label= "#{t("forms.labels.name")}:"
+            = bar.bro.name
+          %p
+            %span.label= "#{t("forms.labels.email")}:"
+            = mail_to bar.bro.email
+          %p
+            %span.label= "#{t("forms.labels.phone")}:"
+            = bar.bro.phone_number
+          = clear_floats
+
+  = clear_floats

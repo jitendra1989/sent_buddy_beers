@@ -1,0 +1,41 @@
+admin_email:
+  email: admin@buddydrinks.com
+  user_id: 1
+  primary: true
+  pending: false
+
+admin_secondary_email:
+  email: help@buddydrinks.com
+  user_id: 1
+  primary: false
+  pending: false
+
+customer_email:
+  email: customer@buddydrinks.com
+  user_id: 2
+  primary: true
+  pending: false
+  
+affiliate_email:
+  email: barman@buddydrinks.com
+  user_id: 3
+  primary: true
+  pending: false
+
+facebook_email:
+  email: mark@example.com
+  user_id: 4
+  primary: true
+  pending: false
+
+twitter_email:
+  email: twitter@buddydrinks.com
+  user_id: 5
+  primary: true
+  pending: false
+  
+unactivated_customer_email:
+  email: customer2@buddydrinks.com
+  user_id: 6
+  primary: true
+  pending: true

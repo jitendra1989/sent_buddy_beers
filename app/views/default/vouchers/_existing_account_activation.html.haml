@@ -1,0 +1,11 @@
+/ default > vouchers > existing_account_activation
+
+= form_for :user, :url => user_session_with_email_url(:return_to => request.fullpath), :html => { :method => :post } do |f|
+  %fieldset
+    %legend= t(".heading")
+    %p= t(".description", :email => group_drink.recipient_email)
+    %ol
+      = hidden_field :email, :email, :value => group_drink.recipient_email
+      = render :partial => "sessions/form", :locals => {:f => f}
+    %ul
+      %li= f.submit t("forms.buttons.login")

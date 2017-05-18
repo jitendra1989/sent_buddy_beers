@@ -1,0 +1,33 @@
+!!!XML
+!!!
+%html{ :xmlns => "http://www.w3.org/1999/xhtml", 'xml:lang' => I18n.locale.to_s, :lang => I18n.locale.to_s } 
+  %head
+    %title= "#{@title.blank? ? controller.action_name : @title} - Buddy Drinks"
+    = render 'layouts/meta'    
+    %meta{ :property => "og:url", :content => @canonical_link.present? ? @canonical_link : "#{(request.ssl? ? "https" : "http")}://www.buddybeers.com#{["/", I18n.locale.to_s].join() unless request.fullpath.start_with?(["/", I18n.locale.to_s].join())}#{request.fullpath.split("?").first.chomp("/")}" }
+    %meta{ :property => "og:title", :content => @title.blank? ? controller.action_name : @title }
+    %meta{ :property => "og:image", :content => "#{(request.ssl? ? "https" : "http")}://www.buddybeers.com/images/sites/buddybeers/facebook/app_icon.png" }
+    %meta{ :property => "og:locale", :content => facebook_locale(I18n.locale.to_s) }
+    = csrf_meta_tag
+    = render 'layouts/favicon'
+    = stylesheet_link_tag 'reset', :media => "all"
+    = stylesheet_link_tag 'sites/buddybeers/sections/facebook'
+    :javascript
+      var bb = {};
+    = javascript_include_tag 'jquery', 'jquery-ui', 'rails', 'map', 'application'
+    :plain
+      <!--[if lte IE 8]>
+        <style type="text/css" media="screen">
+          .pie, #errorExplanation, #header { 
+            position: relative;
+            behavior: url(/PIE.htc); 
+          }
+        </style>
+      <![endif]-->
+    = yield(:head)
+  
+  %body
+    = render 'shared/google_analytics'
+    = render 'shared/facebook_sdk'
+    #facebook
+      = yield

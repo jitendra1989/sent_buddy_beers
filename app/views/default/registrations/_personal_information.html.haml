@@ -1,0 +1,82 @@
+- content_for :head do
+  :javascript
+    $(document).ready(function(){
+      //$("#user_phone_number").attr('disabled','disabled');
+      var dateToday = new Date();
+      $('#user_birthday_day').datepicker({ dateFormat: 'yy-mm-dd', maxDate: dateToday, changeYear: true, yearRange:'-90:+0'});
+    });
+    $(function() {
+      var counter = #{@user.emails.size};
+      $(".add-email").click(function(){
+        counter++;
+        var t = '<div class="row"><div class="col-md-2 padd-none col-xs-4 col-sm-3"></div><div class="col-md-7 padd-none col-xs-8 col-sm-9"><div class="col-md-12 col-sm-12 padd_left_none col-xs-12 input_align" id="removable_fields"><input size="50" name="user[emails_attributes][REPLACE][email]" id="user_emails_attributes_REPLACE_email" class="form-control"><a href="#" class="remove_input">#{t("global.delete")}</a></div></div></div>';
+        $("#email_list").append(t.replace(/REPLACE/g, counter));
+        return false;
+      });
+      
+      $(document).on('click', '.remove_input',function() {
+        $(this).parents("#removable_fields").remove();
+        return false;
+      });
+
+      $(document).on('click', '#edit_phone_number',function() {
+        $("input").removeAttr('disabled');
+        $('#edit_phone_number').hide();
+      });
+    });
+.row
+  .col-md-3.col-sm-3.col-xs-12.edit_account.pull-right.padd-none.account-top-section
+    .row
+      .form-group.browse-btn
+        / %label.add-photo Add a Photo
+        %label.myLabel
+          = f.file_field :avatar, :class => "file"
+          Browse
+  .col-md-9.col-sm-8.col-xs-12.edit_account.padd-none
+    .row
+      .form-group.row
+        .col-md-3.col-sm-4.col-xs-4.padd-none
+          %span= t("forms.labels.name")
+        .col-md-7.col-sm-8.col-xs-8.padd_right_none
+          = f.text_field :name, :placeholder => t("forms.labels.name"), :class => 'form-control', :type => "text"
+      .form-group.row
+        .col-md-3.col-sm-4.col-xs-4.padd-none
+          %span= t("forms.labels.username")
+        .col-md-7.col-sm-8.col-xs-8.padd_right_none
+          = f.text_field :login, :placeholder => t("forms.labels.username"), :class => 'form-control', :type => "text"
+          
+      .form-group.row
+        .col-md-3.col-sm-4.col-xs-4.padd-none
+          %span= t("forms.labels.password")
+        .col-md-7.col-sm-8.col-xs-8.padd_right_none
+          / = f.text_field :password, :placeholder => t("forms.labels.password_star"), :class => 'form-control', :type => "text"
+          = f.text_field :password, :placeholder => t("forms.labels.password_star"), :class => 'form-control', :type => "password", :style=>"height: 42px;" 
+      .form-group.row
+        .col-md-3.col-sm-4.col-xs-4.padd-none
+          %span= t("forms.labels.birthday")
+        .col-md-7.col-sm-8.col-xs-8.padd_right_none
+          = f.text_field :birthday_day, :value => @user.birthday_day.present? ? @user.birthday_day.strftime("%F") : '' ,:placeholder => t("forms.labels.your_birthday"), :class => 'form-control', :type => "text", :autocomplete=>"off"
+      .form-group.row
+        .col-md-3.col-sm-4.col-xs-4.padd-none
+          %span Mobile Phone #
+        .col-md-7.col-sm-8.col-xs-8.padd_right_none
+          = f.text_field :phone_number, :placeholder => "Mobile Phone Number", :class => 'form-control', :type => "text"
+  
+.row
+  .col-md-12.col-sm-12.col-xs-12.edit_account.padd-none
+    .form-group.email-form-group
+      #email_list
+        = f.fields_for :emails do |email_form|
+          = render :partial => "email", :locals => { :f => email_form }
+    .row
+      .col-md-2.col-sm-3.padd-none.col-xs-4
+      .col-md-5.col-sm-5.col-xs-8.padd-right-none.indent-email
+        .form-group
+          %a.add-email{:href => "#"} + Add another Email
+          %br/
+    .row
+      .col-md-2.col-sm-3.col-xs-4.padd-none
+      .col-md-5.col-sm-.col-xs-8.padd-right-none.indent-email.account-update-btn
+        / %hr.bottom-hr/
+        = f.submit t("forms.buttons.update"), :class => 'update-btn btn', :value => "Update", :type => "submit"
+        .clearfix

@@ -1,0 +1,101 @@
+fr:
+  forms:
+    buttons:
+      add: Ajouter
+      register_with_twitter: "S'enregistrer avec Twitter"
+      go: Go!
+      search: "Rechercher"
+      cheers: Cheers!
+      login: Connexion
+      update: "Mise à jour"
+    drinks:
+      remove: Supprimer cette boisson
+      additional_options: "Informations supplémentaires sur la boisson"
+    hint_box:
+      about: "À propos"
+    links:
+      cancel: Annuler
+    select:
+      choose_objects:
+        a_brand: Une marque
+        a_city: Une ville
+        a_country: Un pays
+        a_bar: Un bar
+      none: Aucun
+      default_prompt: Veuillez choisir
+      prompt_choose_object: "Veuillez choisir %{type}"
+      no_countries: Pas de pays disponible
+      no_cities: Pas de ville disponible
+      morning: Matin (9h - 11h)
+      noon: Midi (11h - 13h)
+      afternoon: Après-midi (13h - 17h)
+      evening: Soir (17h - 21h)
+      night: Nuit (21h - 00h)
+    translation: 
+      translation: "%{other_locale} Traduction"
+      none: "Aucune"
+    labels:
+      promotion_group: Nom du groupe
+      city: Ville
+      twitter_password: Mot de passe Twitter
+      address: Adresse
+      name: Nom
+      photo: Photo
+      bank_account_name: "Nom du détenteur du compte"
+      brand: Marque
+      price: Prix Normal
+      current_photo: Photo
+      remember_me: Se souvenir de moi
+      contact_name: Nom complet
+      discounted_price: "Prix réduit"
+      twitter_username: "Nom d'utilisateur Twitter"
+      within: dans les
+      primary_email: Email principal
+      bank_account_code: Code bancaire (BLZ)
+      price_in_cents: Prix (en centimes)
+      title: Titre
+      country: Pays
+      your_name: Votre nom
+      confirm_password: Confirmez votre mot de passe
+      discounted: "Je veux offrir cette boisson à un prix réduit pour les utilisateurs de Buddy Drinks"
+      bar_token: Coupon de bar
+      new_beer: "Nouvelle bière"
+      username: "Nom d'utilisateur"
+      bar_name: Nom du bar
+      choose_password: Choisissez votre mot de passe
+      bank_name: Nom de la banque
+      beer: "Bière"
+      phone_number: "Numéro de téléphone"
+      volume: Taille (Volume)
+      remove: Supprimer
+      bank_address: Adresse bancaire
+      description_bio: Description
+      twitter_handle: Twitter
+      twitter_email: Twitter Email
+      website: Site Internet
+      bank_account_iban: "Numéro IBAN"
+      phone: "Numéro de téléphone"
+      your_email: Adresse Email
+      emails: Email
+      currency: Monnaie
+      opening_hours: "Heures d'ouverture"
+      near: Proche de 
+      description: Description
+      bar: Bar
+      default_currency: Payez moi en
+      contact_email: "Email à contacter"
+      user: Utilisateur
+      password: Mot de passe
+      bank_account_bic_swift: "Numéro BIC/SWIFT"
+      paypal: "Email utilisé pour Paypal"
+      voucher_limit: Limite de boissons sur coupon (par personne/par jour)
+      new_brand: Nouvelle marque 
+      lead: "Qui vous a parlé de nous ?"
+      choose_username: "Choisissez un nom d'utilisateur"
+      email: Adresse Email
+      bank_account_number: "N° de compte"
+      username_or_email: "Nom d'utilisateur ou email"
+      new_password: Nouveau mot de passe
+      confirm_new_password: "Confirmer le nouveau mot de passe"
+      drink_type: Type de boisson
+      remove_this_drink: Supprimer cette boisson

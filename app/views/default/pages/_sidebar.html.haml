@@ -1,0 +1,6 @@
+- if @content_class == "two_column"
+  #sidebar
+    %h3= @page.root == @page ? @page.title : link_to(@page.parent.title, page_url(@page.parent.slug))
+    %ol
+      - @pages = @page.root == @page ? @page.children.live.for_site(current_site) : @page.parent.children.live.for_site(current_site)
+      = render @pages

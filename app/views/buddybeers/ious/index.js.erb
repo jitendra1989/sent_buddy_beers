@@ -1,0 +1,5 @@
+<%if params["type"] == "received"%>
+  $('.sort_paginate_ajax').html("<%= escape_javascript(render("received_ious"))%>")
+<%else%>
+  $('.sort_sent_paginate_ajax').html("<%= escape_javascript(render("sent_ious"))%>")
+<%end%>

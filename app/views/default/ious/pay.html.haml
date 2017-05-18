@@ -1,0 +1,12 @@
+/ default > ious > pay    
+#pay
+  %h1= t(".heading")
+  #price_breakdown
+    = render "order"
+
+  #payment
+    %h2= "#{t(".payment.heading")}:"
+    #payment_methods
+      = render "buddy_bucks_payment"
+      = render "paypal_payment"
+  = clear_floats

@@ -1,0 +1,24 @@
+fr:
+  api:
+    v1:
+      vouchers:
+        statuses:
+          redeemed: "redeemed"
+        sent:
+          empty: "L'utilisateur n'a envoyé aucun coupon"
+        received:
+          empty: "L'utilisateur n'a reçu aucun coupon"  
+      users:
+        errors:
+          not_found: "Utilisateur non trouvé"
+          not_logged_in: "Pas connecté"
+          no_locations: "L'utilisateur n'a aucun emplacement"
+      locations:
+        errors:
+          not_found: "Aucun bar ne correspond à votre recherche"
+      orders:
+        errors:
+          not_enough_currency: "L'utilisateur n'a pas assez d'argent"
+      prices:
+        errors:
+          empty: "Cet endroit n'a pas de liste de prix"

@@ -1,0 +1,38 @@
+de:
+  shared:
+    drink_feed: 
+      heading: "Es gibt 1000 Gründe..."
+    drink_in_feed: 
+      default_friend: "ein Freund"
+      description: "<strong>%{sender}</strong> spendiert <strong>%{recipient}</strong> ein %{beer} im <strong>%{bar}</strong> in %{city}"
+    network_connect: 
+      heading: "Schnell und einfach über Facebook anmelden:"
+    payment: 
+      admin_notes: "Admin Notes"
+      amount: Betrag
+      buddy_beers_address: "Buddy Drinks <br />bei BuddyLabs UG<br />Stargarderstr. 80<br />10437 Berlin<br />Germany"
+      date: Datum
+      expired: abgelaufen
+      for: für
+      invoice: Auszahlung
+      invoice_number: Auszahlungsnummer
+      item_description: "BuddyDrinks Promotion: %{from} &ndash; %{to}"
+      line_item: "%{amount} Gutschein für %{bar} auf %{date} %{status}"
+      notes: Anhang
+      paid_on: "An %{date} bezahlt"
+      redeemed: eingelöst
+      status: Status
+      unpaid: Unbezahlt
+    payment_table: 
+      paid: Ja
+      table: 
+        headings: 
+          amount: Betrag
+          invoice: Auszahlungsnummer
+          name: Name
+          options: Optionen
+          paid: Bezahlt
+          timeframe: Zeitrahmen
+        options: 
+          details: "Rechnung anschauen"
+      unpaid: Nein

@@ -1,0 +1,17 @@
+/ default > prices > new
+
+#new
+  %h1= t(".heading", :bar_name => @bar.name)
+
+  %p.description= t(".description")
+
+  = form_for [@bar, @price] do |f|
+    = error_messages_for :price
+    = render :partial => "form", :locals => {:f => f}
+
+  = render "inventory"
+
+  #next_button
+    = raw link_to_unless(@menu.empty?, "#{t(".next_step")} →", confirm_bar_url(@bar)){ "<span>#{t(".next_step")} →</span>" }
+
+  = clear_floats

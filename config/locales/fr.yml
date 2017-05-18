@@ -1,0 +1,136 @@
+--- 
+fr: 
+  
+  widgets:
+    index:
+      header_alt_text: "Buddy Drinks - Made in Germany. Served Worldwide."
+      main_button: "Achetez une bière à %{bar}"
+      friends_message: "Ou demandez à vos amis de <em>vous</em> en acheter une"
+      twitter_status: "Je suis à %{bar}. Pourquoi ne m'achèteriez-vous pas une bière en ligne ? %{url}"
+  
+  user_activations: 
+    new:
+      heading: Dites bonjour au videur
+      form:
+        button: Activer
+        legend: Choisissez votre mot de passe, et vous y voilà!
+    no_user: "Oh non! Il y a eu une erreur lors de la confirmation de votre compte: %{errors}"
+    activate_account:
+      success: Cool! Vous avez activé votre compte!
+    active_user: Ce compte est déjà activé.
+    success: Cool! Vous avez activé votre compte. Soyez un chic type et envoyez quelques bières!
+    error: Mince! Quelque chose n'a pas fonctionné. Allez boire un verre pendant que nous essayons de réparer notre erreur. 
+  
+  confirmations:
+    new: 
+      title: Envoyer de nouveau les instructions de confirmation. 
+      heading: Envoyer de nouveau les instructions de confirmation. 
+      description: Entrez votre email ci-dessous et nous vous enverrons les instructions pour confirmer votre compte de nouveau. 
+      submit: Envoyer
+  
+  friendships:
+    index:
+      heading: Vos amis
+      
+  time:
+    am: am
+    formats:
+      default: "%a, %d %b %Y %H:%M:%S %z"
+      short: "%d %b %H:%M"
+      long: "%B %d, %Y %H:%M"
+    pm: pm
+  
+  admin:
+    payments:
+      tabs:
+        show: Montrer la facture
+    ious:
+      new:
+        heading: Envoyer un coupon à un nouvel utilisateur ou un utilisateur existant
+        form:
+          new: Nouvel utilisateur
+          existing: Utilisateur existant
+          user_type: Type d'utilisateur
+      create:
+        success: Le coupon a bien été envoyé!
+        error: Il y a eu une erreur avec votre coupon!
+  
+  support:
+    array:
+      words_connector: ", "
+      last_word_connector: ", and "
+      two_words_connector: " and "
+    select:
+      prompt: Please select
+  
+  i18n:
+    transliterate:
+      rule:
+        º: ue
+        ö: oe
+        ä: ae
+        ú: Ue
+        ñ: Oe
+        Ñ: Ae
+        ü: ss  
+  
+  credits:
+    index:
+      title: "Vos BuddyBucks - Rechargez vos BuddyBucks"
+      heading: "Vos BuddyBucks"
+      accept: "Nous acceptons:"
+      and_more: "... et bien plus!"
+      payment_logos: "Visa, Mastercard, American Express, Discover, Paypal, Western Union"
+    balance:
+      balance: "Votre solde de BuddyBucks balance est:"
+    top_up:
+      top_up: "Rechargez votre compte BuddyBucks avec:"
+    return_link:
+      back: "Retour à l'écran de paiement"
+    success:
+      success: "<strong>Votre paiement a fonctionné!</strong> Dès que notre prestataire de paiement nous donnera son aval, nous mettrons à jour votre solde. Cela peut être instantané: si votre solde n'a pas changé, attendez quelques secondes et rechargez la page."  
+  
+  users:
+    get_user:
+      error: "On dirait que cette personne n'existe pas. Vous n'auriez pas bu une bière de trop ?"
+    email:
+      add: + Ajouter un autre e-mail
+      pending: Vérification en attente
+    button:
+      button_text: "Acheter une %{drink} à %{name}" 
+      button_link: "Bouton acheter une %{drink} sur BuddyDrinks.com"
+      me: "moi"
+      beer: "bière"
+  
+  sessions:
+    new:
+      title: Se connecter à Buddy Drinks
+      heading: Déjà un de nos buddies?
+      form:
+        button: Connexion 
+        legend: "ou, connectez vous avec votre compte Buddy Drinks" 
+        forgot_password: Mot de passe oublié ?
+      facebook_heading: Connectez-vous ici en utilisant votre compte <strong>Facebook</strong> 
+      connect_with_facebook: Se connecter avec Facebook 
+    destroy:
+      success: Déconnexion réussie!
+    create:
+      success: Connexion réussie!
+  
+  twitter:
+    new:
+      already_registered:
+        heading: Si vous avez déjà enregistré votre compte Twitter avec Buddy Drinks
+        link: Cliquez %{link} ci-dessus et connectez-vous en utilisant votre nom d'utilisateur Twitter et votre mot de passe. 
+        wrong_place: Vous êtes au mauvais endroit!
+      title: Buddy Drinks | Connectez vous avec Twitter
+      heading: Connectez vous avec Twitter
+    create_user:
+      success: Compte enregistré! Vous pouvez maintenant vous connecter avec vos identifiants Twitter.
+  
+  sms:
+    message: "%{name} vous a acheté des Buddy Drinks! Téléchargez ou ouvrez notre application pour obtenir vos coupons:"
+    error_message: "Quelqu'un vous a envoyé un coupon Buddy Drinks mais nous avons du mal à le localiser. Veuillez contacter info@buddydrinks.com afin que nous puissions vous le délivrer."
+    reminder_singular: "Vous avez un coupon Buddy Drinks valable pour %{item} de la part de %{name} qui expire bientôt !"
+    reminder_plural: "Vous avez un coupon Buddy Drinks valable pour %{count} %{item} de la part de %{name} qui expire bientôt !"
+

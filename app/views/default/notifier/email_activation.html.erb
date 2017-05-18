@@ -1,0 +1,6 @@
+<h1 class="h1"><%= t(".greeting", :name => @email.user.name) %></h1>
+
+<p><strong><%= t(".you_added", :email => @email.to_s) %></strong></p>
+<p><%= t(".verify_email") %></p>
+
+<p style="background: #e98e04; padding: 5px 10px; font-size: 16px; border-radius: 5px; float: left;"><strong><%= link_to t(".verify_link"), email_activation_url(@email.token), :style => "color: #000000; font-weight: bold;" %></strong></p>

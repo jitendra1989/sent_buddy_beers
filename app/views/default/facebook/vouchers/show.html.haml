@@ -1,0 +1,67 @@
+/ default > facebook > vouchers > show
+
+- content_for :facebook do
+  :plain
+    //FB.Canvas.setSize();
+    FB.Canvas.setAutoResize();
+
+- content_for :head do
+  :plain
+    <!--[if lte IE 8]>
+      <style type="text/css" media="screen">
+        #content .container #voucher .drink .avatar img {
+          -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(grayscale=1)";
+          filter: progid:DXImageTransform.Microsoft.BasicImage(grayscale=1);
+        }
+      </style>
+    <![endif]--> 
+    
+#voucher
+
+  #content_header
+    #instructions
+      = link_to image_tag("sites/carlsberg/facebook/apps-small-heading.png", :alt => "Get the apps"), app_download_url, :class => "apps-small-heading", :target => "_blank"
+      %h3= t("ious.show.instructions.heading")
+      %p.description= t("ious.show.instructions.instructions", :iphone_link => app_download_url, :android_link => app_download_url, :bar => link_to(@iou.bar.name, bar_url(@iou.bar))).html_safe
+      %p.redeem.print= link_to content_tag(:span, t("ious.form.mobile_only.app_link")),  app_download_url, :target => "_blank"
+      = clear_floats
+      
+      /%h2.pie= @voucher.coupon
+      /%p.description= t(".coupon.description")
+    
+    %h1= t("ious.show.heading", :value => number_to_currency(@voucher.amount.to_f, :unit => @voucher.amount.currency.symbol), :beer => beverage_owed(@iou))
+  
+  %h3.status= status_for(@voucher)
+  
+  .drink
+    .avatar.sender= image_tag(order_participant_photo(@iou, "sender", "sites/carlsberg/avatars/thumb/missing.png"), :height => "53px", :width => "53px")
+    .avatar.recipient= image_tag(order_participant_photo(@iou, "recipient", "sites/carlsberg/avatars/thumb/missing.png"), :alt => @iou.recipient_name, :height => "53px", :width => "53px")
+    .description
+      %p= raw t("ious.index.description_received", :sender => (@iou.sender_name.blank? ? t("ious.index.sender_generic") : @iou.sender_name), :recipient => t("ious.index.you"), :drink => ["1", @iou.price_name].join(" "), :bar => link_to(@iou.bar_name, bar_url(@iou.bar)), :city => @iou.bar.city.name)
+    - if @iou.memo.present?
+      .memo
+        .bubble
+          %p= @iou.memo
+
+  .bar
+    - if @iou.bar.logo.file?
+      .bar_logo= image_tag @iou.bar.logo(:thumb)
+      
+    %h2
+      = @iou.bar.name
+      %small= @iou.bar.address
+    .map
+      - if @iou.bar && @iou.bar.geocoded?
+        #map{ :style => "width:518px; height:250px", :data => { :"map-markers" => bars_to_map_markers(@iou.bar) } }
+    .description
+      = truncate(@iou.bar.description, :length => 400)
+      %p.info= link_to content_tag(:span, t("vouchers.show.more_info")), facebook_location_url(@iou.bar)
+    
+  %p.disclaimer
+    = t("ious.show.disclaimer.title")
+    = t("ious.show.disclaimer.no_cash")
+        
+= clear_floats
+
+:javascript
+  var map = new bb.maps.Map("#map");

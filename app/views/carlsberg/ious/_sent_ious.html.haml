@@ -1,0 +1,21 @@
+/ carlsberg > ious > sent_ious
+
+- if @sent_ious.present?
+  %ul#sent
+    - for iou in @sent_ious
+     
+      %li
+        .drink
+          .avatar.pie
+            = image_tag iou.sender.avatar.file? ? iou.sender.avatar(:square) : "sites/carlsberg/avatars/square/missing.png", :class => "pie"
+          .description
+            %p= raw t("ious.index.description", :sender => t("ious.index.you"), :recipient => (iou.recipient_name.blank? ? t("ious.index.sender_generic") : iou.recipient_name), :drink => [iou.quantity, iou.price_name].join(" "), :bar => link_to(iou.bar_name, bar_url(iou.bar)), :city => iou.bar.city.name)
+          .memo
+            - if iou.memo.present?
+              .bubble
+                %p= "&quot;".html_safe + iou.memo + "&quot;".html_safe
+            %p.date= iou.created_at.to_s(:twitter_format_w_year)
+          = clear_floats
+
+- else
+  %p#sent.empty= t("ious.index.sent_empty")

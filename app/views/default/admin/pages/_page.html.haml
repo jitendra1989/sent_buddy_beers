@@ -1,0 +1,12 @@
+%li{:class => "page " + cycle("odd", "even") }
+  %h2= page.title 
+  = render "admin/pages/options", :page => page
+  %p.body= truncate(page.body, :length => 1000)
+  .edit_options
+    = link_to 'Show', admin_page_url(page.slug || page.id)
+    = link_to 'Edit', edit_admin_page_path(page) 
+    = link_to 'Destroy', admin_page_path(page), :confirm => 'Are you sure?', :method => :delete 
+  - if page.children.present?
+    %h3 Sub-Pages
+    %ul
+      = render page.children

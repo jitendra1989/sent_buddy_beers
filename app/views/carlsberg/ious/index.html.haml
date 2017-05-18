@@ -1,0 +1,36 @@
+/ carlsberg > ious > index
+
+- @title = t(".title")
+- stylesheets "sites/carlsberg/sections/ious"
+- content_for :head do
+  :javascript
+    $(document).ready(function(){
+      #{ params[:sent] ? "$('#received').hide(); $('.sent_link a').addClass('active');" : "$('#sent').hide(); $('.received_link a').addClass('active');" }
+      $('li.received_link a, li.sent_link a').click(function(e){
+        $('#received, #sent').toggle();
+        $('.received_link a, .sent_link a').toggleClass('active');
+        e.preventDefault();
+      });
+    });
+  :plain
+    <!--[if lte IE 8]>
+      <style type="text/css" media="screen">
+        #ious #sent .drink .avatar, #ious #received .drink .avatar {
+          -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(grayscale=1)";
+          filter: progid:DXImageTransform.Microsoft.BasicImage(grayscale=1);
+        }
+      </style>
+    <![endif]-->
+    
+
+#ious
+  #content_header
+    %h1= t(".heading")
+    %ul.tabs
+      %li.received_link= link_to t(".received_beers", :count => @received_ious.sum(:quantity)), "#"
+      %li.sent_link= link_to t(".sent_beers", :count => @sent_ious.sum(:quantity)), "#"
+    
+    = clear_floats
+    
+  = render "received_ious"
+  = render "sent_ious"

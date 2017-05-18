@@ -1,0 +1,34 @@
+nl:
+  errors: 
+    format: "%{attribute} %{message}"
+    messages: 
+      accepted: "moet geaccepteerd worden"
+      already_confirmed: "is al geaccepteerd"
+      blank: "mag niet leeg zijn"
+      confirmation: "komt niet overeen"
+      empty: "mag niet leeg zijn"
+      equal_to: "moet gelijk zijn aan %{count}"
+      even: "moet gelijk aan elkaar zijn"
+      exclusion: "is gereserveerd"
+      greater_than: "moet groter zijn dan %{count}"
+      greater_than_or_equal_to: "moet groter of gelijk zijn aan %{count}"
+      inclusion: "staat niet op de lijst"
+      invalid: "is ongeldig"
+      less_than: "moet minder zijn dan %{count}"
+      less_than_or_equal_to: "moet minder of gelijk zijn aan %{count}"
+      not_a_number: "is geen getal"
+      not_an_integer: "moet een getal zijn"
+      not_found: "niet gevonden"
+      not_locked: "niet afgesloten"
+      not_saved: 
+        one: "Er is 1 fout waardoor %{resource} niet kon worden opgeslagen:"
+        other: "Er zijn %{count} fouten waardoor %{resource} niet kon worden opgeslagen:"
+      odd: "moet een even getal zijn"
+      too_long: "is te lang (maximaal aantal tekens is %{count})"
+      too_short: "is te kort (minimaal aantal tekens is %{count})"
+      wrong_length: "heeft niet de juiste lengte (moet %{count} tekens bevatten)"
+    template: 
+      body: "Er gaat iets mis met de volgende velden:"
+      header: 
+        one: "Er is 1 fout waardoor %{model} niet kon worden opgeslagen:"
+        other: "Er zijn %{count} fouten waardoor %{model} niet kon worden opgeslagen:"

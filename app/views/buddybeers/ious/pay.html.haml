@@ -1,0 +1,22 @@
+/ buddybeers > ious > pay
+
+- @title = t(".title")
+- stylesheets "sites/buddybeers/sections/ious"
+- unless I18n.locale.to_s == "th"
+  - content_for :head do
+    :javascript
+      Cufon.replace('h1');
+
+#pay.container
+  .pay-main
+    %h1= t(".heading")
+    #price_breakdown
+      = render "order"
+
+    #payment.row
+      #payment_methods
+        %h2= "#{t(".payment.heading")}:"
+        = render "buddy_bucks_payment"
+        = render "paypal_payment"
+
+    = clear_floats

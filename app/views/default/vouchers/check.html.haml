@@ -1,0 +1,13 @@
+/ default > vouchers > check
+
+- stylesheets 'sites/default/sections/popup'
+
+#content.voucher_check
+  %h1= t(".heading")
+  = render(:partial => "layouts/flash", :locals => { :flash => @status }) if @status
+  .pad
+    = form_tag redeem_voucher_url, :method => :post do
+      %input.pie{ :id => "code", :type => "text", :size => "30", :maxlength => "8", :name => "code" }
+      %br
+      %button.pie{ :type => "submit" }
+        = t(".form.button")

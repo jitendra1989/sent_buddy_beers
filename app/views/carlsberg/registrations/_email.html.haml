@@ -1,0 +1,15 @@
+
+= f.text_field :email, :class => "email"
+
+- unless f.object.new_record?
+
+  %p.options
+    = f.label :primary, "#{t("forms.labels.primary_email")}"
+    = f.check_box :primary, :class => "checkbox"
+
+    / For existing records we add a checkbox to be able to delete records.
+    = f.label :_destroy, "#{t("forms.labels.remove")}"
+    = f.check_box :_destroy, :class => "checkbox"
+
+    - if f.object.pending?
+      %span.pending= t(".pending")

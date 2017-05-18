@@ -1,0 +1,35 @@
+/ default > ious > order
+
+%h2= "#{t(".heading")}:"
+.table-responsive
+  %table.table-bordered
+    %thead
+      %tr
+        %th.order= t(".price")
+        %th.qty= t(".quantity")
+        %th.price= t(".total")
+        %th.bucks= t(".bucks")
+    %tbody
+      - @iou.group_drinks.each do |group_drink|
+        %tr
+          %td.drink= render "drink_details", :group_drink => group_drink
+          %td.qty
+            #{group_drink.quantity}
+          %td.price
+            %span{:class => group_drink.discounted ? 'strikeout' : ''}
+              = number_to_currency(calculate_amount(group_drink), :unit => group_drink.price.total.currency.symbol)
+          %td.bucks
+            = image_tag("/images/bb_icon.png", :border => 0)
+            = group_drink.price_in_bucks
+      %tr.total
+        %td.disclaimer( colspan="2" )
+          %small{:style => "text-align: left !important;"}
+            * #{t(".similar_price")}
+          }
+        %td.price
+          %strong{ :class => @iou.discounted ? 'strikeout' : '' }
+            = number_to_currency(calculate_total(@iou), :unit => @iou.amount.currency.symbol)
+        %td.bucks
+          = image_tag("/images/bb_icon.png", :border => 0)
+          %strong= calculate_total_bucks(@iou)
+  = clear_floats

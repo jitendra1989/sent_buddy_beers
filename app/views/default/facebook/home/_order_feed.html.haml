@@ -1,0 +1,8 @@
+= content_for :head do
+  = javascript_include_tag "drink_feed"
+
+%h2= t("shared.drink_feed.heading")
+#drink_feed
+  - @activity.reverse.each_with_index do |order, index|
+    .drink{ :id => "drink#{29 - index}", :style => @activity.reverse.last(5).include?(order) ? "display:block" : "display:none" }
+      = render "facebook/orders/order", :order => order

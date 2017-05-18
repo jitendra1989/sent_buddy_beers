@@ -1,0 +1,44 @@
+- content_for :head do
+  :javascript
+    $(function($) {
+      // create a convenient toggleLoading function
+    
+      $("#new_email_invitation")
+      .bind("ajax:beforeSend", function() { 
+        $("#loading").show();
+        $("#new_email_invitation input.submit").hide(); 
+      })
+      .bind("ajax:success", function(event, data, status, xhr) {
+        $("#new_email_invitation").fadeOut('fast');
+        $("#success p.phone_number").html(data.email_invitation.email);
+        $("#success").fadeIn('fast');
+        #{ Rails.env.production? ? "_gaq.push(['_trackEvent', 'App', 'Notify', 'download link']);" : ""}
+      })
+      .bind("ajax:error", function(event, data, status, xhr) {
+        //alert(data.responseText);
+        //$("#errorExplanation .errors").html(data.responseText);
+        $("#errorExplanation").fadeIn('fast');
+        $("#loading").hide();
+        $("#new_email_invitation input.submit").show(); 
+      });
+    });
+
+#sms.pie
+  %h3= "#{t("home.apps.get_app")}:"
+  %p= t("home.apps.app_instructions").html_safe
+    
+  = form_for @email_invitation, :url => email_invitations_url(:email_invitation => @email_invitation, :format => :json), :remote => true do |f|
+    #errorExplanation.error.pie
+      %p
+        %strong= t("home.apps.error.heading")
+      %p= t("home.apps.error.description")
+    = f.text_field :email, :placeholder => t('forms.labels.your_email'), :class => "text pie"
+    = f.submit "", :class => "submit"
+    #loading= image_tag("sites/default/graphics/w-iphone-ajax-loader.gif")
+    = clear_floats
+  
+  #success
+    %h3= t("home.apps.success.heading")
+    %p.phone_number
+    
+= render "home/app_availability"

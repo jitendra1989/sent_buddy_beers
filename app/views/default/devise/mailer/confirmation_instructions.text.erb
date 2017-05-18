@@ -1,0 +1,11 @@
+<%= t("notifier.confirmation_instructions.thanks") %>
+
+<%= confirmation_url(@resource, :confirmation_token => @resource.confirmation_token) %>
+
+<%= t("notifier.confirmation_instructions.problem_link") %>
+
+<% unless @resource.class.name == 'Corporate' %>
+  <%= t(".personal_information") %>
+  <%= t("forms.labels.username") %>: <%= @resource.login %>
+  <%= t("forms.labels.email") %>: <%= @resource.emails.first.to_s %>
+<% end %>

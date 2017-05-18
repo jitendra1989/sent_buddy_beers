@@ -1,0 +1,60 @@
+%footer
+  .container
+    .col-md-4.col-sm-4.col-xs-12
+      %a{:href => root_url}
+        %img.footer-img{:src => "/images/buddyDrinks-Logo.png"}
+      %h5
+        = raw t("footer.drink_responsibly")
+      - if request.fullpath != "/apps"     
+        %ul.social_icon
+          %li
+            %a.facebook{:href => "http://facebook.com/buddybeers", :target => "_blank"}
+          %li
+            %a.twitter{:href => "http://twitter.com/buddybeers", :target => "_blank"}
+          %li
+            %a.capture{:href => "http://foursquare.com/buddybeers", :target => "_blank"}
+        
+    .col-md-4.col-sm-4.col-xs-12.padd_right_none
+      / - footer menu start
+      %ul.nav.nav-pills.footer_menu
+        %li{:class => request.url == about_url ? 'active' : ''}
+          = link_to t("layouts.menu.about"), about_url, :rel => "nofollow"
+        
+        %li{:class => request.url == bars_url ? 'active' : ''}
+          = link_to content_tag(:span, t("layouts.menu.bars")), bars_url
+        
+        %li{:class => request.url == business_perks_url ? 'active' : ''}
+          = link_to t("layouts.menu.business_perks"), business_perks_url, :rel => "nofollow"
+        
+        %li{:class => request.url == privacy_url ? 'active' : ''}
+          = link_to t("layouts.menu.privacy_terms"), privacy_url, :rel => "nofollow"
+          
+        %li{:class => request.url == new_bar_url ? 'active' : ''}
+          = link_to content_tag(:span, t("layouts.menu.register_a_bar")), new_bar_url
+          
+        %li{:class => request.url == white_label_program_url ? 'active' : ''}
+          = link_to content_tag(:span, t("layouts.menu.white_label_program")), white_label_program_url 
+          
+    - if request.fullpath != "/apps"    
+      .col-md-4.col-sm-4.col-xs-12.get-app-img
+        %h3 Get the app:
+        %a.iphone-btn{:href => "http://itunes.apple.com/app/buddy-beers/id494547749"}
+          %img{:src => "/images/play_store.png"}
+        %a.android-btn{:href => "#androidlink"}
+          %img{:src => "/images/app_store.png"}
+    - else
+      .col-md-4.col-sm-4.col-xs-12.get-app-social
+        %h5
+          Follow Us On:
+        %ul.social_icon
+          %li
+            %a.facebook{:href => "http://facebook.com/buddybeers", :target => "_blank"}
+          %li
+            %a.twitter{:href => "http://twitter.com/buddybeers", :target => "_blank"}
+          %li
+            %a.capture{:href => "http://foursquare.com/buddybeers", :target => "_blank"}
+      
+  .row.text-center
+    %p= raw t("footer.copyright", :date => Date.today.year.to_s)
+
+      

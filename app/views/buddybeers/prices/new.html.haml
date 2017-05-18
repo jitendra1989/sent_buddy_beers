@@ -1,0 +1,29 @@
+/ buddybeers > prices > new
+
+- @title = t(".title")
+- stylesheets 'sites/buddybeers/sections/bars'
+- unless I18n.locale.to_s == "th"
+  - content_for :head do
+    :javascript
+      Cufon.replace('h1');
+    
+#new
+  .pad
+    = render "bars/benefits"
+  
+    .left
+      %h1= t(".heading", :bar_name => @bar.name) 
+      %p.description= t(".description")
+
+      = form_for [@bar, @price] do |f|
+        = error_messages_for :price
+        = render :partial => "form", :locals => {:f => f}
+
+      = render "inventory"
+
+      #next_button
+        = link_to_unless(@menu.empty?, content_tag(:span, "#{t(".next_step")} →"), confirm_bar_url(@bar)) do
+          %p
+            %span= t(".next_step")
+
+    = clear_floats

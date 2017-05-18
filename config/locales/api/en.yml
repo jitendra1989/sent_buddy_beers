@@ -1,0 +1,24 @@
+en:
+  api:
+    v1:
+      vouchers:
+        statuses:
+          redeemed: "redeemed"
+        sent:
+          empty: "You haven't sent any drinks yet! Better get busy. Your social life is depending on it."
+        received:
+          empty: "No drinks yet! Under the Given part"  
+      users:
+        errors:
+          not_found: "User not found"
+          not_logged_in: "Not logged in"
+          no_locations: "User has no locations"
+      locations:
+        errors:
+          not_found: "No venues found matching your search."
+      orders:
+        errors:
+          not_enough_currency: "User does not have enough bucks"
+      prices:
+        errors:
+          empty: "This location has no prices"

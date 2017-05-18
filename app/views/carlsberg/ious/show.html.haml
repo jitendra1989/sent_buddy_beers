@@ -1,0 +1,59 @@
+/ carlsberg > ious > show
+
+- @title = t(".title", :sender => (@iou.sender_name.blank? ? t("ious.index.sender_generic") : @iou.sender_name), :recipient => t("ious.index.you_received"), :drink => [@iou.quantity, beverage_owed(@iou)].join(" "), :bar => @iou.bar_name, :city => @iou.bar.city.name)
+- stylesheets('sites/carlsberg/sections/vouchers')
+
+- content_for :head do
+  :javascript
+    $(document).ready(function(){ $("label").inFieldLabels(); });
+
+.drink
+  .avatar.pie
+    = image_tag @iou.sender.avatar.file? ? @iou.sender.avatar(:square) : "sites/carlsberg/avatars/square/missing.png", :class => "pie"
+  .description
+    %p= t("ious.index.description_received", :sender => (@iou.sender_name.blank? ? t("ious.index.sender_generic") : @iou.sender_name), :recipient => t("ious.index.you_received"), :drink => [@iou.quantity, beverage_owed(@iou)].join(" "), :bar => link_to(@iou.bar_name, bar_url(@iou.bar)), :city => @iou.bar.city.name).html_safe
+    
+  - if @iou.memo.present?
+    .memo
+      .bubble
+        %p= @iou.memo
+  %h3.status= status_for(@iou)
+  = clear_floats
+    
+#iou
+  .left
+    .bar
+      - if @iou.bar.geocoded?
+        .photo.left{:style => "background: url(#{@iou.bar.gallery.photos.present? ? @iou.bar.gallery.photos.first.photo(:iphone) : "/images/sites/carlsberg/photos/missing.png"}) no-repeat left top" }
+        .right  
+          - if @iou.bar.logo.file?
+            .bar_logo= image_tag  @iou.bar.logo(:standard)
+          - if @iou.bar && @iou.bar.geocoded?
+            #map{ :style => "width:270px; height:#{ @iou.bar.logo.file? ? "184" : "300" }px", :data => { :"map-markers" => bars_to_map_markers(@iou.bar) } }
+      - else  
+        .photo{:style => "background: url(#{@iou.bar.gallery.photos.present? ? @iou.bar.gallery.photos.first.photo(:medium) : "/images/sites/carlsberg/photos/missing.png"}) no-repeat left top" }
+         
+      %h2= link_to @iou.bar.name, bar_url(@iou.bar)
+      %p.description= truncate(@iou.bar.description, :length => 400)
+      %p.info= link_to content_tag(:span, t(".more_info")), bar_url(@iou.bar)
+      %p.disclaimer
+        = t(".disclaimer.title")
+        = t(".disclaimer.no_cash")
+
+  #instructions
+    - unless @iou.status == "redeemed"
+      %h3= t(".instructions.heading")
+      %p= t(".instructions.instructions", :iphone_link => app_download_url, :android_link => app_download_url, :bar => link_to(@iou.bar.name, bar_url(@iou.bar))).html_safe
+      %p
+        = link_to image_tag("sites/default/email/app_store.png", :alt => "Available on the App Store"), "http://itunes.apple.com/de/app/buddy-beers-carlsberg-buy/id457267087", :title => "Available on the App Store"
+        = link_to image_tag("sites/default/email/android_market.png", :alt => "Available in Android Market"), "https://play.google.com/store/apps/details?id=com.buddybeers.mobile", :title => "Available in Android Market"
+                                                                      
+    - unless @iou.recipient and @iou.recipient.active_for_authentication?
+      - unless current_user
+        = render "vouchers/existing_account_activation"
+        = render "vouchers/new_account_creation"
+
+  = clear_floats
+
+:javascript
+  var map = new bb.maps.Map("#map");

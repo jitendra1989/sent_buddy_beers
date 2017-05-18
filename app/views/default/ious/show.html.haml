@@ -1,0 +1,55 @@
+/ default > vouchers > show
+
+#iou
+  %h1= t("ious.show.heading", :value => number_to_currency(@iou.amount.to_f, :unit => @iou.amount.currency.symbol), :beer => beverage_owed(@iou))
+  
+  %h2=# @voucher.coupon if @voucher.redeemable?
+    
+  .status
+    %h3= status_for(@iou)
+    %p.expires= @iou.expires_at.to_s(:euro_date)
+  
+  .drink
+    .avatar= image_tag(@iou.sender.avatar(:tiny))
+    .recipient= image_tag(@iou.recipient ? @iou.recipient.avatar(:tiny) : "")
+    .description
+      %p
+        %strong= number_to_currency(@iou.amount.to_f, :unit => @iou.amount.currency.symbol)
+        #{t("ious.show.drink_at_bar", :drink => beverage_owed(@iou), :bar => @iou.bar.name, :city => @iou.bar.city.name, :recipient => @iou.recipient_name, :email => @iou.recipient_email)}
+    - if @iou.memo.present?
+      .memo
+        .bubble
+          %p= @iou.memo
+
+  .bar
+    %h2
+      = @iou.bar.name
+      %small= @iou.bar.address
+    .map
+      - if @iou.bar && @iou.bar.geocoded?
+        #map{ :style => "width:420px; height:150px", :data => { :"map-markers" => bars_to_map_markers(@iou.bar) } }
+      - else
+        = image_tag(@iou.bar.gallery.photos.present ? @iou.bar.gallery.photos.first.photo(:gallery) : "/images/sites/buddybeers/photos/missing.png")
+    - if @iou.bar.logo.file?
+      .bar_logo= image_tag  @iou.bar.logo(:standard)
+    .description= @iou.bar.description
+
+    %p.disclaimer
+      = t("ious.show.disclaimer.title")
+      = t("ious.show.disclaimer.no_cash")
+
+  #instructions
+    - unless @iou.status == "redeemed"
+      %h3= t("ious.show.instructions.heading")
+      %p= t("ious.show.instructions.instructions", :iphone_link => app_download_url, :android_link => app_download_url, :bar => link_to(@iou.bar.name, bar_url(@iou.bar))).html_safe
+      %p.redeem.print= link_to_function "<span>#{t("ious.show.instructions.print_link").capitalize}</span>".html_safe, "window.print()"
+
+    - unless @iou.recipient and @iou.recipient.active_for_authentication?
+      - unless current_user
+        = render "vouchers/existing_account_activation"
+        = render "vouchers/new_account_creation"
+        
+= clear_floats
+
+:javascript
+  var map = new bb.maps.Map("#map");

@@ -1,0 +1,19 @@
+- @title = "#{@bar.name} | #{t('affiliate.prices.index.title')}"
+- javascripts 'price_form'
+
+= render "admin/dashboard/tabs"
+= render "admin/bars/bar_tabs"
+
+#inventory
+  - unless @menu.blank?
+    %ul#drink_list
+      - @menu.each do |menu_item|
+        = render :partial => 'affiliate/prices/drink', :locals => {:object => menu_item, :css_class => cycle("odd", "even")}
+
+  = form_for ["admin", @bar, @price], :html => { :multipart => true } do |f|
+    %fieldset
+      %legend= t("affiliate.prices.index.legend", :bar => @bar.name)
+      = error_messages_for :price
+      = render :partial => "prices/form", :locals => {:f => f}
+      %ul
+        %li= f.submit t("forms.buttons.add")

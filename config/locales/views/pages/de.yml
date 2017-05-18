@@ -1,0 +1,7 @@
+de:
+  pages:
+    show:
+      errors:
+        language_missing: "Entschuldigung. Diese Seite ist in Deiner Sprache leider nicht verfügbar. Wir zeigen sie daher in einer anderen verfügbaren Sparche (%{other_locale})."
+    body:
+      updated_at: "Diese Seite wurde zuletzt aktualisiert am: %{date}."

@@ -1,0 +1,22 @@
+/ carlsberg > bars > bar
+
+.info
+  %h4= link_to bar.name, bar_url(bar)
+  %p.address= bar.full_address
+  - if bar.url
+    %p.distance= link_to bar.url, bar.url, :rel => "nofollow", :target => "_blank"
+
+.more
+  - if bar.logo.file? or bar.gallery.photos.present?
+    .photos.pie
+      = image_tag bar.logo.file? ? bar.logo(:square) : bar.gallery.photos.first.photo(:square), :class => "pie", :width => 100, :height => 100
+  .links_prices
+    %p.more_info= link_to content_tag(:span, t(".more_info")), bar_url(bar)
+    %p.buy_a_beer= link_to content_tag(:span, t(".buy_a_beer")), new_iou_url(:bar_id => bar.id), :rel => "nofollow"
+    %p.prices
+      %strong= t(".price_range")
+      = price_range_for(bar)
+      %strong= t(".drink_specials")
+      = has_drink_specials?(bar)
+
+=clear_floats

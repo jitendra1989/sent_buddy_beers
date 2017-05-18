@@ -1,0 +1,11 @@
+/ carlsberg > bars > drink_list
+
+#drink_list
+  %h2= t(".menu.title")
+  %ul
+    - @bar.prices.each do |price|
+      %li
+        %span.name
+          = price.name
+        = link_to content_tag(:span, number_to_currency(price.total.to_f, :unit => price.amount.currency.symbol)), new_iou_url(:price_id => price.id), :title => price.discounted? ? t(".menu.discount") : "", :class => price.discounted? ? "discounted" : "", :rel => "nofollow"
+        = clear_floats

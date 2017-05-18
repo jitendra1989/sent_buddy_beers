@@ -1,0 +1,37 @@
+.your_boddy_append
+  .row.send_buddy_row
+    %h4.send_buddy_row_h4 Your Buddy
+    .form-group
+      = group_drink.text_field :recipient_name, :placeholder => "Your friend's name", :class =>'form-control'
+    .form-group
+      = group_drink.text_field :recipient_email, :placeholder => "Enter your friend's email", :class =>'form-control'
+    %h4 OR
+    .form-group
+      .row
+        .col-md-6.padd_left_none.col-sm-6.col-xs-12
+          = group_drink.select :recipient_phone_country_code, grouped_options_for_select(dialing_codes), {}, { :class => 'custom-select buddy_country_code_phone' }
+        .col-md-6.padd_none.col-sm-6.col-xs-12
+          = group_drink.text_field :recipient_phone, :placeholder => "Your friend's phone number", :class =>'form-control'
+    %br/
+    %br/
+    %h4 Choose a Drink
+    .form-group
+      .row
+        .col-md-3.padd_none.col-sm-3.col-xs-12
+          %p.drink_quantity Drink (Quantity/Type)
+        .col-md-2.padd_left_none.col-sm-2.col-xs-3
+          = group_drink.select :quantity, (1..10).map{|n| [n.to_s, n.to_s]}, {}, :disabled => @bar.blank?, :class => 'custom-select drink_quantity_type'
+          = group_drink.hidden_field :beverage_id, :value => 1
+        .col-md-7.padd_none.col-sm-7.col-xs-9
+          - if @bar.present?
+            = group_drink.select :price_id, @bar.prices.collect{|p| [ [p.name, "-", number_to_currency(p.total.to_f, :unit => p.total.currency.symbol)].join(" "), p.id ] }.sort, :selected => @price.present? ? @price.id : "", :class => 'custom-select price_select'
+          - else
+            = group_drink.select :price_id, [], { :prompt => t("forms.select.prompt_choose_object", :type => t("forms.select.choose_objects.a_drink")) }, :disabled => true, :class => 'custom-select price_select'
+    
+    .form-group
+      = group_drink.text_area :special_message, :placeholder => "Special Message", :class =>'form-control', :style => 'height: 70px;'
+    
+    .form-group
+      = group_drink.link_to_remove "Remove"  
+  %br
+   

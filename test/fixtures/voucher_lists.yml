@@ -1,0 +1,7 @@
+active_voucher_list:
+  bar: active_bar
+  cents: 499
+  
+voucher_list_250:
+  bar: active_bar
+  cents: 250

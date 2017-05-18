@@ -1,0 +1,38 @@
+nl:
+  shared: 
+    drink_feed: 
+      heading: "Wie stuurt wie een biertje?"
+    drink_in_feed: 
+      default_friend: "een vriend"
+      description: "<strong>%{sender}</strong> heeft voor <strong>%{recipient}</strong> een %{beer} gekocht bij <strong>%{bar}</strong>, %{city}"
+    network_connect: 
+      heading: "Meld je aan met een ander account"
+    payment: 
+      admin_notes: "Admin notities"
+      amount: Aantal
+      buddy_beers_address: "Buddy Labs UG<br />Stargarderstr. 80<br />10437 Berlin<br />Duitsland"
+      date: Datum
+      expired: "loopt af"
+      for: Voor
+      invoice: Uitbetalen
+      invoice_number: "Uitbetalings nummer"
+      item_description: "Buddy Drinks promotie: %{from} &ndash; %{to}"
+      line_item: "Voucher waarde van %{amount} bij %{bar} %{status} op %{datum}"
+      notes: Notitie
+      paid_on: "Betaald op %{date}"
+      redeemed: ingewisseld
+      status: Status
+      unpaid: Onbetaald
+    payment_table: 
+      paid: Ja
+      table: 
+        headings: 
+          amount: Hoeveelheid
+          invoice: "Uitbetalings nummer"
+          name: Naam
+          options: Opties
+          paid: Betaald
+          timeframe: Tijd
+        options: 
+          details: "Toon details"
+      unpaid: Nee

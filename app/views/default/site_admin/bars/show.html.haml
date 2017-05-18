@@ -1,0 +1,11 @@
+%h1
+  - if @bar.affiliate
+    = @bar.affiliate.name
+    &ndash;
+  = @bar.name
+
+= render "site_admin/shared/tabs"
+= render "bar_tabs"
+
+#vouchers
+  = render "shared/admin/ious/outstanding_form", :vouchers => @vouchers

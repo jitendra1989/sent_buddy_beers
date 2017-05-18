@@ -1,0 +1,73 @@
+- @title = "Metrics"
+- stylesheets 'sites/default/sections/payments'
+- javascripts 'jquery.tablesorter.min'
+- content_for :head do
+  :javascript
+    $(document).ready(function(){ $("#metrics_table").tablesorter(); });
+
+= render "admin/dashboard/tabs"
+
+= form_tag do
+  Start Date:
+  = date_select("metric", "start_date")
+  End Date:
+  = date_select("metric", "end_date")
+  %br
+  Metric:
+  = content_tag :label, :for => "metric_type_vouchers_sold" do
+    = radio_button "metric", "type", "Vouchers Sold"
+    Vouchers Sold 
+  = content_tag :label, :for => "metric_type_user_signups" do
+    = radio_button "metric", "type", "User Signups"
+    User Signups
+  = content_tag :label, :for => "metric_type_vouchers_bought_by_new_users" do
+    = radio_button "metric", "type", "Vouchers Bought by New Users"
+    Vouchers Bought by New Users
+  = content_tag :label, :for => "metric_type_recurring_user_purchases" do
+    = radio_button "metric", "type", "Recurring User Purchases"
+    Recurring User Purchases
+  = content_tag :label, :for => "metric_type_total_users" do
+    = radio_button "metric", "type", "Total Users"
+    Total Users
+  = content_tag :label, :for => "metric_type_vouchers_redeemed" do
+    = radio_button "metric", "type", "Vouchers Redeemed"
+    Vouchers Redeemed
+  = content_tag :label, :for => "metric_type_total_value_of_vouchers_sold" do
+    = radio_button "metric", "type", "Total value of vouchers sold"
+    Total value of vouchers sold
+  = submit_tag "Show", :disable_with => "Please wait..."
+ 
+- if @sum    
+  %h2
+    = [params[:metric][:type], "from", @start_date.to_date, "to", @end_date.to_date, ":"].join(" ")
+    %strong= @sum
+  
+- if @total
+  %h2
+    = ["Total", params[:metric][:type], ":"].join(" ")
+    %strong= @total
+
+/ #metrics
+/   %table#metrics_table
+/     %thead
+/       %tr
+/         %th Metric Name
+/         %th Value
+/         %th User
+/         %th User Active?
+/         %th Achieved
+/         %th Created
+/     %tbody
+/       - for metric in @metrics
+/         %tr{:class => cycle('even', 'odd')}
+/           %td= metric.name
+/           %td= metric.value
+/           %td
+/             - if metric.user_id
+/               = link_to metric.user.to_s, edit_admin_user_path(metric.user)
+/           %td
+/             - if metric.user_id
+/               = metric.user.active_for_authentication?
+/           %td= metric.achieved_at
+/           %td= metric.created_at
+

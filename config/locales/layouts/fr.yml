@@ -1,0 +1,50 @@
+fr:
+  layouts:
+    affiliate:
+      view_bar_listing: Voir la liste des bars
+      payment_prefs_empty:
+        heading: Vos informations de paiement sont vides.
+        description: Afin de nous permettre de vous payer, nous avons besoin de vos informations bancaires ou de compte Paypal. <a href="%{link}">Click here to enter your payment details.</a>
+    application:
+      promo: 20% sur toutes les bières que vous achetez avec des BuddyBucks
+    apps:
+      slogan: "Envoyez une bière en ligne!"
+    email_layout:
+      download_now: "Téléchargez maintenant!"
+      be_social: "Soyez social!"
+    logged_in_as: Connecté en tant que %{user}
+    menu:
+      sync_your_email: Synchronisez votre adresse e-mail!  
+      edit_user: Profil
+      blog: Blog
+      bars: Buddy Bars
+      contact: Contactez Nous
+      logout: Déconnexion
+      admin:
+        dashboard: Interface Administrateur
+        affiliates: Adhérents
+        users: Utilisateurs
+      affiliate:
+        my_bars: Mes Bars
+        dashboard: Interface Administrateur
+        my_beers: Mes Bières
+      register_a_bar: Enregistrer un bar
+      about: A propos
+      my_beers: Mes Bières
+      redeem_link: "Échanger un Coupon"
+      send_a_beer: Envoyer un verre en ligne
+      bro:
+        dashboard: Interface Bro
+      home: Page d'accueil
+    meta:
+      description: Buddy Drinks vous permet d'envoyer de VRAIES bières en ligne à vos amis. Avez-vous déjà dit 'Je te dois une bière ?' Maintenant vous pouvez tenir cette promesse en envoyant une bière à votre ami via Buddy Drinks.
+    navigation:
+      slogan: "Made in Berlin. <strong>Served Worldwide.</strong>"
+    user_account_navigation:
+      drinks_sent: Verres envoyés
+      drinks_received: Verres reçus
+      login: Connexion
+      logout: Déconnexion
+      profile: Profil
+      signup: Créez un compte gratuitement
+      buddybeers: Enregistrez vous avec votre compte Buddy Drinks

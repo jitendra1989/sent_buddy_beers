@@ -1,0 +1,60 @@
+- stylesheets "fb_friend_select"
+- javascripts 'jquery.infieldlabel.min', 'jquery.quicksearch'
+
+- content_for :head do
+  :javascript
+    function chooseFriend(friend) {
+      $friend_div = $(friend);
+      $("#friend_select div.friend").removeClass("selected").find("input:checkbox").attr("checked", false);
+      $friend_div.addClass("selected").find("input:checkbox").attr("checked", true);
+      $("#iou_recipient_facebook_uid").val($friend_div.attr("data-uid"));
+      $("#iou_recipient_name").val($friend_div.find("div.name").text());
+    }
+    
+    $(document).ready(function(){
+      $("#friend_select div.search label").inFieldLabels(); 
+      $('input#id_search_list').quicksearch('div.friends div.friend', { 'noResults':'#friend_select div.empty'});
+    });
+    
+    // $("#friend_select div.friend").each(function(){
+    //        var t = $(this);
+    //         setTimeout( function() { 
+    //           t.bind('click', function(e){
+    //             chooseFriend($(this));
+    //             e.preventDefault;
+    //           });
+    //         }, 10 );
+    //       });
+  
+  :plain
+    <!--[if lt IE 8]>
+      <style type="text/css" media="screen">
+        #friend_select .friend .element { display: block; float: left; }
+        #friend_select .friend input { margin-top: 5px; }
+      </style>
+    <![endif]-->
+
+#friend_select
+  %h2= t(".heading")
+  
+  = iou_form.hidden_field :recipient_facebook_uid
+  = iou_form.hidden_field :recipient_name
+
+  .search
+    .field_look
+      %label{ :for => "id_search_list" }= t(".search_prompt")
+      %input{ :type => "text", :name => "search", :value => "", :id => "id_search_list" }
+    
+  .friend_list
+    .friends
+      - if @friends
+        - @friends.each do |friend|
+          .friend{'data-uid' => friend["id"], :id => "friend_#{friend["id"]}", :onclick => "chooseFriend('#friend_#{friend["id"]}');"}
+            .element= check_box "friend", "uid", :autocomplete => "off", :onclick => "chooseFriend('#friend_#{friend["id"]}');"
+            = image_tag "http://graph.facebook.com/#{friend["id"]}/picture?type=square", :width => 30, :height => 30, :class => "element", :onclick => "chooseFriend('#friend_#{friend["id"]}');"
+            .element.name{ :onclick => "chooseFriend('#friend_#{friend["id"]}');" }= friend['name']
+        = clear_floats
+      - else
+        = t(".no_friends")
+      .empty
+        = t(".no_friends")

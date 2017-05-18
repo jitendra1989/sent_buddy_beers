@@ -1,0 +1,5 @@
+%li
+  = link_to_unless_current(page.title, page_url(page.slug))
+  - if page.children.live.for_site(current_site).present?
+    %ol
+      = render page.children.live.for_site(current_site)

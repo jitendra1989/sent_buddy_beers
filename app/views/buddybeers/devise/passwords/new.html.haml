@@ -1,0 +1,26 @@
+/ buddybeers > devise > passwords > new
+
+- @title = t(".title")
+- stylesheets "sites/buddybeers/sections/forms"
+- content_for :head do
+  :javascript
+    $(document).ready(function(){ $("label").inFieldLabels(); });
+    
+#password.container
+  .confirmation-main
+    %h1= t(".heading")
+
+    = form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :post }) do |f|
+      = devise_error_messages!
+      %fieldset
+        %h2= t(".legend")
+        %ol
+          %li
+            = f.text_field :email, :placeholder => "Email address", :class => "col-md-7 col-sm-7 col-xs-12"
+        .clearfix
+        %ul
+          %li= f.submit t(".submit"), :class => "btn"
+          %li= link_to t("forms.links.cancel"), new_session_path(resource_name)
+
+      =# render :partial => "devise/shared/links"
+      = clear_floats

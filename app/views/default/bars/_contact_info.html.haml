@@ -1,0 +1,17 @@
+/ default > bars > contact_info
+
+#contact
+  - if @bar.phone_number.present?
+    %li
+      %span.contact-media.phone-icon
+      %span= @bar.phone_number
+  - if @bar.url.present?
+    %li
+      %span.contact-media.web-icon
+      %span
+        = link_to truncate(@bar.url.gsub("http://", "").gsub("www.", ""), :length => 30), @bar.url, :rel => "nofollow", :target => "_blank"
+  - if @bar.twitter_handle.present?
+    %li
+      %span.contact-media.twitter-icon
+      %span
+        = link_to "@#{@bar.twitter_handle}", "http://www.twitter.com/#{@bar.twitter_handle}", :target => "_blank", :rel => "nofollow"

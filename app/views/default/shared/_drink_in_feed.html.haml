@@ -1,0 +1,11 @@
+/ default > shared > drink_in_feed
+
+.photo-section
+  = image_tag user_profile_image_com(object), :alt => object.sender.to_s
+.media-body
+  %p.media-heading
+    = raw t(".description", :sender => sender_name(object), :recipient => recipient_name(object), :beer => object.price_name, :bar => link_to_unless_current(object.bar_name, bar_url(:id => object.bar.friendly_id || object.bar.id)), :city => object.bar.city.name)
+  %p.popup
+    - if object.memo.present?
+      = truncate(object.memo, :length => 110, :omission => "...")
+= clear_floats

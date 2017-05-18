@@ -1,0 +1,17 @@
+- @title = "#{@bar.name} | #{t('affiliate.prices.index.title')}"
+- javascripts 'price_form'
+
+= render "site_admin/shared/tabs"
+= render "site_admin/bars/bar_tabs"
+
+#inventory
+  - unless @prices.blank?
+    %ul#drink_list= render @prices
+
+  = form_for [:site_admin, @bar, @price], :html => { :multipart => true } do |f|
+    %fieldset
+      = error_messages_for :price
+      %legend= t(".legend", :bar => @bar.name)
+      = render :partial => "prices/form", :locals => {:f => f}
+      %ul
+        %li= f.submit t("forms.buttons.add")

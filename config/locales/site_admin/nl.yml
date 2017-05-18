@@ -1,0 +1,11 @@
+nl:
+  site_admin: 
+    prices: 
+      edit: 
+        legend: "Bier prijs aanpassen"
+      form: 
+        add_beer_link: "Biertje toevoegen"
+        add_brand_link: "Merk toevoegen"
+        legend: "Voeg nog een biertje toe aan de biertjes van %{bar}"
+        new_beer_link: "Voeg een nieuw biertje toe"
+        new_brand_link: "Voeg een nieuw merk toe"

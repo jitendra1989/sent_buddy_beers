@@ -1,0 +1,65 @@
+- @title = [t(".voucher_list"), @list.id, number_to_currency(@list.amount.to_f, :unit => @list.amount.currency.symbol), "(#{beers_in_price_range(@list.cents, @bar)})"].join()
+
+%h2= @bar.name
+%p#page-intro= @bar.full_address
+.clear
+
+.content-box
+  / Start Content Box
+  .content-box-header
+    %h3
+      = t(".voucher_list")
+      = @list.id
+      = number_to_currency(@list.amount.to_f, :unit => @list.amount.currency.symbol)
+      = "(#{beers_in_price_range(@list.cents, @bar)})"
+    
+    .clear
+				
+  .content-box-content
+    %p= link_to "PDF", "/#{I18n.locale}/affiliate/bars/#{@bar.friendly_id}/voucher_lists/#{@list.id}.pdf"
+    = form_for [:affiliate, @bar] do |form|
+      %table
+        %thead
+          %tr
+            %th Voucher Code
+            %th Purchased Date
+            %th Amount
+            %th Item
+            %th Sender
+            %th Recipient
+            %th Redeemed on
+            %th Expires
+        %tfoot
+          %tr
+            %td(colspan="8")
+              .bulk-actions.align-left
+                = submit_tag t("forms.buttons.update"), :id => "submit", :class => "button"
+              .clear
+        %tbody
+          - @list.vouchers.each do |voucher|
+            %tr
+              = form.fields_for :vouchers, voucher do |f|
+                %td
+                  = "#{voucher.to_s}-#{voucher.redemption_token if voucher.redeemed}".html_safe
+                  = f.text_field :redemption_code, :value => "", :class => "redemption_code small-input text-input" if voucher.redeemable?
+                %td
+                  - if voucher.taken?
+                    = voucher.iou.paid_at ? voucher.iou.paid_at.to_s(:euro_sm_with_time) : voucher.iou.created_at.to_s(:euro_sm_with_time)
+                %td
+                  - if voucher.taken?
+                    = number_to_currency(voucher.amount.to_f, :unit => voucher.iou.amount.currency.symbol)
+                %td
+                  - if voucher.taken?
+                    = voucher.iou.price_name
+                %td
+                  - if voucher.taken?
+                    = voucher.iou.sender_name
+                %td
+                  - if voucher.taken?
+                    = voucher.iou.recipient_name
+                %td
+                  - if voucher.redeemed?
+                    = voucher.iou.updated_at.to_s(:euro_sm_with_time)
+                %td
+                  - if voucher.iou
+                    = voucher.iou.expires_at.to_s(:euro_date)

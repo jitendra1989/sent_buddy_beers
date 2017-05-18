@@ -1,0 +1,8 @@
+<%= t('.greeting', :name => @payment.affiliate_name) %>
+
+<%= t('.invoice_paid', :number => @payment.id) %>
+
+<%= t('.explanation', :amount => number_to_currency(@payment.amount.to_f, :unit =>@payment.amount.currency.symbol)) %>
+
+<%= t('.link') %>
+<%= affiliate_payment_url(@payment) %>

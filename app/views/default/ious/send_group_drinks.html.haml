@@ -1,0 +1,154 @@
+= javascript_include_tag :defaults, "nested_form"
+- content_for :add_page_js_css do
+  = stylesheet_link_tag  'send_buddies'
+
+:javascript
+  function get_cities(country_id) {
+    // make a POST call and replace the content
+    jQuery.post('/#{I18n.locale.to_s}/cities/get_cities_for_country', {id : country_id }, function(data) {
+      $("#bar_city").html(data).removeAttr("disabled");
+    });
+  }
+  
+  function get_bars(city_id) {
+    // make a POST call and replace the content
+    jQuery.post('/#{I18n.locale.to_s}/bars/get_bars_for_city', {id : city_id }, function(data) {
+      jQuery("#iou_bar_id").html(data).removeAttr("disabled");
+    });
+  }
+
+  $(document).ready(function(){
+    $("#bar_country").change(function() {
+      get_cities($('#bar_country option:selected').val());
+    });
+    $("#bar_city").change(function() {
+      get_bars(jQuery('#bar_city option:selected').val());
+    });
+    
+    $("#iou_bar_id").change(function() {
+      bar_id = jQuery('#iou_bar_id option:selected').val();
+      jQuery.post('/#{I18n.locale.to_s}/bars/update_bar_details', {id : bar_id }, function(data) {
+        jQuery("#bar_details").html(data);
+      });
+      jQuery.get('/#{I18n.locale.to_s}/ious/send_group_drinks', {bar_id : bar_id }, function(data) {
+        jQuery(".drink_quantity_type, .price_select").removeAttr("disabled");
+      });
+      
+      $.post('/#{I18n.locale.to_s}/prices/get_prices_for_select_from_bar', {id : bar_id }, function(data) {
+        $(".price_select, .drink_quantity_type").removeAttr("disabled");
+        $(".price_select").html(data);
+      });
+    });
+    
+    $(".add_nested_fields").click( function() {
+      bar_id = jQuery('#iou_bar_id option:selected').val();
+      $.post('/#{I18n.locale.to_s}/prices/get_prices_for_select_from_bar', {id : bar_id }, function(data) {
+        $(".price_select, .drink_quantity_type").removeAttr("disabled");
+        $(".price_select").last().html(data);
+      });
+    });
+
+    
+    $('#iou_recipient_phone').keyup(function() { 
+      if ($(this).val() == "") {
+        $("#sms_warning").fadeOut();
+      } else if ($('#iou_recipient_email').val() == "") {
+        $("#sms_warning").fadeIn();
+      } else {
+        $("#sms_warning").fadeOut();
+      }
+    });
+    
+    $('#iou_recipient_email').keyup(function() { 
+      if ($("#iou_recipient_phone").val() != "") {
+        if ($(this).val() != "") {
+          if ($("#sms_warning").is(":visible")) {
+            $("#sms_warning").fadeOut();
+          } 
+        } else {
+          $("#sms_warning").fadeIn();
+        }
+      }
+    });
+    
+    // $("a.hint").fancybox();
+    
+  });
+
+- unless @current_user.friends.blank?
+  :javascript
+    $(document).ready(function(){
+      $("#iou_recipient_name").tokenInput("http://#{request.env["HTTP_HOST"]}/users/#{current_user.id}/friendships.json", {
+        hintText: '#{t('.form.friend_search_hint_text')}',
+        noResultsText: '#{t('.form.friend_search_no_results_text')}',
+        searchingText: '#{t('.form.friend_searching_text')}',
+        tokenLimit: 1
+      });
+    });
+- unless @price.present? or @bar.present?
+  :javascript
+    $(document).ready(function(){
+      if ($("#bar_country option:selected").val() != "") {
+        get_cities($("#bar_country option:selected").val());
+      }
+      if ($("#bar_city option:selected").val() == "") {
+        $("#bar_city").attr("disabled", true);
+      }
+      if ($("#iou_bar_id option:selected").val() == "") {
+        $("#iou_bar_id").attr("disabled", true);
+      }
+      if ($("#iou_beer_id option:selected").val() == "") {
+        $("#iou_beer_id, #iou_quantity").attr("disabled", true);
+      }
+    });
+
+  
+%section
+  .container
+    .row.send_buddy-middle-row
+      .col-md-12.left.col-sm-12.col-xs-12
+        %h1= t("ious.form.send_buddy_legend")
+        = nested_form_for @iou, :as => :iou, :url => {:action => :create}, :html => { :multipart => true } do |iou_form|
+          - if @iou.errors.any? 
+            %div{ :id => "error_explanation"}
+              %h2= "#{pluralize(@iou.errors.count, "error")} prohibited this page from being saved:"
+              %ul
+                - @iou.errors.full_messages.each do |msg| 
+                  %li{:style => 'padding-left: 0px;'}= msg
+                  
+          %h4= t("ious.form.salutation_legend")
+          .form-group
+            = iou_form.text_field :memo, :placeholder => "#{t("ious.form.form.memo")}".html_safe, :class =>'form-control'  
+          %br
+          %h4= t("ious.form.bar_legend") 
+          .form-group
+            .row
+              .col-md-6.padd_left_none.col-sm-6.col-xs-12
+                - if @bar.present?
+                  = select :bar, :country, Country.with_bars_for_site(current_site).with_active_bars.uniq.collect {|c| [ c.printable_name, c.id ] }, :selected => @bar.country.id, :class => 'custom-select send-group-drink-country'
+                - else
+                  = select :bar, :country, Country.with_bars_for_site(current_site).with_active_bars.uniq.collect {|c| [ c.printable_name, c.id ] }, { :prompt => t("forms.select.country").html_safe  }, :class => 'custom-select send-group-drink-country'
+              .col-md-6.padd_none.col-sm-6.col-xs-12.city-select-box
+                - if @bar.present?
+                  = select :bar, :city, @bar.country.cities.with_active_bars.with_bars_for_site(current_site).uniq.collect {|c| [ c.name, c.id ] }, :selected => @bar.city.id, :class => 'custom-select'
+                - else
+                  = select :bar, :city, [], { :prompt => t("forms.select.prompt_city").html_safe  }, :disabled => true, :class => 'custom-select'
+          .form-group.select-large.col-md-12.padd_none
+            - if @bar.present?
+              = iou_form.select :bar_id, @bar.city.bars.active.collect {|c| [ c.name, c.id ] }, :selected => @bar.id, :class => 'custom-select'
+            - else
+              = iou_form.select :bar_id, [], { :prompt => t("forms.select.prompt_bar").html_safe   }, :disabled => true, :class => 'custom-select'
+            .clearfix  
+            #bar_details.set_btn_group_drink
+              = render :partial => "bar_detail"
+          .clearfix 
+          #your_buddy_list{:style=>"margin-top: 20px;"}  
+            = iou_form.fields_for :group_drinks do |group_drink|
+              = render :partial => "your_boddy", :locals => { :iou_form => iou_form, :group_drink => group_drink}
+          .row
+            %p= iou_form.link_to_add "+ Add Another Buddy", :group_drinks
+          %br/
+          .row
+            .col-md-6.col-sm-10.col-xs-12.col-md-push-3.padd_none.final_bottm_row
+              %button.btn.final-btn.pull-right
+                %span Send It

@@ -1,0 +1,3 @@
+/ default > bars > map
+
+#map{ :style => "width:270px; height:#{ @bar.logo.file? ? 330 : 445 }px", :data => { :"map-markers" => bars_to_map_markers(@bar) } }

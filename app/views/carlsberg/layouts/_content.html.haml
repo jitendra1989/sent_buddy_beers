@@ -1,0 +1,24 @@
+/ carlsberg > layouts > content
+
+/ #content{ :class => @content_class }
+/   = render :partial => "layouts/flash", :locals => { :flash => flash }
+/   .container.pie
+/     #content-padding
+/ = yield
+
+
+/ carlsberg > home > index
+
+#home
+  #closed
+    %p= translate("home.index.closed.dear_fan")
+    %p= translate("home.index.closed.thanks")
+    %p= translate("home.index.closed.invite")
+    %p
+      = translate("home.index.closed.facebook")
+      = link_to "https://www.facebook.com/Carlsberg", "https://www.facebook.com/Carlsberg"
+    %p That calls for a Carlsberg.
+    %p= translate("home.index.closed.salutation").html_safe
+    = image_tag "sites/carlsberg/photos/bottle.png", :alt => "Carlsberg bottle"
+
+  = clear_floats

@@ -1,0 +1,30 @@
+<%= form_for([:admin, @admin_city]) do |f| %>
+  <% if @admin_city.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@admin_city.errors.count, "error") %> prohibited this admin_city from being saved:</h2>
+
+      <ul>
+      <% @admin_city.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <fieldset>
+    <legend>Edit City</legend>
+    <ol>
+      <li>
+        <%= f.label :name, "Name" %>
+        <%= f.text_field :name %>
+      </li>
+      <li>
+        <%= f.label :country_id %>
+        <%= select_tag "city[country_id]", grouped_options_for_select(countries_for_select, @admin_city.country_id.present? ? @admin_city.country_id : {}, t("forms.select.default_prompt")) %>
+      </li>
+    </ol>
+    <ul>
+      <li><%= f.submit %></li>
+    </ul>
+  </fieldset>
+<% end %>

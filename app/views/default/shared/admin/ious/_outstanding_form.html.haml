@@ -1,0 +1,12 @@
+- if vouchers.blank?
+  %p.notice= t("affiliate.ious.outstanding_form.no_vouchers")
+- else
+  = render "shared/admin/ious/filter_form"
+
+  = form_for [namespace_for(current_user), @bar] do |form|
+    - vouchers.group_by(&:date).sort.each do |date, vouchers|
+      %h2= date.strftime("%e %b %Y")
+      %ul#list_example
+        = render :partial => "shared/admin/ious/voucher", :collection => vouchers, :locals => { :form => form }
+
+    = submit_tag t("forms.buttons.update"), :id => "submit"

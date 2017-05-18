@@ -1,0 +1,33 @@
+/ carlsberg > layouts > footer
+
+/ #footer
+/   .container
+/     #footer_nav
+/       .footer_nav
+/         %p= t("footer.links_heading")
+/         %ul.footer_links
+/           / %li.about= link_to t("layouts.menu.about"), about_url
+/           %li.press= link_to t("footer.press"), "http://buddybeers.com/#{I18n.locale.to_s}/press"
+/           %li.new_bar= link_to t("layouts.menu.register_a_bar"), new_bar_url
+/           %li.app= link_to "iPhone App", "/iphone"
+/       - if current_site.pages.live.for_footer.present? #and Page.for_footer.size > 4
+/         - remaining_footer_pages = Page.live.for_footer#.last(Page.live.for_footer.size - 4)
+/         - remaining_footer_pages.in_groups_of(8, nil).each do |group|
+/           .footer_nav
+/             %p &nbsp;
+/             %ul.footer_links
+/               - group.each do |page|
+/                 - unless page.nil?
+/                   %li= link_to page.title, page_url(page.slug.present? ? page.slug : page.id)
+/       .footer_nav
+/         %p= t("footer.social_links_heading")
+/         %ul.footer_social_links
+/           %li.facebook= link_to "Facebook", "http://facebook.com/carlsberg.de", :target => "_blank"
+/           %li.twitter= link_to "Twitter", "http://twitter.com/carlsberggroup", :target => "_blank"
+/
+/     #copyright
+/       = link_to image_tag("sites/carlsberg/graphics/BuddyBeers-Carlsberg-Logo-vert.png", :alt => "Buddy Drinks"), "http://buddybeers.com"
+/       %p.copyright= raw t("footer.copyright", :date => Date.today.year.to_s)
+/       %p.drink_responsibly= raw t("footer.drink_responsibly")
+/
+/     = clear_floats

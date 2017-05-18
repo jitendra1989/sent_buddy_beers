@@ -1,0 +1,16 @@
+- content_for :add_page_js_css do
+  = stylesheet_link_tag  'register'
+
+%section
+  .container
+    .row.register-middle-row
+      .col-md-9.left.col-sm-9.col-xs-12
+        %h1 Join Our Buddy Venues Network
+        %h3 Let's Do It
+        %p
+          Fill out the form below and we will get back to you with all the
+          information to get your venue into our Buddy Venues Network as soon as
+          possible.
+        = render "form"
+      = render '/default/shared/what_it_for_me'
+    = clear_floats

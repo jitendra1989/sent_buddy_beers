@@ -1,0 +1,14 @@
+.avatar
+  - if (!@iou.sender.avatar.file? and @iou.sender.facebook_user?)
+    = image_tag("https://graph.facebook.com/#{@iou.sender.facebook_uid}/picture?type=square", :alt => @iou.sender.name, :height => "53px", :width => "53px")
+  - else
+    = image_tag(@iou.sender.avatar(:tiny), :alt => @iou.sender.name, :height => "53px", :width => "53px")
+.description
+  %p
+    %strong= number_to_currency((group_drink.price.total).to_f, :unit => group_drink.price.total.currency.symbol)
+    #{t(".drink_at_bar", :drink => group_drink.try(:price).try(:name), :bar => @iou.bar.name, :city => @iou.bar.city.name, :recipient => group_drink.recipient_name, :email => group_drink.smsable? ? group_drink.recipient_phone : group_drink.recipient_email)}
+ 
+- if @iou.memo.present?
+  .memo
+    .bubble.pie
+      %p= @iou.memo

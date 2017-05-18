@@ -1,0 +1,21 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  recipient_id: 1
+  recipient_name: MyString
+  recipient_email: MyString
+  recipient_phone: MyString
+  quantity: 1
+  price_id: 1
+  special_message: MyString
+  iou_id: 1
+
+two:
+  recipient_id: 1
+  recipient_name: MyString
+  recipient_email: MyString
+  recipient_phone: MyString
+  quantity: 1
+  price_id: 1
+  special_message: MyString
+  iou_id: 1

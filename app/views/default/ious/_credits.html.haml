@@ -1,0 +1,13 @@
+=# t(".current_bucks", :amount => credits)
+ 
+- if I18n.locale.to_s == "de" 
+
+  Dein Guthaben beträgt 
+  = @user.credits
+  BuddyBucks.
+
+- else
+
+  You currently have 
+  = @user.credits
+  BuddyBucks. 

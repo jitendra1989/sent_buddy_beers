@@ -1,0 +1,7 @@
+<%# In order to redeem the voucher you need to download one of our free mobile apps. Login with the same address that this email was sent to and then take your mobile device to %{bar} (%{address}) to receive your gift. %>
+<%= t("notifier.voucher_notification.instructions.heading") %>
+
+1. <%= t("notifier.voucher_notification.instructions.step_one") %> <%= app_download_url %>
+2. <%= t("notifier.voucher_notification.instructions.step_two") %> <%= @group_drink.recipient_email %>
+3. <%= t("notifier.voucher_notification.instructions.step_three", :bar => @iou.bar_name, :address => @iou.bar.full_address) %>
+4. <%= t("notifier.voucher_notification.instructions.step_four") %>

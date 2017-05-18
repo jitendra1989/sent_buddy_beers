@@ -1,0 +1,38 @@
+- stylesheets 'payout'
+%h2= t("affiliate.dashboard.heading")
+.clear
+-# = link_to 'Payouts List', affiliate_payouts_url, :class => 'payout-make-btn'
+.clear
+%br
+.content-box
+  / Start Content Box
+  .content-box-header
+    %h3= "My Venues"
+    .clear
+
+  .content-box-content
+    %table
+      %thead
+        %tr
+          %th Location Name
+          %th= t("affiliate.bars.bar.vouchers.heading")
+          %th= t("affiliate.bars.bar.stats.beers_sold")
+          %th= t('affiliate.bars.bar.stats.beers_redeemed')
+          %th= t('affiliate.bars.bar.stats.monthly_profit')
+          %th= t('affiliate.bars.bar.stats.monthly_turnover')
+          %th= t('affiliate.bars.bar.stats.stats.total_profit')
+          %th= t("global.edit")
+      %tbody
+        - @bars.each do |bar|
+          %tr
+            %td
+              = link_to bar.name, affiliate_bar_url(bar)
+              %small= bar.full_address
+            %td= link_to pluralize((bar.ious.outstanding.count + bar.ious.expired_since(1.week.ago.beginning_of_day).count), t("affiliate.bars.bar.vouchers.outstanding_voucher")), affiliate_bar_path(bar)
+            %td= bar.drinks_sold
+            %td= bar.drinks_redeemed
+            %td= number_to_currency(bar.profit.to_f, :unit => bar.profit.currency.symbol)
+            %td= bar.turnover
+            %td= number_to_currency(bar.profit(bar.created_at, 1.second.from_now).to_f, :unit => bar.profit(bar.created_at, 1.second.from_now).currency.symbol)
+            %td= link_to image_tag("sites/default/admin/icons/pencil.png"), edit_affiliate_bar_path(bar), :title => t("affiliate.bars.bar.edit")
+

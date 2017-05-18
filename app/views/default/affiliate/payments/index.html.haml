@@ -1,0 +1,16 @@
+- @title = t(".title")
+- stylesheets 'sites/default/sections/payments'
+
+%h2=t(".title")
+%p#page-intro= "for #{current_user.to_s}"
+.clear
+
+
+.content-box
+  / Start Content Box
+  .content-box-header
+    %h3=t(".title")
+    .clear
+			
+  .content-box-content
+    = render "shared/payment_table"

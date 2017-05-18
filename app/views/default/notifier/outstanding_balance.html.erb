@@ -1,0 +1,8 @@
+<h1 class="h1"><%= t('.greeting', :name => @affiliate.name) %></h1>
+
+<p><%= t('.amount_owed', :amount => number_to_currency(@affiliate.outstanding_balance.to_f, :unit =>@affiliate.outstanding_balance.currency.symbol)) %></p>
+
+<p><%= t('.link') %><br />
+<%= link_to edit_user_registration_url(@affiliate), edit_user_registration_url(@affiliate) %></p>
+
+<p><%= t('.thanks') %></p>

@@ -1,0 +1,29 @@
+<h1>Cities</h1>
+
+<%= render :partial => "admin/dashboard/tabs" %>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Country</th>
+    <th>Venues</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @admin_cities.each do |admin_city| %>
+  <tr>
+    <td><%= admin_city.name %></td>
+    <td><%= admin_city.country.try(:printable_name) %></td>
+    <td><%= admin_city.bars.count %></td>
+    <td><%= link_to 'Show', admin_city_path(admin_city) %></td>
+    <td><%= link_to 'Edit', edit_admin_city_path(admin_city) %></td>
+    <td><%= link_to 'Destroy', admin_city_path(admin_city), :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New City', new_admin_city_path %>

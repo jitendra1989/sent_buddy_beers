@@ -1,0 +1,197 @@
+- stylesheets "sites/buddybeers/sections/ious"
+- content_for :head do
+  = stylesheet_link_tag  'myaccount', 'custom', 'ious'
+  = javascript_include_tag "nested_form"
+  = javascript_include_tag "jquery.nicescroll.min"
+:javascript
+  $(document).ready(function(){
+    $('.email-list').hide();
+  })
+  $(document).on('blur', '.email-field', function(){
+
+    var email = $(this).val();
+    if(email =="")
+      {
+        alert("please enter email")
+        return false
+      }
+    var emailFdId = $(this).attr("id");
+    var emailFdValue = $('#'+emailFdId).val();
+    var groupId = $('#'+emailFdId).attr("group_id");
+
+    $.ajax({
+      url: "#{ corporates_create_group_email_url }",
+      type: 'post',
+      data: {
+        group_id: groupId,
+        email: emailFdValue
+      },
+      dataType: 'json',
+      success: function (data){
+        if (!data.error) {
+          $('.group-email-list#'+emailFdId).append("<p class='select_buddy_email'>"+data.email+"<span class='glyphicon glyphicon-remove delete_buddy_emails' data-buddy_email_id=" +data.id+"></span></p>");
+          $('#'+emailFdId).val("");
+        }
+      },
+      error: function (data){
+        if (data.error) {
+          alert(data.responseText);
+          $('#'+emailFdId).val("");
+        }
+      }
+    });
+
+  })
+
+  $(document).on('click', '.input-group-addon', function(){
+    var group_id = $(this).attr("data-group-id");
+    $( ".email_list_target_"+group_id).slideToggle( "slow" );
+    if ($(this).hasClass("group-toggle-plus")) {
+      $(this).removeClass("group-toggle-plus");
+      $(this).addClass("group-toggle-minus");
+    }else{
+      $(this).addClass("group-toggle-plus");
+      $(this).removeClass("group-toggle-minus");
+    }
+  })
+
+  $(document).on("click","#submit_group_drink", function(){
+    $("#corporate_group_drink").submit();
+  });
+
+  $(document).on("click", ".buddy-beers-buy-beer-button", function() {
+    $('#buy_a_drink').modal('show');
+  });
+
+  $(document).ready(function() {
+    $(".group-email-list").niceScroll({styler:"fb",cursorcolor:"#fff"});
+    $(".group-email-list").niceScroll();
+    $(".group-email-list").niceScroll("#wrapperexample2",{cursorcolor:"#fff",boxzoom:true});
+    $(".group-email-list").niceScroll("#divexample3 iframe",{boxzoom:true});
+  });
+
+  $(document).on("click", ".delete_buddy_emails", function(){
+    var buddy_email_id = $(this).attr("data-buddy_email_id");
+    var $this = $(this);
+    $.ajax({
+      url: '/corporates/buddy_emails_destroy',
+      data: {id: buddy_email_id},
+      type: 'DELETE',
+      success: function(result) {
+        if(result == "true") {
+          $this.parent().remove();
+        }
+      }
+    });
+  });
+
+  $(document).on("click", ".select_buddy_email", function(){
+    $(".select_buddy_email").each(function(){
+      $(this).removeClass("corp-buddy-email-select");
+    });
+    $(this).addClass("corp-buddy-email-select");
+  });
+
+%section
+  .container
+    .row.account-middle-row.buddy-groups-main.corp-edit
+      .col-md-8.left.col-sm-8.col-xs-12
+        .row
+          .col-md-12.col-sm-12.col-xs-12.edit_account.padd-none
+            %h3
+              %strong Buddy Groups
+            .group-container
+              = nested_form_for @corporate, :url => corporates_create_groups_path(:id => @corporate), :html => { :multipart => true,
+              :id=>"corporate_group_drink"} do |f|
+                - if @corporate.errors.any?
+                  %div{ :id => "error_explanation"}
+                    %h4= "#{pluralize(@corporate.errors.count, "error")} prohibited this page from being saved:"
+                    %ul
+                      - @corporate.try(:errors).try(:full_messages).each do |msg|
+                        %li{:style => 'padding-left: 0px;'}= msg
+
+                %h5
+                  %strong Create Groups
+
+                #group_name
+                  .row
+                    .col-md-12.col-sm-12.col-xs-12
+                      = f.fields_for :buddy_groups do |buddy_group|
+                        - unless buddy_group.object.id.present?
+                          .form-group.col-md-9.col-sm-8.col-xs-12
+                            = buddy_group.text_field :name, :placeholder => "Enter Group Name", :class =>'form-control boddygroups-field'
+                            / = buddy_group.link_to_remove "Remove this task"
+                      = f.submit "Add Group" do
+                        %p = f.link_to_add, :buddy_groups
+                  .clearfix
+
+                .row
+                  .col-md-4.col-sm-6.col-xs-6
+                  .col-md-4.col-sm-6.col-xs-6.padd_right_none
+                    - #= f.submit "Save", :class => "btn btn-warning col-md-6 col-sm-12 col-xs-11"
+                  .col-md-4.col-sm-6.col-xs-6.padd_right_none
+
+              %h5
+                %strong Buddy Groups
+              .row
+                .col-md-12.col-sm-12.col-xs-12.group-list
+
+                  - existing_buddy_groups = @corporate.buddy_groups.count
+                  - @corporate.buddy_groups.each_with_index do |buddy_group, index|
+                    - if existing_buddy_groups > index
+                      .form-group.col-md-9.col-sm-12.col-xs-12.corp-group-list
+                        .input-group
+                          %span.input-group-addon.group-toggle-plus{"data-group-id"=> buddy_group.id}
+                          .form-control.groups= buddy_group.name
+                        #email-list.corp-group-list.email-list{:style => 'display: none;', :class=>"email_list_target_#{buddy_group.id}" }
+                          .row
+                            %input{:type => "text", :placeholder => "Add Emails", :class => 'email-field', :id =>"bdgroup#{buddy_group.id}-email", :group_id =>"#{buddy_group.id}" }
+
+                          .group-email-list{:id=> "bdgroup#{buddy_group.id}-email"}
+                            - buddy_group.buddy_emails.each do |buddy_email|
+                              %p.select_buddy_email
+                                %span
+                                  = buddy_email.email
+                                %span.glyphicon.glyphicon-remove.delete_buddy_emails{"data-buddy_email_id"=> buddy_email.id}
+              .clearfix
+              .row
+                .col-md-9.col-sm-8.col-xs-12.padd-none
+                  .buddy-group-submit
+                    = link_to "Save", 'javascript:void(0)', :id => "submit_group_drink", :class => "btn btn-warning col-md-3 col-sm-5 col-xs-4"
+            .clearfix
+
+      .col-md-4.col-sm-4.col-xs-12.right
+        .row
+          #buddy_bucks.payment_method
+            .description
+              %h3.logo
+            .credits
+              #spinner.hidden= image_tag "/images/sites/default/graphics/ajax-loader.gif"
+              %p#user_credits.current.corp-bb-payment
+                = "#{t("ious.credits.new_current_bucks")} #{image_tag("/images/bb_icon.png", :border => 0)}#{number_with_delimiter(0.0)}".html_safe
+              %ul.manage-list
+                %li= link_to("<span>Get More BuddyBucks</span>".html_safe, "javascript:void(0)", :class => "more iframe buy_credits btn", :id => "buy_credits")
+                /%li.credit_cards= image_tag("graphics/all_cc_cards.gif")
+
+
+            =clear_floats
+
+          / = render "/default/ious/script_for_button"
+          %p.button-text
+          #button.button_demo
+            %script{:src => button_user_url(Corporate.first, :format => :js), :type => "text/javascript", :charset => "utf-8" }
+          #button_with_name.button_demo{ :style => "display:none" }
+            %script{:src => button_user_url(Corporate.first, :format => :js, :name => true), :type => "text/javascript", :charset => "utf-8" }
+
+#buy_a_drink.modal.fade{"aria-hidden" => "true", "aria-labelledby" => "myModalLabel", :role => "dialog", :tabindex => "-1"}
+  .modal-dialog.popup
+    .modal-content
+      .modal-header
+        %button.close{"data-dismiss" => "modal", :type => "button"}
+          %span{"aria-hidden" => "true"} &times;
+          %span.sr-only Close
+        %h4#myModalLabel.modal-title{:style => 'margin:0px;'} Buy A Drink
+      .modal-body
+        "oops it appears that you don’t have your groups yet, please create your groups and start sending drinks to your buddies"
+      .modal-footer
+

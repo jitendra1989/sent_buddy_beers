@@ -1,0 +1,100 @@
+- stylesheets "white_lable_program"
+:javascript
+  $(document).on('click', '.get-start', function() {
+   $('#get-started').modal('show');
+  });
+  $(document).on('click', '#get-start-close', function() {
+   $('#get-started').modal('hide');
+  });
+  
+  $(document).on("click","#contact_us_send", function(){
+      var bname = $("#contact_bname").val();
+      var name = $("#contact_name").val();
+      var email = $("#contact_email").val();
+      var question = $("#contact_comment").val();
+      if(name != "" && email != ""){
+        $("#get_start_form").submit();
+      }  
+    });
+
+%aside.search-top-row.label_top_main
+  .container.white-lable-program-banner
+    .top-banner
+      .row
+        .col-md-12.col-sm-12.col-xs-12
+          %p.text-center 
+            Incorporate Our Gift-Giving Platform Into Your Brand!
+            %br
+            Drive incremental sales through online, mobile and social media with our powerful gift-giving platform.
+          .clearfix
+
+%section
+  .container.marketing
+    .row.middle-row
+      .col-md-6.col-sm.col-xs-12
+        .panel
+          .panel-heading
+            %h3.panel-title.panel-icon-brand
+              In-Brand Experience
+          .panel-body
+            Extend your brand experience and add a seamless gift-giving layer to your web, mobile and social portals.
+      .col-md-6.col-sm.col-xs-12
+        .panel
+          .panel-heading
+            %h3.panel-title.panel-icon-revenue
+              Increase Revenue
+          .panel-body
+            Did you know 47% of people buy a gift last minute?  Allow your customers to send last-minute gifts and increase your revenue.
+    .row.middle-row
+      .col-md-6.col-sm.col-xs-12
+        .panel
+          .panel-heading
+            %h3.panel-title.panel-icon-reporting
+              Reporting
+          .panel-body
+            Track the success and ROI of your new platform easily and seamlessly.
+      .col-md-6.col-sm.col-xs-12
+        .panel
+          .panel-heading
+            %h3.panel-title.panel-icon-account-maneger
+              Dedicated Account Manager
+          .panel-body
+            Leverage our brand experience expertise through your own dedicated account manager.
+    .row.label-bottom-row
+      .col-md-7.col-sm-7.col-xs-12
+        %h3
+          Ready to Learn More?
+      .col-md-4.col-sm-5.col-xs-12.text-center
+        %a{:href => "javascript:void(0)", :class => "btn get-start"}
+          Get Started ›
+          
+          
+      #get-started.modal.fade{"aria-hidden" => "true", "aria-labelledby" => "myModalLabel", :role => "dialog", :tabindex => "-1"}
+        .modal-dialog.popup
+          .modal-content
+            .modal-header
+              %button.close{"data-dismiss" => "modal", :type => "button"}
+                %span{"aria-hidden" => "true"} &times;
+                %span.sr-only Close
+              %h4#myModalLabel{:style => 'margin:0px;'} Get More Info
+            .modal-body
+              = form_tag('/information_send', :id=>"get_start_form") do
+                .form-group
+                  %label Business Name
+                  %input.form-control{:placeholder => "Your Business", :type => "text", :name=>"contact[bname]", :id=>"contact_bname"}/
+                .form-group
+                  %label Your Name
+                  %input.form-control{:placeholder => "First and last name", :type => "text", :name=>"contact[name]", :id=>"contact_name"}/
+                .form-group
+                  %label Your Email
+                  %input.form-control{:placeholder => "Your Email", :type => "text", :name=>"contact[email]", :id=>"contact_email"}/
+                .form-group
+                  %label Comments
+                  %textarea.form-control{:placeholder => "Have any comments or additional info you'd like us to know?", :name=>"contact[comment]", :id=>"contact_comment"}
+            .modal-footer
+              %button.btn.btn-default#get-start-close{:type => "button"}
+                %strong
+                  Close
+              %button#contact_us_send.btn.btn-default{:type => "submit"}
+                %strong
+                  Send

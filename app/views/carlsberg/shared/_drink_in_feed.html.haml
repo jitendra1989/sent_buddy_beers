@@ -1,0 +1,13 @@
+/ carlsberg > shared > drink_in_feed
+
+.avatar
+  = image_tag object.sender.avatar.file? ? object.sender.avatar(:thumb) : '/images/sites/carlsberg/avatars/thumb/missing.png'
+.description
+  %p= raw t(".description", :sender => (object.sender_name.blank? ? object.sender.login : object.sender_name), :recipient => (object.recipient_name.blank? ? t(".default_friend") : object.recipient_name), :beer => object.price_name, :bar => link_to_unless_current(object.bar_name, bar_url(object.bar)), :city => object.bar.city.name)
+- if object.memo.present?
+  .memo
+    %p
+      &quot;
+      = truncate(object.memo, :length => 110, :omission => "…")
+      &quot;
+= clear_floats

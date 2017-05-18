@@ -1,0 +1,8 @@
+/ default > bars > list
+.container
+  #bar_network
+    = render 'bars'
+    - if @bars.try(:total_pages)
+      = will_paginate(@bars, :class => 'set_pagination_btn', :previous_label => '<', :next_label => '>')
+      /  = pageless(@bars.total_pages, bars_url, '#bar_network', t(".loading_more_bars"))
+

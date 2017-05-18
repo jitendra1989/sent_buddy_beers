@@ -1,0 +1,19 @@
+/ default > ious > confirmed_payment
+#confirm_payment
+  %h1= t(".heading")
+  
+  %p= t(".you_sent", :recipient => @iou.recipient_name, :price => "#{@iou.total.currency.symbol}#{@iou.total}", :beer => [@iou.quantity, @iou.price_name].join(" "), :bar => @iou.bar.name, :city => @iou.bar.city.name)
+  %p= raw t(".immediate_delivery", :recipient => @iou.recipient_name)
+  %p
+    = t(".spread_the_love")
+    = link_to t(".send_another_beer"), new_iou_path
+
+  %h2= t(".social_spread.heading")
+  
+  .facebook_share
+    %a(name="fb_share" type="button" href="http://www.facebook.com/sharer.php" share_url="http://buddybeers.com")= t(".social_spread.share")
+    %script(src="http://static.ak.fbcdn.net/connect.php/js/FB.Share" type="text/javascript")
+  
+  .twitter_share= twitter_share_link_for(@iou)
+
+  =clear_floats

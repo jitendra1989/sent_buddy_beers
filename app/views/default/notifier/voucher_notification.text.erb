@@ -1,0 +1,12 @@
+<%# Hey %{name}! %>
+<%= t(".greeting", :name => @group_drink.recipient_name) %>
+
+<%# {{name}} has bought you {{quantity}} {{beer}} %>
+<%= t(".voucher_explained", :name => @iou.sender_name, :quantity => @group_drink.quantity, :beer => @group_drink.price_name) %>
+<%= [@iou.bar.name, @iou.bar.city.name].join(", ") %>
+
+<%= render "voucher_instructions" %>
+
+------------------------------------
+
+<%= render "disclaimer" %>

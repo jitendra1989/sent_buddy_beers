@@ -1,0 +1,8 @@
+<% flash.except(:no_fade_out).each do |severity, message| %>
+  <div class="notification <%= severity %> png_bg" id="<%= severity %>">
+    <a href="#" class="close"><img src="/images/sites/default/admin/icons/cross_grey_small.png" title="Close this notification" alt="close" /></a>
+    <div>
+      <%= @flash_not_html_safe ? message : message.html_safe %>
+    </div>
+  </div>
+<% end %>

@@ -1,0 +1,19 @@
+/ default > home > impressum
+
+%h1= t(".heading")
+   
+#impressum
+  %h2= "#{t(".subsidiary")}:" 
+  = render "contact_info"
+  
+  %h2= t(".founding_partner")
+  %p Travis J. Todd
+  
+  %h2= t(".founding_partner")
+  %p Min-Sung Sean Kim 
+  
+  %h2= t(".founding_partner")
+  %p Benedikt Bingler
+
+  %p
+    %small= t(".last_updated", :date => "31 JAN 2011")

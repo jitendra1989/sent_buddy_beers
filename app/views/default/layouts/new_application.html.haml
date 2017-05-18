@@ -1,0 +1,34 @@
+!!!
+%html{:xmlns => "http://www.w3.org/1999/xhtml"}
+  %head
+    %meta{:charset => "utf-8"}
+    %meta{:content => "IE=edge", "http-equiv" => "X-UA-Compatible"}
+    %meta{:content => "width=device-width, initial-scale=1", :name => "viewport"}
+    %title Buddy Drinks – Put Social Back Into Socializing!
+    %link{:href => 'http://fonts.googleapis.com/css?family=Roboto', :rel =>'stylesheet', :type => 'text/css'}
+    = render 'layouts/new_javascripts'
+    = render 'layouts/new_stylesheets'
+    = yield(:add_page_js_css)
+    = yield(:head)
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    %script{:src => "https://cdnjs.cloudflare.com/ajax/libs/jstimezonedetect/1.0.4/jstz.min.js", :type => "text/javascript"}
+  %body
+    = render 'shared/google_analytics'
+    = render 'shared/facebook_sdk'
+    %aside.search-top-row
+      = render "/default/shared/buddy_header"
+    %div.custom_flash.container
+      = render '/default/shared/messages'
+    =  yield
+    / - footer start
+    = render "/default/shared/buddy_footer"
+
+    - if session[:time_zone_name].blank?
+      :javascript
+        $(document).ready(function () {
+          var timezone = jstz.determine();
+          var time_zone_name = timezone.name();
+          $.get('/timezones/time_zone', {time_zone: time_zone_name})
+        });
+

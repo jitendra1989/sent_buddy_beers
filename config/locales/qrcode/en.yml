@@ -1,0 +1,13 @@
+en:
+  qrcode:
+    validate:
+      html:
+        title: Voucher Check
+      sent: Sent
+      expires: Expires
+      from: From
+      amount: Amount
+      to: To
+      mobile:
+        heading: Voucher Check
+      for: For

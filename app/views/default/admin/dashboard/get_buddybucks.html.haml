@@ -1,0 +1,14 @@
+%table.table.table-hover
+  %tr{:bgcolor => "#D3D3D3"}
+    %th User Name
+    %th User Email
+    %th Spent Amount
+    %th BuddyBucks
+    %th Created Date
+  - @buddybucks.each do|buddybuck|
+    %tr
+      %td= link_to buddybuck.try(:user).get_name, admin_user_path(buddybuck.try(:user))
+      %td= buddybuck.try(:user).email
+      %td= "$#{buddybuck.sepamount}"
+      %td= buddybuck.virtualamount
+      %td= formated_datetime(buddybuck)

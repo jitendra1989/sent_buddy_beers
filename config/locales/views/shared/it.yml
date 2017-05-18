@@ -1,0 +1,44 @@
+it:
+  shared:
+    admin:
+      bars:
+        form:
+          translation: 
+            translation: "%{other_locale} Traduzione" 
+            none: "Nessuno"
+    drink_feed:
+      heading: Chi sta inviando birre?
+    drink_in_feed:  
+      default_friend: un amico
+      description: <strong>%{sender}</strong> ha comprato a <strong>%{recipient}</strong> una %{beer} al <strong>%{bar}</strong>, a %{city}
+    payment_table:
+      paid: "Si"
+      table:
+        options:
+          details: Mostra dettagli
+        headings:
+          name: Nome
+          invoice: Numero della quota corrisposta
+          timeframe: Periodo
+          paid: Pagato
+          amount: Quantità
+          options: Opzioni
+      unpaid: "No"
+    network_connect: 
+      heading: Accedi con facilità grazie a Facebook
+    payment: 
+      buddy_beers_address: Buddy Drinks <br />c/o BuddyLabs UG<br />Stargarderstr. 80<br />10437 Berlin<br />Germany
+      invoice: Quota corrisposta
+      notes: Note
+      amount: Quantità
+      invoice_number: Numero della quota corrisposta
+      item_description: "Promozione Buddy Drinks: %{from} &ndash; %{to}"
+      date: Data
+      redeemed: Riscattato
+      admin_notes: Note dell'Amministratore
+      line_item: "%{amount} Voucher al %{bar} %{status} il %{date}"
+      unpaid: Non pagato
+      for: Per
+      paid_on: "Pagato il %{date}"
+      expired: Scaduto
+      status: Stato

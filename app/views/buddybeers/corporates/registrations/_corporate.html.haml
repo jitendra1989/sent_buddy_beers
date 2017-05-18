@@ -1,0 +1,37 @@
+.row.company-info
+  .col-md-3.col-sm-3.col-xs-12.edit_account.pull-right.padd-none.account-top-section
+    .row
+      .form-group
+        %label.myLabel
+          = f.file_field :company_logo, :class => "file"
+          Browse
+  .col-md-9.col-sm-8.col-xs-12.edit_account.padd-none
+    .row
+      .form-group.row
+        .col-md-3.col-sm-5.col-xs-4.padd-none
+          %span Company Name
+        .col-md-7.col-sm-7.col-xs-8.padd_right_none
+          = f.text_field :company_name, :placeholder => "Company Name", :class => 'form-control', :type => "text"
+          %span.glyphicon.glyphicon-home
+      .form-group.row
+        .col-md-3.col-sm-5.col-xs-4.padd-none
+          %span= t("forms.labels.password")
+        .col-md-7.col-sm-7.col-xs-8.padd_right_none
+          = f.text_field :password, :placeholder => t("forms.labels.password_star"), :class => 'form-control', :type => "password"
+          %span.glyphicon.glyphicon-lock
+      .form-group.row
+        .col-md-3.col-sm-5.col-xs-4.padd-none
+          %span Admin Email
+        .col-md-7.col-sm-7.col-xs-8.padd_right_none
+          = f.text_field :email, :placeholder => "Email", :class => 'form-control', :type => "text"
+          %span.glyphicon.glyphicon-envelope
+      .form-group.row
+        .col-md-3.col-sm-5.col-xs-4.padd-none
+          %span Phone Number
+        .col-md-7.col-sm-7.col-xs-8.padd_right_none
+          = f.text_field :phone_number, :placeholder => "Phone Number", :class => 'form-control', :type => "text"
+          %span.glyphicon.glyphicon-phone
+      .form-group.row
+        .col-md-3.col-sm-5.col-xs-4
+        .col-md-7.col-sm-7.col-xs-8.padd_right_none.text-center
+          = f.submit "Update", :class => "btn btn-warning col-md-5 col-sm-12 col-xs-12 company-info-update-btn", :style => "float: none ! important;"

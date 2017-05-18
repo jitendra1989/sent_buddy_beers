@@ -1,0 +1,28 @@
+/ default > bars > show
+= render "open_graph_meta"
+
+#bar
+  #bar_header
+    %h1= @bar.name
+  
+  #logo_location
+    - if @bar.logo.file?
+      .bar_logo= image_tag  @bar.logo(:standard)
+    
+    = render "map" if @bar.geocoded?
+    
+  = render "gallery" if @bar.gallery.photos.present?
+
+  #information
+    - if @bar.description.present?
+      .description= raw RedCloth.new(@bar.description, [:filter_html]).to_html
+    
+    = render "drink_feed" if @feed.present?
+
+    = render "contact_info"
+    
+    = render "opening_hours" if @bar.opening_hours.present?
+    
+    = render "drink_list"
+    
+    = render "facebook_like_xfbml"

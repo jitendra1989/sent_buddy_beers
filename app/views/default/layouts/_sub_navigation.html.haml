@@ -1,0 +1,8 @@
+#sub_navigation
+  %ul
+    %li.first= link_to t("layouts.menu.about"), about_url
+    %li= link_to t("layouts.menu.register_a_bar"), new_bar_url
+    
+    %li= link_to t("footer.privacy_policy"), privacy_url, :rel => "nofollow"
+    %li= link_to "@buddydrinks", "http://twitter.com/buddybeers", :rel => "nofollow"
+    %li= link_to t("layouts.menu.contact"), press_url

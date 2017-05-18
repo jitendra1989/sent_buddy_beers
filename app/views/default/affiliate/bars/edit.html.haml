@@ -1,0 +1,38 @@
+- @title = t(".title")
+.row{:style => "width: 100%;"}
+  .col-md-6.col-sm-6.col-xs-12{:style => "width: 50%;float: left;"}
+    %h2{:style => "margin-top: 0px;"}= @bar.name
+    %p#page-intro= @bar.full_address
+  .col-md-6.col-sm-6.col-xs-12{:style => "width: 50%;text-align:right;float: left;"}
+    %img#logo{:alt => "Simpla Admin logo", :src => "/images/sites/default/admin/vanue.png", :style => "height: 80px; width: 150px;"}
+.clear
+
+.content-box
+  / Start Content Box
+  .content-box-header
+    %h3=t(".title")
+    .clear
+
+  .content-box-content
+
+    = form_for ["affiliate", @bar], :html => { :multipart => true } do |f|
+      = render "shared/admin/bars/form", :f => f
+
+%a(name="notifications")
+
+.content-box
+  / Start Content Box
+  .content-box-header
+    %h3=t(".notifications_title")
+    .clear
+
+  .content-box-content
+    = form_for ["affiliate", @bar] do |f|
+      %fieldset
+        %ol
+
+          %li
+            = f.label :redeemed_voucher_notification_timeframe, "#{t(".redeemed_voucher_notification_timeframe")}:"
+            = f.select :redeemed_voucher_notification_timeframe, @bar.notification_timelines.collect{ |t| [t("forms.select.timeframes.#{t}"), t]}
+        %ul
+          %li= f.submit t(".update_bar_notifications"), :class => "button"

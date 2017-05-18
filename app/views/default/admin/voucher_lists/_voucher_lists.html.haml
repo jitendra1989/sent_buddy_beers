@@ -1,0 +1,44 @@
+- content_for :head do
+  :javascript
+    $(function ($) {
+      $("ul#voucher_list_nav li.list").hover(
+        function () {
+          $(this).toggleClass("sfhover");
+        }, 
+        function () {
+          $(this).toggleClass("sfhover");
+        }
+      );
+    });
+
+.tabs.tiers
+  %ul#voucher_list_nav
+    / - VoucherList.unscoped.where(:bar_id => @bar.id).order("id").valid.each do |list|
+    /   %li
+    /     = link_to_unless_current([list.id, number_to_currency(list.amount.to_f, :unit => list.amount.currency.symbol)].join(". "), admin_bar_voucher_list_path(list.id, :bar_id => @bar.friendly_id)) do
+    /       = content_tag(:span, [list.id, number_to_currency(list.amount.to_f, :unit => list.amount.currency.symbol)].join(". "))
+    - VoucherList.unscoped.where(:bar_id => @bar.id).order("id").valid.group_by(&:cents).each do |group, lists|
+      %li.list
+        = link_to_unless_current "#{number_to_currency(lists.first.amount.to_f, :unit => lists.first.amount.currency.symbol)} (#{lists.size})", "/#{I18n.locale}/#{namespace_for(current_user)}/bars/#{@bar.friendly_id}/vouchers/#{lists.first.cents}" do
+          = content_tag(:span, number_to_currency(lists.first.amount.to_f, :unit => lists.first.amount.currency.symbol))
+        - unless (params[:price] and params[:price].to_s == lists.first.cents.to_s) or (@list and @list.cents == lists.first.cents)
+          %ul.lists
+            - lists.each do |list|
+              %li
+                = link_to_unless_current("##{list.id}", "/#{I18n.locale}/#{namespace_for(current_user)}/bars/#{@bar.friendly_id}/voucher_lists/#{list.id}") do
+                  = content_tag(:span, "##{list.id}")
+                - unless list.downloaded
+                  %span.new= t("global.new")
+
+  = clear_floats
+  
+- if params[:price] or @list
+  .tabs.tiers
+    %ul
+      - VoucherList.unscoped.where(:bar_id => @bar.id, :cents => params[:price] || @list.cents).order("id").valid.each do |list|
+        %li
+          = link_to_unless_current("##{list.id}", "/#{I18n.locale}/#{namespace_for(current_user)}/bars/#{@bar.friendly_id}/voucher_lists/#{list.id}") do
+            = content_tag(:span, "##{list.id}")
+          - unless list.downloaded
+            %span.new= t("global.new")
+    = clear_floats

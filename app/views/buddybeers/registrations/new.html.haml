@@ -1,0 +1,49 @@
+- content_for :head do
+  = stylesheet_link_tag  'sign_up' 
+:javascript
+    $(document).ready( function() {
+     // $('#customer_birthday_day').datepicker({ dateFormat: 'yy-mm-dd', changeYear: true, yearRange:'-90:+0'});
+    } );
+.sign-up-form 
+  = form_for resource, :as => :customer, :url => registration_path(resource_name) do |f|
+    = f.error_messages(:header_message => nil)
+    - if (@referrer and @referrer.value == "sponsorpay") and (@registration_layout and @registration_layout.value == "right")
+      .sponsorpay_right= image_tag("sites/buddybeers/graphics/landing-sponsorpay-vert-#{I18n.locale.to_s}.jpg")
+
+    - if @referrer and @referrer.value == "sponsorpay"
+      %h1= t(".sponsorpay_heading")
+    - else
+      %h1= t(".heading")
+      
+    - if (@referrer and @referrer.value == "sponsorpay") and (@registration_layout and @registration_layout.value == "top")
+      .sponsorpay_top= image_tag("sites/buddybeers/graphics/landing-sponsorpay-horiz-#{I18n.locale.to_s}.jpg")
+    
+    = render :partial => "shared/network_connect"
+    
+    %p
+      %i Or
+      %br
+        %a{:href => "#"} Create a Buddy Drinks Account
+    
+    = f.text_field :login, :placeholder => t("forms.labels.choose_username"), :class => "col-md-12 col-sm-12 col-xs-12"
+    .clearfix
+    
+    / = f.text_field :birthday_day, :placeholder => t("forms.labels.your_birthday"), :class => "col-md-12 col-sm-12 col-xs-12"
+    / .clearfix
+    
+    = f.fields_for :emails do |emails_form|
+      = emails_form.text_field :email, :placeholder => t("forms.labels.your_email"), :class => "col-md-12 col-sm-12 col-xs-12"
+      .clearfix
+    
+    = f.password_field :password, :placeholder => t("forms.labels.choose_password"), :class => "col-md-12 col-sm-12 col-xs-12 input-password"
+    .clearfix
+    = f.password_field :password_confirmation, :placeholder => t("forms.labels.confirm_password"), :class => "col-md-12 col-sm-12 col-xs-12 input-password"    
+    .clearfix    
+            
+    .row
+      .col-md-5.col-sm-5.col-xs-4.padd_none
+        = f.submit t(".form.button"), :class => "btn btn-warning col-md-12 col-sm-12 col-xs-11" 
+      .col-md-7.col-sm-7.col-xs-8.padd_right_none
+        = link_to t(".form.existing_account"), "/login", :class => "anchor-tag"
+    
+

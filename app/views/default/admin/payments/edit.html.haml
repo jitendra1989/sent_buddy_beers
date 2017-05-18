@@ -1,0 +1,38 @@
+- stylesheets 'sites/default/sections/payments'
+
+= render "admin/dashboard/tabs"
+
+= render "tabs"
+
+= form_for [:admin, @payment] do |f|
+  = error_messages_for :payment
+  %fieldset
+    %legend Edit this invoice
+    %ol
+      %li
+        = f.label :id, "Invoice Number"
+        = f.text_field :id, :disabled => true
+      %li
+        = f.label :affiliate_id, "Affiliate"
+        = f.select :affiliate_id, Affiliate.all.collect{|a| [a.name, a.id]}
+      %li
+        = f.label :affiliate_name, "Affiliate Name"
+        = f.text_field :affiliate_name
+      %li
+        = f.label :paid
+        = f.check_box :paid
+      %li
+        = f.label :amount, "Amount (#{f.object.currency})"
+        = f.text_field :amount
+      %li
+        = f.label :beginning_at, "Timeframe"
+        = f.text_field :beginning_at, :disabled => true, :value => "#{f.object.beginning_at.to_s(:euro_date)}–#{f.object.ending_at.to_s(:euro_date)}"
+      %li
+        = f.label :notes
+        = f.text_area :notes
+      %li
+        = f.label :admin_notes
+        = f.text_area :admin_notes
+    %ul
+      %li
+        = submit_tag

@@ -1,0 +1,8 @@
+/ default > credits > top_up
+
+#top_up
+  %h3= t(".top_up")
+  %ul
+    - @amounts.each do |amount|
+      %li= link_to number_with_delimiter(amount[:amount].to_i * 100, :locale => I18n.locale), amount[:amount], :class => "buy_currency pie", :rel => amount[:hash]
+    .clearfix

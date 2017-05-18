@@ -1,0 +1,39 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  beer: pilsner
+  bar: active_bar
+  cents: 499
+  currency: EUR
+  
+two:
+  beer: weiss
+  bar: active_bar
+  cents: 499
+  currency: EUR
+
+three:
+  beer: pilsner
+  bar: inactive_bar
+  cents: 499
+  currency: EUR
+
+other_price:
+  beer: kindl
+  bar: active_bar
+  cents: 250
+  currency: EUR
+  
+discounted_price:
+  beer: pilsner
+  bar: active_bar
+  cents: 499
+  currency: EUR
+  discounted_cents: 200
+  discounted: true
+
+us_price:
+  beer: kindl
+  bar: active_us_bar
+  cents: 500
+  currency: USD

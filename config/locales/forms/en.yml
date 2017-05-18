@@ -1,0 +1,113 @@
+en:
+  forms:
+    buttons:
+      add: Add
+      register_with_twitter: Register with Twitter
+      go: Go!
+      search: "Search »"
+      cheers: Cheers!
+      login: Login
+      update: Update
+    drinks:
+      remove: Remove this drink
+      additional_options: Additional Drink Details
+    hint_box:
+      about: About
+    links:
+      cancel: Cancel
+    select:
+      choose_objects:
+        a_brand: a Brand
+        a_city: a City
+        a_country: a Country
+        a_bar: a Venue
+        a_drink: a Drink
+      none: None
+      default_prompt: Please Choose
+      prompt_city: City
+      prompt_bar: Venue
+      prompt_country: Country
+      prompt_currency: Currency
+      prompt_time: Best Time to Contact
+      prompt_drink: Drink
+      prompt_choose_object: "Please Choose %{type}"
+      no_countries: No available countries
+      no_cities: No available cities
+      morning: Morning (9 - 11AM)
+      noon: Noon (11AM - 1PM)
+      afternoon: Afternoon (1 - 5PM)
+      evening: Evening (5 - 9PM)
+      night: Night (9PM - 12AM)
+    translation: 
+      translation: "%{other_locale} Translation"
+      none: "None"
+    labels:
+      promotion_group: Group Name
+      city: City
+      twitter_password: Twitter Password
+      address: Street Address
+      name: Name
+      photo: Photo
+      bank_account_name: Account Holder Name
+      brand: Brand
+      price: Normal Price
+      current_photo: Current Photo
+      remember_me: Remember me
+      contact_name: Full Contact Name
+      discounted_price: Discounted Price
+      twitter_username: Twitter Username
+      within: Within
+      primary_email: Primary Email
+      bank_account_code: Bank Code (BLZ)
+      price_in_cents: Price (in cents)
+      title: Title
+      country: Country
+      your_name: Your Name
+      confirm_password: Confirm Password
+      discounted: I want to offer this drink to Buddy Drinks customers at a discounted price
+      bar_token: Venue Token
+      new_beer: New Drink
+      username: Username
+      password: Password
+      password_star: '**********'
+      bar_name: Venue Name
+      choose_password: Choose Password
+      bank_name: Bank Name
+      beer: Drink
+      phone_number: Phone Number
+      volume: Size (Volume)
+      remove: Remove
+      bank_address: Bank Address
+      description_bio: Description/Bio
+      twitter_handle: Twitter
+      facebook_handle: Facebook
+      twitter_email: Twitter Email
+      website: Website
+      bank_account_iban: IBAN Number
+      phone: Phone
+      your_email: Your Email
+      emails: Emails
+      currency: Currency
+      opening_hours: When Are You Open?
+      near: Near
+      description: Description
+      bar: Venue
+      default_currency: Pay me in
+      contact_email: Contact Email
+      user: User
+      password: Password
+      bank_account_bic_swift: BIC/SWIFT Number
+      paypal: Paypal Email
+      voucher_limit: Voucher drink limit (per Person/per Day)
+      new_brand: New Brand
+      lead: Who told you about us?
+      choose_username: Choose Username
+      your_birthday: Your Birthday Date
+      birthday: Birthday
+      email: Email
+      bank_account_number: Account Number
+      username_or_email: Username or Email
+      new_password: New Password
+      confirm_new_password: Confirm New Password
+      drink_type: Drink Type
+      remove_this_drink: Remove this drink

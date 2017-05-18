@@ -1,0 +1,19 @@
+- javascripts 'price_form'
+
+%h2= @bar.name
+%p#page-intro= @bar.full_address
+.clear
+
+.content-box
+  / Start Content Box
+  .content-box-header
+    %h3= t(".legend", :bar => @bar.name)
+    .clear
+				
+  .content-box-content
+    = form_for ["affiliate", @bar, @price], :html => { :multipart => true } do |f|
+      %fieldset
+        = error_messages_for :price
+        = render :partial => "prices/form", :locals => {:f => f}
+        %ul
+          %li= f.submit t("forms.buttons.update"), :class => "button"

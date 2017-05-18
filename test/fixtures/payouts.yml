@@ -1,0 +1,15 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  affiliate_id: 1
+  name: MyString
+  email: MyString
+  address: MyString
+  payment_type: MyString
+
+two:
+  affiliate_id: 1
+  name: MyString
+  email: MyString
+  address: MyString
+  payment_type: MyString

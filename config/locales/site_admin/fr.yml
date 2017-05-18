@@ -1,0 +1,19 @@
+fr:
+  site_admin:
+    affiliates:
+      create:
+        success: "Membre crée avec succès!"
+      update:
+        success: "Membre mis à jour avec succès!"
+      destroy:
+        success: "Membre supprimé avec succès!"
+        error: "Il y a eu une erreur en supprimant ce membre"
+    prices:
+      edit:
+        legend: Changer le prix de la bière
+      form:
+        add_beer_link: Ajouter cette bière
+        legend: Ajouter une autre bière à la liste de bière de %{bar}
+        new_brand_link: Ajouter une nouvelle marque
+        add_brand_link: Ajouter cette marque
+        new_beer_link: Ajouter une bière

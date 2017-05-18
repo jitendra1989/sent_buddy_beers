@@ -1,0 +1,15 @@
+/ buddybeers > bars > drink_list
+#drink_list
+  %br
+  .row
+    %b= t(".menu.title")
+    %ul.profile-menu
+      - prices = @bar.try(:prices)
+      - unless prices.blank?
+        - prices.each do |price|
+          %li
+            %span{ :class => price.drink_type.present? ? price.drink_type.to_s.downcase : "draught"}
+            %span.volume
+              = price.name
+              = "#{price.volume}"
+            = link_to "<span>#{ number_to_currency(price.total.to_f, :unit => price.amount.currency.symbol)}</span>".html_safe, new_iou_url(:price_id => price.id), :title => price.discounted? ? t(".menu.discount") : "", :class => "link", :rel => "nofollow"

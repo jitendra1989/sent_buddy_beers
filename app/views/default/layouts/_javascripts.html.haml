@@ -1,0 +1,27 @@
+:javascript
+  var bb = {};
+= javascript_include_tag 'jquery', 'jquery-ui', 'rails', 'jrails', 'map', 'jquery.fancybox-1.3.4.pack', 'jquery.easing-1.3.pack'
+= javascript_include_tag Rails.env.development? ? 'application_dev' : 'application'
+- if current_user
+  :javascript
+    $(document).ready(function(){
+      $(".buy_credits").fancybox({
+        'padding'       : '0',
+        'autoScale'     : false,
+        'width'         : 417,
+        'height'        : 367,
+        'type'                : 'iframe',
+        'scrolling'     : 'no',
+        'onClosed'      : function() {
+          $('#user_credits').hide();
+          $('#spinner').show();
+          jQuery.ajax({data:'authenticity_token=' + encodeURIComponent('jLnyhwkmggC6Wbd3sUsTDnLb6KOTsgufL9HE9ZLTVVk='),
+          error:function(request){jQuery('.user_credits').html(request.responseText);},
+          success:function(request){jQuery('.user_credits').html(request);},
+          type:'post', url:'/users/#{current_user.id}/credits/balance'});
+          $('#spinner').hide();
+          $('#user_credits').show();
+          // return false;
+        }
+      });
+    });

@@ -1,0 +1,11 @@
+- content_for :head do
+  %meta{:property => "fb:app_id", :content => current_site.facebook_app_id} 
+  %meta{:property => "og:type", :content => "buddybeers:drink"} 
+  %meta{:property => "og:url", :content => bar_price_url(@price, :bar_id => @bar)} 
+  %meta{:property => "og:title", :content => "A #{@price.name} at #{@bar.name}"} 
+  %meta{:property => "og:description", :content => @price.description.present? ? @price.description : @bar.description} 
+  %meta{:property => "og:image", :content => @price.photo.file? ? @price.photo(:square) : @bar.fb_image_url}
+  %meta{:property => "buddybeers:location", :content => bar_url(@bar)}
+
+%h1= "#{@price.name} at #{@bar.name}"
+= image_tag(@price.photo.file? ? @price.photo(:square) : @bar.fb_image_url)

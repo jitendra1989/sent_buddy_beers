@@ -1,0 +1,13 @@
+<%= t(".salutation", :bar_name => @voucher_list.bar.name) %>,
+
+<%= t(".sold_out", :amount => number_to_currency(@voucher_list.amount.to_f, :unit =>@voucher_list.amount.currency.symbol)) %>
+
+<%= t(".explanation") %>
+
+<%= "http://buddybeers.com/#{I18n.locale}/affiliate/bars/#{@voucher_list.bar.friendly_id}/voucher_lists/#{@voucher_list.id}" %>
+
+<%= t(".pdf") %>: <%= "http://buddybeers.com/#{I18n.locale}/affiliate/bars/#{@voucher_list.bar.friendly_id}/voucher_lists/#{@voucher_list.id}.pdf" %>
+
+<%= t(".thanks") %>
+
+<%= t(".post", :link => "#{edit_affiliate_bar_url(@voucher_list.bar)}#notifications") %>

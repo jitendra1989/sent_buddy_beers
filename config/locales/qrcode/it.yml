@@ -1,0 +1,13 @@
+it:
+  qrcode:
+    validate:
+      html:
+        title: Verifica del Voucher
+      sent: Inviato
+      expires: Scade
+      from: Da
+      amount: Importo
+      to: A
+      mobile:
+        heading: Riscatto del Voucher
+      for: Per

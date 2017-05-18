@@ -1,0 +1,10 @@
+.tabs
+  %ul
+    %li
+      = link_to_unless_current(t(".show"), admin_payment_path(@payment)) do
+        = content_tag(:span, t(".show"))
+    %li
+      = link_to_unless_current(t("global.edit"), edit_admin_payment_path(@payment)) do
+        = content_tag(:span, t("global.edit"))
+    %li= link_to t("global.delete"), admin_payment_path(@payment), :method => :delete, :confirm => t("global.confirm_question")
+  = clear_floats

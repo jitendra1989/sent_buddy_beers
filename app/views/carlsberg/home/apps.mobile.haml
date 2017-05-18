@@ -1,0 +1,31 @@
+- if is_device?('iphone') or is_device?('ipad')
+  - store = t('.app_store')
+  - link = "http://itunes.apple.com/de/app/buddy-beers-carlsberg-buy/id457267087"
+- elsif is_device?('android')
+  - store = t('.android_market') 
+  - link = "https://play.google.com/store/apps/details?id=com.buddybeers.mobile"
+
+
+- if is_device?('iphone') or is_device?('ipad') or is_device?('android')
+  :javascript
+    $(function() { 
+      window.location = '#{link}'
+    });
+  
+  #iou
+    .header
+      %h1= image_tag("sites/default/graphics/w-iphone-ajax-loader.gif")
+    %p.information
+      = t('.redirect', :store_name => link_to(store, link)).html_safe
+      = t('.please_wait')
+
+- else
+  #iou
+    .header
+      %h1 &nbsp;
+    %p.information 
+      = t(".download_instructions")
+    #iphone
+      %p= link_to t(".download_iphone_app"), "http://itunes.apple.com/de/app/buddy-beers-carlsberg-buy/id457267087"
+    #android
+      %p= link_to t(".download_android_app"), "https://play.google.com/store/apps/details?id=com.buddybeers.mobile"

@@ -1,0 +1,12 @@
+%meta(http-equiv="content-type" content="text/html;charset=UTF-8")
+%meta{ :name => "description", :content => @meta_description ? @meta_description : t("layouts.meta.description") }
+%meta{ :name => "title", :content => (@title.blank? ? controller.action_name : @title) }
+
+-# Do Not let search engines Index the Default site
+%meta{ :name => 'robots', :content => 'noindex, nofollow' }
+
+-# Facebook OpenGraph Meta Tags are below:
+-# More info: http://developers.facebook.com/docs/reference/plugins/like
+%meta{ :property => "og:site_name", :content => "Buddy Drinks" }
+%meta{ :property => "fb:admins", :content => "511335022" }
+%meta{ :property => "og:description", :content => @meta_description.blank? ? t("layouts.meta.description") : @meta_description }

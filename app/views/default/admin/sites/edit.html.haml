@@ -1,0 +1,9 @@
+- @title = "Edit Site: #{@site.name}"
+
+= render "admin/dashboard/tabs"
+
+= form_for [:admin, @site] do |f|
+  = error_messages_for :site
+  %fieldset
+    %legend Edit Site
+    = render "form", :f => f

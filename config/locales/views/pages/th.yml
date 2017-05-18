@@ -1,0 +1,7 @@
+th:
+  pages:
+    show:
+      errors:
+        language_missing: "ขออภัย ระบบไม่มีภาษาของคุณ เราจะแสดงข้อมูลเป็นภาษาอื่น (%{other_locale})."
+    body:  
+      updated_at: "อัพเดทข้อมูลครั้งสุดท้ายเมื่อ: %{date}"

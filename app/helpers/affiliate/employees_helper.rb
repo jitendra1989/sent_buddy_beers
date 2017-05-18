@@ -1,0 +1,2 @@
+module Affiliate::EmployeesHelper
+end

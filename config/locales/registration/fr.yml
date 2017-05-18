@@ -1,0 +1,48 @@
+fr:
+  registrations:
+    email:
+      pending: Vérification en attente
+    new:
+      title: Créer un compte Buddy Drinks
+      heading: Asseyez-vous au comptoir!
+      sponsorpay_heading: Besoin d'une pause ? Que diriez-vous d'une bière bien fraîche ?
+      form:
+        button: S'enregistrer
+        legend: Créer un compte Buddy Drinks
+        existing_account: J'ai déjà un compte 
+    edit:
+      button:
+        heading: Ajouter un bouton à votre site Internet 
+        description: Copiez et collez ce code dans votre site Internet 
+        name_label: Afficher mon nom
+      title: Editer mon compte
+      heading: Editer mon compte
+      facebook:
+        connected: Vous êtes connectés avec Facebook!
+        account: Vous êtes connectés via le compte Facebook n° %{id}
+        permissions:
+          about: Pourquoi nous avons besoins de vos informations de compte Facebook 
+          basic_info: Informations basiques
+          basic_info_explained: Nous utilisons ces informations pour mettre à jour votre nom et votre photo sur notre site. Nous vérifions également si certains de vos amis utilisent notre application afin que vous puissiez leur envoyer des bières.  
+          email: Adresse email
+          email_explained: Nous utilisons SEULEMENT votre adresse email Facebook pour vous envoyer une notification quand un ami vous envoie une bière. 
+      photo_change: Changer votre Photo
+      photo_add: Ajouter une Photo
+      password: Changer votre mot de passe
+      
+    complete:
+      title: Inscription à Buddy Drinks terminée
+      heading: Inscription terminée. Veuillez vérifier votre email. 
+      description: "Cliquez sur le lien de confirmation dans l'email que nous venons de vous envoyer pour confirmer votre adresse email. "
+      resend: "Vous n'avez rien reçu ? <a href=\"%{link}\">Cliquez ici pour l'envoyer de nouveau.</a>"
+    form:
+      payment_information:
+        legend: Informations de paiement
+      personal_information:
+        legend: Information personnelles
+      promo_information:
+        legend: Informations promotionnelles
+    create:
+      success: "<strong>Votre compte a été crée.</strong> Cliquez sur le lien de confirmation dans votre boîte mail, et c'est parti!"
+    update:
+      success: Compte mis à jour!

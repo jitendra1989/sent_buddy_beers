@@ -1,0 +1,78 @@
+/ default > facebook > locations > index
+
+- javascripts 'jquery.infieldlabel.min'
+- @canonical_link = "#{(request.ssl? ? "https" : "http")}://carlsberg.buddybeers.com#{["/", I18n.locale.to_s].join() unless request.fullpath.start_with?(["/", I18n.locale.to_s].join())}#{request.fullpath.split("?").first.chomp("/")}"
+- @title = t(".title")
+
+- content_for :facebook do
+  :plain
+    //FB.Canvas.setSize();
+    FB.Canvas.setAutoResize();
+
+- content_for :head do
+  :javascript
+    $(document).ready(function(){
+      $("label").inFieldLabels(); 
+    });
+  :plain
+    <!--[if lte IE 8]>
+      <style type="text/css" media="screen">
+        #bars #bar_network .bar .more .photos {
+          -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(grayscale=1)";
+          filter: progid:DXImageTransform.Microsoft.BasicImage(grayscale=1);
+          padding-right: 30px;
+        }
+      </style>
+    <![endif]-->
+
+
+#bars
+  .header
+    %h1= t("bars.index.heading")
+    %h2.clear= t("bars.index.subheading")
+  #bar_search
+    = form_tag facebook_locations_url, :method => :get do
+      %fieldset
+        %ol
+          %li
+            = label "origin", "location", t("bars.search.value")
+            = text_field "origin", "location", :value => (params[:origin] and params[:origin][:location]) ? params[:origin][:location] : "", :class => "pie"
+        %ul
+          %li
+            %button.submitBtn{ :type => "submit"} 
+              %span
+                = image_tag("sites/carlsberg/forms/search_glass.png")
+    = clear_floats
+
+  #map{ :style => "width:520px; height:300px", :data => { :"map-markers" => bars_to_map_markers(@bars) } }
+  
+  #bar_network
+    - @bars.group_by(&:country).each do |country, bars|
+      - bars.group_by(&:city).each do |city, bars_in_city|
+        %h3.city= "#{t("countries.#{country.printable_name.parameterize.gsub("-", "_")}")} / #{city.name}"
+        %ul
+          - bars_in_city.each do |bar|
+            %li{ :class => "bar #{cycle("odd", "even")}"}
+              .info
+                %h4= link_to bar.name, facebook_location_url(bar)
+                %p.address= bar.full_address
+                - if bar.url
+                  %p.distance= link_to bar.url, bar.url, :rel => "nofollow", :target => "_blank"
+                %p.prices
+                  %strong= t("bars.bar.price_range")
+                  = price_range_for(bar)
+                  %strong= t("bars.bar.drink_specials")
+                  = has_drink_specials?(bar)
+
+              .more
+                - if bar.logo.file? or bar.gallery.photos.present?
+                  .photos.pie
+                    = image_tag bar.logo.file? ? bar.logo(:thumb) : bar.gallery.photos.first.photo(:thumb), :class => "pie"
+              .links_prices
+                %p.more_info= link_to content_tag(:span, t("bars.bar.more_info")), facebook_location_url(bar)
+                %p.buy_a_beer= link_to content_tag(:span, t("bars.bar.buy_a_beer")), new_facebook_order_url(:bar_id => bar.id)
+                  
+
+              =clear_floats
+
+  = clear_floats  

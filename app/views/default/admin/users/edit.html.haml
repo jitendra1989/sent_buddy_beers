@@ -1,0 +1,20 @@
+- @title = "Edit User: #{@user.name}"
+
+= render "admin/dashboard/tabs"
+
+= form_for @user, :url => admin_user_url(@user) do |f|
+  = error_messages_for :user
+  %fieldset
+    %legend Edit User
+    = render "form", :f => f
+    %ul
+      %li= f.submit "Update"
+
+= form_for @user, :url => admin_user_url(@user) do |f|
+  = error_messages_for :user
+  %fieldset
+    %legend Change User's Password
+    = f.hidden_field :type, :value => f.object.type
+    %ol= render "password_fields", :f => f
+    %ul
+      %li= f.submit "Change"

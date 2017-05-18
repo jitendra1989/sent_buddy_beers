@@ -1,0 +1,47 @@
+de:
+  registrations: 
+    complete: 
+      description: "Klicke den Bestätigungslink in der Email, die wir Dir soeben gesendet haben, um Deine Emailadresse zu bestätigen."
+      heading: "Registrierung vollständig. Bitte überprüfe Deine Emails."
+      resend: "Email nicht bekommen? <a href=\"%{link}\">Klick hier, um sie nochmal zu senden.</a> "
+      title: "BuddyDrinks Registrierung ist abgeschlossen."
+    create: 
+      success: "<strong>Wilkommen bei Buddy Drinks!.</strong> Check Deine Best\\xC3\\xA4tigungsemail - klick auf die Link, und los geht's!"
+    edit: 
+      button:
+        heading: "Füge Deiner Website einen Button hinzu"
+        description: "Kopiere den nachfolgenden Code und füge ihn Deiner Website hinzu"
+        name_label: "Zeige meinen Namen"
+      facebook: 
+        account: "Du bist mit folgender Facebook Kontonummer verbunden: %{id} "
+        connected: "Du bist über Facebook verbunden!"
+        permissions: 
+          about: "Warum wir Deine Facebook Informationen anfragen"
+          basic_info: "Allgemeine Information"
+          basic_info_explained: "Wir benötigen diese Informationen, um Deine Photos und Deinen Namen auf unserer Seite aktualisieren zu können. Wir überprüfen auch, ob Deine Freunde unsere App benutzen, sodass Du ihnen Biere Spendieren kannst."
+          email: "Email Adresse"
+          email_explained: "Wir nutzen Deine Facebook Emailadresse NUR, um Dir eine Benachrichtigung zu schicken, wenn Dir ein Freund ein Bier spendiert."
+      heading: "Mein Profil bearbeiten"
+      password: "Passwort ändern"
+      photo_add: "Foto hinzufügen"
+      photo_change: "Foto ändern"
+      title: "Mein Profil"
+    email: 
+      pending: "Noch nicht bestätigt"
+    form: 
+      payment_information: 
+        legend: Zahlungsinformationen
+      personal_information: 
+        legend: "Persönliche Informationen"
+      promo_information: 
+        legend: Werbeinformationen
+    new: 
+      form: 
+        button: Registrieren
+        existing_account: "Ich habe bereits ein Konto"
+        legend: "oder ganz klassisch registrieren:"
+      heading: "Komm an die Theke!"
+      sponsorpay_heading: "Pause gefällig? Mit einem kühlen Bier?"
+      title: "Melde Dich an!"
+    update: 
+      success: "Aktualisierung erfolgreich!"

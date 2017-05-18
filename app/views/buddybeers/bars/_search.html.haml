@@ -1,0 +1,14 @@
+/ buddybeers > bars > search
+
+- javascripts "jquery.infieldlabel.min"
+- content_for :head do
+  :javascript
+    $(document).ready(function(){ $("label").inFieldLabels(); });
+
+= form_tag bars_url, :method => :get do
+  .col-md-8.padd_none.col-sm-7.col-xs-7
+    %label Near
+    = text_field "origin", "location", :value => (params[:origin] and params[:origin][:location]) ? params[:origin][:location] : "", :placeholder => "Enter an address, city, or zip code", :class => 'form-control'
+  .col-md-4.padd_none.col-sm-5.col-xs-5
+    %button.btn.btn-warning{:type => "submit"} Search
+= clear_floats

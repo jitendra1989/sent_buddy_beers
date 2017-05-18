@@ -1,0 +1,13 @@
+de:
+  qrcode: 
+    validate: 
+      amount: Summe
+      expires: "Gültig bis"
+      for: für
+      from: Von
+      html: 
+        title: "Gutschein Check"
+      mobile: 
+        heading: "Gutschein Check"
+      sent: Von
+      to: An

@@ -1,0 +1,8 @@
+%li
+  = link_to affiliate.name, admin_affiliate_path(affiliate)
+  = "(#{affiliate.email})"
+  = pluralize(affiliate.bars.length, "Venue")
+  &ndash;
+  = link_to "Edit", edit_admin_affiliate_path(affiliate)
+  |
+  = link_to "Destroy", admin_affiliate_path(affiliate), :method => :delete, :confirm => "For realz?!"

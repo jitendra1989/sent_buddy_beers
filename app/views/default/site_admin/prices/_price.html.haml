@@ -1,0 +1,29 @@
+%li{ :class => cycle("odd", "even") }
+  - if price.photo.file?
+    = image_tag price.photo(:thumb)
+  %span.drink
+    = price.name
+  &ndash;
+  %small.meta
+    - if price.beer
+      - if price.beer.brand
+        = "#{t("forms.labels.brand")}:"
+        = price.beer.brand.name
+      = "#{t("forms.labels.beer")}:"
+      = price.beer.name
+    - if price.drink_type
+      = "#{t("forms.labels.drink_type")}:"
+      = price.drink_type
+    - if price.volume.present?
+      = "#{t("forms.labels.volume")}:"
+      = price.volume
+  &ndash;
+  %span.price{ :class => price.discounted ? 'strikeout' : ''}
+    = number_to_currency(price.amount.to_f, :unit => price.amount.currency.symbol)
+  - if price.discounted
+    = number_to_currency(price.discounted_amount.to_f, :unit => price.discounted_amount.currency.symbol)
+    = image_tag 'icons/emoticon_grin.png', :alt => t("affiliate.prices.drink.special_price"), :title => t("affiliate.prices.drink.special_price")
+  &ndash;
+  = link_to t("global.edit"), edit_site_admin_bar_price_url(price.bar.id, price.id)
+  |
+  = link_to t("global.delete"), site_admin_bar_price_url(price.bar.id, price.id), :method => :delete, :confirm => t("global.confirm_question")

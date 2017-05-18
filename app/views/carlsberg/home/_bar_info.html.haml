@@ -1,0 +1,8 @@
+/ carlsberg > home > bar_info
+
+#bar
+  .pad
+    %h2= t(".heading")
+    %p= raw t(".description")
+    .register_bar_link
+      = link_to t(".link"), new_bar_path

@@ -1,0 +1,7 @@
+- if @prices.blank?
+  %option(value="")
+    = t("forms.select.prompt_choose_object", :type => t("forms.select.choose_objects.a_bar"))
+- else
+  %option(value="")
+    = t("forms.select.prompt_choose_object", :type => t("forms.select.choose_objects.a_drink"))
+  = raw options_for_select(@prices.collect{|p| [ [p.name, "-", number_to_currency(p.total.to_f, :unit => p.total.currency.symbol)].join(" "), p.id ] }.sort)

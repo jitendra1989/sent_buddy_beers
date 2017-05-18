@@ -1,0 +1,199 @@
+th:
+  ious:
+    new:
+      heading: "ส่งเบียร์เลี้ยงเพื่อนของคุณ"
+      title: "ส่งเบียร์เลี้ยงเพื่อนของคุณ"
+    form:
+      and_or: "และ / หรือ"
+      friends_info_legend: "เพื่อนของคุณ"
+      salutation_legend: "คำทักทาย"
+      friend_network: "เลือกรายชื่อเพื่อนของคุณจาก"
+      bar_legend: "เลือกบาร์"
+      sms_warning:
+        notice: "คำเตือน"
+        warning: "เครือข่ายโทรศัพท์มือถือบางเครือข่ายจะไม่สามารถรับข้อความเอสเอ็มเอส SMS จากเราได้ ดังนั้นเราขอแนะนำให้คุณกรอกอีเมล์ของเพื่อนของคุณด้วย"
+      form:
+        button: "ส่ง!"
+        send_a: "ส่ง"
+        memo: "เหตุผลของความใจดี"
+        beer: "เบียร์ <small>(Quantity/Type)</small>"
+        friends_email: "กรุณากรอกอีเมล์ของเพื่อนของคุณ"
+        friend_search_hint_text: "กรุณากรอกชื่อหรืออีเมล์ของเพื่อนของคุณ"
+        friends_name: "ชื่อเพื่อนของคุณ"
+        friend_searching_text: "ค้นหารายชื่อเพื่อนของคุณ..."
+        friend_search_no_results_text: "ไม่พบชื่อนี้ในรายชื่อเพื่อนของคุณ"
+        sms_warning: "อาจจะถูกย่อให้สั้นในข้อความเอสเอ็มเอส SMS"
+        buddy_beers_countries: "ประเทศในเครือข่าย Buddy Drinks"
+        other_countries: "ทุกประเทศ"
+      beer_legend: "เลือกเบียร์"
+      public_acceptance: "แสดงข้อความนี้บนหน้าโฮมเพจหรือบาร์เพจ"
+      mobile_only:
+        app_link: "ดาวน์โหลดแอ๊พฯ"
+        heading: "ตอนนี้เราใช้โปรแกรมสำหรับมือถือเท่านั้น"
+        description: "โปรดตรวจสอบให้แน่ใจว่าบุคคลที่คุณจะส่งดริงค์ให้มีมือถือสมาร์ทโฟน <strong>iPhone</strong> หรือ <strong>Android</strong>"
+        help:
+          title: "เพื่อนฉันต้องมีมือถือสมาร์ทโฟนหรือไม่?"
+          explanation: "<strong>ใช่</strong> มันทำให้งานของเราง่ายขึ้นในการที่จะขยายเครือข่ายบาร์ของเราด้วยการโปรแกรมแอ๊พฯมือถือใหม่ล่าสุดและเทคโนโลยีการขึ้นใช้คูปองง่ายๆจากการคลิ๊กแค่ครั้งเดียวที่เราได้คิดค้นขึ้น"
+          unfortunately: "น่าเสียดายที่สิ่งนี่เป็นการจำกัดจำนวนเพื่อนที่สามารถเข้าใช้การบริการเจ๋งๆของเรา"
+          suggestions:
+            title: "หากเพื่อนคุณไม่มีมือถือสมาร์ทโฟน ลองทำเรื่องสนุกๆแบบนี้ดูสิ"
+            one: "ส่งเบียร์ไปให้เเพื่อนของเพื่อนคุณที่มีมือถือสมาร์ทโฟนสองเบียร์แล้วให้เค้าพาเพื่อนคุณไปดื่มด้วยกัน"
+            two: "ส่งดริงค์ไปให้เพื่อนคุณแล้วท้าเค้าให้หาคนที่มีมือถือสมาร์ทโฟนในบาร์มาแชร์ดริงค์ด้วยกัน"
+            three: "ซื้อดริ้งค์เลี้ยงตัวคุณเองและพาเพื่อนของคุณไปนั่งดื่มด้วยกัน"
+            
+    twitter:
+      status: "\"%{memo}\" %{sender} ซื้อ %{recipient} %{beer} ที่บาร์ %{bar}, %{city}: %{url}"
+    index:
+      title: "เบียร์ของฉัน"
+      you_sent: "คุณ"
+      you_received: "คุณ"
+      description_received: "<strong>%{sender}</strong> ซื้อ <strong>%{recipient}</strong> %{drink} ที่ <strong>%{bar}</strong>, %{city}"
+      description_sent: "<strong>%{sender}</strong> ซื้อ <strong>%{recipient}</strong> %{drink} ที่ <strong>%{bar}</strong>, %{city}"
+      received_beers: "ได้รับเบียร์จำนวน: %{count}"
+      sent_beers: "ได้ส่งเบียร์จำนวน: %{count}"
+      sender_generic: "เพื่อนซี้"
+      voucher_number: "รหัสคูปองเลขที่ #%{number}"
+      heading: "เบียร์ของฉัน"
+      expired: "หมดเขตวันที่: %{date}"
+      expires: "หมดเขตใน %{distance} วันที่ %{date}"
+      redeemed: "ถูกใช้แล้วในวันที่: %{date}"
+      received_empty: "ขณะนี้คุณไม่ได้รับเบียร์จากใครเลย ลองขอเพื่อนหรือญาติพี่น้องของคุณให้ซื้อเบียร์เลี้ยงคุณดีมั้ย บางทีเขาอาจจะหาโอกาสเลี้ยงเบียร์คุณอยู่ก็ได้"
+      received_mobile: 
+        heading: " คุณได้รับคูปองในโทรศัพท์มือถือของคุณแต่คุณเปิดอ่านไม่ได้ใช่ไหม? "
+        description: " <a href=\"%{link}\"> คลิ๊กที่นี่เพื่อเพิ่มข้อมูลโทรศัพท์มือถือในบัญชีของคุณ </a> และหลังจากนั้นคุณก็จะเห็นคูปองของคุณ "
+      sent_empty: "ขณะนี้คุณยังไม่ได้ส่งเบียร์ให้ใครเลย หากคุณไม่มีเพื่อนที่อาศัยอยู่ใกล้ๆบาร์ของเรา ลองสั่งเบียร์เลี้ยงดื่มตัวเองสักหน่อยดีมั้ย"
+    order:
+      price: "รหัสคูปอง"
+      quantity: "จำนวน"
+      similar_price: "หรือเครื่องดื่มในราคาเดียวกัน"
+      total: "ทั้งหมด"
+      heading: "คุณกำลังสั่งซื้อ"
+      bucks: "บัดดี้บัคส์ BuddyBucks"
+    drink_details:
+      drink_at_bar: "%{drink}* คูปองที่ %{bar}, %{city} สำหรับ %{recipient} (%{email})"
+    buddy_bucks_payment:
+      get_bucks: "ซื้อ BuddyBucks เพิ่ม"
+      heading: BuddyBucks
+      pay: "ชำระเงินโดยใช้ %{amount} BuddyBucks"
+      bullets:
+        credit_system: "ตั๋วเงินโดยเฉพาะของเราบนระบบวีซ่า Visa's %{link}"
+        fast_convenient: "สะดวกและรวดเร็ว"
+        payment_options: "วิธีการชำระเงินมีหลากหลายวิธี อาทิ เช่น <strong>การโอนเงินผ่านธนาคาร</strong>"
+        multiple_purchases: "หากคุณสั่งซื้อหลายออเดอร์คุณสามารถชำระเงินรวมกันได้ในครั้งเดียว"
+      credits:
+        voucher: "รหัสคูปอง"
+      credit_cards: "รับบัตรเครดิตทุกธนาคาร"
+    paypal_payment:
+      button: "ชำระเงิน %{amount} ด้วยระบบเพย์พาวล์ Paypal"
+      bullets:
+        credit_card: "ชำระเงินด้วยบัตรเครดิต"
+        secure: "มาตรฐานความปลอดภัยในการชำระเงินทางอินเตอร์เน็ต"
+        no_account: "ไม่จำเป็นต้องมีบัญช"
+      form:
+        for_buddybeers: "สำหรับ BuddyDrinks.com"
+        order_name: "คำสั่งซื้อ #%{number}"
+        item_name: "%{amount} คูปองสำหรับ %{beers}%{location}"
+        average: "โดยเฉลี่ย"
+      credit_cards: "รับบัตรเครดิตทุกธนาคาร"
+    pay:
+      title: "ชำระเงิน"
+      heading: "ชำระเงิน!"
+      payment:
+        heading: "ชำระเงินโดยใช้"
+    credits:
+      current_bucks: "ขณะนี้คุณมี <span class=\"user_credits\">%{amount}</span> BuddyBucks."
+    create:
+      real:
+        success: "<strong>เจ๋งไปเลย!</strong> โปรดชำระค่าเบียร์ตามรายการข้างล่างและเป็นขวัญใจเพื่อนๆตลอดไป!"
+      error: "ขออภัย! มีความผิดพลาดเกิดขึ้น"
+    completed:
+      error: "ขออภัย วันนี้ไม่มีเบียร์ฟรีในระบบ; โปรดสั่งซื้อเบียร์ก่อน"
+    confirm:
+      not_enough_bucks: 
+        heading: "คุณต้องซื้อ %{amount} BuddyBucks เพิ่มเพื่อชำระเงินในคำสั่งซื้อนี้"
+        desc: "โปรดกดลิงค์ข้างล่างนี้เพื่อเพิ่ม BuddyBucks ในบัญชีของคุณ"
+      get_more_bucks: "ซื้อ BuddyBucks เพิ่ม"
+      error:
+        heading: "มีข้อขัดข้อง"
+        description: "ขออภัย! มีความผิดพลาดเกิดขึ้นในการชำระเงิน โปรดลองใหม่อีกครั้งหรือหากยังทำไม่ได้ กรุณาติดต่อเราที่ info@buddydrinks.com "
+      pay: "ชำระด้วย %{amount} BuddyBucks"
+    bar_detail:
+      read_more: "อ่านรายละเอียด"
+      more_info: "รายละเอียดเพิ่มเติม"
+    update:
+      success: "รหัสคูปองถูกใช้แล้ว"
+      error: "มีข้อขัดข้อง"
+    confirm_payment:
+      success: "<strong>สุดยอด!</strong> ระบบPaypalคอนเฟริมการชำระเงินของคุณเรียบร้อยแล้ว!"
+    confirmed_payment:
+      immediate_delivery: "ระบบอาจใช้เวลาสักสองนาทีเพื่อส่งรหัสคูปองให้เพื่อนของคุณ เพื่อนของคุณที่ชื่อ %{recipient} คงจะดีใจมาก เขาอาจจะเลี้ยงเบียร์ <em> คุณ </em>แทนคำขอบคุณ!"
+      title: "ส่งเบียร์!"
+      send_another_beer: "ส่งเบียร์อีก"
+      you_sent: "<strong>คุณ</strong> ได้ส่ง <strong>%{recipient}</strong> %{price} คูปองสำหรับ %{beer} ที่บาร์ <strong>%{bar}</strong> ในเมือง %{city}!"
+      spread_the_love: "ของดีต้องบอกต่อ"
+      heading: "สุดยอด!"
+      success: "<strong>สุดยอด!</strong> ระบบPaypalคอนเฟริมการชำระเงินของคุณเรียบร้อยแล้ว!"
+      delayed_delivery: "เนื่องจากมีความล่าช้าที่บาร์ %{bar} ในการรับแจ้งรหัสคูปอง%{recipient} ทำให้อาจจะต้องใช้เวลาประมาณ %{time} ชั่วโมงในการส่งคูปองให้ถึงมือผู้รับ เพื่อนของคุณที่ชื่อ %{recipient} คงจะดีใจมาก เขาอาจจะเลี้ยงเบียร์ <em> คุณ </em>แทนคำขอบคุณ!"
+      social_spread:
+        share: "แชร์ข้อมูลนี้บนเฟสบุ๊ค!"
+        real: REAL
+        heading: "แชร์ข้อมูลนี้กับเพื่อนผ่านเฟสบุ๊คหรือทวิตเตอร์"
+        fb_status: "ฉันได้ส่ง %{recipient} %{beer} ที่บาร์ %{bar} ในเมือง %{city}: %{memo}!"
+        fb_status_for_display: "ฉันได้ส่ง <strong>%{recipient}</strong> %{beer} ที่บาร์ %{bar} ในเมือง %{city}: %{memo}!"
+        fb_action: "สั่งซื้อเบียร์ได้ที่นี่"
+        twitter_link: "โพสต์ข้อความนี้ในทวิตเตอร์!"
+        twitter_status_for_display: "ฉันได้ส่ง <strong>@%{recipient}</strong> %{beer} ที่บาร์ %{bar}, %{city} บนเว็ปไซด์ <strong>http://buddydrinks.com</strong>"
+        twitter_status: "ฉันได้ส่ง @%{recipient} %{beer} ที่บาร์ %{bar}, %{city}"
+        twitter_via: "ผ่านเว็ปไซด์ Buddy Drinks"
+      receipt:
+        heading: "หลักฐานการชำระเงิน"
+        description: "คุณจะรับหลักฐานการชำระเงินในอีเมล์ของคุณ ผ่านระบบเพย์พาวล์ Paypal หรือ Ultimate Pay"
+        questions: "หากคุณมีข้อสงสัย โปรด:"
+        faqs: "อ่าน ถาม-ตอบ"
+        contact:  "ติดต่อเรา"
+    show:
+      sent: "ส่ง:"
+      expires: "หมดอายุ:"
+      title: "%{sender} ซื้อ %{recipient} %{drink} ที่ %{bar}, %{city}"
+      sent_to: "ส่งให้:"
+      memo: "เหตุผล?"
+      heading: "%{value} คูปองสำหรับ 1 %{beer}"
+      statuses:
+        simple:
+          sent: "ส่ง"
+          redeemed: "ถูกขึ้นใช้"
+          valid_on: "เริ่มมีอายุการใช้งานตั้งแต่%{date}"
+          valid: "มีอายุการใช้งาน"
+          expired: "หมดอายุ"
+        sent: "ส่งแล้วแต่ยังไม่สามารถใช้งานได"
+        redeemed: "ถูกขึ้นใช้!"
+        valid_on: "ยังไม่สามารถใช้งานได้ เริ่มมีอายุการใช้งานตั้งแต่%{date}"
+        valid: "มีอายุการใช้งาน ใช้ได้ทันที"
+        expired: "หมดเขตการใช้แล้ว ทำไมปล่อยทิ้งไว้นานจัง"
+        valid_until: "มีอายุการใช้งานจนถึง%{date}"
+        redeemed_on: "ถูกขึ้นใช้ในวันที่%{date}"
+        expired_on: "หมดเขตการใช้ภายในวันที่%{date}"
+      disclaimer:
+        title: "ข้อตกลง"
+        no_cash: "คูปอง Buddy Drinks ไม่สามารถแลกเป็นเงินสดได้และสามารถโอนกรรมสิทธิ์โดยต้องได้รับความยินยอมจากเจ้าของบาร์ก่อนเท่านั้น"
+        voucher_limit: "บาร์นี้อนุญาตให้ลูกค้าสามารถขึ้นใช้คูปอง Buddy Drinks ได้ %{limit} เครื่องดื่มต่อคนต่อวัน"
+      instructions:
+        print_link: "พิมพ์คูปองนี้"
+        heading: "ฉันต้องทำอย่างไรต่อไป?"
+        instructions: "สิ่งที่คุณต้องทำมีเพียงแค่นำรหัสคูปองข้างบนนี้ไปขึ้นใช้ที่บาร์ %{bar}. คุณสามารถพิมพ์หรือโชว์รหัสบนมือถือสมาร์ทโฟนของคุณหรือแม้กระทั่งจดรหัสใส่บนกระดาษ"
+      map_link: "แผนผังเว็ปไซด"
+      expired: "ขออภัยคูปองนี้ได้หมดอายุแล้ว"
+      status: "สถานะ:"
+      sent_by: "ส่งโดย:"
+      redeemable_at: "สามารถนำไปขึ้นใช้ได้ที่ "
+      heading_voucher: "นี่คือ <span class=\"money\">%{amount}</span> คูปองสำหรับ %{beer}%{bar}"
+      more_info: "ข้อมูลเพิ่มเติม"
+      mobile: 
+        heading: "รหัสคูปอง"
+    existing_account_activation:
+      heading: "มีบัญชีแล้วใช่ไหม?"
+      description: "กรุณาลงชื่อเข้าใช้ที่นี่และเราจะใส่อีเมล์{email} ไปที่บัญชีของคุณ"
+    new_account_creation:
+      heading: "ต้องการที่จะเริ่มใช้บัญชีของคุณ?"
+      description: "การเริ่มใช้บัญชีของคุณจะทำให้คุณเข้าสู่ระบบ Buddy Drinks และตรวจสอบบัญชีเบียร์ของคุณง่ายขึ้น"
+      activate: "เริ่มใช้บัญช"

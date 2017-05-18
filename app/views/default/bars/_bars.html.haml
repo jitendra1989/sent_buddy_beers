@@ -1,0 +1,8 @@
+- @bars.group_by(&:country).each do |country, bars|
+  %h3.country= I18n.t("countries.#{country.printable_name.parameterize("_")}")
+  - bars.group_by(&:city).each do |city, bars_in_city|
+    %h4.city= city.name
+    %ul
+      - bars_in_city.each do |bar|
+        %li{ :class => "bar #{cycle("odd", "even")}"}
+          = render bar

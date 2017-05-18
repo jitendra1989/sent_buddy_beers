@@ -1,0 +1,30 @@
+development:
+  fb_app_id: "490388924438067"
+  fb_app_secret_id: "9e5b602c72bbe052946a8d3510f8ede4"
+  fb_get_access_token: "CAACEdEose0cBAE5FyQ0PvXPLyQQUnSlrbsEEfcKVJDK10sOKmbej1SNY1nmYej8U4nIzGseZAnljMjJ3rIpI2ybi406tFo55Aa7Ic6ZBLWZBWfsZBZBPKsv2c4iwcfZCsLBKEOJZC3wFrMQ4WpbNOOjrVne8LFefZCXErsjNpOXCLKtEaduV4wZCetcyF92HDjwZBPjMbjZAMLGLVos7A3Aw7AR"
+  twilio_sid: "AC13fadafc47a6992b4e4966b9d08bb1fd"
+  twilio_token: "97c8cc7361d6d8891a11f39fd08f6f4b"
+  twilio_phone_number: "+17542276038"
+  paypal_login: "gauravsoni.ror_api1.gmail.com"
+  paypal_password: "1406296883"
+  paypal_signature: "AFcWxV21C7fd0v3bYYYRCpSSRl31AMIqGzUNdGI3Ig3ovWs8Hhkqa1ou"
+
+staging:
+  fb_app_id: "241188962746330"
+  fb_app_secret_id: "2ab24352a82fda1db6062170351ab4f0"
+  twilio_sid: "AC2b17b9c907c7a9c266037b2c21637cbe"
+  twilio_token: "215711bc83164ff1729222c33fd9e9fa"
+  twilio_phone_number: "+16504093341"
+  paypal_login: "bmarhamat_api1.me.com"
+  paypal_password: "N9PJXT3JJE4DFU97"
+  paypal_signature: "A9.yMI9X7-UzUmSO5pqZ-GqDX4KrAwUdrOxX20VphBIRhWNQsxowwEj-"
+
+production:
+  fb_app_id: "241188962746330"
+  fb_app_secret_id: "2ab24352a82fda1db6062170351ab4f0"
+  twilio_sid: "AC2b17b9c907c7a9c266037b2c21637cbe"
+  twilio_token: "215711bc83164ff1729222c33fd9e9fa"
+  twilio_phone_number: "+16504093341"
+  paypal_login: "bmarhamat_api1.me.com"
+  paypal_password: "N9PJXT3JJE4DFU97"
+  paypal_signature: "A9.yMI9X7-UzUmSO5pqZ-GqDX4KrAwUdrOxX20VphBIRhWNQsxowwEj-"

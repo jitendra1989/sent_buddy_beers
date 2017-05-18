@@ -1,0 +1,120 @@
+- javascripts 'price_form'
+- content_for :head do  
+  :javascript 
+  
+    jQuery(function($) {
+      jQuery("li.infield label").inFieldLabels();
+      jQuery('textarea').elastic();
+    });
+
+
+= form_for @bar do |f|
+
+  = error_messages_for :bar
+
+  %fieldset
+    %legend= t(".form.bar_legend")
+    %ol
+      %li
+        = f.label :name, t("forms.labels.bar_name")
+        = f.text_field :name
+      %li
+        = f.label :address, t("forms.labels.address")
+        = f.text_field :address
+      %li.select
+        - @country = Country.find_by_iso("DE")
+        = f.hidden_field :country_id, :value => @country.id
+        = f.label :city_id
+        = f.select :city_id, @country.cities.collect{ |c| [c.name, c.id] }, { :prompt => t("forms.labels.city") }
+        %p#no_city= t(".form.no_city")
+        = f.hidden_field :default_currency, :value => "EUR"
+      %li
+        = f.label :url, t("forms.labels.website")
+        = f.text_field :url
+      %li
+        = f.label :phone_number, t("forms.labels.phone_number")
+        = f.text_field :phone_number
+      %li
+        = f.label :description, t("forms.labels.description_bio")
+        = f.text_area :description
+      %li
+        = f.label :opening_hours, t("forms.labels.opening_hours")
+        = f.text_area :opening_hours
+  %fieldset
+    %legend= t(".form.contact_legend")
+    %ol
+      %li
+        = f.label :contact_name, t("forms.labels.contact_name")
+        = f.text_field :contact_name
+      %li
+        = f.label :contact_phone_number
+        = f.text_field :contact_phone_number
+      %li
+        = f.label :contact_email, t("forms.labels.contact_email")
+        = f.text_field :contact_email
+      %li
+        = f.label :contact_time
+        = f.select :contact_time, [t("forms.select.morning"), t("forms.select.noon"), t("forms.select.afternoon"), t("forms.select.evening"), t("forms.select.night")]
+      %li
+        = f.label :mailing_address
+        = f.text_area :mailing_address
+      %li
+        = f.label :twitter_handle, t("forms.labels.twitter_handle")
+        = f.text_field :twitter_handle
+      %li
+        = f.label :lead
+        = f.text_field :lead 
+      %li
+        = f.label :signup_notes
+        = f.text_area :signup_notes
+        
+  %fieldset.drinks
+    %legend= t(".form.drink_list_legend")
+    %p.description= t("prices.new.description")
+    %ol#drink_list
+      = f.fields_for :prices do |price_form|
+        %li.drink
+          %ol
+            - unless price_form.object.new_record?
+              %li.remove
+                / For existing records we add a checkbox to be able to delete records.
+                = price_form.label :_destroy, t(".drinks.remove")
+                = price_form.check_box :_destroy, :class => "checkbox"
+      
+            %li
+              = price_form.label :name, carlsberg_beer_name_for(@bar.prices.index(price_form.object))
+              = price_form.text_field :name
+            %li
+              = price_form.label :amount, t("forms.labels.price")
+              = price_form.hidden_field :currency, :value => "EUR", :class => "currency"
+              = price_form.text_field :amount, :class => "price_amount"
+              %span.currency= "EUR"
+            %li.special_price
+              %ol
+                %li
+                  %label{ :for => "bar_prices_attributes_#{@bar.prices.index(price_form.object)}_discounted", :class => 'long'}
+                    = price_form.check_box :discounted, :class => "price_discounted"
+                    = t("forms.labels.discounted")
+                %li.discounted_price
+                  = price_form.label :discounted_amount, t("forms.labels.discounted_price")
+                  = price_form.text_field :discounted_amount
+              = clear_floats
+            %li
+              = link_to t(".drinks.additional_options"), "#", :class => "additional_link#{ has_additional_options?(price_form.object) ? "" : " inactive"}"
+              %ol.additional_options{ :style => has_additional_options?(price_form.object) ? "display: block" : ""}
+                %li
+                  = price_form.label :description
+                  = price_form.text_area :description
+                %li.drink_types
+                  = price_form.label :drink_type_id
+                  - DrinkType.all.each do |drink_type|
+                    %span.label
+                      = price_form.radio_button :drink_type_id, drink_type.id
+                      = t("activerecord.models.#{drink_type.to_s.underscore}")
+                %li.volume
+                  = price_form.label :volume, t("forms.labels.volume")
+                  = price_form.text_field :volume
+
+  %ul
+    %li
+      %button{ :type => "submit", :class => I18n.locale.to_s }= t(".form.button")

@@ -1,0 +1,23 @@
+/ carlsberg > bars > index
+
+- @title = t(".title")
+- stylesheets("sites/carlsberg/sections/bars")
+- javascripts("jquery.pageless")
+- content_for :head do
+  :plain
+    <!--[if lte IE 8]>
+      <style type="text/css" media="screen">
+        #bars #bar_network .bar .more .photos {
+          -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(grayscale=1)";
+          filter: progid:DXImageTransform.Microsoft.BasicImage(grayscale=1);
+        }
+      </style>
+    <![endif]-->
+    
+#bars
+  .header
+    %h1= t(".heading")
+    %h2.clear= t(".subheading")
+  #bar_search= render "search"
+  = render "bars/bars_map"
+  = render "bars/list"

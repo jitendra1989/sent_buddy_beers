@@ -1,0 +1,106 @@
+de:
+  activerecord: 
+    attributes: 
+      bar: 
+        address: Adresse
+        city: Stadt
+        city_id: Stadt
+        contact_email: Kontaktadresse
+        contact_name: "Vollständiger Name"
+        contact_phone_number: "Kontakt Telefonnummer"
+        contact_time: Erreichbarkeit
+        country: Land
+        mailing_address: "Zusendungsanschrift des Starterpakets"
+        phone_number: Telefonnummer Bar
+        prices: 
+          cents: Getränkpreis
+          discounted_cents: "Reduzierter Preis"
+          price: 
+            one: Getränk
+            other: Getränke
+        signup_notes: Anmerkungen
+      employment: 
+        user_id: Mitarbeiter
+      iou: 
+        bar_id: Bar
+        price_id: Getränk
+        quantity: Anzahl
+        recipient_email: "Email Adresse deiner Freundin/deines Freundes"
+        recipient_phone: "Handynummer Deines Freundes"
+        recipient_phone_country_code: "Landesvorwahl Deines Freundes"
+      price: 
+        cents: Preis
+        description: Beschreibung
+        discounted_cents: "Reduzierter Preis"
+        drink_type_id: Bier
+        name: Getränk
+      user: 
+        email: Emailadresse
+        emails: 
+          email: Emailadresse
+        login: Benutzername
+        password: Passwort
+        phone_number: Mobilfunknummer
+        phone_number_country_code: Landesvorwahl
+    errors: 
+      full_messages: 
+        format: "%{attribute} %{message}"
+      messages: 
+        accepted: "muss akzeptiert werden"
+        awaiting_verification: "kann nicht gesetzt werden, da diese Emailadresse noch nicht bestätigt wurde"
+        blank: "darf nicht leer sein"
+        changed: "kann nicht geändert werden"
+        confirmation: "stimmt nicht überein"
+        empty: "darf nicht leer sein"
+        equal_to: "muss gleich sein wie %{count}"
+        even: "muss gerade sein"
+        exclusion: "ist belegt"
+        greater_than: "muss größer sein als %{count}"
+        greater_than_or_equal_to: "muss größer oder gleich groß sein wie %{count}"
+        inclusion: "ist nicht in der Liste"
+        invalid: "ist nicht gültig"
+        less_than: "muss kleiner sein als%{count}"
+        less_than_or_equal_to: "muss kleiner oder gleich sein als%{count}"
+        less_than_regular_price: "must kleiner als normaler Preis sein"
+        look_like_email: "sollte wie eine Email aussehen"
+        not_a_number: "ist keine Nummer"
+        odd: "muss ungerade sein"
+        record_invalid: "Etwas hat nicht geklappt: %{errors}"
+        taken: "ist schon weg"
+        too_long: "ist zu lang (maximum sind %{count} Zeichen)"
+        too_short: "ist zu kurz (minimum sind %{count} Zeichen)"
+        wrong_length: "hat nicht die richtige Länge (sollte %{count} Zeichen sein)"
+      models: 
+        employment: 
+          attributes: 
+            user_id: 
+              taken: "ist schon in dieser Bar eingetragen"
+        iou: 
+          attributes: 
+            bar_id: 
+              must_be_chosen: "muss gewählt sein"
+            price_id: 
+              must_be_chosen: "muss gewählt sein"
+            quantity: 
+              must_be_chosen: "muss gewählt sein"
+        photo: 
+          gallery_has_5_photos: "Du kannst maximal 5 Bilder in Deinem Album haben. Also wähle nur die besten aus."
+          only_500_kb: "muss kleiner als 500 KB sein."
+        user: 
+          attributes: 
+            email: 
+              non_existant: "konnte in der Datenbank nicht gefunden werden"
+      template: 
+        body: "Folgende Probleme sind aufgetreten:"
+        header: 
+          body: "Folgende Probleme sind aufgetreten:"
+          one: "Es gab ein \"%{model}\" Fehler"
+          other: "Es gab %{count} Fehler mit \"%{model}\""
+    models: 
+      bottle: Flasche
+      city: Stadt
+      draught: Faß
+      email: Email
+      iou: Schuldschein
+      price: Getränk
+      user_session: Login

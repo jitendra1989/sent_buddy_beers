@@ -1,0 +1,193 @@
+valid_voucher:
+  recipient_id: 1
+  recipient_name: "Adam"
+  recipient_email: "admin@buddydrinks.com"
+  sender_id: 2
+  sender_name: "Sam"
+  beverage: drink
+  brand: berliner
+  beer: pilsner
+  bar: active_bar
+  status: "valid"
+  order_id: nil
+  memo: "For buying me a drink"
+  paid: true
+  expires_at: <%= 2.weeks.from_now.beginning_of_day %>
+  created_at: <%= 3.days.ago %>
+  updated_at: <%= 3.days.ago %>
+  recipient_facebook_uid:
+  notified: true
+  expired: false
+  quantity: 1
+  cents: 499
+  site: warka
+
+valid_voucher_for_weiss:
+  recipient_id: 1
+  recipient_name: "Adam"
+  recipient_email: "admin@buddydrinks.com"
+  sender_id: 2
+  sender_name: "Sam"
+  beverage: drink
+  brand: berliner
+  beer: weiss
+  bar: active_bar
+  status: "valid"
+  order_id: nil
+  memo: "For buying me a drink"
+  paid: true
+  expires_at: <%= 2.weeks.from_now.beginning_of_day %>
+  created_at: <%= 3.days.ago %>
+  updated_at: <%= 3.days.ago %>
+  recipient_facebook_uid:
+  notified: true
+  expired: false
+  quantity: 1
+  cents: 499
+  site: warka
+
+valid_voucher_for_kindl:
+  recipient_id: 1
+  recipient_name: "Adam"
+  recipient_email: "admin@buddydrinks.com"
+  sender_id: 2
+  sender_name: "Sam"
+  beverage: drink
+  brand: berliner
+  beer: kindl
+  bar: active_bar
+  status: "valid"
+  order_id: nil
+  memo: "For buying me a drink"
+  paid: true
+  expires_at: <%= 2.weeks.from_now.beginning_of_day %>
+  created_at: <%= 3.days.ago %>
+  updated_at: <%= 3.days.ago %>
+  recipient_facebook_uid:
+  notified: true
+  expired: false
+  quantity: 1
+  cents: 250
+  site: warka
+
+valid_voucher_to_customer:
+  recipient_id: 2
+  recipient_name: "Sam"
+  recipient_email: "customer@buddydrinks.com"
+  sender_id: 1
+  sender_name: "Adam"
+  beverage: drink
+  brand: berliner
+  beer: pilsner
+  bar: active_bar
+  status: "valid"
+  order_id: nil
+  memo: "For buying me a drink"
+  paid: true
+  expires_at: <%= 2.weeks.from_now.beginning_of_day %>
+  created_at: <%= 3.days.ago %>
+  updated_at: <%= 3.days.ago %>
+  recipient_facebook_uid:
+  notified: true
+  expired: false
+  quantity: 1
+  cents: 499
+  site: warka
+
+redeemed_voucher:
+  recipient_id: 1
+  recipient_name: "Adam"
+  recipient_email: "admin@buddydrinks.com"
+  sender_id: 2
+  sender_name: "Sam"
+  beverage: drink
+  brand: berliner
+  beer: pilsner
+  bar: active_bar
+  status: "redeemed"
+  order_id: nil
+  memo: "For buying me a drink"
+  paid: true
+  expires_at: <%= 2.weeks.from_now.beginning_of_day %>
+  created_at: <%= 3.days.ago %>
+  updated_at: <%= 3.days.ago %>
+  recipient_facebook_uid:
+  notified: true
+  expired: false
+  quantity: 1
+  cents: 499
+  site: warka
+
+expired_voucher:
+  recipient_id: 1
+  recipient_name: "Adam"
+  recipient_email: "admin@buddydrinks.com"
+  sender_id: 2
+  sender_name: "Sam"
+  beverage: drink
+  brand: berliner
+  beer: pilsner
+  bar: active_bar
+  status: "expired"
+  order_id: nil
+  memo: "For buying me a drink"
+  paid: true
+  expires_at: <%= 1.weeks.ago.beginning_of_day %>
+  created_at: <%= 3.days.ago %>
+  updated_at: <%= 3.days.ago %>
+  recipient_facebook_uid:
+  notified: true
+  expired: true
+  quantity: 1
+  cents: 499
+  site: warka
+
+pending_payment_voucher:
+  recipient_id: 1
+  recipient_name: "Adam"
+  recipient_email: "admin@buddydrinks.com"
+  sender_id: 2
+  sender_name: "Sam"
+  beverage: drink
+  brand: berliner
+  beer: pilsner
+  bar: active_bar
+  status: "valid"
+  order_id: nil
+  memo: "For buying me a drink"
+  paid: false
+  expires_at: <%= 2.weeks.from_now.beginning_of_day %>
+  created_at: <%= 1.second.ago %>
+  updated_at: <%= 1.second.ago %>
+  recipient_facebook_uid:
+  notified: false
+  expired: false
+  quantity: 1
+  cents: 499
+  promotional: false
+  company_promotional: false
+  site: warka
+
+pending_payment_voucher_quantity_2:
+  recipient_id: 1
+  recipient_name: "Adam"
+  recipient_email: "admin@buddydrinks.com"
+  sender_id: 2
+  sender_name: "Sam"
+  beverage: drink
+  brand: berliner
+  beer: pilsner
+  bar: active_bar
+  status: "valid"
+  order_id: nil
+  memo: "For buying me a drink"
+  paid: false
+  expires_at: <%= 2.weeks.from_now.beginning_of_day %>
+  created_at: <%= 1.second.ago %>
+  updated_at: <%= 1.second.ago %>
+  recipient_facebook_uid:
+  notified: false
+  expired: false
+  quantity: 2
+  cents: 998
+  site: warka

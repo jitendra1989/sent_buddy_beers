@@ -1,0 +1,8 @@
+<%= t('.greeting', :name => @affiliate.name) %>
+
+<%= t('.amount_owed', :amount => number_to_currency(@affiliate.outstanding_balance.to_f, :unit =>@affiliate.outstanding_balance.currency.symbol)) %>
+
+<%= t('.link') %>
+<%= edit_user_registration_url(@affiliate) %>
+
+<%= t('.thanks') %>

@@ -1,0 +1,16 @@
+/ carlsberg > ious > pay
+
+- @title = t(".title")
+- stylesheets "sites/carlsberg/sections/ious"
+
+#pay
+  %h1= t(".heading")
+  #price_breakdown
+    = render "order"
+
+  #payment
+    #payment_methods
+      = render "buddy_bucks_payment"
+      = render "paypal_payment"
+
+  = clear_floats

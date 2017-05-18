@@ -1,0 +1,38 @@
+- @title = @iou.status
+
+#validate
+  .header
+    %h1= t(".mobile.heading")
+
+  .information
+    %h2{ :class => @iou.status }= status_for(@iou, true)
+    .details
+      %p.code
+        %strong= @voucher.coupon
+
+      %p.amount
+        %span.label= "#{t('.amount')}:"
+        %strong= "#{currency_symbol_for(@iou.currency)}#{@iou.amount}"
+        %br
+        %small= "(#{pluralize(@iou.quantity, beverage_owed(@iou))})"
+
+      %p.recipient
+        %span.label= "#{t('.for')}:"
+        %strong= "#{@iou.bar.name}, #{@iou.bar.city.name}"
+
+      %p.sent
+        %span.label= "#{t('.sent')}:"
+        %strong= @iou.updated_at.to_s(:euro_sm_with_time)
+
+      - if @iou.expires_at
+        %p.expires
+          %span.label= "#{t('.expires')}:"
+          %strong= @iou.expires_at.to_s(:euro_date)
+
+      %p.recipient
+        %span.label= "#{t('.to')}:"
+        %strong= @iou.recipient_name
+
+      %p.sender
+        %span.label= "#{t('.from')}:"
+        %strong= @iou.sender_name

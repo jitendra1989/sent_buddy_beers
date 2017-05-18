@@ -1,0 +1,24 @@
+it:
+  api:
+    v1:
+      vouchers:
+        statuses:
+          redeemed: "Riscattato"
+        sent:
+          empty: "L'utente non ha inviato voucher"
+        received:
+          empty: "L'utente non ha ricevuto voucher"  
+      users:
+        errors:
+          not_found: "Utente non trovato"
+          not_logged_in: "Non sei collegato"
+          no_locations: "L'utente non ha nessun locale"
+      locations:
+        errors:
+          not_found: "Nessun bar corrisponde alla tua ricerca."
+      orders:
+        errors:
+          not_enough_currency: "L'utente non dispone dei necessari bucks"
+      prices:
+        errors:
+          empty: "Questo locale non ha nessun prezzo disponibile"

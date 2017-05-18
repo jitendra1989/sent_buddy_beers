@@ -1,0 +1,5 @@
+// carlsberg > facebook > locations > location_detail
+- if @bar
+  %p= link_to "#{t(".more_information", :name => @bar.name)} »", bar_url(@bar), :target => "_blank"
+  - unless @bar.prices.collect{ |p| p.name.downcase.include?("carlsberg") }.include?(true)
+    %p.no_carlsberg= t(".no_carlsberg", :bar_name => @bar.name)

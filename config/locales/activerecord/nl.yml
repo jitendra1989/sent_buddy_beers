@@ -1,0 +1,58 @@
+nl:
+  activerecord: 
+    attributes: 
+      bar: 
+        city: Stad
+        contact_email: "Email adres"
+        contact_name: "Naam contactpersoon"
+        contact_phone_number: "Contact Telefoonnummer"
+        country: Land
+        phone_number: Telefoonnummer
+      iou: 
+        recipient_email: "Email adres van je vriend"
+        recipient_phone: "Telefoonnummer van je vriend"
+        recipient_phone_country_code: "Land waar je vriend woont"
+      user: 
+        emails: 
+          email: "Email adres"
+    errors: 
+      full_messages: 
+        format: "%{attribute} %{message}"
+      messages: 
+        accepted: "je moet akkoord gaan"
+        blank: "mag niet leeg zijn"
+        changed: "kan niet gewijzigd worden"
+        confirmation: "niet gelijk aan elkaar"
+        empty: "kan niet leeg zijn"
+        equal_to: "moet gelijk zijn aan %{count}"
+        even: "moet gelijk zijn"
+        exclusion: "is gereserveerd"
+        greater_than: "moet groter zijn dan %{count}"
+        greater_than_or_equal_to: "moet groter of gelijk zijn aan %{count}"
+        inclusion: "staat niet in de lijst"
+        invalid: "is niet toegestaan"
+        less_than: "moet minder zijn dan %{count}"
+        less_than_or_equal_to: "moest minder zijn of gelijk aan dan %{count}"
+        not_a_number: "is geen nummer"
+        odd: "moet een even getal zijn"
+        record_invalid: "Validatie fout: %{errors}"
+        taken: "is al in gebruik"
+        too_long: "is te lang (maximum is %{count} tekens)"
+        too_short: "is te kort (maximum is %{count} tekens)"
+        wrong_length: "heeft de verkeerde lengte (moet uit %{count} tekens bestaan)"
+      models: 
+        photo: 
+          gallery_has_5_photos: "Je mag niet meer dan 5 foto's in je foto album. Maak een goede keuze!"
+          only_500_kb: "moet kleiner zijn dan 500 KB"
+      template: 
+        body: "De volgende velden zijn niet goed ingevuld:"
+        header: 
+          body: "De volgende velden zijn niet goed ingevuld:"
+          one: "Er is een fout in %{model}"
+          other: "Er zijn %{count} fouten in %{model}"
+    models: 
+      bottle: Fles
+      draught: Tap
+      email: Email
+      iou: IOU
+      user_session: Inloggen

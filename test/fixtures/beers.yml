@@ -1,0 +1,13 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+pilsner:
+  name: Pilsner
+  brand: berliner
+
+weiss:
+  name: weiss
+  brand: berliner
+  
+kindl:
+  name: kindl
+  brand: berliner

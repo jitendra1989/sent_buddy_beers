@@ -1,0 +1,56 @@
+fr:
+  global:
+    edit: Edit
+    delete: Supprimer
+    access_denied: Vous n'avez pas les autorisations nécessaires pour accéder à cette page
+    generic_friend: un ami
+    or: ou
+    require_no_user: Vous devez être déconnecté pour accéder à cette page
+    at: à
+    new: nouveau
+    require_user: "Vous devez être connecté pour accéder à cette page. <a href=\"/users/sign_up\">Cliquez ici pour créer gratuitement votre compte sur Buddy Beers.</a>"
+    confirm_question: Êtes-vous sûr?
+    affirmative: "Oui" #Oui est un mot réservé
+    negative: "Non" #Non est un mot réservé
+    pagination:
+      previous: "Précédent"
+      next: "Suivant"
+    conjunctions:
+      and: "et"
+      now: "maintenant"
+      but: "mais"
+      so: "donc"
+      only: "seulement"
+      therefore: "donc"
+      moreover: "de plus"
+      besides: "en plus"
+      consequently: "par conséquent"
+      nevertheless: "néanmoins"
+      for: "pour"
+      however: "cependant"
+      hence: "d'où"
+      while: "pendant"
+      then: "alors"
+      who: "qui"
+      which: "lequel"
+      that: "ce"
+      although: "bien que"
+      though: "bien que"
+      while: "pendant"
+      since: "depuis"
+      until: "jusqu'à"
+      as: "comme"
+      after: "après"
+      before: "avant"
+      how: "comment"
+      once: "une fois que"
+      when: "quand"
+      lest: "de peur que"
+      if: "si"
+      in_order: "dans le but de"
+      unless: "à moins que"
+      whether: "si"
+      because: "parce que"
+      till: "jusqu'à ce que"
+      where: "où"
+      whether: "si"

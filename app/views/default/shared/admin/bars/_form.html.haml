@@ -1,0 +1,172 @@
+- javascripts 'jquery.elastic'
+- content_for :head do
+  :javascript
+    $(document).ready(function(){
+      $('#bar_description').elastic();
+      $('#bar_opening_hours').elastic();
+    });
+
+- if admin_signed_in?
+  - content_for :head do
+    :javascript
+      $(function() {
+        var counter = #{@bar.payout_models.size};
+
+        $("#add_link").click(function(){
+          counter++;
+          var t = '<fieldset class="removable_fields"><legend>Payout Model</label><ol><li id="bar_payout_models_attributes_REPLACE_low_cents"><label for="bar_payout_models_attributes_REPLACE_low_cents">Low Price Range</label><input name="bar[payout_models_attributes][REPLACE][low_cents]" id="bar_payout_models_attributes_REPLACE_low_cents"> (in cents)</li><li id="bar_payout_models_attributes_REPLACE_high_cents"><label for="bar_payout_models_attributes_REPLACE_low_cents">High Price Range</label><input name="bar[payout_models_attributes][REPLACE][high_cents]" id="bar_payout_models_attributes_REPLACE_high_cents"> (in cents)</li><li id="bar_payout_models_attributes_REPLACE_percent_payout"><label for="bar_payout_models_attributes_REPLACE_percent_payout">Percent Payout</label><input name="bar[payout_models_attributes][REPLACE][percent_payout]" id="bar_payout_models_attributes_REPLACE_percent_payout"></li><li><a href="#" class="remove_input">#{t("global.delete")}</a></li></ol></fieldset>';
+          $("#payout_model_list").append(t.replace(/REPLACE/g, counter));
+          return false;
+        });
+
+        $('.remove_input').live('click', function() {
+          $(this).parents(".removable_fields").remove();
+          return false;
+        });
+
+        // hide deleted fieldsets
+        $('.removable_fields').each(function(){
+          if ($(this).find('.hidden_delete_field').val() == 'true') {
+            $(this).hide();
+          }
+        });
+      });
+
+= error_messages_for f.object
+
+%fieldset
+  %legend= t("affiliate.bars.form.legends.bar_information")
+  %ol
+    - if admin_signed_in? || site_admin_signed_in?
+      %li
+        = f.label :site_ids, "Sites"
+        %ul
+          - Site.without_default.for(current_user).each do |site|
+            %li
+              = f.check_box :site_ids, {:multiple => true}, site.id, nil
+              = f.label "site_ids_#{site.id}", site.name
+      %li
+        = f.label :affiliate_id, "Affiliate"
+        = f.select :affiliate_id, ["Please Choose"] + Affiliate.all.collect{|u| [u.name, u.id] }
+      %li
+        = f.label :bro_id, "Drink Bro"
+        = f.select :bro_id, ["Please Choose"] + Bro.all.collect{|u| [u.name, u.id] }
+      %li
+        = f.label :active, "Active?"
+        = f.check_box :active, :class => "checkbox"
+    %li
+      = f.label :name, "#{t("forms.labels.bar_name")}:"
+      = f.text_field :name, :class => "medium-input text-input"
+    %li
+      = f.label :address, "#{t("forms.labels.address")}:"
+      = f.text_field :address, :class => "medium-input text-input"
+    %li
+      = f.label :country_id, "#{t("forms.labels.country")}:"
+      = f.select :country_id, Country.all.collect {|c| [ c.printable_name, c.id ] }, { :prompt => t("forms.select.default_prompt") }, {:class => "small-input"}
+      = observe_field("bar_country_id", :frequency => 0.25, :update => "bar_city_id", :url => {:controller => '/cities', :action => :get_cities_for_country}, :with => "'id='+value", :success => "$('#bar_city_id').effect(\"highlight\", {}, 3000);")
+    %li
+      = f.label :city_id, "#{t("forms.labels.city")}:"
+      = f.select :city_id, (@bar.city ? [[@bar.city.name, @bar.city.id]] : []), { :prompt => t("forms.select.default_prompt") }, {:class => "small-input"}
+      #no_city
+        %small
+          = "#{t("bars.form.form.no_city")}:"
+          = text_field_tag :new_city_name, "", :class => "small-input text-input"
+    %li
+      = f.label :phone_number, "#{t("forms.labels.phone_number")}:"
+      = f.text_field :phone_number, :class => "small-input text-input"
+    %li
+      = f.label :default_currency, "#{t("forms.labels.currency")}:"
+      = f.select :default_currency, currencies_in_use, {}, {:class => "small-input"}
+    - if admin_signed_in?
+      %li
+        = f.label :new_voucher_list_notification, "Notify of New Voucher Lists:"
+        = f.check_box :new_voucher_list_notification
+      %li
+        = f.label :redeemed_voucher_notification_timeframe, "Notify of Redeemed Vouchers:"
+        = f.select :redeemed_voucher_notification_timeframe, @bar.notification_timelines.collect{ |t| [t("forms.select.timeframes.#{t}"), t]}
+      %li
+        = label "advanced", "toggle", "Admin Features:"
+        = link_to_function "Edit", "$('.advanced').toggle()"
+      %li.advanced
+        = f.label :percent_expired_cut, "% Expired:"
+        = f.text_field :percent_expired_cut
+      %li.advanced#payout_model_list
+        = f.fields_for :payout_models do |payout_model|
+          %fieldset.payout_model
+            %legend Payout Model
+            %ol
+              %li
+                = payout_model.label :low_cents, "Low Price Range"
+                = payout_model.text_field :low_cents
+                = "(in cents)"
+              %li
+                = payout_model.label :high_cents, "High Price Range"
+                = payout_model.text_field :high_cents
+                = "(in cents)"
+              %li
+                = payout_model.label :percent_payout
+                = payout_model.text_field :percent_payout
+              - unless payout_model.object.new_record?
+                / For existing records we add a checkbox to be able to delete records.
+                %li
+                  = payout_model.label :_destroy, "#{t("forms.labels.remove")}:"
+                  = payout_model.check_box :_destroy, :class => "checkbox"
+      %li.advanced#add_link=link_to "Add a payout model", "#"
+    %li
+      = f.label :logo, "Bar Logo/Photo:"
+      = f.file_field :logo
+    %li
+      = f.label :url, "#{t("forms.labels.website")}:"
+      = f.text_field :url, :class => "small-input text-input"
+    %li
+      = f.label :twitter_handle, "#{t("forms.labels.twitter_handle")}:"
+      = f.text_field :twitter_handle, :class => "small-input text-input"
+    %li
+      = f.label :description, "#{t("forms.labels.description_bio")}:"
+      = f.text_area :description, :maxlength => "1000", :class => "text-input textarea wysiwyg", :rows => "15", :style => "max-height: 170px"
+      .translations
+        - other_locales.each do |locale|
+          -# instance_variable_set("@#{locale}_translation", f.object.translations.detect { |t| t.locale.to_sym == locale })
+          -# @translations << instance_variable_get("@#{locale}_translation")
+          -# @translations.each do |translation|
+          - translation = f.object.translations.detect { |t| t.locale.to_sym == locale }
+
+      -# %p.translation
+      -#    %strong= "#{t("forms.translation.translation", :other_locale => locale.to_s.upcase)}:"
+      -#    = (translation and translation.description) ? translation.description : t("forms.translation.none")
+      -#    = "-"
+      -#    = link_to(t("global.edit"), params.merge({:locale => locale, :id => f.object.id}))
+
+
+    %li
+      = f.label :opening_hours, "#{t("forms.labels.opening_hours")}:"
+      = f.text_area :opening_hours, :class => "text-input textarea", :rows => "5"
+    %li
+      = f.label :contact_name, "#{t("forms.labels.contact_name")}:"
+      = f.text_field :contact_name, :class => "small-input text-input"
+    %li
+      = f.label :contact_email, "#{t("forms.labels.contact_email")}:"
+      = f.text_field :contact_email, :class => "small-input text-input"
+    %li
+      = f.label :contact_phone_number
+      = f.text_field :contact_phone_number, :class => "small-input text-input"
+    %li
+      = f.label :contact_time
+      = f.select :contact_time, [t("forms.select.morning"), t("forms.select.noon"), t("forms.select.afternoon"), t("forms.select.evening"), t("forms.select.night")], {}, {:class => "small-input"}
+    %li
+      = f.label :mailing_address
+      = f.text_area :mailing_address, :class => "text-input textarea", :rows => "10"
+    %li
+      = f.label :signup_notes
+      = f.text_area :signup_notes, :class => "text-input textarea", :rows => "10"
+
+  %ul
+    %li= f.submit nil, :value => "UPDATE", :class => "button"
+/
+/ %fieldset.voucher_conditions
+/   %legend= t("affiliate.bars.form.legends.voucher_conditions")
+/   %ol
+/     %li
+/       = f.label :customer_voucher_limit, "#{t("forms.labels.voucher_limit")}:"
+/       = f.select :customer_voucher_limit, [[t("forms.select.none"), 0]] + (1..20).map{|n| [n.to_s, n.to_s]}, :selected => f.object.customer_voucher_limit.to_s
+/       = hint_box("voucher_limit_hint", t("forms.labels.voucher_limit"), t("affiliate.bars.form.voucher_limit_hint_description"))

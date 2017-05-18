@@ -1,0 +1,37 @@
+/ buddybeers > layouts > user_account_navigation
+
+#user_account_navigation
+  - if current_user
+    #user_account
+      .avatar
+        - if !current_user.avatar.file? and current_user.facebook_user?
+          = link_to content_tag(:span, image_tag("https://graph.facebook.com/#{current_user.facebook_uid}/picture?type=square", :alt => current_user.name, :height => "53px", :width => "53px")), edit_user_registration_url(current_user)
+        - else
+          = link_to content_tag(:span, image_tag(current_user.avatar(:tiny), :alt => current_user.name, :height => "53px", :width => "53px")), edit_user_registration_url(current_user)
+      .account_information
+        %p.name= link_to current_user.to_s, edit_user_registration_url(current_user)
+        %p.buddybucks
+          BuddyBucks:
+          %span.amount
+            = link_to number_with_delimiter(current_user.credits, :locale => I18n.locale), user_credits_url(current_user)
+        %p.logout
+          = link_to t(".profile"), edit_user_registration_url(current_user)
+          |
+          = link_to t(".logout"), destroy_user_session_url
+      .drinks
+        = link_to ious_url(:sent => true) do
+          %span.sent
+            %span.title= t(".drinks_sent")
+            %span.amount= current_user.sent_ious.sum(:quantity)
+      .drinks
+        = link_to ious_url do
+          %span.received
+            %span.title= t(".drinks_received")
+            %span.amount= current_user.received_ious.sum(:quantity)
+  - else
+    %p.logged_out
+      %span.login= "#{t(".login")}:"
+      %span.buddybeers= link_to t(".buddybeers"), login_url, :rel => "nofollow", :title => t(".buddybeers")
+      %span.facebook= facebook_login_button
+      %span.or= t("global.or")
+      %span.signup= link_to content_tag(:span, t(".signup_short")), new_user_registration_url, :rel => "nofollow"

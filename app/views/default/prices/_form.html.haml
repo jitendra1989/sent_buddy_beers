@@ -1,0 +1,37 @@
+%ol
+  %li
+    = f.label :name
+    = f.text_field :name, :class => "medium-input text-input"
+  %li
+    = f.label :amount, "#{t("forms.labels.price")}:"
+    = f.hidden_field :currency, :value => @bar.default_currency, :class => "currency small-input"
+    = f.text_field :amount, :class => "price_amount", :class => "small-input text-input"
+    %span.currency= @bar.default_currency
+  %li.special_price
+    %ol
+      %li
+        %label{ :for => 'price_discounted', :class => 'long'}
+          = f.check_box :discounted, :class => "price_discounted"
+          = "#{t("forms.labels.discounted")}"
+      %li.discounted_price
+        = f.label :discounted_amount, "#{t("forms.labels.discounted_price")}:"
+        = f.text_field :discounted_amount, :class => "small-input text-input"
+    = clear_floats
+  %li
+    = link_to t("forms.drinks.additional_options"), "#", :class => "additional_link#{ has_additional_options?(f.object) ? "" : " inactive"}"
+    %ol.additional_options{ :style => has_additional_options?(f.object) ? "display: block" : ""}
+      %li
+        = f.label :photo
+        = f.file_field :photo
+      %li
+        = f.label :description
+        = f.text_area :description, :class => "text-input textarea wysiwyg", :rows => "15"
+      %li.drink_types
+        = f.label :drink_type_id
+        - DrinkType.all.each do |drink_type|
+          %span.label
+            = "#{t("activerecord.models.#{drink_type.to_s.underscore}")}:"
+            = f.radio_button :drink_type_id, drink_type.id
+      %li.volume
+        = f.label :volume, "#{t("forms.labels.volume")}:"
+        = f.text_field :volume, :class => "small-input text-input"

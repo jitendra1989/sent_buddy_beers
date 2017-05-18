@@ -1,0 +1,22 @@
+= render "admin/dashboard/tabs"
+.tabs
+  %ul
+    %li= link_to("New Site Admin", new_admin_site_admin_path)
+  = clear_floats
+
+%p.stats
+  = "Site Admins: #{@site_admins.length}"
+
+#users
+  = render "shared/admin/filter_form"
+
+  %ul.searchable_list
+    - @site_admins.each do |site_admin|
+      %li{:class => cycle("odd", "even")}
+        = link_to(site_admin.name, admin_site_admin_path(site_admin))
+        &ndash;
+        = site_admin.email
+        &ndash;
+        = site_admin.created_at.to_s(:euro_sm_with_time)
+        &ndash;
+        = link_to "edit", edit_admin_site_admin_path(site_admin)

@@ -1,0 +1,20 @@
+!!!XML
+!!!
+%html{ :xmlns => "http://www.w3.org/1999/xhtml", 'xml:lang' => I18n.locale.to_s, :lang => I18n.locale.to_s }
+  %head
+    %title= "#{@title.blank? ? controller.action_name : @title} - Buddy Drinks"
+    = render 'layouts/meta'
+    = csrf_meta_tag
+    = render 'layouts/favicon'
+    = stylesheet_link_tag 'reset', :media => "all"
+    = render 'layouts/stylesheets'
+    = render 'layouts/javascripts'
+    = yield(:head)
+
+  %body
+    = render 'shared/google_analytics'
+    = render 'shared/facebook_sdk'
+    #container
+      = render 'layouts/header'
+      = render 'layouts/content'
+      = render 'layouts/footer'

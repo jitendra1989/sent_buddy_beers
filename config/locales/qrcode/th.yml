@@ -1,0 +1,13 @@
+th:
+  qrcode:
+    validate:
+      html:
+        title: "ตรวจสอบรหัสคูปอง"
+      sent: "ส่ง"
+      expires: "หมดอายุ"
+      from: "จาก"
+      amount: "จำนวน"
+      to: "ถึง"
+      mobile:
+        heading: "ตรวจสอบรหัสคูปอง"
+      for: "สำหรับ"

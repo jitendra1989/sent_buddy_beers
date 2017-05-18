@@ -1,0 +1,63 @@
+th:
+  home:
+    app_video:
+      video_heading: "มีวิธีการอย่างไร?"
+    apps:
+      android_market: " ตลาด Android "
+      app_instructions: " เปิดแอ๊พฯ <strong>buddybeers.com/apps</strong> ในมือถือของคุณหรือส่งอีเมล์แอ๊พฯนี้ไปที่อีเมล์ของคุณเอง: "
+      app_store: "ร้าน iTunes App Store"
+      availability: "สามารถใช้ได้แล้วกับมือถือ <a href=\"%{iphone_link}\" target=\"blank\" onClick=\"_gaq.push(['_trackEvent', 'App', 'Download', 'homepage link iPhone']);\">iPhone</a> และจะใช้ได้กับมือถือAndroidเร็วๆนี้"
+      download_instructions: "ดาวน์โหลดแอ๊พฯ  “Buddy Drinks mobile app” เพื่อซื้อดริ้งก์ให้เพื่อนและขึ้นใช้คูปอง Buddy Drinks ของคุณ"
+      error:
+        heading: " มีความผิดพลาดในอีเมล์ของคุณ "
+        description: " โปรดตรวจสอบว่าคุณได้กรอกข้อมูลถูกต้องและลองใหม่อีกครั้ง "
+      get_app: " เอาแอ๊พฯนี้"
+      please_wait: "กรุณารอสักครู่"
+      redirect: "คุณกำลังกลับไปหน้า %{store_name}"
+      subhead: " ด้วยโปรแกรม Buddy Drinks คุณก็สามารถซื้อเครื่องดื่มเย็นๆเลี้ยงเพื่อนคุณได้ทั่วทุกมุมโลก "
+      success:
+        heading: " ลิงค์ที่ดาวน์โหลดถูกส่งไปที่: "
+      
+    content_header:
+      buy_a_beer: "ซื้อเบียร์เลี้ยงเพื่อนคุณ"
+      happy_hours: "แฮปปี้เอาเวอร์ตลอดวัน"
+      social_in_socializing: "นำ <span class=\"color\">สังคม</span> กลับสู่การเข้าสังคมอีกครั้ง"
+      description: "คุณมีเพื่อนที่อาศัยอยู่ไกลแสนไกลแต่คุณก็อยากจะส่ง<strong> ของขวัญหรือคำขอบคุณไปให้เขาบ้างไหม?</strong> คุณอยากจะได้ดีลส่วนลดเครื่องดื่ม</strong> ตลอดวันที่บาร์ใกล้บ้านคุณบ้างไหม? Buddy Drinks ให้คุณได้รักษาความสัมพันธ์ทางสังคมผ่านระบบที่เก่าแก่ที่สุด: ซื้อเบียร์เลี้ยงเพื่อนคุณ <strong> ลองสิ วันนี้!</strong>"
+      beer_button: "ส่งเบียร์ เบียร์แก้วแรกของคุณฟรี"
+    bar_info:
+      heading: "คุณเป็นเจ้าของบาร์ ร้านอาหาร เบียร์การ์เด้น หรือโรงแรม....?"
+      description: "ลองมาดูสิว่าเราทำอย่างไรให้คุณมีรายได้เพิ่มขึ้นและฐานลูกค้ามากขึ้นโดยที่คุณไม่ต้องเสียค่าบริการรายเดือน!"
+      link: "เรียนรู้เพิ่มเติม »"
+    index:
+      title: "ส่งเบียร์เลี้ยงเพื่อนออนไลน์!"
+      bar_search:
+        heading: "ค้นหาบาร์ที่ตั้งอยู่ใกล้ตัวฉัน:"
+        label: "กรอกที่อยู่ ยกตัวอย่างเช่น: Stargarderstr. 80, 10437 Berlin"
+      brewery:
+        heading: "คุณคือผู้ผลิตเบียร์ เจ้าของเครือร้านอาหารหรือตัวแทนการตลาดใช่ไหม?"
+        description: "ติดต่อเราเพื่อขอข้อเสนอซ๊อฟท์แวร์อันเป็นเอกลักษณ์พิเศษที่จะทำให้คุณเจาะตลาดในกลุ่มผู้บริโภคอายุระหว่าง 18-30ปี" 
+        link: "เรียนรู้เพิ่มเติม"
+      heading: "ส่งเบียร์เลี้ยงเพื่อนออนไลน์"
+    press:
+      title: "สื่อสัมพันธ์เกี่ยวกับBuddy Drinks ในคอลัมน์ข่าวและบล๊อก"
+      heading: "บริษัทเหล่านี้ได้กล่าวถึงเรา:"
+      big_quote: "นี่อาจจะเปลี่ยนโฉมหน้าการบริโภคเบียร์ที่ประเทศเยอรมันนี"
+      contacts:
+        heading: "ติดต่อฝ่ายสื่อสัมพันธ์"
+    press_releases:
+      heading: "สื่อสัมพันธ์ที่ได้เผยแพร่"
+      carlsberg_en: "26 มิ.ย. 2554 - <strong>Buddy Drinks และเบียร์ Carlsberg ร่วมกันประกาศการเป็นพันธมิตรเพื่อขยายการบริการการให้เบียร์เป็นของกำนัลในประเทศเยอรมันนี </strong> [english]"
+      carlsberg_de: "26 April 2011 - <strong>BuddyDrinks.com kooperiert mit Carlsberg Deutschland.</strong> [german]"
+      paypal: "04 ต.ค. 2553 - <strong>Buddy Drinks และ Appcelerator ร่วมทีมกันชนะรางวัล Paypal X Developer’s Conference Hackathonประจำปี 2010 </strong> [english]"
+      announcing: "29 ก.ค. 2553 - <strong>แถลงการณ์ของ Buddy Drinks</strong> [english]"
+    downloads:
+      heading: "ดาว์นโหลด"
+      logo: "เครื่องหมายการค้า"
+      stamp: "เครื่องหมายโลโก้"
+      iphone: "iPhone App"
+      founders: "Team Photo"
+    contact_info:
+      admin_address: "ที่อยู่ฝ่ายทะเบียน"
+      berlin_office: "สำนักงานกรุงเบอร์ลิน"
+      email_us: "ส่งอีเมล์ถึงเรา"
+      fourth_floor: "4th floor"

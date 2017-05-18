@@ -1,0 +1,61 @@
+= render "bars/open_graph_meta"
+
+- content_for :facebook do
+  :plain
+    //FB.Canvas.setSize();
+    FB.Canvas.setAutoResize();
+    
+- content_for :head do
+  :plain
+    <!--[if lte IE 8]>
+      <style type="text/css" media="screen">
+        #bar #feed .drink .avatar img {
+          -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(grayscale=1)";
+          filter: progid:DXImageTransform.Microsoft.BasicImage(grayscale=1);
+        }
+      </style>
+    <![endif]--> 
+
+#bar
+  #bar_header
+      
+    %h1= @bar.name
+    = clear_floats
+     
+  #facebook
+    = raw "<script src=\"http://connect.facebook.net/#{facebook_locale(I18n.locale.to_s)}/all.js#xfbml=1\"></script><fb:like href=\"#{bar_url(@bar)}\" send=\"true\" show_faces=\"true\" width=\"460\" colorscheme=\"dark\" font=\"lucida grande\"></fb:like>"
+  
+  - if @bar.gallery.photos.present?
+    #gallery
+      #slides
+        - if @bar.logo.file?
+          .slide= image_tag @bar.logo(:square), :width => 100, :height => 100
+        - @bar.gallery.photos.first(@bar.logo.file? ? 2 : 3).each do |photo|
+          .slide
+            = image_tag photo.photo(:square), :width => 100, :height => 100
+                  
+  #map{ :style => "width:#{ (@bar.gallery.photos.present? or @bar.logo.file?) ? "418px" : "518px" }; height: #{(@bar.gallery.photos.length >= 3 or (@bar.logo.present? and @bar.gallery.photos.length > 1)) ? "300px" : "200px"}", :data => { :"map-markers" => bars_to_map_markers(@bar) } }
+
+  #information
+    - if @bar.description.present?
+      .description= raw RedCloth.new(@bar.description, [:filter_html]).to_html
+
+    = render "bars/contact_info"
+    
+    #drink_list
+      %h2= t("bars.drink_list.menu.title")
+      %ul
+        - @bar.prices.each do |price|
+          %li
+            %span.name
+              - if price.discounted?
+                %strong.discount= t("bars.drink_list.menu.discount_short_desc")
+              = price.name
+            %span.price{ :class => price.discounted? ? "discounted" : "" }
+              = link_to content_tag(:span, number_to_currency(price.total.to_f, :unit => price.amount.currency.symbol)), new_facebook_order_url(:price_id => price.id), :title => price.discounted? ? t("bars.drink_list.menu.discount") : ""
+            = clear_floats
+    
+  #feed
+    %h3= t("bars.drink_feed.title", :name => @bar.name)
+    - @feed.each do |order|
+      .drink= render "facebook/orders/order", :order => order

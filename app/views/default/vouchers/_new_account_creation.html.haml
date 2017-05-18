@@ -1,0 +1,23 @@
+/ default > vouchers > new_account_creation
+
+= form_for setup_user(Customer.new), :url => user_registration_with_email_url, :html => {:method => :post} do |f|
+  %fieldset
+    %legend= t(".heading")
+    %p= t(".description")
+    %ol
+      = f.fields_for :emails do |emails_form|
+        = emails_form.hidden_field :email, :value => group_drink.recipient_email
+      %li
+        = f.label :name, t("forms.labels.your_name")
+        = f.text_field :name
+      %li
+        = f.label :login, t("forms.labels.choose_username")
+        = f.text_field :login
+      %li
+        = f.label :password, t("forms.labels.choose_password")
+        = f.password_field :password
+      %li
+        = f.label :password_confirmation, t("forms.labels.confirm_password")
+        = f.password_field :password_confirmation
+    %ul
+      %li= f.submit t(".activate")

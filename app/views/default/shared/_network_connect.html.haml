@@ -1,0 +1,6 @@
+/ default > shared > network_connect
+
+.networks
+  %p= t(".heading")
+  %a.fb-link{:href => "#{request.ssl? ? "https://" : "http://"}#{host_via_subdomain}#{user_omniauth_authorize_path(:facebook)}", :rel => "nofollow", :title => t("sessions.new.connect_with_facebook"), :class => I18n.locale.to_s == "de" ? "de" : "en"}
+  

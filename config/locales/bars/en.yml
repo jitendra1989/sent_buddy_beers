@@ -1,0 +1,96 @@
+en:
+  bars:
+    new:
+      title: Want to Join Our Buddy Drinks Network?
+      network:
+        heading: Our Buddy Venues
+      heading: Join Our Buddy Venues Network.
+      income_link: More Income
+      customers_link: More Customers
+      setup_link: Easy Setup
+      web_link: Online Presence
+    bar:
+      more_info: More Info
+      buy_a_beer: Buy a Drink Here
+      price_range: "Price Range:"
+      drink_specials: "Drink Specials?"
+    benefits:
+      heading: What's in it for me?
+      customers:
+        heading: Every Voucher brings an average of 3.1 customers
+        description: Our research shows <strong>people don't drink alone.</strong> When a voucher is sold through Buddy Drinks that person brings their friends with them to redeem it. This means more customers for you.
+      web:
+        heading: Our Promotion is Your Promotion
+        description: "<strong>We are your promotion partner.</strong> With years of experience in social network and internet marketing, by promoting our service we\xE2\x80\x99re also promoting your venue. We're leveraging new media outlets like Facebook, Twitter, YouTube, UStream.tv, Foursquare and many more."
+      income:
+        heading: Every voucher sells an average of 10.4 full-priced drinks
+        description: Our data shows that <strong>people rarely go to a venue and drink one drink.</strong> Most come to socialize and stay for a while. This means that when people bring their friends and they all drink, your venue sells more.
+      setup:
+        heading: Low Barrier to Entry
+        description: <strong>There are no costs to use our service.</strong> It takes about 30 minutes to get setup to use Buddy Drinks in your venue. We've got solutions for every level of technology access. If you're internet-connected its a bit easier but we'll work with you every step of the way.
+    edit:
+      title: Edit Your Venue's Information
+      heading: Edit Your Venue's Information
+    submit:
+      success: We've successfully received all your information and will get back to you as soon as possible about your Buddy venue membership. Thanks again!
+      error: There was an error. Please try again.
+    confirm:
+      title: Confirm Your Venue's Information
+      drink_list: Drink List
+      heading: Confirm Your Venue's Information
+      vanue_heading: "Your %{bar_name}'s Information"
+      edit_drink_list: Edit drink list
+      edit_bar: Edit Venue Information
+      confirm_button: Looks Good! Let's Do It
+    confirmation_message:
+      confirm: Check that the details of your venue are correct and then click the button at the bottom of the page to send in your application to become a Buddy Venue.
+      whats_next:
+        heading: "What happens next?"
+        one: "A friendly Buddy Drinks representative will contact you to confirm your venue information"
+        two: "We will send out your starter kit, full with your first vouchers, login data and cool marketing stuff. Once you have the login data you can add more drinks and customize your venue profile."
+        three: "We will call again to make sure the kit arrived, set your venue live and answer any other questions"
+        questions: "If you have any immediate questions, feel free to"
+        contact: "Contact us"
+
+    form:
+      form:
+        button: "<strong>Final Step:</strong> Confirm Your Details"
+        bar_legend: Venue Information
+        bar: Venue
+        contact_legend: Contact Information
+        heading: Let's Do It
+        description: Fill out the form below and we will get back to you with all the information to get your venue into our Buddy Venues Network as soon as possible.
+        no_city: If your city is not in the list, add it here
+        drink_list_legend: Your Venue's Drink list
+      drinks:
+        remove: Remove
+        add: Add more drinks to my list
+    show:
+      title: "%{bar} in %{city}, %{country} - Buy your friend a drink online"
+      big_map_link: Big Map
+    drink_list:
+      menu:
+        discount: Special Buddy Drinks Discount!
+        title: Menu
+        buy: Buy
+        discount_short_desc: "Discount Price!"
+    drink_feed:
+      title: "Who\xE2\x80\x99s Been drinking at %{name}?"
+    index:
+      title: "Our Buddy Venues, Where You Can Buy Drinks Online"
+      about_link: About this Venue
+      heading: Our Buddy Venues
+      subheading: Where would you like to have a drink?
+    create:
+      success: Rad. We've received your application and will get in contact with you soon to pass along some more information.
+      error: Oh noes! Something went wrong.
+    search:
+      address_not_found: "%{location} could not be found. Please enter a more exact address."
+      label: Near
+      legend: Find a venue near you or your friend; type an address and a distance then click Go!
+      kilometers: km
+      submit_button: "Search for venues near here »"
+      value: "Enter an address, city, or zip code"
+      map_toggle: "Show/Hide Map"
+      no_results_20: "No venues were found within 20 km of %{location}. <a href=\"/bars?origin[location]=%{location}&origin[distance]=%{distance}\">Click here to search for venues within %{distance} km of %{location}!</a>"
+      no_results: "No venues were found within %{distance} km of %{location}. Maybe you can contact us and suggest one!"

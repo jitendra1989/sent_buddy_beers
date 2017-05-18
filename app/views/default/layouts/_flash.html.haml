@@ -1,0 +1,14 @@
+/ defaults > layouts > flash
+
+#flash
+  - flash.except(:no_fade_out).each do |severity, message|
+    %div{:class => severity, :id => severity}
+      - if @flash_not_html_safe
+        %p.pie= message
+      - else  
+        %p.pie= raw message
+
+    / :javascript
+    /   $('##{severity}').hide();
+    /   $('##{severity}').slideDown(500, 'easeInExpo');
+    /   #{"window.setTimeout(\"$('##{severity}').slideUp(500,'easeOutExpo')\", 10000);" unless flash.include?(:no_fade_out)}

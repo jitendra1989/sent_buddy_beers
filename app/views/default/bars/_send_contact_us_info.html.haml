@@ -1,0 +1,32 @@
+- content_for :head do
+  :javascript  
+    $(document).on('click', '.contact_us_popup', function() {
+      $('#contactUs').modal('show');
+    });
+    
+    $(document).on("click","#contact_us_send", function(){
+      var name = $("#contact_name").val();
+      var question = $("conctact_question").val();
+      if(name != "" && question != ""){
+        $("#contact_us_form").submit();
+      }  
+    });
+    
+#contactUs.modal.fade{"aria-hidden" => "true", "aria-labelledby" => "myModalLabel", :role => "dialog", :tabindex => "-1"}
+  .modal-dialog.popup
+    .modal-content
+      .modal-header
+        %button.close{"data-dismiss" => "modal", :type => "button"}
+          %span{"aria-hidden" => "true"} &times;
+          %span.sr-only Close
+        %h4#myModalLabel.modal-title{:style => 'margin:0px;'} Contact us
+      .modal-body
+        = form_tag('/contact_send', :id=>"contact_us_form") do
+          .form-group
+            %label Name
+            %input.form-control{:placeholder => "Enter Name", :type => "text", :name=>"contact[name]", :id=>"contact_name"}/
+          .form-group
+            %label Question
+            %textarea.form-control{:placeholder => "Enter questions", :name=>"contact[question]", :id=>"contact_question"}
+      .modal-footer
+        %button#contact_us_send.btn.btn-default{:type => "submit"} Send

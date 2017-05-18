@@ -1,0 +1,18 @@
+= render :partial => "site_admin/shared/tabs"
+
+%h2 Stats
+%p
+  %strong Vouchers Sold:
+  = @vouchers_sold
+%p
+  %strong Promotional Vouchers:
+  = @vouchers_promotional
+%p
+  %strong Vouchers Redeemed:
+  = @vouchers_redeemed
+%p
+  %strong Open Vouchers:
+  = @vouchers_open
+%p
+  %strong Vouchers Expired:
+  = @vouchers_expired

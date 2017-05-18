@@ -1,0 +1,139 @@
+<ul id="main-nav">  <!-- Accordion Menu -->
+  <% if @bars.length == 1 %>
+     <li>
+      <a href="#" class="nav-top-item<%= " current" if ((controller.controller_name == "bars" and controller.action_name != "vouchers") or (controller.controller_name == "prices") or (controller.controller_name == "employments")) %>"> <!-- Add the class "current" to current menu item -->
+        Venue Information
+      </a>
+      <ul>
+        <li>
+          <%= link_to_unless_current(t("affiliate.bars.tabs.edit_bar_information"), edit_affiliate_bar_path(@bars.first)) do %>
+            <%= link_to t("affiliate.bars.tabs.edit_bar_information"), edit_affiliate_bar_path(@bars.first), :class => "current" %>
+          <% end %>
+        </li>
+        <li>
+          <!-- Add class "current" to sub menu items also -->
+          <%= link_to_unless_current(t("affiliate.bars.tabs.beer_list"), affiliate_bar_prices_url(@bars.first)) do %>
+            <%= link_to t("affiliate.bars.tabs.beer_list"), affiliate_bar_prices_url(@bars.first), :class => "current" %>
+          <% end %>
+        </li>
+        <li>
+          <%= link_to_unless_current(t("affiliate.bars.tabs.gallery"), gallery_affiliate_bar_path(@bars.first)) do %>
+            <%= link_to t("affiliate.bars.tabs.gallery"), gallery_affiliate_bar_path(@bars.first), :class => "current" %>
+          <% end %>
+        </li>
+        <li>
+          <%= link_to_unless_current(t("affiliate.bars.tabs.employees"), affiliate_bar_employments_path(@bars.first)) do %>
+            <%= link_to t("affiliate.bars.tabs.employees"), affiliate_bar_employments_path(@bars.first), :class => "current" %>
+          <% end %>
+        </li>
+      </ul>
+    </li>
+    <li>
+      <a href="#" class="nav-top-item<%= " current" if @bar.present? and ((controller.controller_name == "ious") or (controller.controller_name == "vouchers") or (controller.controller_name == "voucher_lists") or (controller.controller_name == "bars" and controller.action_name == "vouchers")) %>">
+        Vouchers
+      </a>
+      <ul>
+        <li>
+          <%= link_to_unless_current(t("affiliate.bars.outstanding_vouchers"), affiliate_bar_ious_url(@bars.first)) do %>
+            <%= link_to t("affiliate.bars.outstanding_vouchers"), affiliate_bar_ious_url(@bars.first), :class => "current" %>
+          <% end %>
+        </li>
+        <li>
+          <%= link_to_unless_current(t("affiliate.bars.redeemed_vouchers"), affiliate_bar_ious_url(@bars.first, :filter => "past")) do %>
+            <%= link_to t("affiliate.bars.redeemed_vouchers"), affiliate_bar_ious_url(@bars.first, :filter => "past"), :class => "current" %>
+          <% end %>
+        </li>
+        <li>
+          <%= link_to_unless_current(t("affiliate.bars.voucher_lists"), vouchers_affiliate_bar_url(@bars.first)) do %>
+            <%= link_to t("affiliate.bars.voucher_lists"), vouchers_affiliate_bar_url(@bars.first), :class => "current" %>
+          <% end %>
+        </li>
+      </ul>
+    </li>
+  <% else %>
+    <li>
+      <!-- Add the class "no-submenu" to menu items with no sub menu -->
+      <%= link_to_unless_current(current_user.bars.count == 1 ? t("affiliate.bars.tabs.edit_bar_information") : t("affiliate.dashboard.tabs.home"), affiliate_root_url, :class => "nav-top-item no-submenu") do %>
+        <%= link_to(current_user.bars.count == 1 ? t("affiliate.bars.tabs.edit_bar_information") : t("affiliate.dashboard.tabs.home"), affiliate_root_url, :class => "nav-top-item no-submenu current") %>
+      <% end %>
+    </li>
+    <% @bars.each do |bar| %>
+       <li>
+        <a href="#" class="nav-top-item<%= " current" if @bar.present? and (@bar == bar) and ((controller.controller_name == "bars" and controller.action_name != "vouchers") or (controller.controller_name == "prices") or (controller.controller_name == "employments")) %>"> <!-- Add the class "current" to current menu item -->
+          <%= bar.name %>
+        </a>
+        <ul>
+          <li>
+            <%= link_to_unless_current("Recent Activity", affiliate_bar_path(bar)) do %>
+              <%= link_to "Recent Activity", affiliate_bar_path(bar), :class => "current" %>
+            <% end %>
+          </li>
+          <li>
+            <%= link_to_unless_current(t("affiliate.bars.tabs.edit_bar_information"), edit_affiliate_bar_path(bar)) do %>
+              <%= link_to t("affiliate.bars.tabs.edit_bar_information"), edit_affiliate_bar_path(bar), :class => "current" %>
+            <% end %>
+          </li>
+          <li>
+            <!-- Add class "current" to sub menu items also -->
+            <%= link_to_unless_current(t("affiliate.bars.tabs.beer_list"), affiliate_bar_prices_url(bar)) do %>
+              <%= link_to t("affiliate.bars.tabs.beer_list"), affiliate_bar_prices_url(bar), :class => "current" %>
+            <% end %>
+          </li>
+          <li>
+            <%= link_to_unless_current(t("affiliate.bars.tabs.gallery"), gallery_affiliate_bar_path(bar)) do %>
+              <%= link_to t("affiliate.bars.tabs.gallery"), gallery_affiliate_bar_path(bar), :class => "current" %>
+            <% end %>
+          </li>
+          </ul>
+      </li>
+      <li>
+        <a href="#" class="nav-top-item<%= " current" if @bar.present? and (@bar == bar) and ((controller.controller_name == "ious") or (controller.controller_name == "vouchers") or (controller.controller_name == "voucher_lists") or (controller.controller_name == "bars" and controller.action_name == "vouchers")) %>">
+          <%= bar.name %> Vouchers
+        </a>
+        <ul>
+          <li>
+            <%= link_to_unless_current(t("affiliate.bars.outstanding_vouchers"), affiliate_bar_ious_url(bar)) do %>
+              <%= link_to t("affiliate.bars.outstanding_vouchers"), affiliate_bar_ious_url(bar), :class => "current" %>
+            <% end %>
+          </li>
+          <li>
+            <%= link_to_unless_current(t("affiliate.bars.redeemed_vouchers"), affiliate_bar_ious_url(bar, :filter => "past")) do %>
+              <%= link_to t("affiliate.bars.redeemed_vouchers"), affiliate_bar_ious_url(bar, :filter => "past"), :class => "current" %>
+            <% end %>
+          </li>
+          </ul>
+      </li>
+    <% end %>
+  <% end %>
+  <li>
+    <%= link_to t("affiliate.dashboard.tabs.invoices"), '#', :class => "nav-top-item" %>
+    <ul>
+      <li>
+        <%= link_to 'Payment Setting', new_affiliate_payout_url %>
+        &nbsp;&nbsp;&nbsp;&nbsp;
+      </li>
+      <li>
+        <%= link_to 'Outstanding Payments', affiliate_outstanding_payouts_url %>
+        &nbsp;&nbsp;&nbsp;&nbsp;
+      </li>
+      <li>
+        <%= link_to 'Paid Vouchers', affiliate_paid_vouchers_url %>
+      </li>
+    </ul>
+  </li>
+
+  <li>
+    <a href="#" class="nav-top-item<%= " current" if @bar.present? and controller.controller_name == "ious" and controller.action_name == "new" %>">
+      <%= t("affiliate.bars.tabs.promotional") %>
+    </a>
+    <ul>
+      <% @bars.each do |bar| %>
+        <li>
+          <%= link_to_unless_current(bar.name, new_affiliate_bar_iou_url(bar)) do %>
+            <%= link_to bar.name, new_affiliate_bar_iou_url(bar), :class => "current" %>
+          <% end %>
+        </li>
+      <% end %>
+    </ul>
+  </li>
+</ul> <!-- End #main-nav -->

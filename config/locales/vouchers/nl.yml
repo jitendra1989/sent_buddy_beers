@@ -1,0 +1,9 @@
+nl:
+  vouchers: 
+    existing_account_activation: 
+      description: "Log hier in en we voegen het email adres %{email} toe aan je account."
+      heading: "Heb je al een account?"
+    new_account_creation: 
+      activate: Activeren
+      description: "Activeer je account zodat je in kan inloggen op Buddy Drinks en je kan alle biertjes volgen."
+      heading: "Wil je je account activeren?"

@@ -1,0 +1,106 @@
+it:
+  activerecord:
+    models:
+      city: City
+      user_session: Accedi
+      iou: IOU
+      draught: Alla spina
+      bottle: In bottiglia
+      email: Email
+      price: Drink
+    attributes:
+      iou:
+        recipient_email: "La email del tuo amico"
+        recipient_phone_country_code: "Prefisso internazionale"
+        recipient_phone: "Numero di telefono del tuo amico:"
+        bar_id: "Bar"
+        price_id: "Drink"
+        quantity: "Quantità" 
+      user:
+        emails:
+          email: Indirizzo email
+        email: Indirizzo email
+        login: Nome utente
+        password: Password
+        phone_number: Numero di telefono cellulare
+        phone_number_country_code: Prefisso internazionale del Paese
+      bar:
+        address: Indirizzo
+        country: Nazione
+        city: Città
+        city_id: Città
+        contact_email: Email per il contatto
+        contact_phone_number: Numero di telefono del contatto
+        phone_number: Numero di telefono
+        contact_name: Nome intero del contatto
+        contact_time: Orario migliore per contattare
+        signup_notes: Altre note
+        mailing_address: Indirizzo al quale intendi ricevere il tuo Starter kit
+        prices:
+          cents: Prezzo del drink
+          discounted_cents: Prezzo scontato
+          price: 
+            one: Drink
+            other: Drink
+      price:
+        name: Nome del drink
+        description: Descrizione
+        drink_type_id: Tipo di birra
+        cents: Prezzo
+        discounted_cents: Prezzo scontato
+      employment:
+        user_id: Dipendente
+    errors:
+      messages:
+        record_invalid: "Validazione non riuscita: %{errors}"
+        greater_than_or_equal_to: "deve essere maggiore o uguale a %{count}"
+        confirmation: non corrisponde alla conferma
+        less_than_or_equal_to: "deve essere inferiore o uguale a %{count}"
+        blank: non può essere vuoto
+        invalid: è invalido
+        exclusion: è riservato
+        odd: deve essere dispari
+        empty: non può essere vuoto
+        even: deve essere pari
+        too_short: "è troppo corto (il minimo è %{count} caratteri)"
+        wrong_length: "è della lunghezza sbagliata (dovrebbe essere %{count} caratteri)"
+        less_than: "deve essere inferiore a %{count}"
+        equal_to: "deve essere uguale a %{count}"
+        greater_than: "deve essere più grande di %{count}"
+        accepted: deve essere accettato
+        too_long: "è troppo lungo (il massimo è %{count} caratteri)"
+        taken: "è stato già utilizzato"
+        inclusion: non è incluso nell'elenco
+        not_a_number: non è un numero
+        changed: non può essere modificato
+        look_like_email: "dovrebbe essere simile ad una email"
+        awaiting_verification: "non può essere impostato dal momento che questa email attende ancora di essere verificata"
+        less_than_regular_price: "deve essere inferiore del prezzo normale."
+      models:
+        photo:
+          gallery_has_5_photos: Non puoi caricare più di 5 foto nella galleria. Sceglile con cura.
+          only_500_kb: deve essere inferiore a 500 KB
+        employment:
+          attributes:
+            user_id:
+              taken: "è già utilizzato in questo bar"
+        user:
+          attributes:
+            email:
+              non_existant: "non è rintracciabile nel nostro database"
+        iou:
+          attributes:
+            bar_id:
+              must_be_chosen: "deve essere scelto"
+            price_id:
+              must_be_chosen: "deve essere scelto"
+            quantity:
+              must_be_chosen: "deve essere scelta"
+      full_messages:
+        format: "%{attribute} %{message}"
+      template:
+        body: "Si sono verificati problemi con i seguenti campi:"
+        header:
+          body: "Si sono verificati problemi con i seguenti campi:"
+          one: "Si è verificato un errore con questo %{model}"
+          other: "Si sono verificati %{count} errori con questo %{model}"

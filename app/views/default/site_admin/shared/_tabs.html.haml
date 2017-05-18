@@ -1,0 +1,9 @@
+.tabs
+  %ul
+    %li
+      = link_to_unless_current("Affiliates", site_admin_affiliates_url) do
+        = content_tag(:span, "Affiliates")
+    %li
+      = link_to_unless_current("Venues", site_admin_bars_url) do
+        = content_tag(:span, "Venues")
+  = clear_floats

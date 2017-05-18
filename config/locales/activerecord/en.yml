@@ -1,0 +1,106 @@
+en:
+  activerecord:
+    models:
+      city: City
+      user_session: Login
+      iou: IOU
+      draught: Draught
+      bottle: Bottle
+      email: Email
+      price: Drink
+    attributes:
+      iou:
+        recipient_email: "Your friend's email"
+        recipient_phone_country_code: "Your friend's country"
+        recipient_phone: "Your friend's phone number"
+        bar_id: "Bar"
+        price_id: "Drink"
+        quantity: "Quantity" 
+      user:
+        emails:
+          email: Email address
+        email: Email address
+        login: Username
+        password: Password
+        phone_number: Mobile Phone Number
+        phone_number_country_code: Mobile Phone Country Code
+      bar:
+        address: Address
+        country: Country
+        city: City
+        city_id: City
+        contact_email: Contact Email
+        contact_phone_number: Contact Phone Number
+        phone_number: Phone Number
+        contact_name: Full Contact Name
+        contact_time: Best Time to Contact
+        signup_notes: Other Notes
+        mailing_address: Address Where You Want to Receive Your Starter Kit
+        prices:
+          cents: Drink price
+          discounted_cents: Discounted price
+          price: 
+            one: Drink
+            other: Drinks
+      price:
+        name: Drink Name
+        description: Description
+        drink_type_id: Drink Type
+        cents: Price
+        discounted_cents: Discounted Price
+      employment:
+        user_id: Employee
+    errors:
+      messages:
+        record_invalid: "Validation failed: %{errors}"
+        greater_than_or_equal_to: must be greater than or equal to %{count}
+        confirmation: doesn't match confirmation
+        less_than_or_equal_to: must be less than or equal to %{count}
+        blank: can't be blank
+        invalid: is invalid
+        exclusion: is reserved
+        odd: must be odd
+        empty: can't be empty
+        even: must be even
+        too_short: is too short (minimum is %{count} characters)
+        wrong_length: is the wrong length (should be %{count} characters)
+        less_than: must be less than %{count}
+        equal_to: must be equal to %{count}
+        greater_than: must be greater than %{count}
+        accepted: must be accepted
+        too_long: is too long (maximum is %{count} characters)
+        taken: has already been taken
+        inclusion: is not included in the list
+        not_a_number: is not a number
+        changed: can't be changed
+        look_like_email: "should look like an email"
+        awaiting_verification: "cannot be set because this email is still awaiting verification"
+        less_than_regular_price: "must be less than the regular price."
+      models:
+        photo:
+          gallery_has_5_photos: You cannot have more than 5 photos in your gallery. Choose wisely.
+          only_500_kb: must be less than 500 KB
+        employment:
+          attributes:
+            user_id:
+              taken: "is already employed by this venue"
+        user:
+          attributes:
+            email:
+              non_existant: "cannot be found in our database"
+        iou:
+          attributes:
+            bar_id:
+              must_be_chosen: "must be chosen"
+            price_id:
+              must_be_chosen: "must be chosen"
+            quantity:
+              must_be_chosen: "must be chosen"
+      full_messages:
+        format: "%{attribute} %{message}"
+      template:
+        body: "There were problems with the following fields:"
+        header:
+          body: "There were problems with the following fields:"
+          one: There was an error with this %{model}
+          other: There were %{count} errors with this %{model}

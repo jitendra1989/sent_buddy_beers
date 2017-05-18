@@ -1,0 +1,11 @@
+/ buddybeers > layouts > navigation
+
+#menu
+  .container
+    = render 'layouts/main_navigation'
+#sub_menu
+  .container
+    %p.slogan= raw t(".slogan")
+    = render 'layouts/language_switcher'
+    =# render 'layouts/sub_navigation'
+    = clear_floats

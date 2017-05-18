@@ -1,0 +1,58 @@
+de:
+  facebook:
+    locations:
+      location_detail:
+        more_information: "Mehr information über %{name}"
+    orders:
+      check:
+        connect_link: "Verbinde via Facebook"
+        notice: "Dein Freund hat Dir ein echtes Bier über BuddyDrinks spendiert. Du musst Dich über Facebook verbinden, sodass wir sicher sind, dass es wirklich Du bist."
+        permissions:
+          description: "Wir benötigen Deine Emailadresse ausschließlich, um Dir mitzuteilen mitteilen zu können, dass Dir ein Bier spendiert wurde. Wir werden Dir auch eine Bestätigungsemail senden, wenn Du ein Bier spendierst. Für weitere Infos lese bitte unsere <a href=\"http://buddybeers.com/en/privacy\">Datenschutzrichtlinien.</a> "
+          heading: "Über Email Permissions"
+        welcome: "Willkommen bei BuddyDrinks"
+      create:
+        errors:
+          no_user: "Bitte wähle einen Deiner Facebook Freunde"
+        fb_app_request:
+          default_message: "BuddyDrinks erlaubt es Freunden, sich gegenseitig echte Biere über das Internet zu spendieren. Klicke \"Akzeptieren\", um das Bier zu erhalten, dass %{name} Dir spendiert hat."
+          title: "Ich spendier Dir %{beer} in der Bar %{bar} in %{city}! "
+      friend_select:
+        heading: "Wähle einen Freund"
+        no_friends: "Keine Freunde mit diesem Namen gefunden."
+        search_prompt: "Gebe den Namen Deines Freundes ein, um ihn schneller zu finden"
+      index:
+        ask_for_beer:
+          fb_action_buy: "Spendiere %{name} ein Bier"
+          link: "Frage Deine Facebook Freunde nach einem Bier"
+          my_fb_status: "Hey Buddies! Ich hätte jetzt Lust auf ein kühles Bier! Zufällig gibts da eine geniale Facebook App namens BuddyDrinks, über die Du mir ein Bier in meiner Nähe spendieren kannst ;-) Was meinst Du?"
+          name: "BuddyDrinks - Spendier Deinen Freunden via Facebook echte Biere in echten Bars!"
+        ask_friends:
+          fb_action_buy: "Spendier ein Bier"
+          link: "Frage Deine Freunde, ob sie Lust auf ein Bier haben"
+          my_fb_status: "Hey Buddies! Hab gerade eine geniale Facebook App namens BuddyDrinks gefunden, über die ich Euch ein echtes Bier in einer echten Bar in eurer Nähe spendieren kann! Wer hat Durst?"
+          name: "BuddyDrinks - Spendier Deinen Freunden via Facebook echte Biere in echten Bars!"
+      show:
+        links:
+          post_friends_wall: "Poste auf meiner Facebook Wall"
+          post_to_friend: "Poste auf der Facebook Wall des Freundes"
+          send_message: "Sende Deinem Freund eine Facebook Nachricht"
+        notice:
+          automatic_link: "Klicke hier, damit dies beim nächsten Mal automatisch passiert."
+          not_notified: "Du musst Deinen Freund über eine der nachfolgenden Methoden informieren, dass Du ihm ein Bier spendiert hast."
+        permissions:
+          do_this_automatically: "Tue dies beim nächsten Mal automatisch"
+        posted_heading: "Dies haben wir auf die Wall Deines Freundes gepostet"
+        send_message: "Möchtest Du auch eine persönlcihe Nachricht senden?"
+        social_spread:
+          fb_action: "BuddyDrinks App herunterladen"
+          fb_action_buy: "Spendier ein Bier"
+          fb_message_description: "%{name}: %{memo}. Klicke den nachfolgenden Link, um unsere kostenlose App herunterzuladen und den freien Drink einzulösen."
+          fb_message_description_default: "BuddyDrinks ermöglicht es Freunden, sich gegenseitig reale Drinks online zu spendieren. Klicke den nachfolgenden Link, um die kostenlose App herunterzuladen und den freien Drink einzulösen."
+          fb_message_link: "Ich spendiere Dir %{beer} in der Bar %{bar} in %{city}!"
+          fb_status: "%{memo} Ich spendiere (@[%{recipient_fb_id}]) %{beer} in der Bar %{bar} in %{city}! Lade die App herunter, um Deinen Drink einzulösen: %{link}"
+          my_fb_status: "Ich habe %{recipient} %{beer} in der Bar %{bar} in %{city} spendiert: %{memo}!"
+    vouchers:
+      show:
+        coupon:
+          description: "Zeige diesen Code der Bedienung in der der Bar, um Deinen Drink zu erhalten."

@@ -1,0 +1,15 @@
+- @title = t(".title")
+- stylesheets 'sites/buddybeers/sections/bars'
+
+- content_for :add_page_js_css do
+  = stylesheet_link_tag  'register'
+
+%section
+  .container
+    .row.register-middle-row
+      .col-md-9.left.col-sm-9.col-xs-12
+        %h1= t(".heading")
+        = render "form"
+      = render '/default/shared/what_it_for_me'
+    = clear_floats
+    

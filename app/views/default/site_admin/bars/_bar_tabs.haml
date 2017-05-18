@@ -1,0 +1,19 @@
+- if @bar and @bar.persisted?
+  .tabs
+    %ul
+      %li
+        = link_to_unless_current(@bar.name, site_admin_bar_path(@bar)) do
+          = content_tag(:span, @bar.name)
+      %li
+        = link_to_unless_current("Edit This Venue", edit_site_admin_bar_path(@bar)) do
+          = content_tag(:span, "Edit This Venue")
+      %li
+        = link_to_unless_current("Edit Venue's Drink List", site_admin_bar_prices_path(@bar)) do
+          = content_tag(:span, "Edit Venue's Drink List")
+      %li
+        = link_to_unless_current("Vouchers", vouchers_site_admin_bar_url(@bar)) do
+          = content_tag(:span, "Vouchers")
+      %li
+        = link_to_unless_current(t("affiliate.bars.tabs.gallery"), site_admin_bar_photos_path(@bar)) do
+          = content_tag(:span, t("affiliate.bars.tabs.gallery"))
+    = clear_floats

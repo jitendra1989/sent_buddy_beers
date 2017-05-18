@@ -1,0 +1,7 @@
+/ default > bars > drink_feed
+
+#feed
+  %h3= t(".title", :name => @bar.name)
+  - @feed.each do |item|
+    .media
+      = render "shared/drink_in_feed", :object => item

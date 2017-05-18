@@ -1,0 +1,56 @@
+en:
+  global:
+    edit: Edit
+    delete: Delete
+    access_denied: You do not have the correct privileges to access this page
+    generic_friend: a buddy
+    or: or
+    require_no_user: You must be logged out to access this page
+    at: at
+    new: new
+    require_user: "You must be logged in to access this page. <a href=\"/users/sign_up\">Click here to create your Buddy Account for free.</a>"
+    confirm_question: Are you sure?
+    affirmative: "Yes" #Yes is a reserved word
+    negative: "No" #No is a reserved word
+    pagination:
+      previous: "Previous"
+      next: "Next"
+    conjunctions:
+      and: "and"
+      now: "now"
+      but: "but"
+      so: "so"
+      only: "only"
+      therefore: "therefore"
+      moreover: "moreover"
+      besides: "besides"
+      consequently: "consequently"
+      nevertheless: "nevertheless"
+      for: "for"
+      however: "however"
+      hence: "hence"
+      while: "while"
+      then: "then"
+      who: "who"
+      which: "which"
+      that: "that"
+      although: "although"
+      though: "though"
+      while: "while"
+      since: "since"
+      until: "until"
+      as: "as"
+      after: "after"
+      before: "before"
+      how: "how"
+      once: "once"
+      when: "when"
+      lest: "lest"
+      if: "if"
+      in_order: "in order"
+      unless: "unless"
+      whether: "whether"
+      because: "because"
+      till: "till"
+      where: "where"
+      whether: "whether"

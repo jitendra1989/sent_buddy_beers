@@ -1,0 +1,122 @@
+/ default > facebook > orders > edit
+- stylesheets 'jquery.fancybox-1.3.1', 'fancybox'
+- javascripts 'jquery.fancybox-1.3.4.pack', 'jquery.easing-1.3.pack', 'jquery.ba-postmessage'
+
+- content_for :facebook do
+  :plain
+    FB.Canvas.setSize();
+    //FB.Canvas.setAutoResize();
+    
+- content_for :head do
+  %script(src="https://www.paypalobjects.com/js/external/dg.js" type="text/javascript" charset="utf-8")
+  :javascript
+    $(document).ready(function(){
+      $("#pay_with_credits").fancybox({
+        'padding'       : '0',
+        'autoScale'     : false,
+        'width'         : 417,
+        'height'        : 367,
+        'type'          : 'iframe',
+        'scrolling'     : 'no'
+      });
+    });
+    $(function(){
+      $.receiveMessage(function(e){
+    
+        if (e.data == 'close=true') {
+          dg.closeFlow();
+        }
+    
+        if (e.data == 'redirect=true') {
+          location.replace('#{facebook_order_url(@iou)}');
+        }
+      // An optional origin URL (Ignored where window.postMessage is unsupported).
+      });
+    });
+    
+  :plain
+    <style type="text/css" media="screen">
+      html, body {
+        height: 600px;
+      }
+    </style>
+    <!--[if lte IE 8]>
+      <style type="text/css" media="screen">
+        #pay .drink .avatar img {
+          -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(grayscale=1)";
+          filter: progid:DXImageTransform.Microsoft.BasicImage(grayscale=1);
+        }
+      </style>
+    <![endif]-->   
+    
+#pay
+  %h1= t("ious.pay.heading")
+  #price_breakdown
+    %h2= "#{t("ious.order.heading")}:"
+    .drink
+      .avatar.sender
+        = image_tag(@picture, :alt => @iou.sender.name, :height => "53px", :width => "53px")
+      .avatar.recipient
+        = image_tag("http://graph.facebook.com/#{@iou.recipient_facebook_uid}/picture?type=square", :alt => @iou.sender.name, :height => "53px", :width => "53px")
+      .description
+        %p
+          %strong= number_to_currency((@iou.amount / @iou.quantity).to_f, :unit => @iou.amount.currency.symbol)
+          #{t("ious.drink_details.drink_at_bar", :drink => @iou.price_name, :bar => @iou.bar.name, :city => @iou.bar.city.name, :recipient => @iou.recipient_name, :email => @iou.smsable? ? @iou.recipient_phone : @iou.recipient_email)}
+      - if @iou.memo.present?
+        .memo
+          .bubble.pie
+            %p= @iou.memo
+      .disclaimer
+        * #{t("ious.order.similar_price")}
+    #price
+      %strong= "#{t("ious.order.total")}:"
+      #{@iou.quantity}
+      x  
+      %span{:class => @iou.discounted ? 'strikeout' : ''}
+        = number_to_currency(@iou.amount.to_f / @iou.quantity, :unit => @iou.amount.currency.symbol)
+      - if @iou.discounted
+        = number_to_currency(@iou.discounted_amount.to_f / @iou.quantity, :unit => @iou.discounted_amount.currency.symbol)
+      = "(#{image_tag("sites/carlsberg/graphics/buddybucks-icon.png", :alt => "buddy bucks")} #{@iou.price_in_bucks})".html_safe
+      = "="
+      %strong{ :class => @iou.discounted ? 'strikeout' : '' }= number_to_currency(@iou.amount.to_f, :unit => @iou.amount.currency.symbol)
+      - if @iou.discounted
+        %strong= number_to_currency(@iou.discounted_amount.to_f, :unit => @iou.discounted_amount.currency.symbol)
+      %strong= "(#{image_tag("sites/carlsberg/graphics/buddybucks-icon.png", :alt => "buddy bucks")} #{@iou.price_in_bucks})".html_safe
+
+  #payment
+    #payment_methods
+      #buddy_bucks.payment_method
+        .credits
+          %ul
+            %li#user_credits.current
+              = raw t("ious.credits.current_bucks", :amount => number_with_delimiter(@user.credits, :locale => I18n.locale))
+              = link_to("#{t("ious.buddy_bucks_payment.get_bucks")} &raquo;".html_safe, user_credits_url(current_user, :return_to => pay_iou_url(@iou)), :class => "more iframe buy_credits", :id => "buy_credits")
+            %li= link_to(content_tag(:span, t("ious.buddy_bucks_payment.pay", :amount => @iou.price_in_bucks)), confirm_iou_url(@iou, :return_uri => facebook_order_url(@iou)), :class => "pay", :id => "pay_with_credits", :target => "_blank")
+          .credit_cards= image_tag("sites/carlsberg/graphics/all_credit_cards.png", :alt => t("ious.buddy_bucks_payment.credit_cards"))
+      
+        =clear_floats
+
+      #paypal.payment_method
+        %form{ :action => paypal_create_path, :method => "post", :id => "paypal_form" }
+          = hidden_field "paypal", "amt", :name => "amt", :value => number_to_currency(@iou.total.to_f, :locale => "en", :seperator => ".", :unit => "")
+          = hidden_field "paypal", "cur", :name => "cur", :value => @iou.currency
+          = hidden_field "paypal", "name", :name => "name", :value => t("ious.paypal_payment.form.order_name", :number => @iou.id)
+          = hidden_field "paypal", "description", :name => "description", :value => t("ious.paypal_payment.form.item_name", :amount => [@iou.amount.currency.symbol, @iou.amount].join(), :beers => pluralize(@iou.quantity, beverage_owed(@iou)), :location => " #{t("global.at")} #{@iou.bar.name}")
+          = hidden_field "paypal", "order", :name => "order_id", :value => @iou.id
+          = hidden_field "options", "in_facebook", :value => true
+          = hidden_field "options", "return_uri", :value => build_facebook_url("/paypal/confirmation/#{@iou.id}?amt=#{number_to_currency(@iou.total.to_f, :locale => "en", :seperator => ".", :unit => "")}&cur=#{@iou.currency}&in_facebook=true")
+          = hidden_field "options", "cancel_uri", :value => build_facebook_url("/paypal/cancel?order_id=#{@iou.id}&in_facebook=true")
+          .credits
+            %ul
+              %li
+                %input{ :type => "image", :src => "https://www.paypal.com/#{facebook_locale(I18n.locale.to_s)}/i/btn/btn_dg_pay_w_paypal.gif", :id => "paypal_submit", :name => "paypal_submit", :value => t("ious.paypal_payment.button", :amount => "#{@iou.total.currency.symbol}#{@iou.total}") }
+              %li.credit_cards= image_tag("sites/carlsberg/graphics/major_credit_cards.png", :alt => t("ious.paypal_payment.credit_cards"))
+
+          = clear_floats
+
+        :javascript
+          var dg = new PAYPAL.apps.DGFlow({
+            // the HTML ID of the form submit button which calls setEC
+            trigger: "paypal_submit"
+          });
+  = clear_floats

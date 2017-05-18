@@ -1,0 +1,111 @@
+de:
+  carlsberg:
+    activerecord:
+      attributes:
+        bar:
+          contact_time: Erreichbarkeit
+          lead: "Carlsberg Betreuer"
+    bars:
+      confirm:
+        heading: "DU MÖCHTEST EINE BUDDYBAR WERDEN?"
+      form:
+        form:
+          bar_information: "Bar Information"
+          carlsberg_deal: "Spezielles Angebot (z.B. 5 zum Preis von 4)"
+          no_city: "Falls Deine Stadt nicht gelistet ist, wähle einfach die, die Dir am nächsten ist und gebe Deine eigene Stadt im Feld unten an."
+          other_drink: "Anderes Getränk"
+          single_carlsberg: "Einzelnes Carlsberg"
+    facebook:
+      home:
+        index:
+          buy_button: "Spendier ein Carlsberg"
+          meta_description: "BuddyDrinks in Partnerschaft mit Carlsberg ermöglicht Dir, Deinen Freunden echte Biere in realen Bars zu spendieren wo auch immer sie derzeitig sind. That calls for a Carlsberg!"
+          description: "BuddyDrinks in Partnerschaft mit Carlsberg ermöglicht Dir, Deinen Freunden echte Biere in realen Bars zu spendieren wo auch immer sie derzeitig sind. <span class=\"highlight\">That calls for a Carlsberg!</span> "
+          fb_connect: "Verbinde via Facebook"
+          heading: "Spendier ein Carlsberg"
+          title: "Buddy Drinks - Spendier ein Carlsberg"
+      locations:
+        location_detail:
+          no_carlsberg: "Sorry! %{bar_name} bietet kein Carlsberg Bier an. Du kannst jedoch ein anderes Getränk aus der Liste unten auswählen oder in einer anderen Bar spendieren."
+        index:
+          title: "Carlsberg Buddy Bars"
+      orders:
+        new:
+          heading: "Spendier ein Carlsberg"
+    footer:
+      press: "BuddyDrinks Presse"
+    forms:
+      labels:
+        contact_name: "Vollständiger Name"
+        description_bio: "Wie lässt sich Deine Bar am besten beschreiben?"
+        website: "Internet Adresse"
+    home:
+      index:
+        closed:
+          dear_fan: "Lieber Carlsberg Fan,"
+          thanks: "vielen Dank für Dein Interesse an Carlsberg und Buddy Drinks. Leider ist der Service von uns nicht länger verfügbar."
+          invite: "Lade doch stattdessen einfach Deine Freunde in Deine Lieblings-Location ein und spendiere ihnen und Dir selbst dort ein kühles Carlsberg. Gemeinsam genießen macht schließlich immer noch am meisten Spaß."
+          facebook: "Wir freuen uns auch über deinen Besuch auf unserer Facebook Seite:"
+          salutation: "Beste Grüße,<br />dein Carlsberg Team"
+      apps:
+        availability: "Verfügbar für <a href=\"%{iphone_link}\" target=\"blank\" onClick=\"_gaq.push(['_trackEvent', 'App', 'Download', 'homepage link iPhone']);\">iPhone</a> und für <a href=\"%{android_link}\" target=\"blank\" onClick=\"_gaq.push(['_trackEvent', 'App', 'Download', 'homepage link Android']);\">Android</a>."
+      content_header:
+        app_button: "Lade jetzt die App aus dem Apple iTunes App Store"
+        iphone_description: "<a href=\"http://itunes.com/apps/buddybeerscarlsbergbuyyourfriendacarlsberg\" rel=\"nofollow\">Die BuddyDrinks-Carlsberg iPhone App ist jetzt KOSTENLOS verfügbar im Apple iTunes Store.</a> Endlich kannst Du nun Freunden ein erfrischendes Carlsberg spendieren auch wenn Du unterwegs bist. <strong>Du kommst zu spät zu einer Verabredung im Pub?</strong> Warum nicht schonmal die erste Runde ausgeben bevor Du ankommst! <strong>Du hast kein Bargeld mehr?</strong> Du kannst Dein Bier IMMER über die App bezahlen! Probiere es jetzt aus!"
+        iphone_heading: "JETZT AUF DEM IPHONE!"
+        subhead_alt_text: "Jetzt Erhältlich im Apple iTunes App Store!"
+      iphone:
+        bullets:
+          one: "Spendiere Freunden in anderen Städten ein Carlsberg"
+          three: "Gewinne Freibier"
+          two: "Finde die nächste Carlsberg Bar in Deiner Umgebung"
+        download_link: "Lade jetzt die App aus dem Apple iTunes App Store"
+        form:
+          error:
+            description: "Bitte überprüfe die Schreibweise Deiner Emailadresse."
+            heading: "Leider gab es einen Fehler bei der Speicherung Deiner Email."
+          label: "Gib Deine Emailadresse ein, damit wir Dich kontaktieren können, sobald die App verfügbar ist!"
+          submit: Bestätigen
+          success: "Vielen Dank! Wir informieren Dich, sobald die App im iTunes Store verfügbar ist!"
+        heading: "Carlsberg-BuddyDrinks iPhone App"
+        image_alt_text: "The Carlsberg Buddy Drinks iPhone App"
+        signup: "Jetzt bei BuddyDrinks anmelden!"
+        subhead_alt_text: "Jetzt Erhältlich im Apple iTunes App Store!"
+        title: "Carlsberg-BuddyDrinks iPhone App"
+    ious:
+      confirmed_payment:
+        social_spread:
+          heading: "Teile es deinen Freunden mit"
+      drink_details:
+        drink_at_bar: "%{drink}* Buchungsbeleg im %{bar}, %{city} für %{recipient} (%{email})"
+      new:
+        heading: "Spendiere ein Carlsberg."
+    layouts:
+      facebook:
+        menu:
+          bars: Bars
+          buy: "Spendieren"
+          my_beers: "Meine Biere"
+      navigation:
+        slogan: "That Calls for a <strong>Carlsberg</strong><sup>™</sup>"
+    notifier:
+      multiple_voucher_notification:
+        say_thanks: "Möchtest auch Du Deinen Freunden Biere spendieren, so besuche http://carlsberg-buddybeers.com und probier den Gag aus!"
+      single_voucher_notification:
+        say_thanks: "Möchtest auch Du Deinen Freunden Biere spendieren, so besuche http://carlsberg-buddybeers.com und probier den Gag aus!"
+    sessions:
+      new:
+        connect_with_facebook: "Über Facebook verbinden"
+        facebook_heading: "Altenativ melde Dich bei BuddyDrinks mit Deinem <strong>Facebook-Account</strong> bei an!"
+        form:
+          button: OK
+          forgot_password: "Passwort vergessen?"
+          legend: Login
+        heading: "Login und spendiere Deinen Freunden Biere!"
+        title: "Log Dich Ein und Spendiere Deinen Besten ein Carlsberg!"
+    shared:
+      prices:
+        carlsberg_beers: Carlsberg Biere
+        other_drinks: "Weitere Getränke"
+    sms:
+      message: "Ein Freund hat Dir Carlsberg spendiert! Oeffne einfach nur die BuddyDrinks App:"

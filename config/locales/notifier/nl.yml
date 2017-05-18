@@ -1,0 +1,63 @@
+nl:
+  notifier: 
+    at_bar: in
+    confirmation_instructions: 
+      personal_information: "Je geregistreerd met deze informatie:"
+      problem_link: "Als de bovenstaande URL niet werkt, kopieer dan de link en plak deze in je browser. Lukt dat ook niet, neem dan even contact met ons op."
+      subject: "Buddy Drinks activatie instructies"
+      thanks: "Je account is aangemaakt, bedankt! Klik op onderstaande URL om je account te activeren!"
+    email_activation: 
+      greeting: "Hey %{name}!"
+      subject: "Vergeet je email adres niet te bevestigen"
+      verify_email: "We moeten zeker weten dat het email adres bestaat."
+      you_added: "Je hebt het email adres %{email} toegevoegd aan je account."
+    email_footer: 
+      salutation: "Rock en roll"
+      signature: "Je buddies bij BuddyDrinks.nl"
+    multiple_voucher_notification: 
+      code: "De vouchers codes zijn"
+      expires: "Notitie: De voucher verloopt binnen 2 weken (op %{date})"
+      greeting: "Hey %{name}"
+      instructions: "Je hebt deze codes nodig om de vouchers bij %{bar} (%{address}) in te wisselen. Schrijf ze op, print ze uit of toon ze vanaf je mobiel. Ze lopen af op %{expiration}. Proost!"
+      memo: "%{name} zegt:"
+      print_link: "Je kan de vouchers printen op de volgende link"
+      say_thanks: "Wil je je coole vriend bedanken, stuur hem dat een biertje terug! Kom naar BuddyDrinks.nl. Het is makkelijk en vooral leuk!"
+      subject: "Je vriend, %{name}, heeft een biertje voor je gekocht!"
+      voucher_explained: "%{name} heeft %{quantity} vouchers voor %{beers} in %{bar} (%{city}) voor je gekocht. Lucky you!"
+      your_friend: "Jouw vriend"
+    new_voucher_list: 
+      explanation: "We hebben een nieuwe lijst voor je gemaakt. Print deze uit zodat je vouchers kan ontvangen tegen deze prijs. Je krijgt toegang tot de nieuwe lijst met vouchers door in te loggen op Buddy Drinks en naar de volgende URL's te gaan:"
+      pdf: "Download de PDF"
+      post: "*Wil je deze lijst per post ontangen? Neem contact met ons op!*"
+      salutation: "Hallo %{bar_name}"
+      sold_out: "Het lijkt erop dat je alle vouchers op je huidige %{amount} voucher lijst hebt verkocht. Congrats!"
+      subject: "Je hebt een nieuwe voucher lijst."
+      thanks: "Cool dat je onderdeel van het Buddy Drinks netwerk bent geworden!"
+    outstanding_balance: 
+      amount_owed: "We zijn nog aan het wachten om %{amount} aan je uit te betalen. Maar we missen nog de betalingsmogelijkheden in je profiel op Buddy Drinks."
+      greeting: "Hallo %{name},"
+      link: "Volg de link hieronder om je betalings voorkeuren in te vullen. We zorgen dat het geld dan zo snel mogelijk bij je is."
+      subject: "Je hebt en openstaand bedrag bij Buddy Drinks. We hebben alleen je betalings voorkeuren nog nodig."
+      thanks: "Nogmaals bedankt dat je onderdeel bent geworden van het Buddy Drinks netwerk."
+    outstanding_ious: 
+      click_link: "Gebruik de volgende link om je vouchers in te wisselen."
+      outstanding: "Hier vind je de openstaande Buddy Drinks vouchers"
+      print_this: "Print deze lijst en vul de 2 ontbrekende nummers in wanneer je de vouchers inwisselt. Dit is alles wat je nodig hebt om aan het einde van de maand aan Buddy Drinks te laten weten welke vouchers zijn ingewisseld."
+      subject: "Openstaande vouchers van %{name} voor de week van %{date}"
+    payment_made: 
+      explanation: "Dit houdt in dat de betaling van %{amount} is uitbetaald. We willen je bij deze enorm bedanken dat je lid bent van het Buddy Bars netwerk. "
+      greeting: "Hallo %{name},"
+      invoice_paid: "We hebben onlangs de betaling met nummer %{number} uitbetaald."
+      link: "Als je wilt dat deze betaling uitbetaald wordt, volg de volgende link:"
+      subject: "[Buddy Drinks uitbetaling: %{number}] %{amount}: BETAALD"
+    single_voucher_notification: 
+      code: "Je voucher code is: %{code}"
+      expires: "LET OP: Deze voucher code loopt af binnen 2 maanden (op {%date})"
+      greeting: "Hey %{name}!"
+      instructions: "Je hebt deze codes nodig om de vouchers bij %{bar} (%{address}) in te wisselen. Schrijf ze op, print ze uit of toon ze vanaf je mobiel. Ze lopen af op %{expiration}. Proost!"
+      memo: "%{name} zegt:"
+      print_link: "Je kan de voucher ook printen"
+      say_thanks: "Wil je je vriend bedanken? Stuur hem via BuddyDrinks direct een biertje terug!"
+      subject: "Je vriend, %{name}, heeft een biertje voor je gekocht!"
+      voucher_explained: "%{name} heeft een voucher van %{amount} voor een %{beer} in %{bar} (%{city}). Lucky you!"
+      your_friend: "Jouw vriend"

@@ -1,0 +1,101 @@
+th:
+  carlsberg:
+    activerecord:
+      attributes:
+        bar:
+          contact_time: "ช่วงเวลาที่สามารถติดต่อได้"
+          lead: "ตัวแทนฝ่ายขายเบียร์ Carlsberg"
+    bars: 
+      confirm:
+        heading: "คุณมีความประสงค์ที่จะสมัครเป็นบัดดี้บาร์หรือไม่?"
+      form:
+        form:
+          bar_information: "ข้อมูลของบาร"
+          carlsberg_deal: "ส่วนลดพิเศษ"
+          no_city: "หากคุณไม่ได้อยู่ในเมืองที่มีชื่อตามรายการข้างต้น โปรดเลือกเมืองที่ใกล้กับคุณมากที่สุดและกรอกชื่อเมืองที่คุณอยู่ในช่อง \"หมายเหตุ\" ข้างล่าง"
+          other_drink: "เครื่องดื่มอย่างอื่น"
+          single_carlsberg: "เบียร์ Carlsberg 1 ที่"
+    facebook:
+      home:
+        index:
+          heading: "สั่งซื้อเบียร์ Carlsberg"
+          meta_description: "เครือข่ายบัดดี้เบียร์ (Buddy Drinks) ได้จับมือร่วมกันกับเบียร์ Carlsberg เพื่อให้คุณสามารถสั่งซื้อเบียร์เย็นๆให้เพื่อนในเครือข่ายเฟสบุ๊คของคุณไม่ว่าเขาหรือเธอคนนั้นจะอยู่ใกล้คุณหรืออยู่ไกลในต่างประเทศ That calls for a Carlsberg!"
+          description: "เครือข่ายบัดดี้เบียร์ (Buddy Drinks) ได้จับมือร่วมกันกับเบียร์ Carlsberg เพื่อให้คุณสามารถสั่งซื้อเบียร์เย็นๆให้เพื่อนในเครือข่ายเฟสบุ๊คของคุณไม่ว่าเขาหรือเธอคนนั้นจะอยู่ใกล้คุณหรืออยู่ไกลในต่างประเทศ  <span class=\"highlight\"> That calls for a Carlsberg!</span>"
+          buy_button: "สั่งซื้อเบียร์ Carlsberg"
+          fb_connect: "เชื่อมต่อกับเฟสบุ๊ค"
+          title: "Buddy Drinks - Buy Your Friend a Carlsberg"
+      locations:
+        location_detail:
+          no_carlsberg: "ขออภัย เนื่องจาก %{bar_name} ไม่มีเบียร์ที่คุณชอบจำหน่าย แต่คุณสามารถเลือกเครื่องดื่มอื่นจากบาร์นี้ได้ตามรายการข้างล่างหรือโปรดเลือกบาร์อื่น"
+        index:
+          title: "Carlsberg Buddy Bar Locations"
+      orders:
+        new:
+          heading: "สั่งซื้อเบียร์ Carlsberg"
+    forms:
+      labels:
+        contact_name: "ชื่อและนามสกุลของผู้ที่ติดต่อได"
+        description_bio: "รายละเอียด"
+        website: "เว็ปไซด"
+    footer:
+      press: "สารสนเทศ Buddy Drinks"
+    home:
+      content_header:      
+        iphone_heading: "ดาวน์โหลดเข้ามือถือ IPHONE ได้แล้ววันนี้!"
+        iphone_description: "<a href=\"http://itunes.com/apps/buddybeerscarlsbergbuyyourfriendacarlsberg\" rel=\"nofollow\">ดาวน์โหลดแอพฯ  “BuddyDrinks-Carlsberg iPhone” ฟรีได้ที่  Apple iTunes Store.</a> ในที่สุดคุณก็สามารถส่งเบียร์เย็นๆให้เพื่อนคุณได้ทุกที่ทุกเวลา <strong> มาไม่ทันตามเวลาที่นัดกับเพื่อนๆไว้ที่บาร์? </strong> สั่งเบียร์เลี้ยงเพื่อนๆก่อนที่คุณจะไปถึงบาร์ดีมั้ย? <strong> ลืมกระเป๋าตังค์? </strong>  คุณก็สามารถจ่ายค่าเบียร์คุณได้ผ่านแอพฯนี้ ไม่มีคำว่าเป็นไปไม่ได้!"
+        subhead_alt_text: "ดาวน์โหลดได้แล้ววันนี้ที่ iTunes App Store!"
+        app_button: "ดาวน์โหลด  “Buddy Drinks Carlsberg iPhone app” จาก  Apple iTunes Store"
+      iphone: 
+        title: "แอพฯ Carlsberg Buddy Drinks iPhone App"
+        heading: "แอพฯ Carlsberg Buddy Drinks iPhone App"
+        subhead_alt_text: "ดาวน์โหลดได้แล้ววันนี้ที่ iTunes App Store!"
+        image_alt_text: "แอพฯ Carlsberg Buddy Drinks iPhone App"
+        download_link: "ดาวน์โหลด \"Buddy Drinks Carlsberg iPhone app\" จาก Apple iTunes Store"
+        bullets:
+          one: "เลี้ยงเบียร์ Carlsberg เพื่อนๆคุณได้แม้ว่าคุณจะอยู่กันคนละเมือง!"
+          two: "ค้นหาบาร์ Carlsberg ที่ใกล้ที่สุด"
+          three: "ชิงรางวัลเบียร์ฟรีๆ"
+        form:
+          label: "กรุณากรอกอีเมล์ของคุณด้านล่างเพื่อรับข้อมูลข่าวสารหลังจากแอพฯนี้เปิดตัว:"
+          error:
+            heading: "มีความผิดพลาดในการกรอกอีเมล์ของคุณ"
+            description: "โปรดตรวจสอบข้อมูลอีกครั้งและลองใหม่"
+          success: "ระบบได้ทำการบันทึกข้อมูลคุณไว้เรียบร้อยแล้ว คุณจะได้รับข่าวสารข้อมูลทันทีที่แอพฯนี้เปิดตัวใน iTunes App Store"
+          submit: "ส่งข้อมูล"
+        signup: "เริ่มใช้ Buddy Drinks เดี๋ยวนี้"
+        
+    ious:
+      new:
+        heading: "ส่ง Carlsberg"
+      drink_details:
+        drink_at_bar: "%{drink}* คูปอง ที่ %{bar}, %{city} สำหรับ %{recipient} (%{email})"
+      confirmed_payment:
+        social_spread:
+          heading: "แชร์กับเพื่อนของคุณ"
+    layouts:
+      navigation:
+        slogan: "That Calls for a <strong>Carlsberg</strong><sup>™</sup>"
+      facebook:
+        menu:
+          my_beers: "เบียร์ของฉัน"
+          bars: "บาร์"
+          buy: "สั่งซื้อเบียร์ Carlsberg"
+    sessions:
+      new:
+        heading: "เข้าสู่ระบบและส่งเบียร์ Carlsberg ให้เพื่อนคุณ!"
+        title: "เข้าสู่ระบบ Buddy Drinks"
+        form:
+          button: "ลงชื่อเข้าใช้"
+          legend: "ลงชื่อเข้าใช้ผ่านบัญชี Buddy Drinks"
+          forgot_password: "ลืมรหัสผ่าน?"
+        facebook_heading: "ลงชื่อเข้าใช้ผ่านบัญชี <strong>เฟสบุ๊ค</strong> ของคุณ"
+        connect_with_facebook: "เชื่อมต่อกับเฟสบุ๊ค"
+    shared:
+      prices:
+        carlsberg_beers: "เบียร์ Carlsberg"
+        other_drinks: "เครื่องดื่มอื่นๆ"
+    notifier:
+      single_voucher_notification:
+        say_thanks: "ส่งเบียร์เลี้ยงเพื่อนซี้แทนคำขอบคุณจากใจ ส่งได้แล้วง่ายๆที่  http://carlsberg-buddybeers.com."
+      multiple_voucher_notification:
+        say_thanks: "ส่งเบียร์เลี้ยงเพื่อนซี้แทนคำขอบคุณจากใจ ส่งได้แล้วง่ายๆที่  http://carlsberg-buddybeers.com. "

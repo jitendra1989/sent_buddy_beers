@@ -1,0 +1,80 @@
+- content_for :head do
+  :javascript
+    $(function() {
+      var counter = #{@affiliate.emails.size};
+
+      $("#add_link").click(function(){
+        counter++;
+        var t = '<div class="removable_fields"><li id="user_emails_attributes_REPLACE_name" class="string optional"><input size="50" name="user[emails_attributes][REPLACE][email]" id="user_emails_attributes_REPLACE_email" class="email"> <p class="inline-hints"><a href="#" class="remove_input">Delete</a></p></li></div>';
+        $("#email_list").append(t.replace(/REPLACE/g, counter));
+        return false;
+      });
+
+      $('.remove_input').live('click', function() {
+        $(this).parents(".removable_fields").remove();
+        return false;
+      });
+
+      // hide deleted fieldsets
+      $('.removable_fields').each(function(){
+        if ($(this).find('.hidden_delete_field').val() == 'true') {
+          $(this).hide();
+        }
+      });
+    });
+
+%ol
+  %li
+    = f.label :name, "Name"
+    = f.text_field :name
+  %li
+    = f.label :login, "Username"
+    = f.text_field :login
+  %li
+    = f.label :language
+    = f.select :language, I18n.available_locales.collect{ |l| [l.to_s, l.to_s] }
+  %li
+    = f.label :phone_number, t("forms.labels.phone_number")
+    = f.text_field :phone_number
+
+  %li
+    = f.label :email, "Emails"
+    %ol#email_list
+      = f.fields_for :emails do |email_form|
+        %li
+          .removable_fields
+            =# email_form.text_field :name
+            = render :partial => "registrations/email", :locals => { :f => email_form }
+  
+  #add_link= link_to "Add an Email", "#"
+  
+  - if f.object.affiliate?
+    %li
+      = f.label :default_currency, t("forms.labels.default_currency")
+      = f.select :default_currency, currencies_in_use
+    %li
+      = f.label :paypal_email, t("forms.labels.paypal")
+      = f.text_field :paypal_email
+    %li
+      %strong= t("global.or")
+    %li
+      = f.label :bank_account_name, t("forms.labels.bank_account_name")
+      = f.text_field :bank_account_name
+    %li
+      = f.label :bank_account_number, t("forms.labels.bank_account_number")
+      = f.text_field :bank_account_number
+    %li
+      = f.label :bank_account_bank_code, t("forms.labels.bank_account_code")
+      = f.text_field :bank_account_bank_code
+    %li
+      = f.label :bank_name, t("forms.labels.bank_name")
+      = f.text_field :bank_name
+    %li
+      = f.label :bank_address, t("forms.labels.bank_address")
+      = f.text_field :bank_address
+    %li
+      = f.label :bank_account_iban, t("forms.labels.bank_account_iban")
+      = f.text_field :bank_account_iban
+    %li
+      = f.label :bank_account_bic_swift, t("forms.labels.bank_account_bic_swift")
+      = f.text_field :bank_account_bic_swift

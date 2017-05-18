@@ -1,0 +1,9 @@
+= render "admin/dashboard/tabs"
+
+= form_for [:admin, @site_admin] do |f|
+  = error_messages_for :site_admin
+  %fieldset
+    %legend Edit Site Admin
+    = render "form", :f => f
+    %ul
+      %li= f.submit

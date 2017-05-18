@@ -1,0 +1,17 @@
+- javascripts 'price_form'
+
+= render "site_admin/shared/tabs"
+= render "site_admin/bars/bar_tabs"
+
+#inventory
+  = form_for [:site_admin, @bar, @price], :html => { :multipart => true } do |f|
+    = error_messages_for :price
+    %fieldset
+      %legend= t(".legend")
+      %ol
+        %li
+          = f.label :photo, "Photo:"
+          = f.file_field :photo
+      = render :partial => "prices/form", :locals => {:f => f}
+      %ul
+        %li= f.submit t("forms.buttons.update")

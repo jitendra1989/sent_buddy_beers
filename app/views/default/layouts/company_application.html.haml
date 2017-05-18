@@ -1,0 +1,15 @@
+!!!
+%html{:lang => "en"}
+  %head
+    = render "/default/shared/home_meta"
+    = render 'layouts/javascripts'  
+    = render 'layouts/new_javascripts'          
+    = stylesheet_link_tag 'corporate_program'
+    = yield(:head)
+  %body
+    %aside.top_main
+      = render "/default/shared/buddy_header"
+      = yield
+    %section
+      = render "/default/shared/corporate_middle"
+    = render "/default/shared/buddy_footer"

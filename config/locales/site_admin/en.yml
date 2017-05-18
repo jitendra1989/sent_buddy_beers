@@ -1,0 +1,19 @@
+en:
+  site_admin:
+    affiliates:
+      create:
+        success: "Affiliate created successfully!"
+      update:
+        success: "Affiliate updated successfully!"
+      destroy:
+        success: "Affiliate successfully deleted!"
+        error: "There was an error deleting this affiliate."
+    prices:
+      edit:
+        legend: Change Drink Price
+      form:
+        add_beer_link: Add this drink
+        legend: Add another drink to %{bar} Drink List
+        new_brand_link: Add a new brand
+        add_brand_link: Add this brand
+        new_beer_link: Add a new drink

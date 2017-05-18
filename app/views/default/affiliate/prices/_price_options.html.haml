@@ -1,0 +1,10 @@
+- if current_user
+  - if current_user.affiliate?
+    = link_to image_tag("sites/default/admin/icons/pencil.png"), edit_affiliate_bar_price_url(:bar_id => object.bar.id, :id => object.id), :title => t("global.edit")
+    = link_to image_tag("sites/default/admin/icons/cross.png"), affiliate_bar_price_url(:bar_id => object.bar.id, :id => object.id), :title => t("global.delete"), :method => :delete, :confirm => t("global.confirm_question")
+  - elsif current_user.admin?
+    = link_to t("global.edit"), edit_admin_bar_price_url(:bar_id => object.bar.id, :id => object.id)
+    |
+    = link_to t("global.delete"), admin_bar_price_url(:bar_id => object.bar.id, :id => object.id), :method => :delete, :confirm => t("global.confirm_question")
+- else
+  = link_to t("global.delete"), bar_price_url(:bar_id => object.bar.id, :id => object.id), :method => :delete, :confirm => t("global.confirm_question")

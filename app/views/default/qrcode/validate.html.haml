@@ -1,0 +1,44 @@
+- @title = "#{t(".html.title")}: #{@iou.status.capitalize}"
+- @content_class = "one_col"
+- stylesheets 'sites/default/sections/qrcodes'
+- content_for :head do
+  :javascript
+    Cufon.replace('h1');
+
+#validate
+  .status
+    %h1{ :class => @iou.status }= status_for(@iou, true)
+
+  %p.code
+    %strong= @voucher.coupon
+
+  .information
+
+    %p.amount
+      %span.label= "#{t('.amount')}:"
+      %strong= "#{currency_symbol_for(@iou.currency)}#{@iou.amount}"
+      %br
+      %small= "(#{pluralize(@iou.quantity, beverage_owed(@iou))})"
+
+    %p.bar
+      %span.label= "#{t('.for')}:"
+      %strong= "#{@iou.bar.name}, #{@iou.bar.city.name}"
+
+  .details
+    %p.sent
+      %span.label= "#{t('.sent')}:"
+      %strong= @iou.updated_at.to_s(:euro_sm_with_time)
+
+    %p.expires
+      %span.label= "#{t('.expires')}:"
+      %strong= @iou.expires_at.to_s(:euro_date) if @iou.expires_at
+
+    %p.recipient
+      %span.label= "#{t('.to')}:"
+      %strong= @iou.recipient_name
+
+    %p.sender
+      %span.label= "#{t('.from')}:"
+      %strong= @iou.sender_name
+
+  = clear_floats

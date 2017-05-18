@@ -1,0 +1,50 @@
+th:
+  layouts:
+    affiliate:
+      view_bar_listing: "ดูรายชื่อบาร์ในระบบ"
+      payment_prefs_empty:
+        heading: "คุณยังไม่ได้กรอกข้อมูลการชำระเงิน"
+        description: "ในการชำระเงินให้แก่สมาชิก Buddy Bar ของเรา เราจะใช้ระบบโอนเงินผ่านธนาคารหรือระบบ paypal <a href=\"%{link}\">กรุณากดที่นี่เพื่อกรอกข้อมูลการชำระเงินของคุณ </a>"
+    meta:
+      description: "ช่วยคุณส่งเบียร์เย็นๆให้เพื่อนคุณผ่านระบบออนไลน์ หากคุณเคยบอกกับเพื่อนๆว่า “ไว้คราวหน้าเราจะเลี้ยงดื่มนายนะ”แต่หาโอกาสไม่ได้สักที คราวนี้คุณสามารถทำได้แล้วผ่านทางระบบ Buddy Drinks"
+    application:
+      promo: "ส่วนลด20% สำหรับการสั่งซื้อเบียร์ทุกชนิดผ่าน BuddyBucks"
+    apps: 
+      slogan: "ซื้อเบียร์เลี้ยงเพื่อนคุณ"
+    logged_in_as: "คุณเข้าสู่ระบบโดยใช้ชื่อ %{user}"
+    navigation:
+      slogan: Made in Berlin. <strong>Served Worldwide.</strong>
+    user_account_navigation:
+      drinks: "เครื่องดื่ม"
+      drinks_sent: "ส่งเครื่องดื่มแล้ว"
+      drinks_received: "รับเครื่องดื่มแล้ว"
+      login: "เข้าสู่ระบบ"
+      logout: "ออกจากระบบ"
+      profile: "ข้อมูลผู้ใช้"
+      signup: "สมัครเป็นสมาชิกฟรี"
+      signup_short: "สมัครเป็นสมาชิกฟรี"
+      buddybeers: "เข้าสู่ระบบผ่านบัญชี Buddy Drinks ของคุณ"
+    menu:
+      apps: "เอาแอ๊พฯนี้"
+      sync_your_email: "เชื่อมต่อกับอีเมล์ของคุณ"
+      edit_user: "เกี่ยวกับฉัน"
+      blog: "บล๊อก"
+      bars: "บัดดี้บาร์"
+      contact: "ติดต่อเรา"
+      logout: "ออกจากระบบ"
+      admin:
+        dashboard: "เข้าสู่หน้าเจ้าหน้าที่ฝ่ายทะเบียน"
+        affiliates: "พันธมิตร บริษัทคู่ค้า"
+        users: "ผู้ใช้"
+      affiliate:
+        my_bars: "บาร์ของฉัน"
+        dashboard: "เข้าสู่หน้าพันธมิตร บริษัทคู่ค้า"
+        my_beers: "เบียร์ของฉัน"
+      register_a_bar: "สมัครเป็นสมาชิก Buddy Bars"
+      about: "เกี่ยวกับ"
+      my_beers: "เบียร์ของฉัน"
+      redeem_link: "ลงทะเบียนการใช้คูปอง"
+      send_a_beer: "ส่งเบียร์"
+      bro:
+        dashboard: "เข้าสู่หน้าเจ้าหน้าที่ฝ่ายบริการสมาชิก"
+      home: "หน้าหลัก"

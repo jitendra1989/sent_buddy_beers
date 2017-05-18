@@ -1,0 +1,56 @@
+it:
+  global:
+    edit: Modifica
+    delete: Elimina
+    access_denied: Non hai i necessari privilegi per accedere a questa pagina
+    generic_friend: un amico
+    or: o
+    require_no_user: Devi uscire dal tuo account per accedere a questa pagina
+    at: al
+    new: nuovo
+    require_user: "Devi prima accedere se vuoi visualizzare questa pagina. <a href=\"/users/sign_up\">Clicca qui per creare, in maniera gratuita, il tuo Buddy Account.</a>"
+    confirm_question: Sei sicuro?
+    affirmative: "Si" #Si is a reserved word
+    negative: "No" #No is a reserved word
+    pagination:
+      previous: "Precedente"
+      next: "Prossimo"
+    conjunctions:
+      and: "e"
+      now: "ora"
+      but: "ma"
+      so: "quindi"
+      only: "solo"
+      therefore: "dunque"
+      moreover: "inoltre"
+      besides: "oltre"
+      consequently: "di conseguenza"
+      nevertheless: "tuttavia"
+      for: "per"
+      however: "comunque"
+      hence: "perciò"
+      while: "mentre"
+      then: "allora"
+      who: "chi"
+      which: "quale"
+      that: "che"
+      although: "sebbene"
+      though: "tuttavia"
+      while: "mentre"
+      since: "da"
+      until: "fino"
+      as: "come"
+      after: "dopo"
+      before: "prima"
+      how: "come"
+      once: "una volta"
+      when: "quando"
+      lest: "affinchè non"
+      if: "se"
+      in_order: "allo scopo di"
+      unless: "a meno che"
+      whether: "sia che"
+      because: "perchè"
+      till: "fino"
+      where: "dove"
+      whether: "sia che"

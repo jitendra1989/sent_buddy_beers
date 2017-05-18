@@ -1,0 +1,12 @@
+/ carlsberg > prices > inventory
+
+#inventory
+  %h2= t(".drink_list")
+
+  .info
+    - if @menu.blank?
+      %p= t(".empty")
+    - else
+      %ul
+        - @menu.each do |price|
+          = render price

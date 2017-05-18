@@ -1,0 +1,4 @@
+= f.text_field :username, :placeholder => "User name", :class => "col-md-12 col-sm-12 col-xs-12"
+.clearfix
+= f.password_field :password, :placeholder => "User name", :class => "col-md-12 col-sm-12 col-xs-12 second-input-password"
+.clearfix

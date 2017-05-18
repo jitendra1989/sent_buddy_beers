@@ -1,0 +1,52 @@
+- stylesheets "sites/buddybeers/sections/ious"
+- content_for :head do
+  = stylesheet_link_tag  'myaccount', 'custom', 'ious'
+  :javascript
+    $(document).ready(function(){
+      // $("#pay_with_credits").fancybox({'padding' : '0', 'autoScale' : false, 'width' : 417,'height': 367,'type'          : 'iframe', 'scrolling' : 'no'});
+    });
+
+%section
+  .container
+    .row.account-middle-row.buddy-groups-main.corp-edit
+      .col-md-8.col-sm-8.col-xs-12.left{:style => "padding: 27px 42px 70px !important;"}
+        .company-info-container
+          .row
+            .col-md-8.col-sm-8.col-xs-12.edit_account.padd-none
+              %h4.company-info-title Company Information
+            .col-md-4.col-sm-4.col-xs-12.edit_account.padd-none.text-right
+              - if current_corporate.company_logo.file?
+                %span.profile-img
+                  = image_tag(resource.company_logo(:square))
+                  %span.corporate-delete-link
+                    = link_to "Delete", corporates_delete_pic_path(:corporate_id => current_corporate)
+                .clearfix
+                
+              -else
+                %span.profile-img
+                  = image_tag("/avatars/tiny/missing.png")
+          = form_for resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put, :multipart => true, :class => 'company-info-form' } do |f|
+            = f.error_messages
+            = render :partial => "corporate", :locals => {:f => f}
+      .col-md-4.col-sm-4.col-xs-12.right
+        .row
+          #buddy_bucks.payment_method
+            .description
+              %h3.logo
+            .credits
+              #spinner.hidden= image_tag "/images/sites/default/graphics/ajax-loader.gif"
+              %p#user_credits.current
+                = "#{t("ious.credits.new_current_bucks")} #{image_tag("/images/bb_icon.png", :border => 0)}#{number_with_delimiter(0.0)}".html_safe
+              %ul.manage-list
+                %li= link_to("<span>Get More BuddyBucks</span>".html_safe, "javascript:void(0)", :class => "more iframe buy_credits btn", :id => "buy_credits")
+                /%li.credit_cards= image_tag("graphics/all_cc_cards.gif")
+
+
+            =clear_floats
+
+          / = render "/default/ious/script_for_button"
+          %p.button-text
+          #button.button_demo
+            %script{:src => button_user_url(current_corporate, :format => :js), :type => "text/javascript", :charset => "utf-8" }
+          #button_with_name.button_demo{ :style => "display:none" }
+            %script{:src => button_user_url(current_corporate, :format => :js, :name => true), :type => "text/javascript", :charset => "utf-8" }

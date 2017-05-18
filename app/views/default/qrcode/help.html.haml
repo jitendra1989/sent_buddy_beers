@@ -1,0 +1,32 @@
+#qrcode= render :partial => 'qrcode/qrcode', :locals => { :qrurl => @qrurl, :imgurl => @imgurl }
+
+#main
+  = form_tag({ :controller => :qrcode, :action => :create }, :remote => true, :"data-type" => :script) do
+    %h2 Create a QRCode
+
+    - if flash[:error]
+      #error.error= flash[:error]
+
+    %div
+      %label URL or message
+      %br
+      = text_area_tag 'msg', @msg || url_for(:only_path => false, :controller => :qrcode, :action => :help), :rows => 10, :cols => 40
+
+    #advance{ :style => "display:#{@advance ? 'block' : 'none'}" }
+      %div
+        %label QRCode Level
+        %br
+        = select_tag('version',  "<option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option selected=\"true\">6</option><option>7</option><option>8</option><option>9</option><option>10</option>")
+      %div
+        %label Error Correction Level
+        = select_tag('ecc', "<option>l</option><option>m</option><option selected=\"true\">q</option><option>h</option>")
+    %div
+      = submit_tag 'Generate'
+      = link_to('Advance', :advance => true) unless @advance
+
+#suggestion
+  %h2 Comments or Suggestions
+  #div
+    Please leave me a comment at
+    %a(href="http://www.reality.hk/articles/2008/04/27/823/")
+      this post.

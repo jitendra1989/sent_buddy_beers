@@ -1,0 +1,25 @@
+/ site_admin
+
+%h1
+  - if @bar.affiliate
+    = @bar.affiliate.name
+    &ndash;
+  = number_to_currency(@list.amount.to_f, :unit => @list.amount.currency.symbol)
+  = t("affiliate.voucher_lists.show.voucher_list")
+  = @list.id
+  
+= render "site_admin/shared/tabs"
+= render :partial => "site_admin/bars/bar_tabs"
+
+#vouchers
+  = render "admin/voucher_lists/voucher_lists"
+
+  = form_for [:site_admin, @bar] do |form|
+    %h2
+      = "#{@list.id}. "
+      = number_to_currency(@list.amount.to_f, :unit => @list.amount.currency.symbol)
+      %small #{@list.created_at.to_s(:euro_sm_with_time)} - (#{beers_in_price_range(@list.cents, @bar)})
+      = link_to "PDF", site_admin_bar_voucher_list_path(@list.id, :bar_id => @bar.friendly_id, :format => "pdf"), :class => "pdf_link"
+    %ul#list_example
+      = render :partial => "shared/admin/ious/voucher", :collection => @list.vouchers, :locals => { :form => form }
+    = submit_tag t("forms.buttons.update"), :id => "submit"

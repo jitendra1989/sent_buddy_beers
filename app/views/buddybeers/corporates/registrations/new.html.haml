@@ -1,0 +1,26 @@
+- content_for :head do
+  = stylesheet_link_tag  'sign_up' 
+.sign-up-form 
+  = form_for resource, :as => resource_name, :url => corporates_confirm_path, :method => 'post' do |f|
+    = f.error_messages(:header_message => nil)
+    
+    %h1 Pull Up a Stool!
+    %p
+      %a{:href => "#"} Create a Buddy Drinks Corporate Account
+    
+    = f.text_field :company_name, :placeholder => "Company Name", :class => "col-md-12 col-sm-12 col-xs-12"
+    .clearfix
+
+    = f.text_field :email, :placeholder => t("forms.labels.your_email"), :class => "col-md-12 col-sm-12 col-xs-12"
+    .clearfix
+    
+    = f.password_field :password, :placeholder => t("forms.labels.choose_password"), :class => "col-md-12 col-sm-12 col-xs-12 input-password"
+    .clearfix
+    = f.password_field :password_confirmation, :placeholder => t("forms.labels.confirm_password"), :class => "col-md-12 col-sm-12 col-xs-12 input-password"    
+    .clearfix    
+            
+    .row
+      .col-md-6.col-sm-6.col-xs-6.padd_none 
+        = f.select :no_of_employees, Corporate::NO_OF_EMPLOYEES, {:prompt => "Number Of Employees", :class => 'custom-select'}
+      .col-md-6.col-sm-6.col-xs-6.padd_right_none
+        = f.submit "Sign up", :class => "btn btn-warning col-md-12 col-sm-12 col-xs-11 corporate_sign_up_btn"

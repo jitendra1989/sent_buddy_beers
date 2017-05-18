@@ -1,0 +1,23 @@
+%h1.h1= "#{t('.salutation', :name => @bar.affiliate.name)},"
+
+%p
+  %strong= "#{t('.description', :location_name => @bar.name, :time_frame => t(".timeframes.#{@timeframe.to_s}"))}:"
+
+%table(border="0" cellpadding="0" cellspacing="0" width="100%")
+  %thead
+    %tr
+      %th{ :style => "border-bottom: 1px solid #e7dac5" }= t(".coupon_code")
+      %th{ :style => "border-bottom: 1px solid #e7dac5" }= t(".amount")
+      %th{ :style => "border-bottom: 1px solid #e7dac5" }= t(".redeemed")
+  %tbody
+    - @vouchers.each do |voucher|
+      - style = cycle("", "background-color:#e7dac5;")
+      %tr
+        %td{ :style => "font-family:Arial;font-size:14px; line-height:150%; text-align:left;#{style}" }= voucher.coupon
+        %td{ :style => "font-family:Arial;font-size:14px; line-height:150%; text-align:left;#{style}" }= number_to_currency(voucher.amount.to_f, :unit => voucher.amount.currency.symbol)
+        %td{ :style => "font-family:Arial;font-size:14px; line-height:150%; text-align:left;#{style}" }= voucher.redeemed_at.to_s(:euro_sm_with_time)
+
+%p= t(".list_view", :link => "<a href=\"#{affiliate_bar_ious_url(@bar)}\">#{affiliate_bar_ious_url(@bar)}</a>").html_safe
+
+- content_for :sidebar do
+  %p= t(".notifications", :link => link_to("#{edit_affiliate_bar_url(@bar)}#notifications", "#{edit_affiliate_bar_url(@bar)}#notifications", :style => "word-break:break-all")).html_safe

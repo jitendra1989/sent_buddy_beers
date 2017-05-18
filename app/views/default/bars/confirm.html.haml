@@ -1,0 +1,53 @@
+/ default > bars > confirm
+
+#confirm
+  %h1= t(".heading", :bar_name => @bar.name)
+
+  = render "confirmation_message"
+
+  %h2= @bar.name
+  
+  - if @bar.pending?
+    %p.edit= link_to t(".edit_bar"), edit_bar_url(@bar)
+    
+  - if @bar.geocoded?
+    #map{ :style => "width:600px; height:180px", :data => { :"map-markers" => bars_to_map_markers(@bar) } }
+
+  %p
+    %strong= "#{t("forms.labels.address")}:"
+    = @bar.full_address
+  %p
+    %strong= "#{t("forms.labels.currency")}:"
+    = @bar.default_currency
+  %p
+    %strong= "#{t("forms.labels.website")}:"
+    = @bar.url
+  %p
+    %strong= "#{t("forms.labels.description_bio")}:"
+    = @bar.description
+  %p
+    %strong= "#{t("forms.labels.phone_number")}:"
+    = @bar.phone_number
+  %p
+    %strong= "#{t("forms.labels.contact_name")}:"
+    = @bar.contact_name
+  %p
+    %strong= "#{t("forms.labels.contact_email")}:"
+    = @bar.contact_email
+  %p
+    %strong= "#{t("forms.labels.lead")}:"
+    = @bar.lead
+
+  %h2= t(".drink_list")
+  
+  %p.edit= link_to t(".edit_drink_list"), new_bar_price_url(@bar)
+    
+  %ul.menu
+    - @menu.each do |drink|
+      =render drink
+      
+  - if @bar.pending?
+    #next_button
+      = link_to t(".confirm_button"), submit_bar_url(@bar), :method => :post
+
+  = clear_floats

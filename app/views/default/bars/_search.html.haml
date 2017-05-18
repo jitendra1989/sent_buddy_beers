@@ -1,0 +1,16 @@
+/ default > bars > search
+
+= form_tag bars_url, :method => :get do
+  %fieldset
+    %legend= t(".legend")
+    %ol
+      %li
+        = label "origin", "location", "#{t(".label")}:"
+        = text_field "origin", "location", :value => (params[:origin] and params[:origin][:location]) ? params[:origin][:location] : "Enter an address, city, or zip code"
+      / %li
+      /   = label "origin", "location", "#{t("forms.labels.within")}:"
+      /   = select "origin", "distance", [0.5, 1, 5, 10, 15, 20, 25, 50, 100, 1000], {:selected => (params[:origin] and params[:origin][:distance]) ? params[:origin][:distance].to_i : "0.5"}
+      /   %span.km= t(".sort_form.kilometers")
+    %ul
+      %li= submit_tag t(".submit_button")
+= clear_floats

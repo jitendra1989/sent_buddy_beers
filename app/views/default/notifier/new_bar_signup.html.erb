@@ -1,0 +1,20 @@
+<h1 class="h1">Check this out!</h1> 
+<p>A new venue has signed up. Let's get them integrated ASAP!</p>
+
+<p><strong>Here's the info:</strong></p>
+
+<p>Name: <%= @bar.name %></p>
+<p>Address: <%= @bar.full_address %></p>
+<p>Default Currency: <%= @bar.default_currency %></p>
+<p>Website: <%= @bar.url %></p>
+<p>Description: <%= @bar.description %></p>
+<p>Opening Hours: <%= @bar.opening_hours %></p>
+<p>Phone Number: <%= @bar.phone_number %></p>
+<p>Contact Name: <%= @bar.contact_name %></p>
+<p>Contact Email: <%= @bar.contact_email %></p>
+<p>Mailing Address: <%= @bar.mailing_address %></p>
+<p>Best time to contact: <%= @bar.contact_time %></p>
+<p>Who told you about us? <%= @bar.lead %></p>
+<p>Notes: <%= @bar.signup_notes %></p>
+
+<p>BuddyDrinks URL: <%= admin_bar_url(@bar) %></p>

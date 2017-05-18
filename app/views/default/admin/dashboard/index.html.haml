@@ -1,0 +1,173 @@
+- interval = 1.day * 1000
+- start = 14.days.ago.to_i * 1000
+
+= render 'layouts/new_stylesheets'
+= render :partial => "tabs"
+
+%section
+  .container
+    #dashboard
+      %h4.adminsubtitle Stats
+      .adminbox
+        .adminsubbox
+          .col-md-3.col-sm-3.col-xs-12
+            %span.adminlabel.admin_dashborad Total Drinks sent:
+          = link_to "#{today_sent_drinks_count} Today /", root_path(:day => 'today')
+          = link_to "#{this_week_sent_drinks_count} This Week /", root_path(:day => 'weekly')
+          = link_to "#{this_month_sent_drinks_count} This Month", root_path(:day => 'monthly')
+        %hr
+        .adminsubbox.adminsubboxlast
+          .col-md-3.col-sm-3.col-xs-12
+            %span.adminlabel.admin_dashborad Total Revenue:
+          %a{:href => "javascript:void(0);"}
+            = number_to_currency(today_sent_drinks_revenue, :precision => 2, :strip_insignificant_zeros => true)
+            Today /
+          %a{:href => "javascript:void(0);"}
+            = number_to_currency(this_week_sent_drinks_revenue, :precision => 2, :strip_insignificant_zeros => true)
+            This Week /
+          %a{:href => "javascript:void(0);"}
+            = number_to_currency(this_month_sent_drinks_count, :precision => 2, :strip_insignificant_zeros => true)
+            This Month
+      %h4.adminsubtitle BuddyBucks
+      .adminbox
+        .adminsubbox
+          .col-md-3.col-sm-3.col-xs-12
+            %span.adminlabel.admin_dashborad BB Sold:
+          = link_to "#{today_buddybucks_count} Today /", admin_dashboard_get_buddybucks_path(:day => 'today')
+          = link_to "#{this_week_buddybucks_count} This Week /", admin_dashboard_get_buddybucks_path(:day => 'weekly')
+          = link_to "#{this_month_buddybucks_count} This Month", admin_dashboard_get_buddybucks_path(:day => 'monthly')
+        %hr
+        .adminsubbox.adminsubboxlast
+          .col-md-3.col-sm-3.col-xs-12
+            %span.adminlabel.admin_dashborad BB Revenue:
+          %a{:href => admin_dashboard_get_buddybucks_path(:day => 'today')}
+            = number_to_currency(today_buddybucks_revenue, :precision => 2, :strip_insignificant_zeros => true)
+            Today /
+          %a{:href => admin_dashboard_get_buddybucks_path(:day => 'weekly')}
+            = number_to_currency(this_week_buddybucks_revenue, :precision => 2, :strip_insignificant_zeros => true)
+            This Week /
+          %a{:href => admin_dashboard_get_buddybucks_path(:day => 'monthly')}
+            = number_to_currency(this_month_buddybucks_revenue, :precision => 2, :strip_insignificant_zeros => true)
+            This Month
+      %h4.adminsubtitle Users
+      .adminbox
+        .adminsubbox
+          .col-md-3.col-sm-3.col-xs-12
+            %span.adminlabel.admin_dashborad New Users:
+          = link_to "#{today_users_count} Today /", admin_dashboard_get_users_path(:day => 'today')
+          = link_to "#{this_week_users_count} This Week /", admin_dashboard_get_users_path(:day => 'weekly')
+          = link_to "#{this_month_users_count} This Month", admin_dashboard_get_users_path(:day => 'monthly')
+        %hr
+        .adminsubbox.adminsubboxlast
+          .col-md-3.col-sm-3.col-xs-12
+            %span.adminlabel.admin_dashborad Total Users!!:
+          = link_to "#{total_users}", admin_dashboard_get_users_path(:day => 'total_users')
+      %h4.adminsubtitle Corporate
+      .adminbox
+        .adminsubbox
+          .col-md-3.col-sm-3.col-xs-12
+            %span.adminlabel.admin_dashborad New Corporates:
+          = link_to "#{today_corporates_count} Today /", "javascript:void(0);"
+          = link_to "#{this_week_corporates_count} This Week /", "javascript:void(0);"
+          = link_to "#{this_month_corporates_count} This Month", "javascript:void(0);"
+        %hr
+        .adminsubbox.adminsubboxlast
+          .col-md-3.col-sm-3.col-xs-12
+            %span.adminlabel.admin_dashborad Total Corporates:
+          = link_to "#{total_corporates}", get_corporates_admin_affiliates_path(:day => 'total_corporates')
+      %h4.adminsubtitle Venues
+      .adminbox
+        .adminsubbox
+          .col-md-3.col-sm-3.col-xs-12
+            %span.adminlabel.admin_dashborad New Venue:
+          = link_to "#{today_venues_count} Today /", get_venues_admin_bars_path(:day => 'today')
+          = link_to "#{this_week_venues_count} This Week /", get_venues_admin_bars_path(:day => 'weekly')
+          = link_to "#{this_month_venues_count} This Month", get_venues_admin_bars_path(:day => 'monthly')
+        %hr
+        .adminsubbox.adminsubboxlast
+          .col-md-3.col-sm-3.col-xs-12
+            %span.adminlabel.admin_dashborad Total Venues:
+          = link_to "#{total_venues}", get_venues_admin_bars_path(:day => 'total_venues')
+
+- content_for :head do
+  :javascript
+    $(function() {
+      new Highcharts.Chart({
+        chart: {
+          renderTo: "orders_chart"
+        },
+        title: {
+          text: "Buddy Drinks Statistics (#{2.weeks.ago.to_date} - Today)"
+        },
+        xAxis: {
+          type: "datetime"
+        },
+        yAxis: {
+          title: {
+            text: "Quantity"
+          }
+        },
+        tooltip: {
+           formatter: function() {
+             return Highcharts.dateFormat("%e %B %Y", this.x) + ': ' + this.y;
+           }
+         },
+        // series: [
+        //         <% { "Download" => Order.download, "Shipping" => Order.shipping }.each do |name, orders| %>
+        //         {
+        //           name: "<%= name %>",
+        //           pointInterval: <%= 1.day * 1000 %>,
+        //           pointStart: <%= 2.weeks.ago.to_i * 1000 %>,
+        //           data: <%= orders_chart_series(orders, 3.weeks.ago) %>
+        //         },
+        //         <% end %>
+        series: [
+          {
+            name: "Vouchers Sold",
+            pointInterval: #{ interval },
+            pointStart: #{ start },
+            data: #{ (14.days.ago.to_date..Date.today).map { |date| Iou.paid.where("date(paid_at) = ?", date).sum(:quantity) }.inspect }
+          },
+          {
+            name: "Vouchers Redeemed",
+            pointInterval: #{ interval },
+            pointStart: #{ start },
+            data: #{ (14.days.ago.to_date..Date.today).map { |date| Voucher.redeemed.where("date(redeemed_at) = ?", date).size }.inspect }
+          },
+          {
+            name: "User Signups",
+            pointInterval: #{ interval },
+            pointStart: #{ start },
+            data: #{ (14.days.ago.to_date..Date.today).map { |date| User.active.where("date(created_at) = ?", date).size }.inspect }
+          },
+          {
+            name: "Venue Signups",
+            pointInterval: #{ interval },
+            pointStart: #{ start },
+            data: #{ (14.days.ago.to_date..Date.today).map { |date| Bar.where("date(created_at) = ?", date).size }.inspect }
+          }
+        ]
+      });
+    });
+
+%section
+  .container
+    / %h2 Stats
+
+    / #orders_chart(style="width:90%; height:300px;")
+    /
+      %p
+        %strong Vouchers Sold:
+        = @vouchers_sold
+      %p
+        %strong Promotional Vouchers:
+        = @vouchers_promotional
+      %p
+        %strong Vouchers Redeemed:
+        = @vouchers_redeemed
+      %p
+        %strong Open Vouchers:
+        = @vouchers_open
+      %p
+        %strong Vouchers Expired:
+        = @vouchers_expired

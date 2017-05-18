@@ -1,0 +1,87 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+active_bar:
+  name: Hairy Mary's
+  address: Diedenhoferstrasse 5, Berlin 10405, Germany
+  token: aa07
+  default_currency: EUR
+  lat: 52.5342908000
+  lng: 13.4175622000
+  contact_phone_number: 4969696969
+  percent_cut: 70
+  percent_expired_cut: 100
+  active: true
+  city: berlin
+  country_id: 74
+  affiliate_id: 3
+  contact_name:
+  contact_email:
+  lead:
+  url: <%= "http://hairymarys.tt.de" %>
+  customer_voucher_limit: 4
+  internet_enabled: true
+  pending: false
+
+inactive_bar:
+  name: Dive Bar
+  address: Diedenhoferstrasse 7, Berlin 10405, Germany
+  token: ab07
+  default_currency: EUR
+  lat: 52.5342908000
+  lng: 13.4175622000
+  contact_phone_number: 4969696969
+  percent_cut: 70
+  percent_expired_cut: 100
+  active: false
+  city: berlin
+  country_id: 74
+  affiliate_id: 3
+  contact_name: Mark Gould
+  contact_email: email@example.com
+  lead: travis
+  customer_voucher_limit: 0
+  internet_enabled: false
+  pending: false
+  
+pending_bar:
+  name: Pending Bar
+  address: Diedenhoferstrasse 7, Berlin 10405, Germany
+  token: ab08
+  default_currency: EUR
+  lat: 52.5342908000
+  lng: 13.4175622000
+  contact_phone_number: 4969696969
+  percent_cut: 70
+  percent_expired_cut: 100
+  active: false
+  city: berlin
+  country_id: 74
+  affiliate_id: 3
+  contact_name: Mark Gould
+  contact_email: email@example.com
+  lead: travis
+  customer_voucher_limit: 0
+  internet_enabled: false
+  pending: true
+  
+active_us_bar:
+  name: Travis's
+  address: 1037 Lake Claire Dr., Annapolis, MD, USA
+  token: aa08
+  default_currency: USD
+  lat: 52.5342908000
+  lng: 13.4175622000
+  contact_phone_number: 4969696969
+  percent_cut: 70
+  percent_expired_cut: 100
+  active: true
+  city: annapolis
+  country_id: 1
+  affiliate_id: 3
+  contact_name:
+  contact_email:
+  lead:
+  url: <%= "http://hairymarys.tt.de" %>
+  customer_voucher_limit: 4
+  internet_enabled: true
+  pending: false

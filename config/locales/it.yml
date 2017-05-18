@@ -1,0 +1,141 @@
+--- 
+it:
+  
+  widgets:
+    index:
+      header_alt_text: "Buddy Drinks - Made in Germany. Servito in tutto il mondo."
+      main_button: "Compra una birra al %{bar}"
+      friends_message: "Oppure chiedete ai vostri amici di comprarne <em>a voi</em> una."
+      twitter_status: "Sono al %{bar}. Perchè non mi offrite online un drink qui? %{url}"
+  
+  user_activations: 
+    new:
+      heading: Dì ciao al barista!
+      form:
+        button: Attivare
+        legend: Scegli la tua password ed accedi
+    no_user: "Oh, no! Si è verificato un errore durante la conferma del tuo account: %{errors}"
+    activate_account:
+      success: Ottimo! Hai attivato il tuo account. Ora potrai tracciare le tue birre!
+    active_user: Hai già attivato il tuo account.
+    success: Ottimo! Hai attivato il tuo account. Comincia a farti benvolere in giro inviando delle birre!
+    error: Ahi! Qualcosa non va. Vatti a prendere un drink mentre proviamo a risolvere il problema.
+  
+  confirmations:
+    new: 
+      title: Re-invio delle istruzioni per la conferma
+      heading: Re-invio delle istruzioni per la conferma
+      description: Inserisci qui sotto la tua email e noi ti invieremo nuovamente le istruzioni per confermare l'account
+      submit: Invia
+  
+  friendships:
+    index:
+      heading: I tuoi amici
+  
+  time:
+    am: am
+    formats:
+      default: "%a, %d %b %Y %H:%M:%S %z"
+      short: "%d %b %H:%M"
+      long: "%B %d, %Y %H:%M"
+    pm: pm
+  
+  admin:
+    payments:
+      tabs:
+        show: Mostra quote corrisposte
+    ious:
+      new:
+        heading: Invia un Voucher ad un nuovo utente o ad uno già esistente
+        form:
+          new: Nuovo
+          existing: Esistente
+          user_type: Tipo di utente
+      create:
+        success: Voucher inviato correttamente!
+        error: Si è verificato un errore col tuo Voucher
+  
+  support:
+    array:
+      words_connector: ", "
+      last_word_connector: ", e "
+      two_words_connector: " e "
+    select:
+      prompt: Seleziona
+  
+  i18n:
+    transliterate:
+      rule:
+        ü: ue
+        ö: oe
+        ä: ae
+        Ü: Ue
+        Ö: Oe
+        Ä: Ae
+        ß: ss  
+  
+  credits:
+    index:
+      title: "I tuoi BuddyBucks - Fai il pieno di BuddyBucks"
+      heading: "I tuoi BuddyBucks"
+      accept: "Accettiamo:"
+      and_more: "... e molte altre!"
+      payment_logos: "Visa, Mastercard, American Express, Discover, Paypal, Western Union"
+    balance:
+      balance: "Il bilancio attuale dei tuoi BuddyBucks balance è:"
+    top_up:
+      top_up: "Fai il pieno di BuddyBucks sul tuo account con:"
+    return_link:
+      back: "Torna alla schermata del pagamento"
+    success:
+      success: "<strong>Il tuo acquisto è andato a buon fine!</strong> Non appena il nostro fornitore di servizi di pagamento ce ne darà notifica, il pagamento verrà riportato all'interno del tuo bilancio. Dovrebbe essere una cosa istantanea, quindi se il tuo bliancio non è cambiato aspetta un paio di secondi e ricarica la pagina."
+  
+  emails:
+    activate:
+      not_found: <strong>Oh, no!</strong> Non siamo riusciti a trovare quella email nell'elenco presente all'interno del tuo account!
+      success: <strong>Si!</strong> La tua email è stata verificata!
+      error: <strong>Oh, no!</strong> Si è verificato un problema durante la verifica della tua email! Hai per caso già registrato questa email con un altro account?
+  
+  users:
+    get_user:
+      error: "Sembra che questa persona non esista. Sei sicuro di non esserti fatto una birra di troppo?"
+    email:
+      add: + Aggiungi un'altra email
+      pending: Verifica in sospeso
+    button:
+      button_text: "Compra una %{drink} a %{name}"
+      button_link: "Bottone Compra una %{drink} da BuddyDrinks.com"
+      me: "io"
+      beer: "birra"
+  
+  sessions:
+    new:
+      title: Accedi a Buddy Drinks
+      heading: Sei già un nostro amico??
+      form:
+        button: Accedi
+        legend: "oppure accedi col tuo account Buddy Drinks"
+        forgot_password: Dimenticato la password?
+      facebook_heading: Accedi qui usando il tuo account <strong>facebook</strong>
+      connect_with_facebook: Collegati con facebook
+    destroy:
+      success: Logout avvenuto con successo!
+    create:
+      success: Logout avvenuto con successo!
+      
+  twitter:
+    new:
+      already_registered:
+        heading: Se hai già collegato il tuo account Twitter con BuddyDrinks
+        link: Devi solo cliccare %{link} qui sopra e accedere utilizzando il tuo nome e la tua password Twitter.
+        wrong_place: Sei nel posto sbagliato!
+      title: Buddy Drinks | Accedi con Twitter
+      heading: Accedi con Twitter
+    create_user:
+      success: Account registrato! Potrai ora accedere con le tue credenziali Twitter.
+
+  sms:
+    message: "%{name} ti ha comprato delle birre con Buddy Drinks! Scarica oppure lancia la App per ottenere i tuoi Voucher:"
+    error_message: "Qualcuno ti ha inviato un Voucher Buddy Drinks ma stiamo riscontrando qualche problema a localizzarlo. Ti preghiamo di contattare info@buddydrinks.com in modo da fartelo avere."
+    reminder_singular: "Il Voucher regalo Buddy Drinks valido per una %{item} che ti è stato inviato da %{name} è in scadenza!"
+    reminder_plural: "I Voucher regalo Buddy Drinks validi per %{count} %{item} che ti sono stati inviati da %{name} sono in scadenza!"

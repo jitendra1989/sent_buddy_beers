@@ -1,0 +1,13 @@
+- content_for :head do
+  :javascript
+    jQuery(function () {
+      $('input#id_search_list').quicksearch('ul#list_example li');
+    });
+
+%form{ :action => "#" }
+  %fieldset.sort
+    %ol
+      %li
+        %label.long= "#{t("affiliate.ious.filter_form.instructions")}:"
+        %br
+        %input{ :type => "text", :name => "search", :value => "", :id => "id_search_list" }

@@ -1,0 +1,9 @@
+%ul.footer_links
+  %li.new_bar= link_to t("layouts.menu.register_a_bar"), new_bar_url
+ 
+- if current_site.pages.live.for_footer.present?
+  - current_site.pages.live.for_footer.in_groups_of(8, nil).each do |group|
+    %ul.footer_links
+      - group.each do |page|
+        - unless page.nil?
+          %li= link_to page.title, page_url(page.slug.present? ? page.slug : page.id)

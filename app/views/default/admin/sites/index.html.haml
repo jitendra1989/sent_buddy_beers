@@ -1,0 +1,11 @@
+- @title = "All Sites"
+
+= render :partial => "admin/dashboard/tabs"
+
+.tabs
+  %ul
+    %li= link_to 'New Site', new_admin_site_path 
+  = clear_floats
+  
+#users
+  %ul= render @sites

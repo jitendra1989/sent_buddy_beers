@@ -1,0 +1,56 @@
+nl:
+  devise: 
+    confirmations: 
+      confirmed: "Yeh! Je hebt je account geactiveerd. Maak vrienden en stuur biertjes rond!"
+      send_instructions: "Je ontvangt zo een een email met uitleg hoe je je account kan activeren."
+    devise_mailer: 
+      confirmation_instructions: 
+        problem_link: "Werkt bovenstaande link niet? Kopieer en plak deze in je browser. Werkt het nog steeds niet? Stuur ons een mailtje en we lossen het voor je op."
+        subject: "Buddy Drinks activatie uitleg"
+        thanks: "Bedankt voor het aanmaken van een account. Klik op de volgende link om je account te activeren."
+    failure: 
+      already_authenticated: "Je bent al ingelogd."
+      inactive: "Je account is nog niet geactiveerd."
+      invalid: "Ongeldige login of wachtwoord."
+      invalid_token: "Ongeldige activatie code."
+      locked: "Je account is geblokkeerd."
+      timeout: "je sessie is verlopen. Log nog een keer in."
+      unauthenticated: "Je moet ingelogd zijn om deze pagina te bekijken. <a href=\"/users/sign_up\">Klik hier om een gratis Buddy Account te openen.</a>"
+      unconfirmed: "Je moet je account nog activeren. Zie je email voor de gegevens."
+    mailer: 
+      confirmation_instructions: 
+        subject: "Bevestig je Buddy Drinks email adres"
+      reset_password_instructions: 
+        description: "Je wilt je wachtwoord wijzigen. Klik op onderstaande link om je wachtwoord te wijzigen."
+        greeting: "Hello %{email}!"
+        link_text: "Wijzig mijn wachtwoord"
+        security: "Heb je niet gevraagd om je wachtwoord te wijzigen, negeer dan deze email. Misschien is een vriend van je jaloers en probeert hij toegang te krijgen tot je account. Wees gerust, we doen niets met je wachtwoord als je niet op de bovenstaande link klikt."
+        subject: "Uitleg om je wachtwoord opnieuw in te stellen"
+      unlock_instructions: 
+        subject: "Uitleg om je account te de-blokkeren"
+    omniauth_callbacks: 
+      failure: "We kunnen je niet autoriseren om %{kind} vanwege \"%{reden}\""
+      success: "We hebben je geautoriseerd van het %{kind} account."
+    passwords: 
+      edit: 
+        heading: "Wachtwoord wijzigen"
+        title: "Wachtwoord wijzigen"
+      new: 
+        heading: "Wachtwoord vergeten?"
+        legend: "Vul je email adres in en we sturen je een link om een nieuw wachtwoord in te stellen"
+        submit: Reset
+        title: "Wachtwoord vergeten?"
+      send_instructions: "Je ontvangt zo een email met uitleg hoe je je wachtwoord opnieuw kan instellen."
+      updated: "Je wachtwoord is succesvol aangepast. Je kan nu inloggen."
+    registrations: 
+      destroyed: "Doei! Je account is verwijderd. We hopen dat je van gedachte veranderd en snel weer terugkomt!"
+      inactive_signed_up: "<strong>Je account is aangemaakt.</strong> Je moet deze alleen nog even bevestigen. Zie je email!"
+      signed_up: "Je bent succesvol ingelogd! "
+      updated: "Account aangepast!"
+    sessions: 
+      not_sign_in: "Login niet gelukt"
+      signed_in: "Login gelukt!"
+      signed_out: "Logout gelukt!"
+    unlocks: 
+      send_instructions: "Je ontvangt een email met uitleg hoe je je account kan de-blokkeren."
+      unlocked: "Je account is gedeblokkeerd. Je kan nu weer inloggen."

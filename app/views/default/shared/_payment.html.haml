@@ -1,0 +1,91 @@
+#payment
+  %p.right.address
+    = raw t(".buddy_beers_address")
+
+  %p.clear.address
+    = @payment.affiliate_name
+    - if @payment.affiliate.paypal_email.present?
+      %br
+      = "Paypal: #{@payment.affiliate.paypal_email}"
+    - elsif !@payment.affiliate.payment_prefs_empty?
+      %br
+      = "#{t("forms.labels.bank_account_name")}:"
+      = @payment.affiliate.bank_account_name
+      %br
+      = "#{t("forms.labels.bank_account_number")}:"
+      = @payment.affiliate.bank_account_number
+      - if @payment.affiliate.bank_account_bank_code
+        %br
+        = "#{t("forms.labels.bank_account_code")}:"
+        = @payment.affiliate.bank_account_bank_code
+      - if @payment.affiliate.bank_name.present?
+        %br
+        = "#{t("forms.labels.bank_name")}:"
+        = @payment.affiliate.bank_name.present?
+      - if @payment.affiliate.bank_address
+        %br
+        = "#{t("forms.labels.bank_address")}:"
+        = @payment.affiliate.bank_address
+      - if @payment.affiliate.bank_account_iban.present?
+        %br
+        = "#{t("forms.labels.bank_account_iban")}:"
+        = @payment.affiliate.bank_account_iban
+      - if @payment.affiliate.bank_account_bic_swift.present?
+        %br
+        = "#{t("forms.labels.bank_account_bic_swift")}:"
+        = @payment.affiliate.bank_account_bic_swift
+
+  %h1
+    = t(".invoice")
+
+  %p.details
+    ="#{t(".date")}:"
+    = @payment.created_at.to_s(:euro_date)
+    %br
+    = "#{t(".invoice_number")}:"
+    = @payment.id
+    %br
+    ="#{t(".status")}:"
+    %span{:class => @payment.paid ? 'paid' : 'unpaid'}= @payment.paid ? t(".paid_on", :date => @payment.paid_at) : t(".unpaid")
+
+  %table
+    %tr
+      %th.number
+        %strong="#{t(".for")}:"
+      %th.description
+        = raw t(".item_description", :from => @payment.beginning_at.to_s(:euro_date), :to => @payment.ending_at.to_s(:euro_date))
+      %th.price
+        %strong= "#{t(".amount")}:"
+    - for line_item in @payment.line_items
+      - unless line_item.status == "expired" and !current_user.admin?
+        %tr{ :class => cycle("odd", "even") }
+          %td.number
+            = line_item.voucher ? line_item.voucher.coupon : line_item.iou.id
+          %td.description
+            - if line_item.voucher
+              = t(".line_item", :amount => number_to_currency(line_item.voucher.total.to_f, :unit => line_item.voucher.total.currency.symbol), :status => t(".#{line_item.status}"), :date => line_item.created_at.to_s(:euro_sm_with_time), :bar => line_item.bar.name)
+              = "(@#{line_item.payout_percent}%)" if current_user.admin?
+
+            - else
+              = t(".line_item", :amount => number_to_currency(line_item.iou.total.to_f, :unit => line_item.iou.total.currency.symbol), :status => line_item.status, :date => line_item.created_at.to_s(:euro_sm_with_time), :bar => line_item.bar.name)
+              = "(@#{line_item.payout_percent}%)" if current_user.admin?
+
+          %td.price
+            = number_to_currency(line_item.amount.to_f, :unit => line_item.amount.currency.symbol)
+
+
+    %tr
+      %td.total(colspan="4")
+        %strong= number_to_currency(@payment.amount.to_f, :unit => @payment.amount.currency.symbol)
+
+  .notes
+    %p
+      %strong= "#{t('.notes')}:"
+    = raw RedCloth.new(@payment.notes, [:filter_html]).to_html if @payment.notes
+
+  - if current_user.admin?
+    .admin_notes
+      %strong= "#{t('.admin_notes')}:"
+      = raw RedCloth.new(@payment.admin_notes, [:filter_html]).to_html if @payment.admin_notes
+
+  =clear_floats

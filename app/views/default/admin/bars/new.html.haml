@@ -1,0 +1,6 @@
+%h1 New Venue
+
+= render "admin/dashboard/tabs"
+
+= form_for [:admin, @bar], :html => { :multipart => true } do |f|
+  = render "shared/admin/bars/form", :f => f

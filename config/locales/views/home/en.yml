@@ -1,0 +1,65 @@
+en:
+  home:
+    app_video:
+      video_heading: "How does it work?"
+    apps:
+      android_market: "Android Market"
+      app_instructions: "Open buddydrinks.com/apps in your phone’s browser or email it to yourself:"
+      app_store: iTunes App Store
+      availability: "Available for <a href=\"%{iphone_link}\" target=\"blank\" onClick=\"_gaq.push(['_trackEvent', 'App', 'Download', 'homepage link iPhone']);\">iPhone</a> and soon for Android."
+      download_android_app: "Download Android App"
+      download_instructions: "Download a Buddy Drinks mobile app to buy drinks for friends and redeem your Buddy Drinks vouchers"
+      download_iphone_app: "Download iPhone App"
+      error:
+        heading: "There was an error with your email address."
+        description: "Please make sure you entered it correctly and try again."
+      get_app: "Get the App"
+      get_app_new: "Get the app"
+      please_wait: "Hold tight..."
+      redirect: "You're being redirected to the %{store_name}."
+      subhead: "With Buddy Drinks you can buy real drinks for your friends worldwide. "
+      success:
+        heading: "Download link sent to:"
+    content_header:
+      buy_a_beer: "Buy your friend a drink."
+      happy_hours: "All day happy hours."
+      social_in_socializing: "Put <span class=\"color\">social</span> back into socializing."
+      description: "Have a friend that lives far away but still want to send them a <strong>gift or thank-you?</strong> Would you like to get <strong>discount drink deals</strong> all day at your local pub? Buddy Drinks provides a way for you to maintain your social connections through the oldest social activity: buying drinks with your friends. <strong>Give it a try today!</strong>"
+      beer_button: "Send a drink. Your first one is free"
+    bar_info:
+      heading: "Do you own a bar, restaurant, drink garden, hotel … ?"
+      description: Find out how we can provide you a new revenue stream and increase your customer base all for no monthly fee!
+      link: "Learn more »"
+    index:
+      title: Send Drinks to Your Friends Online!
+      bar_search:
+        heading: "Find Venues Near Me:"
+        label: "Enter an address like: Stargarderstr. 80, 10437 Berlin"
+      brewery:
+        heading: "Are you a brewery, restaurant chain, or marketing agency?"
+        description: "Contact us about our unique software offerings that will significantly boost your brand awareness among a 17-30 year old target audience."
+        link: Learn More
+      heading: Send your friends drinks online.
+    press:
+      title: "Buddy Drinks Press Coverage in News and Blogs"
+      heading: "These companies have been talking about us:"
+      big_quote: "This could change the face of Germany's drink consumption."
+      contacts:
+        heading: Press Contact
+    press_releases:
+      heading: Press Releases
+      carlsberg_en: "26 April 2011 - <strong>Buddy Drinks and Carlsberg Announce a Partnership to Expand the Drink-Gifting Service in Germany.</strong> [english]"
+      carlsberg_de: "26 April 2011 - <strong>BuddyDrinks.com kooperiert mit Carlsberg Deutschland.</strong> [german]"
+      paypal: "04 October 2010 - <strong>Buddy Drinks and Appcelerator team up to win the 2010 PayPal X Developer’s Conference Hackathon</strong> [english]"
+      announcing: "29 July 2010 - <strong>Announcing Buddy Drinks</strong> [english]"
+    downloads:
+      heading: "Downloads"
+      logo: "Logo"
+      stamp: "Logomark"
+      iphone: "iPhone App Images"
+      founders: "Team Photo"
+    contact_info:
+      admin_address: Administrative Address
+      berlin_office: Berlin Office
+      email_us: Email Us
+      fourth_floor: 4th Floor

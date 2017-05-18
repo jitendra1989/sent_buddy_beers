@@ -1,0 +1,10 @@
+/ default > facebook > orders > new
+
+- content_for :facebook do
+  :plain
+    //FB.Canvas.setSize();
+    FB.Canvas.setAutoResize();
+
+%h1= t(".heading")
+
+= render "form"

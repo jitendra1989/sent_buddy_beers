@@ -1,0 +1,7 @@
+it:
+  pages:
+    show:
+      errors:
+        language_missing: "Spiacenti, questa pagina non è disponibile nella vostra lingua. La visualizzeremo in un'altra lingua (%{other_locale})."
+    body:  
+      updated_at: "L'ultimo aggiornamento della pagina è avvenuto il: %{date}"

@@ -1,0 +1,64 @@
+de:
+  home: 
+    app_video:
+      video_heading: "Wie funktionierts?"
+    apps:
+      android_market: "Android Market"
+      app_instructions: "Öffne <strong>buddybeers.com/apps</strong> auf Deinem Smartphone oder schicke Dir den Link:"
+      app_store: iTunes App Store
+      availability: "Verfügbar für <a href=\"%{iphone_link}\" target=\"blank\" onClick=\"_gaq.push(['_trackEvent', 'App', 'Download', 'homepage link iPhone']);\">iPhone</a> und bald für Android."
+      download_android_app: "Android App bald verfügbar"
+      download_instructions: "Lade die BuddyDrinks App herunter, um Deinen Freunden Drinks zu spendieren und Deine BuddyDrinks Gutscheine einzulösen."
+      download_iphone_app: "iPhone App herunterladen"
+      error:
+        heading: "Leider gab es ein Problem mit Deiner Emailadresse"
+        description: "Bitte prüfe, ob Du sie korrekt eingegeben hast und probier es nocheinmal."
+      get_app: "Lade die App"
+      please_wait: "Eine Sekunde…"
+      redirect: "Du wirst weitergeleitet zum %{store_name}."
+      subhead: "Mit BuddyDrinks kannst Du echte Drinks spendieren und genießen."
+      success:
+        heading: "Downloadlink gesendet an:"
+    bar_info: 
+      description: "Finde heraus, wie Du mit BuddyDrinks kostenlos neue Gäste gewinnen und zusätzliche Umsätze für Deine Bar, Deinen Biergarten, Dein Restaurant, Dein Hotel etc. generieren kannst."
+      heading: "Besitzt Du einen gastronomischen Betrieb?"
+      link: "Mehr erfahren »"
+    contact_info: 
+      admin_address: "Verwaltungs Adresse"
+      berlin_office: "Berlin Büro"
+      email_us: "Schreib uns eine Email"
+      fourth_floor: "4 OG"
+    content_header: 
+      beer_button: "Spendiere ein Bier. Freunden oder Dir!"
+      buy_a_beer: "Spendiere Biere."
+      description: "Du hast Freunde, die weit entfernt leben und denen Du gerne ein kleines <strong>Geschenk oder Dankeschön</strong> senden würdest? Oder möchtest Du ein paar <strong>günstige Drinks</strong> genießen? Mit BuddyDrinks pflegst Du Deine Freundschaften durch eine der <strong>ältesten Traditionen unserer Gesellschaft:</strong> Das Spendieren von Bieren. Probier's aus und mache ein wirklich originelles Geschenk!"
+      happy_hours: "Pflege Freundschaften."
+      social_in_socializing: Weltweit.
+    downloads: 
+      founders: "Team Foto"
+      heading: Downloads
+      iphone: "iPhone App Screenshots"
+      logo: "Logo 1"
+      stamp: "Logo 2"
+    index: 
+      bar_search: 
+        heading: "Finde Bars in meiner Nähe:"
+        label: "Gib eine Adresse ein wie: Stargarderstr. 80, 10437 Berlin"
+      brewery: 
+        description: "Kontaktiere uns direkt, wenn Du Interesse an einer Einbindung von BuddyDrinks in Deine eigenen Markenkampagnen hast oder sogar eine individuelle Softwarelösung zur Nutzung von BuddyDrinks für Dich in Frage kommt! "
+        heading: "Bist Du eine Brauerei, eine Restaurantkette oder eine Marketingagentur?"
+        link: "Erfahre mehr"
+      heading: "Pflege Freundschaften. Spendiere Biere."
+      title: "Spendiere Biere. Pflege Freundschaften. Weltweit."
+    press: 
+      big_quote: "Dies könnte sich angesichts von Deutschlands Bierkonsum aber bald ändern."
+      contacts: 
+        heading: Pressekontat
+      heading: "Diese Unternehmen haben über uns berichtet:"
+      title: "Was die Presse über BuddyDrinks schreibt"
+    press_releases: 
+      announcing: "29. Juli 2010 - <strong>Announcing Buddy Drinks</strong> [english] "
+      carlsberg_de: "26. April 2011 - <strong>BuddyDrinks.com kooperiert mit Carlsberg Deutschland.</strong> [german]"
+      carlsberg_en: "26. April 2011 - <strong>Buddy Drinks and Carlsberg Announce a Partnership to Expand the Beer-Gifting Service in Germany.</strong> [english]"
+      heading: Pressemitteilungen
+      paypal: "04. Oktober 2010 - <strong>Buddy Drinks and Appcelerator team up to win the 2010 PayPal X Developer’s Conference Hackathon</strong> [english]"

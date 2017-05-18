@@ -1,0 +1,58 @@
+it:
+  devise:
+    failure:
+      unauthenticated: "Per accedere a questa pagina devi accedere. <a href=\"/users/sign_up\">Clicca qui per creare il tuo Buddy account gratuito.</a>"
+      unconfirmed: 'Devi confermare la tua email prima di poter continuare.'
+      locked: 'Il tuo account è bloccato.'
+      invalid: 'Accesso o password errata.'
+      invalid_token: 'Gettone di autenticazione errato.'
+      timeout: 'La tua sessione è scaduta, per favore accedi di nuovo per continuare.'
+      inactive: 'Il tuo account non è stato ancora attivato.'
+    sessions:
+      login_failed: "Accesso fallito"
+      not_sign_in: "Accesso non riuscito"
+      signed_in: 'Login riuscito!'
+      signed_out: 'Logout riuscito!'
+    passwords:
+      send_instructions: 'Riceverai una email con le istruzioni su come reimpostare la tua password tra pochi minuti.'
+      updated: "La tua password è stata correttamente modificata. Hai effettuato l'accesso."
+      new:
+        title: Dimenticato la password?
+        heading: Dimenticato la password?
+        legend: Inserisci la tua email qui sotto e ti invieremo un link per reimpostare la tua password
+        submit: Reimposta
+      edit: 
+        title: Modifica la tua password
+        heading: Modifica la tua password
+    confirmations:
+      send_instructions: 'Riceverai una email con le istruzioni su come confermare il tuo account tra pochi minuti.'
+      confirmed: "Ottimo! Hai attivato il tuo account. Comincia a farti volere bene in giro inviando delle birre! <iframe src=\"http://www2.balao.de/SL2YM?adv_sub=SUB_ID\" scrolling=\"no\" frameBorder=\"0\" width=\"1\" height=\"1\"></iframe>"
+    registrations:
+      signed_up: "Hai effettuato correttamente l'accesso. Se impostata, ti è stata inviata una conferma al tuo indirizzo email."
+      inactive_signed_up: "<strong>Il tuo account è stato creato.</strong>  Controlla sulla tua email se hai ricevuto il link di conferma, dopodiché sarai pronto per cominciare!"
+      updated: 'Account aggiornato!'
+      destroyed: 'Ciao! Il tuo account è stato eliminato correttamente. Speriamo di rivederti presto.'
+    unlocks:
+      send_instructions: 'Riceverai una email con le istruzioni su come sbloccare il tuo account tra pochi minuti.'
+      unlocked: "Il tuo account è stato sbloccato con successo. Hai effettuato l'accesso."
+    mailer:
+      confirmation_instructions:
+        personal_information: 'Informazioni personali'
+        subject: 'Istruzioni per la conferma'
+      reset_password_instructions:
+        subject: 'Istruzioni per la reimpostazione della password Buddy Drinks'
+        greeting: 'Ciao %{email}!'
+        description: 'Ci hai richiesto di cambiare la tua password. Clicca il link sottostante per modificarla.'
+        link_text: Modifica la mia password
+        security: "Se non chiesto niente, ignora questa mail. Forse un amico è invidioso di tutte le birre che ti stanno offrendo e ha provato ad entrare nel tuo account. Ma sta' tranquillo: non reimpostremo la tua password fino a che non cliccherai sul link qui sopra e ne creerai tu una nuova."
+      unlock_instructions:
+        subject: 'Istruzioni di sblocco'
+    omniauth_callbacks: 
+      failure: "Non possiamo autorizzarti a %{kind} perché \"%{reason}\". "
+      success: "Hai effettuato correttamente l'accesso utilizzando il vostro account %{kind}."
+    
+    devise_mailer:
+      confirmation_instructions:
+        thanks: Grazie per aver creato un account! Clicca il seguente link per attivare il tuo account!
+        subject: Istruzioni per l'attivazione Buddy Drinks
+        problem_link: "Se l'URL qui sopra non dovesse funzionare, prova a copiarlo e ad incollarlo nel tuo browser. Se continui ad aver problemi, contattaci!"

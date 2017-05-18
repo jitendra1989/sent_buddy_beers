@@ -1,0 +1,22 @@
+
+:javascript
+
+  $(document).on('click', '.contact_us_popup', function() {
+    $('#contactUs').modal('show');
+  });
+
+= render "/default/bars/send_contact_us_info"
+- if @bar.pending?
+  %p.confirm.confrim-head= t(".confirm")
+- else
+  .whats_next
+    %h3= t(".whats_next.heading")
+    %ol
+      %li= t(".whats_next.one")
+      %li= t(".whats_next.two")
+      %li= t(".whats_next.three")
+    %p= raw t(".whats_next.questions")
+    %ul
+
+      %li= link_to t(".whats_next.contact"), "javascript:void(0)", :class=>"contact_us_popup"
+  =clear_floats

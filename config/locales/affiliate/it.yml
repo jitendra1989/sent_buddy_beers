@@ -1,0 +1,186 @@
+it:
+  affiliate:
+    affiliate:
+      tabs:
+        home: Home
+    photos:
+      new:
+        title: Aggiungi una nuova foto al tuo bar
+        form:
+          button: Aggiungi
+          legend: Aggiungi una nuova foto
+      edit:
+        title: Modifica una foto
+        form:
+          button: Aggiorna
+          legend: Modifica una foto
+      destroy:
+        success: Foto cancellata!
+        error: Si è verificato un errore durante la cancellazione della tua foto
+      create:
+        success: La foto è stata aggiunta correttamente
+        error: Si è verificato un errore durante l'aggiunta della tua fotoo
+      update:
+        success: La foto è stata aggiornata correttamente
+        error: Si è verificato un errore durante l'aggiornamento della tua foto
+    employments:
+      index:
+        title: Gestisci il tuo staff
+        new_employee: Aggiungi un nuovo dipendente
+        description: "Comincia inserendo il nome del tuo dipendente nel campo sosttostante. Clicca sul nome del dipendente e poi clicca su 'Aggiungi questi dipendenti'. Se i dipendenti non sono ancora membri di Buddy Drinks chiedigli prima di tutto di crearsi un account."
+        submit: Aggiungi questi dipendenti
+        submitting: Sto aggiungendo...
+        no_employees: Attualmente non hai dipendenti
+        how_to: Inserisci i dipendenti tramite il modulo qui sopra. Se ancora non sono membri Buddy Drinks dovrai prima di tutto chiedergli di iscriversi.
+        form:
+          friend_search_hint_text: "Inserisci il nome di un dipendente o una email (almeno 3 lettere)"
+          friend_search_no_results_text: "Nessun utente trovato"
+          friend_searching_text: "Sto cercando"
+      create:
+        success: "Dipendente aggiunto. Al lavoro!"
+        error: "Si è verificato un errore durante l'aggiunta del tuo dipendente. Forse non si è sentito bene."
+      employment:  
+        remove: Rimuovi
+      destroy:
+        success: Il tuo dipendente è stato licenziato!
+        error: "Si è verificato un errore durante la rimozione del tuo dipendente. Riprova, per favore."
+    bars:
+      redeem_ious:
+        voucher: Voucher
+        success: "%{total} riscattati. I profitti per questo mese sono stati aggiornati. Evvai!"
+        error: "%{total} non riscattati. Verifica i tui codici e prova ancora."
+      outstanding_vouchers: Voucher non corrisposti
+      edit:
+        title: Modifica le informazioni del bar
+        notifications_title: Notifiche
+        new_voucher_list_notification: "Io verifico i Voucher riscattati su stampa cartacea. Per favore, inviatemi una notifica quando vengono generati i nuovi codici dei Voucher."
+        redeemed_voucher_notification_timeframe: "Inviatemi una email quando vengono riscattati dei Voucher nel mio bar"
+        update_bar_notifications: "Aggiorna le preferenze per le notifiche"
+      redeemed_vouchers: Voucher riscattati
+      voucher_lists: Elenco dei Voucher
+      form:
+        token_disclaimer: "(Questo numero apparirà all'interno del numero del Voucher, e tramite di esso potrai essere certo che il Voucher è valido per il tuo bar)"
+        voucher_limit_hint_description: Imposta questo valore sulla base del numero massimo di drink giornalieri che un cliente potrà pagare in Voucher.<br /><br />Ciò può risultare utile nel <em>raro</em> caso che un utente si presenti al tuo bar con un sacco di Voucher nella stessa sera e beva praticamente gratis, senza che tu possa guadagnare granchè dal cliente.<br /><br />Il cliente verrà informato di questa limitazione sul Voucher.
+        legends:
+          bar_information: Informazioni sul bar
+          voucher_conditions: Condizioni del Voucher
+      index:
+        title: I miei bar
+        heading: I miei bar
+      gallery:
+        no_photos: Attualmente non hai nessuna foto
+        view_full: Visualizza a grandezza naturale
+        title: Foto del bar
+        tabs:
+          add_photo: Aggiungi una foto
+      show:
+        activity:
+          purchased_singular: "1 Voucher per %{item} è stato"
+          purchased: "%{quantity} Voucher per %{item} sono stati"
+          redeemed: "riscattato"
+          purchased: "acquistato"
+      bar:
+        edit: Modifica questo bar
+        stats:
+          total_profit: Profitti totali
+          monthly_profit: Profitti mensili
+          beers_redeemed: Totale Voucher riscattati
+          monthly_turnover: Giro d'affari mensile
+          beers_sold: Totale venduti
+          heading: Statistiche
+          bro:
+            heading: Il tuo Beer Bro
+            hint:
+              title: I Beer Bro
+              description: "Il Beer Bro rappresenta il tuo punto di contatto locale con Buddy Drinks. Chiamalo se riscontri problemi nella gestione dei Voucher, nella promozione del tuo bar o per qualsiasi altra questione inerente Buddy Drinks: li paghiamo per questo.<br /><br />Il tuo Beer Bro riceve settimanalmente la lista dei Voucher che devono esserti ancora corrisposti ed ha la possibilità di riscattare i tuoi Voucher. Dunque, se non ti fidi completamente di lui, faccelo sapere subito."
+        information:
+          heading: Informazioni
+        map:
+          heading: Mappa
+        vouchers:
+          outstanding_voucher: Voucher non corrisposti
+          heading: Voucher
+          redeem_link: riscatta i Voucher!
+      voucher_list:
+        header: "Elenco Voucher Buddy Drinks #%{number} &ndash; <strong>%{bar_name}, %{bar_city}</strong>"
+        pdf_file_name: Buddy_Drinks_Vouchers
+        expires: "Il precedente elenco, #%{number}, scadrà il: %{date}"
+        footer:
+          code:
+            heading: Codice
+            description: "Riempite gli spazi vuoti con le ultime due cifre del codice. Ad esempio: A-BCD- <strong>EF</strong>."
+          employee:
+            heading: Dipendente
+            description: "Scrivi qui il tuo nome o le tue iniziali in modo che, se dovesse esserci un problema in futuro (come ad esempio qualcuno che non riesce a leggere la tua scrittura), sapranno chi contattare."
+          voucher:
+            heading: Numero del Voucher
+            description: "Quando un cliente ti fornirà il numero del Voucher, questo sarà composto da sei numeri o lettere. Avrà questo aspetto: A-BCD-EF. Ogni numero corrisponde ad una fascia di prezzo."
+      voucher_table:
+        table:
+          headers:
+            code: Codice
+            employee: Dipendente
+            voucher: Voucher
+      update:
+        success: Bar aggiornato!
+        error: Errore durante l'aggiornamento del bar.
+        none_redeemed: I tuoi Voucher non sono stati riscattati. Riprova.
+        some_redeemed: "Voucher riscattati: %{number}"
+      tabs: 
+        edit_bar_information: Modifica le informazioni del bar
+        beer_list: Elenco delle birre
+        gallery: Foto
+        promotional: Invia Voucher promozionali
+        employees: Staff
+    payments:
+      show:
+        title: "Quota corrisposta #%{number}"
+      index:
+        title: Tutte le quote corrisposte
+    dashboard:
+      heading: Benvenuto nel backend per gli affiliati
+      tabs:
+        home: I miei bar
+        invoices: Quote corrisposte
+    ious:
+      outstanding_form:
+        no_vouchers: "Non è presente alcun Voucher che ti deve essere ancora pagato. Hey, fatti sotto con qualche promozione!"
+      filter_form:
+        instructions: Comincia a scrivere numero/data/nome del Voucher per ordinare l'elenco.
+      new:
+        title: Invia un Voucher promozionale Buddy Drinks
+        heading: "Invia un Voucher per %{bar}"
+        instructions: Puoi inviare Voucher per promuovere il tuo bar. Non ti verranno pagati ma puoi utilizzarli per fare pubblicità a determinati eventi oppure come regali per i clienti 'meritevoli'.
+        form:
+          recipient_info_legend: Destinatario
+          recipient_email: Email del destinatario
+          recipient_name: Nome del destinatario
+          beer_legend: Birra
+          beer: Birra (Quantità/Tipo)
+          salutation_legend: Saluto
+          memo: Motivo/Istruzioni
+          sender_name: Nome del mittente
+      index:
+        to: "A:"
+        from: "Da:"
+    prices:
+      edit:
+        title: Cambia prezzo della birra
+        legend: Cambia prezzo della birra
+      destroy:
+        success: Birra eliminata
+        error: Errore durante l'eliminazione della birra
+      drink:
+        special_price: Prezzo speciale. Grazie!
+      index:
+        title: Elenco delle birre
+        legend: "Aggiungi un'altra birra all'elenco delle birre di %{bar}"
+      create:
+        success: Aggiunta nuova birra
+        error: "Errore durante l'aggiunta della birra. Hai inserito una quantità <em>e</em> un nome?"
+      update:
+        success: Prezzo aggiornato
+        error: Errore durante l'aggiornamento del prezzo.
+    voucher_lists:
+      show:
+        voucher_list: "Elenco dei Voucher"

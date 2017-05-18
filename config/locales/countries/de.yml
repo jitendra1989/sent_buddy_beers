@@ -1,0 +1,229 @@
+de:
+  countries: 
+    afghanistan: Afghanistan
+    albania: Albanien
+    algeria: Algerien
+    american_samoa: "Amerikanisch Samoa"
+    andorra: Andorra
+    angola: Angola
+    anguilla: Anguilla
+    antigua_and_barbuda: "Antigua und Barbuda"
+    argentina: Argentinien
+    armenia: Armenien
+    aruba: Aruba
+    australia: Australien
+    austria: Österreich
+    azerbaijan: "Aserbaidschan "
+    bahamas: Bahamas
+    bahrain: Bahrain
+    bangladesh: Bangladesh
+    barbados: Barbados
+    belarus: Belarus
+    belgium: Belgien
+    belize: Belize
+    benin: Benin
+    bermuda: Bermuda
+    bhutan: Bhutan
+    bolivia: Bolivien
+    bosnia_and_herzegovina: Bosnien-Herzegowina
+    botswana: Botswana
+    brazil: Brasilien
+    brunei_darussalam: Brunei
+    bulgaria: Bulgarien
+    burkina_faso: "Burkina Faso"
+    burundi: Burundi
+    cambodia: Kambodscha
+    cameroon: Kamerun
+    canada: Canada
+    cape_verde: "Kap Verde"
+    cayman_islands: "Cayman Inseln "
+    central_african_republic: "Zentralafrikanische Republik"
+    chad: Tschad
+    chile: Chile
+    china: China
+    colombia: Kolumbien
+    comoros: Komoren
+    congo: Kongo
+    congo_the_democratic_republic_of_the: "Demokratische Republik Kongo "
+    cook_islands: "Cook Islands "
+    costa_rica: "Costa Rica"
+    cote_d_ivoire: Elfenbeinküste
+    croatia: Kroatien
+    cuba: Kuba
+    cyprus: Zypern
+    czech_republic: "Tschechische Republik"
+    denmark: Dänemark
+    djibouti: Djibouti
+    dominica: Dominica
+    dominican_republic: "Dominikanische Republik"
+    ecuador: Ecuador
+    egypt: Ägypten
+    el_salvador: "El Salvador"
+    equatorial_guinea: Äquatorialguinea
+    eritrea: Eritrea
+    estonia: Estland
+    ethiopia: Äthiopien
+    falkland_islands_malvinas: "Falkland Inseln"
+    faroe_islands: "Färöer Inseln"
+    fiji: Fiji
+    finland: Finnland
+    france: Frankreich
+    french_guiana: Französisch-Guayana
+    french_polynesia: Französich-Polynesien
+    gabon: Gabon
+    gambia: Gambia
+    georgia: Georgien
+    germany: Deutschland
+    ghana: Ghana
+    gibraltar: Gibraltar
+    greece: Griechenland
+    greenland: Grönland
+    grenada: Grenada
+    guadeloupe: Guadalopue
+    guam: Guam
+    guatemala: Guatemala
+    guinea: Guinea
+    guinea_bissau: Guinea-Bissau
+    guyana: Guyana
+    haiti: Haiti
+    holy_see_vatican_city_state: Vatikan
+    honduras: Honduras
+    hong_kong: "Hong Kong"
+    hungary: Ungarn
+    iceland: Island
+    india: Indien
+    indonesia: Indonesien
+    iran_islamic_republic_of: Iran
+    iraq: Irak
+    ireland: Irland
+    israel: Israel
+    italy: Italien
+    jamaica: Jameica
+    japan: Japan
+    jordan: Jordanien
+    kazakhstan: Kasachstan
+    kenya: Kenia
+    kiribati: Kiribati
+    korea_democratic_people_s_republic_of: "Demokratische Republik Korea"
+    korea_republic_of: "Republik Korea"
+    kuwait: Kuweit
+    kyrgyzstan: Kirgisien
+    lao_people_s_democratic_republic: Lao
+    latvia: Lettland
+    lebanon: Libanon
+    lesotho: Lesotho
+    liberia: Liberia
+    libyan_arab_jamahiriya: Libyan
+    liechtenstein: Liechtenstein
+    lithuania: Litauen
+    luxembourg: Luxembourg
+    macao: Macao
+    macedonia_the_former_yugoslav_republic_of: Mazedonien
+    madagascar: Madagascar
+    malawi: Malawi
+    malaysia: Malysia
+    maldives: Malediven
+    mali: Mali
+    malta: Malta
+    marshall_islands: "Marshall Inseln"
+    martinique: Martinique
+    mauritania: Mauretanien
+    mauritius: Mauritius
+    mexico: Mexiko
+    micronesia_federated_states_of: Mikronesien
+    moldova_republic_of: Moldavien
+    monaco: Monaco
+    mongolia: Mongolei
+    montenegro: Montenegro
+    montserrat: Montserrat
+    morocco: Marokko
+    mozambique: Mosambique
+    myanmar: Myanmar
+    namibia: Namibia
+    nauru: Nauru
+    nepal: Nepal
+    netherlands: Niederlande
+    netherlands_antilles: "Niederländische Antillen"
+    new_caledonia: Neukaledonien
+    new_zealand: Neuseeland
+    nicaragua: Nicaragua
+    niger: Niger
+    nigeria: Nigeria
+    niue: Niue
+    norfolk_island: "Norfolk Island"
+    northern_mariana_islands: "Northern Mariana Islands "
+    norway: Norwegen
+    oman: Oman
+    pakistan: Pakistan
+    palau: Palau
+    panama: Panama
+    papua_new_guinea: Papua-Neuguinea
+    paraguay: Paraguay
+    peru: Peru
+    philippines: Philippinen
+    pitcairn: Pitcairn
+    poland: Polen
+    portugal: Portugal
+    puerto_rico: "Puerto Rico"
+    qatar: Quatar
+    reunion: Reunion
+    romania: Rumänien
+    russian_federation: "Russische Föderation"
+    rwanda: Ruanda
+    saint_helena: "Saint Helena"
+    saint_kitts_and_nevis: "Saint Kitts and Nevis"
+    saint_lucia: "Saint Lucia"
+    saint_pierre_and_miquelon: "Saint Pierre and Miquelon "
+    saint_vincent_and_the_grenadines: "Saint Vincent and the Grenadines "
+    samoa: Samoa
+    san_marino: "San Marino"
+    sao_tome_and_principe: "Sao Tome und Principe"
+    saudi_arabia: "Saudi Arabien"
+    senegal: Senegal
+    seychelles: Seychellen
+    sierra_leone: "Sierra Leone"
+    singapore: Singapur
+    slovakia: Slovakei
+    slovenia: Slovenien
+    solomon_islands: Salomonen
+    somalia: Somalia
+    south_africa: Südafrika
+    spain: Spanien
+    sri_lanka: "Sri Lanka"
+    sudan: Sudan
+    suriname: Sirname
+    svalbard_and_jan_mayen: "Svalbard und Jan Mayen"
+    swaziland: Swaziland
+    sweden: Schweden
+    switzerland: Schweiz
+    syrian_arab_republic: Syrien
+    taiwan_province_of_china: Taiwan
+    tajikistan: Tadschikistan
+    tanzania_united_republic_of: Tansania
+    thailand: Thailand
+    togo: Togo
+    tokelau: Tokelau
+    tonga: Tonga
+    trinidad_and_tobago: "Trinidad und Tobago"
+    tunisia: Tunesien
+    turkey: Türkei
+    turkmenistan: Turkmenistan
+    turks_and_caicos_islands: "Turks undCaicos Islands"
+    tuvalu: Tuvalu
+    uganda: Uganda
+    ukraine: Ukraine
+    united_arab_emirates: "Vereinigte Arabische Emirate"
+    united_kingdom: "Vereinigtes Königreich"
+    united_states: "Vereinigte Staaten"
+    uruguay: Uruguay
+    uzbekistan: Usbekistan
+    vanuatu: Vanuatu
+    venezuela: Venezuela
+    viet_nam: Vietnam
+    virgin_islands_british: "Virgin Islands, UK"
+    virgin_islands_u_s: "Virgin Islands, US"
+    wallis_and_futuna: "Wallis und Futuna"
+    western_sahara: "Westliche Sahara"
+    yemen: Yemen
+    zambia: Sambia
+    zimbabwe: Simbabwe

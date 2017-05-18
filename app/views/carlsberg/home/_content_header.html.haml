@@ -1,0 +1,40 @@
+/ - content_for :head do
+/   :plain
+/     <script src="http://cloud.github.com/downloads/malsup/cycle/jquery.cycle.all.latest.js" type="text/javascript"></script>
+/   
+/   :javascript
+/     $(document).ready(function() {
+/       $('#content_header').cycle({
+/         fx: 'fade', // choose your transition type, ex: fade, scrollUp, shuffle, etc...
+/         timeout: 8000
+/       });
+/     }); 
+
+#content_header.pie
+  .iphone
+    .padding
+      #video
+        :plain
+          <iframe src="http://player.vimeo.com/video/36271945?title=0&amp;byline=0&amp;portrait=0&amp;color=00a950" width="638" height="267" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+      #text
+        %h1= t("home.apps.get_app")
+        = render "home/app_availability"
+      = link_to t("home.apps.get_app"), app_download_url, :id => "app_link"
+      /       %p= t(".iphone_description").html_safe
+      //.app_button
+      //  = link_to t(".app_button"), "http://itunes.com/apps/buddybeerscarlsbergbuyyourfriendacarlsberg", :class => I18n.locale.to_s, :rel => "nofollow"
+      //.app_store
+      //  %p{ :class => I18n.locale.to_s }= link_to t(".subhead_alt_text"), "http://itunes.com/apps/buddybeerscarlsbergbuyyourfriendacarlsberg", :rel => "nofollow"
+      = clear_floats
+  / .home
+  /     .padding
+  /       %h1
+  /         = t(".buy_a_beer")
+  /         %br
+  /         = t(".happy_hours")
+  /         %br
+  /         = raw t(".social_in_socializing")
+  /       %p= raw t(".description")
+  /       .send_a_beer
+  /         = link_to t(".beer_button"), new_iou_path, :class => I18n.locale.to_s, :rel => "nofollow"
+  /       =clear_floats

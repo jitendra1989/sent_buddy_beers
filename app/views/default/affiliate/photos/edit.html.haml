@@ -1,0 +1,11 @@
+- @title = t(".title")
+
+= render "affiliate/bars/tabs"
+
+= form_for ["affiliate", @bar, @photo], :html => { :multipart => true } do |f|
+  = error_messages_for :photo
+  %fieldset
+    %legend= t(".form.legend")
+    = render "shared/admin/photos/form", :f => f
+    %ul
+      %li= f.submit t(".form.button")

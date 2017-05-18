@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<title>untitled</title>
+	<!--[if IE]>
+		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+	<link rel="stylesheet" href="/stylesheets/reset.css" type="text/css" media="screen" title="Style Reset" charset="utf-8">
+	<style type="text/css" media="screen">
+	  html{
+      background: transparent;
+    }
+	  a.buddy-beers-buy-beer-button {
+	    background: #ff9e00;
+      background: -webkit-gradient(linear, 0 0, 0 bottom, from(#ffc601), to(#ff9e00));
+      background: -moz-linear-gradient(#ffc601, #ff9e00);
+      background: linear-gradient(#ffc601, #ff9e00);
+      -pie-background: linear-gradient(#ffc601, #ff9e00);
+      border: 2px solid #ebe1d0;
+      -moz-border-radius: 10px;
+      -webkit-border-radius: 10px;
+      border-radius: 10px;
+      cursor: pointer;
+      line-height: 16px;
+      padding: 4px 10px 2px;
+      font-size: 14px;
+      text-align: center;
+      font-family: Helvetica, Arial, Verdana, sans-serif;
+      display: block;
+      color: #FFF;
+      text-decoration: none;
+      font-weight: bold;
+      text-shadow: 0px 1px 2px #815c01;
+      text-transform: uppercase;
+    }
+    a.buddy-beers-buy-beer-button:hover {
+	    background: #feab23;
+      background: -webkit-gradient(linear, 0 0, 0 bottom, from(#fed64f), to(#feab23));
+      background: -moz-linear-gradient(#fed64f, #feab23);
+      background: linear-gradient(#fed64f, #feab23);
+      -pie-background: linear-gradient(#fed64f, #feab23);
+    }
+    a.buddy-beers-buy-beer-button img {
+      vertical-align: middle;
+      margin-right: 4px;
+    }
+    p.buddy-beers-get-button-link {
+      font-size: 10px;
+      line-height: 20px;
+      text-align: center;
+      font-family: Helvetica, Arial, Verdana, sans-serif;
+      color: #999;
+    }
+    p.buddy-beers-get-button-link a {
+      color: #999;
+    }
+	</style>
+</head>
+<body>
+
+<div class="buddy-beers-users-widget">
+  <p>
+    <%= link_to content_tag(:span, image_tag("icons/buddybeers.png") + t(".button_text", :name => @name, :drink => @drink)), new_iou_url(@url_options), :class => "buddy-beers-buy-beer-button", :target => "_blank" %>
+  </p>
+  <p class="buddy-beers-get-button-link">
+    <%= link_to t(".button_link", :drink => @drink), root_url, :target => "_blank" %>
+  </p>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,148 @@
+nl:
+  affiliate: 
+    bars: 
+      bar: 
+        edit: "Pas de informatie van deze kroeg aan"
+        information: 
+          heading: Informatie
+        map: 
+          heading: Kaart
+        stats: 
+          beers_redeemed: "Totaal aantal biertjes ingewisseld"
+          beers_sold: "Aantal biertjes verkocht"
+          bro: 
+            heading: "Je Bier-Bro"
+            hint: 
+              description: "Je Bier-Bro is het lokale contactpersoon naar Buddy Drinks. Geef hem een belletje als je hulp nodig hebt met het beheren van de voucher, de bar promoten of al het andere wat met Buddy Drinks te maken heeft. Daar betalen we ze voor.<br /><br />Je Bier-Bro ontvangt wekelijks je openstaande voucher lijst en heeft de mogelijkheid om voucher in te wisselen. Als je iemand niet vertrouwd, laat het ons direct weten."
+              title: Bier-Bro's
+          heading: Statistieken
+          monthly_profit: "Winst per maand"
+          monthly_turnover: "Omzet per maand"
+          total_profit: "Totale omzet"
+        vouchers: 
+          heading: Vouchers
+          outstanding_voucher: "Openstaande vouchers"
+          redeem_link: "Voucher inwisselen!"
+      edit: 
+        title: "Wijzig de informatie van deze kroeg"
+      form: 
+        legends: 
+          bar_information: "Informatie over deze kroeg"
+          voucher_conditions: "Voucher voorwaarden"
+        token_disclaimer: "(Dit nummer staat op alle voucher codes. Op deze manier zie je of deze voucher hoort bij jouw kroeg)"
+        voucher_limit_hint_description: "Hier voer je in hoeveel vouchers 1 gast per dag mag inwisselen.<br /><br />Dit is nuttig in <em>het bijzondere</em> geval dat een gast een stapel vouchers meeneemt en de hele avond niets anders besteld.<br /><br />De gast wordt hiervan op de hoogte gebracht."
+      gallery: 
+        no_photos: "Je hebt nog geen foto's"
+        tabs: 
+          add_photo: "Voeg een foto toe"
+        title: "Voeg foto's van je kroeg toe"
+        view_full: "Bekijk op groter formaat"
+      index: 
+        heading: "Mijn kroegen"
+        title: "Mijn kroegen"
+      outstanding_vouchers: "Openstaande vouchers"
+      redeem_ious: 
+        error: "%{total} niet ingewisseld. Controleer de voucher codes en probeer het nog een keer."
+        success: "%{total} ingewisseld. Ka-ching."
+        voucher: voucher
+      redeemed_vouchers: "Ingewisselde vouchers"
+      tabs: 
+        beer_list: "Bier lijst"
+        edit_bar_information: "Wijzig de informatie over je kroeg"
+        gallery: Foto's
+        promotional: "Stuur een promo voucher"
+      update: 
+        error: "Error bij het wegschrijven van de kroeg gegevens."
+        none_redeemed: "Uw vouchers werden niet verzilverd. Probeer het opnieuw."
+        some_redeemed: "Verlost Vouchers: %{number}"
+        success: "Gegevens van de kroeg aangepast!"
+      voucher_list: 
+        footer: 
+          code: 
+            description: "Voer de laatste 2 cijfers van de code hieronder in. Bijvoorbeeld ABC-1<strong>23</strong>."
+            heading: Code
+          employee: 
+            description: "Zet hier je naam of initialen zodat we je later contact met je kunnen opnemen als er problemen zijn."
+            heading: Medewerker
+          voucher: 
+            description: "Een voucher code bestaat uit 6 tekens. Dit kunnen zowel cijfers als letters zijn. Een code ziet eruit als <strong>ABC-123</strong>."
+            heading: "Voucher code"
+        header: "Buddy Drinks voucher lijst #%{number} &ndash; <strong>%{bar_name},%{bar_city}</strong>"
+        pdf_file_name: "Buddy Drinks vouchers"
+      voucher_lists: "Voucher lijst"
+      voucher_table: 
+        table: 
+          headers: 
+            code: Code
+            employee: Medewerker
+            voucher: Voucher
+    dashboard: 
+      heading: "Welkom bij de Affiliate Backend"
+      tabs: 
+        home: "Mijn kroegen"
+        invoices: Uitbetalingen
+    ious: 
+      filter_form: 
+        instructions: "Voer een voucher nummer/datum/naam in om de lijst te sorteren"
+      index: 
+        from: "Van:"
+        to: "Aan:"
+      new: 
+        form: 
+          beer: "Biertje (Hoeveelheid/type)"
+          beer_legend: Biertje
+          memo: Reden/instructies
+          recipient_email: "E-mailadres ontvanger"
+          recipient_info_legend: Ontvanger
+          recipient_name: "Naam ontvanger"
+          salutation_legend: Aanhef
+          sender_name: "Naam verzender "
+        heading: "Stuur een voucher voor %{bar}"
+        instructions: "Je kunt voucher van je eigen bar sturen als promotie. De vouchers worden niet aan je uitbetaald, maar je kunt ze gebruiken om weg te geven om je bar te promoten op evenementen of als een blijk van waardering voor je vaste klanten."
+        title: "Stuur een Promotional Buddy Drinks Voucher"
+      outstanding_form: 
+        no_vouchers: "Je hebt geen openstaande vouchers. Tijd om Buddy Drinks te promoten in je kroeg!"
+    payments: 
+      index: 
+        title: "Alle uitbetalingen"
+      show: 
+        title: "Betaling #%{number}"
+    photos: 
+      create: 
+        error: "Er ging iets fout bij het uploaden van je foto"
+        success: "Je foto is toegevoegd"
+      destroy: 
+        error: "Er ging iets fout bij het verwijderen van je foto"
+        success: "Foto verwijderd!"
+      edit: 
+        form: 
+          button: Update
+          legend: "Wijzig een foto"
+        title: "Wijzig een foto"
+      new: 
+        form: 
+          button: "Voeg toe"
+          legend: "Voeg een foto toe"
+        title: "Plaats een foto van je kroeg"
+      update: 
+        error: "Er ging iets fout bij het wijzigen van je foto"
+        success: "Foto toegevoegd"
+    prices: 
+      create: 
+        error: "Er ging iets fout bij het toevoegen van het biertje. Kies je wel een merk <em>en</em> biertje?"
+        success: "Nieuwe biertje toegevoegd"
+      destroy: 
+        error: "Er ging iets fout bij het verwijderen van het biertje"
+        success: "Biertje weggehaald"
+      drink: 
+        special_price: "Speciale prijs. Bedankt!"
+      edit: 
+        title: "Pas de prijs van het biertje aan"
+      index: 
+        title: "Lijst met biertjes"
+      update: 
+        error: "Er ging iet mis met het aanpassen van de prijs."
+        success: "Prijs aangepast"
+    voucher_lists:
+      show:
+        voucher_list: "Voucher lijst"

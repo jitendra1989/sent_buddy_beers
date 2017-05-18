@@ -1,0 +1,36 @@
+/ carlsberg > ious > received_ious
+
+- if @received_ious.present?
+  %ul#received
+    - for iou in @received_ious
+    
+      %li
+        = link_to iou_url(iou), :class => "drink" do
+          .avatar.pie
+            = image_tag iou.sender.avatar.file? ? iou.sender.avatar(:square) : "sites/carlsberg/avatars/square/missing.png", :class => "pie"
+          .description
+            %p= raw t("ious.index.description_received", :sender => (iou.sender_name.blank? ? t("ious.index.sender_generic") : iou.sender_name), :recipient => t("ious.index.you"), :drink => [iou.quantity, iou.price_name].join(" "), :bar => iou.bar_name, :city => iou.bar.city.name)      
+          .memo
+            - if iou.memo.present?
+              .bubble
+                %p= "&quot;".html_safe + iou.memo + "&quot;".html_safe
+            %p.date
+              = iou.created_at.to_s(:twitter_format_w_year)
+              - if iou.expired? and iou.expires_at
+                &ndash;
+                %strong= t("ious.index.expired", :date => iou.expires_at.to_s(:euro_date))
+              - elsif iou.expires_at.present? and !iou.redeemed?
+                &ndash;
+                %strong= t("ious.index.expires", :distance => distance_of_time_in_words(Time.now, iou.expires_at, false), :date => iou.expires_at.to_s(:euro_date))
+              - elsif iou.redeemed? and iou.vouchers.present?
+                &ndash;
+                %strong= t("ious.index.redeemed", :date => iou.vouchers.last.redeemed_at.to_s(:euro_date))
+
+          = clear_floats
+- else
+  #received
+    %p.empty= t("ious.index.received_empty")
+    %p.empty
+      %strong.sync_phone_number_message= t("ious.index.received_mobile.heading")
+      %br
+      = t("ious.index.received_mobile.description", :link => edit_user_registration_url(current_user)).html_safe

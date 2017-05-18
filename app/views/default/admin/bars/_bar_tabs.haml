@@ -1,0 +1,19 @@
+- if @bar and !@bar.new_record?
+  .tabs
+    %ul
+      %li
+        = link_to_unless_current(@bar.name, admin_bar_url(@bar)) do
+          = content_tag(:span, @bar.name)
+      %li
+        = link_to_unless_current("Edit This Venue", edit_admin_bar_url(@bar)) do
+          = content_tag(:span, "Edit This Venue")
+      %li
+        = link_to_unless_current("Edit Venue's Drink List", admin_bar_prices_url(@bar)) do
+          = content_tag(:span, "Edit Venue's Drink List")
+      %li
+        = link_to_unless_current("Vouchers", vouchers_admin_bar_url(@bar)) do
+          = content_tag(:span, "Vouchers")
+      %li
+        = link_to_unless_current(t("affiliate.bars.tabs.gallery"), admin_bar_photos_path(@bar)) do
+          = content_tag(:span, t("affiliate.bars.tabs.gallery"))
+    = clear_floats

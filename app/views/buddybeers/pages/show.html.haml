@@ -1,0 +1,8 @@
+/ buddybeers > pages > show
+
+- @title = @page.title
+
+- @content_class = "two_column" if @page.children.present? or @page.parent.present?
+= render "sidebar"
+= render "body"
+= clear_floats

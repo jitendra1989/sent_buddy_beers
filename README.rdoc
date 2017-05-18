@@ -1,0 +1,13 @@
+== Getting started
+
+* Seed your database
+* To work with subdomains setup your /etc/hosts file:
+    127.0.0.1       buddybeers.local
+    127.0.0.1       carlsberg.buddybeers.local
+
+== Deploying to heroku
+
+* pushing to staging heroku server:
+    git push staging staging:master
+    - staging -- name of remote
+    - staging:master -- local-branch-name:heroku-master-branch

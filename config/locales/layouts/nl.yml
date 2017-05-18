@@ -1,0 +1,43 @@
+nl:
+  layouts: 
+    affiliate: 
+      payment_prefs_empty: 
+        description: "Om je omzet als Buddy Bar uit te kunnen betalen, hebben we je bankgegevens of PayPal account nodig. <a href=\"%{link}\">Voer hier je gegevens in</a>."
+        heading: "De betalingsgegevens zijn leeg."
+      view_bar_listing: "Bekijk overzicht met kroegen"
+    application: 
+      promo: "20% korting op alle biertjes als je betaald met BuddyBucks"
+    logged_in_as: "Je bent ingelogd als %{user}"
+    menu: 
+      about: Over
+      admin: 
+        affiliates: Affiliates
+        dashboard: "Admin dashboard"
+        users: Gebruikers
+      affiliate: 
+        dashboard: "Affiliate dashboard"
+        my_bars: "Mijn kroegen"
+        my_beers: "Mijn biertjes"
+      bars: "Buddy Bars"
+      blog: Blog
+      bro: 
+        dashboard: "Bier-Bro dashboard"
+      contact: "Neem contact op"
+      edit_user: "Over mij"
+      home: Home
+      logout: Logout
+      my_beers: "Mijn biertjes"
+      register_a_bar: "Meld een kroeg aan"
+      send_a_beer: "Verstuur een biertje"
+      sync_your_email: "Sync je email!"
+    meta: 
+      description: "Met Buddy Drinks verstuur je online echte biertjes naar je vrienden. Heb je ooit wel eens gezegd: \"Je krijgt een biertje van me?\". Nu kan je deze belofte direct inwisselen met Buddy Drinks!"
+    navigation: 
+      slogan: "Made in Berlin. <strong>Served Worldwide.</strong>"
+    user_account_navigation: 
+      buddybeers: "Log in met je Buddy Drinks account"
+      drinks_received: "Drankjes ontvangen"
+      drinks_sent: "Drankjes verstuurd"
+      login: Inloggen
+      logout: Uitloggen
+      signup: "Meld je gratis aan"

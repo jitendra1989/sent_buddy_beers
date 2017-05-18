@@ -1,0 +1,55 @@
+/ default > credits > ultimate_pay
+
+- javascripts 'http://static.pbc.com/js/ultimatepay-api.js'
+
+- content_for :head do
+  :javascript
+    var ultimatePayParams = {
+        /* Required Params */
+        "method" : "StartOrderFrontEnd",
+        "sn" : "BEER",
+        "display" : "Lightbox",
+        "userid" : "#{current_user.id}",
+        "sepamount" : "10.00",
+        "amountdesc" : "1000 BuddyBucks",
+        "hash" : "#{@amounts.first[:hash]}",
+        <!-- xdurl parameter may also need to be specified here to overcome the cross site scripting problem on some versions of Internet Explorer 7 as mentioned in the Ultimate Pay Integration Guide -->
+        "xdurl" : "https://#{current_site.domain}/xd.html",
+        /* Optional Params */
+        "accountname" : "#{current_user.login}",
+        "appid" : "#{current_site.code_name}",
+        "country" : "#{country_code_for(I18n.locale)}",
+        "currency" : "USD",
+        "email" : "#{current_user.email}",
+        "language" : "#{I18n.locale}",
+        "livemode" : "#{Rails.env.production? ? "T" : "F"}",
+        "lname" : "#{current_user.name}",
+        "merchtrans" : "credit-#{@transaction_token}",
+        "virtualcurrency" : "BUDDYB",
+        "completeurl" : "#{success_user_credit_url(current_user, @transaction_token)}",
+        "incompleteurl" : "#{user_credits_url(current_user)}",
+        "paymentid" : "#{I18n.locale == "de" ? "M3" : "CH"}"
+      };
+
+    function buy(amount, hash, desc) {
+      ultimatePayParams['hash'] = hash;
+      ultimatePayParams['sepamount'] = amount;
+      ultimatePayParams['amountdesc'] = desc + " BuddyBucks";
+      
+      ulp.ultimatePay = true;
+      ulp.displayUltimatePay();
+    }
+
+    ulp.on('closeLB',function(data){
+      ultimatepayPostProcess(data);
+      /* Do your processing here on close Lightbox */
+    });
+    
+    $(document).ready(function(){
+      $(".buy_currency").click(function(e){ 
+        buy(jQuery(this).attr("href"), jQuery(this).attr("rel"), jQuery(this).html()); 
+        e.preventDefault();
+      });
+    });
+    
+#div_b{ :style => "display:none;padding:10px;display:block;position:absolute;top: 50%;left: 50%; margin-top: -212px; margin-left: -385px;z-index:10000;" }

@@ -1,0 +1,62 @@
+fr:
+  home:
+    content_header:
+      buy_a_beer: "Achetez une bière à votre ami"
+      happy_hours: "Happy Hours toute la journée."
+      social_in_socializing: "Remettez le <span class=\"color\">social</span> au coeur de la socialization"
+      description: "Vous avez un ami qui vit loin mais vous voulez quand même lui envoyerr un <strong>cadeau ou un merci?</strong> Voudriez-vous obtenir des <strong>verres à prix réduits</strong> tous les jours au pub du coin de la rue ? Buddy Drinks vous offre le moyen d'entretenir vos amitiés grâce à l'activité sociale la plus vieille du monde: acheter des bières avec vos amis. <strong>Essayez aujourd'hui!</strong>"
+      beer_button: "Envoyez une bière. La première est gratuite"
+    bar_info:
+      heading: "Vous possédez un bar, un restaurant, un hôtel...?"
+      description: Découvrez comment nous pouvons vous proposer une nouvelle source de revenus tout en augmentant le nombre de vos clients, le tout sans aucun frais! 
+      link: "Apprenez-en plus!"
+    index:
+      title: Envoyez des bières en ligne à vos amis! 
+      bar_search:
+        heading: "Trouver des bars à proximité:"
+        label: "Entrez une adresse telle que: rue Masséna, 59000 Lille"
+      brewery:
+        heading: "Vous êtes une brasserie, une chaîne de restaurants ou une agence de marketing ?"
+        description: "Contactez-nous à propos de nos offres logicielles révolutionnaires qui boosteront votre brans awareness auprès des 17-30 ans."
+        link: Apprenez-en plus
+      heading: Envoyez des bières en ligne à vos amis. 
+    press:
+      title: "Buddy Drinks dans la presse et sur les blogs"
+      heading: "Ces entreprises ont parlé de nous:"
+      big_quote: "Cela pourrait modifier la façon dont la bière est consommée en Allemagne"
+      contacts:
+        heading: Contact presse
+    press_releases:
+      heading: Citations dans la presse
+      carlsberg_en: "26 April 2011 - <strong>Buddy Drinks et Carlsberg Announce a Partnership to Expand the Beer-Gifting Service in Germany.</strong> [english]"
+      carlsberg_de: "26 April 2011 - <strong>BuddyDrinks.com kooperiert mit Carlsberg Deutschland.</strong> [german]"
+      paypal: "04 October 2010 - <strong>Buddy Drinks and Appcelerator team up to win the 2010 PayPal X Developer‚Äôs Conference Hackathon</strong> [english]"
+      announcing: "29 July 2010 - <strong>Announcing Buddy Drinks</strong> [english]"
+    downloads:
+      heading: "Téléchargements"
+      logo: "Logo"
+      stamp: "Logomarque"
+    contact_info:
+      admin_address: Adresse Administrative
+      berlin_office: Bureau de Berlin
+      email_us: Envoyez nous un email. 
+      fourth_floor: 4ème étage. 
+    apps:
+      android_market: "Android Market"
+      app_instructions: "Ouvrez <strong>buddybeers.com/apps</strong> sur le navigateur de votre téléphone ou envoyez-le vous par e-mail"
+      app_store: iTunes App Store
+      availability: "Disponible pour <a href=\"%{iphone_link}\">iPhone</a> et <a href=\"%{android_link}\">Android</a>."
+      download_android_app: "Télécharger l'application Android"
+      download_instructions: "Télécharger une application mobile Buddy Drinks pour acheter des verres à vos amis et échanger vos coupons Buddy Drinks"
+      download_iphone_app: "Télécharger l'application iPhone"
+      error:
+        heading: "Il y a eu une erreur avec votre adresse e-mail."
+        description: "Vérifiez que vous l'avez tapée correctement et essayez encore."
+      get_app: "Obtenez l'application"
+      please_wait: "Attendez deux secondes..."
+      redirect: "Vous allez être redirigé vers %{store_name}."
+      subhead: "Avec Buddy Drinks vous pouvez acheter de vrais verres à vos amis dans le monde entier."
+      success:
+        heading: "Lien de téléchargement envoyé à:"
+    app_video:
+      video_heading: "Comment ça marche?"

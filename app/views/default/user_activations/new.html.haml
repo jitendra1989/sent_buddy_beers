@@ -1,0 +1,12 @@
+#text
+  %h1= t(".heading")
+
+  = form_for @user, :url => activate_path(@user.id), :html => { :method => :post } do |f|
+    = f.error_messages
+    %fieldset
+      %legend= t(".form.legend")
+      = render :partial => "form", :locals => { :f => f }
+      %ul
+        %li= f.submit t(".form.button")
+
+= clear_floats

@@ -1,0 +1,18 @@
+/ carlsberg > home > index
+
+- @title = translate(".title")
+- stylesheets "sites/carlsberg/sections/home"
+
+#home
+  #closed
+    %p= translate(".closed.dear_fan")
+    %p= translate(".closed.thanks")
+    %p= translate(".closed.invite")
+    %p
+      = translate(".closed.facebook")
+      = link_to "https://www.facebook.com/Carlsberg", "https://www.facebook.com/Carlsberg"
+    %p That calls for a Carlsberg.
+    %p= translate(".closed.salutation").html_safe
+    = image_tag "sites/carlsberg/photos/bottle.png", :alt => "Carlsberg bottle"
+
+  = clear_floats

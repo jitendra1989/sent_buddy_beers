@@ -1,0 +1,61 @@
+#voucher_list
+  #header
+    / #logo= image_tag "http://www.buddybeers.com/images/print/logo-for-pdf.jpg", :width => 200, :height => 90
+    %p.bar_name
+      = raw t(".header", :number => list.id, :bar_name => @bar.name, :bar_city => @bar.city.name)  
+    %p.expiry
+      - if @previous_list and @previous_list.expires_at
+        = t(".expires", :number => @previous_list.id, :date => @previous_list.expires_at.to_s(:euro_date))
+      - else
+        &nbsp;
+    %p.list_number= "##{list.id}"
+    %h1= number_to_currency(list.amount.to_f, :unit => list.amount.currency.symbol)
+    %h2 (#{beers_in_price_range(list.cents, @bar)})
+    =clear_floats
+  - if list.vouchers.length > 20
+    #body.three_col
+      - @first_third = list.vouchers.first(list.vouchers.length / 3)
+      - @second_third = (list.vouchers - @first_third).first((list.vouchers - @first_third).length / 2)
+      .left
+        .pad
+          = render :partial => 'affiliate/bars/voucher_table', :locals => {:vouchers => @first_third }
+
+      .right
+        .pad
+          = render :partial => 'affiliate/bars/voucher_table', :locals => {:vouchers => list.vouchers - @first_third - @second_third }
+        
+      .center
+        .pad
+          = render :partial => 'affiliate/bars/voucher_table', :locals => {:vouchers => @second_third  }
+      
+      = clear_floats
+      
+  - else
+    #body.two_col
+      - @second_half = list.vouchers.last(list.vouchers.length / 2)
+      .left
+        .pad
+          = render :partial => 'affiliate/bars/voucher_table', :locals => {:vouchers => (list.vouchers - @second_half)  }
+
+      .right
+        .pad
+          = render :partial => 'affiliate/bars/voucher_table', :locals => {:vouchers => @second_half }
+    
+      = clear_floats
+  
+
+  #footer
+    .price
+      .list_number= "List Number ##{list.id}"
+      .number= number_to_currency(list.amount.to_f, :unit => list.amount.currency.symbol)
+      .beers (#{beers_in_price_range(list.cents, @bar)})
+    %p
+      %strong= "#{t(".footer.voucher.heading")}:"
+      = t(".footer.voucher.description")
+    %p
+      %strong= "#{t(".footer.code.heading")}:"
+      = raw t(".footer.code.description")
+    %p
+      %strong= "#{t(".footer.employee.heading")}:"
+      = t(".footer.employee.description")
+    #logo= image_tag "http://buddybeers.com/images/print/logo-for-pdf.jpg", :width => 150, :height => 64

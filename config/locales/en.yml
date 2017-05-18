@@ -1,0 +1,144 @@
+--- 
+en: 
+  
+  widgets:
+    index:
+      header_alt_text: "Buddy Drinks - Made in Germany. Served Worldwide."
+      main_button: "Buy a drink at %{bar}"
+      friends_message: "Or ask your friends to buy <em>you</em> one."
+      twitter_status: "I'm at %{bar}. Why don't you buy me a drink here online? %{url}"
+  
+  user_activations: 
+    new:
+      heading: Say Hello to the Doorman
+      form:
+        button: Activate
+        legend: Choose your password and you're in
+    no_user: "Oh no! There was an error confirming your account: %{errors}"
+    activate_account:
+      success: Sweet! You've activated you account. Now you can track your drinks!
+    active_user: You've already activated your account.
+    success: Sweet! You've activated you account. Start being awesome and sending some drinks!
+    error: Crap! Something went wrong. Go grab a drink and we'll try and sort it out.
+  
+  confirmations:
+    new: 
+      title: Resend confirmation instructions
+      heading: Resend confirmation instructions
+      description: Enter your email below and we will send you your account confirmation instructions again
+      submit: Send
+  
+  friendships:
+    index:
+      heading: Your friends
+    
+  time:
+    am: am
+    formats:
+      default: "%a, %d %b %Y %H:%M:%S %z"
+      short: "%d %b %H:%M"
+      long: "%B %d, %Y %H:%M"
+    pm: pm
+  
+  admin:
+    payments:
+      tabs:
+        show: Show Payout
+    ious:
+      new:
+        heading: Send a Voucher to an Existing or New User
+        form:
+          new: New
+          existing: Existing
+          user_type: User Type
+      create:
+        success: Voucher sent successfully!
+        error: There was an error with your voucher
+  
+  support:
+    array:
+      words_connector: ", "
+      last_word_connector: ", and "
+      two_words_connector: " and "
+    select:
+      prompt: Please select
+  
+  i18n:
+    transliterate:
+      rule:
+        ü: ue
+        ö: oe
+        ä: ae
+        Ü: Ue
+        Ö: Oe
+        Ä: Ae
+        ß: ss  
+
+  credits:
+    index:
+      title: "Your BuddyBucks - Top Up Your BuddyBucks"
+      heading: "Your BuddyBucks"
+      accept: "We accept:"
+      and_more: "... and many more!"
+      payment_logos: "Visa, Mastercard, American Express, Discover, Paypal, Western Union"
+    balance:
+      balance: "Your current BuddyBucks balance is:"
+    top_up:
+      top_up: "Top up your BuddyBucks account with:"
+    return_link:
+      back: "Back to the Payment Screen"
+    success:
+      success: "<strong>Your purchase was successful!</strong> As soon as our payment provider notifies us it will be reflected in your balance. This could be instantaneous so if your balance hasn't changed wait a couple seconds and reload the page."
+
+  emails:
+    activate:
+      not_found: <strong>Oh no!</strong> We couldn't find that email listed in your account!
+      success: <strong>Yes!</strong> Your email has been verified!
+      error: <strong>Oh no!</strong> There was a problem verifying your email! Have you already registered this email with another account?
+  
+  users:
+    get_user:
+      error: "Seems like this person doesn't exist. Sure you haven't had one too many?"
+    email:
+      add: + Add another Email
+      pending: Pending Verification
+    button:
+      button_text: "Buy %{name} a %{drink}"
+      button_link: "Buy a %{drink} button from BuddyDrinks.com"
+      me: "me"
+      beer: "drink"
+  
+  sessions:
+    new:
+      title: Login to Buddy Drinks
+      heading: One of our buddies?
+      signin_with_facebook: Signed up with Facebook? Connect Below
+      login_heading: Login With Your Buddy Drinks Account
+      form:
+        button: Log In
+        legend: "or, login with your Buddy Drinks account"
+        forgot_password: Forgot your password?
+      facebook_heading: Login here using your <strong>facebook</strong> account
+      connect_with_facebook: Connect with facebook
+    destroy:
+      success: Logout successful!
+    create:
+      success: Login successful!
+      
+  twitter:
+    new:
+      already_registered:
+        heading: If you've already registered your Twitter account with Buddy Drinks
+        link: Just click %{link} above and login using your twitter name and password.
+        wrong_place: You're in the wrong place!
+      title: Buddy Drinks | Register With Twitter
+      heading: Register With Twitter
+    create_user:
+      success: Account registered! You can now login with your twitter credentials.
+  
+  sms:
+    message: "Hey %{recipient}, %{name} just sent you a drink on @buddydrinks. Redeem your voucher now @"
+    error_message: "Someone has sent you a Buddy Drinks voucher but we are having trouble locating it. Please contact info@buddydrinks.com so we can get it to you."
+    reminder_singular: "You have a Buddy Drinks gift voucher for %{item} from %{name} expiring soon!"
+    reminder_plural: "You have Buddy Drinks gift vouchers for %{count} %{item} from %{name} expiring soon!"
+

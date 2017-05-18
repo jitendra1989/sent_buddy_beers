@@ -1,0 +1,49 @@
+- @title = "Payouts"
+- stylesheets 'sites/default/sections/payments', 'payout'
+- javascripts 'jquery.tablesorter.min'
+- content_for :head do
+  :javascript
+    $(document).ready(function(){ $("#payment_table").tablesorter(); });
+    
+%h2="Outstanding Payments"
+%p#page-intro= "for #{current_user.to_s}"
+.clear
+
+= link_to 'Pay', affiliate_pay_url, :class => 'payout-make-btn pay-btn'  if @vouchers.present? && @total_vouchers.present?
+.clear
+%br
+
+.content-box
+  / Start Content Box
+  .content-box-header
+    %h3= "Outstanding Payments"
+    .clear
+
+  .content-box-content
+    %table#payment_table
+      %thead
+        %tr
+          %th Code
+          %th Redeemed Date
+          %th Amount
+      %tbody
+        - @vouchers.each do |voucher|
+          %tr
+            %td= voucher.coupon
+            %td= voucher.group_drink.paid_at.to_s(:euro_sm_with_time) rescue ''
+            %td
+              %strong= number_to_currency(voucher.amount.to_f, :unit => voucher.amount.currency.symbol)
+      - if @vouchers.present? && @total_vouchers.present?
+        %tr
+          %td
+          %td
+          %td
+            %strong Current page total amount :
+            %strong= number_to_currency(@vouchers.map{|voucher| voucher.amount.to_f}.sum, :unit => @vouchers.first.amount.currency.symbol)
+        %tr
+          %td
+          %td
+          %td
+            %strong All total amount :
+            %strong= number_to_currency(@total_vouchers.map{|voucher| voucher.amount.to_f}.sum, :unit => @vouchers.first.amount.currency.symbol)
+    = will_paginate @vouchers

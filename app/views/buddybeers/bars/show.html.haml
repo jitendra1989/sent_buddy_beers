@@ -1,0 +1,66 @@
+- @title = t(".title", :bar => @bar.name, :city => @bar.city.name, :country => t("countries.#{@bar.country.printable_name.parameterize.gsub("-", "_")}"))
+- @meta_description = truncate(@bar.description, :length => 300) if @bar.description.present?
+- @canonical_link = "#{(request.ssl? ? "https" : "http")}://buddybeers.com#{bar_path(@bar)}"
+- content_for :head do
+  = stylesheet_link_tag  'bar_profile'
+:javascript
+  $(document).ready(function(){
+    $('input[type=file]').change(function(event){
+      var target = $(event.target);
+      if(target.val() != ''){
+        $(target.parents('form').get(0)).submit(); //better ways to do it ^^
+        event.stopPropagation();
+        return false;
+      }
+    });
+  });
+= render "open_graph_meta"
+
+- unless I18n.locale.to_s == "th"
+  - content_for :head do
+    :javascript
+      Cufon.replace("h1 span.name", {textShadow: '0px 1px #e5dfd7'});
+      Cufon.replace("h2, h3");
+
+
+%section
+  .container
+    .row.profile-middle-row
+      .col-md-9.left.col-sm-8.col-xs-12
+        .row.bar-img
+          .col-md-8.padd_none
+            .heading-text
+              %h1.name= @bar.try(:name)
+              %h3.address= "#{@bar.try(:full_address)}"
+          .col-md-4.venue-img
+            / = render "gallery" if @bar.gallery.photos.present?
+            / - if @bar.gallery.photos.blank?
+            /  = image_tag("/images/sites/buddybeers/photos/missing.png", :width => "668")
+            - if @bar.logo.file?
+              .bar_logo= image_tag  @bar.logo(:full)
+            - else
+              = image_tag("/images/sites/buddybeers/photos/missing.png", :width => "668")
+            - if current_user.present? && (@bar.affiliate == current_user || current_user.admin?)
+              = form_for @bar, :url => upload_logo_bar_url(@bar), :html => { :method => 'put', :multipart => true } do |f|
+                #container{:title => "Upload Your Logo"}
+                  #doit Upload Your Logo
+                  #hid
+                    = f.file_field :logo, :size => "1"
+                    
+        .clearfix
+        .comment-box
+          - unless @bar.description.blank?
+            / = raw RedCloth.new(@bar.description, [:filter_html]).to_html
+          = render "drink_feed" unless @feed.blank?
+      .col-md-3.right.col-sm-4.col-xs-12
+        - if !@bar.phone_number.blank? || !@bar.url.blank? || !@bar.twitter_handle.blank? || !@bar.opening_hours.blank?
+          %h4.venue-info VENUE INFORMATION
+          .row
+            %ul
+              = render "contact_info"
+              - unless @bar.opening_hours.blank?
+                %li
+                  %span.contact-media.time-icon
+                  = render "opening_hours"
+        = render "drink_list"
+/ - Middle section end

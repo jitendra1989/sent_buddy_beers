@@ -1,0 +1,129 @@
+--- 
+nl: 
+  
+  admin: 
+    ious: 
+      create: 
+        error: "Er is iets fout met je voucher"
+        success: "Je voucher is verstuurd!"
+      new: 
+        form: 
+          existing: Bestaand
+          new: Nieuw
+          user_type: Gebruiker
+        heading: "Stuur een voucher naar een bestaande of nieuwe gebruiker"
+    payments: 
+      tabs: 
+        show: "Toon uitbetaling"
+  
+  confirmations: 
+    new: 
+      description: "Vul je email adres in en we sturen je de instructies om je account te verifiëren nogmaals"
+      heading: "Instructies sturen"
+      submit: Verstuur
+      title: "Instructies sturen"
+  
+  credits: 
+    balance: 
+      balance: "Je huidige BuddyBucks saldo is:"
+    index: 
+      accept: "Wij accepteren:"
+      and_more: "... en nog veel meer!"
+      heading: "Jouw BuddyBucks"
+      payment_logos: "Visa, Mastercard, American Espress, Discover, iDeal, Wallie"
+      title: "Jouw BuddyBucks - Vul je BuddyBucks aan"
+    return_link: 
+      back: "Terug naar het betalingsscherm"
+    top_up: 
+      top_up: "Vul je BuddyBucks aan met:"
+  
+  emails: 
+    activate: 
+      error: "<strong>Oh nee!</strong> Er ging iets mis met het verifieren van je email adres. Heb je niet toevallig al een account onder dit email adres?"
+      not_found: "<strong>Oh nee!</strong> Dit email adres is niet gekoppeld aan dit account!"
+      success: "<strong>Jaaa!</strong> Je email is geverifieerd."
+  
+  friendships: 
+    index: 
+      heading: "Jouw vrienden"
+  
+  helpers: 
+    select: 
+      prompt: "Maak een keuze"
+    submit: 
+      create: "Maak %{model}"
+      submit: "Sla %{model} op"
+      update: "Pas %{model} aan"
+  
+  sessions: 
+    create: 
+      success: "Succesvol ingelogd!"
+    destroy: 
+      success: "Succesvol uitgelogd!"
+    new: 
+      connect_with_facebook: "Aanmelden via Facebook"
+      facebook_heading: "Log hier in met je <strong>Facebook</strong> account"
+      form: 
+        button: Inloggen
+        forgot_password: "Wachtwoord vergeten?"
+        legend: "Login met je Buddy Drinks account"
+      heading: "Ben je al een van onze buddies?"
+      title: "Log in op Buddy Drinks"
+  
+  sms: 
+    error_message: "Iemand heeft je een Buddy Drinks tegoedbon gestuurd, maar we kunnen je niet bereiken. Neem contact op het info@buddydrinks.com zodat we contact met je op kunnen nemen."
+    message: "%{sender_name} heeft je een tegoedbon voor %{bar_name}, %{city} ter waarde van %{amount} gestuurd. Geef deze code aan de barman: %{code}"
+  
+  support: 
+    array: 
+      last_word_connector: ", en"
+      two_words_connector: en
+      words_connector: ","
+    select: 
+      prompt: Selecteer
+  
+  time: 
+    am: am
+    formats: 
+      default: "%a, %d %b %Y %H:%M:%S %z"
+      long: "%B %d, %Y %H:%M"
+      short: "%d %b %H:%M"
+    pm: pm
+  
+  twitter: 
+    create_user: 
+      success: "Account aangemaakt! Je kan nu inloggen met je Twitter gegevens."
+    new: 
+      already_registered: 
+        heading: "Als je al geregistreerd bent met je Twitter account bij Buddy Drinks"
+        link: "Klik op %{link} en login met je Twitter naam en wachtwoord."
+        wrong_place: "Je bent op de verkeerde plek!"
+      heading: "Inloggen met Twitter"
+      title: "Buddy Drinks | Inloggen met Twitter"
+  
+  user_activations: 
+    activate_account: 
+      success: "Cool! Je hebt je account geactiveerd! Nu kan je je biertjes volgen!"
+    active_user: "Je hebt dit account al geactiveerd."
+    error: "Crap, er ging iets mis. Neem een biertje en we fixen het zo snel mogelijk!"
+    new: 
+      form: 
+        button: Activeren
+        legend: "Kies je wachtwoord en je bent binnen"
+      heading: "Zeg onze uitsmijter gedag"
+    no_user: "Blijkbaar besta je nog niet in ons systeem. Meld jezelf aan! %{errors}"
+    success: "Cool! Je hebt je account geactiveerd! Stuur biertjes rond naar je vrienden!"
+  
+  users: 
+    email: 
+      add: "+ Voeg een email adres toe"
+      pending: "Activatie is afwachtend"
+    get_user: 
+      error: "Het lijkt erop dat deze persoon niet bestaat. Klopt het wel?"
+  
+  widgets: 
+    index: 
+      friends_message: "Of vraag je vrienden om er een voor je te kopen."
+      header_alt_text: "Buddy Drinks - Gemaakt in Duitsland. We schenken wereldwijd."
+      main_button: "Koop een biertje bij %{bar}"
+      twitter_status: "Ik ben in %{bar}. Koop online direct een biertje voor mij! %{url}"

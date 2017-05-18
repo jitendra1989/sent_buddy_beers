@@ -1,0 +1,7 @@
+- content_for :head do
+  :javascript
+    $(document).ready(function(){
+      top.location.replace('#{@oauth_url}');
+    });
+    
+%p= "You are bing redirected. Sorry."

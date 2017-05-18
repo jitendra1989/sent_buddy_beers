@@ -1,0 +1,16 @@
+fr:
+  footer:
+    links_heading: "Le fond du tonneau:"
+    social_links_heading: "Soyons sociaux!"
+    drink_responsibly: Veuillez boire avec modération et obéir aux lois sur l'alcool dans votre juridiction. Nous ne tolérons pas la consommation d'alcool en-dessous de l'âge légal ou la conduite sous l'influence de l'alcool.<br /> <em>Ne soyez pas un abruti, non plus</em>
+    copyright: "&copy; %{date} Buddy Beers.com. Tous droits réservés."
+    twitter_link: Stalkez nous. On adore ça. 
+    impressum: "Information légale"
+    privacy_policy: Paramètres de confidentialité
+    press: Presse
+    terms: Termes et Conditions
+  emails:
+    activate:
+      not_found: <strong>Oh non!</strong> Nous ne trouvons pas cet email dans votre compte! 
+      success: <strong>Yes!</strong> Votre email a été vérifié!
+      error: <strong>Oh non!</strong> Il y a eu un problème en vérifiant votre email! Avez-vous déjà utilisé cet email avec un autre compte ?

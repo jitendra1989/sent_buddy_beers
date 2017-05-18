@@ -1,0 +1,5 @@
+/ default > credits > credit_balance
+
+#balance.pie
+  %h2= t(".balance")
+  %p= number_with_delimiter(@user.credits, :locale => I18n.locale)

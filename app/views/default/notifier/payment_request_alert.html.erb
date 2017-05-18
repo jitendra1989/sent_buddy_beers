@@ -1,0 +1,16 @@
+<b></b>Marchent Payment Request Details: </b> <br /><br />
+<%- payout = @marchent.payouts.first %>
+<b>Merchant Name:</b> <%= @marchent.name %><br />
+<b>Payment Type:</b> <%= payment_type = payout.payment_type %><br />
+<% if payment_type == 'cheque' %>
+<b>Name on cheque:</b> <%= payout.address %><br />
+<b>Address:</b> <%= payout.address %><br />
+<% else %>
+<b>Paypal email:</b> <%= payout.email %><br />
+<% end %>
+<% @total_vouchers.each do |voucher| %>
+<b>Amount :</b> <%= voucher.group_drink.price_name %> $<%= voucher.amount.to_f %><br />
+<% end %>
+
+
+

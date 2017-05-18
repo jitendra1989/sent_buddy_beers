@@ -1,0 +1,20 @@
+- if Rails.env.production?
+  :javascript
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-750037-13']);
+
+    // This is just if we want to track subdomains
+    // _gaq.push(['_setDomainName', '.buddybeers.com']);
+    // _gaq.push(['_setAllowHash', false]);
+    // _gaq.push(['_trackPageview']);
+    /* #{request.host} */
+    _gaq.push(['_setDomainName', '#{((request.host == "buddybeers.com") or (request.host.match(Regexp.escape(".buddybeers.com")).present?)) ? ".buddybeers.com" : current_site.domain}']);
+    _gaq.push(['_setAllowLinker', true]);
+    _gaq.push(['_setAllowHash', false]);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ga);
+    })();

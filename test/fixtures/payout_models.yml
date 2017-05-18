@@ -1,0 +1,29 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+standard:
+  bar: active_bar
+  low_cents: 0
+  high_cents:
+  currency: EUR
+  percent_payout: 30
+  
+low:
+  bar: active_us_bar
+  low_cents: 0
+  high_cents: 200
+  currency: EUR
+  percent_payout: 100
+
+mid:
+  bar: active_us_bar
+  low_cents: 201
+  high_cents: 500
+  currency: EUR
+  percent_payout: 75
+
+high:
+  bar: active_us_bar
+  low_cents: 501
+  high_cents:
+  currency: EUR
+  percent_payout: 25

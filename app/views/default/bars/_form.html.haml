@@ -1,0 +1,330 @@
+:javascript
+  function browse() {
+    var val = document.getElementById('#purchase_document').value;
+    $('#FileField').val() = val;
+  }
+
+:javascript
+  function get_cities(country_id) {
+    // make a POST call and replace the content
+    jQuery.post('/#{I18n.locale.to_s}/cities/get_cities_for_country', {id : country_id }, function(data) {
+    jQuery("#bar_city_id").html(data).val('#{@bar.city_id}').removeAttr("disabled");
+    });
+  }
+
+  $(function() {
+    var counter = #{@bar.prices.size};
+    var currency = '#{@bar.default_currency}';
+
+    $(".add-more-btn").click(function(e){
+      counter++;
+      var t = '<div class="drink removable_fields">'+
+                '<div class="remove form-group">' +
+                  '<label for="bar_prices_attributes_REPLACE__destroy">#{t("forms.labels.remove_this_drink")}</label>&nbsp;&nbsp;&nbsp;&nbsp;' +
+                  '<a href="javascript:void(0)" class="remove_input">#{t("global.delete")}</a>' +
+                '</div>' +
+                '<div class="form-group">'+
+                  '<div class="row" for="bar_prices_attributes_REPLACE_name">' +
+                    '<div class="col-md-6 padd_left_none col-sm-6 col-xs-12">'+
+                      '<input id="bar_prices_attributes_REPLACE_name" name="bar[prices_attributes][REPLACE][name]" size="30" type="text" value="" placeholder="Drink Name" />' +
+                    '</div>'+
+                    '<div class="col-md-6 padd_none col-sm-6 col-xs-12">' +
+                      '<input id="bar_prices_attributes_REPLACE_currency" name="bar[prices_attributes][REPLACE][currency]" type="hidden" value="' + currency + '" />' +
+                      '<input class="price_amount" id="bar_prices_attributes_REPLACE_amount" name="bar[prices_attributes][REPLACE][amount]" size="30" type="text" value="0.00" />' +
+                    '</div>'+
+                  '</div>'+
+                '</div>'+
+                '<div class="well well-sm offer-checkbox">' +
+                  '<div class="checkbox special_price">'+
+                    '<label for="price_discounted">' +
+                      '<input name="bar[prices_attributes][REPLACE][discounted]" type="hidden" value="0" />' +
+                      '<input class="price_discounted" id="bar_prices_attributes_REPLACE_discounted" name="bar[prices_attributes][REPLACE][discounted]" type="checkbox" value="" />' +
+                      '#{t("forms.labels.discounted")}'+
+                    '</label>' +
+                  '</div>' +
+
+                  '<div class="form-group discounted_price">' +
+                    '<label for="bar_prices_attributes_REPLACE_discounted_amount">#{t("forms.labels.discounted_price")}</label>' +
+                    '<input id="bar_prices_attributes_REPLACE_discounted_amount" name="bar[prices_attributes][REPLACE][discounted_amount]" size="30" type="text" value="0.00" />' +
+                    '<div class="clear"></div>' +
+                  '</div>'+
+                '</div>' +
+
+                '<div>' +
+                  '<a href="javascript:void(0)" class="additional-options">' +
+                    '<span></span>'+
+                    '<span>#{t(".drinks.additional_options")}</span>'+
+                  '</a>' +
+                '</div>' +
+
+                '<div class="row hide_row" style="display: none;">' +
+                  '<div class="form-group">' +
+                    '<div class="row">' +
+                      '<div class="col-md-1 padd_left_none col-sm-3 col-xs-3">' +
+                        '<p class="more-options">#{t("activerecord.attributes.price.photo")}</p>'+
+                      '</div>' +
+                      '<div class="col-md-9 padd_none col-sm-9 col-xs-9">' +
+                        '<input id="bar_prices_attributes_REPLACE_photo" type="file" name="bar[prices_attributes][2][photo]">' +
+                      '</div>' +
+                    '</div>' +
+                  '</div>' +
+                  '<div class="form-group">' +
+                    '<div class="row">'+
+                      '<div class="col-md-12 padd_none col-xs-12 col-sm-12">' +
+                        '<textarea rows="7%" placeholder="Description" name="bar[prices_attributes][REPLACE][description]" id="bar_prices_attributes_REPLACE_description" cols="20" class="form-control"></textarea>' +
+                      '</div>' +
+                    '</div>' +
+                  '</div>' +
+                  '<p class="more-options" for="bar_prices_attributes_REPLACE_drink_type_id">#{t("activerecord.attributes.price.drink_type_id")}</p>' +
+
+                  '<ul class="drink-type skinned-form-controls skinned-form-controls-mac">' +
+                    '#{DrinkType.all.collect{ |drink_type| "<li><input id=\"bar_prices_attributes_REPLACE_drink_type_id_1\" name=\"bar[prices_attributes][REPLACE][drink_type_id]\" type=\"radio\" value=\"1\" /><span>#{drink_type.type}</span><span class=\"#{drink_type.type.to_s.downcase}\"></span></li>"}.join()}' +
+                  '</ul>' +
+                  '<div class="form-group">' +
+                    '<div class="row">' +
+                      '<div class="col-md-6 padd_left_none col-sm-6 col-xs-12">' +
+                        '<input id="bar_prices_attributes_REPLACE_volume" name="bar[prices_attributes][REPLACE][volume]" size="30" type="text" value="" placeholder="Size (Volume)"/>' +
+                      '</div>' +
+                    '</div>' +
+                  '</div>' +
+                '</div>' +
+              '</div>'
+      $("#drink_list").append(t.replace(/REPLACE/g, counter));
+      e.preventDefault();
+    });
+
+    $(document).on("click", ".remove_input", function() {
+      $(this).parents().parents('.removable_fields').remove();
+      return false;
+    });
+
+    $('.removable_fields').each(function(){
+      if ($(this).find('.hidden_delete_field').val() == 'true') {
+        $(this).hide();
+      }
+    });
+
+    #{ @bar.country.present? ? "get_cities(#{@bar.country_id});" : "if ($(\"#bar_country_id option:selected\").val() != \"\") { get_cities($(\"#bar_country_id option:selected\").val()); }" }
+
+    $("#bar_default_currency").change(function(){
+      currency = $(this).val();
+      $("span.currency").html("<span>" + currency + "</span>");
+      $("input.currency").val(currency);
+    });
+
+    $("#bar_country_id").change(function() {
+      get_cities($('#bar_country_id option:selected').val());
+    });
+  });
+
+= form_for @bar, :html => { :multipart => true } do |f|
+  = error_messages_for :bar
+  %h4 Venue Information
+  .form-group
+    = f.text_field :name, :placeholder => "Venue Name", :class => 'form-control', :id=> 'exampleInputEmail1'
+  .form-group
+    = f.text_field :address, :placeholder => "Srteet Address", :class => 'form-control', :id=> 'exampleInputPassword1'
+  .form-group
+    .row
+      .col-md-6.padd_left_none.col-sm-6.col-xs-12
+        = select_tag "bar[country_id]", grouped_options_for_select(countries_for_select, @bar.country_id.present? ? @bar.country_id : {}, t("forms.select.prompt_country")), :autocomplete => @bar.country_id.present? ? "on" : "off", :class => "selectOptions front_page_select_option custom-select"
+      .col-md-6.padd_none.col-sm-6.col-xs-12
+        = f.select :city_id, ((!@bar.new_record? and @bar.country.present?) ? @bar.country.cities.with_active_bars.uniq.collect{|c| [ c.name, c.id ] } : []), { :prompt => t("forms.select.prompt_city") }, :disabled => true, :class => 'custom-select'
+  #no_city{:style=>"margin-top: -15px;"}
+    .form-group
+      %small= t(".form.no_city")
+      = text_field_tag :new_city_name, nil, :placeholder => 'Add New City', :class => 'form-control'
+  .form-group
+    .row
+      .col-md-6.padd_left_none.col-sm-6.col-xs-12
+        = f.select :default_currency, currencies_in_use, {:include_blank => t("forms.select.prompt_currency") }, :autocomplete => "off", :class => 'custom-select'
+      .col-md-6.padd_none.col-sm-6.col-xs-12
+        = f.text_field :url, :placeholder => "Website", :class => 'form-control', :id=> 'exampleInputPassword1'
+  .form-group
+    .row
+      .col-md-6.padd_left_none.col-sm-6.col-xs-12
+        = f.text_field :phone_number, :placeholder => "Phone Number", :class => 'form-control', :id=> 'exampleInputPassword1'
+      .col-md-6.padd_none.col-sm-6.col-xs-12
+        = f.text_field :alternative_phone, :placeholder => "Alternative Phone Number", :class => 'form-control', :id=> 'exampleInputPassword1'
+  .form-group
+    .row
+      .col-md-6.padd_left_none.col-sm-6.col-xs-12
+        %h4= t('forms.labels.opening_hours')
+        .form-group.opening-hours
+          .row
+            .col-md-5.padd_none.col-sm-12.col-xs-12
+              %p Monday
+            .col-md-2.padd_none.col-sm-6.col-xs-6
+              = f.select :mon_opening_time, Bar::OPENING_TIME, {:prompt => t("forms.select.close").html_safe }, :class => 'custom-select'
+            .col-md-2.padd_none.col-sm-6.col-xs-6
+              = f.select :mon_closing_time, Bar::CLOSING_TIME, { :prompt => t("forms.select.close").html_safe  }, :class => 'custom-select'
+          .row
+            .col-md-5.padd_none.col-sm-12.col-xs-12
+              %p Tuesday
+            .col-md-2.padd_none.col-sm-6.col-xs-6
+              = f.select :tue_opening_time, Bar::OPENING_TIME, {:prompt => t("forms.select.close").html_safe }, :class => 'custom-select'
+            .col-md-2.padd_none.col-sm-6.col-xs-6
+              = f.select :tue_closing_time, Bar::CLOSING_TIME, { :prompt => t("forms.select.close").html_safe  }, :class => 'custom-select'
+          .row
+            .col-md-5.padd_none.col-sm-12.col-xs-12
+              %p Wednesday
+            .col-md-2.padd_none.col-sm-6.col-xs-6
+              = f.select :wed_opening_time, Bar::OPENING_TIME, {:prompt => t("forms.select.close").html_safe }, :class => 'custom-select'
+            .col-md-2.padd_none.col-sm-6.col-xs-6
+              = f.select :wed_closing_time, Bar::CLOSING_TIME, { :prompt => t("forms.select.close").html_safe  }, :class => 'custom-select'
+          .row
+            .col-md-5.padd_none.col-sm-12.col-xs-12
+              %p Thursday
+            .col-md-2.padd_none.col-sm-6.col-xs-6
+              = f.select :thu_opening_time, Bar::OPENING_TIME, {:prompt => t("forms.select.close").html_safe }, :class => 'custom-select'
+            .col-md-2.padd_none.col-sm-6.col-xs-6
+              = f.select :thu_closing_time, Bar::CLOSING_TIME, { :prompt => t("forms.select.close").html_safe  }, :class => 'custom-select'
+          .row
+            .col-md-5.padd_none.col-sm-12.col-xs-12
+              %p Friday
+            .col-md-2.padd_none.col-sm-6.col-xs-6
+              = f.select :fri_opening_time, Bar::OPENING_TIME, {:prompt => t("forms.select.close").html_safe }, :class => 'custom-select'
+            .col-md-2.padd_none.col-sm-6.col-xs-6
+              = f.select :fri_closing_time, Bar::CLOSING_TIME, { :prompt => t("forms.select.close").html_safe  }, :class => 'custom-select'
+          .row
+            .col-md-5.padd_none.col-sm-12.col-xs-12
+              %p Saturday
+            .col-md-2.padd_none.col-sm-6.col-xs-6
+              = f.select :sat_opening_time, Bar::OPENING_TIME, {:prompt => t("forms.select.close").html_safe }, :class => 'custom-select'
+            .col-md-2.padd_none.col-sm-6.col-xs-6
+              = f.select :sat_closing_time, Bar::CLOSING_TIME, { :prompt => t("forms.select.close").html_safe  }, :class => 'custom-select'
+          .row
+            .col-md-5.padd_none.col-sm-12.col-xs-12
+              %p Sunday
+            .col-md-2.padd_none.col-sm-6.col-xs-6
+              = f.select :sun_opening_time, Bar::OPENING_TIME, {:prompt => t("forms.select.close").html_safe }, :class => 'custom-select'
+            .col-md-2.padd_none.col-sm-6.col-xs-6
+              = f.select :sun_closing_time, Bar::CLOSING_TIME, { :prompt => t("forms.select.close").html_safe  }, :class => 'custom-select'
+      .col-md-6.padd_none.col-sm-6.col-xs-12
+        %h4 YOUR LOGO HERE
+        .row
+          .col-md-8.padd_none.col-sm-3.col-xs-12
+            #FileUpload.user_field
+              = f.file_field :logo, :required => false, :label => false, :id => "purchase_document", :onchange => "getElementById('FileField').value = getElementById('purchase_document').value;"
+              #BrowserVisible
+                %input#FileField{:type => "text"}/
+                %span Browse
+
+  .form-group
+    .row
+      .col-md-12.padd_none.col-sm-12.col-xs-12
+        = f.text_area :description, :placeholder => "Description/Bio", :rows => 5, :cols=> 40, :maxlength => 1000
+  %br/
+  %br/
+  %h4 Contact Information
+  .form-group
+    = f.text_field :contact_name, :placeholder => "Full Contact Name", :class => 'form-control', :id=> 'exampleInputEmail1'
+  .form-group
+    = f.text_field :contact_email, :placeholder => "Contact Email", :class => 'form-control', :id=> 'exampleInputEmail1'
+  .form-group
+    .row
+      .col-md-6.padd_left_none.col-sm-6.col-xs-12
+        = f.text_field :contact_phone_number, :placeholder => "Contact Phone Number", :class => 'form-control', :id=> 'exampleInputPassword1'
+      .col-md-6.padd_none.col-sm-6.col-xs-12
+        = f.select :contact_time, [t("forms.select.morning"), t("forms.select.noon"), t("forms.select.afternoon"), t("forms.select.evening"), t("forms.select.night")], { :prompt => t("forms.select.prompt_time") }, {:class => 'custom-select'}
+  .form-group
+    .row
+      .col-md-12.padd_none.col-sm-12.col-xs-12
+      = f.text_area :mailing_address, :placeholder => "Address Where You Want to Receive Your Starter Kit", :rows => "7%"
+  .form-group
+    = f.text_field :facebook_handle, :placeholder => "Facebook", :class => 'form-control'
+  .form-group
+    = f.text_field :twitter_handle, :placeholder => "Twitter", :class => 'form-control'
+  .form-group
+    = f.text_field :lead, :placeholder => "Who told you about us?", :class => 'form-control'
+  .form-group
+    .row
+      .col-md-12.padd_none.col-xs-12.col-sm-12
+        = f.text_area :signup_notes, :placeholder => "Other Notes", :rows => "7%"
+  %br/
+  %br/
+  %h4= t(".form.drink_list_legend")
+  %p
+    = t("prices.new.description")
+  #drink_list
+    = f.fields_for :prices do |price_form|
+      - unless price_form.object.new_record?
+        .form-group
+          .row
+            .col-md-12.padd_none.col-xs-12.col-sm-12.remove
+              / = price_form.check_box :_destroy, :class => "checkbox"
+      .form-group
+        .row
+          .col-md-6.padd_left_none.col-sm-6.col-xs-12
+            = price_form.text_field :name, :placeholder => "Drink Name", :class => 'form-control'
+          .col-md-6.padd_none.col-sm-6.col-xs-12
+            = price_form.hidden_field :currency, :value => @bar.default_currency, :class => "currency form-control"
+            = price_form.text_field :amount, :class => "price_amount", :placeholder => "Normal Price ", :class => 'form-control', :value => "0.00"
+      .well.well-sm.offer-checkbox
+        .checkbox.special_price
+          %label
+            = price_form.check_box :discounted, :class => "price_discounted"
+            = "#{t("forms.labels.discounted")}"
+        .form-group.discounted_price
+          = price_form.label :discounted_amount, t("forms.labels.discounted_price")
+          = price_form.text_field :discounted_amount
+          = clear_floats
+
+      %div
+        %a.additional-options{:href => "javascript:void(0)"}
+          %span
+          %span Additional Options
+      .row.hide_row
+        .form-group
+          .row
+            .col-md-1.padd_left_none.col-sm-3.col-xs-3
+              %p.more-options Photo
+            .col-md-9.padd_none.col-sm-9.col-xs-9.photo-input
+              - if price_form.object.photo.file?
+                = image_tag price_form.object.photo(:thumb)
+              = price_form.file_field :photo
+        .form-group
+          .row
+            .col-md-12.padd_none.col-xs-12.col-sm-12
+              = price_form.text_area :description, :placeholder => "Description", :class => 'form-control', :rows => "7%"
+        %p.more-options Drink Type
+        %ul.drink-type.skinned-form-controls.skinned-form-controls-mac
+          - DrinkType.all.each do |drink_type|
+            %li
+              %label
+                = price_form.radio_button :drink_type_id, drink_type.id
+                %span= drink_type.type
+                %span{:class => drink_type.type.downcase}
+        .form-group
+          .row
+            .col-md-6.padd_left_none.col-sm-6.col-xs-12
+              = price_form.text_field :volume, :placeholder => "Size (Volume)", :class => "form-control"
+  .form-group
+    %a.btn.add-more-btn{:href => "#"}
+      %span
+      %span= t(".drinks.add")
+  %button.btn.final-btn{ :type => "submit" }
+    %span Final Step:
+    %span Confirm Your Details
+    %span.step-forword
+
+:javascript
+  $(document).on("click", ".price_discounted", function() {
+    id = $(this).attr('id')
+    if($('#'+id).is(':checked')){
+      $('#'+id).parent().parent().next(".discounted_price").show();
+    }else{
+       $('#'+id).parent().parent().next(".discounted_price").hide();
+    }
+  });
+
+  $('.hide_row').hide();
+  $(document).on("click", ".additional-options", function() {
+    $(this).parent().next().first('.hide_row').toggle();
+    if($(this).children('span:first').hasClass('down-arrow')){
+      $(this).children('span:first').removeClass('down-arrow')
+    }
+    else{
+      $(this).children('span:first').addClass('down-arrow')
+    }
+  });

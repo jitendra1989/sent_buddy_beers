@@ -1,0 +1,10 @@
+#gallery
+  #slides
+    - @bar.gallery.photos.each do |photo|
+      .slide
+        = image_tag photo.photo(:gallery), :width => "668"
+        %p.title= photo.title
+  #gallery_menu
+    %ul
+      - @bar.gallery.photos.reverse.each do |photo|
+        %li.menuItem= link_to image_tag(photo.photo(:gallery_thumb), :width => "26", :height => "17"), photo.photo(:gallery)

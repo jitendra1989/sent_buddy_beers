@@ -1,0 +1,17 @@
+/ default > prices > price
+
+%li{:class => [price.drink_type.try(:to_s).try(:downcase), cycle("odd", "even")].join(" "), :style => price.photo.file? ? "background-image:url('#{price.photo(:thumb)}');" : nil}
+  %span.drink
+    / - if price.photo.file?
+    /   = image_tag price.photo(:thumb)
+    = price.name
+    = price.drink_type
+    = price.volume
+  %span.options
+    %span.price
+      %span{ :class => price.discounted ? 'strikeout' : ''}= number_to_currency(price.amount.to_f, :unit => price.amount.currency.symbol)
+      - if price.discounted
+        = number_to_currency(price.discounted_amount.to_f, :unit => price.discounted_amount.currency.symbol)
+        = image_tag 'icons/emoticon_grin.png', :alt => t(".special_price"), :title => t(".special_price")
+    / %span.delete= link_to "x", bar_price_url(:bar_id => price.bar.id, :id => price.id), :method => :delete, :confirm => t("global.confirm_question")
+  =clear_floats

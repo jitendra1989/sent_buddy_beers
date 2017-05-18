@@ -1,0 +1,23 @@
+/ carlsberg > layouts / main_navigation
+
+#main_navigation
+  %ul
+    %li= link_to content_tag(:span, t("layouts.menu.bars")), bars_url
+    %li= link_to content_tag(:span, t("layouts.menu.about")), about_url
+    %li{ :class => current_user ? "" : "last"}= link_to content_tag(:span, t("layouts.menu.register_a_bar")), new_bar_url
+    - unless current_user and !current_user.is_a?(Customer) 
+      %li= link_to content_tag(:span, t("layouts.menu.apps")), "/apps"
+    - if current_user
+      %li= link_to content_tag(:span, t("layouts.menu.my_beers")), ious_url
+      %li{ :class => (current_user.admin? or current_user.affiliate? or current_user.bro?) ? "" : "last"}= link_to content_tag(:span, t("layouts.menu.edit_user")), edit_user_registration_url(current_user)
+      - if current_user.admin?
+        %li.last= link_to content_tag(:span, t("layouts.menu.admin.dashboard")), admin_root_url
+      - if current_user.site_admin?
+        %li.last= link_to t("layouts.menu.admin.dashboard"), site_admin_root_url
+      - if current_user.affiliate?
+        %li.last= link_to content_tag(:span, t("layouts.menu.affiliate.dashboard")), affiliate_root_url
+      - if current_user.bro?
+        %li.last= link_to content_tag(:span, t("layouts.menu.bro.dashboard")), affiliate_root_url
+
+  #send_a_beer
+    %p= link_to content_tag(:span, t("layouts.menu.send_a_beer")), new_iou_url, :rel => "nofollow"

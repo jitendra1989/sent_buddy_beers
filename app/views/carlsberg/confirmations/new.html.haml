@@ -1,0 +1,24 @@
+/ carlsberg > devise > passwords > edit
+
+- @title = t(".title")
+- stylesheets "sites/carlsberg/sections/forms"
+- content_for :head do
+  :javascript
+    $(document).ready(function(){ $("label").inFieldLabels(); });
+    
+#password
+  %h1= t(".heading")
+
+  = form_for resource_name, resource, :url => confirmation_path(resource_name) do |f|
+    = f.error_messages
+    %fieldset
+      %h2= t(".description")
+      %ol
+        %li
+          = f.label :email
+          = f.text_field :email, :class => "pie"
+
+      %ul
+        %li
+          %button{ :type => "submit" }= content_tag(:span, t(".submit"))
+    = clear_floats

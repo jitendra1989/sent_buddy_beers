@@ -1,0 +1,7 @@
+<p id="notice"><%= notice %></p>
+
+<p><%= @admin_city.name %></p>
+<p><%= @admin_city.country.printable_name %></p>
+
+<%= link_to 'Edit', edit_admin_city_path(@admin_city) %> |
+<%= link_to 'Back', admin_cities_path %>

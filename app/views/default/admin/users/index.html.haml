@@ -1,0 +1,8 @@
+- @title = "All Users"
+
+= render "admin/dashboard/tabs"
+
+= render "user_list"
+
+- if @users.blank? and params[:query]
+  %p.notice= "No users matching #{params[:query]}"

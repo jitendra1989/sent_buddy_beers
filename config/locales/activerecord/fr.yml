@@ -1,0 +1,106 @@
+fr:
+  activerecord:
+    models:
+      city: Ville
+      user_session: Connexion
+      iou: IOU
+      draught: Pression
+      bottle: Bouteille
+      email: Email
+      price: Boisson
+    attributes:
+      iou:
+        recipient_email: "Adresse email de votre ami!"
+        recipient_phone_country_code: "Pays de votre ami"
+        recipient_phone: "Numéro de téléphone de votre ami"
+        bar_id: "Bar"
+        price_id: "Boisson"
+        quantity: "Quantité" 
+      user:
+        emails:
+          email: Adresse email
+        email: Adresse email
+        login: "Nom d'utilisateur"
+        password: Mot de passe
+        phone_number: "Numéro de mobile"
+        phone_number_country_code: "Indicateur téléphonique"
+      bar:
+        address: Adresse
+        country: Pays
+        city: Ville
+        city_id: Ville
+        contact_email: "Email à contacter"
+        contact_phone_number: "Numéro de téléphone à contacter"
+        phone_number: "Numéro de téléphone"
+        contact_name: Nom complet
+        contact_time: Meilleur moment pour vous contacter
+        signup_notes: Autres notes
+        mailing_address: "Adresse à laquelle vous souhaitez recevoir votre kit de démarrage"
+        prices:
+          cents: Prix des boissons
+          discounted_cents: Promotions
+          price: 
+            one: Boisson
+            other: Boissons
+      price:
+        name: Nom de la boisson
+        description: Description
+        drink_type_id: Type de bière
+        cents: Price
+        discounted_cents: Prix en promotion
+      employment:
+        user_id: "Employé"
+    errors:
+      messages:
+        record_invalid: "La validation a échoué: %{errors}"
+        greater_than_or_equal_to: "Doit être supérieur ou égal à %{count}"
+        confirmation: "ne correspond pas à la confirmation"
+        less_than_or_equal_to: "Doit être inférieur ou égal à %{count}"
+        blank: "ne peut pas être vide"
+        invalid: est invalide
+        exclusion: "est réservé"
+        odd: "doit être impair"
+        empty: "ne peut pas être vide"
+        even: "doit être pair"
+        too_short: "est trop court (le minimum est %{count} characters)"
+        wrong_length: "n'est pas de la bonne longueur (devrait contenir %{count} caractères )"
+        less_than: "doit être inférieur à %{count}"
+        equal_to: "doit être égal à %{count}"
+        greater_than: "doit être plus grand que %{count}"
+        accepted: "doit être accepté"
+        too_long: "est trop long (le maximum est %{count} caractères)"
+        taken: "est déjà pris"
+        inclusion: "n'est pas inclus dans la liste"
+        not_a_number: "n'est pas un nombre"
+        changed: "ne peut être changé"
+        look_like_email: "devrait ressembler à une adresse email"
+        awaiting_verification: "ne peut être utilisé car cet e-mail est toujours en attente de vérification"
+        less_than_regular_price: "doit être inférieur au prix régulier"
+      models:
+        photo:
+          gallery_has_5_photos: "Vous ne pouvez pas avoir plus de 5 photos dans votre galerie. Choisissez avec soin."
+          only_500_kb: "doit peser moins de 500Kb. "
+        employment:
+          attributes:
+            user_id:
+              taken: "est déjà utilisé par ce bar"
+        user:
+          attributes:
+            email:
+              non_existant: "ne peut pas être trouvé dans notre base de données"
+        iou:
+          attributes:
+            bar_id:
+              must_be_chosen: "doit être choisi"
+            price_id:
+              must_be_chosen: "doit être choisi"
+            quantity:
+              must_be_chosen: "doit être choisi"
+      full_messages:
+        format: "%{attribute} %{message}"
+      template:
+        body: "Il y a eu un problème avec les champs suivants:"
+        header:
+          body: "Il y a eu un problème avec les champs suivants:"
+          one: "Il y a eu une erreur avec ce %{model}"
+          other: "Il y a eu %{count} erreurs avec ce %{model}"

@@ -1,0 +1,12 @@
+/ default > bars > drink_list
+
+#drink_list
+  %h2= t(".menu.title")
+  %ul
+    - @bar.prices.each do |price|
+      %li{ :class => price.drink_type.try(:to_s).try(:downcase), :style => price.photo.file? ? "background-image:url('#{price.photo(:thumb)}');" : nil}
+        %span.name
+          = price.name
+          %span.volume= "#{price.volume}"
+        = link_to "<span>#{ number_to_currency(price.total.to_f, :unit => price.amount.currency.symbol)}</span>".html_safe, new_iou_url(:price_id => price.id), :title => price.discounted? ? t(".menu.discount") : "", :class => price.discounted? ? "discounted" : "", :rel => "nofollow"
+        = clear_floats

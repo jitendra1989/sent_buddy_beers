@@ -1,0 +1,63 @@
+:javascript
+  $(document).ready(function(){
+  //$('html, body').css('background', 'lightgray'); 
+  });
+  function browse() {
+    var val = document.getElementById('#purchase_document').value;
+    $('#FileField').val() = val;
+    alert(val);
+  }
+.search-bar
+  .container
+    .confirm-form 
+      = form_for :corporate, :url => registration_path(@corporate) do |f|
+        = f.error_messages(:header_message => nil)
+        
+        %h4 Comapny Information
+        
+        = f.hidden_field :password_confirmation
+        = f.hidden_field :no_of_employees
+        .clearfix
+        
+        .form-group.row
+          .col-md-4.col-sm-5.col-xs-4
+            %span Company Name
+          .col-md-6.col-sm-7.col-xs-8
+            = f.text_field :company_name, :placeholder => "Company Name", :class => "col-md-12 col-sm-12 col-xs-12", :class => 'form-control', :type => "text", :autocomplete=>"off"
+          .clearfix
+          
+        .form-group.row
+          .col-md-4.col-sm-5.col-xs-4
+            %span Password
+          .col-md-6.col-sm-7.col-xs-8
+            = f.password_field :password, :placeholder => t("forms.labels.choose_password"), :class => "col-md-12 col-sm-12 col-xs-12 input-password", :class => 'form-control', :autocomplete=>"off"
+          .clearfix
+          
+        .form-group.row
+          .col-md-4.col-sm-5.col-xs-4
+            %span Admin Email
+          .col-md-6.col-sm-7.col-xs-8
+            = f.text_field :email, :placeholder => t("forms.labels.your_email"), :class => "col-md-12 col-sm-12 col-xs-12", :class => 'form-control', :type => "text", :autocomplete=>"off"
+          .clearfix   
+          
+        .form-group.row
+          .col-md-4.col-sm-5.col-xs-4
+            %span Phone Number
+          .col-md-6.col-sm-7.col-xs-8
+            = f.text_field :phone_number, :placeholder => "Your Phone Number", :class => "col-md-12 col-sm-12 col-xs-12", :class => 'form-control', :type => "text", :autocomplete=>"off"
+          .clearfix   
+        %br  
+        .row
+          .col-md-4.col-sm-5.col-xs-4
+            %span Company Logo 
+          .col-md-6.col-sm-7.col-xs-8
+            #FileUpload.user_field
+              = f.file_field :company_logo, :required => false, :label => false, :id => "purchase_document", :onchange => "getElementById('FileField').value = getElementById('purchase_document').value;"
+              #BrowserVisible
+                %input#FileField{:type => "text", :class => "col-md-12 col-sm-12 col-xs-12 form-control", :autocomplete=>"off"}/
+                %span Browse
+        %br         
+        .row
+          .col-md-4.col-sm-6.col-xs-6
+          .col-md-4.col-sm-6.col-xs-6.padd_right_none
+            = f.submit "Save", :class => "btn btn-warning col-md-12 col-sm-12 col-xs-11"

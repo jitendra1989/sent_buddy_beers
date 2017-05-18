@@ -1,0 +1,31 @@
+/ <h1 class="h1">Heading 1</h1>
+/ <h2 class="h2">Heading 2</h2>
+/ <h3 class="h3">Heading 3</h3>
+/ <h4 class="h4">Heading 4</h4>
+
+- content_for :subject do
+  = t(".subject", :name => @iou.sender_name.titleize, :quantity => @iou.quantity, :item => @iou.price_name, :location => @iou.bar.name, :city => @iou.bar.city.name)
+
+- content_for :sidebar do
+  / <h4 class="h4">Heading 4</h4>
+  / <strong>Repeatable content blocks:</strong> Repeatable sections are noted with plus and minus signs so that you can add and subtract content blocks. You can also <a href="http://www.mailchimp.com/kb/article/how-do-i-work-with-repeatable-content-blocks" target="_blank">get a little fancy</a>: repeat blocks and remove all text to make image "gallery" sections, or do the opposite and remove images for text-only blocks!
+  = render "disclaimer"
+  
+%h1.h1= t(".greeting", :name => @iou.recipient_name)
+
+%table(border="0" cellpadding="0" cellspacing="0")
+  %tr
+    %td{ :width => "60px", :valign => "top" }
+      = image_tag(@iou.price.photo(:thumb), :alt => @iou.price_name)
+    %td(style="color:#505050; font-family:Arial;font-size:14px; line-height:150%; text-align:left;")
+      -# {{name}} has bought you {{quantity}} {{beer}} at {{bar}}, {{city}}%{memo}!
+      = t(".voucher_explained", :name => @iou.sender_name, :quantity => @iou.quantity, :beer => @iou.price_name)
+      = link_to([@iou.bar.name, @iou.bar.city.name].join(", "), bar_url(@iou.bar))
+
+- if @iou.memo.present?
+  %p
+    %strong
+      &hellip;
+      = @iou.memo
+            
+= render "voucher_instructions"

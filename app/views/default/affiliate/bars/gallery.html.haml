@@ -1,0 +1,60 @@
+- @title = t(".title")
+- stylesheets "sites/buddybeers/sections/gallery"
+- javascripts 'jquery.fancybox-1.3.1.pack', 'jquery.easing-1.3.pack'
+- stylesheets 'jquery.fancybox-1.3.1', 'fancybox'
+
+- content_for :head do
+  :javascript
+    $(document).ready(function(){
+      $("a.single_image").fancybox();
+    });
+
+%h2= @bar.name
+%p#page-intro= @bar.full_address
+.clear
+
+.content-box
+  / Start Content Box
+  .content-box-header
+    %h3=t(".title")
+    .clear
+				
+  .content-box-content
+    - if @gallery.photos.blank?
+      %p.empty= t('.no_photos')
+    - else
+      %table
+        %thead
+          %tr
+            %th Photo
+            %th Title
+            %th Description
+            %th Options
+              
+        %tbody
+          - @gallery.photos.each do |photo|
+            %tr
+              %td= link_to image_tag(photo.photo(:thumb), :alt => photo.title), photo.photo(:full), :class => "single_image", :title => t(".view_full")
+              %td
+                - unless photo.title.blank?
+                  = photo.title
+              %td
+                - unless photo.description.blank?
+                  = photo.description
+              %td
+                = link_to image_tag("sites/default/admin/icons/pencil.png"), edit_affiliate_bar_photo_path(@bar, photo), :title => t("global.edit")
+                = link_to image_tag("sites/default/admin/icons/cross.png"), affiliate_bar_photo_path(@bar, photo), :method => :delete, :confirm => t("global.confirm_question"), :title => t("global.delete")
+
+.content-box
+  / Start Content Box
+  .content-box-header
+    %h3= t("affiliate.photos.new.form.legend")
+    .clear
+				
+  .content-box-content
+    = form_for ["affiliate", @bar, @photo], :html => { :multipart => true } do |f|
+      = error_messages_for :photo
+      %fieldset
+        = render "shared/admin/photos/form", :f => f
+        %ul
+          %li= f.submit t("affiliate.photos.new.form.button"), :class => "button"

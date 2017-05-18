@@ -1,0 +1,16 @@
+#language_switcher
+  %ul
+    %li{ :class => I18n.locale.to_s == "en" ? "active" : "" }
+      = link_to image_tag("/images/flags/en.png", :alt => "#{ @bar.name if @bar.present? } Send Drinks to your friends online"), (@bar.present? and controller.try(:controller_name) == "bars") ? params.merge({:locale => 'en', :id => @bar.slug_en || @bar.id}) : params.merge({:locale => 'en'})
+    %li{ :class => I18n.locale.to_s == "de" ? "active" : "" }
+      = link_to image_tag("/images/flags/de.png", :alt => "#{ @bar.name if @bar.present? } Spendiere Biere. Pflege Freundschaften. Weltweit."), (@bar.present? and controller.try(:controller_name) == "bars") ? params.merge({:locale => 'de', :id => @bar.slug_de || @bar.id}) : params.merge({:locale => 'de'})
+    %li{ :class => I18n.locale.to_s == "fr" ? "active" : "" }
+      = link_to image_tag("/images/flags/fr.png", :alt => "#{ @bar.name if @bar.present? } Send Drinks to your friends online"), (@bar.present? and controller.try(:controller_name) == "bars") ? params.merge({:locale => 'fr', :id => @bar.slug_th || @bar.id}) : params.merge({:locale => 'fr'})
+    %li{ :class => I18n.locale.to_s == "it" ? "active" : "" }
+      = link_to image_tag("/images/flags/it.png", :alt => "#{ @bar.name if @bar.present? } Send Drinks to your friends online"), (@bar.present? and controller.try(:controller_name) == "bars") ? params.merge({:locale => 'it', :id => @bar.slug_th || @bar.id}) : params.merge({:locale => 'it'})
+    %li{ :class => I18n.locale.to_s == "th" ? "active" : "" }
+      = link_to image_tag("/images/flags/th.png", :alt => "#{ @bar.name if @bar.present? } ส่งเบียร์เลี้ยงเพื่อนออนไลน์"), (@bar.present? and controller.try(:controller_name) == "bars") ? params.merge({:locale => 'th', :id => @bar.slug_th || @bar.id}) : params.merge({:locale => 'th'})    
+
+    
+    /%li{ :class => I18n.locale.to_s == "nl" ? "active" : "" }
+    /  = link_to image_tag("/images/flags/nl.png", :alt => "#{ @bar.name if @bar.present? } Stuur online biertjes naar je vrienden"), params.merge({:locale => 'nl'})

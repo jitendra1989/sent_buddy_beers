@@ -1,0 +1,24 @@
+de:
+  api: 
+    v1: 
+      locations: 
+        errors: 
+          not_found: "Es wurden keine Bars gefunden"
+      orders: 
+        errors: 
+          not_enough_currency: "Benutzer hat nicht ausreichend BuddyBucks"
+      prices: 
+        errors: 
+          empty: "Diese Bar hat keine Preise"
+      users: 
+        errors: 
+          no_locations: "Benutzer hat keine Bars"
+          not_found: "Benutzer wurde nicht gefunden."
+          not_logged_in: "Nicht angemeldet"
+      vouchers: 
+        received: 
+          empty: "Benutzer hat keine Gutscheine empfangen"
+        sent: 
+          empty: "Benutzer hat keine Gutscheine gesendet"
+        statuses: 
+          redeemed: eingelöst

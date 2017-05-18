@@ -1,0 +1,16 @@
+- @title = t('.title', :number => @payment.id)
+- stylesheets 'sites/default/sections/payments'
+
+%h2= t("affiliate.payments.index.title")
+%p#page-intro= "for #{current_user.to_s}"
+.clear
+
+.content-box
+  / Start Content Box
+  .content-box-header
+    %h3= t('.title', :number => @payment.id)
+    .clear
+			
+  .content-box-content
+    %p= link_to "PDF", "/#{I18n.locale}/affiliate/payments/#{@payment.id}.pdf", :class => "default-tab"
+    = render "shared/payment"

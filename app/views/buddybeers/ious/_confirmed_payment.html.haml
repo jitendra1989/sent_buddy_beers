@@ -1,0 +1,111 @@
+/ buddybeers > ious > confirmed_payment
+
+- @title = t(".title")
+- stylesheets "sites/buddybeers/sections/payment"
+- content_for :head do
+  :javascript  
+    function post_to_facebook() {
+      FB.ui({ method: 'feed', display: 'popup', 
+      //#{"to: '#{@iou.recipient.facebook_uid}'," if @iou.recipient and @iou.recipient.facebook_uid.present?}
+      message: '#{t(".social_spread.fb_status", :recipient => @iou.recipient_name, :price => "#{@iou.amount}", :beer => [@iou.quantity, @iou.price_name].join(" "), :bar => @iou.bar.name, :city => @iou.bar.city.name, :memo => @iou.memo).gsub("'", "\\\\'")}',
+      link: '#{bar_url(@iou.bar)}',
+      picture: '#{@iou.bar.fb_image_url}',
+      name: '#{t("bars.show.title", :bar => @iou.bar.name, :city => @iou.bar.city.name, :country => @iou.bar.country.printable_name).gsub("'", "\\\\'")}',
+      caption: '#{bar_url(@iou.bar)}',
+      description: '#{(@iou.bar.description.present? ? truncate(@iou.bar.description, :length => 200) : t("layouts.meta.description")).gsub(/\n/," ").gsub(/\r/," ").gsub("'", "\\\\'")}',
+      actions: {name: '#{t(".social_spread.fb_action")}', link: '#{new_iou_url(:bar_id => @iou.bar.id)}' },
+      next: null,
+      redirect_uri: '#{[request.protocol, request.host_with_port, completed_iou_path(@iou)].join()}'
+      });
+    }
+    $(document).ready(function(){
+      $("#fb_share_link").click(function(e){
+        post_to_facebook();
+        e.preventDefault();
+      });
+    });
+    
+    $(document).on('click', '.contact_us_popup', function() {
+      $('#contactUs').modal('show');
+    });
+= render "/default/bars/send_contact_us_info"
+#confirm_payment.container
+  .row.confrim-pay-main
+    .left.custom-left.col-md-8.col-sm-8.col-xs-12
+      %h1= t(".heading")
+
+      .drink
+        .avatar
+          - if (!@iou.sender.avatar.file? and @iou.sender.facebook_user?)
+            = image_tag("https://graph.facebook.com/#{@iou.sender.facebook_uid}/picture?type=small", :alt => @iou.sender.name, :height => "53px", :width => "53px")
+          - else
+            = image_tag(@iou.sender.avatar(:tiny), :alt => @iou.sender.name, :height => "53px", :width => "53px")
+        - @iou.group_drinks.each_with_index do |gd, index|
+          - if index > 1
+            .description{:style => "margin-left: 63px;"}
+              %p= raw t(".you_sent", :recipient => gd.recipient_name, :price => "#{gd.amount.currency.symbol}#{gd.amount}", :beer => [gd.quantity, gd.price_name].join(" "), :bar => @iou.bar.name, :city => @iou.bar.city.name)
+          - else
+            .description
+              %p= raw t(".you_sent", :recipient => gd.recipient_name, :price => "#{gd.amount.currency.symbol}#{gd.amount}", :beer => [gd.quantity, gd.price_name].join(" "), :bar => @iou.bar.name, :city => @iou.bar.city.name)
+        - if @iou.memo.present?
+          .memo.col-md-10.col-sm-10.col-xs-12
+            .bubble
+              %p= @iou.memo
+          
+      %p=# raw t(".immediate_delivery", :recipient => @iou.recipient_name)
+      .clearfix
+      %h2= t(".social_spread.heading")
+      - @iou.group_drinks.each do |gd|
+        .facebook_share
+          .pad
+            .border
+              /%a{ :name => "fb_share", :type => "button", :href => "http://www.facebook.com/sharer.php?u=#{URI.escape()}&t=#{, :target => "_blank", :share_url => bar_url(@iou.bar), :id => "fb_share_link" }
+              /  %span= t(".social_spread.share")
+              = link_to content_tag(:span, t(".social_spread.share")), "#", :type => "button", :id => "fb_share_link"
+              .post
+                .avatar
+                  - if (!@iou.sender.avatar.file? and @iou.sender.facebook_user?)
+                    = image_tag("https://graph.facebook.com/#{@iou.sender.facebook_uid}/picture?type=small", :alt => @iou.sender.name)
+                  - else
+                    = image_tag(@iou.sender.avatar(:tiny), :alt => @iou.sender.name)
+                .info
+                  %p.name= @iou.sender_name
+                  %p.status= raw t(".social_spread.fb_status_for_display", :recipient => gd.recipient_name.capitalize, :price => "#{gd.amount.currency.symbol}#{gd.amount}", :beer => [gd.quantity, gd.price_name].join(" "), :bar => @iou.bar.name, :city => @iou.bar.city.name, :memo => @iou.memo)
+                  .bar
+                    .logo= image_tag @iou.bar.logo.file? ? @iou.bar.logo(:thumb) : (@iou.bar.gallery and @iou.bar.gallery.photos.present?) ? @iou.bar.gallery.photos.first.photo(:thumb) : "sites/buddybeers/avatars/tiny/missing.png"
+                    .title= t("bars.show.title", :bar => @iou.bar.name, :city => @iou.bar.city.name, :country => @iou.bar.country.printable_name)
+                    .url= bar_url(@iou.bar)
+                    .description= @iou.bar.description.present? ? truncate(@iou.bar.description, :length => 200) : t("layouts.meta.description")
+                = clear_floats
+              /%script(src="http://static.ak.fbcdn.net/connect.php/js/FB.Share" type="text/javascript")
+
+        .twitter_share
+          .pad
+            .border.custom-border
+              = twitter_share_link_for(gd)
+              .post
+                .avatar= image_tag @iou.sender.avatar(:tiny)
+                .info
+                  %p.name= @iou.sender.login
+                  %p.status= raw t(".social_spread.twitter_status_for_display", :recipient => twitter_name_for(gd), :price => "#{gd.amount.currency.symbol}#{@iou.amount}", :beer => [gd.quantity, gd.price_name].join(" "), :bar => @iou.bar.name, :city => @iou.bar.city.name, :bar_url => bar_url(@iou.bar))
+                  %p.time
+                    = DateTime.now.to_s(:twitter_format)
+                    = t(".social_spread.twitter_via")
+                = clear_floats
+              
+      .send_a_beer
+        %h3= t(".spread_the_love")
+        = link_to content_tag(:span, t(".send_another_beer")), new_iou_path
+        = clear_floats
+    
+    .right.custom-right.col-md-4.col-sm-4.col-xs-12
+      %h2= t(".receipt.heading")
+      %p= t(".receipt.description")
+      %p= t(".receipt.questions")
+      %ul
+        //%li= link_to t(".receipt.faqs"), about_url
+        %li= link_to t(".receipt.contact"), "javascript:void(0)", :class=>"contact_us_popup"
+      
+
+    =clear_floats
+          

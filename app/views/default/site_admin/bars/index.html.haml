@@ -1,0 +1,23 @@
+= render "site_admin/shared/tabs"
+
+.tabs
+  %ul
+    %li= link_to("New Bar", new_site_admin_bar_path)
+    %li
+      = link_to_if((params.keys.include?("inactive") or params.keys.include?("pending")), "Active", site_admin_bars_url) do
+        = content_tag(:span, "Active")
+    %li
+      = link_to_unless(params[:inactive], "Inactive", site_admin_bars_url(:inactive => true)) do 
+        = content_tag(:span, "Inactive")
+    %li
+      = link_to_unless(params[:pending], "Pending", site_admin_bars_url(:pending => true)) do 
+        = content_tag(:span, "Pending")
+
+  = clear_floats
+
+#users
+  = render "shared/admin/filter_form"
+
+  %div{ :id => params[:inactive] ? "inactive" : "active" }
+    - @bars.group_by(&:country).sort_by { |country, bars| country.name }.each do |country, bars|
+      = render "bar_list", :country => country, :bars => bars

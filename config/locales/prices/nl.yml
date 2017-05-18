@@ -1,0 +1,21 @@
+nl:
+  prices: 
+    form: 
+      add_beer_link: "Voeg dit biertje toe"
+      add_brand_link: "Voeg dit merk toe"
+      legend: "Voeg nog een biertje toe aan de biertjes van %{bar}"
+      new_beer: "Voeg een nieuw biertje toe aan onze database"
+      new_beer_link: "Voeg een nieuw biertje toe"
+      new_brand: "Voeg een nieuw merk toe aan onze database"
+      new_brand_link: "Voeg een nieuw merk toe"
+      submit: "Biertje toevoegen"
+    inventory: 
+      drink_list: "Huidige lijst met drankjes"
+      empty: "Er staan geen dranken op je menu."
+    new: 
+      description: "Zet de prijzen van de biertjes die je op BuddyDrinks wilt verkopen in onderstaand formulier. Als je klaar bent kan je onderaan de pagina naar de volgende stap."
+      heading: "%{bar_name}'s lijst met drankjes"
+      next_step: "Stap 3: Bevestig de gegevens"
+      title: "Voeg de dranken lijst in van je kroeg"
+    price: 
+      special_price: "Speciale prijs. Bedankt!"

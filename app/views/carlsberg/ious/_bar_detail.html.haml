@@ -1,0 +1,25 @@
+/ carlsberg > ious > bar_detail
+
+- if @bar
+  .bar
+    .info
+      %h5= @bar.name
+      %p.address= link_to @bar.full_address, google_maps_link_for(@bar), :target => "_blank"
+      - if @bar.url
+        %p.distance= link_to @bar.url, @bar.url, :rel => "nofollow", :target => "_blank"
+
+    .more
+      - if @bar.logo.file?
+        .photos= image_tag @bar.logo(:thumb)
+      .links_prices
+        %p.more_info= link_to content_tag(:span, t(".more_info")), bar_url(@bar), :target => "_blank"
+        %p.prices
+          %strong= t("bars.bar.price_range")
+          = price_range_for(@bar)
+          %strong= t("bars.bar.drink_specials")
+          = has_drink_specials?(@bar)
+    .description
+      = raw truncate(@bar.description, :length => 400, :omission => "&hellip; #{link_to("#{t(".read_more")}&raquo;".html_safe, bar_url(@bar), :target => "_blank")}")
+    
+    - unless @bar.prices.collect{ |p| p.name.downcase.include?("carlsberg") }.include?(true)
+      %p.no_carlsberg= t("facebook.locations.location_detail.no_carlsberg", :bar_name => @bar.name)

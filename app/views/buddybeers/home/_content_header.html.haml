@@ -1,0 +1,52 @@
+/ buddybeers > home > content_header
+
+- content_for :head do
+  / :plain
+  /     <style type="text/css" media="screen">
+  /       #content_header .oktoberfest {
+  /         width: 938px;
+  /       }
+  /       
+  /       #content_header .oktoberfest a {
+  /         display: block;
+  /         text-indent: -9999px;
+  /         height: 276px;
+  /         width: 938px;
+  /       }
+  /       #content_header { padding: 0; background: none; }
+  /       #content_header .home { width: 938px; }
+  /       #content_header .home .padding { 
+  /         background: url("/images/sites/buddybeers/backgrounds/home_header_image.jpg") no-repeat scroll right top #000510;
+  /         border-color: #000510 #E5D7C1 #000510 #000510;
+  /         border-radius: 10px 10px 0 0;
+  /         border-width: 1px;
+  /         max-height: 320px;
+  /         padding: 26px 17px 17px 30px;
+  /       }
+  /     </style>
+  /     <script src="http://cloud.github.com/downloads/malsup/cycle/jquery.cycle.all.latest.js" type="text/javascript"></script>
+  
+  - unless I18n.locale.to_s == "th"
+    :javascript
+      Cufon.replace('#content_header h1', {color: '-linear-gradient(#909090, 0.2=#fff, #fff)'});
+      Cufon.replace('#content_header h1 .color', {color: '-linear-gradient(#909090, 0.2=#ffa100, #ffa100)'});
+  / $(document).ready(function() {
+  /       $('#content_header').cycle({
+  /         fx: 'fade', // choose your transition type, ex: fade, scrollUp, shuffle, etc...
+  /         timeout: 8000
+  /       });
+  /     }); 
+
+#content_header
+  .home
+    .padding 
+      %h1
+        = t(".buy_a_beer")
+        %br
+        = t(".happy_hours")
+        %br
+        = raw t(".social_in_socializing")
+      %p= raw t(".description")
+      .send_a_beer
+        = link_to t(".beer_button"), new_iou_path, :class => I18n.locale.to_s, :rel => "nofollow"
+      =clear_floats

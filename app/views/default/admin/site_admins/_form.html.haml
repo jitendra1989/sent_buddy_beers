@@ -1,0 +1,52 @@
+- content_for :head do
+  :javascript
+    $(function() {
+    var counter = #{f.object.emails.size};
+
+    $("#add_link").click(function(){
+    counter++;
+    var t = '<div class="removable_fields"><li id="user_emails_attributes_REPLACE_name" class="string optional"><input size="50" name="user[emails_attributes][REPLACE][email]" id="user_emails_attributes_REPLACE_email" class="email"> <p class="inline-hints"><a href="#" class="remove_input">Delete</a></p></li></div>';
+    $("#email_list").append(t.replace(/REPLACE/g, counter));
+    return false;
+    });
+
+    $('.remove_input').live('click', function() {
+    $(this).parents(".removable_fields").remove();
+    return false;
+    });
+
+    // hide deleted fieldsets
+    $('.removable_fields').each(function(){
+    if ($(this).find('.hidden_delete_field').val() == 'true') {
+    $(this).hide();
+    }
+    });
+    });
+
+%ol
+  %li
+    = f.label :site_ids, "Sites"
+    %ul
+      - Site.all.each do |site|
+        %li
+          = f.check_box :site_ids, {:multiple => true}, site.id, nil
+          = f.label "site_ids_#{site.id}", site.name
+
+  %li
+    = f.label :name, "Name"
+    = f.text_field :name
+  %li
+    = f.label :login, "Username"
+    = f.text_field :login
+  %li
+    = f.label :phone_number, t("forms.labels.phone_number")
+    = f.text_field :phone_number
+  %li
+    = f.label :email, "Emails:"
+    %ol#email_list
+      = f.fields_for :emails do |email_form|
+        %li
+          .removable_fields
+            = render "registrations/email", :f => email_form
+
+    #add_link=link_to "Add an Email", "#"

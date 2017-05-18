@@ -1,0 +1,25 @@
+/ carlsberg > bars > search
+
+- content_for :head do
+  :javascript
+    $(document).ready(function(){ 
+      $("label").inFieldLabels();
+      $('.toggle_map').click(function(e){
+        $('#bar_map').slideToggle('fast', function(){ 
+          $('.toggle_map a').toggleClass('active') 
+        });
+        e.preventDefault();
+      });
+    });
+
+= form_tag bars_url, :method => :get do
+  %fieldset
+    %p.toggle_map= link_to t(".map_toggle"), "#", :title => t(".map_toggle"), :class => "active"
+    %p.near= "#{t(".label")}:"
+    %ol
+      %li
+        = label "origin", "location", t(".value")
+        = text_field "origin", "location", :value => (params[:origin] and params[:origin][:location]) ? params[:origin][:location] : ""
+    %ul
+      %li= submit_tag t(".submit_button")
+= clear_floats

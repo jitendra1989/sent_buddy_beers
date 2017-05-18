@@ -1,0 +1,45 @@
+!!!XML
+!!!
+%html{ :xmlns => "http://www.w3.org/1999/xhtml", 'xml:lang' => I18n.locale.to_s, :lang => I18n.locale.to_s } 
+  %head
+    %title= "#{@title.blank? ? controller.action_name : @title} - Buddy Drinks"
+    = csrf_meta_tag
+    = javascript_include_tag 'jquery'
+    %style{:type => "text/css", :media => "screen"}
+      :plain
+        #paypal {
+          background: #fff;
+          -moz-border-radius: 10px;
+          -webkit-border-radius: 10px;
+          border-radius: 10px;
+          padding: 10px 15px;
+        }
+    - if params[:in_facebook].present? and params[:in_facebook].to_s == "true"
+      :javascript
+        var parent_url = '#{build_facebook_url(edit_facebook_order_path(params[:order_id]))}';
+      = javascript_include_tag 'jquery.ba-postmessage', 'sendPaypalRedirectMessage'
+    - else
+      :javascript
+        $(document).ready(function(){
+          top.location.replace('#{completed_iou_url(@iou)}');
+          $("#redirect_link").click(function(){
+            top.location.replace('#{completed_iou_url(@iou)}');
+          });
+        });
+  %body
+    #paypal.redirect
+      - if @status == "success"
+        - if params[:in_facebook].present? and params[:in_facebook].to_s == "true"
+          Transaction successful! If this page does not redirect, 
+          = link_to "Click Here", build_facebook_url(facebook_order_path(@iou)), :id => "redirect_link", :target => "_blank"
+        - else  
+          Transaction successful! If this page does not redirect, 
+          = link_to "Click Here", completed_iou_url(@iou), :id => "redirect_link"
+      - else
+        - if params[:in_facebook].present? and params[:in_facebook].to_s == "true"
+          = t('.error') 
+          = link_to "Click Here to reload this page.", build_facebook_url(facebook_order_path(@iou)), :id => "redirect_link", :target => "_blank"
+        - else  
+          = t('.error')
+          = link_to "Click Here to reload this page.", completed_iou_url(@iou), :id => "redirect_link"
+        

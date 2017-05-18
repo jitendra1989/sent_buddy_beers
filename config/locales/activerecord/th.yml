@@ -1,0 +1,107 @@
+th:
+  activerecord:
+    models:
+      city: "เมือง"
+      user_session: "เข้าสู่ระบบ"
+      iou: "ฉันติดหนี้ค้างคุณ"
+      draught: "เบียร์สด"
+      bottle: "เบียร์ขวด"
+      email: "อีเมล์"
+      price: "ต่อดื่ม"
+    attributes:
+      iou:
+        recipient_email: "อีเมล์ของเพื่อนคุณ"
+        recipient_phone_country_code: "รหัสประเทศของหมายเลขติดต่อที่เพื่อนคุณใช้"
+        recipient_phone: "เบอร์โทรศัพท์ของเพื่อนคุณ"
+        bar_id: "บาร"
+        price_id: "เครื่องดื่ม"
+        quantity: "จำนวน" 
+      user:
+        emails:
+          email: "ที่อยู่ทางอีเมล์"
+        email: "ที่อยู่ทางอีเมล์"
+        login: "ลงชื่อผู้เข้าใช้"
+        password: "รหัสผ่าน"
+        phone_number: เบอร์โทรศัพท์มือถือ
+        phone_number_country_code: รหัสประเทศของโทรศัพท์มือถือ
+      bar:
+        address: "ที่อยู่"
+        country: "ประเทศ"
+        city: "เมือง/จังหวัด"
+        city_id: "เมือง/จังหวัด"
+        contact_email: "อีเมล์ที่สามารถติดต่อได้"
+        contact_phone_number: "หมายเลขโทรศัพท์ที่สามารถติดต่อได้"
+        phone_number: "หมายเลขโทรศัพท์"
+        contact_name: "ชื่อและนามสกุลของผู้ที่สามารถติดต่อได้"
+        contact_time: "เวลาที่สะดวกในการติดต่อ"
+        signup_notes: "หมายเหต"
+        mailing_address: "ที่อยู่ที่จะให้ทางเราส่งคู่มือ Starter kits ให้"
+        prices:
+          cents: "ราคาเครื่องดื่ม"
+          discounted_cents: "ราคาลดพิเศษ"
+          price: 
+            one: "ดื่ม"
+            other: "ดื่ม"
+      price:
+        name: "ชื่อเครื่องดื่ม"
+        description: "รายละเอียด"
+        drink_type_id: "ชนิดของเบียร์"
+        cents: "ราคา"
+        discounted_cents: "ราคาลดพิเศษ"
+        photo: "รูปถ่าย"
+      employment:
+        user_id: "พนักงาน"
+    errors:
+      messages:
+        record_invalid: "ไม่ผ่านระบบ: %{errors}"
+        greater_than_or_equal_to: "ต้องมากกว่าหรือเท่ากับ %{count}"
+        confirmation: "ไม่ตรงกับที่ได้ยืนยันไว้"
+        less_than_or_equal_to: "ต้องน้อยกว่าหรือเท่ากับ %{count}"
+        blank: "ต้องกรอกข้อมูล"
+        invalid: "ไม่ถูกต้อง"
+        exclusion: "ถูกจองแล้ว"
+        odd: "ต้องเป็นเลขคี่"
+        empty: "ต้องกรอกข้อมูล"
+        even: "ต้องเป็นเลขคู่"
+        too_short: "สั้นเกินไป (อย่างน้อยต้อง %{count} ตัวอักษร)"
+        wrong_length: "ยาวเกินไป(ควรจะเป็น %{count} ตัวอักษร)"
+        less_than: "ต้องน้อยกว่า %{count}"
+        equal_to: "ต้องเท่ากับ %{count}"
+        greater_than: "ต้องมากกว่า %{count}"
+        accepted: "ต้องยอมรับข้อตกลง"
+        too_long: "ยาวเกินไป (มากที่สุด %{count} ตัวอักษร)"
+        taken: "ถูกใช้ไปแล้ว"
+        inclusion: "อยู่นอกเหนือจากรายการ"
+        not_a_number: "ไม่ใช่ตัวเลข"
+        changed: "ไม่สามารถเปลี่ยนแปลงได้"
+        look_like_email: "ควรดูคล้ายกับอีเมล์" 
+        awaiting_verification: "ไม่สามารถตั้งข้อมูลได้เนื่องจากอีเมล์ยังไม่ได้รับการยืนยัน"
+        less_than_regular_price: "ต้องน้อยกว่าราคาปกติ"
+      models:
+        photo:
+          gallery_has_5_photos: "คุณสามารถเลือกได้เพียง5 ภาพเท่านั้น โปรดเลือกภาพที่คิดว่าดีที่สุด"
+          only_500_kb: "ต้องน้อยกว่า 500 KB"
+        employment:
+          attributes:
+            user_id:
+              taken: "มีชื่อบันทึกในบาร์นี้มาแล้วก่อนหน้านี้"
+        user:
+          attributes:
+            email:
+              non_existant: "ไม่มีข้อมูลในระบบ"
+        iou:
+          attributes:
+            bar_id:
+              must_be_chosen: "ต้องเลือก"
+            price_id:
+              must_be_chosen: "ต้องเลือก"
+            quantity:
+              must_be_chosen: "ต้องเลือก"
+      full_messages:
+        format: "%{attribute} %{message}"
+      template:
+        body: "เกิดการขัดข้องตามช่องข้อมูลดังต่อไปนี้:"
+        header:
+          body: "เกิดการขัดข้องตามช่องข้อมูลดังต่อไปนี้:"
+          one: "เกิดความผิดพลาดในข้อมูลนี้ %{model}"
+          other: "เกิดความผิดพลาด%{count} จุดในข้อมูลนี้ %{model}"

@@ -1,0 +1,27 @@
+/ carlsberg > credits > index
+
+- @title = t(".title")
+- stylesheets "sites/carlsberg/sections/credits"
+
+= render "ultimate_pay"
+
+#credits.pie
+  #main
+    %h1= t(".heading")
+    = render "balance"
+    = render "top_up"
+    .acceptance_methods
+      %p= t(".accept")
+      %p.logos
+        = image_tag "sites/buddybeers/graphics/credit-payment-logos-#{I18n.locale}.png", :alt => t(".payment_logos")
+        = t(".and_more")  
+    - if params[:return_to]
+      #return_link
+        %p= link_to "&larr; #{t(".back")}".html_safe, params[:return_to]
+      
+  #information
+    %h2= t("home.about.buddy_bucks.question")
+    %p= raw t("home.about.buddy_bucks.answer")
+    %h2= t("home.about.ultimate_pay.question")
+    %p= raw t("home.about.ultimate_pay.answer")
+  =clear_floats

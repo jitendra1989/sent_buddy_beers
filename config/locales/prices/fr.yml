@@ -1,0 +1,21 @@
+fr:
+  prices:
+    new:
+      title: Entrez la liste de boissons de votre bar
+      next_step: "Étape 3: Confirmez votre information"
+      heading: "Liste de boissons de %{bar_name}"
+      description: "Ajoutez le prix des bières (ou d'autres boissons) que vous aimeriez vendre sur Buddy Drinks en utilisant le champ ci-dessous. Quand vous avez fini, cliquez sur le bouton en bas de la page pour passer à l'étape suivante."
+    form:
+      new_brand: Entrez la marque de la boisson
+      add_beer_link: Ajouter cette bière
+      legend: Ajouter une autre bière à la liste de boissons de %{bar}
+      new_brand_link: Lier cette boisson à une marque
+      add_brand_link: Lier cette marque
+      new_beer_link: Ajouter une nouvelle bière
+      new_beer: Ajouter une nouvelle bière à notre base de données
+      submit: Ajouter cette boisson
+    inventory:
+      drink_list: Liste actuelle de boissons
+      empty: Il n'y a aucune boisson sur notre carte. Ajoutez-en en utilisant le champ ci-dessous. 
+    price:
+      special_price: Tarif spécial. Merci!

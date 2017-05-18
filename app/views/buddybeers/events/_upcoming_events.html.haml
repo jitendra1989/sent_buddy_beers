@@ -1,0 +1,75 @@
+- today_events = @upcoming_event
+- unless today_events.blank?
+  .today-event
+    .today-event-heading
+      Upcomming Events
+    .today-event-box-container
+      - today_events.each_with_index do |event, index|
+        %b= date_for_comming_event(event.day_of_the_event)
+
+        .row
+          .col-md-2.col-sm-2.col-xs-12.padd_left_none
+            .event-for-image
+              - if current_user
+                - if !event.user.avatar.file? and event.user.facebook_user?
+                  = link_to content_tag(:span, image_tag("https://graph.facebook.com/#{event.user.facebook_uid}/picture?type=square", :alt => event.user.name, :height => "53px", :width => "53px")), edit_user_registration_url(event.user)
+                - else
+                  = link_to content_tag(:span, image_tag(event.user.avatar(:square), :alt => event.user.name, :height => "53px", :width => "53px")), edit_user_registration_url(event.user)
+          .col-md-10.col-sm-10.col-xs-12.padd_none
+            %h5= "Friend #{event.event_type.to_s.capitalize}"
+            .row
+              .col-md-8.col-sm-12.col-xs-12.padd_none
+                %p
+                  = "#{event.title.to_s.capitalize}'s #{event.event_type.to_s.capitalize}, Wish your buddy \"Happy #{event.event_type.to_s.capitalize}\" and send him a drink now."
+              .col-md-4.col-sm-12.col-xs-12.event-celeb-btn
+                %a{:class => 'celebrator-btn btn', :href => new_iou_url(:friend_name => event.title)}
+                  %span= "Celebrate With #{event.title.to_s.capitalize}"
+      - current_user_friendships = current_user.friendships
+      - unless current_user_friendships.blank?
+        - current_user_friendships.each do |friend|
+          - friend_user = User.where(:id => friend.friend_id).first
+          - if !friend_user.blank? && !friend_user.birthday_day.blank?
+            - if CheckBirthday.birthday?(friend_user.birthday_day, 0, 15)
+              %b= date_for_comming_event(friend_user.birthday_day)
+              .row
+                .col-md-2.col-sm-2.col-xs-12.padd_left_none
+                  .event-for-image
+                    - if !friend_user.avatar.file? and friend_user.facebook_user?
+                      = link_to content_tag(:span, image_tag("https://graph.facebook.com/#{friend_user.facebook_uid}/picture?type=square", :alt => friend_user.name, :height => "53px", :width => "53px")), edit_user_registration_url(friend_user)
+                    - else
+                      = link_to content_tag(:span, image_tag(friend_user.avatar(:square), :alt => friend_user.name, :height => "53px", :width => "53px")), edit_user_registration_url(friend_user)
+                .col-md-10.col-sm-10.col-xs-12.padd_none
+                  %h5 Friend Birthday
+                  .row
+                    .col-md-8.col-sm-12.col-xs-12.padd_none
+                      %p
+                        = "#{friend_user.get_name.to_s.capitalize}'s Birthday, Wish your buddy \"Happy Birthday\" and send him a drink now."
+                    .col-md-4.col-sm-12.col-xs-12.event-celeb-btn
+                      %a{:class => 'celebrator-btn btn', :href => new_iou_url(:user_id => friend_user.id)}
+                        %span= "Celebrate With #{friend_user.get_name.to_s.capitalize}"
+      - if current_user.birthday_day.present?
+        - if CheckBirthday.birthday?(current_user.birthday_day, 0, 15)
+          %b= date_for_comming_event(current_user.birthday_day)
+          .row
+            .col-md-2.col-sm-2.col-xs-12.padd_left_none
+              .event-for-image
+                - if current_user
+                  - if !current_user.avatar.file? and current_user.facebook_user?
+                    = link_to content_tag(:span, image_tag("https://graph.facebook.com/#{current_user.facebook_uid}/picture?type=square", :alt => current_user.name, :height => "53px", :width => "53px")), edit_user_registration_url(current_user)
+                  - else
+                    = link_to content_tag(:span, image_tag(current_user.avatar(:square), :alt => current_user.name, :height => "53px", :width => "53px")), edit_user_registration_url(current_user)
+            .col-md-10.col-sm-10.col-xs-12.padd_none
+              %h5 Friend Birthday
+              .row
+                .col-md-8.col-sm-12.col-xs-12.padd_none
+                  %p
+                    = "Today is #{current_user.get_name.to_s.capitalize}'s Birthday, Wish your buddy \"Happy Birthday\" and send him a drink now."
+                .col-md-4.col-sm-12.col-xs-12.event-celeb-btn
+                  %a{:class => 'celebrator-btn btn', :href => new_iou_url(:user_id => current_user.id)}
+                    %span= "Celebrate With #{current_user.get_name.to_s.capitalize}"
+    .row.text-right
+      = will_paginate(@upcoming_event, :class => 'set_pagination_btn', :previous_label => '<<', :next_label => '>>', :style => "margin: 20px 0;")
+
+
+
+

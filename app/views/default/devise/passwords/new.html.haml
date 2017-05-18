@@ -1,0 +1,14 @@
+/ default > devise > passwords > new
+
+%h1= t(".heading")
+
+= form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :post }) do |f|
+  = devise_error_messages!
+  %fieldset
+    %ol
+      %li
+        = f.label :email
+        = f.text_field :email
+    %ul
+      %li= f.submit t(".submit")
+      %li= link_to t("forms.links.cancel"), new_session_path(resource_name)

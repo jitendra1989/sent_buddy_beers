@@ -1,0 +1,70 @@
+/ default > ious > confirm
+
+- stylesheets "sites/default/sections/buddybucks"
+- content_for :head do 
+  :javascript
+    $(function($) {
+      // create a convenient toggleLoading function
+    
+      $("#new_credit_event")
+        .bind("ajax:beforeSend", function() { 
+          $("#loading").show();
+          $("button#pay").hide(); 
+        })
+        .bind("ajax:success", function(event, data, status, xhr) {
+          parent.window.location.replace("#{@return_uri || confirm_payment_iou_url(@iou)}");
+        })
+        .bind("ajax:error", function(event, data, status, xhr) {
+          $("#errorExplanation").show();
+          $("#loading").hide();
+          $("button#pay").show(); 
+        });
+      $(".get_button").click(function(e){
+        top.window.location.replace($(this).attr("href"));
+        e.preventDefault();
+      });
+    });
+
+#confirm.container
+  .pad.pie
+    - if @user.credits.to_i < @iou.price_in_bucks
+        
+      #errorExplanation.error
+        %h2= t(".not_enough_bucks.heading", :amount => @iou.price_in_bucks - @user.credits.to_i)
+        %p= t(".not_enough_bucks.desc")
+      
+      = link_to content_tag(:span, t(".get_more_bucks")), user_credits_url(@user, :return_to => pay_iou_url(@iou)), :class => "get_button pie"
+    
+    - else
+      = form_for @credit_event, :url => user_credits_url(@user), :remote => true do |f|
+        #errorExplanation.error{ :style => "display:none" }
+          %h2= t(".error.heading")
+          %p= t(".error.description")
+      
+        = f.hidden_field :user_id
+        = f.hidden_field :iou_id
+        = f.hidden_field :amount
+        = f.hidden_field :currency
+        = f.hidden_field :provider
+        = f.hidden_field :site_id
+        = f.hidden_field :virtualamount
+        = f.hidden_field :commtype
+      
+        %h2= "#{t("ious.order.heading")}:"
+      
+        .drink
+          - if  @iou.group_drinks.present?
+            - @iou.group_drinks.each do |group_drink|
+              = render "drink_details", :group_drink => group_drink
+          - else
+            = render "drink_details"
+          %p
+            %small
+              * #{t("ious.order.similar_price")}
+          
+        %button#pay.pie{:type => "submit"}
+          - unless @iou.group_drinks.present?
+            %span= raw t(".pay", :amount => @iou.price_in_bucks)
+          - else
+            %span= t(".pay", :amount => @iou.group_drinks.map(&:price_in_bucks).sum).html_safe
+        #loading{ :style => "display:none" }= image_tag "/images/sites/default/graphics/ajax-loader.gif"

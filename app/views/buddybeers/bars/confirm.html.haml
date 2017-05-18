@@ -1,0 +1,64 @@
+- content_for :add_page_js_css do
+  = stylesheet_link_tag  'confirm'
+/ - Middle section start
+%section
+  .container
+    .row.confrim-middle-row
+      .col-md-9.left.col-sm-9.col-xs-12
+        - if @bar.pending?
+          %h1= t(".heading", :bar_name => @bar.name)
+        - else
+          %h1= t(".vanue_heading", :bar_name => @bar.name)
+        = render "confirmation_message"
+        %h3= @bar.name.titleize
+        %p
+          %span= "#{t("forms.labels.address")}:"
+          %span= @bar.full_address
+        %p
+          %span= "#{t("forms.labels.currency")}:"
+          %span= @bar.default_currency
+        %p
+          %span= "#{t("forms.labels.website")}:"
+          %span= @bar.url
+        %p
+          %span= "#{t("forms.labels.description_bio")}:"
+          %span= @bar.description
+        %p
+          %span= "#{t("forms.labels.contact_name")}:"
+          %span= @bar.contact_name
+        %p
+          %span= "#{t("forms.labels.phone_number")}:"
+          %span= @bar.phone_number
+        %p
+          %span= "#{t("forms.labels.contact_email")}:"
+          %span= @bar.contact_email
+        %p
+          %span= "#{t("activerecord.attributes.bar.contact_time")}:"
+          %span= @bar.contact_time
+        %p
+          %span= "#{t("activerecord.attributes.bar.mailing_address")}:"
+          %span= @bar.mailing_address
+        %p
+          %span= "#{t("forms.labels.twitter_handle")}:"
+          %span= @bar.twitter_handle
+        %p
+          %span= "#{t("forms.labels.facebook_handle")}:"
+          %span= @bar.facebook_handle
+        %p
+          %span= "#{t("forms.labels.lead")}:"
+          %span= @bar.lead
+        %p
+          %span= "#{t("activerecord.attributes.bar.signup_notes")}:"
+          %span= @bar.signup_notes
+        %br/
+        %br/
+        = render "prices/inventory"
+
+        - if @bar.pending?
+          %a.look-good-btn.btn{:href => submit_bar_url(@bar), :method => :post}
+            %span Looks Good!
+            %span Let's Do It
+            %span.look-good-icon
+          %a.edit-bar-btn{:href => edit_bar_url(@bar)} Edit Venue Information
+        
+      = render '/default/shared/what_it_for_me'

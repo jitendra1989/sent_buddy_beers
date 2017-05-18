@@ -1,0 +1,49 @@
+- @title = @bar.name
+%h2= @bar.name
+%p#page-intro= @bar.full_address
+
+.clear
+
+.content-box
+  / Start Content Box
+  .content-box-header
+    %h3= "Recent Activity"
+    .clear
+
+  .content-box-content
+
+    %table
+      %thead
+        %tr
+          %th
+          %th Activity
+          %th Date
+          %th Status
+          %th Payout
+          %th Redeemed Date
+      %tfoot
+        %tr
+          %td(colspan="3")
+            = will_paginate @activity, :renderer => Affiliate::AffiliateHelper::AdminPagination::LinkRenderer
+            .clear
+
+      %tbody
+        - @activity.each do |activity|
+
+          %tr
+            %td{ :width => 60 }= image_tag(activity.price.photo(:thumb)) if activity.price.present?
+            %td{ :style => "vertical-align: middle" }
+              - if activity.quantity == 1
+                = t(".activity.purchased_singular", :item => activity.group_drinks.first.price_name)
+              - else
+                = t(".activity.purchased_plural", :quantity => activity.quantity, :item => activity.group_drinks.first.price_name)
+              %strong= activity.redeemed? ? t(".activity.redeemed") : t(".activity.purchased")
+
+            %td{ :style => "vertical-align: middle" }= activity.updated_at.to_s(:euro_date)
+            %td{ :style => "vertical-align: middle" }= redeemed_voucher(activity)
+            %td{ :style => "vertical-align: middle" }= number_to_currency(merchant_payout(activity.total.to_f), :unit => activity.amount.currency.symbol, :precision => 3)
+            %td{ :style => "vertical-align: middle" }= activity.vouchers.last.redeemed_at.to_s(:euro_date) rescue ''
+
+
+
+

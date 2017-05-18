@@ -1,0 +1,60 @@
+<% content_for :subject do %>
+  <%# "%{count} of your Buddy Drinks gift vouchers expires soon!" %>
+  <%= t(".subject", :count => @vouchers.count) %>
+<% end %>
+
+<h1 class="h1">
+  <% if @vouchers.count == 1 %>
+    <%# "Your gift voucher expires in %{time}!" %>
+    <%= t(".expires_singular", :time => distance_of_time_in_words_to_now(@group_drink.expires_at)) %>
+  <% else %>  
+    <%# "Your %{count} gift vouchers expire in %{time}!" %>
+    <%= t(".expires_plural", :count => @vocuhers.count, :time => distance_of_time_in_words_to_now(@group_drink.expires_at)) %>
+  <% end %>
+</h1>
+
+<table border="0" cellpadding="0" cellspacing="0" >
+  <tr>
+    <td width="60px" valign="top">
+      <%= image_tag(@group_drink.price.photo(:thumb), :alt => @group_drink.price_name) %>
+    </td>
+    <td style="color:#505050; font-family:Arial;font-size:14px; line-height:150%; text-align:left;">
+      <strong>
+        <%# "%{name} bought you %{quantity} %{item} about %{time} ago." %>
+        <%= t(".description", :name => @iou.sender_name, :quantity => @group_drink.quantity, :item => @group_drink.price_name, :time => distance_of_time_in_words_to_now(@group_drink.paid_at)) %>
+      </strong>
+    </td>
+  </tr>
+</table>
+
+<% if @vouchers.count == @group_drink.quantity %>
+ 
+  <p>
+    <% if @vouchers.count == 1 %>
+      <%# We think %{name} would be pretty bummed if you dont pick up your gift. In order to claim your gift follow the instructions below. %>
+      <%= t(".none_redeemed_singular", :name => @iou.sender_name) %> 
+    <% else %>
+      <%# We think %{name} would be pretty bummed if you dont pick up your gifts. In order to claim your gifts follow the instructions below. %>
+      <%= t(".none_redeemed_plural", :name => @iou.sender_name) %> 
+    <% end %>
+  </p>
+    
+<% else %>
+  
+  <p>
+    <% if @group_drink.quantity - @vouchers.count == 1 %>
+      <%# You have already collected %{@group_drink.quantity - @vouchers.count} gift but you still have %{@vouchers.count} to pick up! %>
+      <%= t(".one_redeemed", :count => @voucher.count) %>
+    <% else %>
+      <%# You have already collected %{collected_count} gifts but you still have %{:count} to pick up! %>
+      <%= t(".many_redeemed", :collected_count => @group_drink.quantity - @vouchers.count, :count => @voucher.count) %>
+    <% end %>
+  </p>
+ 
+<% end %> 
+ 
+<%= render "voucher_instructions" %>
+
+<% content_for :sidebar do %>
+  <%= render "disclaimer" %>
+<% end %>

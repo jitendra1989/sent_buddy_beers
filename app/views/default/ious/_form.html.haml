@@ -1,0 +1,167 @@
+- javascripts 'jquery.tokeninput.js'
+- content_for :head do
+  :javascript
+    function get_cities(country_id) {
+      // make a POST call and replace the content
+      jQuery.post('/#{I18n.locale.to_s}/cities/get_cities_for_country', {id : country_id }, function(data) {
+        $("#bar_city").html(data).removeAttr("disabled");
+      });
+    }
+    
+    function get_bars(city_id) {
+      // make a POST call and replace the content
+      jQuery.post('/#{I18n.locale.to_s}/bars/get_bars_for_city', {id : city_id }, function(data) {
+        jQuery("#iou_bar_id").html(data).removeAttr("disabled");
+      });
+    }
+    
+    $(document).ready(function(){
+      $("#bar_country").change(function() {
+        get_cities($('#bar_country option:selected').val());
+      });
+      $("#bar_city").change(function() {
+        get_bars(jQuery('#bar_city option:selected').val());
+      });
+      
+      $("#iou_bar_id").change(function() {
+        bar_id = jQuery('#iou_bar_id option:selected').val();
+        jQuery.post('/#{I18n.locale.to_s}/bars/update_bar_details', {id : bar_id }, function(data) {
+          jQuery("#bar_details").html(data);
+        });
+        jQuery.get('/#{I18n.locale.to_s}/ious/new', {bar_id : bar_id }, function(data) {
+          jQuery(".drink_quantity_type, .price_select").removeAttr("disabled");
+        });
+        
+        $.post('/#{I18n.locale.to_s}/prices/get_prices_for_select_from_bar', {id : bar_id }, function(data) {
+          $(".price_select, .drink_quantity_type").removeAttr("disabled");
+          $(".price_select").html(data);
+        });
+      });
+      
+      $('#iou_recipient_phone').keyup(function() { 
+        if ($(this).val() == "") {
+          $("#sms_warning").fadeOut();
+        } else if ($('#iou_recipient_email').val() == "") {
+          $("#sms_warning").fadeIn();
+        } else {
+          $("#sms_warning").fadeOut();
+        }
+      });
+      
+      $('#iou_recipient_email').keyup(function() { 
+        if ($("#iou_recipient_phone").val() != "") {
+          if ($(this).val() != "") {
+            if ($("#sms_warning").is(":visible")) {
+              $("#sms_warning").fadeOut();
+            } 
+          } else {
+            $("#sms_warning").fadeIn();
+          }
+        }
+      });
+      //$("a.hint").fancybox();
+      
+    });
+
+  - unless @current_user.friends.blank?
+    :javascript
+      $(document).ready(function(){
+        $("#iou_recipient_name").tokenInput("http://#{request.env["HTTP_HOST"]}/users/#{current_user.id}/friendships.json", {
+          hintText: '#{t('.form.friend_search_hint_text')}',
+          noResultsText: '#{t('.form.friend_search_no_results_text')}',
+          searchingText: '#{t('.form.friend_searching_text')}',
+          tokenLimit: 1
+        });
+      });
+  - unless @price.present? or @bar.present?
+    :javascript
+      $(document).ready(function(){
+        if ($("#bar_country option:selected").val() != "") {
+          get_cities($("#bar_country option:selected").val());
+        }
+        if ($("#bar_city option:selected").val() == "") {
+          $("#bar_city").attr("disabled", true);
+        }
+        if ($("#iou_bar_id option:selected").val() == "") {
+          $("#iou_bar_id").attr("disabled", true);
+        }
+        if ($("#iou_beer_id option:selected").val() == "") {
+          $(".price_select, .drink_quantity_type").attr("disabled", true);
+        }
+      });
+
+= nested_form_for @iou, :as => :iou, :url => {:action => :create}, :html => { :multipart => true } do |iou_form|
+  - if @iou.errors.any? 
+    %div{ :id => "error_explanation"}
+      %h2= "#{pluralize(@iou.errors.count, "error")} prohibited this page from being saved:"
+      %ul
+        - @iou.try(:errors).try(:full_messages).each do |msg| 
+          %li{:style => 'padding-left: 0px;'}= msg 
+          
+  %h4= t(".friends_info_legend")
+  = iou_form.fields_for :group_drinks do |group_drink|
+    .form-group
+      = group_drink.text_field :recipient_name, :placeholder => "#{t(".form.friends_name")}", :class =>'form-control'
+    .form-group
+      = group_drink.text_field :recipient_email, :placeholder => "#{t(".form.friends_email")}", :class =>'form-control'
+    %h4.search-option OR
+    .form-group
+      .row
+        .col-md-6.padd_left_none.col-sm-6.col-xs-12
+          = group_drink.select :recipient_phone_country_code, grouped_options_for_select(dialing_codes), {}, { :class => 'custom-select country_code_phone' }
+          / = select_tag "iou[recipient_phone_country_code]", grouped_options_for_select(dialing_codes), :class => 'custom-select'
+        .col-md-6.padd_none.col-sm-6.col-xs-12
+          = group_drink.text_field :recipient_phone, :placeholder => "Your friend's phone number", :class =>'form-control'
+    
+    %h4.search-option OR SIMPLY
+    .form-group.text-center
+      = image_tag("/images/fb_friends.png", :border => 0, :class => "img-responsive")
+    
+    %h4= t(".bar_legend")
+    .form-group
+      .row
+        .col-md-6.padd_left_none.col-sm-6.col-xs-12
+          - if @bar.present?
+            = select :bar, :country, Country.with_bars_for_site(current_site).with_active_bars.uniq.collect {|c| [ c.printable_name, c.id ] }, :selected => @bar.country.id, :class => 'custom-select send-friend-country'
+          - else
+            = select :bar, :country, Country.with_bars_for_site(current_site).with_active_bars.uniq.collect {|c| [ c.printable_name, c.id ] }, { :prompt => t("forms.select.country").html_safe  }, :class => 'custom-select send-friend-country'
+        .col-md-6.padd_none.col-sm-6.col-xs-12.city-select-box
+          - if @bar.present?
+            = select :bar, :city, @bar.country.cities.with_active_bars.with_bars_for_site(current_site).uniq.collect {|c| [ c.name, c.id ] }, :selected => @bar.city.id, :class => 'custom-select'
+          - else
+            = select :bar, :city, [], { :prompt => t("forms.select.prompt_city").html_safe  }, :disabled => true, :class => 'custom-select'
+    .form-group.select-large.col-md-12.padd_none
+      - if @bar.present?
+        = iou_form.select :bar_id, @bar.city.bars.active.collect {|c| [ c.name, c.id ] }, :selected => @bar.id, :class => 'custom-select'
+      - else
+        = iou_form.select :bar_id, [], { :prompt => t("forms.select.prompt_bar").html_safe   }, :disabled => true, :class => 'custom-select'
+      .clearfix  
+      #bar_details
+        = render :partial => "bar_detail"
+
+    %h4{:style => "margin-top: 54px !important;"} Choose a Drink
+    .form-group
+      .row
+        .col-md-3.padd_none.col-sm-3.col-xs-12
+          %p.drink_quantity Drink (Quantity/Type)
+        .col-md-2.padd_left_none.col-sm-2.col-xs-3
+          = group_drink.select :quantity, (1..10).map{|n| [n.to_s, n.to_s]}, {}, :disabled => @bar.blank?, :class => 'custom-select drink_quantity_type'
+          = group_drink.hidden_field :beverage_id, :value => 1
+        .col-md-7.padd_none.col-sm-7.col-xs-9
+          - unless @bar.blank?
+            = group_drink.select :price_id, @bar.prices.collect{|p| [ [p.name, "-", number_to_currency(p.total.to_f, :unit => p.total.currency.symbol)].join(" "), p.id ] }.sort, :selected => @price.present? ? @price.id : "", :class => 'custom-select price_select'
+          - else
+            = group_drink.select :price_id, [], { :prompt => t("forms.select.prompt_choose_object", :type => t("forms.select.choose_objects.a_drink")) }, :disabled => true, :class => 'custom-select price_select'
+            
+  %h4{:style => "margin-top: 54px !important;"} Salutation
+  .form-group
+    = iou_form.text_field :memo, :placeholder => "#{t(".form.memo")}".html_safe, :class =>'form-control'
+  .form-group
+    = iou_form.text_field :sender_name, :placeholder => "#{t("forms.labels.your_name")}", :class =>'form-control', :value => current_user.name
+  %br/
+  .row
+    .col-md-6.col-sm-10.col-xs-12.pull-right.padd_none.final_bottm_row
+      %label
+        = iou_form.check_box :public
+        %span= t(".public_acceptance")
+      = submit_tag "Send It", :class => "btn final-btn pull-right send_it-btn"  

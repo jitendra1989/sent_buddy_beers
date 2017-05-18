@@ -1,0 +1,8 @@
+<%= t(".greeting", :name => @email.user.name) %>
+
+<%= t(".you_added", :email => @email.to_s) %> 
+<%= t(".verify_email") %>
+
+<%= t(".click_link") %>
+
+<%= email_activation_url(@email.token) %>

@@ -1,0 +1,92 @@
+de:
+  bars: 
+    bar: 
+      buy_a_beer: "Spendiere hier ein Bier"
+      drink_specials: "Drink Specials?"
+      more_info: "Weitere Informationen"
+      price_range: Preise
+    benefits: 
+      customers: 
+        description: "Unsere Erfahrung zeigt, dass <strong>Gutscheinbesitzer selten alleine trinken.</strong> Sie bringen Freunde mit, die ebenfalls gerne das eine oder andere kühle Bier in Gesellschaft genießen möchten."
+        heading: "Jeder Gutschein bringt im Schnitt 3 Gäste!"
+      heading: "Was sind meine Vorteile?"
+      income: 
+        description: "Der Gast mit dem BuddyDrinks Gutschein sowie seine Freunde konsumieren erfahrungsgemäß <strong>mehr als nur ein Getränk</strong>. Wenn es ihnen bei Dir gefällt, bleiben sie länger und Du profitierst von zusätzlichem Umsatz."
+        heading: "Mit jedem Gutschein werden im Schnitt 9-10 weitere Getränke in der Bar konsumiert."
+      setup: 
+        description: "Unser System ist <strong> einfach und kostenlos</strong>. Es ist in weniger als 30 Minuten einsatzfähig und auch das Barpersonal benötigt keine besonderen technischen Vorkenntnisse."
+        heading: "BuddyDrinks ist kostenlos"
+      web: 
+        description: "Wir sind Dein <strong>Werbepartner für das Internet</strong>. Wir sind in der Welt des Internets zu Hause und kennen uns aus mit aktuellen Trends und Methoden, Deine Bar im Web zu bewerben. Dazu gehören soziale Netzwerke wie Facebook, Twitter, YouTube oder Foursquare, um nur einige zu nennen."
+        heading: "Wir werben für Dich"
+    confirm: 
+      confirm_button: Abschicken!
+      drink_list: Getränkeliste
+      edit_bar: "Bar Information bearbeiten"
+      edit_drink_list: "Getränkeliste bearbeiten"
+      heading: "Registrierung abschließen!"
+      title: "Registrierung abschließen!"
+    confirmation_message: 
+      confirm: "Überprüfe, ob die Daten über Deinen gastronomischen Betrieb korrekt und vollständig sind und klicke die Schaltfläche am Ende der Seite, um deine Registrierung als BuddyBar abzuschließen!"
+      whats_next: 
+        contact: "Falls Du Fragen hast, <a href=\"%{link}\">kontaktiere uns</a> einfach. "
+        heading: "Was passiert als nächstes?"
+        one: "Ein freundlicher Buddy von BuddyDrinks wird Dich kontaktieren, um Deine Barinformationen zu bestätigen."
+        three: "Wir werden uns nochmals bei Dir melden, um sicherzustellen, dass Du das Willkommenspaket bekommen hast, Deine Bar \"live\" ist und alle Deine offenen Fragen beantwortet sind."
+        two: "Wir senden Dir ein Willkommenspaket mit Deinen ersten Gutscheinlisten, Zugangsdaten und tollen Marketing-Artikeln. Sobald Du die Zugangsdaten hast, kannst Du weitere Drinks hinzufügen und das Profil Deiner Bar anpassen."
+    create: 
+      error: "Oooops! Da ist wohl etwas schief gelaufen..."
+      success: "Wir haben Deine Anmeldung bekommen und werden Dich so schnell wie möglich kontaktieren, um Dir mehr Infos zu geben."
+    drink_feed: 
+      title: "Wer hatte im %{name} ein BuddyDrink?"
+    drink_list: 
+      menu: 
+        buy: Kaufen
+        discount: "Spezieller Buddy Drinks Rabatt!"
+        discount_short_desc: "Mit Rabatt!"
+        title: Menü
+    edit: 
+      heading: "Barinformationen bearbeiten"
+      title: "Barinformationen bearbeiten"
+    form: 
+      drinks: 
+        add: "Weitere Getränke der Liste hinzufügen"
+        remove: Entfernen
+      form: 
+        bar_legend: "Information über Deine Bar"
+        button: "<strong>Letzter Schritt:</strong> Bestätigung Deiner Infos"
+        contact_legend: "Kontakt Information"
+        description: "Fülle das nachfolgende Formular aus und wir werden Dich so schnell wie möglich kontaktieren, um Deine Bar in unser BuddyBars Netzwerk zu integrieren."
+        drink_list_legend: "Deine Getränkeliste"
+        heading: "Los geht's!"
+        no_city: "Wenn Deine Stadt nicht in der Liste auftaucht, ergänze sie hier"
+    index: 
+      about_link: "Über diese Bar"
+      heading: "Unsere BuddyBars"
+      subheading: "In welcher Bar möchtest Du Freunden oder Dir heute ein Bier spendieren?"
+      title: "Spendiere weltweit Biere in unseren BuddyBars"
+    new: 
+      customers_link: "Mehr Kundschaft"
+      heading: "Du möchtest eine BuddyBar werden?"
+      income_link: "Mehr Einnahmen"
+      network: 
+        heading: "Unsere BuddyBars"
+      setup_link: "Minimaler Aufwand"
+      title: "Du möchtest unserem BuddyBars Netzwerk beitreten?"
+      web_link: "Online Präsenz"
+    search: 
+      address_not_found: "%{location} konnte nicht gefunden werden. Bitte gebe eine genauere Adresse ein."
+      kilometers: km
+      label: "In der Nähe von"
+      legend: "Finde eine Bar in der Nähe Deines Freundes"
+      map_toggle: "Karte anzeigen/verstecken"
+      no_results: "Es wurden keine Bars im Umkreis von %{distance} um %{location} gefunden. Vielleicht kannst Du uns ja eine empfehlen!"
+      no_results_20: "Es wurden keine Bars im Umkreis von 20km von %{location} gefunden. <a href=\"/bars?origin[location]=%{location}&origin[distance]=%{distance}\">Klicke hier zur Suche nach Bars im Umkreis von %{distance}km um %{location}!</a>"
+      submit_button: "Bars suchen »"
+      value: "Gebe eine Adresse oder Stadt ein"
+    show: 
+      big_map_link: "Große Karte"
+      title: "%{bar} in %{city}, %{country} - Spendiere ein Bier"
+    submit: 
+      error: "Es gab einen Fehler. Bitte versuche es nochmal."
+      success: "Vielen Dank für Dein Interesse an BuddyDrinks! Wir haben alle Informationen über Deinen Betrieb erhalten und werden Dich in den nächsten Tagen kontaktieren!"

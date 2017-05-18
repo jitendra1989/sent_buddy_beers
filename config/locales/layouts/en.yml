@@ -1,0 +1,63 @@
+en:
+  layouts:
+    affiliate:
+      view_bar_listing: View Venue Listing
+      payment_prefs_empty:
+        heading: Your payment details are empty.
+        description: In order for us to pay out your profit from being a Buddy Venue, we need your bank or paypal details. <a href="%{link}">Click here to enter your payment details.</a>
+    application:
+      promo: 20% Off All Drinks when you pay with BuddyBucks
+    apps:
+      slogan: "Put <span class=\"color\">social</span> back into socializing."
+    email_layout:
+      download_now: "Download Now!"
+      be_social: "Share The Love!"
+    logged_in_as: Welcome %{user}
+    menu:
+      white_label_program: "Whitelabel App"
+      apps: "Get the App"
+      sync_your_email: Sync your email! 
+      edit_user: Profile
+      blog: Blog
+      bars: Buddy Venues
+      business_perks: Business Perks
+      contact: Contact Us
+      logout: Logout
+      privacy_terms: Privacy & Terms
+      admin:
+        dashboard: Admin Backend
+        affiliates: Affiliates
+        users: Users
+        dashboard_admin: Dashboard
+      affiliate:
+        my_bars: My Venues
+        dashboard: Affiliate Backend
+        my_beers: My Drinks
+      register_a_bar: Register a Venue
+      new_bar: New Venue
+      about: About
+      my_beers: My Drinks
+      redeem_link: "Redeem a Voucher"
+      send_a_beer: Buy a Drink
+      send_a_buddy_beer: Buy a Buddy Drink
+      bro:
+        dashboard: Bro Backend
+      home: Home
+    meta:
+      description: Buddy Drinks allows you to send REAL Drinks to your friends online. Ever said 'I owe you a Drink?' Now you can make good on that offer by sending your friend a Drink through Buddy Drinks.
+    navigation:
+      slogan: "Made in Berlin. <strong>Served Worldwide.</strong>"
+    user_account_navigation:
+      drinks: Drinks
+      drinks_sent: Sent Drinks
+      drinks_received: Received Drinks
+      login: Log in
+      logout: Log out
+      profile: Profile
+      my_account: My Account
+      my_drinks: My Drinks
+      my_events: My Events
+      signup: Sign up for free
+      new_sign_up: Sign up
+      signup_short: Sign up free
+      buddybeers: Log in with your Buddy Drinks account

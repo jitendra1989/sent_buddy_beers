@@ -1,0 +1,203 @@
+de:
+  ious: 
+    bar_detail: 
+      more_info: "Weitere Informationen"
+      read_more: "mehr Infos"
+    buddy_bucks_payment: 
+      bullets: 
+        credit_system: "Unsere eigene Währung (%{link})"
+        fast_convenient: "Schnell und zuverlässig"
+        multiple_purchases: "Einmal zahlen und mehrfach spendieren"
+        payment_options: "Etliche Zahlmethoden wie <strong>Überweisung</strong> möglich"
+      credit_cards: "Akzeptiert alle Kreditkarten"
+      credits: 
+        voucher: Gutschein
+      get_bucks: "Lade Dein BuddyBucks Guthaben auf"
+      heading: BuddyBucks
+      pay: "Zahle mit %{amount} BuddyBucks"
+    completed: 
+      error: "Sorry, Buddy. Heute kein Freibier. Du musst erst Deinen Deckel zahlen."
+    confirm: 
+      error: 
+        description: "Es gab ein Problem im Zahlungsprozess. Bitte versuche es nocheinmal und kontaktiere uns via info@buddydrinks.com, falls das Problem immer noch besteht."
+        heading: Fehler
+      get_more_bucks: "Lade weitere BuddyBucks auf"
+      not_enough_bucks: 
+        desc: "Bitte klicke den Link, um Dein BuddyBucks-Konto aufzuladen."
+        heading: "Du benötigst %{amount} weitere BuddyBucks um Deine Bestellung abzuschließen."
+      pay: "Zahle mit %{amount} BuddyBucks"
+    confirm_payment: 
+      success: "PayPal hat den Eingang Deiner Bezahlung bestätigt!"
+    confirmed_payment: 
+      delayed_delivery: "Da die Bars etwas Zeit benötigen, um ihre Gutscheinlisten zu aktualisieren, wird der Voucher erst in ca. %{time} Stunden im %{bar} eingelöst werden können. Sobald der Gutschein aktiv ist, werden wir %{recipient} über sein Glück informieren. %{recipient} wird sich sicherlich sehr freuen und Dir in Zukunft vielleicht auch einmal ein Bier via BuddyDrinks spendieren!"
+      heading: "Wow! Geschafft!"
+      immediate_delivery: "Der Gutschein, den %{recipient} von uns in diesem Moment erhält, kann umgehend eingelöst werden. %{recipient} wird sich sicherlich über Deine Großzügigkeit sehr freuen und vielleicht auch Dir ein Getränk spendieren!"
+      receipt: 
+        contact: "Kontaktiere uns"
+        description: "Per Email erhälst Du eine Quittung von Deinem Zahlungsanbieter (PayPal oder Ultimate Pay)."
+        faqs: "Lies unsere FAQs"
+        heading: Quittung
+        questions: "Falls Du weitere Fragen hast, bitte:"
+      send_another_beer: "Noch ne Runde!"
+      social_spread: 
+        fb_action: "Spendiere hier ein Bier"
+        fb_status: "Ich habe %{recipient} %{beer} spendiert in %{bar} in %{city}: %{memo}."
+        fb_status_for_display: "Ich habe <strong>%{recipient}</strong> %{beer} spendiert in %{bar} in %{city}: %{memo}! "
+        heading: "Lass alle wissen, wie großzügig Du bist!"
+        real: ECHT
+        share: "Auf Facebook veröffentlichen!"
+        twitter_link: "Auf Twitter veröffentlichen!"
+        twitter_status: "Ich habe @%{recipient} hier %{beer} spendiert: %{bar}, %{city}"
+        twitter_status_for_display: "Ich habe <strong>@%{recipient}</strong> hier %{beer} spendiert: %{bar}, %{city}"
+        twitter_via: "über BuddyDrinks"
+      spread_the_love: "Ach was soll's! Noch ne Runde spendieren?"
+      success: "<strong>Nice!</strong> Paypal hat Deine Zahlung bestätigt!"
+      title: "Weg damit!"
+      you_sent: "<strong>Du</strong> hast <strong>%{recipient}</strong> einen %{price} Gutschein für ein %{beer} spendiert in der Bar: <strong>%{bar}</strong>, %{city}!"
+    create: 
+      error: "Ah shit! Etwas hat nicht funktioniert!"
+      real: 
+        success: "<strong>Klasse!</strong> Jetzt nicht die Zeche prellen - Du bist kurz vor dem Ziel!"
+    credits: 
+      current_bucks: "Dein Guthaben beträgt <span class=\\\"user_credits\\\">%{amount}</span> BuddyBucks."
+    drink_details: 
+      drink_at_bar: "%{drink}* Gutschein in %{bar}, %{city} für %{recipient} (%{email})"
+    form: 
+      and_or: "und / oder"
+      bar_legend: "Wähle eine Bar"
+      beer_legend: "Wähle eine Bier"
+      form: 
+        beer: "Bier <small>(Anzahl, Marke)</small>"
+        buddy_beers_countries: "BuddyDrinks Länder"
+        button: Senden!
+        friend_search_hint_text: "Gebe den Namen oder die Email eines Freundes ein"
+        friend_search_no_results_text: "noch keine Buddies..."
+        friend_searching_text: Suche...
+        friends_email: "Email Deines Freundes"
+        friends_name: "Name Deines Freundes"
+        memo: "Grund für die Großzügigkeit"
+        other_countries: "Alle Länder"
+        send_a: "Sende ein"
+        sms_warning: "Kann in SMS abgeschnitten werden"
+      friend_network: "Wähle einen Freund aus"
+      friends_info_legend: "Dein Freund"
+      mobile_only: 
+        app_link: "App herunterladen"
+        heading: "Gutscheine sind nur noch über unsere Apps einlösbar!"
+        description: "Bitte vergewissere Dich, dass die Person, der Du ein Getränk ausgibst, ein <strong>iPhone</strong> oder ein <strong>Android</strong> Smartphone besitzt."
+        help: 
+          explanation: "<strong>Ja.</strong> Mit Hilfe unserer Mobile Apps und dem 1-Klick Einlöseverfahren für die Gutscheine können wir Bars viel schneller in unser Netzwerk integrieren."
+          suggestions: 
+            title: "Falls Dein Buddy kein Smartphone besitzt, so haben wir folgende witzige Vorschläge"
+            one: "Spendiere einfach zwei Biere an den Buddy Deines Buddies, der ein iPhone oder ein Android Smartphone besitzt und Deinen Buddy und stelle sicher, dass sie gemeinsam auf Dich anstoßen."
+            two: "Spendiere es Deinem Buddy und fordere ihn oder sie auf, in der Bar jemanden zu finden, der ein Smartphone besitzt."
+            three: "Kaufe Dir über Dein Smartphone ein paar Drinks und nehme Deinen Buddy einfach mit in die Bar."
+          title: "Benötigt der Empfänger ein Smartphone?"
+          unfortunately: "Leider schränkt dies die Menge der Buddies ein, die BuddyDrinks nutzen können, jedoch nur geringfügig, da heute schließlich fast jeder ein Smartphone besitzt."
+      public_acceptance: "Ich bin damit einverstanden, dass dies auf der Homepage und Detailseite der Bar angezeigt wird."
+      salutation_legend: Grußnachricht
+      sms_warning:
+        notice: Achtung
+        warning: "Da weltweit einige Mobilfunkanbieter unseren SMS-Service nicht unterstützen, empfehlen wir, stets auch eine Email-Adresse des Beschenkten anzugeben, damit der Drink garantiert ankommt."
+    index: 
+      description_sent: "<strong>%{sender}</strong> hast <strong>%{recipient}</strong> hier %{drink} spendiert: <strong>%{bar}</strong> in %{city}"
+      description_received: "<strong>%{sender}</strong> hat <strong>%{recipient}</strong> hier %{drink} spendiert: <strong>%{bar}</strong> in %{city}"
+      expired: "Verfallen am: %{date} "
+      expires: "Verfällt in %{distance} am %{date} "
+      heading: "Mein Bierdeckel"
+      received_beers: "Empfangene Getränke: %{count} "
+      received_empty: "Du hast derzeitig leider keine spendierten Biere. Frage doch Deine Freunde und Bekannten, ob sie Dir nicht eins ausgeben möchten. Wenn sie wüssten, dass dies möglich ist, würden sie es sofort tun! Oder vielleicht spendierst Du ihnen sogar das erste Bier! Dann sind sie Dir eins schuldig!"
+      received_mobile:
+        heading: "Wurde ein Gutschein an Dein Smartphone geschickt und Du kannst ihn in der App nicht finden?"
+        description: "<a href=\"%{link}\">Klicke hier, um Deine Mobilfunknummer Deinem Account hinzuzufügen</a> sodass Du auf dem Smartphone auch Gutscheine empfangen kannst, die an diese Nummer gesendet wurden."
+      redeemed: "Eingelöst am: %{date} "
+      sender_generic: "Ein Buddy"
+      sent_beers: "Spendierte Getränke: %{count} "
+      sent_empty: "Ohje! Du warst noch nicht wirklich spendabel. Genau genommen hast Du bisher Null Biere spendiert. Gib Dir einen Ruck! Sei spendabel und gib Deinen besten Freunden einen aus. Falls sie nicht in der Nähe einer BuddyBar wohnen, dann verwöhn Dich doch einfach selbst mit einem kühlen Blonden!"
+      title: "Mein Bierdeckel"
+      voucher_number: "Gutschein #%{number}"
+      you_sent: Du
+      you_received: Dir
+    new: 
+      heading: "Spendiere Biere"
+      title: "Schick Deinen Freunden ein Bier"
+    order: 
+      bucks: BuddyBucks
+      heading: "Du zahlst"
+      price: Gutschein
+      quantity: Menge
+      similar_price: "oder Getränk der gleichen Preiskategorie"
+      total: Gesamt
+    pay: 
+      heading: "Die Rechnung bitte!"
+      payment: 
+        heading: "Bezahle mit"
+      title: "Herr Ober, die Rechnung bitte!"
+    paypal_payment: 
+      bullets: 
+        credit_card: "Zahle mit allen gängigen Kreditkarten"
+        no_account: "Kein Account benötigt"
+        secure: "Standard für sichere Internetbezahlung"
+      button: "Zahle %{amount} über PayPal"
+      credit_cards: "Akzeptiert alle bekannten Kreditkarten"
+      form: 
+        average: durchschnitt
+        for_buddybeers: "für BuddyDrinks.com"
+        item_name: "%{amount} Gutschein für %{beers}%{location}"
+        order_name: "Bestellung #%{number}"
+    show:
+      app:
+        iphone:
+          heading: "Löse Deine Gutscheine über unsere iPhone App ein:"
+          link: "iPhone App herunterladen"
+        android:
+          heading: "Löse Deine Gutscheine über unsere Android App ein:"
+          link: "Android App herunterladen"
+        mobile: 
+          heading: "Löse Deine Gutscheine über unsere iPhone oder Android App ein:"
+      disclaimer: 
+        no_cash: "Buddy Drinks Voucher koennen nicht gegen Geld eingetauscht werden und sind nur eintauschbar wenn der Barbesitzer es erlaubt hat."
+        title: "Haftungsauschluss:"
+        voucher_limit: "Diese Bar erlaub nur %{limit} Getränk von einer Person am Tag!"
+      expired: "Entschuldigung, dieser Gutschein ist abgelaufen."
+      expires: "ABLAUFS DATUM:"
+      heading: "%{value} Gutschein für 1 %{beer} "
+      heading_voucher: "Dies ist ein <span class=\"money\">%{amount}</span> Voucher für ein %{beer}%{bar}"
+      instructions: 
+        heading: "Was muss Ich jetzt tun?"
+        instructions: "Installiere unsere iPhone oder Android App und löse Deine Gutscheine einfach in der Bar %{bar} ein."
+        instructions_iphone: "Installiere unsere iPhone App und löse Deine Gutscheine einfach in der Bar %{bar} ein."
+        instructions_android: "Installiere unsere Android App und löse Deine Gutscheine einfach in der Bar %{bar} ein."
+        print_link: "Gutschein ausdrucken"
+      map_link: "Große Karte"
+      memo: Warum?
+      mobile: 
+        heading: Gutschein
+      more_info: "Weitere Informationen"
+      redeemable_at: "einlösbar beim"
+      sent: "VON:"
+      sent_by: "Von:"
+      sent_to: "An:"
+      status: "STATUS:"
+      statuses: 
+        expired: "Abgelaufen! Was hast Du denn die ganze Zeit gemacht?"
+        expired_on: "Verfällt am: %{date} "
+        redeemed: Eingelöst!
+        redeemed_on: "Eingelöst am %{date} "
+        sent: "Gesendet, aber nicht gültig"
+        simple: 
+          expired: Abgelaufen
+          redeemed: Eingelöste
+          sent: Gesendet
+          valid: Gültig
+          valid_on: "Gültig an dem %{date}"
+        valid: "Gültig! Auf gehts!"
+        valid_on: "Noch nicht gültig! Gültig ab dem %{date}."
+        valid_until: "Gültig bis: %{date} "
+      title: "%{sender} hat %{recipient} hier %{drink} spendiert: %{bar} in %{city}"
+      
+    twitter:
+      status: "\"%{memo}\" %{sender} hat %{recipient} hier %{beer} spendiert: %{bar}, %{city} %{url}"
+    update: 
+      error: "Da war ein Fehler"
+      success: "Voucher wurde eingelöst"

@@ -1,0 +1,58 @@
+en:
+  devise:
+    failure:
+      unauthenticated: "You need to sign in or sign up before continuing."
+      unconfirmed: 'You have to confirm your email before continuing.'
+      locked: 'Your account is locked.'
+      invalid: 'Oops! Your username or password was entered incorrectly. Try again.'
+      invalid_token: 'Invalid authentication token.'
+      timeout: 'Your session expired, please sign in again to continue.'
+      inactive: 'Your account was not activated yet.'
+    sessions:
+      login_failed: "Login failed"
+      not_sign_in: "Login unsuccessful"
+      signed_in: 'Login successful!'
+      signed_out: 'Logout successful!'
+    passwords:
+      send_instructions: 'You will receive an email with instructions about how to reset your password in a few minutes.'
+      updated: 'Your password was changed successfully. You are now signed in.'
+      new:
+        title: Forgot your password?
+        heading: Forgot your password?
+        legend: Enter your email below and we will send you a link to reset your password
+        submit: Reset
+      edit:
+        title: Change your password
+        heading: Change your password
+    confirmations:
+      send_instructions: 'You will receive an email with instructions about how to confirm your account in a few minutes.'
+      confirmed: "Sweet! You've activated your account. Start being awesome and sending some drinks!"
+    registrations:
+      signed_up: 'You have signed up successfully. If enabled, a confirmation was sent to your e-mail.'
+      inactive_signed_up: "Your account has been created. Just check your e-mail for the confirmation link, and you're ready to go!"
+      updated: 'Account updated!'
+      destroyed: 'Bye! Your account was successfully cancelled. We hope to see you again soon.'
+    unlocks:
+      send_instructions: 'You will receive an email with instructions about how to unlock your account in a few minutes.'
+      unlocked: 'Your account was successfully unlocked. You are now signed in.'
+    mailer:
+      confirmation_instructions:
+        personal_information: 'Personal Information'
+        subject: 'Confirmation Instructions'
+      reset_password_instructions:
+        subject: 'Buddy Drinks password reset instructions'
+        greeting: 'Hello %{email}!'
+        description: 'We received a request to change your password. Click the link below to change it.'
+        link_text: Change my password
+        security: "If you didn't request this, just ignore this email. Maybe a friend is jealous of all the drinks you're getting and trying to get into your account. But don't worry we won't reset your password until you access the link above and create a new one."
+      unlock_instructions:
+        subject: 'Unlock Instructions'
+    omniauth_callbacks:
+      failure: "Could not authorize you from %{kind} because \"%{reason}\". "
+      success: "Successfully signed in using your %{kind} account."
+
+    devise_mailer:
+      confirmation_instructions:
+        thanks: Thank you for creating an account! Click the url below to activate your account!
+        subject: Buddy Drinks Activation Instructions
+        problem_link: If the above URL does not work try copying and pasting it into your browser. If you continue to have problem, please feel free to contact us.

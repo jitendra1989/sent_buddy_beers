@@ -1,0 +1,14 @@
+/ default > registrations > form
+
+= f.hidden_field :language, :value => I18n.locale
+
+= render("payment_information", :f => f) if f.object.affiliate?
+
+%fieldset
+  %legend= t(".personal_information.legend")
+
+  = render "personal_information", :f => f
+  %ol= render "password_fields", :f => f
+
+  %ul
+    %li= f.submit t("forms.buttons.update")

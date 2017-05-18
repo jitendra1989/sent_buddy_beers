@@ -1,0 +1,29 @@
+/ buddybeers > devise > passwords > edit
+
+- @title = t(".title")
+- stylesheets "sites/buddybeers/sections/forms"
+- content_for :head do
+  :javascript
+    $(document).ready(function(){ $("label").inFieldLabels(); });
+    
+#password
+  %h1= t(".heading")
+
+  = form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :put }) do |f|
+    = devise_error_messages!
+    = f.hidden_field :reset_password_token
+
+    %fieldset
+      %ol
+        %li
+          = f.label :password, t("forms.labels.new_password")
+          = f.password_field :password
+
+        %li
+          = f.label :password_confirmation, t("forms.labels.confirm_new_password")
+          = f.password_field :password_confirmation
+
+      %ul
+        %li= f.submit t("forms.buttons.update")
+    
+    =clear_floats

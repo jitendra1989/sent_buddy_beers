@@ -1,0 +1,115 @@
+- content_for :head do
+  :javascript
+    function get_cities(country_id) {
+      // make a POST call and replace the content
+      jQuery.post('/#{I18n.locale.to_s}/cities/get_cities_for_country', {id : country_id }, function(data) {
+        jQuery("#bar_city").html(data).effect("highlight", {}, 3000).removeAttr("disabled");
+      });
+    }
+    
+    function get_bars(city_id) {
+      // make a POST call and replace the content
+      jQuery.post('/#{I18n.locale.to_s}/bars/get_bars_for_city', {id : city_id }, function(data) {
+        jQuery("#iou_bar_id").html(data).effect("highlight", {}, 3000).removeAttr("disabled");
+      });
+    }
+    
+    $(document).ready(function(){
+      $("#bar_country").change(function() {
+        get_cities(jQuery('#bar_country option:selected').val());
+      });
+      $("#bar_city").change(function() {
+        get_bars(jQuery('#bar_city option:selected').val());
+      });
+      $("#iou_bar_id").change(function() {
+        bar_id = jQuery('#iou_bar_id option:selected').val();
+        jQuery.post('/#{I18n.locale.to_s}/facebook/locations/update_location_details', {id : bar_id }, function(data) {
+          jQuery("#bar_details").html(data, function(){
+            //FB.Canvas.setSize();
+          });
+        });
+        jQuery.post('/#{I18n.locale.to_s}/prices/get_prices_for_select_from_bar', {id : bar_id }, function(data) {
+          jQuery("#iou_price_id, #iou_quantity").removeAttr("disabled");
+          jQuery("#iou_price_id").html(data).effect("highlight", {}, 3000);
+        });
+      });
+    });
+
+  - unless @price.present? or @bar.present?
+    :javascript
+      $(document).ready(function(){
+        if ($("#bar_country option:selected").val() != "") {
+          get_cities($("#bar_country option:selected").val());
+        }
+        if ($("#bar_city option:selected").val() == "") {
+          $("#bar_city").attr("disabled", true);
+        }
+        if ($("#iou_bar_id option:selected").val() == "") {
+          $("#iou_bar_id").attr("disabled", true);
+        }
+        if ($("#iou_beer_id option:selected").val() == "") {
+          $("#iou_beer_id, #iou_quantity").attr("disabled", true);
+        }
+      });
+
+= form_for @iou, :as => :iou, :url => {:action => :create} do |iou_form|
+
+  = render "friend_select", :iou_form => iou_form
+  
+  %fieldset.bar
+    %legend= t("ious.form.bar_legend")
+    %ol
+      %li
+        = label :city, "#{t("forms.labels.country")}:"
+        - if @bar.present?
+          = select :bar, :country, Country.with_active_bars.with_bars_for_site(current_site).uniq.collect {|c| [ c.printable_name, c.id ] }, :selected => @bar.country.id
+        - else
+          = select :bar, :country, Country.with_active_bars.with_bars_for_site(current_site).uniq.collect {|c| [ c.printable_name, c.id ] }, { :prompt => t("forms.select.default_prompt").html_safe }
+
+      %li
+        = label :city, "#{t("forms.labels.city")}:"
+        - if @bar.present?
+          = select :bar, :city, @bar.country.cities.with_active_bars.with_bars_for_site(current_site).uniq.collect {|c| [ c.name, c.id ] }, :selected => @bar.city.id
+        - else
+          = select :bar, :city, [], { :prompt => t("forms.select.default_prompt").html_safe }, :disabled => true
+
+      %li
+        = iou_form.label :bar_id, "#{t("forms.labels.bar")}:"
+        - if @bar.present?
+          = iou_form.select :bar_id, @bar.city.bars.active.collect {|c| [ c.name, c.id ] }, :selected => @bar.id
+        - else
+          = iou_form.select :bar_id, [], { :prompt => t("forms.select.default_prompt")  }, :disabled => true
+        #bar_details
+          = render :partial => "facebook/locations/location_detail"
+
+  %fieldset.beer
+    %legend= t("ious.form.beer_legend")
+    %ol
+      %li
+        = iou_form.label :quantity, "#{t("ious.form.form.beer")}:".html_safe
+        %span.quantity= iou_form.select :quantity, (1..10).map{|n| [n.to_s, n.to_s]}, {}, :disabled => @bar.blank?
+        = iou_form.hidden_field :beverage_id, :value => 1
+        %span.name
+          - if @bar.present?
+            = iou_form.select :price_id, @bar.prices.collect{|p| [ [p.name, "-", number_to_currency(p.total.to_f, :unit => p.total.currency.symbol)].join(" "), p.id ] }.sort, :selected => @price.present? ? @price.id : ""
+          - else
+            = iou_form.select :price_id, [], { :prompt => t("forms.select.default_prompt") }, :disabled => true
+
+  %fieldset.salutation
+    %legend= t("ious.form.salutation_legend")
+    %ol
+      %li
+        = iou_form.label :memo, "#{t("ious.form.form.memo")}:".html_safe
+        = iou_form.text_field :memo
+      %li
+        = iou_form.label :sender_name, "#{t("forms.labels.your_name")}:"
+        = iou_form.text_field :sender_name, :value => current_user.name
+      %li.public
+        %label{ :for => "iou_public" }
+          = iou_form.check_box :public
+          = t("ious.form.public_acceptance")
+  %ul.buttons
+    %li
+      = submit_tag t("ious.form.form.button"), :class => "send_beer"
+      
+  = clear_floats

@@ -1,0 +1,220 @@
+en:
+  ious:
+    new:
+      heading: Send a Drink to Your Friend.
+      title: Send Your Friend a Drink
+      bar_legend: Choose a Venue
+      beer_legend: Choose a Drink
+      friends_info_legend: Your Friend
+      salutation_legend: Salutation
+    form:
+      and_or: "and / or"
+      friends_info_legend: Your Friend
+      salutation_legend: Salutation
+      friend_network: Choose a friend from
+      bar_legend: Choose a Venue
+      send_buddy_legend: Send Drinks to Your Buddies
+      friends_email: "Recipient's Email"
+      friends_name: "Recipient's Name"
+      memo: "Memo"
+      mobile_only:
+        app_link: "Get the App"
+        heading: "We're mobile only now!"
+        description: "Please make sure the person you are sending a drink to has an <strong>iPhone</strong> or <strong>Android</strong> smartphone."
+        help:
+          title: "Does my friend need a smart phone?"
+          explanation: "<strong>Yes.</strong> Its much easier for us to expand our venue network with our new mobile apps and our one-click voucher redemption technology."
+          unfortunately: "Unfortunately this does limit the amount of buddies who can use our awesome service."
+          suggestions:
+            title: "If your buddy doesn't have a smartphone, here are some fun suggestions"
+            one: "Send two Drinks to your buddy's buddy who does have a smartphone and make sure he takes your friend."
+            two: "Send it to your buddy and challenge him or her to find someone in the venue with a smartphone to share with."
+            three: "Buy yourself a Drink and take your buddy in person."
+
+      sms_warning:
+        notice: Notice
+        warning: "Some worldwide mobile carriers do not accept our SMSs. We strongly recommend also adding your friend's email."
+      form:
+        button: Send it!
+        send_a: Send a
+        memo: Reason for your generosity
+        beer: Drink <small>(Quantity/Type)</small>
+        friends_email: Your friend's email
+        friend_search_hint_text: Start typing a friend’s name or email
+        friends_name: Your friend's name
+        friend_searching_text: Searching your friend list...
+        friend_search_no_results_text: No friends with this name
+        sms_warning: "May be truncated in SMS"
+        buddy_beers_countries: Buddy Drinks Countries
+        other_countries: All Countries
+      beer_legend: Choose a Drink
+      public_acceptance: "Yes!  Please show this on the Buddy Drinks homepage."
+    twitter:
+      status: "\"%{memo}\" %{sender} bought %{recipient} %{beer} at %{bar}, %{city}: %{url}"
+    index:
+      title: "My Drinks"
+      you_sent: You
+      you_received: You
+      description_received: "<strong>%{sender}</strong> bought <strong>%{recipient}</strong> %{drink}<strong>%{beverage_name}</strong> at <strong>%{bar}</strong>"
+      venue: "<strong>%{city}</strong>"
+      description_sent: "<strong>%{sender}</strong> bought <strong>%{recipient}</strong> %{drink} at <strong>%{bar}</strong>, %{city}"
+      received_beers: "Received Drinks: %{count}"
+      sent_beers: "Sent Drinks: %{count}"
+      sender_generic: "A Buddy"
+      voucher_number: "Voucher #%{number}"
+      heading: My Drinks
+      expired: "Expired on: %{date}"
+      expires: "Expires in %{distance} on %{date}"
+      redeemed: "Redeemed on: %{date}"
+      received_empty: "You currently have no received Drinks. Why not ask your friends or family to send you a Drink? They'd probably love to!"
+      received_mobile:
+        heading: "Did you receive a voucher to your mobile phone but you're not seeing it here?"
+        description: "<a href=\"%{link}\">Click here to add your mobile phone to your account</a> and then you will see your vouchers."
+      sent_empty: "You haven't sent any Drinks, yet. If you don't have any friends near our venues, why not just buy yourself one?"
+    order:
+      price: Voucher
+      quantity: Qty.
+      similar_price: or similarly-priced drink
+      total: Total
+      heading: You're buying
+      bucks: BuddyBucks
+    drink_details:
+      drink_at_bar: "%{drink}* voucher at %{bar}, %{city} for %{recipient} (%{email})"
+    buddy_bucks_payment:
+      get_bucks: Get More<img src='/images/buddy-bucks.png'> BuddyBucks
+      heading: BuddyBucks
+      pay: Pay using %{amount}<img src='/images/buddy-bucks.png'> BuddyBucks
+      bullets:
+        credit_system: Our very own currency built on Visa's %{link}
+        fast_convenient: Fast and convenient
+        payment_options: Tons of payment options including <strong>bank transfers</strong>
+        multiple_purchases: Only pay once for multiple purchases
+      credits:
+        voucher: Voucher
+      credit_cards: "Accepts all credit cards"
+    paypal_payment:
+      button: Pay %{amount} with Paypal
+      bullets:
+        credit_card: Pay with any major credit card
+        secure: The standard in secure internet payments
+        no_account: No account required
+      form:
+        for_buddybeers: for BuddyDrinks.com
+        order_name: "Order #%{number}"
+        item_name: "%{amount} Voucher for %{beers}%{location}"
+        average: average
+      credit_cards: "Accepts all major credit cards"
+    pay:
+      title: Check Please
+      heading: Time to pay up!
+      payment:
+        heading: Pay using
+    credits:
+      current_bucks: "You currently have <span class=\"user_credits\">%{amount}</span> BuddyBucks"
+      new_current_bucks: "Balance:"
+    create:
+      real:
+        success: Awesome! Pay for the Drink below and your friend will think you're the absolute coolest!
+      error: Oops! Looks like something bogus happened.
+    completed:
+      error: "Sorry, bro. No free Drinks today; You gotta pay for your tab first."
+    confirm:
+      not_enough_bucks:
+        heading: "You need %{amount} more BuddyBucks to complete this order"
+        desc: "Please click the link below to top up your BuddyBucks account."
+      get_more_bucks: "Get more BuddyBucks"
+      error:
+        heading: "Error"
+        description: "There was an error paying for your voucher. Please try again or contact us at info@buddydrinks.com if the problem persists."
+      pay: "Pay with %{amount}<img src='/images/buddy-bucks.png'> BuddyBucks"
+    bar_detail:
+      read_more: read more
+      more_info: More Info
+    update:
+      success: Voucher has been redeemed
+      error: There was an error
+    confirm_payment:
+      success: <strong>Sweet!</strong> Paypal has confirmed your payment!
+    confirmed_payment:
+      immediate_delivery: It might take a couple minutes for your friend to receive their voucher, but man, is your friend, %{recipient}, gonna be happy! They may even buy <em>you</em> a Drink to say thanks!
+      title: Drinks away!
+      send_another_beer: Send another Drink
+      you_sent: "<strong>You</strong> sent <strong>%{recipient}</strong> a %{price} voucher for %{beer} at <strong>%{bar}</strong> in %{city}!"
+      spread_the_love: Want to keep spreading the love?
+      heading: Hot damn!
+      success: <strong>Sweet!</strong> Paypal has confirmed your payment!
+      delayed_delivery: Due to the time it takes for %{bar} to receive their vouchers, %{recipient} will receive their voucher in approximately %{time} hours. Man, is your friend, %{recipient}, gonna be happy! They may even buy <em>you</em> a Drink to say thanks!
+      social_spread:
+        share: Share this on Facebook!
+        real: REAL
+        heading: Let your friends know via Facebook or Twitter
+        fb_status: "I sent %{recipient} %{beer} at %{bar} in %{city}: %{memo}!"
+        fb_status_for_display: "I sent <strong>%{recipient}</strong> %{beer} at %{bar} in %{city}: %{memo}!"
+        fb_action: Buy a Drink Here
+        twitter_link: Post this on Twitter!
+        twitter_status_for_display: "I sent <strong>@%{recipient}</strong> %{beer} at %{bar}, %{city} on <strong>http://buddydrinks.com</strong> /#spreadthelove <strong>@buddydrinks</strong>"
+        twitter_status: "I sent @%{recipient} %{beer} at %{bar}, %{city}%20on%20http%3A%2F%2Fbuddydrinks.com%20%2F%23spreadthelove%20%40buddydrinks"
+        twitter_via: "via Buddy Drinks"
+      receipt:
+        heading: "Receipt of payment"
+        description: "You will receive a receipt to your email address from our payment service provider (Paypal or Ultimate Pay)."
+        questions: "If you have any questions, please:"
+        faqs: "Read our FAQs"
+        contact: "Contact us"
+    show:
+      app:
+        iphone:
+          heading: "Redeem your vouchers with our iPhone App:"
+          link: "Download iPhone App"
+        android:
+          heading: "Redeem your vouchers with our Android App:"
+          link: "Download Android App"
+        mobile:
+          heading: "Redeem your vouchers with our iPhone or Android App:"
+      sent: "SENT:"
+      expires: "EXPIRES:"
+      title: "%{sender} bought %{recipient} %{drink} at %{bar}, %{city}"
+      sent_to: "Sent To:"
+      memo: Why?
+      heading: "%{value} Voucher for 1 %{beer}"
+      statuses:
+        simple:
+          sent: Sent
+          redeemed: Redeemed
+          valid_on: Valid from %{date}
+          valid: Valid
+          expired: Expired
+        sent: Sent, but not valid yet
+        redeemed: Redeemed!
+        valid_on: Not valid yet. Valid from %{date}.
+        valid: Valid, get on it!
+        expired: Expired! What took you so long?
+        valid_until: Valid until %{date}
+        redeemed_on: Redeemed on %{date}
+        expired_on: Expired on %{date}
+      disclaimer:
+        title: "Disclaimer:"
+        no_cash: Buddy Drinks vouchers are not redeemable for cash and only transferrable upon the venue owner's permission.
+        voucher_limit: This Venue allows only %{limit} drinks to be purchased per person per day using Buddy Drinks vouchers.
+      instructions:
+        print_link: print this voucher
+        heading: What do I do now?
+        instructions: "Download our <a href=\"%{iphone_link}\" target=\"_blank\">iPhone App</a> or <a href=\"%{android_link}\" target=\"_blank\">Android App</a> and take your phone to %{bar}."
+        instructions_iphone: "Download our <a href=\"%{link}\" target=\"_blank\">iPhone App</a> and take your phone to %{bar}."
+        instructions_android: "Download our <a href=\"%{link}\" target=\"_blank\">Android App</a> and take your phone to %{bar}."
+      map_link: big map
+      expired: Sorry, this voucher has expired.
+      status: "STATUS:"
+      sent_by: "Sent By:"
+      redeemable_at: redeemable at
+      heading_voucher: This is a <span class="money">%{amount}</span> voucher for a %{beer}%{bar}
+      more_info: More Info
+      mobile:
+        heading: Voucher
+    existing_account_activation:
+      heading: Already have an account?
+      description: Login here and we'll add %{email} to your account.
+    new_account_creation:
+      heading: Want to activate your account?
+      description: Activating your account allows you to log in to Buddy Drinks and track your Drinks easier.
+      activate: Activate

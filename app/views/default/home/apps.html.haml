@@ -1,0 +1,19 @@
+- content_for :head do
+  :javascript
+    $(document).ready(function(){
+      $("a#video_link").fancybox();
+      #{ params[:video].present? ? "$('a#video_link').trigger('click');" : "" }
+      $("#phones").click(function(e){
+        #{ Rails.env.production? ? "_gaq.push(['_trackEvent', 'App', 'Download', 'homepage graphics iPhone']);" : ""}
+        window.open("http://itunes.apple.com/app/buddy-beers/id494547749");
+        e.preventDefault();
+      })
+    });
+
+#body.pie
+  #apps
+    %h2= t(".subhead")
+  
+    = render "app_form"
+    
+= render "app_video"

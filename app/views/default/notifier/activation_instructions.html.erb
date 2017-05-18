@@ -1,0 +1,11 @@
+<%= t(".thanks") %>
+ 
+<%= @activation_url %>
+
+<%= t(".personal_information") %>
+<%= t("forms.labels.username") %>: <%= @user.login %>
+<%= t("forms.labels.email") %>: <%= Email.find_by_primary_and_id(true, @user.id).email %>
+ 
+<%= t(".problem_link") %>
+
+<%= render :partial => "email_footer" %>

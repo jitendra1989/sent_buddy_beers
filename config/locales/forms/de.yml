@@ -1,0 +1,101 @@
+de:
+  forms: 
+    buttons: 
+      add: Hinzufügen
+      cheers: Anmelden
+      go: Suchen
+      login: Anmelden
+      register_with_twitter: "Registrieren mit Twitter"
+      search: "Suchen » "
+      update: Speichern
+    drinks: 
+      additional_options: "Weitere Details über das Getränk"
+      remove: "Dieses Getränk entfernen"
+    hint_box: 
+      about: Über
+    labels: 
+      address: Adresse
+      bank_account_bic_swift: BIC/SWIFT-Nummer
+      bank_account_code: "Bankleitzahl (BLZ)"
+      bank_account_iban: IBAN-Nummer
+      bank_account_name: "Name des Kontoinhabers"
+      bank_account_number: Konto-Nummer
+      bank_address: "Bank Adresse"
+      bank_name: "Bank Name"
+      bar: Bar
+      bar_name: "Name des Betriebs"
+      bar_token: "Bar Erkennung"
+      beer: Bier
+      brand: Marke
+      choose_password: "Passwort wählen"
+      choose_username: "Benutzernamen wählen"
+      city: Stadt
+      confirm_new_password: "Neues Passwort bestätigen"
+      confirm_password: "Passwort bestätigen"
+      contact_email: "Email Kontakt"
+      contact_name: "Vollständiger Name"
+      country: Land
+      currency: Währung
+      current_photo: "Aktuelles Bild"
+      default_currency: "Zahlung in"
+      description: Beschreibung
+      description_bio: Beschreibung
+      discounted: "Ich möchte dieses Bier BuddyDrinks Gästen zu einem reduzierten Preis anbieten"
+      discounted_price: "Reduzierter Preis"
+      drink_type: Getränketyp
+      email: Email
+      emails: Email-Adressen
+      lead: "Wer hat Dir von uns erzählt?"
+      name: Name
+      near: Adresse
+      new_beer: "Neues Bier"
+      new_brand: "Neue Marke"
+      new_password: "Neues Passwort"
+      opening_hours: Öffnungszeiten
+      password: Passwort
+      paypal: "Paypal Email"
+      phone: Telefon
+      phone_number: Telefonnummer
+      photo: Bild
+      price: Preis
+      price_in_cents: "Preis (in Cents)"
+      primary_email: "Erste Adresse"
+      promotion_group: "Name der Gruppe"
+      remember_me: "An mich erinnern"
+      remove: "Löschen"
+      remove_this_drink: "Entferne dieses Getränk"
+      title: Titel
+      twitter_email: "Twitter Email"
+      twitter_handle: Twitter
+      twitter_password: "Twitter Passwort"
+      twitter_username: "Twitter Username"
+      user: Benutzer
+      username: Benutzername
+      username_or_email: "Benutzername oder Email"
+      volume: "Maß"
+      voucher_limit: "Gutschein Trink Limit (Pro Person / Pro Tag)"
+      website: Website
+      within: Umkreis
+      your_email: "Deine Emailadresse"
+      your_name: "Dein Name"
+    links: 
+      cancel: "Hier hab ich nicht geparkt!"
+    translation: 
+      translation: "%{other_locale} Übersetzung" 
+      none: "Kein"
+    select: 
+      afternoon: "Nachmittags (13:00-17:00)"
+      choose_objects: 
+        a_bar: "eine Bar"
+        a_brand: "eine Marke"
+        a_city: "eine Stadt"
+        a_country: "ein Land"
+      default_prompt: "Bitte wähle"
+      evening: "Abends (17:00-21:00)"
+      morning: "Morgen (9:00-11:00)"
+      night: "Nacht (21:00-0:00)"
+      no_cities: "Keine verfügbaren Städte"
+      no_countries: "Keine verfügbaren Länder"
+      none: Kein
+      noon: "Mittags (11:00-13:00)"
+      prompt_choose_object: "Bitte wähle %{type}"

@@ -1,0 +1,16 @@
+it:
+  vouchers:
+    check:
+      heading: "Riscatta un Voucher"
+      form:
+        button: "Riscatta"
+    redeem:
+      success_expired: "Il Voucher per il %{bar} è scaduto! Lo abbiamo riscattato noi al posto tuo in modo che tu possa essere pagato; sei comunque tu a decidere se dare lo stesso il prodotto al cliente."
+      success: "Voucher per il %{bar} riscattato!"
+      error:
+        expired: "Il Voucher è scaduto!"
+        unredeemable: "Il codice da te inserito non è corretto oppure è il Voucher stesso che non può essere riscattato."
+        not_found: "Questo Voucher non è stato trovato oppure è stato già riscattato."
+        empty: "I tuoi Voucher sono stati tutti già riscattati."
+        permission_denied: "Spiacenti, non hai il permesso per riscattare i Voucher."
+        no_code: "Non hai inserito nessun numero del Voucher. Ti preghiamo di riprovare."

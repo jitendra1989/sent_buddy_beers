@@ -1,0 +1,97 @@
+nl:
+  date: 
+    abbr_day_names: 
+      - Zo
+      - Ma
+      - Di
+      - Wo
+      - Do
+      - Vr
+      - Za
+    abbr_month_names: 
+      - ~
+      - Jan
+      - Feb
+      - Maa
+      - Apr
+      - Mei
+      - Jun
+      - Jul
+      - Aug
+      - Sep
+      - Okt
+      - Nov
+      - Dec
+    day_names: 
+      - Zondag
+      - Maandag
+      - Dinsdag
+      - Woensdag
+      - Donderdag
+      - Vrijdag
+      - Zaterdag
+    formats: 
+      default: "%d-%m-%Y"
+      long: "%B %d, %Y"
+      short: "%b %d"
+    month_names: 
+      - ~
+      - Januari
+      - Februari
+      - Maart
+      - April
+      - Mei
+      - Juni
+      - Juli
+      - Augustus
+      - September
+      - Oktober
+      - November
+      - December
+    order: 
+      - !ruby/symbol year
+      - !ruby/symbol month
+      - !ruby/symbol day
+  datetime: 
+    distance_in_words: 
+      about_x_hours: 
+        one: "ongeveer 1 uur"
+        other: "ongeveer %{count} uur"
+      about_x_months: 
+        one: "ongeveer 1 maand"
+        other: "ongeveer %{count} maanden"
+      about_x_years: 
+        one: "ongeveer 1 jaar"
+        other: "ongeveer %{count} jaar"
+      almost_x_years: 
+        one: "ongeveer 1 jaar"
+        other: "ongeveer %{count} jaar"
+      half_a_minute: "een halve minuut"
+      less_than_x_minutes: 
+        one: "minder dan een minuut"
+        other: "minder dan %{count} minuten"
+      less_than_x_seconds: 
+        one: "minder dan een seconde"
+        other: "minder dan %{count} seconden"
+      over_x_years: 
+        one: "over 1 jaar"
+        other: "over %{count} jaar"
+      x_days: 
+        one: "1 dag"
+        other: "%{count} dagen"
+      x_minutes: 
+        one: "1 minuut"
+        other: "%{count} minuten"
+      x_months: 
+        one: "1 maand"
+        other: "%{count} maanden"
+      x_seconds: 
+        one: "1 seconde"
+        other: "%{count} seconden"
+    prompts: 
+      day: Dag
+      hour: Uur
+      minute: Minuut
+      month: Maand
+      second: Seconden
+      year: Jaar

@@ -1,0 +1,58 @@
+de:
+  devise: 
+    confirmations: 
+      confirmed: "Herzlichen Glückwunsch! Du hast Deinen Account erfolgreich aktiviert. Sei großzügig und spendiere ein paar Getränke! <iframe src=\"http://www2.balao.de/SL2YM?adv_sub=SUB_ID\" scrolling=\"no\" frameBorder=\"0\" width=\"1\" height=\"1\"></iframe>"
+      send_instructions: "In wenigen Minuten erhälst Du eine Email zur Bestätigung Deines Accounts."
+    devise_mailer: 
+      confirmation_instructions: 
+        problem_link: "Wenn die oben angegebene URL nicht funktioniert, versuch mal den Link in Deinen Webbrowser zu kopieren."
+        subject: "Buddy Drinks Bestätigungs email"
+        thanks: "Danke, dass Du Dich bei uns angemeldet hast! Klick auf die unten angegebene URL, um Dein Konto zu aktivieren."
+    failure: 
+      already_authenticated: "Du bist bereits angemeldet."
+      inactive: "Dein Konto ist nicht aktiv"
+      invalid: "Benutzername oder Passwort ist nicht gültig"
+      invalid_token: "Ungültiger Aktivierungslink."
+      locked: "Dein Account ist gesperrt."
+      timeout: "Deine Session ist aus Sicherheitsgründen abgelaufen. Bitte melde Dich erneut an mit Deiner Emailadresse und Deinem Passwort"
+      unauthenticated: "Du musst eingeloggt sein, um diese Seite betreten zu können. <a href=\"/users/sign_up\">Klicke hier zur Einrichtung eines kostenlosen BuddyDrinks Kontos.</a> "
+      unconfirmed: "Du musst Deine E-Mailadresse bestätigen, bevor Du weitermachen kannst."
+    mailer: 
+      confirmation_instructions: 
+        personal_information: "Persönliche Informationen"
+        subject: Bestätigungsinformationen
+      reset_password_instructions: 
+        description: "Wir haben eine Anfrage zur Änderung Deines Passworts erhalten. Klicke den Link unten, um es zu ändern."
+        greeting: "Hallo %{email}! "
+        link_text: "Passwort ändern"
+        security: "Falls Du die Anfrage nicht gestellt hast, ignoriere diese Email einfach. Vielleicht ist nur ein Freund von Dir neidisch darauf, dass Du so viele Biere spendiert bekommst. Aber keine Angst - wir werden Dein Passwort nicht zurücksetzen, sofern Du nicht den obigen Link klickst und selbst ein neues Passwort erstellst."
+        subject: "Anweisungen zum Zurücksetzen des BuddyDrinks Passworts"
+      unlock_instructions: 
+        subject: "Anweisungen zum Reaktivieren des BuddyDrinks Kontos"
+    omniauth_callbacks: 
+      failure: "Could not authorize you from %{kind} because \"%{reason}\". "
+      success: "Erfolgreich über %{kind} Konto authorisiert."
+    passwords: 
+      edit: 
+        heading: "Passwort ändern"
+        title: "Passwort ändern"
+      new: 
+        heading: "Passwort vergessen?"
+        legend: "Gib unten Deine Emailadresse ein, damit wir Dir den Link zum Zurücksetzen Deines Passworts senden können."
+        submit: Zurücksetzen
+        title: "Passwort vergessen?"
+      send_instructions: "Innerhalb der nächsten Minuten erhälst Du eine Email mit Anweisungen, wie Du Dein Passwort zurücksetzen kannst."
+      updated: "Dein Passwort wurde erfolgreich geändert. Du bist nun eingeloggt!"
+    registrations: 
+      destroyed: "Tschööö mit Ö! Dein Konto wurde erfolgreich gelöscht. Wir hoffen jedoch, dass Du trotzdem mal wieder vorbeischaust!"
+      inactive_signed_up: "<strong>Wilkommen bei Buddy Drinks!.</strong> Check Deine Bestätigungsemail - klick auf die Link, und los geht's!"
+      signed_up: "Herzlichen Glückwunsch! Du hast Dich erfolgreich angemeldet. Eine kurze Bestätigungsemail erhälst Du von uns in Kürze."
+      updated: "Aktualisierung erfolgreich!"
+    sessions: 
+      login_failed: "Login fehlgeschlagen"
+      not_sign_in: "Login leider nicht erfolgreich."
+      signed_in: "Du bist drinne!"
+      signed_out: "Du bist draußen!"
+    unlocks: 
+      send_instructions: "Innerhalb der nächsten Minuten erhälst Du von uns eine Email mit Anweisungen, wie Du Dein Konto wieder freischalten kannst."
+      unlocked: "Dein Konto wurde erfolgreich freigeschaltet. Du bist nun angemeldet!"

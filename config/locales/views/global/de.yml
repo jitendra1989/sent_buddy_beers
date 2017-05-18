@@ -1,0 +1,17 @@
+de:
+  global: 
+    access_denied: "Du hast nicht die korrekte Berechtigung diesen Bereich zu betreten"
+    affirmative: Ja
+    at: an
+    confirm_question: "Bist du sicher?"
+    delete: Löschen
+    edit: Bearbeiten
+    generic_friend: "einem Buddy"
+    negative: Nein
+    new: neu
+    or: oder
+    pagination: 
+      next: Weiter
+      previous: Zurück
+    require_no_user: "Du musst ausgeloggt sein, um diese Seite betreten zu können"
+    require_user: "Du musst eingeloggt sein, um diese Seite betreten zu können. <a href=\"/users/sign_up\">Klicke hier zur Einrichtung eines kostenlosen BuddyDrinks Kontos.</a> "

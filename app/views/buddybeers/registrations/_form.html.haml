@@ -1,0 +1,12 @@
+/ buddybeers > registrations > form
+
+
+= f.hidden_field :language, :value => I18n.locale
+
+= render("payment_information", :f => f) if f.object.affiliate?
+
+%fieldset.col-md-8.col-sm-9.col-xs-12.edit_account.padd-none
+  %h4.info-heading= t(".personal_information.legend")
+= render "personal_information", :f => f
+  
+

@@ -1,0 +1,163 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+admin:
+  id: 1
+  name: Adam Admin
+  login: admin
+  sex: m
+  type: Admin
+  confirmed_at: <%= 2.minutes.ago %>
+  password_salt: "karrtggII8yUqQKy7I5k"
+  encrypted_password: "2295dc0f485abe4999687564f2ea07215ba143004463fcf0bc80433722a25cc2f05be30dc347d8a1f71330f4cc7bf580f38577e72eae04c7223ab858e19a8b4b"
+  sign_in_count: 1
+  current_sign_in_at: <%= 3.minutes.ago %>
+  last_sign_in_at: <%= 3.minutes.ago %>
+  current_sign_in_ip: 127.0.0.1
+  last_sign_in_ip: 127.0.0.1
+  created_at: <%= 2.days.ago %>
+  updated_at: <%= 2.minutes.ago %>
+  facebook_uid: 511335022
+  facebook_session_key: 3.0uY9NOPRbUjwDHmwlcpGJg__.3600.1269342000-511335022
+  oauth_token:
+  oauth_secret:
+  language: en
+  phone_number:
+
+customer:
+  id: 2
+  name: Sam Saufer
+  login: sam
+  sex: m
+  type: Customer
+  confirmed_at: <%= 2.minutes.ago %>
+  password_salt: "karrtggII8yUqQKy7I5k"
+  encrypted_password: "2295dc0f485abe4999687564f2ea07215ba143004463fcf0bc80433722a25cc2f05be30dc347d8a1f71330f4cc7bf580f38577e72eae04c7223ab858e19a8b4b"
+  sign_in_count: 1
+  current_sign_in_at: <%= 3.minutes.ago %>
+  last_sign_in_at: <%= 3.minutes.ago %>
+  current_sign_in_ip: 127.0.0.1
+  last_sign_in_ip: 127.0.0.1
+  created_at: <%= 2.days.ago %>
+  updated_at: <%= 2.minutes.ago %>
+  facebook_uid:
+  facebook_session_key:
+  oauth_token:
+  oauth_secret:
+  language: en
+  phone_number:
+
+affiliate:
+  id: 3
+  name: Bar Owner
+  login: barman
+  sex: m
+  type: Affiliate
+  confirmed_at: <%= 2.minutes.ago %>
+  password_salt: "karrtggII8yUqQKy7I5k"
+  encrypted_password: "2295dc0f485abe4999687564f2ea07215ba143004463fcf0bc80433722a25cc2f05be30dc347d8a1f71330f4cc7bf580f38577e72eae04c7223ab858e19a8b4b"
+  sign_in_count: 1
+  current_sign_in_at: <%= 3.minutes.ago %>
+  last_sign_in_at: <%= 3.minutes.ago %>
+  current_sign_in_ip: 127.0.0.1
+  last_sign_in_ip: 127.0.0.1
+  created_at: <%= 2.days.ago %>
+  updated_at: <%= 2.minutes.ago %>
+  facebook_uid:
+  facebook_session_key:
+  oauth_token:
+  oauth_secret:
+  language: en
+  phone_number:
+
+facebook_user:
+  id: 4
+  name: Mark Zuckerman
+  login: mark-example-com #from email mark@example.com
+  sex: m
+  type: Customer
+  confirmed_at: <%= 2.minutes.ago %>
+  password_salt: "karrtggII8yUqQKy7I5k"
+  encrypted_password: "2295dc0f485abe4999687564f2ea07215ba143004463fcf0bc80433722a25cc2f05be30dc347d8a1f71330f4cc7bf580f38577e72eae04c7223ab858e19a8b4b"
+  sign_in_count: 1
+  current_sign_in_at: <%= 3.minutes.ago %>
+  last_sign_in_at: <%= 3.minutes.ago %>
+  current_sign_in_ip: 127.0.0.1
+  last_sign_in_ip: 127.0.0.1
+  created_at: <%= 2.days.ago %>
+  updated_at: <%= 2.minutes.ago %>
+  facebook_uid: 610941952
+  facebook_session_key: 3.EAEB2D4xF2OKJxqnZCbQ2A__.3600.1268413200-610941952
+  oauth_token:
+  oauth_secret:
+  language: en
+  phone_number:
+
+twitter_user:
+  id: 5
+  name: Jason
+  login: iwearyourshirt
+  sex: m
+  type: Customer
+  confirmed_at: <%= 2.minutes.ago %>
+  password_salt: "karrtggII8yUqQKy7I5k"
+  encrypted_password: "2295dc0f485abe4999687564f2ea07215ba143004463fcf0bc80433722a25cc2f05be30dc347d8a1f71330f4cc7bf580f38577e72eae04c7223ab858e19a8b4b"
+  sign_in_count: 1
+  current_sign_in_at: <%= 3.minutes.ago %>
+  last_sign_in_at: <%= 3.minutes.ago %>
+  current_sign_in_ip: 127.0.0.1
+  last_sign_in_ip: 127.0.0.1
+  created_at: <%= 2.days.ago %>
+  updated_at: <%= 2.minutes.ago %>
+  facebook_uid:
+  facebook_session_key:
+  oauth_token: 16431844-Dfh7VsSXtP2hbXSTZXm5dBJ3y49fP4RPBd5xa42M
+  oauth_secret: 4JF17yDKMWCDgCcBSiAVJ7wLP8rgIzfK2CL64FRScU
+  language: en
+  phone_number:
+
+unactivated_customer:
+  id: 6
+  name: Sam Saufer Jr.
+  login: sammy
+  sex: m
+  type: Customer
+  confirmation_token: "RpRHzpid_ICuJslKrTw8"
+  confirmed_at:
+  password_salt: "karrtggII8yUqQKy7I5k"
+  encrypted_password: "2295dc0f485abe4999687564f2ea07215ba143004463fcf0bc80433722a25cc2f05be30dc347d8a1f71330f4cc7bf580f38577e72eae04c7223ab858e19a8b4b"
+  sign_in_count: 0
+  current_sign_in_at: <%= 3.minutes.ago %>
+  last_sign_in_at: <%= 3.minutes.ago %>
+  current_sign_in_ip: 127.0.0.1
+  last_sign_in_ip: 127.0.0.1
+  created_at: <%= 2.days.ago %>
+  updated_at: <%= 2.minutes.ago %>
+  facebook_uid:
+  facebook_session_key:
+  oauth_token:
+  oauth_secret:
+  language: en
+  phone_number:
+
+bro:
+  id: 7
+  name: Bart Bro
+  login: brosef
+  sex: m
+  type: Bro
+  confirmed_at: <%= 2.minutes.ago %>
+  password_salt: "karrtggII8yUqQKy7I5k"
+  encrypted_password: "2295dc0f485abe4999687564f2ea07215ba143004463fcf0bc80433722a25cc2f05be30dc347d8a1f71330f4cc7bf580f38577e72eae04c7223ab858e19a8b4b"
+  sign_in_count: 1
+  current_sign_in_at: <%= 3.minutes.ago %>
+  last_sign_in_at: <%= 3.minutes.ago %>
+  current_sign_in_ip: 127.0.0.1
+  last_sign_in_ip: 127.0.0.1
+  created_at: <%= 2.days.ago %>
+  updated_at: <%= 2.minutes.ago %>
+  facebook_uid:
+  facebook_session_key:
+  oauth_token:
+  oauth_secret:
+  language: en
+  phone_number: 496969696969

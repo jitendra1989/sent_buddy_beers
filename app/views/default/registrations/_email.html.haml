@@ -1,0 +1,19 @@
+.row
+  .col-md-2.col-sm-3.col-xs-4.edit_account.padd-none
+    %span Email
+  .col-md-9.col-sm-9.col-xs-8.padd-right-none.indent-email
+    .row{:style => "margin: 0 !important;"}
+      .col-md-7.col-sm-8.col-xs-12.padd_left_none
+        = f.text_field :email, :placeholder => t("forms.labels.emails"), :class => 'form-control clear', :type => "text"
+        - if f.object.pending?
+          %span.pending= t(".pending")
+      .col-md-4.col-sm-12.col-xs-12.padd-none
+        .inline-checkbox.check-inline
+          - unless f.object.new_record?
+            = f.check_box :primary, :class => "checkbox-inline", :id=> 'inlineCheckbox1', :type => "checkbox", :value => "option1"
+            = f.label :primary, "#{t("forms.labels.primary_email")}"
+            
+            / = f.check_box :_destroy, :class => "checkbox-inline", :id=> 'inlineCheckbox2', :type => "checkbox", :value => "option2"
+            / = f.label :_destroy, "#{t("forms.labels.remove")}"
+  .clearfix    
+  

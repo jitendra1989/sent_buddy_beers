@@ -1,0 +1,15 @@
+- unless @venues.blank?
+  %table.table.table-hover
+    %tr{:bgcolor => "#D3D3D3"}
+      %th Venues
+      %th Country
+      %th City
+      %th Created Date
+    - @venues.each do|venue|
+      %tr
+        %td= venue.try(:name)
+        %td= venue.country.try(:name)
+        %td= venue.city.try(:name)
+        %td= formated_datetime(venue)
+- else
+  %h2 Sorry!, Record not found!

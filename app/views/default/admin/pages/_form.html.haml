@@ -1,0 +1,69 @@
+= form_for([:admin, @page]) do |f| 
+  - if @page.errors.any? 
+    %div{ :id => "error_explanation"}
+      %h2= "#{pluralize(@page.errors.count, "error")} prohibited this page from being saved:"
+
+      %ul
+        - @page.errors.full_messages.each do |msg| 
+          %li= msg 
+  %fieldset            
+    %ol
+      %li
+        = f.label :site_ids, "Sites"
+        %ul
+          - Site.for(current_user).each do |site|
+            %li
+              = f.check_box :site_ids, {:multiple => true}, site.id, nil
+              = f.label "site_ids_#{site.id}", site.name
+    
+      %li
+        = f.label :parent_id
+        = f.collection_select :parent_id, Page.includes(:translations).all(:order => "page_translations.title"), :id, :title, :include_blank => true
+    
+      %li
+        = f.label :title 
+        = f.text_field :title 
+        .translations
+          - other_locales.each do |locale|
+            - translation = f.object.translations.detect { |t| t.locale.to_sym == locale}
+            %p.translation
+              %strong= "#{t("forms.translation.translation", :other_locale => locale.to_s.upcase)}:"
+              = (translation and translation.title) ? translation.title : t("forms.translation.none")
+              = "-"
+              = link_to t("global.edit"), params.merge({:locale => locale})
+  
+      %li
+        = f.label :body 
+        = f.text_area :body 
+        .translations
+          - other_locales.each do |locale|
+            - translation = f.object.translations.detect { |t| t.locale.to_sym == locale}
+            %p.translation
+              %strong= "#{t("forms.translation.translation", :other_locale => locale.to_s.upcase)}:"
+              = (translation and translation.body) ? translation.body : t("forms.translation.none")
+              = "-"
+              = link_to t("global.edit"), params.merge({:locale => locale})
+  
+      %li
+        = f.label :published 
+        = f.check_box :published 
+      
+      / %li
+      /   = f.label :navigation 
+      /   = f.check_box :navigation 
+        
+      %li
+        = f.label :footer 
+        = f.check_box :footer 
+      
+      %li
+        = f.label :position
+        = f.text_field :position
+  
+      - unless f.object.new_record?
+        %li
+          = f.label :slug 
+          = f.object.slug 
+  
+    %ul
+      %li= f.submit

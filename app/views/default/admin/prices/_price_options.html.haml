@@ -1,0 +1,3 @@
+= link_to t("global.edit"), edit_admin_bar_price_url(:bar_id => object.bar.id, :id => object.id)
+|
+= link_to t("global.delete"), admin_bar_price_url(:bar_id => object.bar.id, :id => object.id), :method => :delete, :confirm => t("global.confirm_question")

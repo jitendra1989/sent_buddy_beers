@@ -1,0 +1,42 @@
+- @title = "Payouts"
+- stylesheets 'sites/default/sections/payments', 'payout'
+- javascripts 'jquery.tablesorter.min'
+- content_for :head do
+  :javascript
+    $(document).ready(function(){ $("#payment_table").tablesorter(); });
+
+%h2="Payouts"
+%p#page-intro= "for #{current_user.to_s}"
+.clear
+%br
+
+.content-box
+  / Start Content Box
+  .content-box-header
+    %h3= "Payouts List"
+    .clear
+
+  .content-box-content
+    %table#payment_table
+      %thead
+        %tr
+          %th Payment Type
+          %th Name on Cheque
+          %th Address
+          %th Paypal's Email
+          %th Affiliate
+          %th Date
+          %th= t("global.edit")
+      %tbody
+        - @payouts.each do |payout|
+          %tr{:class => cycle('even', 'odd')}
+            %td= payout.payment_type
+            %td= payout.name
+            %td= payout.address
+            %td= payout.email
+            %td= payout.affiliate.name rescue ""
+            %td= payout.created_at.to_s(:euro_date)
+            %td
+              / = link_to t("global.edit"), ''#, edit_affiliate_payout_path(payout) if current_user.affiliate?
+              = link_to image_tag("sites/default/admin/icons/pencil.png"), edit_affiliate_payout_path(payout), :title => t("affiliate.bars.bar.edit")
+

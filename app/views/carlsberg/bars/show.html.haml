@@ -1,0 +1,50 @@
+/ carlsberg > bars > show
+
+- @title = t(".title", :bar => @bar.name, :city => @bar.city.name, :country => t("countries.#{@bar.country.printable_name.parameterize.gsub("-", "_")}"))
+- @meta_description = truncate(@bar.description, :length => 300) if @bar.description.present?
+- stylesheets 'sites/carlsberg/sections/bars'
+- @content_class = "two_col"
+- content_for :head do
+  :plain
+    <!--[if lte IE 8]>
+      <style type="text/css" media="screen">
+        #bar #information .left #feed .drink .avatar {
+          -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(grayscale=1)";
+          filter: progid:DXImageTransform.Microsoft.BasicImage(grayscale=1);
+        }
+      </style>
+    <![endif]-->
+= render "open_graph_meta"
+
+#bar
+  .left
+    %h1.pie
+      %span.name= @bar.name
+      %span.address= "(#{@bar.full_address})"
+
+    #main
+      = render "gallery" if @bar.gallery.photos.present?
+      - if @bar.gallery.photos.blank?
+        #gallery
+          #slides
+            .slide
+              = image_tag("/images/sites/carlsberg/photos/missing.jpg", :width => "672", :class => "pie")
+  .right
+    - if @bar.logo.file?
+      .bar_logo= image_tag  @bar.logo(:standard), :class => "pie"
+    
+    = render "map" if @bar.geocoded?
+
+  #information
+    .pad
+      .left
+        - if @bar.description.present?
+          #description= raw RedCloth.new("\"#{@bar.description}\"", [:filter_html]).to_html
+        = render "drink_feed" if @feed.present?
+      .right
+        = render "contact_info"
+        = render "drink_list"
+        = render "facebook_like_xfbml"
+      
+      = clear_floats
+  = clear_floats

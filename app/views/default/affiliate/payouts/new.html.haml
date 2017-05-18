@@ -1,0 +1,82 @@
+- @title = "Payouts"
+- stylesheets 'sites/default/sections/payments', 'payout'
+- javascripts 'jquery1.11.1.min'
+
+:javascript
+
+  $(document).ready(function(){
+    $('#all_field_for_cheque_paypal').hide();
+    if($('#payout_payment_type_cheque').is(':checked')) {
+      $('#all_field_for_cheque_paypal').show();
+      $('#requred_field_for_cheque').show();
+      $('#requred_field_for_paypal').hide();
+    }
+    if($('#payout_payment_type_paypal').is(':checked')) {
+      $('#all_field_for_cheque_paypal').show();
+      $('#requred_field_for_cheque').hide();
+      $('#requred_field_for_paypal').show();
+    }
+  });
+
+  $(document).on('click', '#payout_payment_type_cheque', function(){
+    $('#all_field_for_cheque_paypal').show();
+    $('#requred_field_for_cheque').show();
+    $('#requred_field_for_paypal').hide();
+  });
+  $(document).on('click', '#payout_payment_type_paypal', function(){
+    $('#all_field_for_cheque_paypal').show();
+    $('#requred_field_for_cheque').hide();
+    $('#requred_field_for_paypal').show();
+  });
+
+%h2="Payouts"
+%p#page-intro= "for #{current_user.to_s}"
+.clear
+
+.content-box
+  / Start Content Box
+  .content-box-header
+    %h3= "Make Payouts"
+    .clear
+  - unless @payout.kind_of?(Array)
+    .content-box-content
+      %br
+      = form_for ["affiliate", @payout], :html => { :multipart => true } do |f|
+        - if @payout.errors.any?
+          %div{ :id => "error_explanation"}
+            %h4= "#{pluralize(@payout.errors.count, "error")} prohibited this page from being saved:"
+            %ul
+              - @payout.try(:errors).try(:full_messages).each do |msg|
+                %li{:style => 'padding-left: 0px;'}= msg
+
+        = f.hidden_field :affiliate_id, :value => (current_user.id || @payout.affiliate_id)
+        %ol{:style => "min-height: 50px;"}
+          %li
+            = f.label :payment_type, "Chosse Payment Type:", :class => 'payment_type_label'
+            .redio-option
+              #cheque-redio
+                = f.radio_button :payment_type, "cheque"
+                Cheque
+              #paypal-radio
+                = f.radio_button :payment_type, "paypal"
+                Paypal
+        .clearfix
+        #all_field_for_cheque_paypal
+          %fieldset
+            %ol
+              #requred_field_for_cheque
+                %li
+                  = f.label :name, "Name on Cheque:"
+                  = f.text_field :name, :class => "medium-input text-input"
+                %li
+                  = f.label :address, "Address:"
+                  = f.text_field :address, :class => "medium-input text-input"
+              #requred_field_for_paypal
+                %li
+                  = f.label :email
+                  = f.text_field :email, :class => "medium-input text-input"
+            .clearfix
+        %ul
+          %li= f.submit nil, :value => "Save", :class => "button"
+  -else
+    %p{:class => 'payment_section'}= 'Payment Already saved'

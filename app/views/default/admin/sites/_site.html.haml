@@ -1,0 +1,4 @@
+%li{ :class => cycle("odd", "even") }
+  = site.name
+  = link_to "show", admin_site_url(site)
+  = link_to "edit", edit_admin_site_url(site)

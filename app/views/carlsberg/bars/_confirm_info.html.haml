@@ -1,0 +1,58 @@
+- if @bar.geocoded?
+  #map{ :style => "width:672px; height:180px", :data => { :"map-markers" => bars_to_map_markers(@bar) } }
+
+.info
+  %p
+    %strong= "#{t("forms.labels.address")}:"
+    = @bar.full_address
+  %p
+    %strong= "#{t("forms.labels.currency")}:"
+    = @bar.default_currency
+  %p
+    %strong= "#{t("forms.labels.website")}:"
+    = @bar.url
+  %p
+    %strong= "#{t("forms.labels.description_bio")}:"
+    = @bar.description
+  %p
+    %strong= "#{t("forms.labels.contact_name")}:"
+    = @bar.contact_name
+  %p
+    %strong= "#{t("forms.labels.phone_number")}:"
+    = @bar.phone_number
+  %p
+    %strong= "#{t("forms.labels.contact_email")}:"
+    = @bar.contact_email
+  %p
+    %strong= "#{t("activerecord.attributes.bar.contact_time")}:"
+    = @bar.contact_time
+  %p
+    %strong= "#{t("activerecord.attributes.bar.mailing_address")}:"
+    = @bar.mailing_address
+  %p
+    %strong= "#{t("forms.labels.twitter_handle")}:"
+    = @bar.twitter_handle
+  %p
+    %strong= "#{t("forms.labels.lead")}:"
+    = @bar.lead
+  %p
+    %strong= "#{t("activerecord.attributes.bar.signup_notes")}:"
+    = @bar.signup_notes
+
+#inventory
+  %h2= t(".drink_list")
+
+  .info
+    - if @menu.blank?
+      %p= t(".empty")
+    - else
+      %ul
+        - @menu.sort{|d1, d2| d1.id <=> d2.id }.each_with_index do |price, index|
+          %li
+            %span.drink{ :class => carlsberg_class_name(index) }= price.name
+            %span.options
+              %span{ :class => price.discounted ? 'strikeout' : ''}= number_to_currency(price.amount.to_f, :unit => price.amount.currency.symbol)
+              - if price.discounted
+                = number_to_currency(price.discounted_amount.to_f, :unit => price.discounted_amount.currency.symbol)
+                = image_tag 'icons/emoticon_grin.png', :alt => t("prices.price.special_price"), :title => t("prices.price.special_price")
+            =clear_floats

@@ -1,0 +1,85 @@
+= render "facebook_action_js"
+
+- content_for :head do        
+  :plain
+    <!--[if lte IE 8]>
+      <style type="text/css" media="screen">
+        #confirm_payment .drink .avatar img {
+          -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(grayscale=1)";
+          filter: progid:DXImageTransform.Microsoft.BasicImage(grayscale=1);
+        }
+      </style>
+    <![endif]-->
+
+#confirm_payment
+  %h1= t("ious.confirmed_payment.heading")
+  
+  .drink
+    .avatar.sender
+      = image_tag(@picture, :alt => @iou.sender.name, :height => "53px", :width => "53px")
+    .avatar.recipient
+      = image_tag("http://graph.facebook.com/#{@iou.recipient_facebook_uid}/picture?type=square", :alt => @iou.sender.name, :height => "53px", :width => "53px")
+    .description
+      %p= raw t("ious.confirmed_payment.you_sent", :recipient => @iou.recipient_name, :price => "#{@iou.amount.currency.symbol}#{@iou.amount}", :beer => [@iou.quantity, @iou.price_name].join(" "), :bar => @iou.bar.name, :city => @iou.bar.city.name)
+    = clear_floats
+
+  - unless @iou.emailable? or @iou.smsable? or !@iou.recipient or !@iou.sender.has_fb_post_permissions_for?(current_site)
+    #notice
+      %p
+        = t(".notice.not_notified")
+        = link_to t(".notice.automatic_link"), "#"
+  
+  - unless @iou.sender.has_fb_post_permissions_for?(current_site)
+    %h2= t("ious.confirmed_payment.social_spread.heading")
+    
+    #fb_wall_post
+      .unposted{ :class => @iou.posted_to_friends_facebook_wall_at ? "posted" : "" }
+        = link_to content_tag(:span, t(".links.post_to_friend")), "#"
+    
+    #fb_message
+      .unposted{ :class => @iou.sent_facebook_message_at ? "posted" : "" }
+        = link_to content_tag(:span, t(".links.send_message")), "#"
+
+    #fb_my_wall_post
+      .unposted{ :class => @iou.posted_to_facebook_wall_at ? "posted" : "" }
+        = link_to content_tag(:span, t(".links.post_friends_wall")), "#"
+    
+    .permissions   
+      %p.pie
+        %label{ :for => "allow_publish_stream" }
+          = check_box "allow", "publish_stream", :autocomplete => "off", :checked => @iou.sender.has_fb_post_permissions_for?(current_site)
+          = t(".permissions.do_this_automatically")
+  
+  
+  - else
+    %h2= t(".posted_heading")
+  
+    .facebook_share
+      .pad
+        .border
+          .post
+            .avatar= image_tag("https://graph.facebook.com/#{@iou.sender.facebook_uid}/picture?type=small", :alt => @iou.sender.name)
+            .info
+              %p.name= @fb_user['name']
+              %p.status= t("facebook.orders.show.social_spread.fb_status", :beer => [@iou.quantity, @iou.price_name].join(" "), :bar => @iou.bar.name, :city => @iou.bar.city.name, :memo => @iou.memo, :link => "http://apps.facebook.com/#{current_site.facebook_app_url}/?order_id=#{@iou.id}")
+              .bar
+                .logo= image_tag @iou.bar.fb_image_url
+                .title= t("bars.show.title", :bar => @iou.bar.name, :city => @iou.bar.city.name, :country => @iou.bar.country.printable_name)
+                .url= bar_url(@iou.bar)
+                .description= @iou.bar.description.present? ? truncate(@iou.bar.description, :length => 200) : t("layouts.meta.description")
+            = clear_floats
+  
+    %p.message_question= t(".send_message")
+    
+    #fb_message
+      .unposted{ :class => @iou.sent_facebook_message_at ? "posted" : "" }
+        = link_to content_tag(:span, t(".links.send_message")), "#"
+  
+    
+  
+  
+  
+  .send_a_beer
+    = link_to content_tag(:span, t("ious.confirmed_payment.send_another_beer")), new_facebook_order_url, :class => I18n.locale
+    = clear_floats
+    

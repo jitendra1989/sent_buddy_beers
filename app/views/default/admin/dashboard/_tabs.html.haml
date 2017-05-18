@@ -1,0 +1,37 @@
+.tabs
+  %ul
+    %li
+      = link_to_unless_current("Users", admin_users_path) do
+        = content_tag(:span, "Users")
+    %li
+      = link_to_unless_current("Affiliates", admin_affiliates_path) do
+        = content_tag(:span, "Affiliates")
+    %li
+      = link_to_unless_current("Bros", admin_bros_path) do
+        = content_tag(:span, "Bros")
+    %li
+      = link_to_unless_current("Site Admins", admin_site_admins_path) do
+        = content_tag(:span, "Site Admins")
+    %li
+      = link_to_unless_current("Venues", admin_bars_path) do
+        = content_tag(:span, "Venues")
+    %li
+      = link_to_unless_current("Payments", admin_payments_path) do
+        = content_tag(:span, "Payments")
+      = content_tag(:span, Payment.outstanding.length, :class => "count") if Payment.outstanding.length > 0
+    %li
+      = link_to_unless_current("New Voucher", new_admin_iou_path) do
+        = content_tag(:span, "Voucher")
+    %li
+      = link_to_unless_current("Sites", admin_sites_path) do
+        = content_tag(:span, "Sites")
+    %li
+      = link_to_unless_current("Pages", admin_pages_path) do
+        = content_tag(:span, "Pages")
+    %li
+      = link_to_unless_current("Cities", admin_cities_path) do
+        = content_tag(:span, "Cities")
+    %li
+      = link_to_unless_current("Metrics", admin_metrics_path) do
+        = content_tag(:span, "Metrics")
+  = clear_floats

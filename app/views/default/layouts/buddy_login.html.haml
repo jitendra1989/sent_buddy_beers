@@ -1,0 +1,13 @@
+%html{:lang => "en"}
+  %head
+    = render "shared/login_meta"
+    = render 'layouts/javascripts'
+    = render 'layouts/new_javascripts'  
+    = render 'layouts/new_stylesheets'          
+    = yield(:head)
+  %body
+    %aside.login-top-main
+      = render "shared/buddy_header"
+      = yield
+    = render "shared/buddy_footer"
+

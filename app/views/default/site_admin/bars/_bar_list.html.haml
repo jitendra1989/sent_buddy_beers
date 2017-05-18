@@ -1,0 +1,16 @@
+%h2= country.printable_name
+- bars.group_by(&:city).each do |city, bars_in_city|
+  %h3= city.name
+  %ul.searchable_list
+    - for bar in bars_in_city
+      %li{ :class => [cycle("odd", "even"), (bar.active ? "active" : "inactive")].join("_")  }
+        = link_to bar.name, site_admin_bar_path(:id => bar.friendly_id || bar.id)
+        &ndash;
+        = bar.active ? "Active" : "Inactive"
+        &ndash;
+        = bar.affiliate ? link_to(bar.affiliate.name, site_admin_affiliate_path(bar.affiliate)) : "Unaffiliated"
+        &ndash;
+        = link_to "Edit", edit_site_admin_bar_path(:id => bar.friendly_id || bar.id)
+        - unless bar.active?
+          |
+          = link_to t("global.delete"), site_admin_bar_path(:id => bar.id), :method => :delete, :confirm => t("global.confirm_question")

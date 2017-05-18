@@ -1,0 +1,27 @@
+%ol
+  %li
+    = f.label :name, "Name"
+    = f.text_field :name  
+  %li
+    = f.label :name, "Code Name"
+    = f.text_field :code_name
+  %li
+    = f.label :subdomain, "Subdomain"
+    = f.text_field :subdomain
+  %li
+    = f.label :domain, "Domain Name"
+    = f.text_field :domain
+  %li
+    = f.label :facebook_app_id, "Facebook app id"
+    = f.text_field :facebook_app_id
+  %li
+    = f.label :facebook_app_secret
+    = f.text_field :facebook_app_secret
+  %li
+    = f.label :facebook_app_scope
+    = f.text_field :facebook_app_scope
+  %li
+    = f.label :facebook_app_url, "Facebook App URL, facebook.com/..."
+    = f.text_field :facebook_app_url
+%ul
+  %li= f.submit

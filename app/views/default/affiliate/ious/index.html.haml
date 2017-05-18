@@ -1,0 +1,38 @@
+- @title = [@bar.name, (params[:filter] and params[:filter] == "past") ? t("affiliate.bars.redeemed_vouchers") : t("affiliate.bars.outstanding_vouchers")].join(" | ")
+
+%h2= @bar.name
+%p#page-intro= @bar.full_address
+.clear
+
+.content-box
+  / Start Content Box
+  .content-box-header
+    %h3
+      = params[:filter] ? t("affiliate.bars.redeemed_vouchers") : t("affiliate.bars.outstanding_vouchers")
+      = " - Last Updated: #{@bar.vouchers.order('updated_at desc').first.updated_at.to_s(:euro_date)}"
+    .clear
+
+  .content-box-content
+    %p= link_to "Download PDF", affiliate_bar_ious_url(@bar, :format => "pdf")
+    %table
+      %thead
+        %tr
+          %th Code
+          %th= params[:filter] ? "Redeemed Date" : "Purchased Date"
+          %th Amount
+          %th Recipient
+          %th Sender
+      %tfoot
+        %tr
+          %td(colspan="5")
+            = will_paginate @vouchers, :renderer => Affiliate::AffiliateHelper::AdminPagination::LinkRenderer
+            .clear
+      %tbody
+        - @vouchers.each do |voucher|
+          %tr
+            %td= voucher.coupon
+            %td= voucher.iou.paid_at ? voucher.iou.paid_at.to_s(:euro_sm_with_time) : voucher.iou.updated_at.to_s(:euro_sm_with_time)
+            %td
+              %strong= number_to_currency(voucher.amount.to_f, :unit => voucher.amount.currency.symbol)
+            %td= voucher.group_drink.recipient_name
+            %td= voucher.iou.sender

@@ -1,0 +1,46 @@
+- @title = t(".title")
+- stylesheets("sites/buddybeers/sections/bars")
+- javascripts("jquery.pageless")
+- unless I18n.locale.to_s == "th"
+  - content_for :head do
+    :javascript
+      Cufon.replace('h1', {textShadow: '0px 1px #fbf5ec'});
+      Cufon.replace('.bar h5');
+      Cufon.replace('.more_info a', {textShadow: '0px 1px #f4eee4', hover: true });
+      Cufon.replace('.buy_a_beer a', {textShadow: '0px 1px #f4efe5', hover: { textShadow: '0px -1px #d29a01' }});
+
+- content_for :add_page_js_css do
+  = stylesheet_link_tag 'search'
+  = render 'layouts/javascripts'
+
+/ -Middle Container Start
+.search-bar
+  .container
+    .row
+      .col-md-5.col-xs-12.col-sm-6.padd_right_none
+        %h1= t(".heading")
+        %p= t(".subheading")
+      .col-md-7.col-xs-12.col-sm-6.padd_right_none
+        .row.search-bar-form
+          = render "search"
+.map-section.text-center
+  = render "bars/bars_map"
+  %a.map-icon{:href => "javascript:void(0)"}
+  / %p.toggle_map= link_to_function t(".map_toggle"), "$('#bar_map').slideToggle('fast', function(){ $('.toggle_map a').toggleClass('active') })", :title => t(".map_toggle"), :class => "active"
+
+= render "bars/list"
+
+:javascript
+  $('.map-icon').click( function() {
+    $(this).prev('#bar_map').toggle();
+
+    if($(this).hasClass('map-down-icon')){
+      $(this).removeClass('map-down-icon')
+    }
+    else{
+      $(this).addClass('map-down-icon')
+    }
+
+  });
+
+

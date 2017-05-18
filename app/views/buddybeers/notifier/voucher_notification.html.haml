@@ -1,0 +1,24 @@
+- content_for :subject do
+  = t(".subject", :name => @group_drink.iou.sender_name.titleize, :quantity => @group_drink.quantity, :item => @group_drink.price_name, :location => @group_drink.iou.bar.name, :city => @group_drink.iou.bar.city.name)
+
+- content_for :sidebar do
+  = render "disclaimer"
+  
+%h1.h1= t(".greeting", :name => @group_drink.recipient_name)
+
+%table(border="0" cellpadding="0" cellspacing="0")
+  %tr
+    %td{ :width => "60px", :valign => "top" }
+      = image_tag(@group_drink.price.photo(:thumb), :alt => @group_drink.price_name)
+    %td(style="color:#505050; font-family:Arial;font-size:14px; line-height:150%; text-align:left;")
+      -# {{name}} has bought you {{quantity}} {{beer}} at {{bar}}, {{city}}%{memo}!
+      = t(".voucher_explained", :name => @iou.sender_name, :quantity => @group_drink.quantity, :beer => @group_drink.price_name)
+      = link_to([@iou.bar.name, @iou.bar.city.name].join(", "), bar_url(@iou.bar))
+
+- if @iou.memo.present?
+  %p
+    %strong
+      &hellip;
+      = @iou.memo
+      
+= render "voucher_instructions"

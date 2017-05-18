@@ -1,0 +1,9 @@
+.options
+  %span.option= page.position
+  %span.option= page.published ? "Live" : "Draft"
+  - if page.sites.present?
+    %span.option= page.sites.collect{ |s| s.name }.join(", ")
+  - if page.navigation
+    %span.option= "In Main Navigation"
+  - if page.footer
+    %span.option= "In Footer Navigation"

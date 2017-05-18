@@ -1,0 +1,20 @@
+%table
+  %tr
+    %th= t(".table.headers.voucher")
+    %th.code_header( colspan="2" )= t(".table.headers.code")
+    %th.employee_header= t(".table.headers.employee")
+  - vouchers.each do |voucher|
+    %tr{ :class => cycle("odd", "even") }
+      %td.voucher= voucher.code
+      - if voucher.redeemed?
+        %td( colspan="2" )
+          = voucher.redemption_code
+        %td
+          = voucher.updated_at.to_s(:euro_date)
+      - else  
+        %td.code
+          %span
+        %td.code
+          %span
+        %td.employee
+          %span

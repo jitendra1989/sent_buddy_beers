@@ -1,0 +1,66 @@
+/ - Header start  
+%header.navbar-fixed-top
+  .container
+    %nav.navbar{:role => "navigation"}
+      .navbar-header
+        %button.navbar-toggle.btn_toggle{"data-target" => "#bs-example-navbar-collapse-1", "data-toggle" => "collapse", :type => "button"}
+          %span.sr-only Toggle navigation
+          %span.icon-bar
+          %span.icon-bar
+          %span.icon-bar
+        %a.logo.navbar-brand{:href => root_url}
+      #bs-example-navbar-collapse-1.collapse.navbar-collapse.top_menu.padd_none
+        - if corporate_signed_in?
+          .col-md-9.col-sm-9.col-xs-12.pull-right.top_user_row.text-right.padd_none
+            .row
+              .col-md-12.col-sm-12.col-xs-12.padd_none
+                %ul.nav.navbar-nav.custom_header.my_tabs_pos.after-login-header
+                  %li.dropdown
+                    %a.my_tabs.btn{:href => "javascript:void(0)", :class => request.url == "javascript:void(0)" ? 'active' : '', :style => "margin-right: 0 !important;"}
+                      %span.glyphicon.glyphicon-usd
+                      = "Buy A Drink"
+                  %li.dropdown
+                    %a.my_tabs.btn{:href => edit_corporate_registration_url(current_corporate), :class => request.url == edit_corporate_registration_url(current_corporate) ? 'active' : '', :style => "margin-right: 0 !important;"}
+                      %span.glyphicon.glyphicon-user
+                      = "Buddy Account"
+                  %li.dropdown
+                    %a.my_tabs.btn{:href => corporates_buddy_groups_url, :class => (request.url == corporates_buddy_groups_url) ? 'active' : ''}
+                      %span.glyphicon.glyphicon-tasks
+                      = "Buddy Groups"
+                  %li.dropdown
+                    %a.my_tabs.btn{:href => "javascript:void(0)", :class => request.url == "javascript:void(0)" ? 'active' : ''}
+                      %span.glyphicon.glyphicon-glass
+                      = "Sent Drinks"
+
+                #user_account_navigation
+                  - if current_corporate
+                    #user_account
+                      .avatar
+                        - if !current_corporate.company_logo.file?
+                          = image_tag("/avatars/tiny/missing.png")
+                        - else
+                          = link_to content_tag(:span, image_tag(current_corporate.company_logo(:thumb), :alt => current_corporate.company_name, :height => "53px", :width => "53px")), edit_corporate_registration_url(current_corporate)
+                      .account_information{:style=>"margin: 0px;"}
+                        %p.name= link_to current_corporate.company_name, edit_corporate_registration_url(current_corporate), :class => request.url == edit_corporate_registration_url(current_corporate) ? 'active' : ''
+                        %p.logout
+                          = link_to t("layouts.user_account_navigation.logout"), destroy_corporate_session_url
+                    .clearfix        
+        
+        - unless corporate_signed_in?
+          %ul.nav.navbar-nav.custom_header 
+            %li{:class => request.url == bars_url ? 'active' : ''}
+              = link_to content_tag(:span, t("layouts.menu.bars")), bars_url
+            %li{:class => request.url == new_bar_url ? 'active' : ''}
+              = link_to content_tag(:span, t("layouts.menu.register_a_bar")), new_bar_url
+            
+            %li{:class => request.url == new_iou_url ? 'active' : ''}
+              = link_to t("layouts.menu.send_a_beer"), new_iou_url, :rel => "nofollow"
+
+            %li{:class => request.url == about_url ? 'active' : ''}
+              = link_to t("layouts.menu.about"), about_url, :rel => "nofollow"
+            %li.dropdown
+              %a.btn.btn-danger.login.login-btn{:href => new_corporate_session_url}= t("layouts.user_account_navigation.login")
+            %li.dropdown
+              %a.btn.btn-warning.signup.signup-btn{:href => new_corporate_registration_url}= t("layouts.user_account_navigation.new_sign_up")
+          
+

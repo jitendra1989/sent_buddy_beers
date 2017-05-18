@@ -1,0 +1,6 @@
+/ default > sessions > new
+
+- content_for :head do
+  %meta{ :name => 'robots', :content => 'noindex, nofollow' }
+
+= render "login"

@@ -1,0 +1,65 @@
+/ carlsberg > registrations > edit
+
+- @title = t(".title")
+- @content_class = "two_col"
+- stylesheets "sites/carlsberg/sections/users"
+- content_for :head do
+  :javascript
+    $(document).ready(function(){ $("#password_form label").inFieldLabels(); });
+    
+  :plain
+    <!--[if lte IE 8]>
+      <style type="text/css" media="screen">
+        .avatar {
+          -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(grayscale=1)";
+          filter: progid:DXImageTransform.Microsoft.BasicImage(grayscale=1);
+        }
+        #user .left #facebook .pad, #user form fieldset ol li input, 
+        #photo_form fieldset ol li .fakefile { 
+          position: relative;
+          behavior: url(/PIE.htc); 
+        }
+      </style>
+    <![endif]-->
+    
+#user
+  .left
+    %h1= t(".heading")
+    
+    #facebook
+      - if resource.facebook_user?
+        .pad
+          %p.notice= t(".facebook.connected")
+          %p
+            = image_tag("https://graph.facebook.com/#{resource.facebook_uid}/picture?type=small", :alt => current_user.name, :style => "float:left; margin-right: 10px")
+            - fb_json = open("https://graph.facebook.com/#{resource.facebook_uid}").read
+            = JSON.parse(fb_json)['name'] unless fb_json == "false"
+            %br
+            = resource.facebook_uid
+            =# t(".facebook.account", :id => resource.facebook_uid)
+          =clear_floats
+      - else
+        .pad{ :class => I18n.locale.to_s }
+          = facebook_login_button
+          = clear_floats
+          %h3= t(".facebook.permissions.about")
+          %p
+            %strong= t(".facebook.permissions.basic_info")
+            = t(".facebook.permissions.basic_info_explained")
+          %p
+            %strong= t(".facebook.permissions.email")
+            = t(".facebook.permissions.email_explained")
+        
+    = form_for resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put, :multipart => true } do |f|
+      = f.error_messages
+      = render :partial => "form", :locals => {:f => f}
+  
+  .right
+        
+    = form_for resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put, :multipart => true, :id => "password_form" } do |f|
+      %fieldset
+        %legend= t(".password")
+        %ol= render "password_fields", :f => f
+        %ul
+          %li= f.submit t("forms.buttons.update")  
+  =clear_floats

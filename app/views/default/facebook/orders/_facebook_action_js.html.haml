@@ -1,0 +1,80 @@
+- content_for :head do
+  :javascript
+    $(document).ready(function() {   
+      $("#fb_wall_post a").click(function(e){
+        FB.ui({ method: 'feed', display: 'iframe', 
+         to: '#{@iou.recipient_facebook_uid}',
+         message: '#{t("facebook.orders.show.social_spread.fb_status", :beer => [@iou.quantity, @iou.price_name].join(" "), :bar => @iou.bar.name, :city => @iou.bar.city.name, :memo => @iou.memo, :link => "#{app_download_url}").gsub("'", "\\\\\'")}',
+         link: '#{bar_url(@iou.bar)}',
+         picture: '#{@iou.bar.fb_image_url}',
+         name: '#{t("bars.show.title", :bar => @iou.bar.name, :city => @iou.bar.city.name, :country => @iou.bar.country.printable_name).gsub("'", "\\\\\'")}',
+         caption: '#{bar_url(@iou.bar)}',
+         description: '#{(@iou.bar.description.present? ? truncate(@iou.bar.description, :length => 200) : t("layouts.meta.description")).gsub(/\n/," ").gsub(/\r/," ").gsub("'", "\\\\\'")}',
+         actions: {name: '#{t("facebook.orders.show.social_spread.fb_action")}', link: '#{app_download_url}' }
+        }, function (response) {
+          if (response) {
+            // posts
+            $("#fb_wall_post .unposted").addClass("posted");
+          } 			
+        });
+        e.preventDefault();
+      });
+      $("#fb_message a").click(function(e){
+        FB.ui({ method: 'send', display: 'popup', 
+          to: '#{@iou.recipient_facebook_uid}',
+          link: '#{app_download_url}',
+          picture: '#{@iou.bar.fb_image_url}',
+          name: '#{t("facebook.orders.show.social_spread.fb_message_link", :beer => [@iou.quantity, @iou.price_name].join(" "), :bar => @iou.bar.name, :city => @iou.bar.city.name).gsub("'", "\\\\\'")}',
+          description: '#{@iou.memo.present? ? t('facebook.orders.show.social_spread.fb_message_description', :name => @iou.sender_name.gsub("'", "\\\\\'"), :memo => @iou.memo.gsub(/\n/," ").gsub(/\r/," ").gsub("'", "\\\\\'")) : t('facebook.orders.show.social_spread.fb_message_description_default', :sender_name => @iou.sender_name.gsub("'", "\\\\\'"))}'
+        }, function (response) {
+          if (response) {
+            // posts
+            $("#fb_message .unposted").addClass("posted");
+          } 			
+        });
+        e.preventDefault();
+      });
+      $("#fb_my_wall_post a").click(function(e){
+        FB.ui({ method: 'feed', display: 'iframe',
+         message: '#{t("facebook.orders.show.social_spread.my_fb_status", :recipient => @iou.recipient_name, :beer => [@iou.quantity, @iou.price_name].join(" "), :bar => @iou.bar.name, :city => @iou.bar.city.name, :memo => @iou.memo).gsub("'", "\\\\\'")}',
+         link: '#{bar_url(@iou.bar)}',
+         picture: '#{@iou.bar.fb_image_url}',
+         name: '#{t("bars.show.title", :bar => @iou.bar.name, :city => @iou.bar.city.name, :country => @iou.bar.country.printable_name).gsub("'", "\\\\\'")}',
+         caption: '#{bar_url(@iou.bar)}',
+         description: '#{(@iou.bar.description.present? ? truncate(@iou.bar.description, :length => 200) : t("layouts.meta.description")).gsub(/\n/," ").gsub(/\r/," ").gsub("'", "\\\\\'")}',
+         actions: {name: '#{t("facebook.orders.show.social_spread.fb_action")}', link: '#{app_download_url}' }
+        }, function (response) {
+          if (response) {
+            // posts
+            $("#fb_my_wall_post .unposted").addClass("posted");
+          } 			
+        });
+        e.preventDefault();
+      });
+      $("#notice a, div.permissions input").click(function(e){
+        FB.login(function(response) {
+          if (response.session) {
+            if (response.perms) {
+              // user is logged in and granted some permissions.
+              // perms is a comma separated list of granted permissions
+              $.ajax({
+                type: "POST",
+                url: '#{facebook_grant_permissions_url(current_user.id)}',
+                data: "permissions=" + response.perms,
+                success: function(msg){
+                  $("div.permissions input[type=checkbox]").attr("checked", true).attr("disabled", true);
+                  $("div.permissions").fadeTo('fast', 0.5);
+                  // TODO: Flush this out
+                },
+                error: function(msg){
+                  alert( "Error updating your preferences. Please try again." );
+                }
+             });
+            } else {
+              $(".permissions input[type=checkbox]").attr("checked", false);
+            }
+          }
+        }, {perms:'email,publish_stream'});
+        e.preventDefault();
+      });
+    });

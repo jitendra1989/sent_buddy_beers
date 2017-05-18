@@ -1,0 +1,12 @@
+- javascripts 'price_form'
+
+= render "admin/dashboard/tabs"
+
+#inventory
+  = form_for ["admin", @bar, @price], :html => { :multipart => true } do |f|
+    %fieldset
+      = error_messages_for :price
+      %legend= t("affiliate.prices.edit.legend", :bar => @bar.name)
+      = render :partial => "prices/form", :locals => {:f => f}
+      %ul
+        %li= f.submit t("forms.buttons.update")

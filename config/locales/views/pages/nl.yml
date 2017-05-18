@@ -1,0 +1,4 @@
+nl:
+  pages:
+    body:
+      updated_at: "Deze pagina is voor het laatste aangepast op: %{date}"

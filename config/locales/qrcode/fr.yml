@@ -1,0 +1,13 @@
+fr:
+  qrcode:
+    validate:
+      html:
+        title: Vérification de coupon
+      sent: Envoyé
+      expires: Expire
+      from: De
+      amount: Montant
+      to: A
+      mobile:
+        heading: Vérification de coupon
+      for: Pour

@@ -1,0 +1,21 @@
+- if @prices.blank?
+  %option(value="")
+    = t("forms.select.prompt_choose_object", :type => t("forms.select.choose_objects.a_bar"))
+- else
+
+  - @carlsberg_beers = @prices.collect{ |p| p if p.name.downcase.include?("carlsberg") }.compact
+  - @other_drinks = @prices 
+  -# @option_group = []
+  -# if @carlsberg_beers.present?
+    -# @other_drinks = @prices - @carlsberg_beers
+    -# @option_group.concat(["Carlsberg Beers", @carlsberg_beers.collect{|p| [ [p.name, "-", number_to_currency(p.total.to_f, :unit => p.total.currency.symbol)].join(" "), p.id ] }.sort])
+  -# @option_group.concat([["Other Drinks", @other_drinks.collect{|p| [ [p.name, "-", number_to_currency(p.total.to_f, :unit => p.total.currency.symbol)].join(" "), p.id ] }.sort]]) if @other_drinks.present?
+  =# grouped_options_for_select([["Carlsberg Beers", [["Carlsberg Lager Bottle 33cl - 3.0 €", 138]], "Other Drinks", [["Astra Urtyp Bottle 33 cl - 2.5 €", 143], ["Franziskaner Heferweißen Bottle 0,5 L - 3.2 €", 139], ["Franziskaner Heferweißen Dunkel Bottle 0,5 L - 3.2 €", 142], ["Franziskaner Kristal Bottle 0,5 L - 3.2 €", 141]]]])
+  =# grouped_options_for_select([['North America',    [['United States','US'],'Canada']],       ['Europe',['Denmark','Germany','France']]])
+  
+  - @option_group = {}
+  - @other_drinks = @prices - @carlsberg_beers if @carlsberg_beers.present?
+  - @option_group.merge!({t(".carlsberg_beers") => @carlsberg_beers.collect{|p| [ [p.name, "-", number_to_currency(p.total.to_f, :unit => p.total.currency.symbol)].join(" "), p.id ] }.sort}) if @carlsberg_beers.present?
+  - @option_group.merge!({t(".other_drinks") => @other_drinks.collect{|p| [ [p.name, "-", number_to_currency(p.total.to_f, :unit => p.total.currency.symbol)].join(" "), p.id ] }.sort}) if @other_drinks.present?
+  
+  = grouped_options_for_select(@option_group)

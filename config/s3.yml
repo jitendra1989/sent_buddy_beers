@@ -1,0 +1,21 @@
+# Amazon S3 Credentials for use by paperclip gem
+
+development:
+  bucket: buddybeersdevelopment
+  access_key_id: AKIAJEJTK3YYEM2FUA6A
+  secret_access_key: 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
+
+test:
+  bucket: buddydrinks
+  access_key_id: AKIAINAD2YUB7AJHPAFQ
+  secret_access_key: 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
+
+production:
+  bucket: buddydrinks
+  access_key_id: AKIAINAD2YUB7AJHPAFQ
+  secret_access_key: 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
+
+staging:
+  bucket: buddydrinks
+  access_key_id: AKIAINAD2YUB7AJHPAFQ
+  secret_access_key: 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

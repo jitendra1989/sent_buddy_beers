@@ -1,0 +1,9 @@
+.tabs
+  %ul
+    %li
+      = link_to_unless_current(t("affiliate.dashboard.tabs.home"), affiliate_root_url) do
+        = content_tag(:span, t("affiliate.dashboard.tabs.home"))
+    %li
+      = link_to_unless_current(t("affiliate.dashboard.tabs.invoices"), affiliate_payments_url) do
+        = content_tag(:span, t("affiliate.dashboard.tabs.invoices"))
+  = clear_floats

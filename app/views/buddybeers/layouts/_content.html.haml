@@ -1,0 +1,9 @@
+/ buddybeers > layouts > content
+
+#content{ :class => @content_class }
+  = render :partial => "layouts/flash", :locals => { :flash => flash }
+  .container
+    #content-padding
+      = yield
+  #content-footer.clear
+    // Clear Floats

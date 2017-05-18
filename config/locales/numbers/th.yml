@@ -1,0 +1,33 @@
+th:
+  number:
+    format:
+      separator: .
+      precision: 3
+      delimiter: ","
+    human:
+      format:
+        precision: 1
+        delimiter: .
+      storage_units:
+        format: "%n %u"
+        units:
+          kb: KB
+          tb: TB
+          gb: GB
+          byte:
+            one: Byte
+            other: Bytes
+          mb: MB
+    percentage:
+      format:
+        delimiter: .
+    currency:
+      format:
+        format: "%u%n"
+        unit: $
+        separator: .
+        precision: 2
+        delimiter: ","
+    precision:
+      format:
+        delimiter: .

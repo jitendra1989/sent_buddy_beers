@@ -1,0 +1,62 @@
+/ carlsberg > home > iphone
+
+- @title = translate(".title")
+- stylesheets "sites/carlsberg/sections/home"
+- content_for :head do 
+  :javascript
+    $(function($) {
+      // create a convenient toggleLoading function
+    
+      $("#subscribe_form")
+        .bind("ajax:beforeSend", function() { 
+          $("#form_contents, #errorExplanation, #success").hide(); 
+          $("#loading").show();
+        })
+        .bind("ajax:success", function(event, data, status, xhr) {
+          $("#loading, #errorExplanation").hide();
+          $("#success").show();
+        })
+        .bind("ajax:error", function(event, data, status, xhr) {
+          $("#loading").hide();
+          $("#errorExplanation").show();
+          $("#form_contents").show(); 
+        });
+    }); 
+      
+#iphone
+  
+  #iphone_header
+    %h1= t(".heading")
+    = image_tag "sites/carlsberg/graphics/iphone-subhead-#{ I18n.locale.to_s }.png", :alt => t(".subhead_alt_text")
+    
+  .primary_content
+    .iphone= image_tag "sites/carlsberg/graphics/iphone-app.png", :alt => t(".image_alt_text")
+
+  .secondary_content
+    %ul
+      %li= t(".bullets.one")
+      %li= t(".bullets.two")
+      %li= t(".bullets.three")
+    
+    .app_button= link_to t(".download_link"), "http://itunes.com/apps/buddybeerscarlsbergbuyyourfriendacarlsberg", :rel => "nofollow", :class => (I18n.locale == :en) ? "en" : nil
+    
+    .app_store
+      %p{ :class => I18n.locale.to_s }= link_to t(".subhead_alt_text"), "http://itunes.com/apps/buddybeerscarlsbergbuyyourfriendacarlsberg", :rel => "nofollow"
+    
+    / = form_tag(subscribe_url, :method => "post", :id => "subscribe_form", :remote => true) do
+    /   %label= t(".form.label")
+    /   #errorExplanation.error{ :style => "display:none" }
+    /     %h2= t(".form.error.heading")
+    /     %p= t(".form.error.description")
+    /   #success{ :style => "display:none" }
+    /     %h2= t(".form.success")
+    /   #loading{ :style => "display:none" }= image_tag "/images/sites/default/graphics/ajax-loader.gif"
+    /   #form_contents
+    /     %input{ :type => "text", :name => "email" }
+    /     %button
+    /       %span= t(".form.submit")
+    / .conversion
+    /   %p{ :class => I18n.locale.to_s }= link_to content_tag(:span, t(".signup")), new_user_registration_url
+    
+    
+  = clear_floats

@@ -1,0 +1,7 @@
+.tabs
+  %ul
+    - if @user and @user.affiliate? and !@user.new_record?
+      %li= link_to_unless_current(@user.name, admin_affiliate_url(@user)){ raw "<span>#{@user.name}</span>" }
+      %li= link_to_unless_current("Add Venue to Affiliate", new_admin_bar_url){ raw "<span>Add Bar to Affiliate</span>" }
+    %li= link_to_unless_current("New Affiliate", new_admin_affiliate_url){ raw "<span>New Affiliate</span>" }
+  = clear_floats

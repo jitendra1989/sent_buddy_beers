@@ -1,0 +1,17 @@
+%h1= @user.name
+= render :partial => "site_admin/shared/tabs"
+
+#user
+
+  = render "shared/admin/users/user_info"
+
+  %h2= "Venues"
+
+  %ul
+    - for bar in @user.bars
+      %li{ :class => cycle("odd", "even") }
+        = link_to bar.name, site_admin_bar_url(bar)
+        &ndash;
+        = link_to pluralize((bar.ious.outstanding.count + bar.ious.expired_since(1.week.ago.beginning_of_day).count), t("affiliate.bars.bar.vouchers.outstanding_voucher")), site_admin_bar_path(bar)
+        |
+        = link_to t("affiliate.bars.bar.edit"), edit_site_admin_bar_path(bar), :class => "edit_link"

@@ -1,0 +1,143 @@
+--- 
+th: 
+  
+  widgets:
+    index:
+      header_alt_text: "Buddy Drinks - Made in Germany. Served Worldwide."
+      main_button: "สั่งซื้อเบียร์ที่บาร์ %{bar}"
+      friends_message: "หรือขอเพื่อนคุณให้ซื้อ <em>ให้คุณ</em>"
+      twitter_status: "ฉันอยู่ที่ %{bar} คุณช่วยเลี้ยงดื่ม %{url} ฉันผ่านเน็ตหน่อยนะ"
+  
+  user_activations: 
+    new:
+      heading: "เข้าสู่ระบบ"
+      form:
+        button: "เริ่มใช้งาน"
+        legend: "เลือกรหัสผ่านเพื่อเข้าสู่ระบบ"
+    no_user: " ขออภัย! มีความผิดพลาดในการรับรองบัญชีของคุณ : %{errors}"
+    activate_account:
+      success: "สำเร็จ! คุณได้เปิดบัญชีของคุณเป็นที่เรียบร้อยแล้ว คุณสามารถตรวจสอบบัญชีเบียร์ของคุณได้แล้ว!"
+    active_user: "คุณได้เปิดบัญชีของคุณเป็นที่เรียบร้อยแล้ว"
+    success: "สำเร็จ! คุณได้เปิดบัญชีของคุณเป็นที่เรียบร้อย คุณสามารถส่งเบียร์เลี้ยงเพื่อนของคุณได้แล้ว!"
+    error: "ขออภัย ระบบขัดข้อง เรากำลังดำเนินการแก้ไข"
+  
+  confirmations:
+    new: 
+      title: "ส่งยืนยันคำสั่งอีกครั้ง"
+      heading: "ส่งยืนยันคำสั่งอีกครั้ง"
+      description: "โปรดกรอกอีเมล์ของคุณด้านล่างเพื่อให้ทางเราส่งวิธีการยืนยันสมาชิกอีกครั้ง"
+      submit: "ส่งข้อมูล"
+  
+  friendships:
+    index:
+      heading: "เพื่อนของคุณ"
+
+  time:
+    am: "ช่วงเช้า"
+    formats:
+      default: "%a, %d %b %Y %H:%M:%S %z"
+      short: "%d %b %H:%M"
+      long: "%B %d, %Y %H:%M"
+    pm: "ช่วงบ่าย"
+  
+  admin:
+    payments:
+      tabs:
+        show: "แสดงใบแจ้งหนี้"
+    ious:
+      new:
+        heading: "ส่งคูปองให้ผู้ที่เป็นสมาชิกแล้วหรือผู้ที่ยังไม่ได้เป็นสมาชิก"
+        form:
+          new: "ผู้ที่ยังไม่ได้เป็นสมาชิก"
+          existing: "ผู้ที่เป็นสมาชิกแล้ว"
+          user_type: "ประเภทของผู้ใช"
+      create:
+        success: "การส่งคูปองสำเร็จแล้ว!"
+        error: "มีความผิดพลาดกับคูปองของคุณ"
+  
+  support:
+    array:
+      words_connector: ", "
+      last_word_connector: ", และ "
+      two_words_connector: " และ "
+    select:
+      prompt: "โปรดเลือก"
+  
+  i18n:
+    transliterate:
+      rule:
+        ü: ue
+        ö: oe
+        ä: ae
+        Ü: Ue
+        Ö: Oe
+        Ä: Ae
+        ß: ss  
+
+  credits:
+    index:
+      title: "BuddyBucks ของคุณ – เติมเงิน BuddyBucks"
+      heading: "BuddyBucks ของคุณ"
+      accept: "เรารับ:"
+      and_more: "... และอื่นๆ!"
+      payment_logos: "วีซ่า มาสเตอร์การ์ด อเมริกันเอ็กซ์เพรส ดิสคัฟเวอร์ เพย์พาว เวสเตอร์นยูเนี่ยน"
+    balance:
+      balance: "ยอดคงเหลือในบัญชี BuddyBucks ของคุณคือ:"
+    top_up:
+      top_up: "เติมเงิน ในบัญชี BuddyBucks ของคุณโดย:"
+    return_link:
+      back: "กลับสู่หน้าจอการชำระเงิน"
+    success:
+      success: "<strong>คุณได้ทำการสั่งซื้อสำเร็จแล้ว!</strong> หลังจากเราได้รับการยืนยันจากตัวแทนการชำระเงินยอดคงเหลือจะปรากฎอยู่ในบัญชีของคุณโดยอัตโนมัติ หากยังไม่มีการเปลี่ยนแปลงยอด โปรดรออีกสักครู่และดาว์นโหลดหน้าจออีกครั้ง"
+
+  emails:
+    activate:
+      not_found: "<strong>ขออภัย!</strong> เราไม่พบอีเมล์นี้ในบัญชีของคุณ!"
+      success: "<strong>ใช่เลย!</strong> อีเมล์ของคุณได้ผ่านการตรวจสอบแล้ว!"
+      error: "<strong>ขออภัย!</strong> ระบบเกิดขัดข้องในการตรวจสอบอีเมล์ของคุณ! คุณเคยลงทะเบียนอีเมล์นี้ไว้กับบัญชีอื่นหรือเปล่า?"
+  
+  users:
+    get_user:
+      error: "ดูเหมือนว่าไม่มีข้อมูลบุคคลนี้ปรากฎ เอ..หรือคุณดื่มมากไปหรือเปล่า?"
+    email:
+      add: "+ เพิ่มอีเมล์อื่น" 
+      pending: "รอการตรวจสอบ - โปรดเช็คอีเมล์ตามที่คุณได้ให้ข้อมูลใหม่กับเราเพื่อเป็นการยืนยันการเลี่ยนแปลงข้อมูลของคุณ"
+    button:
+      button_text: "ซื้อ %{name} %{drink}"
+      button_link: "กดปุ่มนี้เพื่อซื้อ %{drink} จาก BuddyDrinks.com"
+      me: "ตัวฉัน"
+      beer: "เบียร์"
+  
+  sessions:
+    new:
+      title: "เข้าสู่ระบบ Buddy Drinks"
+      heading: "คุณเป็นสมาชิกแล้วหรือยัง?"
+      form:
+        button: "เข้าสู่ระบบ"
+        legend: "เข้าสู่ระบบโดยใช้บัญชี Buddy Drinks ของคุณ"
+        forgot_password: "ลืมรหัสผ่าน?"
+      facebook_heading: "เข้าสู่ระบบที่นี่โดยใช้บัญชี <strong>เฟสบุ๊ค</strong>  ของคุณ"
+      connect_with_facebook: "เชื่อมต่อกับเฟสบุ๊ค"
+    destroy:
+      success: "ออกจากระบบสำเร็จแล้ว!"
+    create:
+      success: " เข้าสู่ระบบสำเร็จแล้ว!"
+      
+  twitter:
+    new:
+      already_registered:
+        heading: "หากคุณได้ทำการลงทะเบียนทวิตเตอร์ของคุณไว้กับ Buddy Drinksแล้ว"
+        link: "แค่คลิ๊กไปที่ %{link} ข้างบนและเข้าสู่ระบบโดยใช้ชื่อบัญชีทวิตเตอร์ของคุณและใส่รหัสผ่าน"
+        wrong_place: "คุณได้เข้าผิดเพจ!"
+      title: "Buddy Beers | ลงทะเบียนผ่านทวิตเตอร์"
+      heading: "ลงทะเบียนผ่านทวิตเตอร์"
+    create_user:
+      success: "ได้ลงทะเบียนบัญชีเรียบร้อยแล้ว คุณสามารถเข้าสู่ระบบผ่านทวิตเตอร์ของคุณ"
+  
+  sms:
+    message: "%{name} เพื่อนของคุณได้ซื้อ Buddy Drinks ให้คุณ! กรุณาดาวน์โหลดหรือเข้าใช้แอ๊พของเราเพื่อขอรับคูปอง"
+    error_message: "มีคนส่งคูปอง Buddy Drinks ให้คุณ แต่เราไม่สามารถระบุสถานที่ได้ กรุณาติดต่อเราที่ info@buddydrinks.com เพื่อให้เราดำเนินการแก้ไข"
+  
+  sms_invitations:
+    create:
+      message: "ดาวน์โหลดแอ๊พฯ Buddy Drinks ที่นี่: %{link}" 

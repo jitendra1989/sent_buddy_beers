@@ -1,0 +1,40 @@
+nl:
+  home: 
+    bar_info: 
+      description: "Lees meer over hoe we je kunnen helpen aan meer omzet en klanten, en dat zonder maandelijkse kosten!"
+      heading: "Ben je eigenaar van een kroeg, restaurant, cafe, hotel ... ?"
+      link: "Meer info »"
+    contact_info: 
+      email_us: "Stuur een mail"
+    content_header: 
+      beer_button: "Stuur een biertje. De eerste is van ons"
+      buy_a_beer: "Koop een biertje voor een vriend."
+      description: "Heb je een vriend die ver weg woont en wil je hem een <strong>kado of bedankje sturen?</strong> Ben je op zoek naar <strong>korting op drankjes</strong> bij je lokale kroeg? Buddy Drinks maakt het mogelijk om je sociale contacten te onderhouden via de aloude traditie: een drankje kopen voor je vrienden! <strong>Probeer het vandaag nog, het eerste biertje krijg je van ons!</strong>"
+      happy_hours: "Hele dag Happy Hour"
+      social_in_socializing: "Breng <span class=\"color\">social</span> terug in socializing."
+    downloads: 
+      heading: Downloads
+      logo: Logo
+      stamp: Zegel
+    index: 
+      bar_search: 
+        heading: "Zoek een kroeg in de buurt:"
+        label: "Vul een adres in, bv: Leidseplein 20, Amsterdam"
+      brewery: 
+        description: "Neem contact met ons op als je op zoek bent naar een unieke middel om je merk onder de aandacht te krijgen van de doelgroep 17-30 jaar."
+        heading: "Werk je bij een brouwerij, restaurant keten of marketing bureau?"
+        link: "Meer info"
+      heading: "Stuur je vrienden biertjes online."
+      title: "Buddy Drinks | Stuur online biertjes naar je vrienden!"
+    press: 
+      big_quote: "Dit kan de Nederlandse bier consumptie op z'n kop zetten."
+      contacts: 
+        heading: "Pers contact"
+      heading: "We zijn in contact met deze bedrijven:"
+      title: "Buddy Drinks in het nieuws"
+    press_releases: 
+      announcing: "29 Juli 2010 - <strong>Announcing Buddy Drinks</strong> [english]"
+      carlsberg_de: "26 April 2011 - <strong>BuddyDrinks.com kooperiert mit Carlsberg Deutschland.</strong> [deutsch]"
+      carlsberg_en: "26 April 2011 - <strong>Buddy Drinks and Carlsberg Announce a Partnership to Expand the Beer-Gifting Service in Germany.</strong> [english]"
+      heading: Persberichten
+      paypal: "04 Oktober 2010 - <strong>Buddy Drinks and Appcelerator team genomineerd voor de 2010 PayPal X Developer’s Conference Hackathon</strong> [english]"

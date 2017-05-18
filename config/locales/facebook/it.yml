@@ -1,0 +1,60 @@
+it:
+  facebook:
+    home:
+      index:
+        drink_feed:
+          heading: Chi sta comprando birre a chi su BuddyDrinks.com?
+    orders:
+      index:
+        ask_for_beer:
+          link: "Chiedi ai tuoi amici di facebook una birra"
+          my_fb_status: "Amici! Ho sete e mi andrebbe una birra. Esiste una bellissima App per Facebook chiamata Buddy Drinks grazie alla quale potete comprarmi una birra da consumare in uno dei bar della mia città! Che ne dite?"
+          name: "Buddy Drinks - Compra vere birre in veri bar ai tuoi amici tramite Facebook!"
+          fb_action_buy: "Compra una birra a %{name}"
+        ask_friends:
+          link: "Chiedi ai tuoi amici di Facebook se vogliono una birra"
+          my_fb_status: "Amici! Esiste una bellissima App per Facebook chiamata Buddy Drinks grazie alla quale posso comprarvi una birra che potrete poi consumare in uno dei bar della vostra città! Qualcuno di voi ha sete?"
+          name: "Buddy Drinks - Compra vere birre in veri bar ai tuoi amici tramite Facebook!"
+          fb_action_buy: "Compra una birra"
+      show:
+        social_spread:
+          fb_status: "%{memo} (@[%{recipient_fb_id}]) ho comprato una %{beer} al %{bar} a %{city}! Segui questo link per reclamare la tua birra: %{link}"
+          fb_message_link: "Ti ho comprato una %{beer} al %{bar} a %{city}!"
+          fb_action: Reclama questa birra
+          my_fb_status: "Ho comprato una %{beer} a %{recipient} al %{bar} a %{city}: %{memo}!"
+          fb_action_buy: Compra una birra
+        notice:
+          not_notified: "Devi notificare i tuoi amici utilizzando uno dei metodi sottostanti, altrimenti non verranno mai a conoscenza della birra che gli hai comprato."
+          automatic_link: "Clicca qui per svolgere questa operazione in automatico la prossima volta."
+        links:
+          post_to_friend: "Postalo sul wall dei tuoi amici di Facebook"
+          send_message: "Invia un messaggio ai tuoi amici su Facebook"
+          post_friends_wall: "Postalo sul mio wall di Facebook"
+        permissions:
+          do_this_automatically: "Fallo automaticamente la prossima volta"
+        posted_heading: "Questo è quello che hai postato sul wall dei tuoi amici"
+        send_message: "Vuoi inviargli anche tu un messaggio?"
+      check:
+        welcome: "Benvenuto a Buddy Drinks"
+        notice: "Un tuo amico ti ha comprato una birra vera tramite Buddy Drinks. Devi collegare il tuo account Facebook affinché possiamo verificare che si tratta effettivamente di te."
+        connect_link: "Collegati con Facebook"
+        permissions:
+          heading: "Informazioni sui permessi per le email"
+          description: "Chiediamo l'indirizzo email solamente per notificarti quando qualcuno ti ha comprato una birra tramite il nostro servizio. L'indirizzo email viene utilizzato anche per inviare le informazioni d'acquisto nel caso che sia tu ad effettuare un ordine. Ti chiediamo di pubblicare il tutto all'interno del tuo flusso di attività in modo che il tuo amico venga avvisato quando gli compri una birra. Per avere informazioni più dettagliate ti preghiamo di consultare il nostro <a href=\"http://buddybeers.com/en/privacy\">Privacy Policy.</a>"
+      create:
+        fb_app_request:
+          title: "Ti ho comprato una %{beer} al %{bar} a %{city}!"
+          default_message: "Buddy Drinks permette agli amici di offrirsi a vicenda birre vere online. Clicca \"accept\" per reclamara la birra che %{name} ti ha comprato."
+        errors:
+          no_user: "Devi selezionare un amico di Facebook"
+      friend_select:
+        heading: "Seleziona un amico"
+        search_prompt: "Digita il nome di un amico per cominciare a cercarlo"
+        no_friends: "Nessun amico corrisponde a questo nome"
+    locations:
+      location_detail:
+        more_information: "Maggiori informazioni su %{name}"
+    vouchers:
+      show:
+        coupon:
+          description: "Mostra questo codice al barista per ricevere il tuo drink gratuito."

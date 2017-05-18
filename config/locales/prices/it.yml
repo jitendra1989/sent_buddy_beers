@@ -1,0 +1,21 @@
+it:  
+  prices:
+    new:
+      title: Inserisci l'elenco dei drink del tuo bar
+      next_step: "Passo 3: Conferma i tuoi dettagli"
+      heading: "Elenco dei drink del %{bar_name}"
+      description: Tramite il modulo seguente puoi stabilire il prezzo delle birre (o degli altri tipi di drink) che intendi vendere tramite Buddy Drinks. Quando hai finito, clicca il bottone in fondo alla pagina per proseguire con lo step successivo.
+    form:
+      new_brand: Inserisci la marca del drink
+      add_beer_link: Aggiungi questa birra
+      legend: Aggiungi un'altra birra all'elenco del %{bar}
+      new_brand_link: Collega questo drink a una marca
+      add_brand_link: Collega questa marca
+      new_beer_link: Aggiungi una nuova birra
+      new_beer: Aggiungi una nuova birra al nostro database
+      submit: Aggiungi questo drink
+    inventory:
+      drink_list: Elenco dei drink attuale
+      empty: Attualmente non ci sono drink nel tuo menu. Per favore, aggiungine qualcuno tramite il modulo sottostante.
+    price:
+      special_price: Prezzo speciale. Grazie!

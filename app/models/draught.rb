@@ -1,0 +1,2 @@
+class Draught < DrinkType
+end

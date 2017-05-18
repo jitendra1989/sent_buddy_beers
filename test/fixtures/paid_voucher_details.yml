@@ -1,0 +1,15 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  no_of_redeemed_vouchers: 1
+  affiliate_id: 1
+  date: 2014-10-15 19:22:37
+  mode: MyString
+  amount: MyString
+
+two:
+  no_of_redeemed_vouchers: 1
+  affiliate_id: 1
+  date: 2014-10-15 19:22:37
+  mode: MyString
+  amount: MyString

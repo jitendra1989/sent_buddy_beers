@@ -1,0 +1,36 @@
+/ default > registrations > payment_information
+-#
+  %fieldset
+    %legend= t(".payment_information.legend")
+    %ol
+      %li
+        = f.label :default_currency, t("forms.labels.default_currency")
+        = f.select :default_currency, currencies_in_use
+      %li
+        = f.label :paypal_email, t("forms.labels.paypal")
+        = f.text_field :paypal_email
+      %li
+        %strong= t("global.or")
+      %li
+        = f.label :bank_account_name, t("forms.labels.bank_account_name")
+        = f.text_field :bank_account_name
+      %li
+        = f.label :bank_account_number, t("forms.labels.bank_account_number")
+        = f.text_field :bank_account_number
+      %li
+        = f.label :bank_account_bank_code, t("forms.labels.bank_account_code")
+        = f.text_field :bank_account_bank_code
+      %li
+        = f.label :bank_name, t("forms.labels.bank_name")
+        = f.text_field :bank_name
+      %li
+        = f.label :bank_address, t("forms.labels.bank_address")
+        = f.text_field :bank_address
+      %li
+        = f.label :bank_account_iban, t("forms.labels.bank_account_iban")
+        = f.text_field :bank_account_iban
+      %li
+        = f.label :bank_account_bic_swift, t("forms.labels.bank_account_bic_swift")
+        = f.text_field :bank_account_bic_swift
+
+-

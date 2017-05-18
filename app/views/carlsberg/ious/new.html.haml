@@ -1,0 +1,20 @@
+/ carlsberg > ious > new
+
+- stylesheets 'sites/carlsberg/sections/ious'
+- @title = t(".title")
+- content_for :head do
+  :plain
+    <!--[if lte IE 8]>
+      <style type="text/css" media="screen">
+        #new fieldset ol li input, 
+        #new li.dynamic_list ul.token-input-list,
+        #new fieldset ol li .bar {
+          position: relative;
+          behavior: url(/PIE.htc); 
+        }
+      </style>
+    <![endif]-->
+    
+#new
+  %h1= t(".heading")
+  = render "form"

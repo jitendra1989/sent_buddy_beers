@@ -1,0 +1,17 @@
+!!!XML
+!!!
+%html{ :xmlns => "http://www.w3.org/1999/xhtml", 'xml:lang' => I18n.locale.to_s, :lang => I18n.locale.to_s } 
+  %head
+    %title= "#{@title.blank? ? controller.action_name : @title} - Buddy Drinks"
+    = csrf_meta_tag
+    - if params[:in_facebook].present? and params[:in_facebook].to_s == "true"
+      :javascript
+        //parent.dg.closeFlow();
+        var parent_url = '#{build_facebook_url(edit_facebook_order_path(params[:order_id]))}';
+      = javascript_include_tag 'jquery', 'jquery.ba-postmessage', 'sendPaypalCloseMessage'
+    - else  
+      :javascript
+        top.dg.closeFlow(); 
+      
+  %body 
+    = link_to "Cancel", "#", :id => "cancel_link"

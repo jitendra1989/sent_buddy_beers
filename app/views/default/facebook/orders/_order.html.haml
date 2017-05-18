@@ -1,0 +1,13 @@
+/ Temporary page b/c we dont want links in the feed yet
+
+
+.avatar.sender= image_tag order_participant_photo(order, "sender", "sites/#{current_site.code_name}/avatars/thumb/missing.png")
+.avatar.recipient= image_tag(order_participant_photo(order, "recipient", "sites/#{current_site.code_name}/avatars/thumb/missing.png"), :alt => order.recipient_name, :height => "53px", :width => "53px")
+
+.description
+  %p= raw t("ious.index.description_received", :sender => order.sender_name.blank? ? order.sender.to_s : order.sender_name, :recipient => (order.recipient_name.blank? ? t("ious.index.sender_generic") : order.recipient_name), :drink => [order.quantity, order.price_name].join(" "), :bar => link_to(order.bar_name, facebook_location_url(order.bar)), :city => order.bar.city.name)
+- if order.memo.present?
+  .memo
+    .bubble
+      %p= order.memo
+= clear_floats

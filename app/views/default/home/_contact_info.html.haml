@@ -1,0 +1,21 @@
+/ default > home > contact_info
+
+%p
+  %strong= t(".berlin_office")
+  %br
+  BuddyLabs UG
+  %br
+  1370 Willow Road, 2nd Floor
+  %br
+  Menlo Park, CA 94025
+%p
+  %strong= t(".admin_address")
+  %br
+  BuddyLabs UG
+  %br
+  1370 Willow Road, 2nd Floor 
+  %br
+  Menlo Park, CA 94025
+
+%p
+  = mail_to "info@buddydrinks.com", t(".email_us"), :encode => :hex

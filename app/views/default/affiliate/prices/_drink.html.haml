@@ -1,0 +1,16 @@
+%td
+  - if object.photo.file?
+    = image_tag object.photo(:thumb)
+%td
+  = object.name
+  - if object.volume.present?
+    = object.volume
+%td
+  %span{ :class => object.discounted ? 'strikeout' : ''}= number_to_currency(object.amount.to_f, :unit => object.amount.currency.symbol)
+%td
+  - if object.discounted
+    = number_to_currency(object.discounted_amount.to_f, :unit => object.discounted_amount.currency.symbol)
+%td
+  - if object.description
+    %span.desc= object.description
+%td= render :partial => "affiliate/prices/price_options", :locals => {:object => object}

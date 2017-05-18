@@ -1,0 +1,11 @@
+/ default > shared > drink_feed
+
+= content_for :head do
+  = javascript_include_tag "drink_feed"
+
+%h2= t(".heading")
+= render "shared/twitter_follow_button"
+#drink_feed
+  - @activity.reverse.each_with_index do |item, index|
+    .drink{ :id => "drink#{29 - index}", :style => @activity.reverse.last(5).include?(item) ? "display:block" : "display:none" }
+      = render "shared/drink_in_feed", :object => item

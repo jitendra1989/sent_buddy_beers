@@ -1,0 +1,15 @@
+/ buddybeers > home > press
+
+- @title = t(".title")
+- stylesheets "sites/buddybeers/sections/press"
+
+#press
+  .left
+    #press_links= render "press"
+    = render "press_releases"
+  .right
+    %h2= t(".contacts.heading")
+    %p= mail_to "press@buddydrinks.com", obscure_email("press@buddydrinks.com").html_safe, :encode => :hex
+    = render "contact_info"
+    #downloads= render "downloads"
+  =clear_floats

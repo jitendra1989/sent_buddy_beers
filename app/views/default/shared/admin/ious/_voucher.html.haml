@@ -1,0 +1,19 @@
+%li{ :class => "#{cycle("odd", "even")}#{(voucher.redeemable? ? "" : voucher.redeemed ? "_redeemed" : " unclaimed")}"}
+  = form.fields_for :vouchers, voucher do |f|
+    %span.number
+      = f.label :redemption_code, "#{voucher.to_s}-#{voucher.redemption_token if voucher.redeemed}".html_safe
+      = f.text_field :redemption_code, :value => "", :class => "redemption_code" if voucher.redeemable?
+    - if voucher.redeemable?
+      %br
+      = voucher.iou.created_at.to_s(:euro_sm_with_time)
+      &ndash;
+      %strong= number_to_currency(voucher.amount.to_f, :unit => voucher.iou.amount.currency.symbol)
+      &ndash;
+      %strong= beverage_owed(voucher.iou)
+      &ndash;
+      = voucher.iou.sender_name
+      &ndash;&gt;
+      = voucher.iou.recipient_name
+    - if voucher.redeemed?
+      %br
+      = voucher.iou.updated_at.to_s(:euro_sm_with_time)

@@ -1,0 +1,92 @@
+it:
+  bars:
+    new:
+      title: Vuoi far parte della nostra rete di Buddy Bar?
+      network:
+        heading: I nostri Buddy Bar
+      heading: Unisciti alla nostra rete di Buddy Bar.
+      income_link: Maggior guadagno
+      customers_link: Più clienti
+      setup_link: Facile da impostare
+      web_link: Presenza online
+    bar:
+      more_info: Maggiori informazioni
+      buy_a_beer: Compra una birra qui
+      price_range: "Range di prezzo:"
+      drink_specials: "Offerte sui drink?"
+    benefits:
+      heading: COSA CI GUADAGNO?
+      customers:
+        heading: Per ogni Voucher si vendono 10.4 drink a prezzo pieno.
+        description: "Le nostre ricerche dimostrano che <strong>la gente non beve da sola.</strong> Quando viene venduto un Voucher tramite Buddy Drinks, solitamente la persona che deve covalidarlo porta con sé anche altri amici. Ciò implica un maggior numero di clienti per la tua attività."
+      web:
+        heading: Promuoverci vuol dire promuovervi
+        description: "<strong>Siamo vostri partner nella diffusione commerciale</strong>. Dall'alto della nostra esperienza sui social network e nel marketing online, ti assicuriamo  che promuovendo il nostro servizio promuoverai anche il tuo bar. Per far ciò potrai sfruttare la visibilità garantita da nuovi media come Facebook, Twitter, YouTube, UStream.tv, Foursqaure e molti altri."
+      income:
+        heading: Ogni Voucher vende una media di 10.4 drink a prezzo pieno
+        description: "Le nostre informazioni mettono in evidenza il fatto che difficilmente la gente che va in un bar consuma solo un drink. Molti clienti vengono per socializzare e dunque si fermano per un bel po'. Quando poi i clienti portano con sé anche degli amici, automaticamente il tuo bar vende di più."
+      setup:
+        heading: Facilità d'accesso
+        description: "<strong>L'utilizzo del nostro servizio non prevede nessun costo.</strong> Sarai in grado di impostare e utilizzare Buddy Drinks per il tuo bar in meno di 30 minuti. Abbiamo una soluzione per ogni livello di tecnologia d'accesso. Se sei in possesso di una connessione internet il tutto è un po' più semplice ma, in ogni caso, sarai guidato passo-passo all'interno di tutto il processo."
+    edit:
+      title: Modifica le informazioni del tuo bar
+      heading: Modifica le informazioni del tuo bar
+    submit:
+      success: "Abbiamo ricevuto in maniera corretta tutte le tue informazioni: verrai informato quanto prima riguardo la tua affiliazione come Buddy bar. Grazie ancora!"
+      error: Si è verificato un errore. Prova ancora.
+    confirm:
+      title: Conferma le informazioni del tuo bar
+      drink_list: Elenco dei drink
+      heading: Conferma le informazioni del tuo bar
+      edit_drink_list: Modifica l'elenco dei drink
+      edit_bar: Modifica le informazioni del bar
+      confirm_button: Sembra ok! Facciamolo!
+    confirmation_message:
+      confirm: "Una volta certo che le informazioni relative al tuo bar siano corrette, clicca il tasto in fondo alla pagina e invia la richiesta per diventare un Buddy bar."
+      whats_next:
+        heading: "Ed ora cosa succede?"
+        one: "Un gentile rappresentante di Buddy Drinks ti contatterà per confermare le informazioni relative al tuo bar"
+        two: "Ti invieremo uno Starter Kit completo dei tuoi primi Voucher, dei dati per il login e con del fighissimo materiale promozionale. Una volta in possesso dei dati di login, potrai aggiungere altri drink e personalizzare il profilo del tuo bar."
+        three: "Ti contatteremo ancora per essere sicuri che il materiale sia arrivato, per mettere il tuo bar online e rispondere ad altre eventuali domande."
+        contact: "Se hai già delle domande <a href=\"%{link}\">contattaci subito</a>."
+    form:
+      form:
+        button: "<strong>Ultimo passo:</strong> Conferma le tue informazioni"
+        bar_legend: Informazioni del bar
+        contact_legend: Informazioni di contatto
+        heading: Forza!
+        description: Compila il modulo e ti forniremo le informazioni necessarie per inserire il prima possibile il tuo bar nella rete dei Buddy Bar.
+        no_city: "Se la tua città non è nell'elenco, aggiungila qui"
+        drink_list_legend: LISTA DEI DRINK DISPONIBILI NEL TUO BAR
+      drinks:
+        remove: Rimuovi
+        add: Aggiungi altri drink al mio elenco
+    show:
+      title: "%{bar} a %{city}, %{country} - Compra online una birra ai tuoi amici"
+      big_map_link: Mappa grande
+    drink_list:
+      menu:
+        discount: Sconto speciale Buddy Drinks!
+        title: Menu
+        buy: Compra
+        discount_short_desc: "Prezzo scontato!"
+    drink_feed:
+      title: "Chi sta bevendo al %{name}?"
+    index:
+      title: "I nostri Buddy Bar, dove potrete comprare birre online"
+      about_link: Informazioni su questo bar
+      heading: I nostri Buddy Bar
+      subheading: Dove ti farai una birra stasera??
+    create:
+      success: Grande. Abbiamo ricevuto la tua domanda e ci faremo risentire per fornirti altre informazioni.
+      error: Oh no! Si è verificato un problema.
+    search:
+      address_not_found: "%{location} non è stata trovata. Per favore, inserisci un indirizzo più preciso."
+      label: Vicino
+      legend: "Trova un bar vicino a te o ad un tuo amico: inserisci un indirizzo e una distanza e clicca Vai!"
+      kilometers: km
+      submit_button: "Cerca un bar qui vicino"
+      value: "Inserisci un indirizzo, una città o un CAP"
+      map_toggle: "Mostra/Nascondi la mappa"
+      no_results_20: "Non sono stati trovati bar nel raggio di 20 km da %{location}. <a href=\"/bars?origin[location]=%{location}&origin[distance]=%{distance}\">Clicca qui per cercare bar nel raggio di %{distance} km da %{location}!</a>"
+      no_results: "Non sono stati trovati bar nel raggio di %{distance} km da %{location}. Forse vuoi contattarci e suggerircene uno!"

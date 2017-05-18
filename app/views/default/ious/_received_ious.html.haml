@@ -1,0 +1,51 @@
+/ default > ious > received_ious
+:javascript
+  $(function() {
+    $(".sort_paginate_ajax th a, .sort_paginate_ajax .pagination a").on("click", function(){
+      $.getScript(this.href+"&type=received");
+      return false;
+    });
+  });
+
+- if @received_ious.present?
+  %ul#received
+    - for gd in @received_ious
+      %li
+        .media
+          = link_to iou_url(gd.iou), :class => "drink" do
+            .avatar
+              - if current_user.avatar.file?
+                = image_tag current_user.avatar(:tiny), :class => "received_margin"
+              -else
+                = image_tag "/images/icon-profile.png", :class => "received_margin"
+            .media-body
+              .media-heading
+                .description
+                  %p= raw t("ious.index.description_received", :sender => (gd.iou.sender_name.blank? ? t("ious.index.sender_generic") : gd.iou.sender_name), :recipient => t("ious.index.you_received"), :drink => [gd.quantity, gd.price_name].join(" "), :bar => gd.iou.bar_name, :city => gd.iou.bar.city.name, :beverage_name => gd.price.name)
+                - if gd.iou.memo.present?
+                  .memo
+                    %p= "\" #{gd.iou.memo} \""
+                .clear
+              %p.date
+                = gd.iou.created_at.to_s(:twitter_format_w_year)
+                - if gd.iou.expired? and gd.iou.expires_at
+                  &ndash;
+                  %strong= t("ious.index.expired", :date => gd.iou.expires_at.to_s(:euro_date))
+                - elsif gd.iou.expires_at.present? and !gd.iou.redeemed?
+                  &ndash;
+                  %strong= t("ious.index.expires", :distance => distance_of_time_in_words(Time.now, gd.iou.expires_at, false), :date => gd.iou.expires_at.to_s(:euro_date))
+                - elsif gd.iou.redeemed? and gd.iou.vouchers.present?
+                  &ndash;
+                  %strong= t("ious.index.redeemed", :date => gd.iou.vouchers.last.redeemed_at.to_s(:euro_date))
+    .row.text-right
+      = will_paginate(@received_ious, :class => 'set_pagination_btn', :class =>'pagination', :previous_label => '<<', :next_label => '>>', :style => "margin: 20px 0;")
+- else
+  #received
+    %p.empty= t("ious.index.received_empty")
+    %p.empty
+      %strong.sync_phone_number_message= t("ious.index.received_mobile.heading")
+      %br
+      = t("ious.index.received_mobile.description", :link => edit_user_registration_url(current_user)).html_safe
+
+.row.text-right
+  /= will_paginate(@received_ious, :class => 'set_pagination_btn', :class =>'pagination', :previous_label => '<<', :next_label => '>>', :style => "margin: 20px 0;")

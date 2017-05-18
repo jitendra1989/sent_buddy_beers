@@ -1,0 +1,18 @@
+%h1
+  - if @bar.affiliate
+    = @bar.affiliate.name
+    &ndash;
+  = @bar.name
+
+= render "admin/dashboard/tabs"
+= render "bar_tabs"
+
+#widget_code
+  %strong Widget Code:
+  %pre
+    %code
+      = "<script src=\"http://buddybeers.com/#{I18n.locale.to_s}/bars/#{@bar.friendly_id}/widgets.js\" type=\"text/javascript\"></script>"
+      = "<div id=\"buddy-beers-bar-widget-container\"></div>"
+
+#vouchers
+  = render "shared/admin/ious/outstanding_form", :vouchers => @vouchers

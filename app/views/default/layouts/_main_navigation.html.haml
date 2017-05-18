@@ -1,0 +1,24 @@
+/ default > layouts / main_navigation
+
+#main_navigation
+  %ul
+    / %li.home
+    /       = link_to_unless_current(content_tag(:span, t("layouts.menu.home")), root_url) do
+    /         = content_tag(:span, content_tag(:span, t("layouts.menu.home")), :class => "active")
+    %li= link_to content_tag(:span, t("layouts.menu.bars")), bars_url
+    %li= link_to content_tag(:span, t("layouts.menu.about")), about_url
+    %li{ :class => current_user ? "" : "last"}= link_to content_tag(:span, t("layouts.menu.register_a_bar")), new_bar_url
+    %li= link_to content_tag(:span, t("layouts.menu.apps")), "/apps"
+    - if current_user
+      %li= link_to content_tag(:span, t("layouts.menu.my_beers")), ious_url
+      - if current_user.admin?
+        %li.last= link_to content_tag(:span, t("layouts.menu.admin.dashboard")), admin_root_url
+      - if current_user.site_admin?
+        %li.last= link_to content_tag(:span, t("layouts.menu.admin.dashboard")), site_admin_root_url
+      - if current_user.affiliate?
+        %li.last= link_to content_tag(:span, t("layouts.menu.affiliate.dashboard")), affiliate_root_url
+      - if current_user.bro?
+        %li.last= link_to content_tag(:span, t("layouts.menu.bro.dashboard")), affiliate_root_url
+
+  #send_a_beer
+    %p= link_to t("layouts.menu.send_a_beer"), new_iou_url, :rel => "nofollow"

@@ -1,0 +1,8 @@
+/ buddybeers > layouts > flash
+#flash
+  - flash.except(:no_fade_out).each do |severity, message|
+    %div.container{:class => severity, :id => severity}
+      - if @flash_not_html_safe
+        %p.pie= message
+      - else  
+        %p.pie= raw message

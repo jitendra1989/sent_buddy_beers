@@ -1,0 +1,18 @@
+#drink_feed_tweet_button
+  - button_options = {:href => "http#{"s" if request.ssl?}://twitter.com/#{defined?(username) ? username : "buddydrinks"}", :class => "twitter-follow-button", 'data-show-count' => "false"}
+  - button_options.merge!({'data-button' => "grey", 'data-text-color' => "#FFFFFF", 'data-link-color' => "#009B3A"}) if defined?(dark)
+  - case I18n.locale.to_s
+  - when "de"
+    %a{ button_options.merge!({'data-lang' => "de"}) }
+      = "@#{defined?(username) ? username : "buddydrinks"} folgen"
+  - when "nl"
+    %a{ button_options.merge!({'data-lang' => "nl"}) }
+      = "Follow @#{defined?(username) ? username : "buddydrinks"}"
+  - when "th"
+    %a{ button_options.merge!({'data-lang' => "th"}) }
+      = "Follow @#{defined?(username) ? username : "buddydrinks"}"
+  - else
+    %a{ button_options }
+      = "Follow @#{defined?(username) ? username : "buddydrinks"}"
+  :plain
+    <script src="http#{"s" if request.ssl?}://platform.twitter.com/widgets.js" type="text/javascript"></script>

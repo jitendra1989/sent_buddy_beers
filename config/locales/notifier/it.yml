@@ -1,0 +1,79 @@
+it:
+  notifier:
+    notify_employee:
+      subject: "Ora sei un dipendente del %{bar} su Buddy Drinks!"
+      notify: "Sei stato indicato come dipendente del %{bar} su Buddy Drinks!"
+      description: "Ciò significa che avrai accesso ad una serie di funzionalità particolari all'interno del nostro sito e delle nostre App per dispositivi portatili; tra le varie funzionalità c'è anche quelle che ti permette di riscattare i Voucher col tuo cellulare nel tuo bar."
+      login_html: "Accedi a BuddyDrinks.com per scoprire le nuove funzionalità."
+      login_text: "Accedi a (%{url}) BuddyDrinks.com per scoprire le nuove funzionalità."
+    outstanding_balance:
+      thanks: Grazie ancora per essere entrato a far parte del network di bar Buddy Drinks!
+      amount_owed: "Stiamo aspettando di pagarti i %{amount} che ti dobbiamo dal momento che non hai ancora selezionato un metodo di pagamento all'interno del tuo profilo Buddy Drinks."
+      subject: Sono presenti dei pagamenti su Buddy Drinks che non ti sono stati corrisposti. Abbiamo bisogno dei tuoi dettagli per il pagamento.
+      greeting: "Ciao %{name},"
+      link: "Segui il link sottostante per aggiungere, dopo aver effettuato l'accesso, i tuoi dettagli per il pagamento; fatto ciò, invieremo subito il tuo denaro:"
+    voucher_notification:
+      disclaimer: "Ogni Voucher vale %{amount} e scade il %{expiration}. I Voucher Buddy Drinks rappresentano uno specifico ammontare di denaro: sono riscattabili nel luogo sopra specificato e non fungono in nessun modo da garanzia per la qualità dei prodotti elencati. La verifica che il destinatario del Voucher abbia l'età legale per acquistare uno dei prodotti è responsabilità dello staff del bar. I Voucher Buddy Drinks non sono riscattabili in denaro. Per maggiori informazioni visitate la pagina delle FAQ e quella dei Termini e delle Condizioni."
+      greeting: "Hey, %{name}!"
+      instructions: 
+        heading: "Per riscattare i tuoi Voucher segui questi quattro semplici passi:"
+        step_one: "Scarica la nostra App per dispositivi mobile qui:"
+        step_two: "Registrati con la tua email:"
+        step_three: "Vai al %{bar} (%{address})"
+        step_four: "Mostra il Voucher presente nella App Buddy Drinks e goditi il tuo drink gratuito."
+      subject: "%{name} ti ha comprato %{quantity} %{item} al %{location}, a %{city}!"
+      voucher_explained: "%{name} ti ha comprato %{quantity} %{beer} al"
+    confirmation_instructions:
+      thanks: Grazie per aver creato un account! Clicca il seguente link per attivare il tuo account!
+      subject: Buddy Drinks - Istruzioni per l'attivazione
+      personal_information: "Ti sei registrato con le seguenti informazioni:"
+      problem_link: "Se il link qui sopra non dovesse funzionare, prova a copiarlo e ad incollarlo all'interno del tuo browser. Se continuti ad aver problemi, ti invitiamo a contattarci."
+    new_voucher_list:
+      subject: Sono pronti nuovi codici per i Voucher.
+      thanks: Grazie per essere entrato a far parte del network Buddy Drinks!
+      post: "Se non hai più bisogno di verificare i codici dei Voucher e non vuoi più ricevere notifiche per questo bar, puoi modificare le tue impostazioni qui: %{link}"
+      salutation: "Ciao, %{bar_name}"
+      explanation: "Abbiamo generato automaticamente dei codici univoci per te. Puoi stampare il nuovo elenco di codici e svolgere così una doppia verifica della validità dei Voucher che riceverai. Puoi entrare nella lista dei codici accedendo a Buddy Drinks e visitando uno di questi URL:"
+      sold_out: "Hai venduto tutti i %{amount} codici per i Voucher attualmente presenti nel tuo elenco. Congratulazioni!"
+      pdf: Download diretto del PDF
+    email_activation:
+      verify_email: Dobbiamo verificare che hai veramente accesso a questa email.
+      you_added: "Hai recentemente aggiunto l'email %{email} al tuo account."
+      subject: Buddy Drinks ha necessità che tu verifichi la tua email
+      greeting: "Hey, %{name}!"
+      verify_link: "Clicca qui per verificare questa email"
+    payment_made:
+      invoice_paid: "Abbiamo recentemente indicato la quota #%{number} come corrisposta."
+      subject: "[Quota corrisposta Buddy Drinks: %{number}] %{amount} PAGATO"
+      explanation: "Ciò significa che ti è stata corrisposta una quota di %{amount} nella modalità da te indicata. Vogliamo cogliere l'occasione per ringraziarti di essere entrato a far parte del nostro network di Buddy Bar e speriamo di riuscire a fornirti un servizio ancora più potente in futuro."
+      greeting: "Ciao, %{name},"
+      link: "Se vuoi visualizzare online la quota che ti è stata corrisposta, segui il link sottostante:"
+    at_bar: al
+    email_footer:
+      salutation: Rock and Roll,
+      signature: I tuoi amici a BuddyDrinks.com
+    email_invitation:
+      subject: "Link per il download della App Buddy Drinks"
+      message: "Scarica la App Buddy Drinks App da qui: %{link}"
+    redeemed_voucher_report:
+      salutation: "Ciao, %{name}"
+      description: "Ecco i Buddy Voucher che sono stati riscattati al %{location_name} negli ultimi %{time_frame}"
+      coupon_code: "Codice Coupon"
+      amount: "Ammontare"
+      redeemed: "Importo"
+      list_view: "Puoi visualizzare questo elenco quando vuoi all'interno del backen di gestione del tuo bar su %{link}."
+      notifications: "Se non desideri più ricevere queste notifiche o se preferisci impostarne la ricezione più o meno frequentemente, fai un salto all'interno dei settaggi per le notifiche: %{link}"
+      subject: "Voucher Buddy Drinks riscattati al %{location_name} negli ultimi %{time_frame}"
+      timeframes:
+        daily: "giorno"
+        weekly: "settimana"
+        monthly: "mese"
+    voucher_expires_soon:
+      description: "%{name} ti ha comprato %{quantity} %{item} circa %{time} fa."
+      expires_plural: "I tuoi %{count} Voucher regalo scadono tra %{time}!"
+      expires_singular: "Il tuo Voicher regalo scade tra %{time}!"
+      many_redeemed: "Hai già collezionato %{collected_count} regali ma devi ancora riceverne %{count}!"
+      none_redeemed_plural: "Pensiamo che %{name} potrebbe non prendere benissimo il fatto che non hai ancora ricevuto il suo regalo. Per reclamare i tuoi regali segui istruzioni qui sotto."
+      none_redeemed_singular: "%{name} potrebbe non prendere benissimo il fatto che non vuoi ricevere il suo regalo. Per reclamarlo segui le istruzioni qui sotto."
+      one_redeemed: "Hai già collezionato un regalo ma devi ancora riceverne %{count}!"
+      subject: "%{count} dei tuoi Voucher regalo Buddy Drinks scadranno presto!"

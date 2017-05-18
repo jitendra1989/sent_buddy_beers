@@ -1,0 +1,186 @@
+fr:
+  affiliate:
+    affiliate:
+      tabs:
+        home: "Page d'accueil"
+    photos:
+      new:
+        title: "Ajouter une nouvelle photo à votre bar"
+        form:
+          button: Ajouter
+          legend: Ajouter une photo
+      edit:
+        title: Editer une photo
+        form:
+          button: "Mise à jour"
+          legend: Editer une photo
+      destroy:
+        success: "Photo supprimée!"
+        error: Il y a eu une erreur lors de la suppression de votre photo
+      create:
+        success: "Votre photo a été ajoutée avec succès"
+        error: "Il y a eu une erreur lors de l'ajout de votre photo"
+      update:
+        success: "Photo mise à jour avec succès"
+        error: "Il y a eu une erreur lors de la mise à jour de votre photo"
+    employments:
+      index:
+        title: "Gérer vos employés"
+        new_employee: "Ajouter un nouvel employé"
+        description: "Commencez à taper le nom de votre employé dans le champ ci-dessous. Cliquez sur son nom puis cliquez sur Ajouter ces employés. S'ils ne sont pas déjà membres de Buddy Drinks demandez leur de commencer par créer un compte. "
+        submit: "Ajouter ces employés"
+        submitting: "Soumission..."
+        no_employees: "Vous n'avez aucun employés pour le moment"
+        how_to: "Entrez le nom de vos employés en utilisant le formulaire ci-dessus. S'ils ne sont pas déjà membres de Buddy Drinks demandez leur de commencer par créer un compte."
+        form:
+          friend_search_hint_text: "Entrez le nom ou l'email d'un employé (au moins trois lettres)"
+          friend_search_no_results_text: "Aucun utilisateur trouvé"
+          friend_searching_text: "Recherche"
+      create:
+        success: "Employé ajouté. Au travail!"
+        error: "Il y a eu une erreur en ajoutant votre employé."
+      employment:  
+        remove: Retirer
+      destroy:
+        success: "Votre employé a été viré!"
+        error: "Il y a eu une erreur en retirant votre employé de la liste. Essayez encore!"
+    bars:
+      redeem_ious:
+        voucher: Coupon
+        success: "%{total} échangés. Votre profit de ce mois-ci a été mis à jour. Cha-ching!"
+        error: "%{total} non échangés. Vérifiez vos codes et essayez encore."
+      outstanding_vouchers: "Coupons impayés"
+      edit:
+        title: "Editer l'information de votre bar"
+        notifications_title: Notifications
+        new_voucher_list_notification: "Je vérifie mes coupons échangés sur papier. Envoyez moi un email quand de nouveau codes sont générés."
+        redeemed_voucher_notification_timeframe: "Envoyez moi un email quand des coupons sont échangés dans mon bar"
+        update_bar_notifications: "Mettre à jour mes préférences"
+      redeemed_vouchers: "Coupons échangés"
+      voucher_lists: Liste de coupons
+      form:
+        token_disclaimer: "(Ce chiffre apparaîtra dans le numéro de chaque coupon pour vous confirmer qu'il est bien valide dans votre bar)."
+        voucher_limit_hint_description: "Ce nombre est la limite de boissons que vous autorisez un client à payer en coupons chaque jour. <br /><br />Cela peut-être utile dans le <em>rare</em> cas où un utilisateur apporte beaucoup de coupons dans votre bar un soir et boive gratuitement sans que vous n'y gagniez beaucoup. Le client sera informé de cette limite sur son coupon. "
+        legends:
+          bar_information: Information sur le bar
+          voucher_conditions: "Conditions d'utilisation du coupon"
+      index:
+        title: Mes Bars
+        heading: Mes Bars
+      gallery:
+        no_photos: "Vous n'avez aucune photo"
+        view_full: "Voir en taille réelle"
+        title: Emplacement des Photos
+        tabs:
+          add_photo: Ajouter une Photo
+      show:
+        activity:
+          purchased_singular: "1 coupon pour %{item} a été"
+          purchased: "%{quantity} coupons pour %{item} ont été"
+          redeemed: "échangés"
+          purchased: "achetés"
+      bar:
+        edit: Editer cet endroit
+        stats:
+          total_profit: Profit total
+          monthly_profit: Profit mensuel
+          beers_redeemed: "Total échangé"
+          monthly_turnover: "Chiffre d'affaires mensuel"
+          beers_sold: Total Vendu
+          heading: Statistiques
+          bro:
+            heading: Votre Beer Bro
+            hint:
+              title: Beer Bros
+              description: "Votre Beer Bro est votre contact local chez Buddy Drinks. Appelez-le si vous avez besoin d'aidre avec les coupons, la promotion de votre bar ou n'importe quoi d'autre ayant reapport à Buddy Drinks. Ils sont là pour ça!<br /><br />Votre Beer Bro reçoit également votre liste hebdomadaire de coupons impayés et a la possibilité de les échanger. Donc, si vous n'avez pas entièrement confiance en lui, faites-le nous savoir immédiatement!" 
+        information:
+          heading: Information
+        map:
+          heading: Carte
+        vouchers:
+          outstanding_voucher: "Coupon Impayé"
+          heading: Coupons
+          redeem_link: "Échanger les coupons!"
+      voucher_list:
+        header: "Liste de coupons Buddy Drinks #%{number} &ndash; <strong>%{bar_name}, %{bar_city}</strong>"
+        pdf_file_name: Coupons_Buddy_Drinks
+        expires: "La liste précédente, #%{number}, expire le: %{date}"
+        footer:
+          code:
+            heading: Code
+            description: "Ecrivez ici les deux derniers numéros du code dans ces espaces vides. Par exemple A-BCD<strong>EF</strong>."
+          employee:
+            heading: "Employé"
+            description: "Ecrivez votre nom ou initiales ici de telle sorte qu'en cas de problème (quelqu'un ne pouvant pas lire votre écriture, par exemple), ils sachent qui contacter. "
+          voucher:
+            heading: Numéro de coupon
+            description: "Quand le consommateur vous donne le numéro de coupon, il y a six lettres ou chiffres. Cela ressemble à ça: A-BCD-EF. Chaque numéro est valable pour une seule catégorie de prix. "
+      voucher_table:
+        table:
+          headers:
+            code: Code
+            employee: "Employé"
+            voucher: Coupon
+      update:
+        success: "Bar mis à jour!"
+        error: "Erreur en mettant le bar à jour."
+        none_redeemed: "Vos coupons n'ont pas été échangés. Essayez encore."
+        some_redeemed: "Coupons échangés: %{number}"
+      tabs: 
+        edit_bar_information: "Editer l'information de mon bar"
+        beer_list: "Liste de bières"
+        gallery: Photos
+        promotional: Envoyer un coupon promotionnel
+        employees: "Employés"
+    payments:
+      show:
+        title: "#%{number} de facture"
+      index:
+        title: Toutes les factures
+    dashboard:
+      heading: Bienvenue sur le portail de management de bars
+      tabs:
+        home: Mes Bars
+        invoices: Factures
+    ious:
+      outstanding_form:
+        no_vouchers: "Vous n'avez pas de coupons impayés."
+      filter_form:
+        instructions: "Commencez à taper un numéro, date ou nom de coupon pour trier la liste." 
+      new:
+        title: Envoyez un coupon promotionnel Buddy Drinks. 
+        heading: Envoyez un coupon pour %{bar}
+        instructions: "Vous pouvez envoyer des coupons pour votre bar en tant que promotions. Ils ne vous seront pas payés mais vous pouvez les utiliser pour promouvoir votre bar à des évènements ou en tant que cadeau pour de bons clients. "
+        form:
+          recipient_info_legend: Destinataire
+          recipient_email: Email du destinataire
+          recipient_name: Nom du destinataire
+          beer_legend: "Bière"
+          beer: "Beer (Quantité/Type)"
+          salutation_legend: Salutations
+          memo: Raison/Instructions
+          sender_name: "Nom de l'expéditeur"
+      index:
+        to: "De:"
+        from: "A:"
+    prices:
+      edit:
+        title: "Changer le prix de la bière"
+        legend: "Changer le prix de la bière"
+      destroy:
+        success: "Bière supprimée"
+        error: "Erreur en supprimant la bière"
+      drink:
+        special_price: "Tarif préférentiel. Merci!"
+      index:
+        title: "Liste de bières"
+        legend: "Ajouter une autre bière à la liste de %{bar}"
+      create:
+        success: "Nouvelle bière ajoutée"
+        error: "Erreur en ajoutant la bière. Avez-vous entré une quantité <em>et</em> un nom?"
+      update:
+        success: "Le prix a été mis à jour"
+        error: "Erreur lors de la mise à jour du prix."
+    voucher_lists:
+      show:
+        voucher_list: "Liste de coupons"

@@ -1,0 +1,12 @@
+%h1 Listing pages
+
+= render "admin/dashboard/tabs" 
+
+.tabs
+  %ul
+    %li= link_to 'New Page', new_admin_page_path 
+  = clear_floats
+
+#pages
+  %ul
+    = render @pages

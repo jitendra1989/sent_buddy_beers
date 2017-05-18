@@ -1,0 +1,42 @@
+nl:
+  registrations: 
+    complete: 
+      description: "Klik op de bevestigingslink in de email die je zojuist hebt ontvangen."
+      heading: "Aanmelding voltooid. Check je mail."
+      resend: "Geen geluk vandaag? Heb je de mail niet ontvangen? <a href=\"%{link}\">Klik hier om de mail nogmaals te laten versturen.</a>"
+      title: "Buddy Drinks registratie voltooid"
+    create: 
+      success: "<strong>Je account is aangemaakt!</strong> Controleer je email om je account te activeren en ga ervoor!"
+    edit: 
+      facebook: 
+        account: "Je bent aangemeld via Facebook account nummer %{id}"
+        connected: "Je bent aangemeld via Facebook!"
+        permissions: 
+          about: "Waarom we om informatie van Facebook opvragen"
+          basic_info: "Basis informatie"
+          basic_info_explained: "We gebruiken de informatie om je foto en naam op onze site up to date te houden. Verder checken we of je vrienden onze app ook gebruiken zodat je hun een biertje kunt sturen."
+          email: "Email adres"
+          email_explained: "We gebruiken je facebook email adres ALLEEN om te je informeren als een vriend een biertje voor je heeft gekocht."
+      heading: "Wijzig mijn account"
+      password: "Wijzig je wachtwoord"
+      photo_add: "Foto toevoegen"
+      photo_change: "Foto wijzigen"
+      title: "Wijzig mijn account"
+    email: 
+      pending: "Activatie is afwachtende"
+    form: 
+      payment_information: 
+        legend: "Betalings informatie"
+      personal_information: 
+        legend: "Persoonlijke informatie"
+      promo_information: 
+        legend: "Promotionele informatie"
+    new: 
+      form: 
+        button: Registreren
+        existing_account: "Ik heb al een account"
+        legend: "Maak een Buddy Drinks account"
+      heading: "Trek er een kruk bij!"
+      title: "Maak een Buddy Drinks account aan"
+    update: 
+      success: "Account is aangepast!"

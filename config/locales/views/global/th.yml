@@ -1,0 +1,17 @@
+th:
+  global:
+    edit: "เปลี่ยนแปลง"
+    delete: "ลบออก"
+    access_denied: "คุณไม่มีเอกสิทธิ์ในการเข้าสู่เพจนี้"
+    generic_friend: "เพื่อนซี้"
+    or: "หรือ"
+    require_no_user: "คุณต้องออกจากระบบเพื่อเข้าสู่เพจนี้"
+    at: "ที่"
+    new: "ใหม่"
+    require_user: "คุณต้องออกจากระบบเพื่อเข้าสู่เพจนี้<a href=\"/users/sign_up\">โปรดคลิ๊กที่นี่เพื่อสร้างบัญชี Buddy Account ของคุณเองฟรี</a>"
+    confirm_question: "คุณแน่ใจใช่ไหม?"
+    affirmative: "ใช่" #Yes is a reserved word
+    negative: "ไม่" #No is a reserved word
+    pagination:
+      previous: "ก่อนหน้านี้"
+      next: "ถัดไป"

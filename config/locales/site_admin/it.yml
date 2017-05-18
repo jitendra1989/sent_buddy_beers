@@ -1,0 +1,19 @@
+it:
+  site_admin:
+    affiliates:
+      create:
+        success: "Affiliato creato correttamente!"
+      update:
+        success: "Affiliato aggiornato correttamente!"
+      destroy:
+        success: "Affiliato eliminato correttamente!"
+        error: "Si è verificato un errore durante l'eliminazione di questo affiliato."
+    prices:
+      edit:
+        legend: Modifica prezzo della birra
+      form:
+        add_beer_link: Aggiungi questa birra
+        legend: Aggiungi un'altra birra all'elenco delle birre del %{bar}
+        new_brand_link: Aggiungi una nuova marca
+        add_brand_link: Aggiungi questa marca
+        new_beer_link: Aggiungi una nuova birra

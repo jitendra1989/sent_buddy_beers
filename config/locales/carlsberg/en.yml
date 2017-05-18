@@ -1,0 +1,110 @@
+en:
+  carlsberg:
+    activerecord:
+      attributes:
+        bar:
+          contact_time: "Best Time to Contact"
+          lead: Carlsberg Sales Representative
+    bars:
+      confirm:
+        heading: "Do you want to be a buddy bar?"
+      form:
+        form:
+          bar_information: "Bar Information"
+          carlsberg_deal: "Special Offer"
+          no_city: "If your city is not in the list above, choose the nearest to you and put your exact city in the Other Notes field below"
+          other_drink: "Other Drink"
+          single_carlsberg: "Single Carlsberg"
+    facebook:
+      home:
+        index:
+          heading: "Buy a Carlsberg"
+          meta_description: "Buddy Drinks has teamed up with Carlsberg to allow you to buy real drinks for your facebook friends whether they live nearby or a world away. That calls for a Carlsberg!"
+          description: "Buddy Drinks has teamed up with Carlsberg to allow you to buy real drinks for your facebook friends whether they live nearby or a world away. <span class=\"highlight\">That calls for a Carlsberg!</span>"
+          buy_button: "Buy a Carlsberg"
+          fb_connect: "Connect with Facebook"
+          title: "Buddy Drinks - Buy Your Friend a Carlsberg"
+      locations:
+        location_detail:
+          no_carlsberg: "We're sorry, but %{bar_name} doesn't serve your favorite drink. You can buy another drink using the list below or try another location."
+        index:
+          title: "Carlsberg Buddy Bar Locations"
+      orders:
+        new:
+          heading: "Buy a Carlsberg"
+    forms:
+      labels:
+        contact_name: "Full Contact Name"
+        description_bio: "Description/Bio"
+        website: "Website"
+    footer:
+      press: "Buddy Drinks Press"
+    home:
+      index:
+        closed:
+          dear_fan: "Dear Carlsberg Fan,"
+          thanks: "Thank you for your interest in Carlsberg and Buddy Drinks. Unfortunately, the service is no longer available."
+          invite: "Instead simply invite your friends to your favorite location, and buy them a cold Carlsberg in person."
+          facebook: "We also look forward to your visit on our Facebook page:"
+          salutation: "Best regards,<br />Your Carlsberg Team"
+      apps:
+        availability: "Available for <a href=\"%{iphone_link}\" target=\"blank\" onClick=\"_gaq.push(['_trackEvent', 'App', 'Download', 'homepage link iPhone']);\">iPhone</a> and <a href=\"%{android_link}\" target=\"blank\" onClick=\"_gaq.push(['_trackEvent', 'App', 'Download', 'homepage link Android']);\">Android</a>."
+      content_header:
+        iphone_heading: "NOW ON THE IPHONE!"
+        iphone_description: "<a href=\"http://itunes.com/apps/buddybeerscarlsbergbuyyourfriendacarlsberg\" rel=\"nofollow\">The BuddyDrinks-Carlsberg iPhone app is now available FOR FREE in the Apple iTunes Store.</a> Finally you can send a cold Carlsberg to a friend on the go. <strong>Running late to meet your friends in a pub?</strong> Why not buy them their first round before you get there. <strong>Forget  your wallet?</strong> You can always pay for your drink via the app. The possibilities are endless!"
+        subhead_alt_text: "Now available in the iTunes App Store!"
+        app_button: "Download the Buddy Drinks Carlsberg iPhone app from the Apple iTunes Store"
+      iphone:
+        title: Carlsberg Buddy Drinks iPhone App
+        heading: Carlsberg Buddy Drinks iPhone App
+        subhead_alt_text: "Now available in the iTunes App Store!"
+        image_alt_text: The Carlsberg Buddy Drinks iPhone App
+        download_link: "Download the Buddy Drinks Carlsberg iPhone app from the Apple iTunes Store"
+        bullets:
+          one: "Buy a Carlsberg for friends even if you’re in different cities!"
+          two: "Find the nearest Carlsberg bar"
+          three: "Win free drinks"
+        form:
+          label: "Enter your email below to be notified when the app launches:"
+          error:
+            heading: "There was an error adding your email."
+            description: "Please check the address you entered for any mistakes and try again."
+          success: "Success! You will be notified as soon as the app is available in the iTunes app store."
+          submit: Submit
+        signup: Start using buddy Drinks now
+
+    ious:
+      new:
+        heading: "Send a Carlsberg"
+      drink_details:
+        drink_at_bar: "%{drink}* voucher at %{bar}, %{city} for %{recipient} (%{email})"
+      confirmed_payment:
+        social_spread:
+          heading: "Share with your friends"
+    layouts:
+      navigation:
+        slogan: "That Calls for a <strong>Carlsberg</strong><sup>™</sup>"
+      facebook:
+        menu:
+          my_beers: "My Drinks"
+          bars: "Venues"
+          buy: "Buy a Carlsberg"
+    sessions:
+      new:
+        heading: "Login and send your friend a Carlsberg!"
+        title: Login to Buddy Drinks
+        form:
+          button: Login
+          legend: Login with your Buddy Drinks account
+          forgot_password: Forgot your password?
+        facebook_heading: Login here using your <strong>facebook</strong> account
+        connect_with_facebook: Connect with facebook
+    shared:
+      prices:
+        carlsberg_beers: Carlsberg Drinks
+        other_drinks: Other Drinks
+    notifier:
+      voucher_notification:
+        say_thanks: "If you want to say thanks to your awesome friend, why not send them a drink back? Come on over to http://carlsberg-buddybeers.com. It's easy and fun."
+    sms:
+      message: "Your friend bought you a Carlsberg! Download or open our app to get your vouchers:"

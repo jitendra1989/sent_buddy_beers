@@ -1,0 +1,62 @@
+en:
+  facebook:
+    home:
+      index:
+        drink_feed:
+          heading: Who's buying drinks for each other on BuddyDrinks.com?
+    orders:
+      index:
+        ask_for_beer:
+          link: "Ask your facebook friends for a drink"
+          my_fb_status: "Hey buddies, I'm thirsty and could use a drink. There's a great facebook app called Buddy Drinks where you can buy me a drink at my local venue! How about it?"
+          name: "Buddy Drinks - Buy your friends real drink in real venues via Facebook!"
+          fb_action_buy: "Buy %{name} a drink"
+        ask_friends:
+          link: "Ask your facebook friends if they want a drink"
+          my_fb_status: "Hey buddies, there's a great facebook app called Buddy Drinks where I can buy you a drink at your local venue! Anyone thirsty?"
+          name: "Buddy Drinks - Buy your friends real drinks in real venues via Facebook!"
+          fb_action_buy: "Buy A Drink"
+      show:
+        social_spread:
+          fb_status: "%{memo} I bought (@[%{recipient_fb_id}]) %{beer} at %{bar} in %{city}! Download the app to redeem your free drink: %{link}"
+          fb_message_link: "I bought you %{beer} at %{bar} in %{city}! Download the app to redeem your free drink!"
+          fb_message_description: "%{name} said, %{memo}. Click the link above to download the app to redeem your free drink."
+          fb_message_description_default: "Buddy Drinks allows friends to buy real drinks for each other online. Click the link above to download the app and redeem the drink %{sender_name} bought for you."
+          fb_action: Get the Buddy Drinks App
+          my_fb_status: "I bought %{recipient} %{beer} at %{bar} in %{city}: %{memo}!"
+          fb_action_buy: Buy A Drink
+        notice:
+          not_notified: "You must notify your friend via one of the methods below or they won't know about the drink you bought them."
+          automatic_link: "Click here to have this done automatically next time."
+        links:
+          post_to_friend: "Post to Friend's Facebook Wall"
+          send_message: "Send your friend a Facebook Message"
+          post_friends_wall: "Post to My Facebook Wall"
+        permissions:
+          do_this_automatically: "Do this automatically for me next time"
+        posted_heading: "Here's what we posted to your friend's wall"
+        send_message: "Do you also want to send them a message?"
+      check:
+        welcome: "Welcome to Buddy Drinks"
+        notice: "Your friend has bought you a real drink via Buddy Drinks. You'll need to connect your facebook account so that we can verify it's really you."
+        connect_link: "Connect with Facebook"
+        permissions:
+          heading: "About Email Permissions"
+          description: "We only ask for your email address so that we can notify you if someone buys you a drink though our service. We also send your purchase information to this email address if you make an order. We ask to publish to your stream so that your friend is notified when you order them a drink. For detailed information please check out our <a href=\"http://buddybeers.com/en/privacy\">Privacy Policy.</a>"
+      create:
+        fb_app_request:
+          title: "I bought you %{beer} at %{bar} in %{city}!"
+          default_message: "Buddy Drinks allows friends to buy real drinks for each other online. Click \"accept\" to claim the drink that %{name} bought for you."
+        errors:
+          no_user: "You must choose a facebook friend"
+      friend_select:
+        heading: "Select a friend"
+        search_prompt: "Start typing a friend's name to search"
+        no_friends: "No friends by this name."
+    locations:
+      location_detail:
+        more_information: "More information about %{name}"
+    vouchers:
+      show:
+        coupon:
+          description: "Show this code to the venuetender to get your free drink."

@@ -1,0 +1,24 @@
+/ buddybeers > devise > passwords > edit
+
+- @title = t(".title")
+- stylesheets "sites/buddybeers/sections/forms"
+- content_for :head do
+  :javascript
+    $(document).ready(function(){ $("label").inFieldLabels(); });
+    
+#password.container
+  .confirmation-main
+    %h1= t(".heading")
+
+    = form_for resource_name, resource, :url => confirmation_path(resource_name) do |f|
+      = f.error_messages
+      %fieldset
+        %h2= t(".description")
+        %ol
+          %li
+            = f.text_field :email, :placeholder => "Email address", :class => "col-md-7 col-sm-7 col-xs-12"
+        .clearfix
+        %ul
+          %li
+            = f.submit t(".submit"), :class => "btn"
+      = clear_floats

@@ -1,0 +1,20 @@
+!!!
+%html{:lang => "en"}
+  %head
+    = render "/default/shared/home_meta"
+    = render 'layouts/javascripts'  
+    = render 'layouts/new_javascripts'          
+    = yield(:head)
+  %body
+    %aside.top_main
+      / - Header start
+      = render "/default/shared/buddy_header"
+      / - Header end
+      / - Banner start
+      = render "/default/shared/home_banner"
+      / - Banner end
+    / - aside top main section end  
+    = yield
+    / - footer start
+    = render "/default/shared/buddy_footer"
+    / - footer end

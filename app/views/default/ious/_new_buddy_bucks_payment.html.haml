@@ -1,0 +1,23 @@
+/ default > ious > social_gold_payment
+
+- content_for :head do
+  :javascript
+    $(document).ready(function(){
+      // $("#pay_with_credits").fancybox({'padding' : '0', 'autoScale' : false, 'width' : 417,'height': 367,'type'          : 'iframe', 'scrolling' : 'no'});
+    });
+
+#buddy_bucks.payment_method
+  .description
+    %h3.logo
+  .credits
+    #spinner.hidden= image_tag "/images/sites/default/graphics/ajax-loader.gif"
+    %p#user_credits.current.buddybucks-payment
+      = "#{image_tag("/images/sites/buddybeers/graphics/buddy-bucks.png", :border => 0)} #{t("ious.credits.new_current_bucks")} #{image_tag("/images/bb_icon.png", :border => 0)}#{number_with_delimiter(current_user.credits)}".html_safe
+
+    %ul
+      / %li= link_to("<span>#{t(".pay", :amount => calculate_total_bucks(@iou))} &raquo;</span>".html_safe, confirm_iou_url(@iou), :class => "pay", :id => "pay_with_credits")
+      %li= link_to("<span>Get More<img src='/images/buddy-bucks-white.png' style='width: 50%;position: relative;left: 4px;top: -2px;'></span>".html_safe, user_credits_url(current_user, :return_to => request.url), :class => "more iframe buy_credits", :id => "buy_credits")
+      /%li.credit_cards= image_tag("graphics/all_cc_cards.gif")
+    
+      
+  =clear_floats

@@ -1,0 +1,11 @@
+%h1
+  - if @bar.affiliate
+    = @bar.affiliate.name
+    &ndash;
+  = @bar.name
+
+= render "admin/dashboard/tabs"
+= render "bar_tabs"
+
+= form_for [:admin, @bar], :html => { :multipart => true } do |f|
+  = render "shared/admin/bars/form", :f => f

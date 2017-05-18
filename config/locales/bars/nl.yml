@@ -1,0 +1,81 @@
+nl:
+  bars: 
+    bar: 
+      buy_a_beer: "Koop hier je Bier"
+      drink_specials: "Drank Specials?"
+      more_info: "Meer info"
+      price_range: "Prijs tussen:"
+    benefits: 
+      customers: 
+        description: "We hebben uitgebreid onderzoek gedaan en we zien dat <strong>mensen niet graag alleen een biertje drinken</strong>. Als een voucher verkocht wordt via Buddy Drinks, dan neemt de ontvanger bijna altijd een vriend mee. Dus, meer klanten voor jou!"
+        heading: "Elke voucher brengt je gemiddeld 3.1 klanten"
+      heading: "Waarom zou ik Buddy Bar worden?"
+      income: 
+        description: "We merken dat <strong>mensen meer dan één drankje drinken in een kroeg</strong>. De meeste mensen komen om te socializen en blijven hangen. Dit betekend dat mensen hun vrienden meenemen en ze allemaal een drankje bestellen. Zo verkoop jij dus meer!"
+        heading: "Voor elke voucher worden gemiddeld 10.4 drankjes verkocht."
+      setup: 
+        description: "<strong>Onze service is gratis!</strong> Het kost je ongeveer 30 minuten om Buddy Bar te worden. We hebben oplossingen op elk technisch niveau. Het is makkelijker als je een internet verbinding in je kroeg hebt, maar zonder kan het ook."
+        heading: "Lage instap"
+      web: 
+        description: "<strong>We zijn een promotionele partner!</strong> Met onze jarenlange ervaringen op sociale netwerken en internet marketing promoten we niet alleen Buddy Drinks, maar ook jouw kroeg. We gebruiken netwerken als Facebook, Twitter, Foursquare en meer."
+        heading: "Onze promotie is jouw promotie"
+    confirm: 
+      confirm_button: "Ziet er goed uit. Let's do it!"
+      drink_list: "Lijst met drank"
+      edit_bar: "Wijzg de gegevens van de kroeg"
+      edit_drink_list: "Wijzig de lijst met drank"
+      heading: "Bevestig de gegevens van je kroeg"
+      title: "Bevestig de gegevens van je kroeg"
+    confirmation_message:
+      confirm: "Controleer of de gegevens van je kroeg goed zijn. Klik hierna op de knop onderaan de pagina om je aanmelding te versturen en een Buddy Bar te worden!"
+    create: 
+      error: "Uh-oh, er ging iets fout."
+      success: "Cool! We hebben je aanmelding ontvangen en nemen zo snel mogelijk contact met je op!"
+    drink_feed: 
+      title: "Wie drinkt er bij %{name}?"
+    drink_list: 
+      menu: 
+        buy: Koop
+        discount: "Speciale Buddy Drinks korting!"
+        title: Menu
+    edit: 
+      heading: "Wijzig de gegevens van je kroeg"
+      title: "Wijzig de gegevens van je kroeg"
+    form: 
+      form: 
+        bar_legend: "Gegevens van de kroeg"
+        button: "Stap 2: Lijst met drank"
+        contact_legend: "Contact informatie"
+        description: "Vul het formulier hieronder in en we komen zo snel mogelijk bij je terug om jouw kroeg een echte Buddy Bar te maken."
+        heading: "Let's Do It"
+        no_city: "Staat je stad niet in de lijst? Voer het hierin."
+    index: 
+      about_link: "Over deze kroeg"
+      heading: "Onze Buddy Bars"
+      subheading: "Waar zou jij een biertje willen drinken vanavond?"
+      title: "Onze Buddy Bars, Waar Je Online Biertjes Kan Kopen"
+    new: 
+      customers_link: "Meer klanten"
+      heading: "Sluit je aan bij het Buddy Bars Netwerk"
+      income_link: "Meer omzet"
+      network: 
+        heading: "Onze Buddy Bars"
+      setup_link: "Lage instap"
+      title: "Wil je je ook aansluiten bij ons Buddy Bars Netwerk?"
+      web_link: "Online PR"
+    search: 
+      address_not_found: "%{location} kon niet gevonden worden. Voer een meer precies adres in."
+      kilometers: km
+      label: Vlakbij
+      legend: "Zoek een kroeg in de buurt; type het adres, kies een afstand en klik op Go!"
+      map_toggle: "Toon/verberg kaart"
+      no_results_20: "Geen bars werden gevonden binnen 20 km van %{location}. <a href=\"/bars?origin[location]=%{location}&origin[distance]=%{distance}\">Klik hier om te zoeken naar bars binnen %{distance} km van %{location}!</a>"
+      no_results: "Geen bars werden gevonden binnen %{distance} km van %{location}. Misschien kun je contact met ons op en stel voor een!"
+      submit_button: "Zoek een bar bij jou in de buurt »"
+      value: "Vul een adres, plaats of postcode in"
+    show: 
+      big_map_link: "Grotere kaart"
+      title: "%{bar} in %{city}, %{country}"
+    submit: 
+      error: "Er ging iets fout. Probeer het nog een keer."
+      success: "We hebben al je informatie ontvangen en komen zo snel mogelijk bij je terug. Thanks!"

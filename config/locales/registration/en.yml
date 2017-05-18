@@ -1,0 +1,48 @@
+en:
+  registrations:
+    email:
+      pending: Pending Verification
+    new:
+      title: Create a Buddy Drinks Account
+      heading: Pull Up a Stool!
+      sponsorpay_heading: Need a pause? How about a cold Drink?
+      form:
+        button: Register
+        legend: Create a Buddy Drinks Account
+        existing_account: I already have an account
+    edit:
+      button:
+        heading: Add a Button to your website
+        description: Copy and paste the code below into your website
+        name_label: Show my name
+      title: Edit My Account
+      heading: My Account
+      facebook:
+        connected: You're connected with Facebook!
+        account: You're connected via Facebook account number %{id}
+        permissions:
+          about: Why We're Requesting Your Facebook Information
+          basic_info: Basic Information
+          basic_info_explained: We use this information to update your photo and name on our site. We also check to see if any of your friends are using our app so you can send them drinks.
+          email: Email Address
+          email_explained: We ONLY use your facebook email address to send you a notification when a friend buys you a drink.
+      photo_change: Change Your Photo
+      photo_add: Add a Photo
+      password: Change Your Password
+      
+    complete:
+      title: Buddy Drinks Registration Complete
+      heading: Signup Complete. Please Check Your Email.
+      description: "Click the confirmation link in the email we just sent you to confirm your email address."
+      resend: "No dice? Didn't get the email? <a href=\"%{link}\">Click here to resend it.</a>"
+    form:
+      payment_information:
+        legend: Payment Information
+      personal_information:
+        legend: Personal Information
+      promo_information:
+        legend: Promotional Information
+    create:
+      success: "<strong>Your account has been created.</strong> Just check your e-mail for the confirmation link, and you're ready to go!"
+    update:
+      success: Account updated!

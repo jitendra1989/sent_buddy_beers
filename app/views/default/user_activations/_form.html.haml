@@ -1,0 +1,11 @@
+%ol
+  %li
+    = f.label :password, t("forms.labels.password")
+    = f.password_field :password
+
+  %li
+    = f.label :password_confirmation,t("forms.labels.confirm_password")
+    = f.password_field :password_confirmation
+
+  =# f.label :openid_identifier, "Or use OpenID instead of your email / password"
+  =# f.text_field :openid_identifier

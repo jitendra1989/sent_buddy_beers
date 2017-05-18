@@ -1,0 +1,22 @@
+/ carlsberg > bars > confirm
+
+- @title = t(".title")
+- stylesheets 'sites/carlsberg/sections/bars'
+
+#confirm
+  .header
+    %h1= t(".heading")
+    = render "confirmation_message"
+  .pad  
+    = render "benefits"
+    .left
+      %h2= @bar.name
+
+      = render "confirm_info"
+      
+      - if @bar.pending?
+        #next_button
+          %p.edit= link_to content_tag(:span, "#{t(".edit_bar")} »"), edit_bar_url(@bar)
+          %p.next{ :class => I18n.locale.to_s }= link_to content_tag(:strong, t(".confirm_button")), submit_bar_url(@bar), :method => :post
+
+    = clear_floats

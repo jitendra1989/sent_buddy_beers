@@ -1,0 +1,13 @@
+%html{:lang => "en"}
+  %head
+    = render "shared/about_meta"
+    = render 'layouts/new_javascripts'
+    = render 'layouts/javascripts'
+    = render 'layouts/new_stylesheets'           
+    = yield(:head)
+  %body
+    %aside.about-main
+      = render "shared/buddy_header"
+      = yield
+    = render "shared/buddy_footer"
+

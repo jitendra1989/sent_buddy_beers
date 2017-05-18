@@ -1,0 +1,28 @@
+/ buddybeers > credits > index
+
+- @title = t(".title")
+- stylesheets "sites/buddybeers/sections/credits"
+
+= render "ultimate_pay"
+%section
+  .container
+    #credits.credit-background-none
+      .row.credits-main-row
+        .col-md-12.col-sm-12.col-xs-12.credit-left
+          #main
+            %h1= t(".heading")
+            = render "balance"
+            = render "top_up"
+            .acceptance_methods
+              %p= t(".accept")
+              %p.logos
+                = image_tag "sites/buddybeers/graphics/credit-payment-logos-#{I18n.locale}.png", :alt => t(".payment_logos"), :class => "img-responsive"
+                / = t(".and_more")  
+            = render "return_link"
+/        .col-md-4.col-sm-4.col-xs-12.credit-right  
+/          #information
+/            %h2= t("home.about.buddy_bucks.question")
+/            %p= raw t("home.about.buddy_bucks.answer")
+/            %h2= t("home.about.ultimate_pay.question")
+/            %p= raw t("home.about.ultimate_pay.answer")
+/          =clear_floats

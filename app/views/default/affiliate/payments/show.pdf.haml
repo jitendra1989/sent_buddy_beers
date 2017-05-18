@@ -1,0 +1,10 @@
+- @title = t('.title', :number => @payment.id)
+
+.content-box
+  / Start Content Box
+  .content-box-header
+    %h3= t('.title', :number => @payment.id)
+    .clear
+	
+  .content-box-content
+    = render "shared/payment.html.haml"

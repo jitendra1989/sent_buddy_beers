@@ -1,0 +1,21 @@
+de:
+  prices: 
+    form: 
+      add_beer_link: "Füge diese Bier hinzu"
+      add_brand_link: "Füge diese Marke hinzu"
+      legend: "Füge der %{bar} Getränkeliste Biere hinzu"
+      new_beer: "Füge ein neues Bier hinzu"
+      new_beer_link: "Bier existiert nicht?"
+      new_brand: "Füge eine neue Marke hinzu"
+      new_brand_link: "Marke noch nicht vorhanden?"
+      submit: "Bier hinzufügen"
+    inventory: 
+      drink_list: "Aktuelle Getränkeliste"
+      empty: "Im Moment befinden sich keine Getränke in deinem Menü."
+    new: 
+      description: "Trage die Preise für die Biere (oder andere Getränke), die Du über BuddyDrinks anbieten möchtest im nachfolgenden Formular ein. Sobald Du fertig bist, klicke den Bestätigungsbutton am Ende der Seite, um zum nächsten Schritt zu gelangen."
+      heading: "%{bar_name}s Getränkeliste"
+      next_step: "Schritt 3: Details bestätigen"
+      title: "Getränkeliste eingeben"
+    price: 
+      special_price: "Spezial Preis. Danke!"

@@ -1,0 +1,196 @@
+it:
+  ious:
+    new:
+      heading: Invia una birra ad un tuo amico.
+      title: Invia una birra ad un tuo amico
+    form:
+      and_or: "e/o"
+      friends_info_legend: Informazioni sull'amico
+      salutation_legend: Saluto
+      friend_network: Scegli un amico da
+      bar_legend: Scegli un bar
+      sms_warning:
+        notice: Attenzione
+        warning: "Alcuni fornitori di servizi di telefonia mobile non accettano i nostri SMS. Per questo, ti raccomandiamo di inserire anche l'email del tuo amico."
+      form:
+        button: Inviagliela!
+        send_a: Invia una
+        memo: Motivo della tua generosità
+        beer: "Birra <small>(Quantità/Tipo)</small>"
+        friends_email: Email del tuo amico
+        friend_search_hint_text: Comincia col scrivere il nome o l'email del tuo amico
+        friends_name: Nome del tuo amico
+        friend_searching_text: Cerco tra l'elenco dei tuoi amici...
+        friend_search_no_results_text: Non risultano amici con questo nome
+        sms_warning: "Potrebbe risultare tagliato nell'SMS"
+        buddy_beers_countries: Le nazioni Buddy Drinks
+        other_countries: Tutte le nazioni
+      beer_legend: Scegli una birra
+      public_acceptance: "Sono d'accordo a mostrarlo sulla homepage e sulla pagina del bar."
+    twitter:
+      status: "\"%{memo}\" %{sender} ha comprato a %{recipient} %{beer} al %{bar}, %{city}: %{url}"
+    index:
+      title: "Le mie birre"
+      you_sent: Tu
+      you_received: Tu
+      description_received: "<strong>%{sender}</strong> ha comprato a <strong>%{recipient}</strong> %{drink} al <strong>%{bar}</strong>, %{city}"
+      description_sent: "<strong>%{sender}</strong> ha comprato a <strong>%{recipient}</strong> %{drink} al <strong>%{bar}</strong>, %{city}"
+      received_beers: "Birre ricevute: %{count}"
+      sent_beers: "Birre inviate: %{count}"
+      sender_generic: "Un amico"
+      voucher_number: "Voucher #%{number}"
+      heading: Le mie birre
+      expired: "Scaduto il: %{date}"
+      expires: "Scade a %{distance} il %{date}"
+      redeemed: "riscattato il: %{date}"
+      received_empty: "Al momento non hai ricevuto nessuna birra. Perchè non chiedi ai tuoi amici o familiari di inviartene una? Potrebbe fargli piacere!"
+      received_mobile:
+        heading: "Hai ricevuto un Voucher sul tuo cellulare ma non lo vedi qui?"
+        description: "<a href=\"%{link}\">Clicca qui per aggiungere il cellulare al tuo account</a> e allora potrai vedere i tuoi Voucher."
+      sent_empty: "Non hai ancora inviato nessuna birra. Se non hai amici vicino ai nostri bar puoi sempre comprartene una da solo!"
+    order:
+      price: Voucher
+      quantity: Qtà.
+      similar_price: o un drink con prezzo simile.
+      total: Totale
+      heading: Stai comprando
+      bucks: BuddyBucks
+    drink_details:
+      drink_at_bar: "Vucher %{drink}* al %{bar}, %{city} per %{recipient} (%{email})"
+    buddy_bucks_payment:
+      get_bucks: Ottieni più BuddyBucks
+      heading: BuddyBucks
+      pay: "Paga utilizzando %{amount} BuddyBucks"
+      bullets:
+        credit_system: "La nostra esclusiva moneta basata su Visa %{link}"
+        fast_convenient: Veloce e conveniente
+        payment_options: "Numerosissime opzioni di pagamento, compresi i <strong>trasferimenti bancari</strong>"
+        multiple_purchases: Paga una volta sola per acquisti multipli
+      credits:
+        voucher: Voucher
+      credit_cards: "Accetta tutte le carte di credito"
+    paypal_payment:
+      button: "Paga %{amount} con Paypal"
+      bullets:
+        credit_card: Paga con una qualsiasi delle principali carte di credito
+        secure: Lo standard di riferimento nei pagamenti interneti sicuri
+        no_account: Non è richiesto nessun account
+      form:
+        for_buddybeers: per BuddyDrinks.com
+        order_name: "Ordine #%{number}"
+        item_name: "%{amount} Voucher per %{beers}%{location}"
+        average: media
+      credit_cards: "Accetta tutte le principali carte di credito"
+    pay:
+      title: "Controlla, per favore"
+      heading: È ora di pagare!
+      payment:
+        heading: Paga utilizzando
+    credits:
+      current_bucks: "Attualmente hai <span class=\"user_credits\">%{amount}</span> BuddyBucks."
+    create:
+      real:
+        success: <strong>Grande.</strong> Paga per la birra qui sotto e il tuo amico penserà che sei veramente troppo figo!
+      error: Ops! Sembra sia successo qualcosa di strano.
+    completed:
+      error: "Scusa, amico. Niente birre gratis oggi: devi prima pagare il conto."
+    confirm:
+      not_enough_bucks: 
+        heading: "Hai bisogno di altri %{amount} BuddyBucks per completare quest'ordine."
+        desc: "Perfavore, clicca il link sottostante per fare il pieno di BuddyBucks sul tuo account."
+      get_more_bucks: "Ottieni più BuddyBucks"
+      error:
+        heading: "Errore"
+        description: "Si è verificato un errore durante il pagamento del tuo Voucher. Ti preghiamo di riprovare o di contattarci all'indirizzo info@buddydrinks.com se il problema dovesse persistere."
+      pay: "Paga con %{amount} BuddyBucks"
+    bar_detail:
+      read_more: Continua a leggere
+      more_info: Maggiori informazioni
+    update:
+      success: Il Voucher è stato riscattato
+      error: Si è verificato un errore
+    confirm_payment:
+      success: <strong>Benone!</strong> Paypal ha confermato il tuo pagamento!
+    confirmed_payment:
+      immediate_delivery: "Potrebbero volerci un paio di minuti prima che il tuo amico riceva il Voucher ma puoi essere certo di una cosa: %{recipient} ne sarà felicissimo! Per ringraziarti potrebbe addirittua comprare <em>a te</em> una a birra!"
+      title: Birre offerte!
+      send_another_beer: Invia un'altra birra
+      you_sent: "<strong>Tu hai</strong> inviato a <strong>%{recipient}</strong> un Voucher da %{price} per una %{beer} al <strong>%{bar}</strong> a %{city}!"
+      spread_the_love: Vuoi continuare a distribuire amore in giro?
+      heading: Che spettacolo!
+      success: <strong>Benone!</strong> Paypal ha confermato il tuo pagamento!
+      delayed_delivery: "A causa del tempo necessario al %{bar} per ricevere i suoi Voucher, %{recipient} riceverà il suo Voucher in circa %{time} ore. Vedrai come %{recipient} ne sarà felice! Per ringraziarti, potrebbe addirittura comprare <em>a te</em> una birra!"
+      social_spread:
+        share: Condividilo su Facebook!
+        real: VERO
+        heading: Spargi la voce con i tuoi amici su Facebook o Twitter
+        fb_status: "Ho inviato a %{recipient} una %{beer} al %{bar} a %{city}: %{memo}!"
+        fb_status_for_display: "Ho inviato a <strong>%{recipient}</strong> una %{beer} al %{bar} a %{city}: %{memo}!"
+        fb_action: Compra una birra qui
+        twitter_link: Postalo su Twitter!
+        twitter_status_for_display: "Ho inviato a <strong>@%{recipient}</strong> una %{beer} al %{bar}, a %{city} tramite <strong>http://buddydrinks.com</strong>"
+        twitter_status: "Ho inviato a @%{recipient} una %{beer} a %{bar}, a %{city}"
+        twitter_via: "tramite Buddy Drinks"
+      receipt:
+        heading: "Ricevuta di pagamento"
+        description: "Il nostro fornitore di servizi di pagamento (Paypal o Ultimate Pay) invierà la ricevuta al tuo indirizzo email."
+        questions: "Per ogni eventuale dubbio, ti preghiamo di:"
+        faqs: "Leggere le nostre FAQ"
+        contact: "Contattarci"
+    show:
+      app:
+        iphone:
+          heading: "Riscatta i tuoi Voucher con la nostra App per iPhone:"
+          link: "Sarica la App per iPhone Download iPhone App"
+        android:
+          heading: "Riscatta i tuoi Voucher con l'App per Android:"
+          link: "Scarica l'App per Android"
+        mobile: 
+          heading: "Riscatta i tuoi Voucher con l'App per iPhone o Android:"
+      sent: "INVIATA:"
+      expires: "SCADE IL:"
+      title: "%{sender} ha comprato a %{recipient} una %{drink} al %{bar}, a %{city}"
+      sent_to: "Inviata da:"
+      memo: Perchè?
+      heading: "Voucher da %{value} valido per 1 %{beer}"
+      statuses:
+        simple:
+          sent: Inviato
+          redeemed: Riscattato
+          valid_on: "Valido dal %{date}"
+          valid: Valido
+          expired: Scaduto
+        sent: Inviato ma non ancora valido
+        redeemed: Riscattato!
+        valid_on: "Non ancora valido. Valido dal %{date}."
+        valid: "Valido, dagli sotto!"
+        expired: Scaduto! Perchè ci hai messo così tanto?
+        valid_until: "Valido fino al %{date}"
+        redeemed_on: "Riscattato il %{date}"
+        expired_on: "Scaduto il %{date}"
+      disclaimer:
+        title: "Disclaimer:"
+        no_cash: I Voucher Buddy Drinks non sono riscattabili in denaro e sono trasferibili solamente previo permesso del proprietario del bar.
+        voucher_limit: "Questo bar permette l'acquisto, tramite Voucher Buddy Drinks, di solo %{limit} drink a persona al giorno."
+      instructions:
+        print_link: stampa questo Voucher
+        heading: Cosa faccio ora?
+        instructions: "Scarica le nostre App per <a href=\"%{iphone_link}\">iPhone</a> oppure per <a href=\"%{android_link}\">Android</a> e porta il tuo cellulare al %{bar}."
+        instructions_iphone: "Scarica la nostra <a href=\"%{link}\">App per iPhone </a> e porta il tuo cellulare al %{bar}."
+        instructions_android: "Scarica la nostra <a href=\"%{link}\">App per Android</a> e porta il tuo cellulare al %{bar}."
+      map_link: mappa grande
+      expired: "Spiacenti, questo Voucher è scaduto."
+      status: "STATO:"
+      sent_by: "Inviato da:"
+      redeemable_at: riscattabile al
+      heading_voucher: "Questo è un Voucher da <span class=\"money\">%{amount}</span> valido per una %{beer} al %{bar}"
+      more_info: Maggiori informazioni
+      mobile: 
+        heading: Voucher
+    existing_account_activation:
+      heading: Hai già un account?
+      description: "Accedi qui e noi aggiungeremo %{email} al tuo account."
+    new_account_creation:
+      heading: Vuoi attivare il tuo account?
+      description: Attivando il tuo account ti permetterà di accedere a Buddy Drinks e tracciare più facilmente le tue birre.
+      activate: Attiva

@@ -1,0 +1,49 @@
+--- 
+affiliate: 
+  affiliate: 
+    tabs: 
+      invoices: Payouts
+  payments: 
+    index: 
+      title: All Payouts
+    show: 
+      title: "Payout #%{number}"
+bars: 
+  new: 
+    form: 
+      button: "Step 2: Drink List"
+    setup: 
+      description: <strong>There are no costs to use our service.</strong> It takes about 30 minutes to get setup to use Buddy Drinks in your venue. We've got solutions for every level of technology access. If you're internet-connected its a bit easier but we'll work with you every step of the way.
+admin: 
+  payments: 
+    tabs: 
+      show: Show Payout
+ious: 
+  pay: 
+    order: 
+      drink_at_bar: "%{drink} voucher at %{bar}"
+  new: 
+    form: 
+      friend_search_hint_text: Type a friends email
+      friend_search_no_results_text: Not a BuddyDrinks friend yet
+      friend_searching_text: Searching...
+shared: 
+  payment_table: 
+    table: 
+      headings: 
+        invoice: Payout Number
+  payment: 
+    invoice: Payout
+    invoice_number: Payout Number
+facebook: 
+  index: 
+    heading: Hey, welcome to Buddy Drinks.
+notifier: 
+  single_voucher_notification: 
+    voucher_explained: "%{name} has bought you a %{amount} voucher for a %{beer} at %{bar} (%{city})! Lucky You!"
+  multiple_voucher_notification: 
+    voucher_explained: "%{name} has bought you %{quantity} %{amount} vouchers for %{beers} at %{bar} (%{city})! Lucky You!"
+home: 
+  index: 
+    register: 
+      description: Signup for free and send your friend a real drink.

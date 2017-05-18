@@ -1,0 +1,13 @@
+nl:
+  qrcode: 
+    validate: 
+      amount: Hoeveelheid
+      expires: "Loopt af"
+      for: Voor
+      from: Van
+      html: 
+        title: "Voucher controle"
+      mobile: 
+        heading: "Voucher controle"
+      sent: Verstuurd
+      to: Tot

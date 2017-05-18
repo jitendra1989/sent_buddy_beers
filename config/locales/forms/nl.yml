@@ -1,0 +1,93 @@
+nl:
+  forms: 
+    buttons: 
+      add: "Voeg toe"
+      cheers: Proost!
+      go: Go!
+      login: Inloggen
+      register_with_twitter: "Inloggen met Twitter"
+      search: "Zoeken »"
+      update: Wijzigen
+    hint_box: 
+      about: Over
+    labels: 
+      address: Adres
+      bank_account_bic_swift: "BIC/SWIFT numer"
+      bank_account_code: "Bank code"
+      bank_account_iban: "IBAN nummer"
+      bank_account_name: "Naam bankrekening houder"
+      bank_account_number: "Bankrekening nummer"
+      bank_address: "Adres van de bank"
+      bank_name: "Naam van de bank"
+      bar: Kroeg
+      bar_name: "Naam van de kroeg"
+      bar_token: "Kroeg token"
+      beer: Biertje
+      brand: Merk
+      choose_password: "Kies wachtwoord"
+      choose_username: "Kies gebruikersnaam"
+      city: Stad
+      confirm_new_password: "Nieuw wachtwoord bevestigen"
+      confirm_password: "Bevestig je wachtwoord"
+      contact_email: "Email adres"
+      contact_name: "Naam contactpersoon"
+      country: Land
+      currency: Munteenheid
+      current_photo: "Huidige foto"
+      default_currency: "Betaal mij uit in"
+      description: Omschrijving
+      description_bio: Omschrijving/bio
+      discounted: "Ik wil dit drankje aan Buddy Drinks klanten aanbieden met een korting"
+      discounted_price: "Prijs incl. korting"
+      email: "Email adres"
+      emails: Emails
+      lead: "Hoe heb je gehoord over ons?"
+      name: Naam
+      near: Vlakbij
+      new_beer: "Nieuw biertje"
+      new_brand: "Nieuw merk"
+      new_password: "Nieuw wachtwoord"
+      opening_hours: Openingstijden
+      password: Wachtwoord
+      paypal: "PayPal emailadres"
+      phone: Telefoon
+      phone_number: Telefoonnummer
+      photo: Foto
+      price: "Normale prijs"
+      price_in_cents: "Prijs (in centen)"
+      primary_email: "Primair email adres"
+      promotion_group: "Groep naam"
+      remember_me: "Onthoud mij"
+      remove: Verwijder
+      title: Titel
+      twitter_email: "Twitter email"
+      twitter_handle: Twitter
+      twitter_password: "Twitter wachtwoord"
+      twitter_username: "Twitter naam"
+      user: Gebruiker
+      username: Gebruikersnaam
+      username_or_email: "Gebruikersnaam of Email"
+      volume: "Afmeting (volume)"
+      voucher_limit: "Voucher limiet (per persoon/per dag)"
+      website: Website
+      within: Binnen
+      your_email: "Je email adres"
+      your_name: "Jouw naam"
+    links: 
+      cancel: Annuleren
+    select: 
+      afternoon: 13:00-17:00
+      choose_objects: 
+        a_bar: "een kroeg"
+        a_brand: "een merk"
+        a_city: "een stad"
+        a_country: "een land"
+      default_prompt: Kies
+      evening: "17:00-21:00"
+      morning: "9:00-11:00"
+      night: "21:00-0:00"
+      no_cities: "Geen steden aanwezig"
+      no_countries: "Geen landen beschikbaar"
+      noon: 11:00-13:00
+      none: Geen
+      prompt_choose_object: "Maak een keuze %{type}"

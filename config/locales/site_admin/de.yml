@@ -1,0 +1,19 @@
+de:
+  site_admin: 
+    affiliates: 
+      create: 
+        success: "Barbesitzer wurde erfolgreich angelegt!"
+      destroy: 
+        error: "Es gab einen Fehler beim Löschen des Barbesitzers."
+        success: "Barbesitzer wurde erfolgreich gelöscht!"
+      update: 
+        success: "Barbesitzer wurde erfolgreich aktualisiert!"
+    prices: 
+      edit: 
+        legend: "Bierpreis ändern"
+      form: 
+        add_beer_link: "Füge diese Bier hinzu"
+        add_brand_link: "Füge diese Marke hinzu"
+        legend: "Füge der %{bar} Getränkeliste Biere hinzu"
+        new_beer_link: "Bier existiert nicht?"
+        new_brand_link: "Marke noch nicht vorhanden?"

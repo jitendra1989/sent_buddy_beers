@@ -1,0 +1,7 @@
+.friend
+  %p
+    -# link_to user_friendship_path(@user, object) do
+    %span.photo= image_tag(friendship.friend.avatar(:tiny))
+    %span.user
+      %strong= friendship.friend.name
+  =clear_floats

@@ -1,0 +1,169 @@
+nl:
+  ious: 
+    bar_detail: 
+      more_info: "Meer info"
+      read_more: "lees meer"
+    buddy_bucks_payment: 
+      bullets: 
+        credit_system: "Onze eigen valuta gebouwd op %{link}"
+        fast_convenient: "Snel en gemakkelijk"
+        multiple_purchases: "Betaal voor meerdere aankopen"
+        payment_options: "Meerdere betalingsmogelijkheden waaronder <strong>iDEAL</strong>"
+      credit_cards: "Accepteerd alle credit cars"
+      credits: 
+        voucher: Voucher
+      get_bucks: "Koop meer BuddyBucks"
+      heading: "BuddyBucks"
+      pay: "Betaal met %{amount} BuddyBucks"
+    completed: 
+      error: "Sorry vriend, geen gratis biertje voor jou vandaag. Je moet eerst je rekening nog betalen!"
+    confirm: 
+      error: 
+        description: "Er ging iets mis bij het betalen voor je tegoedbon. Probeer het nog een keer of neem contact op met info@buddydrinks.nl als het probleem zich blijft voordoen."
+        heading: Foutmelding
+      get_more_bucks: "Krijg meer BuddyBucks"
+      not_enough_bucks: 
+        desc: "Klik op onderstaande link om je BuddyBucks account aan te vullen."
+        heading: "Je hebt %{amount} meer BuddyBucks nodig om deze betalling af te ronden."
+      pay: "Betaal met %{amount} BuddyBucks"
+    confirm_payment: 
+      success: "<strong>Cool!</strong> PayPal heeft je betaling goedgekeurd."
+    confirmed_payment: 
+      delayed_delivery: "Omdat het wat tijd kost voordat %{bar} de voucher heeft ontvangen, zal %{recipient} de voucher over ongeveer %{time} uur ontvangen. Maar, je vriend %{recipient} gaat zo blij zijn. Wellicht koopt hij wel direct een biertje voor jou, als dank!"
+      heading: "Hot damn!"
+      immediate_delivery: "Het kan enkele minuten duren voordat je vriend de voucher ontvangt. Maar, je vriend %{recipient} gaat zo blij zijn. Wellicht koopt hij wel direct een biertje voor jou, als dank!"
+      receipt: 
+        contact: Contact
+        description: "Je ontvangt een factuur via email van onze betalingsprovider (Paypal of Social Gold)."
+        faqs: "Lees onze FAQs"
+        heading: Factuur
+        questions: "Heb je vragen/opmerkingen:"
+      send_another_beer: "Stuur nog een biertje"
+      social_spread: 
+        fb_action: "Koop hier je biertje"
+        fb_status: "Ik heb voor %{recipient} een %{beer} bij %{bar} in %{city} gekocht: %{memo}!"
+        fb_status_for_display: "Ik heb voor %{recipient} een %{beer} bij %{bar} in %{city} gekocht: %{memo}!"
+        heading: "Vertel het je vrienden via Facebook of Twitter"
+        real: ECHT
+        share: "Deel dit via Facebook"
+        twitter_link: "Plaats het op Twitter!"
+        twitter_status: "Ik heb voor @%{recipient} een %{beer} bij %{bar}, %{city} gekocht via http://buddydrinks.nl"
+        twitter_status_for_display: "Ik heb voor %{recipient} een %{beer} bij %{bar} in %{city} gekocht. Via <strong>http://buddydrinks.nl</strong>"
+        twitter_via: "via Buddy Drinks"
+      spread_the_love: "Verspreid de Buddy Drinks liefde!"
+      success: "<strong>Cool!</strong> PayPal heeft je betaling goedgekeurd."
+      title: Gaaaan!
+      you_sent: "<strong>Je</strong> hebt <strong>%{recipient}</strong> een %{price} voucher voor een %{beer} bij <strong>%{bar}</strong> in %{city} gekocht!"
+    create: 
+      error: "Oops, er ging iets raars fout."
+      real: 
+        success: <strong>Cool!</strong>
+    credits: 
+      current_bucks: "Je hebt momenteel %{amount} BuddyBucks."
+    drink_details: 
+      drink_at_bar: "%{drink}* tegoedbon bij %{bar}, %{city} voor %{recipient} (%{email})"
+    form: 
+      and_or: "en / of"
+      bar_legend: "Kies een kroeg"
+      beer_legend: "Kies een biertje"
+      form: 
+        beer: "Biertje <small>(Hoeveelheid/type)</small>"
+        buddy_beers_countries: "Buddy Drinks Landen"
+        button: Versturen!
+        friend_search_hint_text: "Het emailadres van je vriend"
+        friend_search_no_results_text: "Nog geen BuddyDrinks vriend"
+        friend_searching_text: Zoekende...
+        friends_email: "Het emailadres van je vriend"
+        friends_name: "De naam van je vriend"
+        memo: " Waarom stuur je hem een biertje?"
+        other_countries: "Alle Landen"
+        send_a: "Stuur een"
+        sms_warning: "Kan ingekort worden in het SMS bericht"
+      friend_network: "Kies een vriend uit"
+      friends_info_legend: "Jouw vriend"
+      salutation_legend: Aanhef
+    index: 
+      description_sent: "<strong>%{sender}</strong> heeft voor <strong>%{recipient}</strong> een %{drink} gekocht bij <strong>%{bar}</strong>, %{city}"
+      description_received: "<strong>%{sender}</strong> heeft voor <strong>%{recipient}</strong> een %{drink} gekocht bij <strong>%{bar}</strong>, %{city}"
+      expired: "Vervalt op: %{date}"
+      expires: "Vervalt binnen %{distance} op %{date}"
+      heading: "Mijn biertjes"
+      received_beers: "Ontvangen biertjes: %{count}"
+      received_empty: "Je hebt nog geen biertje ontvangen. Vraag je vrienden of familie een keer om je een biertje te sturen? Ze vinden het waarschijnlijk geweldig!"
+      redeemed: "Ingeleverd op: %{date}"
+      sender_generic: "Een buddy"
+      sent_beers: "Verstuurde biertjes: %{count}"
+      sent_empty: "Je hebt nog geen biertjes verzonden. Als je geen vrienden kent in de buurt van onze kroegen, dan kun je altijd een biertje voor jezelf kopen?"
+      title: "Mijn biertjes"
+      voucher_number: "Voucher #%{number}"
+      you_sent: Jij
+      you_received: Jij
+    new: 
+      heading: "Stuur je vriend een biertje."
+      title: "Stuur je vriend een biertje."
+    order: 
+      bucks: "BuddyBucks"
+      heading: "Je koopt"
+      price: Voucher
+      quantity: Hoeveelheid
+      similar_price: "of gelijk-geprijsd drankje"
+      total: Totaal
+    pay: 
+      heading: "Tijd om te betalen!"
+      payment: 
+        heading: "Betaal met"
+      title: "Afrekenen ajb"
+    paypal_payment: 
+      bullets: 
+        credit_card: "Betaal met credit card"
+        no_account: "Geen account nodig"
+        secure: "De standaard in veilige internet betalingen"
+      button: "Betaal %{amount} met PayPal"
+      credit_cards: "Accepteerd alle bekende credit cars"
+      form: 
+        average: gemiddeld
+        for_buddybeers: "van BuddyDrinks.nl"
+        item_name: "%{amount} vouchers voor %{beers}%{location}"
+        order_name: "Bestelling #%{number}"
+    show: 
+      disclaimer: 
+        no_cash: "Buddy Drinks vouchers zijn niet inwisselbaar voor geld en kunnen enkel bij de kroeg ingewisseld worden."
+        title: "Disclaimer:"
+        voucher_limit: "Deze kroeg heeft een voucher limiet van %{limit} drankjes per persoon per dag."
+      expired: "Sorry, deze voucher is verlopen"
+      expires: "LOOPT AF:"
+      heading: "%{value} Voucher voor 1 %{beer}"
+      heading_voucher: "Dit is een voucher van <span class=\"money\">%{amount} voor een %{beer}%{bar}"
+      instructions: 
+        heading: "Wat moet ik nu doen?"
+        instructions: "Het enige dat je hoeft te doen is met bovenstaand voucher naar %{bar} te gaan. Je kunt 'm printen, op je mobiel laten zien of gewoon opschrijven."
+        print_link: "deze voucher printen"
+      map_link: "grotere kaart"
+      memo: Waarom?
+      mobile: 
+        heading: Tegoedbon
+      more_info: "Meer info"
+      redeemable_at: "in te wisselen bij"
+      sent: "VERSTUURD:"
+      sent_by: "Verstuurd door:"
+      sent_to: "Verstuurd naar:"
+      status: "STATUS:"
+      statuses: 
+        expired: "VERLOPEN! Waarom duurde het zo lang?"
+        expired_on: "Verlopen op %{date}"
+        redeemed: Ingewisseld!
+        redeemed_on: "Opgehaald op %{date}"
+        sent: "Verstuurd, maar nog niet geldig"
+        simple: 
+          expired: Verlopen
+          redeemed: Ingewisseld
+          sent: Verstuurd
+          valid: Geldig
+          valid_on: "Geldig vanaf %{date}"
+        valid: "Geldig, ga ervoor!"
+        valid_on: "Nog niet geld. Geldig vanaf %{date}"
+        valid_until: "Geldig tot %{date}"
+      title: "%{sender} heeft voor %{recipient} een %{drink} gekocht bij %{bar}, %{city}"
+    update: 
+      error: "Er ging iets fout"
+      success: "Voucher is ingewisseld"

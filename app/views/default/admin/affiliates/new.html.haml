@@ -1,0 +1,9 @@
+= render "admin/dashboard/tabs"
+= form_for @user, :url => admin_affiliates_url do |form|
+  = error_messages_for :user
+  %fieldset
+    %legend New Affiliate
+    = render :partial => "admin/users/form", :locals => {:f => form}
+    %ol= render :partial => "admin/users/password_fields", :locals => {:f => form}
+    %ul
+      %li= form.submit

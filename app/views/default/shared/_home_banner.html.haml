@@ -1,0 +1,12 @@
+/ - Banner start
+.container.banner
+  .col-md-8.col-sm-8.col-xs-12
+    %p
+      With Buddy Drinks you can buy real drinks for your friends worldwide.
+    .row
+      .btn-group.home-btn
+        %a.btn.btn-danger.login.buy_btn{:href => new_iou_url}= t("layouts.menu.send_a_buddy_beer")
+        %a.btn.btn-warning.signup.get_btn{:href => "/apps"}= t("home.apps.get_app")
+  .col-md-4.col-sm-4.col-xs-12.padd_none
+    %img{:alt => "", :src => "images/iPhone-Hand.png"}/
+/ - banner end

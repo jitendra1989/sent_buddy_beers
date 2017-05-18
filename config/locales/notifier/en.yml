@@ -1,0 +1,79 @@
+en:
+  notifier:
+    notify_employee:
+      subject: "You're now an employee of %{bar} on Buddy Drinks!"
+      notify: "You've been made an employee of %{bar} on Buddy Drinks!"
+      description: "This mean's you'll have access to special features on our website and mobile apps, like the ability to redeem vouchers with your phone in your venue."
+      login_html: "Login to BuddyDrinks.com to check out your new features."
+      login_text: "Login (%{url}) to BuddyDrinks.com to check out your new features."
+    outstanding_balance:
+      thanks: Thanks again for being part of the Buddy Drinks network!
+      amount_owed: We've been waiting to pay you the %{amount} you're owed because you haven't chose a payment option in your profile on Buddy Drinks.
+      subject: You have an outstanding balance at Buddy Drinks. We need you payment details.
+      greeting: Hello %{name},
+      link: "Follow the link below to add your payment preferences (after you log in) and we'll get your money out to you right away:"
+    voucher_notification:
+      disclaimer: Each voucher is worth %{amount} and expires on %{expiration}. Buddy Drinks vouchers represent a specific monetary amount, redeemable at the location specified above and in no way guarantees the product listed. The location staff is fully responsible for verifying that any recipient is of legal age to receive the above product. Buddy Drinks vouchers are not redeemable for cash. For more information visit our FAQs and Terms and Conditions.
+      greeting: Hey %{name}!
+      instructions: 
+        heading: "To redeem your voucher use your Buddy Drinks app, if you don’t have the app please follow these four steps:"
+        step_one: "Download our mobile app here:"
+        step_two: "Sign up with your email:"
+        step_three: "Go to %{bar} (%{address})"
+        step_four: "Show the voucher in the Buddy Drinks app and enjoy your free drink."
+      subject: %{name} bought you %{quantity} %{item} at %{location}, %{city}!
+      voucher_explained: %{name} bought you %{quantity} %{beer} at
+    confirmation_instructions:
+      thanks: Thank you for creating an account! Click the url below to activate your account!
+      subject: Buddy Drinks Activation Instructions
+      personal_information: "You registered with this information:"
+      problem_link: If the above URL does not work try copying and pasting it into your browser. If you continue to have problem, please feel free to contact us.
+    new_voucher_list:
+      subject: You have new voucher codes.
+      thanks: Thanks for being part of our Buddy network!
+      post: "If you no longer need to check voucher codes and would like to stop receiving these notifications for this location, you can change your settings here: %{link}"
+      salutation: Hello %{bar_name}
+      explanation: "We've generated a new batch of unique codes for you. You can print out the new list of codes in order to double verify that the vouchers you receive are valid. You can access your voucher code list by logging into Buddy Drinks and visiting one of these URLs:"
+      sold_out: "You have sold all the %{amount} voucher codes on your current list. Congrats!"
+      pdf: Direct PDF download
+    email_activation:
+      verify_email: We need to verify that you really do have access to this email.
+      you_added: You recently added the email, %{email}, to your account.
+      subject: Buddy Drinks Needs You to Verify Your Email
+      greeting: Hey %{name}!
+      verify_link: "Click here to verify this email"
+    payment_made:
+      invoice_paid: "We have recently marked payout #%{number} as paid."
+      subject: "[Buddy Drinks Payout: %{number}] %{amount} PAID"
+      explanation: This means that the payout amount of %{amount} has been delivered to you in the manner by which you have requested. We want to take a moment to thank you for being a part of our Buddy Venues network and we look forward to providing you with kick-ass service in the future.
+      greeting: Hello %{name},
+      link: "If you want to view this payout online, follow the link below:"
+    at_bar: at
+    email_footer:
+      salutation: Rock and Roll,
+      signature: Your Buddies at BuddyDrinks.com
+    email_invitation:
+      subject: "Buddy Drinks App Download Link"
+      message: "Download the Buddy Drinks App here: %{link}"
+    redeemed_voucher_report:
+      salutation: "Hello %{name}"
+      description: "Here are the Buddy vouchers that were redeemed in %{location_name} over the last %{time_frame}"
+      coupon_code: "Coupon Code"
+      amount: "Amount"
+      redeemed: "Redeemed"
+      list_view: "You can view this list anytime in your location management backend on %{link}."
+      notifications: "If you would like to stop receiving these notifications or schedule them to occur more or less frequently, visit your notification settings on %{link}"
+      subject: "Buddy vouchers redeemed in %{location_name} over the last %{time_frame}"
+      timeframes:
+        daily: "day"
+        weekly: "week"
+        monthly: "month"
+    voucher_expires_soon:
+      description: "%{name} bought you %{quantity} %{item} about %{time} ago."
+      expires_plural: "Your %{count} gift vouchers expire in %{time}!"
+      expires_singular: "Your gift voucher expires in %{time}!"
+      many_redeemed: "You have already collected %{collected_count} gifts but you still have %{count} to pick up!"
+      none_redeemed_plural: "We think %{name} would be pretty bummed if you don't pick up your gifts. In order to claim your gifts follow the instructions below."
+      none_redeemed_singular: "We think %{name} would be pretty bummed if you don't pick up your gift. In order to claim your gift follow the instructions below."
+      one_redeemed: "You have already collected one gift but you still have %{count} to pick up!"
+      subject: "%{count} of your Buddy Drinks gift vouchers expires soon!"

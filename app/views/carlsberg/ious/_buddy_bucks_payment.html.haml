@@ -1,0 +1,34 @@
+/ carlsberg > ious > social_gold_payment
+
+- content_for :head do
+  :javascript
+    $(document).ready(function(){
+      $("#pay_with_credits").fancybox({
+        'padding'       : '0',
+        'autoScale'     : false,
+        'width'         : 417,
+        'height'        : 367,
+        'type'          : 'iframe',
+        'scrolling'     : 'no'
+      });
+    });
+
+#buddy_bucks.payment_method
+  .description
+    %h3.logo= t(".heading")
+    %ul
+      %li= raw t(".bullets.credit_system", :link => link_to("UltimatePay", "http://www.ultimatepay.com/"))
+      %li= t(".bullets.multiple_purchases")
+      %li= t(".bullets.fast_convenient")
+      %li= raw t(".bullets.payment_options")
+    .credit_cards= image_tag("sites/carlsberg/graphics/all_credit_cards.png", :alt => t(".credit_cards"))
+      
+  .credits
+    %p#user_credits.current
+      = raw t("ious.credits.current_bucks", :amount => number_with_delimiter(@user.credits, :locale => I18n.locale))
+
+    %ul
+      %li= link_to("#{t(".get_bucks")} &raquo;".html_safe, user_credits_url(current_user, :return_uri => pay_iou_url(@iou)), :class => "more iframe buy_credits", :id => "buy_credits")
+      %li= link_to(content_tag(:span, t(".pay", :amount => @iou.price_in_bucks)), confirm_iou_url(@iou), :class => "pay", :id => "pay_with_credits")
+      
+  =clear_floats

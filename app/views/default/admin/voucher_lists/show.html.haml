@@ -1,0 +1,33 @@
+/ admin
+
+%h1
+  - if @bar.affiliate
+    = @bar.affiliate.name
+    &ndash;
+  = number_to_currency(@list.amount.to_f, :unit => @list.amount.currency.symbol)
+  = t("affiliate.voucher_lists.show.voucher_list")
+  = @list.id
+
+= render :partial => "admin/dashboard/tabs"
+= render :partial => "admin/bars/bar_tabs"
+
+#vouchers
+  / .tabs.tiers
+  /     %ul
+  /       - VoucherList.unscoped.where(:bar_id => @bar.id).order("id").valid.each do |list|
+  /         %li
+  /           = link_to_unless_current([list.id, number_to_currency(list.amount.to_f, :unit => list.amount.currency.symbol)].join(". "), admin_bar_voucher_list_path(list.id, :bar_id => @bar.friendly_id)) do
+  /             = content_tag(:span, [list.id, number_to_currency(list.amount.to_f, :unit => list.amount.currency.symbol)].join(". "))
+  / 
+  /     = clear_floats
+  = render "admin/voucher_lists/voucher_lists"
+
+  = form_for [:admin, @bar] do |form|
+    %h2
+      = "#{@list.id}. "
+      = number_to_currency(@list.amount.to_f, :unit => @list.amount.currency.symbol)
+      %small #{@list.created_at.to_s(:euro_sm_with_time)} - (#{beers_in_price_range(@list.cents, @bar)})
+      = link_to "PDF", admin_bar_voucher_list_path(@list.id, :bar_id => @bar.friendly_id, :format => "pdf"), :class => "pdf_link"
+    %ul#list_example
+      = render :partial => "shared/admin/ious/voucher", :collection => @list.vouchers, :locals => { :form => form }
+    = submit_tag t("forms.buttons.update"), :id => "submit"

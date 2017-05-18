@@ -1,0 +1,48 @@
+- content_for :add_page_js_css do
+  = stylesheet_link_tag  'myaccount'
+- content_for :head do
+  :javascript  
+    function check_name(){
+      if($("#check_name").is(":checked")) {
+          $("#button_with_name").show();
+          $("#button").hide();
+          $("#button_code textarea.code").html('&lt;script src="#{button_user_url(current_user, :format => :js, :name => true)}" type="text/javascript" charset="utf-8"&gt;&lt;/script&gt;');
+        } else {
+          $("#button_with_name").hide();
+          $("#button").show();
+          $("#button_code textarea.code").html('&lt;script src="#{button_user_url(current_user, :format => :js)}" type="text/javascript" charset="utf-8"&gt;&lt;/script&gt;');
+        }
+    }
+    
+    $(document).ready(function(){ 
+      check_name();
+      // $("#password_form label").inFieldLabels(); 
+      $("#check_name").click(function(e){
+        check_name();
+      });
+    });
+    
+
+
+
+%form(action="" method="get" accept-charset="utf-8" id="button_code")
+  .script_background
+    %h4 Add a Button to your website
+    %fieldset
+      %p.description 
+        Copy and paste the code below into your website:
+      %ol
+        %li
+          %label{ :for => "check_name", :class => "long" }
+            = check_box "check", "name", :class => "checkbox", :id => "check_name", :autocomplete => false
+            Show My Name
+        %li
+          .loading{ :style => "display:none" }= image_tag "/images/sites/default/graphics/ajax-loader.gif"
+          %textarea.code
+            = "<script src=\"#{button_user_url(current_user, :format => :js)}\" type=\"text/javascript\" charset=\"utf-8\"></script>"
+      %p.button-text This is how the button will appear on your website:
+      #button.button_demo
+        %script{:src => button_user_url(current_user, :format => :js), :type => "text/javascript", :charset => "utf-8" }  
+      #button_with_name.button_demo{ :style => "display:none" }
+        %script{:src => button_user_url(current_user, :format => :js, :name => true), :type => "text/javascript", :charset => "utf-8" }
+  

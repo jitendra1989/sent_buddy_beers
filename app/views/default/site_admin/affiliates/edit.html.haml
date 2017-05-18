@@ -1,0 +1,8 @@
+= render "site_admin/shared/tabs"
+= form_for [:site_admin, @affiliate] do |f|
+  = error_messages_for :affiliate
+  %fieldset
+    %legend Edit Affiliate
+    = render "form", :f => f
+    %ul
+      %li= f.submit

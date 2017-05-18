@@ -1,0 +1,11 @@
+#fb-root
+:javascript
+  window.fbAsyncInit = function() {
+    FB.init({appId: '#{facebook_app_id}', status: true, cookie: true, xfbml: true, channelUrl: '#{(request.ssl? ? "https" : "http")}://#{request.env["HTTP_HOST"]}/facebook/channel'});
+    #{ yield(:facebook) }
+  };
+  (function() {
+    var e = document.createElement('script'); e.async = true;
+    e.src = '#{(request.ssl? ? "https" : "http") + "://connect.facebook.net/#{facebook_locale(I18n.locale.to_s)}/all.js"}';
+    document.getElementById('fb-root').appendChild(e);
+  }());

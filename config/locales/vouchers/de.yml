@@ -1,0 +1,23 @@
+de:
+  vouchers: 
+    check: 
+      form: 
+        button: Einlösen
+      heading: "Gutschein einlösen"
+    existing_account_activation: 
+      description: "Melde Dich hier an und wir werden die Adresse %{email} zu Deinem Konto hinzufügen"
+      heading: "Hast Du schon ein Konto?"
+    new_account_creation: 
+      activate: Aktivieren
+      description: "Wenn Du Dein Konto aktivierst, kannst Du Dich auf Buddy Drinks einloggen und Deine Biersendungen leichter verfolgen."
+      heading: "Willst Du Dein Konto aktivieren?"
+    redeem: 
+      error: 
+        empty: "All Deine Gutscheine wurden eingelöst"
+        expired: "Gutschein ist abgelaufen!"
+        no_code: "Du hast nicht die Gutscheinnummer eingegeben! Bitte versuche es noch einmal!"
+        not_found: "Dieser Gutschein wurde nicht gefunden oder wurde schon eingelöst"
+        permission_denied: "Sorry, Du hast nicht die Rechte einen Gutschein einzulösen"
+        unredeemable: "Der eingetragene Gutschein-Code ist entweder falsch eingetragen oder nicht einlösbar"
+      success: "Gutschein eingelöst bei %{bar}"
+      success_expired: "Gutschein für %{bar} ist abglaufen! Wenn Du möchtest, kannst Du ihn aber trotzdem einlösen und wir zahlen Dich wie gewöhnlich dafür aus."

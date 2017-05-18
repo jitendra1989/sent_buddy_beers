@@ -1,0 +1,12 @@
+/ default > bars > bar
+
+.info
+  %strong= link_to bar.name, bar_url(bar)
+  %br
+  %span.address
+    = bar.address
+    - if bar.url
+      %br
+      = link_to bar.url, bar.url, :rel => "nofollow", :target => "_blank"
+- unless bar.description.blank?
+  .desc= raw truncate(bar.description, :length => 300, :omission => "&hellip; #{link_to("#{t("ious.bar_detail.read_more")}&raquo;", bar_url(bar), :target => "_blank")}")

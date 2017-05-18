@@ -1,0 +1,8 @@
+/ default > pages > show
+
+- @content_class = "two_column" if @page.children.present? or @page.parent.present?
+#page
+  = render "sidebar"
+  
+  #text= render "body"
+  = clear_floats

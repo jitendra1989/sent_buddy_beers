@@ -1,0 +1,34 @@
+/ default > ious > paypal_payment
+
+- content_for :head do
+  %script(src="https://www.paypalobjects.com/js/external/dg.js" type="text/javascript" charset="utf-8")
+
+#paypal.payment_method.col-md-6.col-sm-6.col-xs-12
+  %form{ :action => paypal_create_path, :method => "post", :id => "paypal_form" }
+    = hidden_field "paypal", "amt", :name => "amt", :value => number_to_currency(@iou.total.to_f, :locale => "en", :seperator => ".", :unit => "")
+    = hidden_field "paypal", "cur", :name => "cur", :value => @iou.currency
+    = hidden_field "paypal", "name", :name => "name", :value => t(".form.order_name", :number => @iou.id)
+    = hidden_field "paypal", "description", :name => "description", :value => t(".form.item_name", :amount => [@iou.amount.currency.symbol, @iou.amount].join(), :beers => pluralize(@iou.quantity, beverage_owed(@iou)), :location => " #{t("global.at")} #{@iou.bar.name}")
+    = hidden_field "paypal", "order", :name => "order_id", :value => @iou.id
+    .description
+      %h3.logo Paypal
+      %ul
+        %li= t(".bullets.secure")
+        %li= t(".bullets.credit_card")
+        %li
+          %strong= t(".bullets.no_account")
+    .credits
+      %ul
+        %li
+          / %input{ :type => "image", :src => "https://www.paypal.com/#{facebook_locale(I18n.locale.to_s)}/i/btn/btn_dg_pay_w_paypal.gif", :id => "paypal_submit", :name => "paypal_submit", :value => t(".button", :amount => "#{@iou.total.currency.symbol}#{@iou.total}") }
+          = link_to (image_tag "https://www.paypal.com/en_US/i/btn/btn_dg_pay_w_paypal.gif"), paypal_express_path(:iou_id => @iou.id)
+          = number_to_currency(calculate_total(@iou), :unit => @iou.amount.currency.symbol)
+        /%li.credit_cards= image_tag("graphics/major_cc_cards.gif", :alt => t(".credit_cards"))
+
+    = clear_floats
+
+  :javascript
+    var dg = new PAYPAL.apps.DGFlow({
+      // the HTML ID of the form submit button which calls setEC
+      trigger: "paypal_submit"
+    });

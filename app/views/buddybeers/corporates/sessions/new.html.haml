@@ -1,0 +1,37 @@
+- content_for :head do
+  = stylesheet_link_tag  'login' 
+.middle-part
+  = form_for resource, :as => resource_name, :url => session_path(resource_name) do |f|
+    = f.error_messages
+    .login-facebook
+      %h1{:style => "margin-top: 110px;"}= t("sessions.new.heading")
+      %p.sameas_signup Login With Your Buddy Drinks Corporate Account
+
+    - flash.each do |name, msg|
+      - if msg.is_a?(String) && name == :alert
+        .col-md-12.col-xs-12.col-sm-12.padd_none
+          %div{:class => "glogal-alert alert alert-#{name == :notice ? "success" : "danger"}", :style => "margin-bottom:15px" }
+            %a.close{"data-dismiss" => "alert"} ×
+            = content_tag :div, msg, :id => "flash_#{name}"
+          .clear
+    
+    = f.text_field :email, :placeholder => "Email", :class => "col-md-12 col-sm-12 col-xs-12"
+    .clearfix
+    = f.password_field :password, :placeholder => "Password", :class => "col-md-12 col-sm-12 col-xs-12 second-input-password"
+    .clearfix
+
+    .col-md-12.padd_none
+      .row
+        .col-md-12.col-sm-12.col-xs-12.padd_none
+          = f.submit t("sessions.new.form.button"), :class => 'btn btn-warning col-md-12 col-sm-12 col-xs-12 login-submit', :style => "font-size: 14px; line-height:20px;"
+      .row
+        .col-md-6.col-sm-6.col-xs-6.remember-pad-none.padd_none
+          %label.remember
+            %span= t("forms.labels.remember_me")
+            = f.check_box :remember_me, :class => "checkbox"
+        .col-md-6.col-sm-6.col-xs-6.padd_none.text-right
+          %span
+            = link_to 'Forgot your password ?', new_corporate_password_path, :class => 'forgot-password', :rel => "nofollow"
+      .row
+        .col-md-12.col-sm-12.col-xs-12.padd_none
+          %a.btn.btn-warning.signup.no_account_signup-btn.col-md-12.col-sm-12.col-xs-12.padd_none{:href => new_corporate_registration_url} No account yet? Sign up here

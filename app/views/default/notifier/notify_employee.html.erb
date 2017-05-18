@@ -1,0 +1,8 @@
+<%# You've been made an employee of @employment.bar.name on Buddy Drinks! %>
+<h1 class="h1"><%= t(".notify", :bar => @employment.bar.name) %></h1>
+
+<%# This mean's you'll have access to special features on our website and mobile apps, like the ability to redeem vouchers with your phone in your bar.%>
+<p><%= t(".description") %></p>
+
+<%# "Login" to BuddyDrinks.com to check out your new features. %>
+<p><%= link_to t(".login_html"), login_url %></p>

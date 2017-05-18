@@ -1,0 +1,25 @@
+- content_for :head do
+  :javascript
+    $(document).ready(function(){
+      $("a#video_link").fancybox();
+      #{ params[:video].present? ? "$('a#video_link').trigger('click');" : "" }
+      $("#phones").click(function(e){
+        var x = e.pageX - $(this).offset().left;
+        if (x <= 162) {
+          #{ Rails.env.production? ? "_gaq.push(['_trackEvent', 'App', 'Download', 'homepage graphics Android']);" : ""}
+          window.open("https://play.google.com/store/apps/details?id=com.buddybeers.mobile");
+        } else {
+          #{ Rails.env.production? ? "_gaq.push(['_trackEvent', 'App', 'Download', 'homepage graphics iPhone']);" : ""}
+          window.open("http://itunes.apple.com/de/app/buddy-beers-carlsberg-buy/id457267087");
+        }
+        e.preventDefault();
+      })
+    });
+
+#body.pie
+  #apps
+    %h2= t(".subhead")
+  
+    = render "app_form"
+    
+= render "app_video"

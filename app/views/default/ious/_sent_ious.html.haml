@@ -1,0 +1,38 @@
+/ default > ious > sent_ious
+:javascript
+  $(function() {
+    $(".sort_sent_paginate_ajax th a, .sort_sent_paginate_ajax .sent_pagination a").on("click", function(){
+      $.getScript(this.href);
+      return false;
+    });
+  });
+- if @sent_ious.present?
+  %ul#sent
+    - for iou in @sent_ious
+      %li
+        .media
+          .drink
+            .avatar
+              - if current_user.avatar.file?
+                = image_tag iou.sender.avatar(:tiny), :class => "sent_margin"
+              -else
+                = image_tag "/images/icon-profile.png", :class => "sent_margin"
+            .media-body
+              .description
+                - iou.group_drinks.each do |gd|
+                  %p= raw t("ious.index.description_sent", :sender => t("ious.index.you_sent"), :recipient => (gd.recipient_name.blank? ? t("ious.index.sender_generic") : gd.recipient_name), :drink => [gd.quantity, gd.price_name].join(" "), :bar => link_to(iou.bar_name, bar_url(iou.bar)), :city => iou.bar.city.name)
+              - if iou.memo.present?
+                .memo
+                  %p= " \"#{iou.memo} \""
+              %p.date= iou.created_at.to_s(:twitter_format_w_year)
+    .row.text-right
+      = will_paginate(@sent_ious, :class => 'set_pagination_btn', :class =>'sent_pagination', :previous_label => '<<', :next_label => '>>', :style => "margin: 20px 0;")
+
+
+- else
+  %p#sent.empty= t("ious.index.sent_empty")
+
+.row.text-right
+  /= will_paginate(@sent_ious, :class => 'set_pagination_btn', :class =>'sent_pagination', :previous_label => '<<', :next_label => '>>', :style => "margin: 20px 0;")
+
+

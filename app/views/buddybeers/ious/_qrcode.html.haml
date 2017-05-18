@@ -1,0 +1,44 @@
+:css
+  table {
+    border-width: 0;
+    border-style: none;
+    border-color: #0000ff;
+    border-collapse: collapse;
+    margin: 0 4% 4% 0;
+    width: 100%;
+  }
+  td {
+    border-width: 0;
+    border-style: none;
+    border-color: #0000ff;
+    border-collapse: collapse;
+    padding: 0;
+    margin: 0;
+    width: 10px;
+    height: 10px;
+  }
+  td.black { background-color: #000; }
+  td.white { background-color: #fff; }
+  .voucher-text {
+    font-weight: bold;
+    margin-bottom: 30px;
+  }
+.row
+  - unless @drinks.blank?
+    - @drinks.each do |drink|
+      - drink.vouchers.each do |voucher|
+        - unless voucher.blank?
+          - qr = get_new_qr_code(voucher)
+          - unless qr.blank?
+            .col-md-6.col-sm-6.col-xs-12
+              %table
+                - qr.modules.each_index do |x|
+                  %tr
+                    - qr.modules.each_index do |y|
+                      - if qr.is_dark(x,y)
+                        %td.black
+                      - else
+                        %td.white
+              %p.voucher-text.text-center= voucher.coupon
+
+

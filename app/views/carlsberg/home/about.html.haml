@@ -1,0 +1,192 @@
+/ carlsberg > home > about
+
+- @title = t(".title")
+- @meta_description = t(".meta_description")
+- stylesheets "sites/carlsberg/sections/static"
+
+- content_for :head do
+  :javascript
+    $(function() {
+      var $sidebar   = $(".toc"),
+          $window    = $(window),
+          $footer    = $("#footer"), // use your footer ID here
+          offset     = $sidebar.offset(),
+          foffset    = $footer.offset(),
+          threshold  = foffset.top - $sidebar.height(), // may need to tweak
+          topPadding = 10;
+      
+      $window.scroll(function() {
+        if ($window.scrollTop() > threshold) {
+            $sidebar.stop().animate({
+                marginTop: threshold
+            });
+        } else if ($window.scrollTop() > offset.top) {
+          
+            $sidebar.stop().animate({
+              marginTop: $window.scrollTop() - offset.top + topPadding
+            });
+        } else {
+          $sidebar.stop().animate({
+            marginTop: 0
+          });
+        }
+      });
+    });
+
+#text.about.pie
+  #sidebar
+    .toc
+      %h2= t(".toc.title")
+      %ol
+        %li
+          = link_to t(".about_buddy_beers.toc"), "##{t(".about_buddy_beers.anchor")}", :rel => "nofollow"
+          %ol
+            %li= link_to t(".buddy_bars.toc"), "##{t(".buddy_bars.anchor")}", :rel => "nofollow"
+        %li
+          = link_to t(".how_does_it_work.toc"), "##{t(".how_does_it_work.anchor")}", :rel => "nofollow"
+          %ol
+            %li= link_to t(".printing_vouchers.toc"), "##{t(".printing_vouchers.anchor")}", :rel => "nofollow"
+            %li= link_to t(".hand_written_vouchers.toc"), "##{t(".hand_written_vouchers.anchor")}", :rel => "nofollow"
+            %li= link_to t(".sms_vouchers.toc"), "##{t(".sms_vouchers.anchor")}", :rel => "nofollow"
+            %li= link_to t(".mobile_vouchers.toc"), "##{t(".mobile_vouchers.anchor")}", :rel => "nofollow"
+            %li= link_to t(".expire.toc"), "##{t(".expire.anchor")}", :rel => "nofollow"
+            %li= link_to t(".buy_myself.toc"), "##{t(".buy_myself.anchor")}", :rel => "nofollow"
+        %li
+          = link_to t(".pricing.toc"), "##{t(".pricing.anchor")}", :rel => "nofollow"
+          %ol
+            %li= link_to t(".paying.toc"), "##{t(".paying.anchor")}", :rel => "nofollow"
+            %li= link_to t(".paypal.toc"), "##{t(".paypal.anchor")}", :rel => "nofollow"
+            %li= link_to t(".buddy_bucks.toc"), "##{t(".buddy_bucks.anchor")}", :rel => "nofollow"
+        %li
+          = link_to t(".account.toc"), "##{t(".account.anchor")}", :rel => "nofollow"
+          %ol
+            %li= link_to t(".signup.toc"), "##{t(".signup.anchor")}", :rel => "nofollow"
+            %li= link_to t(".account_after_facebook.toc"), "##{t(".account_after_facebook.anchor")}", :rel => "nofollow"
+            %li= link_to t(".send_beers_on_facebook.toc"), "##{t(".send_beers_on_facebook.anchor")}", :rel => "nofollow"
+        %li
+          = link_to t(".signing_up_bars.toc"), "##{t(".signing_up_bars.anchor")}", :rel => "nofollow"
+          %ol
+            %li= link_to t(".bar_needs.toc"), "##{t(".bar_needs.anchor")}", :rel => "nofollow"
+            %li= link_to t(".bartender.toc"), "##{t(".bartender.anchor")}", :rel => "nofollow"
+        %li
+          = link_to t(".who.toc"), "##{t(".who.anchor")}", :rel => "nofollow"
+          %ol
+            %li= link_to t(".founded.toc"), "##{t(".founded.anchor")}", :rel => "nofollow"
+            %li= link_to t(".contact.toc"), "##{t(".contact.anchor")}", :rel => "nofollow"
+
+  #main
+    %h1= t(".heading")
+    
+    %a{ :name => t(".about_buddy_beers.anchor") }
+    %h2= t(".about_buddy_beers.question")
+    = raw t(".about_buddy_beers.answer")
+    #intro_video
+      %iframe(src="http://player.vimeo.com/video/13982961?portrait=0&amp;color=FF9A00" width="560" height="315" frameborder="0") 
+    
+    %a{ :name => t(".buddy_bars.anchor") }
+    %h3= t(".buddy_bars.question")
+    = raw t(".buddy_bars.answer", :link => bars_url)
+    
+    %hr
+    
+    %a{ :name => t(".how_does_it_work.anchor")}
+    %h2= t(".how_does_it_work.question")
+    = raw t(".how_does_it_work.answer")
+    
+    %a{ :name => t(".printing_vouchers.anchor")}
+    %h3= t(".printing_vouchers.question")
+    = raw t(".printing_vouchers.answer")
+    
+    %a{ :name => t(".hand_written_vouchers.anchor") }
+    %h3= t(".hand_written_vouchers.question")
+    = raw t(".hand_written_vouchers.answer")
+    
+    %a{ :name => t(".sms_vouchers.anchor")}
+    %h3= t(".sms_vouchers.question")
+    = raw t(".sms_vouchers.answer")
+    
+    %a{ :name => t(".mobile_vouchers.anchor") }
+    %h3= t(".mobile_vouchers.question")
+    = raw t(".mobile_vouchers.answer")
+    
+    %a{ :name => t(".expire.anchor") }
+    %h3= t(".expire.question")
+    = raw t(".expire.answer")
+    
+    %a{ :name => t(".buy_myself.anchor") }
+    %h3= t(".buy_myself.question")
+    = raw t(".buy_myself.answer")
+    
+    %hr
+    
+    %a{ :name => t(".pricing.anchor") }
+    %h2= t(".pricing.question")
+    = raw t(".pricing.answer")
+    
+    %a{ :name => t(".paying.anchor") }
+    %h3= t(".paying.question")
+    = raw t(".paying.answer")
+    
+    %a{ :name => t(".paypal.anchor") }
+    %h3= t(".paypal.question")
+    = raw t(".paypal.answer")
+    
+    %a{ :name => t(".buddy_bucks.anchor") }
+    %h3= t(".buddy_bucks.question")
+    = raw t(".buddy_bucks.answer")
+    
+    %hr
+    
+    %a{ :name => t(".account.anchor") }
+    %h2= t(".account.question")
+    = raw t(".account.answer")
+    
+    %a{ :name => t(".signup.anchor") }
+    %h3= t(".signup.question")
+    = raw t(".signup.answer", :signup_link => new_user_registration_url, :connect_with_facebook => facebook_login_button)
+    
+    %a{ :name => t(".account_after_facebook.anchor") }
+    %h3= t(".account_after_facebook.question")
+    = raw t(".account_after_facebook.answer")
+    
+    %a{ :name => t(".send_beers_on_facebook.anchor") }
+    %h3= t(".send_beers_on_facebook.question")
+    = raw t(".send_beers_on_facebook.answer")
+    
+    %hr
+    
+    %a{ :name => t(".signing_up_bars.anchor") }
+    %h2= t(".signing_up_bars.question") 
+    = raw t(".signing_up_bars.answer", :link => new_bar_url)
+    
+    %a{ :name => t(".bar_needs.anchor") }
+    %h3= t(".bar_needs.question")
+    = raw t(".bar_needs.answer")
+    
+    %a{ :name => t(".bartender.anchor") }
+    %h3= t(".bartender.question")
+    = raw t(".bartender.answer")
+    
+    %hr
+    
+    %a{ :name => t(".who.anchor") }
+    %h2= t(".who.question")
+    = raw t(".who.answer", :video_link => "http://vimeo.com/11294850", :email => obscure_email("info@buddydrinks.com"))
+    
+    %a{ :name => t(".founded.anchor") }
+    %h3= t(".founded.question") 
+    = raw t(".founded.answer")
+    
+    %a{ :name => t(".contact.anchor") } 
+    %h3= t(".contact.question")
+    = render "contact_info"
+    %p
+      Twitter: 
+      = link_to "@buddydrinks", "http://www.twitter.com/buddybeers", :target => "_blank"
+    %p
+      Facebook: 
+      = link_to t(".contact.facebook_app"), "http://www.facebook.com/apps/application.php?id=9972531846", :target => "_blank"
+    %p
+      %small= t(".contact.updated", :updated => "18 APR 2011")
+
+  = clear_floats

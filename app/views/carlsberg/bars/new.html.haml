@@ -1,0 +1,28 @@
+/ carlsberg > bars > new
+
+- @title = translate(".title")
+- javascripts 'jquery.elastic', 'sites/buddybeers/bars'
+- stylesheets "sites/carlsberg/sections/bars"
+- content_for :head do
+  :plain
+    <!--[if lte IE 8]>
+      <style type="text/css" media="screen">
+        #new .left form fieldset ol li input, 
+        #new .left form fieldset ol li select, 
+        #new .left form fieldset ol li textarea,
+        #new .left form fieldset ol .special_price ol { 
+          position: relative;
+          behavior: url(/PIE.htc); 
+        }
+      </style>
+    <![endif]-->
+  
+#new
+  .header
+    %h1= t(".heading")
+    %h2= t("bars.form.form.heading")
+    %p= t("bars.form.form.description")
+  .pad  
+    = render "benefits"
+    .left= render "form"
+    = clear_floats

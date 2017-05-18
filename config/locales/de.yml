@@ -1,0 +1,146 @@
+--- 
+de: 
+  
+  admin: 
+    ious: 
+      create: 
+        error: "Es wurde ein Fehler mit deinen Gutschein"
+        success: "Gutschein gesendet!"
+      new: 
+        form: 
+          existing: Bestehende
+          new: Neu
+          user_type: "Benutzer Typ"
+        heading: "Sende eine Gutschein zu eine bestehende oder neue User"
+    payments: 
+      tabs: 
+        show: "Auszahlung Betrachten"
+        
+  confirmations: 
+    new: 
+      description: "Gib unten Deine Emailadresse ein, damit wir Dir die notwendigen Informationen zur Bestätigung Deines Kontos zuschicken können."
+      heading: "Sende Bestätigungsinformationen nochmals"
+      submit: Senden
+      title: "Sende Bestätigungsinformationen nochmals"
+      
+  credits: 
+    balance: 
+      balance: "Dein BuddyBucks Kontostand lautet:"
+    index: 
+      accept: "Wir akzeptieren:"
+      and_more: "... und viel mehr!"
+      heading: "Deine BuddyBucks"
+      payment_logos: "Visa, Mastercard, American Espress, Discover, GiroPay, EC, Lastschrift, Sofortüberweisung"
+      title: "Deine BuddyBucks - Lade Dein Konto auf"
+    return_link: 
+      back: "Zurück zur Kasse"
+    success: 
+      success: "<strong>Du hast Dein Konto erfolgreich aufgeladen!</strong> Deinen aktuellen Kontostand siehst Du in wenigen Sekunden in der obigen Statusleiste, wenn Du eine neue Seite lädst."
+    top_up: 
+      top_up: "Lade Deinen BuddyBucks Konto auf mit:"
+  
+  emails: 
+    activate: 
+      error: "<strong>Es gab ein Problem mit der Bestätigung!</strong> Hast Du Dich vielleicht mit einem anderen Benutzernamen schon registriert?"
+      not_found: "<strong>Ach!</strong> Wir konnten die angegebene Emailadresse nicht finden!"
+      success: "<strong>Ja!</strong> Deine Email wurde uns bestätigt!"
+  
+  friendships: 
+    index: 
+      heading: "Deine Freunde"
+  
+  helpers: 
+    select: 
+      prompt: "Bitte wähle"
+    submit: 
+      create: "Erstelle %{model}"
+      submit: "Speichere %{model}"
+      update: "Aktualisiere %{model}"
+  
+  i18n:
+    transliterate:
+      rule:
+        ü: ue
+        ö: oe
+        ä: ae
+        Ü: Ue
+        Ö: Oe
+        Ä: Ae
+        ß: ss
+  
+  sessions: 
+    create: 
+      success: "Du bist drinne!"
+    destroy: 
+      success: "Du bist draußen!"
+    new: 
+      connect_with_facebook: "Über Facebook verbinden"
+      facebook_heading: "Altenativ melde Dich bei BuddyDrinks mit Deinem <strong>Facebook-Account</strong> bei an!"
+      form: 
+        button: Login
+        forgot_password: "Passwort vergessen?"
+        legend: "oder, melde Dich bei BuddyDrinks an"
+      heading: "Bist Du schon angemeldet?"
+      title: "Log Dich ein auf Buddy Drinks"
+  
+  sms: 
+    error_message: "Jemand hat Dier einen BuddyDrinks Gutschein geschickt, aber wir wissen nicht mehr wo wir ihn aufgehoben haben. Bitte kontaktiere uns unter info@buddydrinks.com, sodass wir ihn Dir zukommen lassen können."
+    message: "%{name} hat Dir Biere spendiert! Oeffne einfach nur die BuddyDrinks App:"
+  support: 
+    array: 
+      last_word_connector: " und"
+      two_words_connector: und
+      words_connector: ","
+    select: 
+      prompt: "Bitte wähle"
+  
+  time: 
+    am: am
+    formats: 
+      default: "%a, %d %b %Y %H:%M:%S %z"
+      long: "%B %d, %Y %H:%M"
+      short: "%d %b %H:%M"
+    pm: pm
+  
+  twitter: 
+    create_user: 
+      success: "Dein Konto wurde erfolgreich erstellt! Melde Dich mit Deinen Twitter-Logindaten an."
+    new: 
+      already_registered: 
+        heading: "Wenn Du Dich bereits mit dem Twitteraccount bei Buddy Drinks angemeldet hast"
+        link: "Klick einfach auf %{link} und log Dich mit Deinem Twitter Namen und Deinem Passwort "
+        wrong_place: "Du bist hier falsch!"
+      heading: "Anmelden über Twitter"
+      title: "Buddy Drinks | Log Dich ein mit Twitter"
+  
+  user_activations: 
+    activate_account: 
+      success: "Nice! Du hast Dein Konto aktiviert. Jetzt kannst Du Deine Biersendungen verfolgen!"
+    active_user: "Du hast schon Dein Konto aktiviert."
+    error: "Shit! Es ist etwas schiefgegangen. Hol Dir ein Drink, wir werden uns darum kümmern."
+    new: 
+      form: 
+        button: Aktivieren
+        legend: "Such Dir ein Passwort aus und los geht's!"
+      heading: "Sag Hallo zum Gatekeeper!"
+    no_user: "Ohje! Bei der Bestätigung Deines Kontos ist ein Fehler aufgetreten: %{errors}"
+    success: "Nice! Du hast Dich eingeloggt."
+  
+  users: 
+    email: 
+      add: "Email-Adresse hinzufügen"
+      pending: "Noch nicht bestätigt"
+    get_user: 
+      error: "Hmm … Sieht aus als gebe es diese Person nicht. Bist Du Dir sicher, dass Du nicht ein zuviel hattest?"
+    button:
+      button_text: "Spendiere %{name} ein %{drink}"
+      button_link: "Spendiere ein %{drink} Button von BuddyDrinks.com"
+      me: "mir"
+      beer: "Bier"
+  
+  widgets: 
+    index: 
+      friends_message: "Oder frage Deine Freunde, ob sie <em>Dir</em> eins ausgeben."
+      header_alt_text: "BuddyDrinks - Made in Germany. Served Worldwide."
+      main_button: "Spendiere hier ein Bier: %{bar} "
+      twitter_status: "Ich bin hier: %{bar}. Warum spendierst Du mir hier kein Bier? %{url}"

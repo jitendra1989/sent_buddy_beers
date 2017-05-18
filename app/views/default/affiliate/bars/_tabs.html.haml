@@ -1,0 +1,28 @@
+.tabs
+  %ul
+    %li= link_to t("affiliate.affiliate.tabs.home"), affiliate_root_url
+    %li.vouchers
+      = link_to_unless_current(t("affiliate.bars.outstanding_vouchers"), affiliate_bar_url(@bar)) do
+        = content_tag(:span, t("affiliate.bars.outstanding_vouchers"))
+    %li.vouchers
+      = link_to_unless_current(t("affiliate.bars.redeemed_vouchers"), affiliate_bar_ious_url(@bar, :filter => "past")) do
+        = content_tag(:span, t("affiliate.bars.redeemed_vouchers"))
+    %li.voucher_lists
+      = link_to_unless_current(t("affiliate.bars.voucher_lists"), vouchers_affiliate_bar_url(@bar)) do
+        = content_tag(:span, t("affiliate.bars.voucher_lists"))
+    %li.inventory
+      = link_to_unless_current(t(".beer_list"), affiliate_bar_prices_url(@bar)) do
+        = content_tag(:span, t(".beer_list"))
+    %li.bar
+      = link_to_unless_current(t(".edit_bar_information"), edit_affiliate_bar_path(@bar)) do
+        = content_tag(:span, t(".edit_bar_information"))
+    %li
+      = link_to_unless_current(t(".gallery"), gallery_affiliate_bar_path(@bar)) do
+        = content_tag(:span, t(".gallery"))
+    %li
+      = link_to_unless_current(t(".employees"), affiliate_bar_employments_path(@bar)) do
+        = content_tag(:span, t(".employees"))
+    %li
+      = link_to_unless_current(t(".promotional"), new_affiliate_bar_iou_url(@bar)) do
+        = content_tag(:span, t(".promotional"))
+  = clear_floats

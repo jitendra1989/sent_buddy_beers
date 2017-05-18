@@ -1,0 +1,79 @@
+de:
+  notifier: 
+    at_bar: beim
+    confirmation_instructions: 
+      personal_information: "Du hast Dich mit folgenden Daten registriert:"
+      problem_link: "Falls die obige Internetadresse nicht funktioniert, kopiere sie und versuche, sie im Eingabefeld Deines Browsers aufzurufen. Sollten weiterhin Probleme auftauchen, kontaktiere uns jederzeit."
+      subject: "BuddyDrinks Aktivierung"
+      thanks: "Vielen Dank, dass Du ein Konto bei uns eingerichtet hast! Klicke den nachfolgenden Link, um Dein Konto zu aktivieren!"
+    email_activation: 
+      greeting: "Hallo %{name}!"
+      subject: "Buddy Drinks muss Deine Email verifizieren"
+      verify_email: "Wir müssen sicher stelllen, dass Du die Berechtigung zu dieser Email hast!"
+      verify_link: "Klicke hier zur Bestätigung Deiner Emailadresse"
+      you_added: "Du hast gerade die Adresse  %{email} Deinem Konto hinzugefügt."
+    email_footer: 
+      salutation: Cheers!
+      signature: "Dein BuddyDrinks-Team"
+    email_invitation:
+      subject: "BuddyDrinks App Download Link"
+      message: "Lade die BuddyDrinks App hier herunter: %{link}"
+    new_voucher_list: 
+      explanation: "Wir haben für Dich eine neue Liste von Gutscheincodes erstellt. Diese kannst Du ausdrucken, falls Du sie zusätzlich zu unserer App auf ihre Gültigkeit überprüfen möchtest. Grundsätzlich ist dies jedoch nicht notwendig, da die über unsere App eingelösten Gutscheine bereits durch uns auf Ihre Gültigkeit überprüft werden. Du erhältst Zugang zu den Gutscheinlisten, wenn Du Dich bei BuddyDrinks anmeldest und eine der folgenden Links klickst:"
+      pdf: "Directer PDF Download"
+      post: "Falls Du die Gutscheinlisten nicht mehr benötigst und Du keine weiteren Benachrichtigungen erhalten möchtest, so kannst Du die Einstellungen hier ändern: %{link}"
+      salutation: "Hallo %{bar_name}!"
+      sold_out: "Glückwunsch! Alle %{amount} Gutscheincodes Deiner aktuellen Liste wurden verkauft."
+      subject: "Du hast neue Gutscheincodes"
+      thanks: "Vielen Dank für Eure Mitgliedschaft im Netzwerk der BuddyBars!"
+    notify_employee: 
+      description: "Dies bedeutet, dass Du Zugang zu speziellen Funktionalitäten auf unserer Website und unserer mobilen Applikation hast, wie zum Beispiel das Einlösen von Gutscheinen in der Bar via iPhone."
+      login_html: "Login bei BuddyDrinks.de, um Deine neuen Features auszuprobieren."
+      login_text: "Login (%{url}) bei BuddyDrinks.de, um Deine neuen Features auszuprobieren."
+      notify: "Du bist nun ein Mitarbeiter der %{bar} bei BuddyDrinks"
+      subject: "Du bist jetzt ein Mitarbeiter der %{bar} bei BuddyDrinks"
+    outstanding_balance: 
+      amount_owed: "Damit wir Dir Deinen ausstehenden Gewinn von %{amount} überweisen können, wähle bitte baldmöglichst eine Bezahloption auf Deinem Buddy Drinks Profil."
+      greeting: "Hallo %{name},"
+      link: "Klicke den nachfolgenden Link um Deine Bezahloption festzulegen, sodass wir Dir Deinen Gewinn umgehend überweisen können:"
+      subject: "Du hast noch einen nicht ausgezahlten Gewinn. Zur Überweisung benötigen wir dringend Deine Kontoinformationen."
+      thanks: "Vielen Dank für Eure Mitgliedschaft im Netzwerk der BuddyBars!"
+    payment_made: 
+      explanation: "Dies bedeutet, dass der Auszahlungensbetrag von %{amount} an Dich überwiesen wurde entsprechend der von Dir gewählten Bezahloption. Wir danken Dir sehr dafür, dass Du Mitglied unseres Buddy Drinks Netzwerkes bist und freuen uns darauf, Dir auch in Zukunft einen modernen und außergewöhnlichen Service mit Buddy Drinks zu bieten."
+      greeting: "Hallo %{name},"
+      invoice_paid: "Der Betrag der Auszahlung %{number} wurde beglichen."
+      link: "Um Dir die Auszahlung online anzuschaun, folge dem Link:"
+      subject: "[BuddyDrinks Auszahlung: %{number}] %{amount} BEZAHLT"
+    redeemed_voucher_report:
+      salutation: "Hallo %{name}"
+      description: "Nachfolgend eine Liste aller hier eingelösten BuddyDrinks Gutscheine in den letzten %{time_frame}: %{location_name}"
+      coupon_code: "Gutscheincode"
+      amount: "Betrag"
+      redeemed: "Eingelöst"
+      list_view: "Du kannst diese Liste jederzeit unter folgendem Link einsehen: %{link}."
+      notifications: "Falls Du diese Benachrichtigungen weiterhin nicht mehr oder seltener erhalten möchtest, treffe die entsprechenden Einstellungen unter folgendem Link: %{link}"
+      subject: "Alle eingelösten BuddyDrinks Gutscheine in den letzten %{time_frame} für %{location_name}"
+      timeframes:
+        daily: "Tag"
+        weekly: "Woche"
+        monthly: "Monat"
+    voucher_expires_soon:
+      description: "%{name} hat Dir %{quantity} %{item} vor %{time} spendiert."
+      expires_plural: "Deine %{count} Geschenkgutscheine verfallen in %{time}!"
+      expires_singular: "Dein Geschenkgutschein verfällt in %{time}!"
+      many_redeemed: "Du hast bereits %{collected_count} Geschenke bekommen, jedoch %{count} weitere warten noch auf Dich!"
+      none_redeemed_plural: "Wir wissen, dass %{name} sehr enttäuscht wäre, wenn Deine Geschenke nicht abholst! Um dies zu vermeiden, tue folgendes:"
+      none_redeemed_singular: "Wir wissen, dass %{name} sehr enttäuscht wäre, wenn Dein Geschenk nicht abholst! Um dies zu vermeiden, tue folgendes:"
+      one_redeemed: "Du hast bereits ein Geschenk bekommen, jedoch %{count} weitere warten noch auf Dich!"
+      subject: "%{count} Deiner BuddyDrinks Geschenkgutscheine verfallen bald!"
+    voucher_notification: 
+      disclaimer: "Jeder Gutschein hat einen Wert von %{amount} und verfällt am %{expiration}. BuddyDrinks Gutscheine repräsentieren einen monetäre Werte und können in der oben genannten Gastronomie eingelöst werden, garantieren jedoch nicht die Verfügbarkeit des genannten Produkts. Die Gastronomen sind umfassend verantwortlich für die Einhaltung des JuSchG. BuddyDrinks Gutscheine können nicht gegen Geld eingetauscht werden. Um weitere Informationen zu bekommen, lese unsere AGB."
+      greeting: "Hallo %{name}!"
+      instructions: 
+        heading: "Zur Einlösung des Gutscheins sind es nur 4 simple Schritte:"
+        step_one: "Lade hier unsere Mobile App:"
+        step_two: "Melde Dich mit Deiner Emailadresse an:"
+        step_three: "Besuche %{bar} (%{address})"
+        step_four: "Zeige den Gutschein auf der BuddyDrinks App der Bedienung und genieße Deinen freien Drink."
+      subject: "%{name} hat Dir hier %{quantity} %{item} spendiert: %{location}, %{city}!"
+      voucher_explained: "%{name} hat Dir hier %{quantity} %{beer} spendiert:"

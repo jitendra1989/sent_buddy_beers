@@ -1,0 +1,18 @@
+%section
+  = form_for current_user.events.build, :url=> { :action=> "create" }, :method=> :post, :html=> {  :id=> "addEventForm" } do |f|
+    .field.form-group
+      = f.label :title, "Friend’s Name:"
+      = f.text_field :title, :class=>"form-control"
+
+    .field.form-group.event-select-box
+      = f.label "Event:"
+      = f.select :event_type, Event::EVENT_TYPE, {:prompt => "Select Event" }, :class => 'custom-select'
+      = f.text_field :other_event_type, :class=>"form-control", :placeholder => 'Add Other Event'
+
+    .field.form-group
+      = f.label "Day of Event:"
+      = f.text_field :day_of_the_event, :placeholder => 'MM-DD-YYYY', :class=>"form-control", :readonly=>"readonly"
+    .field.form-group
+      = f.hidden_field :user_id, :val => current_user.id
+    .actions.form-group
+      = f.submit"Create Event", :class => 'btn btn-success'

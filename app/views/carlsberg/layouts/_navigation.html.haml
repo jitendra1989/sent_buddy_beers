@@ -1,0 +1,16 @@
+/ carlsberg > layouts > navigation
+
+#menu
+  .container
+    = render 'layouts/main_navigation'
+#sub_menu
+  .container
+    %p.slogan= raw t(".slogan")
+    
+    #language_switcher
+      %ul
+        - if I18n.locale.to_s == "de"
+          %li= link_to image_tag("/images/flags/en.png", :alt => "#{ @bar.name if @bar.present? } Send Drinks to your friends online"), params.merge({:locale => 'en'})
+        - else
+          %li= link_to image_tag("/images/flags/de.png", :alt => "#{ @bar.name if @bar.present? } Spendiere Biere. Pflege Freundschaften. Weltweit."), params.merge({:locale => 'de'})
+    =clear_floats

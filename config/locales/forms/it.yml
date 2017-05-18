@@ -1,0 +1,101 @@
+it:
+  forms:
+    buttons:
+      add: Add
+      register_with_twitter: Registrati con Twitter
+      go: Vai!
+      search: "Cerca ¬ª"
+      cheers: Salute!
+      login: Accedi
+      update: Aggiorna
+    drinks:
+      remove: Rimuovi questo drink
+      additional_options: Dettagli aggiuntivi sul drink
+    hint_box:
+      about: Informazioni
+    links:
+      cancel: Cancella
+    select:
+      choose_objects:
+        a_brand: una marca
+        a_city: una città
+        a_country: un Paese
+        a_bar: un bar
+      none: None
+      default_prompt: Seleziona per favore
+      prompt_choose_object: "Seleziona perfavore %{type}"
+      no_countries: Nessun Paese disponibile
+      no_cities: Nessuna città disponibile
+      morning: Mattina (9 - 11AM)
+      noon: Pranzo (11AM - 1PM)
+      afternoon: Pomeriggio (1 - 5PM)
+      evening: Tardo pomeriggio (5 - 9PM)
+      night: Sera (9PM - 12AM)
+    translation: 
+      translation: "%{other_locale} Traduzione"
+      none: "Nessuno"
+    labels:
+      promotion_group: Nome del gruppo
+      city: Città
+      twitter_password: Password Twitter
+      address: Indirizzo
+      name: Nome
+      photo: Foto
+      bank_account_name: Nome dell'intestatario del conto
+      brand: Marca
+      price: Prezzo normale
+      current_photo: Foto attuale
+      remember_me: Ricordami
+      contact_name: Nome intero del contatto
+      discounted_price: Prezzo scontato
+      twitter_username: Nome utente Twitter
+      within: Entro
+      primary_email: Email primaria
+      bank_account_code: Codice banca (BLZ)
+      price_in_cents: Prezzo (in centesimi)
+      title: Titolo
+      country: Nazione
+      your_name: Il tuo nome
+      confirm_password: Conferma Password
+      discounted: Ho intenzione di offrire questo drink ad un prezzo scontato per i clienti Buddy Drinks
+      bar_token: Simbolo del bar
+      new_beer: Nuova birra
+      username: Nome Utente
+      bar_name: Nome del bar
+      choose_password: Scegli una Password
+      bank_name: Nome della banca
+      beer: Birra
+      phone_number: Numero di telefono
+      volume: Dimensioni (volume)
+      remove: Rimuovi
+      bank_address: Indirizzo della banca
+      description_bio: Descrizione/biografia
+      twitter_handle: Twitter
+      twitter_email: Email di Twitter
+      website: Sito web
+      bank_account_iban: Numero IBAN
+      phone: Telefono
+      your_email: La tua Email
+      emails: Email
+      currency: Valuta
+      opening_hours: Orari di apertura
+      near: Vicino
+      description: Descrizione
+      bar: Bar
+      default_currency: Pagami in
+      contact_email: Email del contatto
+      user: Utente
+      password: Password
+      bank_account_bic_swift: Numero BIC/SWIFT
+      paypal: Email Paypal
+      voucher_limit: Limite di drink per ogni Voucher (a persona, al giorno)
+      new_brand: Nuova marca
+      lead: Chi ti ha parlato di noi?
+      choose_username: Segli un Nome Utente
+      email: Email
+      bank_account_number: Numero di Conto
+      username_or_email: Utente o Email
+      new_password: Nuova password
+      confirm_new_password: Conferma la nuova password
+      drink_type: Tipo di drink
+      remove_this_drink: Rimuovi questo drink

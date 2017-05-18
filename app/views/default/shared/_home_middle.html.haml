@@ -1,0 +1,80 @@
+- content_for :head do
+  :javascript
+    $(function($) {
+      // create a convenient toggleLoading function
+      $("#loading").hide();
+      $("#success").hide();
+      $("#new_email_invitation")
+      .bind("ajax:beforeSend", function() { 
+        $("#loading").show();
+        $("#new_email_invitation input.submit").hide(); 
+      })
+      .bind("ajax:success", function(event, data, status, xhr) {
+        $("#new_email_invitation").fadeOut('fast');
+        $("#success p.phone_number").html(data.email_invitation.email);
+        $("#success").fadeIn('fast');
+        #{ Rails.env.production? ? "_gaq.push(['_trackEvent', 'App', 'Notify', 'download link']);" : ""}
+      })
+      .bind("ajax:error", function(event, data, status, xhr) {
+        //alert(data.responseText);
+        //$("#errorExplanation .errors").html(data.responseText);
+        $("#errorExplanation").fadeIn('fast');
+        $("#loading").hide();
+        $("#new_email_invitation input.submit").show(); 
+      });
+      
+      $(document).on( "click", ".home_video",function(){   
+        var theModal = $(this).data("target"),
+        videoSRC = $(this).attr("data-theVideo"),
+        videoSRCauto = videoSRC + "?autoplay=1";
+        $(theModal + ' iframe').attr('src', videoSRCauto);
+        $(theModal + ' button.close').click(function () {
+          $(theModal + ' iframe').attr('src', videoSRC);
+        });
+        $(theModal).modal("show");
+      });
+  
+    }); 
+    
+/ - Middle section start
+%section.home_middle
+  / - first section
+  .row
+    .container.home_middle_section
+      .col-md-5.col-sm-5.col-xs-12
+        %img{:alt => "", :src => "images/app-Screens.png"}/
+      .col-md-7.col-sm-7.col-xs-12.right_section
+        %p.high Put social back into socializing
+        %p.medium
+          Buddy Drinks enables you to buy real drink vouchers for your friends in our affiliated bars or restaurants worldwide. All your friend has to do is take their smartphone into the venue and redeem the drink voucher. Prove you're a real friend by surprising your friends in other cities!  Together, we can bring social back - one drink at a time.
+        #app_video
+          = link_to image_tag("/images/video-img-new.jpg", :alt => "Buddy Drinks Video", :class => "img-responsive"), "javascript:void(0)","data-target" => "#videoModal", "data-theVideo" => "https://www.youtube.com/embed/I0RwzqzxqCM","data-toggle" => "modal", :class=>"home_video"
+  / - first section end
+  / - second section start
+/  .row.second_row
+/    .container.home_middle_section.get_the_app
+/      %p
+/        = t("home.apps.get_app_new")
+/        %br/
+/        %span= t("home.apps.app_instructions").html_safe
+/      = form_for @email_invitation, :url => email_invitations_url(:email_invitation => @email_invitation, :format => :json), :remote => true do |f|
+/        .col-md-6.col-sm-6.col-xs-12.email_row  
+/          .input-group
+/            = f.text_field :email, :class => "form-control", :type => "text"
+/            %span.input-group-btn
+/              = f.submit "Submit", :class => "btn btn-warning submit"
+/              #loading{:style => "margin-left: 8px;"}= image_tag("sites/default/graphics/w-iphone-ajax-loader.gif")
+/              = clear_floats
+/      #success
+/        %h3{:style => "text-align:center"}= t("home.apps.success.heading")
+/        %p.phone_number
+/ - middle section end
+
+#videoModal.modal.fade{"aria-hidden" => "true", "aria-labelledby" => "videoModal", :role => "dialog", :tabindex => "-1"}
+  .modal-dialog
+    .modal-content
+      .modal-body
+        %button.close{"aria-hidden" => "true", "data-dismiss" => "modal", :type => "button"} &times;
+        %div
+          %iframe{:height => "350", :src => "", :width => "100%"}
+      

@@ -1,0 +1,13 @@
+nl:
+  global: 
+    access_denied: "Je hebt niet de juiste rechten om deze pagina te bekijken"
+    affirmative: Ja
+    at: bij
+    confirm_question: "Weet je het zeker?"
+    delete: Verwijder
+    edit: Aanpassen
+    negative: Nee
+    new: nieuw
+    or: of
+    require_no_user: "Je moet uitgelogd zijn om deze pagina te bekijken"
+    require_user: "Je moet ingelogd zijn om deze pagina te bekijken. <a href=\"/users/sign_up\">Klik hier om een gratis Buddy Account te openen.</a>"

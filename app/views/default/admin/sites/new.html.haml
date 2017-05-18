@@ -1,0 +1,9 @@
+- @title = "New Site"
+
+= render "admin/dashboard/tabs"
+
+= form_for [:admin, @site] do |f|
+  = error_messages_for :site
+  %fieldset
+    %legend New Site
+    = render "form", :f => f

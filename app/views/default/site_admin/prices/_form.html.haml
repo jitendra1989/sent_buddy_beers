@@ -1,0 +1,58 @@
+- content_for :head do
+  :javascript
+    $(document).ready(function(){
+      #{ @price.discounted ? '' : '$("#price_discounted_amount").attr("disabled", true);' }
+      $("#price_discounted").click(function(){
+        if ($(this).is(":checked")) {
+          $("#price_discounted_amount").removeAttr("disabled");
+        } else {
+          $("#price_discounted_amount").attr("disabled", true);
+        }
+      });
+    });
+
+%fieldset
+  %legend= t(".legend", :bar => @bar.name)
+  %ol
+    %li#brand
+      = label :brand, :id, "#{t("forms.labels.brand")}:"
+      = select :brand, :id, [""] + Brand.all.collect{|b| [b.name, b.id]}.sort
+      %span.no_brand
+        = link_to_function "<span id=\"brand_link_plus\">+</span><span id=\"brand_link_minus\" class=\"hidden\">&ndash;</span> #{t(".new_brand_link")}".html_safe, "$('#brand_form, #brand_link_plus, #brand_link_minus').toggle()"
+    %li#brand_form.brand_form{ :style => "display:none"}
+      = label :brand, :name, "#{t("forms.labels.new_brand")}:"
+      = link_to_remote t(".add_brand_link"), :url => {:controller => '/brands', :action => "add_brand"}, :success => "$('#brand_form, #brand_link_plus, #brand_link_minus').toggle(); $('#brand').effect(\"highlight\", {}, 3000)", :submit => "brand_form", :update => "brand_id"
+      = text_field :brand, :name
+      = observe_field "brand_id", :frequency => 0.25, :update => "price_beer_id", :url => { :controller => '/beers', :action => :get_beers_for_brand }, :with => "'brand_id='+value", :success => "$('#beer').effect(\"highlight\", {}, 3000); $('#no_beer').show(); $('#beer_brand_id').val($('#brand_id').val())"
+
+    %li#beer
+      = f.label :beer_id, "#{t("forms.labels.beer")}:"
+      = f.select :beer_id, [t("forms.select.prompt_choose_object", :type => t("forms.select.choose_objects.a_brand"))]
+      %span#no_beer.no_brand{ :style => "display:none" }
+        = link_to_function "<span id=\"beer_link_plus\">+</span><span id=\"beer_link_minus\" class=\"hidden\">&ndash;</span> #{t(".new_beer_link")}".html_safe, "$('#beer_form, #beer_link_plus, #beer_link_minus').toggle()"
+    %li#beer_form.beer_form{ :style => "display:none"}
+      = hidden_field :beer, :brand_id, :value => ""
+      %span.drink_types
+        - DrinkType.all.each do |drink_type|
+          = label :beer, :drink_type_id, "#{t("activerecord.models.#{drink_type.to_s.underscore}")}:"
+          = radio_button :beer, :drink_type_id, drink_type.id
+      = label :beer, :volume, "#{t("forms.labels.volume")}:"
+      = text_field :beer, :volume
+      = label :beer, :name, "#{t("forms.labels.new_beer")}:"
+      = text_field :beer, :name
+      = link_to_remote t(".add_beer_link"), :url => {:controller => '/beers', :action => :add_beer}, :success => "$('#beer_form, #beer_link_plus, #beer_link_minus').toggle(); $('#beer').effect(\"highlight\", {}, 3000)", :submit => "beer_form", :update => "price_beer_id"
+    %li
+      = f.label :amount, "#{t("forms.labels.price")}:"
+      = f.select :currency, [@bar.default_currency]
+      = f.text_field :amount
+    %li#special_price
+      %ol
+        %li
+          %label{ :for => 'price_discounted', :class => 'long'}
+            = "#{t("forms.labels.discounted")}: "
+            = f.check_box :discounted
+        %li
+          = f.label :discounted_amount, "#{t("forms.labels.discounted_price")}:"
+          = f.text_field :discounted_amount
+  %ul
+    %li= f.submit t("forms.buttons.add")

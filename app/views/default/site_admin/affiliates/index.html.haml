@@ -1,0 +1,20 @@
+= render "site_admin/shared/tabs"
+= render "affiliate_tabs"
+
+%p.stats= "Affiliates: #{@affiliates.length}"
+
+#users
+  = render "shared/admin/filter_form"
+
+  %ul.searchable_list
+    - @affiliates.each do |affiliate|
+      %li{:class => cycle("odd", "even")}
+        = link_to(affiliate.name, site_admin_affiliate_path(affiliate))
+        &ndash;
+        = affiliate.email
+        &ndash;
+        = pluralize(affiliate.bars.length, "Venue")
+        &ndash;
+        = affiliate.created_at.to_s(:euro_sm_with_time)
+        &ndash;
+        = link_to "edit", edit_site_admin_affiliate_path(affiliate)

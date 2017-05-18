@@ -1,0 +1,13 @@
+%table.table.table-hover
+  %tr{:bgcolor => "#D3D3D3"}
+    %th User Email
+    %th Created Date
+    %th
+    %th
+  - @users.each do|user|
+    %tr
+      %td= user.email
+      %td= formated_datetime(user)
+
+      %td= link_to "Detail", admin_user_path(user)
+      %td= link_to "Edit",edit_admin_user_path(user)

@@ -1,0 +1,19 @@
+germany:
+  id: 74
+  iso: DE
+  name: GERMANY
+  printable_name: Germany
+  iso3: DEU
+  numcode: 2760000
+  created_at: <%= 3.days.ago %>
+  updated_at: <%= 3.days.ago %>
+  
+usa:
+  id: 1
+  iso: US
+  name: UNITED STATES
+  printable_name: USA
+  iso3: USA
+  numcode: 3000000
+  created_at: <%= 3.days.ago %>
+  updated_at: <%= 3.days.ago %>

@@ -1,0 +1,16 @@
+fr:
+  vouchers:
+    check:
+      heading: "Échanger un coupon"
+      form:
+        button: "Échanger"
+    redeem:
+      success_expired: "Le coupon pour %{bar} a expiré! Nous l'avons échangé pour vous afin que vous soyez payé de toutes façons, mais c'est à vous de choisir si vous voulez servir le produit au consommateur."
+      success: "Coupon pour %{bar} échangé"
+      error:
+        expired: "Le coupon a expiré"
+        unredeemable: "Le code que vous avez entré est incorrect ou le coupon n'était pas échangeable."
+        not_found: "Ce coupon n'a pas été trouvé ou a déjà été échangé"
+        empty: "Tous vos coupons ont déjà été échangés"
+        permission_denied: "Désolé, vous n'avez pas la permission d'échanger des coupons"
+        no_code: "Vous n'avez pas entré de numéro de coupon. Veuillez essayer encore"

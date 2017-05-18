@@ -1,0 +1,36 @@
+/ buddybeers > layouts > footer
+
+#footer
+  .container
+    .footer_nav
+      %p= t("footer.links_heading")
+      %ul.footer_links
+        / %li.about= link_to t("layouts.menu.about"), about_url
+        / - %li.press= link_to t("footer.press"), press_url
+        %li.blog= link_to t("layouts.menu.blog"), "javascript:void(0)"
+        %li.new_bar= link_to t("layouts.menu.register_a_bar"), new_bar_url
+        / - if current_site.pages.live.for_footer.present?
+        /   - current_site.pages.live.for_footer.first(4).each do |page|
+        /     %li= link_to page.title, page_url(page.slug)
+        
+        / %li.privacy= link_to t("footer.privacy_policy"), privacy_url, :rel => "nofollow"
+        / %li.impressum= link_to(t("footer.impressum"), impressum_url, :rel => "nofollow")
+        / %li.terms= link_to t("footer.terms"), terms_url, :rel => "nofollow"
+    - if current_site.pages.live.for_footer.present? #and Page.for_footer.size > 4
+      - remaining_footer_pages = Page.live.for_footer#.last(Page.live.for_footer.size - 4)
+      - remaining_footer_pages.in_groups_of(8, nil).each do |group|
+        .footer_nav
+          %p &nbsp;
+          %ul.footer_links
+            - group.each do |page|
+              - unless page.nil?
+                %li= link_to page.title, page_url(page.slug.present? ? page.slug : page.id)
+    .footer_nav
+      %p= t("footer.social_links_heading")
+      = render "layouts/footer/social"
+    #copyright
+      = image_tag("sites/buddybeers/graphics/buddy-beers-logo.png")
+      %p.copyright= raw t("footer.copyright", :date => Date.today.year.to_s)
+      %p.drink_responsibly= raw t("footer.drink_responsibly")
+      
+    = clear_floats

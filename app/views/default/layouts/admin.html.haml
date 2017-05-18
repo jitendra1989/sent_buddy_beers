@@ -1,0 +1,36 @@
+!!!XML
+!!!
+%html(xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en")
+  %head
+    %meta(http-equiv="content-type" content="text/html;charset=UTF-8")
+    %link(rel="Shortcut Icon" href="/favicon.ico")
+    %link(rel="icon" href="/favicon.ico")
+    %title
+      = @title.blank? ? controller.action_name : @title
+    = stylesheet_link_tag 'reset'
+    = stylesheet_link_tag 'sites/default/sections/admin', 'jquery.fancybox-1.3.1', 'fancybox', 'bootstrap.min'
+    = csrf_meta_tag
+    = javascript_include_tag 'jquery', 'jquery-ui', 'rails', 'jrails', 'jquery.quicksearch', 'jquery.fancybox-1.3.4.pack', 'jquery.easing-1.3.pack', 'highcharts'
+    = yield(:head)
+  %body
+    #container
+      
+      = render "layouts/flash", :flash => flash
+      #header
+        .container
+          #logo= link_to image_tag("buddyDrinks-Logo.png", :alt => "Buddy Drinks Logo"), root_url
+          #account.navbar-right
+            %p
+              - if current_user
+                = t("layouts.logged_in_as", :user => current_user)
+                / = link_to t("layouts.menu.admin.affiliates"), admin_affiliates_url
+                / = link_to t("layouts.menu.admin.users"), admin_users_url
+                = link_to t("layouts.menu.admin.dashboard_admin"), admin_root_url
+                = link_to t("layouts.menu.logout"), destroy_user_session_url
+              - else
+                = link_to t("layouts.menu.login"), new_user_session_url, :class => "login_link", :rel => "nofollow"
+        = clear_floats
+
+      #content
+        .container
+          = yield

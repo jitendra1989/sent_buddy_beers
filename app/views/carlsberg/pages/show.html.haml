@@ -1,0 +1,13 @@
+/ carlsberg > pages > show
+
+- @title = @page.title
+- stylesheets "sites/carlsberg/sections/static"
+- content_for :head do
+  :javascript
+    Cufon.replace('h1');
+- @content_class = "two_column" if @page.children.present? or @page.parent.present?
+#page
+  #text
+    = render "sidebar"
+    #main= render "body"
+    = clear_floats

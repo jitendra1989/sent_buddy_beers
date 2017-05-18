@@ -1,0 +1,58 @@
+fr:
+  devise:
+    failure:
+      unauthenticated: "Vous devez être connecté pour accéder à cette page. <a href=\"/users/sign_up\">Cliquez ici pour créer gratuitement un compte sur Buddy Drinks.</a>"
+      unconfirmed: 'Vous devez confirmer votre email avant de continuer.'
+      locked: 'Votre compte est verrouillé'
+      invalid: 'Mauvais identifiant ou mot de passe.'
+      invalid_token: "Jeton d'authentification invalide"
+      timeout: 'Votre session a expiré, veuillez vous reconnecter pour continuer.'
+      inactive: "Votre compte n'a pas encore été activé"
+    sessions:
+      login_failed: "La connexion a échoué"
+      not_sign_in: "La connexion n'a pas réussi"
+      signed_in: 'La connexion a réussi!'
+      signed_out: "La déconnexion n'a pas réussi!"
+    passwords:
+      send_instructions: 'Vous allez recevoir un e-mail contenant les informations pour réinitialiser votre mot de passe dans quelques minutes!'
+      updated: 'Votre mot de passe a été changé avec succès. Vous êtes maintenant connecté.'
+      new:
+        title: "Mot de passe oublié?"
+        heading: "Mot de passe oublié?"
+        legend: "Entrez votre adresse e-mail ci-dessous et nous vous enverrons un lien pour réinitialiser votre mot de passe "
+        submit: Reset
+      edit: 
+        title: Modifier votre mot de passe 
+        heading: Modifier votre mot de passe
+    confirmations:
+      send_instructions: 'Vous allez recevoir un e-mail contenant les informations pour confirmer votre compte dans quelques minutes!'
+      confirmed: "Cool! Vous avez activé votre compte. Soyez un chic type et envoyez quelques bières! <iframe src=\"http://www2.balao.de/SL2YM?adv_sub=SUB_ID\" scrolling=\"no\" frameBorder=\"0\" width=\"1\" height=\"1\"></iframe>"
+    registrations:
+      signed_up: 'Vous vous êtes enregistré avec succès! Un e-mail de confirmation vous a été envoyé.'
+      inactive_signed_up: "<strong>Votre compte a été crée.</strong> Vérifiez simplement votre e-mail pour le lien de confirmation, et c'est parti!"
+      updated: 'Compte mis à jour!'
+      destroyed: 'Bye! Votre compte a été effacé avec succès… On espère vous revoir bientôt!'
+    unlocks:
+      send_instructions: 'Vous allez recevoir un email contenant les informations nécessaires à déverrouiller votre compte dans quelques minutes.'
+      unlocked: 'Votre compte a été déverrouillé avec succès. Vous êtes maintenant connecté'
+    mailer:
+      confirmation_instructions:
+        personal_information: 'Informations Personnelles'
+        subject: 'Instructions de confirmation'
+      reset_password_instructions:
+        subject: 'Instructions pour réinitialiser votre mot de passe Buddy Drinks'
+        greeting: 'Salut %{email}!'
+        description: 'Nous avons reçu une demande de changement de mot de passe. Cliquez sur le lien ci-dessous pour le modifier.'
+        link_text: Changer mon mot de passe
+        security: "Si vous n'avez rien demandé, ignorez cet e-mail. Peut-être qu'un de vos amis est jaloux de toutes les bonnes bières que vous recevez et essaie de se connecter à votre compte. Mais pas d'inquiétude, nous ne changerons pas votre mot de passe tant que vous n'aurez pas cliqué sur le lien ci-dessous pour en créer un nouveau." 
+      unlock_instructions:
+        subject: 'Instructions de Déverouillage'
+    omniauth_callbacks: 
+      failure: "Nous n'avons pas pu vous autoriser à %{kind} à cause de \"%{reason}\". "
+      success: "Enregistré avec succès en utilisant votre compte %{kind}"
+  
+    devise_mailer:
+      confirmation_instructions:
+        thanks: "Merci d'avoir crée un compte! Cliquez sur l'URL ci-dessous pour activer votre compte!"
+        subject: "Instructions d'Activation Buddy Drinks"
+        problem_link: "Si l'URL ci-dessus ne fonctionne pas essayez de la copier et coller dans votre navigateur. Si vous continuez à rencontrer ce problème, n'hésitez pas à nous contacter."

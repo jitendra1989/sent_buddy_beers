@@ -1,0 +1,186 @@
+en:
+  affiliate:
+    affiliate:
+      tabs:
+        home: Home
+    photos:
+      new:
+        title: Add a New Photo to Your Venue
+        form:
+          button: Add
+          legend: Add a New Photo
+      edit:
+        title: Edit a Photo
+        form:
+          button: Update
+          legend: Edit a Photo
+      destroy:
+        success: Photo deleted!
+        error: There was an error deleting your photo
+      create:
+        success: Photo was successfully added
+        error: There was an error adding your photo
+      update:
+        success: Photo updated successfully
+        error: There was an error updating your photo
+    employments:
+      index:
+        title: Manage your staff
+        new_employee: Add a New Employee
+        description: "Start typing your employee's name into the field below. Click your employee's name and then click 'Add these employees.' If they are not a Buddy Drinks member ask them to create and account first."
+        submit: Add these employees
+        submitting: Submiting ...
+        no_employees: You Currently Have No Employees
+        how_to: Enter employees using the form above. If they are currently not a Buddy Drinks member you must ask them to sign up first.
+        form:
+          friend_search_hint_text: "Enter an employee name or email (at least 3 letters)"
+          friend_search_no_results_text: "No users found"
+          friend_searching_text: "Searching"
+      create:
+        success: "Employee added. Get to work!"
+        error: "There was an error adding your employee. Maybe he wasn't a good fit."
+      employment:
+        remove: Remove
+      destroy:
+        success: Your employee was fired!
+        error: There was an error removing your employee. Please try again.
+    bars:
+      redeem_ious:
+        voucher: voucher
+        success: "%{total} redeemed. Your profit for this month has been updated. Cha-ching!"
+        error: "%{total} not redeemed. Check your codes and try again."
+      outstanding_vouchers: Purchased Vouchers
+      edit:
+        title: Edit Venue Information
+        notifications_title: Notifications
+        new_voucher_list_notification: "I check my redeemed vouchers against hard copy paper print outs. Please, notify me when new voucher codes are generated."
+        redeemed_voucher_notification_timeframe: "Email me when vouchers are redeemed in my location"
+        update_bar_notifications: "Update Notification Preferences"
+      redeemed_vouchers: Redeemed Vouchers
+      voucher_lists: Voucher Lists
+      form:
+        token_disclaimer: (This number will appear in all your voucher's numbers to let you know it is valid for your venue)
+        voucher_limit_hint_description: Set this value to the number of drinks that you will allow one customer to pay in vouchers per day.<br /><br />This is useful in the <em>rare</em> case that a user brings a lot of vouchers to your venue on one night and drink basically for free without you earning much from that customer.<br /><br />The customer will be informed of this limitation on their voucher.
+        legends:
+          bar_information: Venue Information
+          voucher_conditions: Voucher Conditions
+      index:
+        title: My Venues
+        heading: My Venues
+      gallery:
+        no_photos: Your currently have no photos
+        view_full: View Full Size
+        title: Location Photos
+        tabs:
+          add_photo: Add a Photo
+      show:
+        activity:
+          purchased_singular: "1 voucher for %{item} was"
+          purchased_plural: "%{quantity} vouchers for %{item} were"
+          redeemed: "redeemed"
+          purchased: "purchased"
+      bar:
+        edit: Edit this location
+        stats:
+          total_profit: Total Profit
+          monthly_profit: Monthly Profit
+          beers_redeemed: Total Redeemed
+          monthly_turnover: Monthly Turnover
+          beers_sold: Total Sold
+          heading: Stats
+          bro:
+            heading: Your Drink Bro
+            hint:
+              title: Drink Bros
+              description: Your Drink Bro is your local point of contact to Buddy Drinks. Give them a call if you need help with managing the vouchers, promoting your venue or anything related to Buddy Drinks. This is what we pay them for.<br /><br />Your Drink Bro also receives your weekly outstanding voucher list and has the ability to redeem your vouchers. So, if they're not someone you completely trust, then let us know immediately.
+        information:
+          heading: Information
+        map:
+          heading: Map
+        vouchers:
+          outstanding_voucher: Purchased Voucher
+          heading: Vouchers
+          redeem_link: Redeem vouchers!
+      voucher_list:
+        header: "Buddy Drinks Voucher List #%{number} &ndash; <strong>%{bar_name}, %{bar_city}</strong>"
+        pdf_file_name: Buddy_Drinks_Vouchers
+        expires: "The previous list, #%{number}, expires on: %{date}"
+        footer:
+          code:
+            heading: Code
+            description: Write down the last two digits of the code in these empty spaces. For example A-BCD- <strong>EF</strong>.
+          employee:
+            heading: Employee
+            description: Write your name or initials here so that if there is a problem later (like someone cannot read your handwriting) they'll know who to contact.
+          voucher:
+            heading: Voucher Number
+            description: When the customer gives you the voucher number it will be six letters or numbers. It will look like this A-BCD-EF. Each number is only for one price group.
+      voucher_table:
+        table:
+          headers:
+            code: Code
+            employee: Employee
+            voucher: Voucher
+      update:
+        success: Venue updated!
+        error: Error updating venue.
+        none_redeemed: Your vouchers were not redeemed. Please try again.
+        some_redeemed: "Vouchers Redeemed: %{number}"
+      tabs:
+        edit_bar_information: Edit Venue Information
+        beer_list: Drink List
+        gallery: Photos
+        promotional: Send Promotional Voucher
+        employees: Staff
+    payments:
+      show:
+        title: "Payout #%{number}"
+      index:
+        title: All Payouts
+    dashboard:
+      heading: Welcome to the Affiliate Backend
+      tabs:
+        home: My Venues
+        invoices: Payouts
+    ious:
+      outstanding_form:
+        no_vouchers: You have no outstanding vouchers. Get your promotion on, man!
+      filter_form:
+        instructions: Start typing a voucher number/date/name to sort the list
+      new:
+        title: Send a Promotional Buddy Drinks Voucher
+        heading: Send a voucher for %{bar}
+        instructions: You can send vouchers for your venue as promotions. They will not be paid out to you but you can use them in promoting your venue for events or as special gifts to valuable customers.
+        form:
+          recipient_info_legend: Recipient
+          recipient_email: Recipient's Email
+          recipient_name: Recipient's Name
+          beer_legend: Drink
+          beer: Drink (Quantity/Type)
+          salutation_legend: Salutation
+          memo: Reason/Instructions
+          sender_name: Sender's Name
+      index:
+        to: "To:"
+        from: "From:"
+    prices:
+      edit:
+        title: Change Drink Price
+        legend: Change Drink Price
+      destroy:
+        success: Drink Removed
+        error: Error Removing Drink
+      drink:
+        special_price: Special price. Thanks!
+      index:
+        title: Drink List
+        legend: "Add another Drink to %{bar} Drink List"
+      create:
+        success: New Drink Added
+        error: "Error Adding Drink. Did you enter an amount <em>and</em> a name?"
+      update:
+        success: Price updated
+        error: Error Updating Price.
+    voucher_lists:
+      show:
+        voucher_list: "Voucher List"

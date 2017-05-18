@@ -1,0 +1,19 @@
+/ carlsberg > bars > contact_info
+
+#contact
+  - if @bar.phone_number.present?
+    %p
+      %span= "#{t('forms.labels.phone')}:"
+      = @bar.phone_number
+  - if @bar.url.present?
+    %p
+      %span= "#{t('forms.labels.website')}:"
+      = link_to truncate(@bar.url.gsub("http://", "").gsub("www.", ""), :length => 30), @bar.url, :rel => "nofollow", :target => "_blank"
+  - if @bar.twitter_handle.present?
+    %p
+      %span= "#{t('forms.labels.twitter_handle')}:"
+      = link_to "@#{@bar.twitter_handle}", "http://www.twitter.com/#{@bar.twitter_handle}", :target => "_blank", :rel => "nofollow"
+  - if @bar.opening_hours.present?
+    %p
+      %span= "#{t('forms.labels.opening_hours')}:"
+      = @bar.opening_hours

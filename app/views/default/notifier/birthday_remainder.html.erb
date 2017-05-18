@@ -1,0 +1,10 @@
+<p>Time to celebrate #{@birthday_guy.get_name.to_s.capitalize}'s birthday!</p>
+
+<p><%= image_tag current_user.avatar(:tiny), :alt => current_user.name, :height => "53px", :width => "53px" %></p>
+
+<p>Be first to say, "Happy Birthday" by buying them a drink.</p>
+
+<p><%= link_to 'Click here', new_iou_url(:user_id => @birthday_guy.id) %> to send #{@birthday_guy.get_name.to_s.capitalize} a drink now. </p>
+
+<p>Cheers,</p>
+<p>Your Friends @buddydrinks!</p>

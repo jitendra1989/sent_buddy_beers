@@ -1,0 +1,14 @@
+/ default > home > press
+
+#press
+  = render "press"
+  
+  = render "press_releases"
+  
+  %h2= t(".contacts.heading")
+  
+  %p= mail_to obscure_email("press@buddydrinks.com"), obscure_email("press@buddydrinks.com").html_safe
+  
+  = render "contact_info"
+  
+  = render "downloads"

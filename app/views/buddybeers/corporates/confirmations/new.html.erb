@@ -1,0 +1,24 @@
+<% content_for :head do %>
+  <%= stylesheet_link_tag 'sites/buddybeers/sections/forms' %>
+<% end %>
+
+<div class="container corp-content" id="password"> 
+  <div class="confirmation-main">
+    <h1>Resend confirmation instructions</h1>
+
+    <%= form_for(resource, :as => resource_name, :url => confirmation_path(resource_name), :html => { :method => :post }) do |f| %>
+      <%= devise_error_messages! %>
+      
+      
+      <p><%= f.label :email %><br/>
+      <%= f.email_field :email, :placeholder => "Enter email", :class => "col-md-5 col-sm-7 col-xs-12" %></p>
+      <div class="clearfix"></div>
+      <br/>
+      <p><%= f.submit "Resend confirmation instructions", :class => "btn reset-password" %></p>
+    <% end %>
+
+    <div class="row corp-links">
+      <%= render :partial => "corporates/shared/links" %>
+    </div>
+  </div>
+</div>

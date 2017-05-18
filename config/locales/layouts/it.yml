@@ -1,0 +1,50 @@
+it:
+  layouts:
+    affiliate:
+      view_bar_listing: Visualizza l'elenco dei bar
+      payment_prefs_empty:
+        heading: Nessun dettaglio relativo ai pagamenti.
+        description: "Per monetizzare i profitti ottenuti come Buddy Bar, abbiamo bisogno che tu ci fornisca i tuoi dettagli bancari o quelli di paypal. <a href=\"%{link}\">Clicca qui per accedere ai tuoi dettagli di pagamento.</a>"
+    application:
+      promo: Sconto del 20% su tutte le birre quando paghi con i BuddyBucks
+    apps:
+      slogan: "Put <span class=\"color\">social</span> back into socializing."
+    email_layout:
+      download_now: "Scarica subito!"
+      be_social: "Socializza!"
+    logged_in_as: Sei connesso come %{user}
+    menu:
+      sync_your_email: Sincronizza la tua email! 
+      edit_user: Profilo
+      blog: Blog
+      bars: Buddy Bar
+      contact: Contattaci
+      logout: Disconnessione
+      admin:
+        dashboard: Backend di amministrazione
+        affiliates: Affilati
+        users: Utenti
+      affiliate:
+        my_bars: I miei bar
+        dashboard: Backend per gli affiliati
+        my_beers: Le mie birre
+      register_a_bar: Aggiungi un bar
+      about: A proposito
+      my_beers: Le mie birre
+      redeem_link: "Riscatta un Voucher"
+      send_a_beer: Invia un drink online
+      bro:
+        dashboard: Backend amici
+      home: Home
+    meta:
+      description: "Con Buddy Drinks potrai inviare online delle VERE birre ai tuoi amici. Hai mai detto 'Hey, ti devo una birra!'? Da oggi potrai tener fede alla tua promessa offrendo una birra al tuo amico, questo grazie a Buddy Drinks."
+    navigation:
+      slogan: "Made in Berlin. <strong>Servito in tutto il mondo.</strong>"
+    user_account_navigation:
+      drinks_sent: Drink inviati
+      drinks_received: Drink ricevuti
+      login: Accedi
+      logout: Disconnessione
+      profile: Profilo
+      signup: "Registrati, è gratuito!"
+      buddybeers: Accedi col tuo account Buddy Drinks

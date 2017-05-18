@@ -1,0 +1,31 @@
+/ buddybeers > ious > new
+- stylesheets 'sites/buddybeers/sections/ious'
+- @title = t(".title")
+- content_for :add_page_js_css do
+  = stylesheet_link_tag  'send_friend'
+
+%section
+  .container
+    .row.send_friend-middle-row
+      .col-md-9.left.col-sm-9.col-xs-12
+        .row
+          .col-md-9.col-xs-12.col-sm-12.padd_none
+            %h1 Send a Drink to Your Friend
+          .col-md-3.col-xs-12.col-sm-12.padd_none
+            %a.group-drink.btn{:href => send_group_drinks_ious_path} Send Drinks To A Group 
+        = render "form"
+      .col-md-3.col-sm-3.col-xs-12.padd_right_none.right
+        .row.right_app_ad
+          %img{:alt => "", :src => "/images/mobile-small.png"}/
+          %h3 We're mobile only now!
+          %p
+            Please make sure the person you are sending a drink to has an
+            %strong iPhone
+            or
+            %strong Android
+            smartphone.
+          %p
+            = link_to t("home.apps.get_app_new"), "/apps", :target => "_blank", :class => "btn"
+
+  
+  

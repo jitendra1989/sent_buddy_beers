@@ -1,0 +1,37 @@
+/ carlsberg > sessions > login
+
+- @title = t("sessions.new.title")
+- stylesheets "sites/carlsberg/sections/forms"
+- content_for :head do
+  :javascript
+    $(document).ready(function(){ $("label").inFieldLabels(); });
+  :plain
+    <!--[if lte IE 8]>
+      <style type="text/css" media="screen">
+        #login form fieldset ol li input, 
+        #new_user form fieldset ol li input, 
+        #password form fieldset ol li input { 
+          position: relative;
+          behavior: url(/PIE.htc); 
+        }
+      </style>
+    <![endif]-->
+#login
+  %h1= t("sessions.new.heading")
+  = form_for resource, :as => resource_name, :url => session_path(resource_name) do |f|
+    = f.error_messages
+    %fieldset
+      %h2= t("sessions.new.form.legend")
+      %ol
+        = render :partial => "sessions/form", :locals => {:f => f}
+        %li.checkbox
+          = f.label :remember_me, t("forms.labels.remember_me")
+          = f.check_box :remember_me, :class => "checkbox"
+      %ul
+        %li
+          %button{ :type => "submit" }
+            %span= t("sessions.new.form.button")
+        %li= link_to t("sessions.new.form.forgot_password"), new_user_password_url, :rel => "nofollow"
+
+    = render :partial => "shared/network_connect"
+    = clear_floats

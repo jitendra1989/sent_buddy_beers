@@ -1,0 +1,44 @@
+nl:
+  number: 
+    currency: 
+      format: 
+        delimiter: ","
+        format: "%u%n"
+        precision: 2
+        separator: ","
+        unit: $
+    format: 
+      delimiter: ","
+      precision: 3
+      separator: "."
+    human: 
+      decimal_units: 
+        format: "%n %u"
+        units: 
+          billion: Biljoen
+          million: Miljoen
+          quadrillion: Quadriljoen
+          thousand: Duizend
+          trillion: Triljoen
+          unit: "&nbsp;"
+      format: 
+        delimiter: "."
+        precision: 1
+        significant: true
+        strip_insignificant_zeros: true
+      storage_units: 
+        format: "%n %u"
+        units: 
+          byte: 
+            one: Byte
+            other: Bytes
+          gb: GB
+          kb: KB
+          mb: MB
+          tb: TB
+    percentage: 
+      format: 
+        delimiter: "."
+    precision: 
+      format: 
+        delimiter: "."

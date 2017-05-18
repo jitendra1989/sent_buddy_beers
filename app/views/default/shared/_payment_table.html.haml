@@ -1,0 +1,16 @@
+- javascripts 'jquery.tablesorter.min'
+- content_for :head do
+  :javascript
+    $(document).ready(function(){ $("#payment_table").tablesorter(); });
+
+%table#payment_table
+  %thead
+    %tr
+      %th= t(".table.headings.paid")
+      %th= t(".table.headings.invoice")
+      %th= t(".table.headings.amount")
+      %th= t(".table.headings.timeframe")
+      %th= t(".table.headings.name")
+      %th= t(".table.headings.options")
+  %tbody
+    = render 'shared/payment_table_inside'

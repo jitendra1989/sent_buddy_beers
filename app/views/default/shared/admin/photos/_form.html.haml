@@ -1,0 +1,14 @@
+%ol
+  - unless f.object.new_record?
+    %li
+      = label "photo", "current_photo", "#{t("forms.labels.current_photo")}:"
+      = image_tag @photo.photo(:thumb)
+  %li
+    = f.label :photo, "#{t("forms.labels.photo")}:"
+    = f.file_field :photo
+  %li
+    = f.label :title, "#{t("forms.labels.title")}:"
+    = f.text_field :title, :class => "medium-input text-input"
+  %li
+    = f.label :description, "#{t("forms.labels.description")}:"
+    = f.text_area :description, :class => "text-input textarea wysiwyg", :rows => "15"

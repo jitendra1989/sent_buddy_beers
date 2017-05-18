@@ -1,0 +1,13 @@
+- content_for :head do
+  :javascript
+    $(function () {
+      $('input#id_search_list').quicksearch('ul.searchable_list li');
+    });
+
+%form{ :action => "#" }
+  %fieldset.sort
+    %ol
+      %li
+        %label.long Start typing a name/email/etc. to sort the list:
+        %br
+        %input{ :type => "text", :name => "search", :value => "", :id => "id_search_list" }

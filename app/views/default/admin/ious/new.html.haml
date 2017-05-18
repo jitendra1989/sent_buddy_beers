@@ -1,0 +1,61 @@
+- @title = "Send a voucher for free, shit we're special."
+
+%h1= t(".heading")
+
+= render "admin/dashboard/tabs"
+
+= form_for [:admin, @iou] do |f|
+  = error_messages_for :iou
+  %fieldset.friend
+    %legend= t("ious.new.friends_info_legend")
+    %ol
+      %li
+        = f.label :recipient_email, "#{t("ious.form.friends_email")}:"
+        = f.text_field :recipient_email
+      %li.friends_name
+        = f.label :recipient_name, "#{t("ious.form.friends_name")}:"
+        = f.text_field :recipient_name
+  %fieldset.bar
+    %legend= t("ious.new.bar_legend")
+    %ol
+      %li
+        = f.label :site_id
+        = f.select :site_id, Site.all.map { |s| [s.name, s.id] }, { :prompt => t("forms.select.default_prompt") }
+        = observe_field("iou_site_id", :frequency => 0.25, :update => "bar_country", :url => '/countries/get_countries_for_site', :with => "'id='+value", :success => "$('#bar_country').effect(\"highlight\", {}, 3000).removeAttr(\"disabled\");")
+      %li
+        = label :city, "#{t("forms.labels.country")}:"
+        = select :bar, :country, [], { :prompt => t("forms.select.default_prompt") }, :disabled => true
+        = observe_field("bar_country", :frequency => 0.25, :update => "bar_city", :url => '/cities/get_cities_for_country', :with => "'id='+value+'&'+'site_id='+$('#iou_site_id').val()", :success => "$('#bar_city').effect(\"highlight\", {}, 3000).removeAttr(\"disabled\");")
+
+      %li
+        = label :city, "#{t("forms.labels.city")}:"
+        = select :bar, :city, [], { :prompt => t("forms.select.default_prompt") }, :disabled => true
+        = observe_field("bar_city", :frequency => 0.25, :update => "iou_bar_id", :url => '/bars/get_bars_for_city', :with => "'id='+value+'&'+'site_id='+$('#iou_site_id').val()", :success => "$('#iou_bar_id').effect(\"highlight\", {}, 3000).removeAttr(\"disabled\");")
+
+      %li
+        = f.label :bar_id, "#{t("forms.labels.bar")}:"
+        = f.select :bar_id, [], { :prompt => t("forms.select.default_prompt")  }, :disabled => true
+        =# observe_field("iou_bar_id", :frequency => 0.25, :update => "iou_quantity", :url => '/bars/get_voucher_limit_for_select_from_bar', :with => "'id='+value")
+        = observe_field("iou_bar_id", :frequency => 0.25, :update => "iou_price_id", :url => '/prices/get_prices_for_select_from_bar', :with => "'id='+value")
+
+  %fieldset.beer
+    %legend= t("ious.new.beer_legend")
+    %ol
+      %li
+        = f.label :quantity, "#{t("ious.new.form.beer")}:".html_safe
+        %span.quantity= f.select :quantity, 1..50
+        = f.hidden_field :beverage_id, :value => 1
+        %span.name= f.select :price_id, [], { :prompt => t("forms.select.prompt_choose_object", :type => t("forms.select.choose_objects.a_bar")) }
+  %fieldset.salutation
+    %legend= t("ious.new.salutation_legend")
+    %ol
+      %li
+        = f.label :memo, "#{t("ious.form.memo")}:"
+        = f.text_field :memo
+      %li
+        = f.label :sender_name, "#{t("forms.labels.your_name")}:"
+        = f.text_field :sender_name, :value => current_user.name
+
+    %ul
+      %li
+        = submit_tag t("ious.form.form.button"), :class => "send_beer"
